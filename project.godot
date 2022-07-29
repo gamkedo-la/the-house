@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="The House"
-run/main_scene="res://main-3d.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [display]

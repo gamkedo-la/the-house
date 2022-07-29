@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/player.gd" type="Script" id=1]
+
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true

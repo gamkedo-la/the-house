@@ -1,9 +1,15 @@
 <mxfile host="65bd71144e">
     <diagram id="uI9hO-N1rfZND0lMfROh" name="Page-1">
-        <mxGraphModel dx="2568" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2391" dy="1830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="182" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="179" target="170">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="170" target="124">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="153" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="65" target="76">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
@@ -79,6 +85,9 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="178" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="21" target="177">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="21" value="An unsettling Chest:&lt;br&gt;- 3 foot seems to have grown from it's cover, going outward. They are naked.&lt;br&gt;- the chest is closed and locked. There is a big keypad on it with numbers (0 to 9). 6 numbers must be entered." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
                     <mxGeometry x="-380" y="2050" width="250" height="140" as="geometry"/>
                 </mxCell>
@@ -95,10 +104,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="A half-player-size doll (that must be creepy) on the border of the bed. Too heavy to be moved around (if possible, only the arms can be moved, and the head turned).&lt;br&gt;After the first time the player sees closely, it will teleport behind the player (or close to that position, but behind the player) each time the player cannot see it anymore (without a noise).&lt;br&gt;Should be scary. No need for sounds when it's teleported.&lt;br&gt;The doll cannot be traversed so the player have to move around it to go behind it." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="1860" width="230" height="195" as="geometry"/>
+                    <mxGeometry x="90" y="1925" width="230" height="195" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="A big cauldron, with a weird sauce in it.&amp;nbsp;&lt;br&gt;Player can put objects in it, the sauce is not tall enough to hide the objects." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="1480" y="1710" width="200" height="100" as="geometry"/>
+                <mxCell id="171" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="26" target="170">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="A big cauldron, with a weird sauce in it.&amp;nbsp;&lt;br&gt;Player can put objects in it, the sauce is not tall enough to hide the objects.&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+                    <mxGeometry x="2150" y="870" width="270" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="A &lt;b&gt;MUSIC BOX&lt;/b&gt;. &lt;br&gt;&lt;br&gt;Can be open/closed.&lt;br&gt;Plays some unsettling music when open.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
                     <mxGeometry x="1070" y="860" width="160" height="110" as="geometry"/>
@@ -251,7 +263,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="BedRoom" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="1370" width="170" height="90" as="geometry"/>
+                    <mxGeometry x="-60" y="1545" width="170" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" style="edgeStyle=none;html=1;fontSize=11;" edge="1" parent="1" source="63" target="76">
                     <mxGeometry relative="1" as="geometry"/>
@@ -300,8 +312,11 @@
                         <mxPoint x="-102" y="-46" as="offset"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="167" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="86" target="166">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="86" value="Trap door to the basement.&lt;br&gt;Locked" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
-                    <mxGeometry x="1350" y="430" width="130" height="40" as="geometry"/>
+                    <mxGeometry x="1700" y="720" width="130" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="91" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="1" source="90" target="2">
                     <mxGeometry relative="1" as="geometry"/>
@@ -337,13 +352,13 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="97" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="29" target="86">
+                <mxCell id="97" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="750" y="735" as="sourcePoint"/>
-                        <mxPoint x="655" y="795" as="targetPoint"/>
+                        <mxPoint x="1260.9999999999995" y="661.9918699186992" as="sourcePoint"/>
+                        <mxPoint x="1701" y="729.959349593496" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="98" value="LOCKED" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" connectable="0" parent="97">
+                <mxCell id="98" value="LOCKED&lt;br&gt;Requires BASEMENT KEY" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" connectable="0" parent="97">
                     <mxGeometry x="-0.1691" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
@@ -396,7 +411,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="121" value="Attic&lt;br&gt;&lt;br&gt;Boxes, old stuffs, weird artifacts and a few creepy dolls having a tea party.&lt;br&gt;There is a chair at the tea party table which is empty, the other chairs are occuupied by creepy dolls." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
-                    <mxGeometry x="440" y="1890" width="270" height="120" as="geometry"/>
+                    <mxGeometry x="617.5" y="1860" width="270" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="154" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="124" target="126">
                     <mxGeometry relative="1" as="geometry"/>
@@ -423,7 +438,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="134" value="Every time the players don't see that room anymore, &lt;b&gt;the positions of the objects in that room exchanges in a random way&lt;/b&gt;.&lt;br&gt;It's fine if doing so triggers some noises. }:D" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fillColor=#647687;fontColor=#ffffff;strokeColor=#314354;" vertex="1" parent="1">
-                    <mxGeometry x="1370" y="1110" width="160" height="120" as="geometry"/>
+                    <mxGeometry x="930" y="1110" width="160" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="139" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="136" target="106">
                     <mxGeometry relative="1" as="geometry"/>
@@ -447,13 +462,67 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="143" value="In the back of the creepy doll (maybe on the head?) there are 5 symbols.&lt;br&gt;Once decyphered they are the &lt;b&gt;code to open the ATTIC&lt;br&gt;&lt;br&gt;Entering the code in the keypad will lower a mechanical stair to get into the Attic.&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
-                    <mxGeometry x="215" y="1690" width="225" height="130" as="geometry"/>
+                    <mxGeometry x="360" y="1870" width="225" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="151" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="148" target="21">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="148" value="Bringing the creepy doll to the attic dolls tea party will make it stuck on the chair.&lt;br&gt;&lt;br&gt;As a reward, when the player will get back to to the stairs, a BIG WOMAN BOOT will be thrown by the creepy doll to the player.&amp;nbsp;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
-                    <mxGeometry x="370" y="2080" width="230" height="100" as="geometry"/>
+                    <mxGeometry x="425" y="2140" width="230" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="LOOPING CORRIDOR PUZZLE&lt;br&gt;&lt;br&gt;Basically, after &amp;lt;INSERT ACTION HERE&amp;gt; the door is unlocked and leads to the corridor, doing a corner. It is not the same corridor as before.&lt;br&gt;When going in the corridor, the door to the bathroom closes locked. When the player goes to the other side of the corridor (which does an L) they find another door, which leads to the bathroom. Once inside the doors lock again and some other &amp;lt;INSERT ACTION HERE&amp;gt; needs to be done.&lt;br&gt;&lt;br&gt;Things in the bathroom changes slightly and give clue at what should be done. This happens about 5 times. After the last time, a door open in the wall going to the Secret Room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1020" y="1700" width="411.25" height="225" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;" edge="1" parent="1" source="106" target="156">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1250" y="1680" as="sourcePoint"/>
+                        <mxPoint x="1300" y="1630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="165" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="160" target="164">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="Secret Room&lt;br&gt;&lt;br&gt;Contains far too many mushrooms and weird items.&lt;br&gt;There is a door leading to the real corridor of the house.&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1100" y="2035" width="241.25" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" value="LOOP PUZZLE SOLVED" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;" edge="1" parent="1" source="156" target="160">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1126.6004504504504" y="1945" as="sourcePoint"/>
+                        <mxPoint x="1110.0013513513509" y="2055" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="176" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="164" target="86">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="Among the items, there is the &lt;b&gt;BASEMENT KEY&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1545.005" y="2070" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="166" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="174" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="166" target="173">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="166" value="BASEMENT&lt;br&gt;&lt;br&gt;There is a massive cauldron there.&lt;br&gt;There is also a pile/stock of hands, feet, noses, eyes etc.&lt;br&gt;&lt;br&gt;Also tons of items that are witch stuffs" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1900" y="680" width="285" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt;If the player put in there at least 1 hand, feet, eye and nose, pluss some MAGIC MUSHROOMS (found in the forest) plus a GOLD object, they all disappear with the soup and only a &lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt;&lt;b&gt;GOLDEN HANDSHAKE&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; display: inline ; float: none&quot;&gt; is left in the cauldron.&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+                    <mxGeometry x="2145" y="970" width="280" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" edge="1" parent="1" source="173" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="An OLD SPORT SHOE (snicker?basket?) can be found in this room." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1900" y="840" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="177" target="179">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" value="In the chest:&lt;br&gt;A big grimmor and a &lt;b&gt;GOLDEN OBJECT&lt;/b&gt; (not decided yet, can be a lingo/bar)" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-362.5" y="2300" width="215" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="179" value="Looking at the Grimmor will display a text.&lt;br&gt;This is a recipe for a GOLDEN HANDSHAKE.&lt;br&gt;&lt;br&gt;IT requires:&lt;br&gt;- at least one hand&lt;br&gt;- at least one foot&lt;br&gt;- at least one nose&lt;br&gt;- at least two eyes&lt;br&gt;- several magic mushooms&lt;br&gt;- some gold (a gold object)" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="2270" width="280" height="165" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

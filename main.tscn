@@ -4,7 +4,7 @@
 [ext_resource path="res://forest/test-ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://main.gd" type="Script" id=4]
-[ext_resource path="res://items/plate.glb" type="PackedScene" id=5]
+[ext_resource path="res://items/plate/plate.glb" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -47,4 +47,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.917014, 1.25204 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532844, 0.884297, -8.65323 )
 
 [node name="plate" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 0.258785, 0.965935, 0, -0.965935, 0.258785, -0.962459, 1.39716, 0.502663 )
+transform = Transform( 1, 0, 0, 0, 0.597905, 0.801567, 0, -0.801567, 0.597905, 0, 1.31158, 0 )

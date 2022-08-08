@@ -1,7 +1,7 @@
 extends KinematicBody
 
-var walk_speed = 1000.0
-var view_speed = 0.01
+var walk_speed = 500.0
+var view_speed = 0.002
 
 var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/2d/default_gravity"), 0.0)
 

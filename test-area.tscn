@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -6,6 +6,16 @@
 [ext_resource path="res://items/plate/plate.glb" type="PackedScene" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/frying_pan/frying_pan.glb" type="PackedScene" id=6]
+[ext_resource path="res://items/mushrooms/mushroom_1.glb" type="PackedScene" id=7]
+[ext_resource path="res://items/mushrooms/mushroom_3.glb" type="PackedScene" id=8]
+[ext_resource path="res://items/mushrooms/mushroom_0.glb" type="PackedScene" id=9]
+[ext_resource path="res://items/mushrooms/mushroom_8.glb" type="PackedScene" id=10]
+[ext_resource path="res://items/mushrooms/mushroom_7.glb" type="PackedScene" id=11]
+[ext_resource path="res://items/mushrooms/mushroom_6.glb" type="PackedScene" id=12]
+[ext_resource path="res://items/mushrooms/mushroom_9.glb" type="PackedScene" id=13]
+[ext_resource path="res://items/mushrooms/mushroom_4.glb" type="PackedScene" id=14]
+[ext_resource path="res://items/mushrooms/mushroom_5.glb" type="PackedScene" id=15]
+[ext_resource path="res://items/mushrooms/mushroom_2.glb" type="PackedScene" id=16]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -52,3 +62,33 @@ transform = Transform( 1, 0, 0, 0, 0.597905, 0.801567, 0, -0.801567, 0.597905, 0
 
 [node name="frying_pan" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0 )
+
+[node name="mushroom_0" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78029, 0.00149816, 0.775352 )
+
+[node name="mushroom_1" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96973, 0.00149679, 0.959642 )
+
+[node name="mushroom_2" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35047, 0.00149924, 0.811638 )
+
+[node name="mushroom_3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91497, 0.00150168, 0.576604 )
+
+[node name="mushroom_4" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17247, 0.000895441, 0.538905 )
+
+[node name="mushroom_5" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05693, 0.000899017, 0.766662 )
+
+[node name="mushroom_6" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74928, 0.000895858, 0.941579 )
+
+[node name="mushroom_7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66099, 0.000893593, 0.563895 )
+
+[node name="mushroom_8" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79001, 0.000764489, 1.15239 )
+
+[node name="mushroom_9" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45728, 0.000763178, 0.858094 )

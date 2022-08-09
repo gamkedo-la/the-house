@@ -6,11 +6,13 @@ var view_speed = 0.002
 var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/2d/default_gravity"), 0.0)
 
 onready var camera = $Head/Camera
+#onready var state_machine := StateMachine.new()
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
+	
 
-func _process(delta):
+func _process(_delta):
 #	print("player transform : ", transform)
 	pass
 

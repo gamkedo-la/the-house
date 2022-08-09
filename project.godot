@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "FSM_State",
+"language": "GDScript",
+"path": "res://code-library/FSM/fsm-state.gd"
+}, {
+"base": "FSM_State",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://code-library/FSM/fsm-statemachine.gd"
+} ]
+_global_script_class_icons={
+"FSM_State": "",
+"StateMachine": ""
+}
+
 [application]
 
 config/name="The House"

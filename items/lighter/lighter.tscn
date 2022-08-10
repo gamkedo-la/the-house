@@ -164,7 +164,7 @@ anims/Light = SubResource( 3 )
 anims/RESET = SubResource( 2 )
 
 [node name="Flame" parent="." index="3" instance=ExtResource( 3 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.0195225, 0.0134895, 0 )
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.02, 0.0154123, 0 )
 
 [node name="CPUParticles" parent="Flame" index="0"]
 emitting = false

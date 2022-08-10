@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://items/lighter/lighter.glb" type="PackedScene" id=1]
+[ext_resource path="res://items/lighter/lighter.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Light"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("OmniLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Open Lid"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 140 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("OmniLight:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="lighter" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Body" parent="Lighter" index="0"]
+cast_shadow = 0
+
+[node name="Lid" parent="Lighter" index="1"]
+cast_shadow = 0
+
+[node name="Wheel" parent="Lighter/Wheel_Axis" index="0"]
+cast_shadow = 0
+
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0181092, 0.0169707, 0 )
+light_color = Color( 1, 0.996667, 0.8, 1 )
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+anims/Light = SubResource( 3 )
+"anims/Open Lid" = SubResource( 1 )
+anims/RESET = SubResource( 2 )

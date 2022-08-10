@@ -1,0 +1,8 @@
+/audio
+for all audio files
+
+/furniture
+for objects that are too large to move by the player, fixtures in the environment etc.
+
+/props
+for objects that can be handled and are small enough to move easily at human scale

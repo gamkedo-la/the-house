@@ -1,0 +1,1 @@
+Feel free to swap out assets in test-assets.tscn to see how your model looks in-engine and that it adheres to the 1m = 1unit scale

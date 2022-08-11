@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://visuals/PostProcess.tscn" type="PackedScene" id=3]
+[ext_resource path="res://visuals/screen_pixelation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
 [ext_resource path="res://visuals/WorldEnvironment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://visuals/night_sky.tscn" type="PackedScene" id=7]
@@ -29,6 +29,6 @@ script = ExtResource( 4 )
 
 [node name="Sky" parent="Head/Camera" instance=ExtResource( 7 )]
 
-[node name="PostProcess" parent="Head/Camera" instance=ExtResource( 3 )]
+[node name="screen pixelation" parent="Head/Camera" instance=ExtResource( 3 )]
 
 [node name="WorldEnvironment" parent="Head/Camera" instance=ExtResource( 5 )]

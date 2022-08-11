@@ -1,7 +1,48 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://items/lighter/lighter.glb" type="PackedScene" id=1]
 [ext_resource path="res://items/lighter/lighter.gd" type="Script" id=2]
+[ext_resource path="res://items/flame/flame.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Close Lid"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 140 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flame/CPUParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("OmniLight:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Light"
@@ -12,8 +53,35 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Flame/CPUParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Light Flickering"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("OmniLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.819, -0.25, 0, 0.25, 0, 0.974, -0.25, 0, 0.25, 0, 0.793, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6, 1.1, 1.5, 2 )
 }
 
 [sub_resource type="Animation" id=1]
@@ -56,6 +124,18 @@ tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flame/CPUParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [node name="lighter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -71,11 +151,22 @@ cast_shadow = 0
 
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0181092, 0.0169707, 0 )
-light_color = Color( 1, 0.996667, 0.8, 1 )
+light_color = Color( 0.9, 0.7416, 0.306, 1 )
 light_energy = 0.0
 shadow_enabled = true
+omni_range = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+"anims/Close Lid" = SubResource( 4 )
 anims/Light = SubResource( 3 )
+"anims/Light Flickering" = SubResource( 5 )
 "anims/Open Lid" = SubResource( 1 )
 anims/RESET = SubResource( 2 )
+
+[node name="Flame" parent="." index="3" instance=ExtResource( 3 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.02, 0.0154123, 0 )
+
+[node name="CPUParticles" parent="Flame" index="0"]
+emitting = false
+
+[editable path="Flame"]

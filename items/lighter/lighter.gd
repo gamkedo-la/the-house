@@ -1,15 +1,8 @@
 extends Spatial
 
-onready var AnimationPlayer = get_node("AnimationPlayer")
+onready var AnimationPlayer = get_parent().get_node("AnimationPlayer")
 
 var toggle = false
-
-func _ready():
-	pass
-
-func _input(event):
-	if event is InputEventKey and event.scancode == KEY_Q and event.pressed and not event.echo:
-		toggle_light()
 		
 func toggle_light():
 	if toggle:
@@ -28,3 +21,7 @@ func turn_on():
 func turn_off():
 	AnimationPlayer.play("Close Lid")
 	pass
+
+
+func _on_lighter_use_item():
+	toggle_light()

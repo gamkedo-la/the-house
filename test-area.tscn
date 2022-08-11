@@ -84,6 +84,7 @@ current = true
 
 [node name="lighter" parent="player" instance=ExtResource( 57 )]
 transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.1, 0.7, -0.2 )
+item_held = true
 
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )
@@ -295,5 +296,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.582604, 0.492678, -5.18948 )
 
 [node name="plate" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 0.529599, -5.21058 )
+
+[node name="lighter" parent="." instance=ExtResource( 57 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60145, 0.144103, -5.44373 )
 
 [editable path="player"]

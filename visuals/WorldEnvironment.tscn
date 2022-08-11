@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://visuals/WorldEnvironment.gd" type="Script" id=1]
 
+[sub_resource type="PanoramaSky" id=4]
+
 [sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 4 )
+fog_enabled = true
 glow_enabled = true
 glow_levels/7 = true
 glow_bloom = 0.38

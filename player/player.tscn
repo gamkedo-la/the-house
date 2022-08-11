@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://visuals/new_environment.tres" type="Environment" id=2]
+[ext_resource path="res://visuals/PostProcess.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
+[ext_resource path="res://visuals/WorldEnvironment.tscn" type="PackedScene" id=5]
+[ext_resource path="res://visuals/night_sky.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -22,4 +25,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
-environment = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Sky" parent="Head/Camera" instance=ExtResource( 7 )]
+
+[node name="PostProcess" parent="Head/Camera" instance=ExtResource( 3 )]
+
+[node name="WorldEnvironment" parent="Head/Camera" instance=ExtResource( 5 )]

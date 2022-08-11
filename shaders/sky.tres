@@ -1,0 +1,303 @@
+[gd_resource type="VisualShader" load_steps=25 format=2]
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=5]
+uniform_name = "VectorUniform"
+default_value_enabled = true
+default_value = Vector3( 0, 0.1, -0.5 )
+
+[sub_resource type="VisualShaderNodeInput" id=8]
+input_name = "screen_uv"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=1]
+uniform_name = "SkyTop"
+default_value_enabled = true
+default_value = Color( 0.18612, 0.322506, 0.599287, 1 )
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=10]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=11]
+default_input_values = [ 0, 0.0, 1, 2.0 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=12]
+default_input_values = [ 0, 0.0, 1, 1.0 ]
+operator = 1
+
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
+default_input_values = [ 0, 0.0, 1, 2.0 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=14]
+default_input_values = [ 0, 0.0, 1, 1.0 ]
+operator = 1
+
+[sub_resource type="VisualShaderNodeGlobalExpression" id=16]
+size = Vector2( 543.75, 238.889 )
+expression = "vec3 rotate_y(vec3 v, float angle)
+{
+	float ca = cos(angle); float sa = sin(angle);
+	return v*mat3(
+		vec3(+ca, +.0, -sa),
+		vec3(+.0,+1.0, +.0),
+		vec3(+sa, +.0, +ca));
+}
+
+vec3 rotate_x(vec3 v, float angle)
+{
+	float ca = cos(angle); float sa = sin(angle);
+	return v*mat3(
+		vec3(+1.0, +.0, +.0),
+		vec3(+.0, +ca, -sa),
+		vec3(+.0, +sa, +ca));
+}"
+
+[sub_resource type="VisualShaderNodeExpression" id=19]
+size = Vector2( 475.333, 256.667 )
+expression = "ry = rotate_y(rx, -uvx * M_PI / 2.);"
+
+[sub_resource type="VisualShaderNodeScalarConstant" id=20]
+constant = 3.14159
+
+[sub_resource type="VisualShaderNodeExpression" id=21]
+size = Vector2( 510, 196.667 )
+expression = "rx = rotate_x(vec3(0., 0., 1.), -uvy * M_PI / 2.);"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=2]
+uniform_name = "SkyBottom"
+default_value_enabled = true
+default_value = Color( 0.4821, 0.155375, 0.350012, 1 )
+
+[sub_resource type="VisualShaderNodeVectorFunc" id=22]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=23]
+operator = 3
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=24]
+uniform_name = "MoonRadius"
+hint = 1
+default_value_enabled = true
+default_value = 0.1
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=25]
+function = 31
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=26]
+function = 18
+
+[sub_resource type="VisualShaderNodeVectorOp" id=27]
+output_port_for_preview = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id=28]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeVectorScalarMix" id=3]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeColorUniform" id=4]
+uniform_name = "MoonColor"
+default_value_enabled = true
+default_value = Color( 0.87877, 0.899942, 0.717376, 1 )
+
+[sub_resource type="VisualShaderNodeInput" id=17]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorDistance" id=18]
+output_port_for_preview = 0
+
+[resource]
+code = "shader_type canvas_item;
+uniform vec4 MoonColor : hint_color = vec4(0.878770, 0.899942, 0.717376, 1.000000);
+uniform vec3 VectorUniform = vec3(0.000000, 0.100000, -0.500000);
+uniform float MoonRadius : hint_range(0, 1) = 0.1;
+
+
+// GlobalExpression:0
+	vec3 rotate_y(vec3 v, float angle)
+	{
+		float ca = cos(angle); float sa = sin(angle);
+		return v*mat3(
+			vec3(+ca, +.0, -sa),
+			vec3(+.0,+1.0, +.0),
+			vec3(+sa, +.0, +ca));
+	}
+	
+	vec3 rotate_x(vec3 v, float angle)
+	{
+		float ca = cos(angle); float sa = sin(angle);
+		return v*mat3(
+			vec3(+1.0, +.0, +.0),
+			vec3(+.0, +ca, -sa),
+			vec3(+.0, +sa, +ca));
+	}
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// ColorUniform:6
+	vec3 n_out6p0 = MoonColor.rgb;
+	float n_out6p1 = MoonColor.a;
+
+// Input:16
+	vec3 n_out16p0 = vec3(SCREEN_UV, 0.0);
+
+// VectorDecompose:20
+	float n_out20p0 = n_out16p0.x;
+	float n_out20p1 = n_out16p0.y;
+	float n_out20p2 = n_out16p0.z;
+
+// ScalarOp:21
+	float n_in21p1 = 2.00000;
+	float n_out21p0 = n_out20p0 * n_in21p1;
+
+// ScalarOp:22
+	float n_in22p1 = 1.00000;
+	float n_out22p0 = n_out21p0 - n_in22p1;
+
+// Scalar:28
+	float n_out28p0 = 3.141593;
+
+// ScalarOp:23
+	float n_in23p1 = 2.00000;
+	float n_out23p0 = n_out20p1 * n_in23p1;
+
+// ScalarOp:24
+	float n_in24p1 = 1.00000;
+	float n_out24p0 = n_out23p0 - n_in24p1;
+
+// Expression:29
+	vec3 n_out29p0;
+	n_out29p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out29p0 = rotate_x(vec3(0., 0., 1.), -n_out24p0 * n_out28p0 / 2.);
+	}
+
+// Expression:27
+	vec3 n_out27p0;
+	n_out27p0 = vec3(0.0, 0.0, 0.0);
+	{
+		n_out27p0 = rotate_y(, -n_out22p0 * n_out28p0 / 2.);
+	}
+
+// VectorFunc:30
+	vec3 n_out30p0 = normalize(n_out27p0);
+
+// VectorUniform:10
+	vec3 n_out10p0 = VectorUniform;
+
+// Distance:9
+	float n_out9p0 = distance(n_out30p0, n_out10p0);
+
+// ScalarUniform:32
+	float n_out32p0 = MoonRadius;
+
+// ScalarOp:31
+	float n_out31p0 = n_out9p0 / n_out32p0;
+
+// ScalarFunc:33
+	float n_out33p0 = 1.0 - n_out31p0;
+
+// ScalarFunc:34
+	float n_out34p0 = min(max(n_out33p0, 0.0), 1.0);
+
+// VectorOp:35
+	vec3 n_out35p0 = n_out6p0 * vec3(n_out34p0);
+
+// VectorOp:36
+	vec3 n_in36p0 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_out36p0 = n_in36p0 + n_out35p0;
+
+// Output:0
+	COLOR.rgb = n_out36p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -2944.91, 220.211 )
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2( 1180, 60 )
+nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/position = Vector2( -820, -120 )
+nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/position = Vector2( -820, 40 )
+nodes/fragment/5/node = SubResource( 3 )
+nodes/fragment/5/position = Vector2( -120, 20 )
+nodes/fragment/6/node = SubResource( 4 )
+nodes/fragment/6/position = Vector2( -200, 340 )
+nodes/fragment/8/node = SubResource( 17 )
+nodes/fragment/8/position = Vector2( -860, 540 )
+nodes/fragment/9/node = SubResource( 18 )
+nodes/fragment/9/position = Vector2( -620, 560 )
+nodes/fragment/10/node = SubResource( 5 )
+nodes/fragment/10/position = Vector2( -1080, 600 )
+nodes/fragment/16/node = SubResource( 8 )
+nodes/fragment/16/position = Vector2( -2680, 340 )
+nodes/fragment/20/node = SubResource( 10 )
+nodes/fragment/20/position = Vector2( -2500, 340 )
+nodes/fragment/21/node = SubResource( 11 )
+nodes/fragment/21/position = Vector2( -2280, 340 )
+nodes/fragment/22/node = SubResource( 12 )
+nodes/fragment/22/position = Vector2( -2100, 340 )
+nodes/fragment/23/node = SubResource( 13 )
+nodes/fragment/23/position = Vector2( -2280, 480 )
+nodes/fragment/24/node = SubResource( 14 )
+nodes/fragment/24/position = Vector2( -2100, 480 )
+nodes/fragment/26/node = SubResource( 16 )
+nodes/fragment/26/position = Vector2( -3020, 1400 )
+nodes/fragment/26/size = Vector2( 543.75, 238.889 )
+nodes/fragment/26/input_ports = ""
+nodes/fragment/26/output_ports = ""
+nodes/fragment/26/expression = "vec3 rotate_y(vec3 v, float angle)
+{
+	float ca = cos(angle); float sa = sin(angle);
+	return v*mat3(
+		vec3(+ca, +.0, -sa),
+		vec3(+.0,+1.0, +.0),
+		vec3(+sa, +.0, +ca));
+}
+
+vec3 rotate_x(vec3 v, float angle)
+{
+	float ca = cos(angle); float sa = sin(angle);
+	return v*mat3(
+		vec3(+1.0, +.0, +.0),
+		vec3(+.0, +ca, -sa),
+		vec3(+.0, +sa, +ca));
+}"
+nodes/fragment/27/node = SubResource( 19 )
+nodes/fragment/27/position = Vector2( -1700, 560 )
+nodes/fragment/27/size = Vector2( 475.333, 256.667 )
+nodes/fragment/27/input_ports = "0,0,uvx;1,0,M_PI;2,3,rx;"
+nodes/fragment/27/output_ports = "0,1,ry;"
+nodes/fragment/27/expression = "ry = rotate_y(rx, -uvx * M_PI / 2.);"
+nodes/fragment/28/node = SubResource( 20 )
+nodes/fragment/28/position = Vector2( -2080, 640 )
+nodes/fragment/29/node = SubResource( 21 )
+nodes/fragment/29/position = Vector2( -1700, 300 )
+nodes/fragment/29/size = Vector2( 510, 196.667 )
+nodes/fragment/29/input_ports = "0,0,uvy;1,0,M_PI;"
+nodes/fragment/29/output_ports = "0,1,rx;"
+nodes/fragment/29/expression = "rx = rotate_x(vec3(0., 0., 1.), -uvy * M_PI / 2.);"
+nodes/fragment/30/node = SubResource( 22 )
+nodes/fragment/30/position = Vector2( -1160, 440 )
+nodes/fragment/31/node = SubResource( 23 )
+nodes/fragment/31/position = Vector2( -440, 560 )
+nodes/fragment/32/node = SubResource( 24 )
+nodes/fragment/32/position = Vector2( -740, 760 )
+nodes/fragment/33/node = SubResource( 25 )
+nodes/fragment/33/position = Vector2( -260, 560 )
+nodes/fragment/34/node = SubResource( 26 )
+nodes/fragment/34/position = Vector2( -60, 560 )
+nodes/fragment/35/node = SubResource( 27 )
+nodes/fragment/35/position = Vector2( 180, 420 )
+nodes/fragment/36/node = SubResource( 28 )
+nodes/fragment/36/position = Vector2( 440, 140 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 5, 0, 3, 0, 5, 1, 10, 0, 9, 1, 16, 0, 20, 0, 20, 0, 21, 0, 21, 0, 22, 0, 23, 0, 24, 0, 20, 1, 23, 0, 28, 0, 27, 1, 24, 0, 29, 0, 28, 0, 29, 1, 22, 0, 27, 0, 29, 0, 27, 2, 27, 0, 30, 0, 9, 0, 31, 0, 32, 0, 31, 1, 31, 0, 33, 0, 33, 0, 34, 0, 6, 0, 35, 0, 34, 0, 35, 1, 35, 0, 36, 1, 36, 0, 0, 0, 30, 0, 9, 0 )

@@ -79,7 +79,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14163, 11.5689 )
 shape = SubResource( 3 )
 
 [node name="Camera" parent="player/Head" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, -4.15978 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.419, 0 )
 current = true
 
 [node name="lighter" parent="player" instance=ExtResource( 57 )]

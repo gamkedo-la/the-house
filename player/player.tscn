@@ -32,3 +32,10 @@ script = ExtResource( 4 )
 [node name="screen pixelation" parent="Head/Camera" instance=ExtResource( 3 )]
 
 [node name="WorldEnvironment" parent="Head/Camera" instance=ExtResource( 5 )]
+
+[node name="ItemRay" type="RayCast" parent="Head/Camera"]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector3( 0, 0, -3 )
+collision_mask = 128
+debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )

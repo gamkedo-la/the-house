@@ -6,6 +6,8 @@ var view_speed = 0.002
 var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/2d/default_gravity"), 0.0)
 
 onready var camera = $Head/Camera
+onready var item_ray: RayCast = $"%ItemRay"
+var hilited_items = []
 #onready var state_machine := StateMachine.new()
 
 func _init():
@@ -18,7 +20,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	update_walk(delta)
-
+	_item_ray_check()
 
 func update_walk(delta):
 	var translation = Vector3()
@@ -41,6 +43,18 @@ func update_walk(delta):
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
 	move_and_slide(oriented_movement + gravity, Vector3.UP, true) 
+
+func _item_ray_check() -> void:
+	if item_ray.is_colliding():
+		var obj = item_ray.get_collider()
+		if obj is InteractiveItem and obj.has_method("hilite"):
+				hilited_items.append(obj)
+				obj.hilite(true)
+	else:
+		for item in hilited_items:
+			item.hilite(false)
+		hilited_items.clear()
+	
 
 func _input(event):
 	if event is InputEventMouseMotion:

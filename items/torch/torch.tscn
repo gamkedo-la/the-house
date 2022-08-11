@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/torch/torch.glb" type="PackedScene" id=1]
+[ext_resource path="res://items/item.gd" type="Script" id=2]
+
+[node name="torch" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Body" parent="Root" index="0"]
+cast_shadow = 0
+
+[node name="SpotLight" type="SpotLight" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0653904 )
+shadow_enabled = true
+spot_range = 20.0
+spot_attenuation = 2.2974
+spot_angle = 30.0
+spot_angle_attenuation = 0.707107

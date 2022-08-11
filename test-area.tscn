@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://items/mushrooms/brown/mushroom_2.glb" type="PackedScene" id=55]
 [ext_resource path="res://items/mushrooms/brown/mushroom_5.glb" type="PackedScene" id=56]
 [ext_resource path="res://items/lighter/lighter.tscn" type="PackedScene" id=57]
+[ext_resource path="res://items/torch/torch.tscn" type="PackedScene" id=58]
 
 [sub_resource type="CapsuleShape" id=3]
 resource_local_to_scene = true
@@ -82,9 +83,13 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.419, 0 )
 current = true
 
-[node name="lighter" parent="player" instance=ExtResource( 57 )]
-transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.1, 0.7, -0.2 )
+[node name="lighter" parent="player/Head/Camera" index="0" instance=ExtResource( 57 )]
+transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.05, 0, -0.2 )
+visible = false
 item_held = true
+
+[node name="torch" parent="player/Head/Camera" index="1" instance=ExtResource( 58 )]
+transform = Transform( 0.996839, 0, 0.0794508, 0, 1, 0, -0.0794508, 0, 0.996839, 0.129, -0.139, -0.2 )
 
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )

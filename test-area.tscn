@@ -5,7 +5,7 @@
 [ext_resource path="res://forest/test-ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/plate/plate.glb" type="PackedScene" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://items/frying_pan/frying_pan.glb" type="PackedScene" id=6]
+[ext_resource path="res://items/frying_pan/frying_pan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://items/mushrooms/blue/mushroom_0.glb" type="PackedScene" id=7]
 [ext_resource path="res://items/mushrooms/yellow/mushroom_0.glb" type="PackedScene" id=8]
 [ext_resource path="res://items/mushrooms/yellow/mushroom_1.glb" type="PackedScene" id=9]
@@ -115,9 +115,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532844, 0.884297, -8.65323 )
 
 [node name="plate" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 0.999998, -0.00207699, 0, 0.00207699, 0.999998, 1.04174, 0.296843, -6.50444 )
-
-[node name="frying_pan" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.179111, 0, 0.983829, -0.00109893, 0.999999, -0.00020007, -0.983828, -0.00111699, -0.179111, 0.356546, 0.287823, -6.65477 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.564852, 0.825192, 0, -0.825192, 0.564852, 0, 11.8971, 0 )
@@ -295,5 +292,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229768, 0, -0.222455 )
 
 [node name="mushroom_9" parent="Brown Mushroom Group" instance=ExtResource( 54 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.480026, 0, -0.0755296 )
+
+[node name="frying_pan" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.582604, 0.492678, -5.18948 )
 
 [editable path="player"]

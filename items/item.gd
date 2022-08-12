@@ -16,6 +16,7 @@ func _ready():
 	hilite_mesh = get_node_or_null(mesh_node)
 	if hilite_mesh:
 		item_mat = hilite_mesh.get_surface_material(0)
+		item_mat.set_next_pass(item_mat.get_next_pass().duplicate())
 		item_mat_next = item_mat.get_next_pass()
 		
 	pass # Replace with function body.

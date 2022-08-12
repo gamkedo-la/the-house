@@ -10,13 +10,22 @@ onready var item_ray: RayCast = $"%ItemRay"
 var hilited_items = []
 #onready var state_machine := StateMachine.new()
 
+onready var pixelator = $"Head/Camera/screen pixelation"
+
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
 	
 
 func _process(_delta):
-#	print("player transform : ", transform)
-	pass
+	
+	# TEMPORARY:
+	if Input.is_action_just_pressed("switch_pixelator"):
+		print("F10")
+		if pixelator.visible:
+			pixelator.hide()
+		else:
+			pixelator.show()
+	####
 
 func _physics_process(delta):
 	update_walk(delta)

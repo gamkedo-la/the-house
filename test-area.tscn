@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -58,7 +58,6 @@
 [ext_resource path="res://items/mushrooms/brown/mushroom_5.glb" type="PackedScene" id=56]
 [ext_resource path="res://items/lighter/lighter.tscn" type="PackedScene" id=57]
 [ext_resource path="res://items/torch/torch.tscn" type="PackedScene" id=58]
-[ext_resource path="res://items/frying_pan/frying_pan_hilite.tscn" type="PackedScene" id=59]
 
 [sub_resource type="CapsuleShape" id=3]
 resource_local_to_scene = true
@@ -300,22 +299,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.480026, 0, -0.0755296 )
 [node name="frying_pan" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.582604, 0.945501, -5.18948 )
 
+[node name="frying_pan2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19094, 0.945501, -5.18948 )
+highlight_color = Color( 0.682353, 0.054902, 0.054902, 1 )
+
+[node name="frying_pan3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1589, 0.945501, -5.18948 )
+
 [node name="plate" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 0.529599, -5.21058 )
+
+[node name="plate2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 1.48227, -4.48179 )
 
 [node name="lighter" parent="." instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60145, 0.144103, -5.44373 )
 
-[node name="frying_pan_hl" parent="." instance=ExtResource( 59 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.684411, 2.94043 )
-
-[node name="frying_pan_hl2" parent="." instance=ExtResource( 59 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78523, 0.684411, 0.89561 )
-
-[node name="frying_pan_hl3" parent="." instance=ExtResource( 59 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.684411, 7.04824 )
-
 [editable path="player"]
-[editable path="frying_pan_hl"]
-[editable path="frying_pan_hl2"]
-[editable path="frying_pan_hl3"]

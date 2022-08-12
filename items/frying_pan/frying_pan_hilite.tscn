@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://items/item.gd" type="Script" id=1]
-[ext_resource path="res://shaders/outline_hilite.gdshader" type="Shader" id=2]
+[ext_resource path="res://shaders/hilite_material.tres" type="Material" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 vertex_color_use_as_albedo = true
@@ -21,14 +21,9 @@ surfaces/0 = {
 "vertex_count": 384
 }
 
-[sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 2 )
-shader_param/outline_color = Color( 1, 0.435294, 0, 1 )
-shader_param/outline_width = 0.0
-
 [sub_resource type="SpatialMaterial" id=7]
 resource_local_to_scene = true
-next_pass = SubResource( 8 )
+next_pass = ExtResource( 2 )
 
 [sub_resource type="CylinderShape" id=3]
 height = 0.055

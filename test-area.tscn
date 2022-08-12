@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -68,6 +68,9 @@ radius = 0.5
 
 [sub_resource type="ConvexPolygonShape" id=2]
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 3.37637, 0.232884, 7.56073 )
+
 [node name="World" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -86,11 +89,11 @@ current = true
 
 [node name="lighter" parent="player/Head/Camera" index="0" instance=ExtResource( 57 )]
 transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.05, 0, -0.2 )
-visible = false
 item_held = true
 
 [node name="torch" parent="player/Head/Camera" index="1" instance=ExtResource( 58 )]
 transform = Transform( 0.996839, 0, 0.0794508, 0, 1, 0, -0.0794508, 0, 0.996839, 0.129, -0.139, -0.2 )
+visible = false
 
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )
@@ -315,5 +318,236 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 1.48227, -4.48179 )
 
 [node name="lighter" parent="." instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60145, 0.144103, -5.44373 )
+
+[node name="StaticBody3" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 16.5025, 3.08569, -5.85059 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody3"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
+shape = SubResource( 4 )
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3894, 6.5687, -5.89618 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody2"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+shape = SubResource( 4 )
+
+[node name="StaticBody4" type="StaticBody" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 10.0497, 3.08569, -5.85059 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody4"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
+shape = SubResource( 4 )
+
+[node name="StaticBody5" type="StaticBody" parent="."]
+transform = Transform( 9.74001e-16, -2.22826e-08, -0.509765, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 13.3107, 3.08569, -13.6105 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody5"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody5"]
+shape = SubResource( 4 )
+
+[node name="StaticBody6" type="StaticBody" parent="."]
+transform = Transform( 9.74001e-16, -2.22826e-08, -0.509765, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 13.3107, 6.03946, 1.55712 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody6"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody6"]
+shape = SubResource( 4 )
+
+[node name="StaticBody7" type="StaticBody" parent="."]
+transform = Transform( 9.74001e-16, -2.22826e-08, -0.509765, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 15.3941, 3.19571, 1.86133 )
+
+[node name="CSGBox" type="CSGBox" parent="StaticBody7"]
+width = 6.60513
+height = 0.32771
+depth = 15.1987
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody7"]
+shape = SubResource( 4 )
+
+[node name="Brown Mushroom Group2" type="Spatial" parent="."]
+transform = Transform( -0.949841, 0, 0.312733, 0, 1, 0, -0.312733, 0, -0.949841, 13.7483, -0.0780335, -15.1595 )
+
+[node name="mushroom_0" parent="Brown Mushroom Group2" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.879797, 0, -0.0996974 )
+
+[node name="mushroom_1" parent="Brown Mushroom Group2" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.651175, 0, -0.428535 )
+
+[node name="mushroom_2" parent="Brown Mushroom Group2" instance=ExtResource( 55 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265257, 0, -0.220665 )
+
+[node name="mushroom_3" parent="Brown Mushroom Group2" instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296124, 0, -0.400195 )
+
+[node name="mushroom_4" parent="Brown Mushroom Group2" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.481056, 0, 0.278147 )
+
+[node name="mushroom_5" parent="Brown Mushroom Group2" instance=ExtResource( 56 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202146, 1.19209e-07, -0.822112 )
+
+[node name="mushroom_6" parent="Brown Mushroom Group2" instance=ExtResource( 53 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113469, 0, -0.455183 )
+
+[node name="mushroom_7" parent="Brown Mushroom Group2" instance=ExtResource( 50 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291123, 0, 0.0072031 )
+
+[node name="mushroom_8" parent="Brown Mushroom Group2" instance=ExtResource( 51 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229768, 0, -0.222455 )
+
+[node name="mushroom_9" parent="Brown Mushroom Group2" instance=ExtResource( 54 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.480026, 0, -0.0755296 )
+
+[node name="Brown Mushroom Group3" type="Spatial" parent="."]
+transform = Transform( -0.949841, 0, 0.312733, 0, 1, 0, -0.312733, 0, -0.949841, 13.7483, -0.0780335, -11.0071 )
+
+[node name="mushroom_0" parent="Brown Mushroom Group3" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.879797, 0, -0.0996974 )
+
+[node name="mushroom_1" parent="Brown Mushroom Group3" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.651175, 0, -0.428535 )
+
+[node name="mushroom_2" parent="Brown Mushroom Group3" instance=ExtResource( 55 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265257, 0, -0.220665 )
+
+[node name="mushroom_3" parent="Brown Mushroom Group3" instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296124, 0, -0.400195 )
+
+[node name="mushroom_4" parent="Brown Mushroom Group3" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.481056, 0, 0.278147 )
+
+[node name="mushroom_5" parent="Brown Mushroom Group3" instance=ExtResource( 56 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202146, 1.19209e-07, -0.822112 )
+
+[node name="mushroom_6" parent="Brown Mushroom Group3" instance=ExtResource( 53 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113469, 0, -0.455183 )
+
+[node name="mushroom_7" parent="Brown Mushroom Group3" instance=ExtResource( 50 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291123, 0, 0.0072031 )
+
+[node name="mushroom_8" parent="Brown Mushroom Group3" instance=ExtResource( 51 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229768, 0, -0.222455 )
+
+[node name="mushroom_9" parent="Brown Mushroom Group3" instance=ExtResource( 54 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.480026, 0, -0.0755296 )
+
+[node name="Purple Mushroom Group2" type="Spatial" parent="."]
+transform = Transform( -0.949841, 0, 0.312733, 0, 1, 0, -0.312733, 0, -0.949841, 0.346774, 0.000265479, -0.97212 )
+
+[node name="mushroom_0" parent="Purple Mushroom Group2" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.717471, 0, -0.00951135 )
+
+[node name="mushroom_1" parent="Purple Mushroom Group2" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0368992, 0, 0.046769 )
+
+[node name="mushroom_2" parent="Purple Mushroom Group2" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0253782, 0, 1.05662 )
+
+[node name="mushroom_3" parent="Purple Mushroom Group2" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35301, 0, 0.704928 )
+
+[node name="mushroom_4" parent="Purple Mushroom Group2" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691925, 0, 0.621742 )
+
+[node name="mushroom_5" parent="Purple Mushroom Group2" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148462, 0, -0.485133 )
+
+[node name="mushroom_6" parent="Purple Mushroom Group2" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302907, 0, 0.462324 )
+
+[node name="mushroom_7" parent="Purple Mushroom Group2" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.560491, 0, 0.174791 )
+
+[node name="mushroom_8" parent="Purple Mushroom Group2" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404883, 0, -0.376259 )
+
+[node name="mushroom_9" parent="Purple Mushroom Group2" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
+
+[node name="Purple Mushroom Group3" type="Spatial" parent="."]
+transform = Transform( -0.949841, 0, 0.312733, 0, 1, 0, -0.312733, 0, -0.949841, 11.9229, 0.000265479, -15.5162 )
+
+[node name="mushroom_0" parent="Purple Mushroom Group3" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.717471, 0, -0.00951135 )
+
+[node name="mushroom_1" parent="Purple Mushroom Group3" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0368992, 0, 0.046769 )
+
+[node name="mushroom_2" parent="Purple Mushroom Group3" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0253782, 0, 1.05662 )
+
+[node name="mushroom_3" parent="Purple Mushroom Group3" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35301, 0, 0.704928 )
+
+[node name="mushroom_4" parent="Purple Mushroom Group3" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691925, 0, 0.621742 )
+
+[node name="mushroom_5" parent="Purple Mushroom Group3" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148462, 0, -0.485133 )
+
+[node name="mushroom_6" parent="Purple Mushroom Group3" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302907, 0, 0.462324 )
+
+[node name="mushroom_7" parent="Purple Mushroom Group3" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.560491, 0, 0.174791 )
+
+[node name="mushroom_8" parent="Purple Mushroom Group3" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404883, 0, -0.376259 )
+
+[node name="mushroom_9" parent="Purple Mushroom Group3" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
+
+[node name="Purple Mushroom Group4" type="Spatial" parent="."]
+transform = Transform( -0.949841, 0, 0.312733, 0, 1, 0, -0.312733, 0, -0.949841, 15.3388, 0.000265717, -5.64648 )
+
+[node name="mushroom_0" parent="Purple Mushroom Group4" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.717471, 0, -0.00951135 )
+
+[node name="mushroom_1" parent="Purple Mushroom Group4" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0368992, 0, 0.046769 )
+
+[node name="mushroom_2" parent="Purple Mushroom Group4" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0253782, 0, 1.05662 )
+
+[node name="mushroom_3" parent="Purple Mushroom Group4" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35301, 0, 0.704928 )
+
+[node name="mushroom_4" parent="Purple Mushroom Group4" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691925, 0, 0.621742 )
+
+[node name="mushroom_5" parent="Purple Mushroom Group4" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148462, 0, -0.485133 )
+
+[node name="mushroom_6" parent="Purple Mushroom Group4" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302907, 0, 0.462324 )
+
+[node name="mushroom_7" parent="Purple Mushroom Group4" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.560491, 0, 0.174791 )
+
+[node name="mushroom_8" parent="Purple Mushroom Group4" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404883, 0, -0.376259 )
+
+[node name="mushroom_9" parent="Purple Mushroom Group4" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
 
 [editable path="player"]

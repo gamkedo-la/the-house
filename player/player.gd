@@ -5,8 +5,8 @@ var view_speed = 0.002
 
 var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/2d/default_gravity"), 0.0)
 
-onready var camera = $Head/Camera
-onready var item_ray: RayCast = $"%ItemRay"
+onready var camera = $"%Camera"
+onready var interraction_ray: RayCast = $"%InterractionRay"
 var hilited_items = []
 #onready var state_machine := StateMachine.new()
 
@@ -54,8 +54,8 @@ func update_walk(delta):
 	move_and_slide(oriented_movement + gravity, Vector3.UP, true) 
 
 func _item_ray_check() -> void:
-	if item_ray.is_colliding():
-		var obj = item_ray.get_collider()
+	if interraction_ray.is_colliding():
+		var obj = interraction_ray.get_collider()
 		if obj is InteractiveItem and obj.has_method("hilite"):
 				hilited_items.append(obj)
 				obj.hilite(true)

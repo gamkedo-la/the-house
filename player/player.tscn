@@ -47,6 +47,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
 script = ExtResource( 4 )
 
@@ -57,7 +58,7 @@ visible = false
 
 [node name="WorldEnvironment" parent="Head/Camera" instance=ExtResource( 5 )]
 
-[node name="ItemRay" type="RayCast" parent="Head/Camera"]
+[node name="InterractionRay" type="RayCast" parent="Head/Camera"]
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector3( 0, 0, -3 )

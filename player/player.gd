@@ -34,7 +34,16 @@ func _process(delta):
 			pixelator.hide()
 		else:
 			pixelator.show()
-
+			
+	if Input.is_action_just_pressed("switch_light_source"):
+		var lighter = $"%Camera/lighter"
+		var torch = $"%Camera/torchlight"
+		if lighter.visible:
+			lighter.hide()
+			torch.show()
+		else:
+			lighter.show()
+			torch.hide()
 	####
 
 func _physics_process(delta):

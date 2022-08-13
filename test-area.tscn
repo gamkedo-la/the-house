@@ -91,7 +91,7 @@ current = true
 transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.05, 0, -0.2 )
 item_held = true
 
-[node name="torch" parent="player/Head/Camera" index="1" instance=ExtResource( 58 )]
+[node name="torchlight" parent="player/Head/Camera" index="1" instance=ExtResource( 58 )]
 transform = Transform( 0.996839, 0, 0.0794508, 0, 1, 0, -0.0794508, 0, 0.996839, 0.129, -0.139, -0.2 )
 visible = false
 

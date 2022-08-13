@@ -1,5 +1,7 @@
 extends KinematicBody
 
+class_name Player
+
 var walk_speed = 500.0
 var view_speed = 0.002
 
@@ -7,17 +9,24 @@ var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/2d/default_grav
 
 onready var camera = $"%Camera"
 onready var interraction_ray: RayCast = $"%InterractionRay"
+onready var pixelator = $"%Camera/screen pixelation"
 var hilited_items = []
-#onready var state_machine := StateMachine.new()
 
-onready var pixelator = $"Head/Camera/screen pixelation"
+
+#onready var _state_machine := PlayerStateMachine.new()
+
+
+var is_movement_enabled := true
+var is_item_take_enabled := true
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
 	
+func _ready():
+	pass
 
-func _process(_delta):
-	
+func _process(delta):
+#	_state_machine.update(delta)	
 	# TEMPORARY:
 	if Input.is_action_just_pressed("switch_pixelator"):
 		print("F10")
@@ -25,13 +34,20 @@ func _process(_delta):
 			pixelator.hide()
 		else:
 			pixelator.show()
+
 	####
 
 func _physics_process(delta):
-	update_walk(delta)
+#	_state_machine.physics_update(delta)
+	_update_walk(delta)
 	_item_ray_check()
 
-func update_walk(delta):
+func _input(event):
+#	_state_machine.input_update(event)
+	_update_orientation(event)
+		
+
+func _update_walk(delta) -> void:
 	var translation = Vector3()
 
 	# TODO: replace these actions by game specific actions "walk_left" etc.
@@ -51,7 +67,13 @@ func update_walk(delta):
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
-	move_and_slide(oriented_movement + gravity, Vector3.UP, true) 
+	move_and_slide(oriented_movement + gravity, Vector3.UP, true)
+
+func _update_orientation(event: InputEvent) -> void:
+	if(event is InputEventMouseMotion):
+		rotate_y(-event.relative.x * view_speed)
+		camera.rotate_x(-event.relative.y * view_speed)
+	
 
 func _item_ray_check() -> void:
 	if interraction_ray.is_colliding():
@@ -65,10 +87,5 @@ func _item_ray_check() -> void:
 		hilited_items.clear()
 	
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * view_speed)
-		camera.rotate_x(-event.relative.y * view_speed)
-		
 	
 	

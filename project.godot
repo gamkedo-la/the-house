@@ -14,20 +14,32 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://code-library/FSM/fsm-state.gd"
 }, {
+"base": "FSM_State",
+"class": "FSM_StateMachine",
+"language": "GDScript",
+"path": "res://code-library/FSM/fsm-statemachine.gd"
+}, {
 "base": "RigidBody",
 "class": "InteractiveItem",
 "language": "GDScript",
 "path": "res://items/item.gd"
 }, {
-"base": "FSM_State",
-"class": "StateMachine",
+"base": "KinematicBody",
+"class": "Player",
 "language": "GDScript",
-"path": "res://code-library/FSM/fsm-statemachine.gd"
+"path": "res://player/player.gd"
+}, {
+"base": "FSM_StateMachine",
+"class": "PlayerStateMachine",
+"language": "GDScript",
+"path": "res://player/player-statemachine.gd"
 } ]
 _global_script_class_icons={
 "FSM_State": "",
+"FSM_StateMachine": "",
 "InteractiveItem": "",
-"StateMachine": ""
+"Player": "",
+"PlayerStateMachine": ""
 }
 
 [application]

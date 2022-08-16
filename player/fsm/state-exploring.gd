@@ -25,6 +25,7 @@ func leave():
 func update(delta):
 	player._update_walk(delta)
 	.update(delta)
+	
 
 func input_update(event: InputEvent):
 	player._update_orientation(event)

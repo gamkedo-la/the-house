@@ -22,14 +22,14 @@ func _ready():
 func _process(delta):
 #	_state_machine.update(delta)	
 	# TEMPORARY:
-	if Input.is_action_just_pressed("switch_pixelator"):
+	if Input.is_action_just_pressed("debug_switch_pixelator"):
 		print("F10")
 		if pixelator.visible:
 			pixelator.hide()
 		else:
 			pixelator.show()
 			
-	if Input.is_action_just_pressed("switch_light_source"):
+	if Input.is_action_just_pressed("debug_switch_light_source"):
 		var lighter = $"%Camera/lighter"
 		var torch = $"%Camera/torchlight"
 		if lighter.visible:

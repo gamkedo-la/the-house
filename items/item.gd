@@ -31,7 +31,6 @@ func _init_hilite() -> void:
 		set_collision_layer_bit(7, true)
 	for child in get_children():
 		if child is MeshInstance:
-#			print_debug(child)
 			hilite_mesh = child.get_mesh()
 			if hilite_mesh:
 				var hilite_m = hilite_mat
@@ -40,6 +39,9 @@ func _init_hilite() -> void:
 				item_mat_next = item_mat.get_next_pass()
 				item_mat_next.set_shader_param("color", highlight_color)
 		
+func is_hilighted()-> bool:
+	return hilighted
+	
 func hilite(toggle: bool) -> void:
 	hilighted = toggle
 	if hilite_mesh:

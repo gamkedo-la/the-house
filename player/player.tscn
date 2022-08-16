@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -16,6 +16,13 @@
 resource_local_to_scene = true
 margin = 0.001
 radius = 0.5
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+flags_no_depth_test = true
+flags_use_point_size = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
@@ -70,6 +77,16 @@ cast_to = Vector3( 0, 0, -3 )
 collision_mask = 128
 debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )
 
+[node name="target" type="CSGBox" parent="Head/Camera/InterractionRay"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.18657 )
+cast_shadow = 0
+generate_lightmap = false
+operation = 2
+width = 0.01
+height = 0.01
+depth = 1.622
+material = SubResource( 5 )
+
 [node name="CPUParticles" type="CPUParticles" parent="Head/Camera"]
 amount = 150
 lifetime = 5.0
@@ -97,7 +114,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398669, 2.38419e-07, -1.3142
 
 [node name="CSGBox" type="CSGBox" parent="Head/Camera/right_hand"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406402, -0.590947, 0.0302677 )
-visible = false
 width = 0.142808
 height = 0.175988
 depth = 0.126958

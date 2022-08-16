@@ -9,10 +9,10 @@ var _gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gra
 
 onready var _camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
-onready var _hand_node = $"right_hand"
+onready var _hand_node = $"%Camera/right_hand"
 onready var _pixelator = $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
-var _hilited_items = []
+var _pointed_item : InteractiveItem
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
@@ -72,16 +72,23 @@ func update_orientation(event: InputEvent) -> void:
 
 func update_interraction_ray() -> void:
 	if _interraction_ray.is_colliding():
-		var obj = _interraction_ray.get_collider()
-		if obj is InteractiveItem and obj.has_method("hilite"):
-				_hilited_items.append(obj)
-				obj.hilite(true)
+		var something = _interraction_ray.get_collider()
+		if something is InteractiveItem and (_pointed_item == null or _pointed_item != something):
+			if _pointed_item != null:
+				_pointed_item.hilite(false)
+			_pointed_item = something
+			_pointed_item.hilite(true)
+			print("Highlight ON: %s" % _pointed_item)
 	else:
-		for item in _hilited_items:
-			item.hilite(false)
-		_hilited_items.clear()
+		if _pointed_item is InteractiveItem:
+			print("Highlight OFF: %s" % _pointed_item)
+			_pointed_item.hilite(false)
+			_pointed_item = null
+	
 
-
+func currently_pointed_item() -> InteractiveItem:
+	return _pointed_item
+	
 
 func get_item_in_hand() -> Node:
 	return _hand_node.get_child(0)

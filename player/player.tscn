@@ -112,12 +112,6 @@ color_ramp = SubResource( 4 )
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.398669, 2.38419e-07, -1.31422 )
 
-[node name="CSGBox" type="CSGBox" parent="Head/Camera/right_hand"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406402, -0.590947, 0.0302677 )
-width = 0.142808
-height = 0.175988
-depth = 0.126958
-
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )
 

@@ -54,11 +54,11 @@ func push_action(action_id, params:= {}) -> bool:
 	print_log("Received action: %s" % action_id)
 	if !is_active:
 		return false
-	var current_state_transitions = _transition_table[_current_state.id]
+	var current_state_transitions = _transition_table[_current_state.state_id]
 	assert(current_state_transitions != null)
 	var next_state_id = current_state_transitions[action_id]
 	if(next_state_id != null): # Can be null if nothing matches the action.
-		print_log("Transition found for action: %s -> %s" % action_id % next_state_id)
+		print_log("Transition found for action: %s -> %s" % [action_id, next_state_id])
 		_begin_switch_to(next_state_id)
 		return true
 	else:

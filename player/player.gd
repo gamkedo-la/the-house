@@ -86,9 +86,11 @@ func update_interraction_ray() -> void:
 			_pointed_item = null
 	
 
-func currently_pointed_item() -> InteractiveItem:
+func get_currently_pointed_item() -> InteractiveItem:
 	return _pointed_item
-	
+
+func is_pointing_item() -> bool:
+	return _pointed_item is InteractiveItem
 
 func get_item_in_hand() -> Node:
 	return _hand_node.get_child(0)
@@ -96,13 +98,20 @@ func get_item_in_hand() -> Node:
 func is_holding_item() -> bool:
 	return get_item_in_hand() != null
 	
-func take_item(item_node: Node) -> void:
+func take_item(item_node: InteractiveItem) -> void:
 	assert(item_node)
-	item_node.parent().remove_child(item_node)
+	print("PLAYER: take item %s" % item_node)
+	item_node.get_parent().remove_child(item_node)
 	_hand_node.add_child(item_node)
+	item_node.global_transform.origin = _hand_node.global_transform.origin
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()
-	assert(item is Node)
+	assert(item is InteractiveItem)
+	print("PLAYER: drop item %s" % item)
 	_hand_node.remove_child(item)
+	get_parent().add_child(item)
+	item.global_transform.origin = _hand_node.global_transform.origin
+	
+	
 

@@ -8,8 +8,12 @@ func _init().("NO_ITEM"):
 	pass
 
 func enter():
+	if player.is_holding_item():
+		player.drop_item()
+		
 	print("No item in hands")
 
 func update(delta):
-	# TODO: how to take item
-	pass
+	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_item():
+		state_machine.push_action(PlayerState.Action.take_item)
+	

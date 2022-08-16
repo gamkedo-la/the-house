@@ -1,30 +1,17 @@
+extends FSM_State # Both a Node and a state, to allow sub-statemachines
 
-extends FSM_State
 class_name FSM_StateMachine
 
-enum { START }
+const START := "INITIAL_STATE"
 
-var _states: Dictionary
+var _states:= {}
 var _transition_table: Dictionary
 
-class StateSlot:
-	var state : FSM_State
-	var id
-
-	func _init(id_, state_ : FSM_State):
-		assert(id_ != null)
-		assert(state != null)
-		id = id_
-		state = state_
-
-var _current_state: StateSlot
-var _next_state: StateSlot
+var _current_state: FSM_State
+var _next_state: FSM_State
 
 var _current_transition: GDScriptFunctionState
 
-# The states must be provided in the form:
-#     { state_id: state_instance , ... }
-#
 # The transition table must be provided in the form:
 #     { 
 #         state_id : { action_id: state_id, ... }, 
@@ -34,11 +21,21 @@ var _current_transition: GDScriptFunctionState
 # of the state that we must start with:
 #     { FSM_StateMachine.START: state_id, ... }
 # The start state will be entered immediately.
-func _init(states: Dictionary, transition_table: Dictionary):
-	# TODO: add some checks here
-	_states = states
+func _init(id: String, transition_table: Dictionary).(id):
 	_transition_table = transition_table
+
+func _ready():
+	yield(owner, "ready")
+	_gather_states()
 	_begin_switch_to(_transition_table[START])
+	
+func _gather_states():
+	for node in get_children():
+		var node_id = node.state_id
+		if node is FSM_State:
+			assert(!_states.has(node_id), "Node type exists more than once in the state-machine children node: %s" % node_id)
+			node.state_machine = self
+			_states[node_id] = node
 
 # Takes an action id and look for a state to transition to following the
 # transition table given in `_init()`.
@@ -52,23 +49,28 @@ func push_action(action_id, params:= {}) -> bool:
 	else:
 		return false
 
-
-func update(delta):
+func _process(delta):
 	_update_state_transition(delta)
 	_current_state.update(delta)
 
-func physics_update(delta):
+func _physics_process(delta):
 	_current_state.physics_update(delta)
 
-func input_update(event:InputEvent):
+func _input(event:InputEvent):
 	_current_state.input_update(event)
 
+func _unhandled_input(event:InputEvent):
+	_current_state.unhandled_input_update(event)
+
 func _begin_switch_to(state_id) -> void:
-	assert(state_id != null)
-	_next_state = StateSlot.new(state_id, _states[state_id])
-	assert(_next_state != null)
+	assert(state_id is String)
+	_next_state = _states[state_id]
+	assert(_next_state is FSM_State)
 	if(_current_state != null):
-		_current_transition = _current_state.state.leave()
+		_current_transition = _current_state.leave()
+	else:
+		# No transition: switch immediately
+		_switch_to_next_state()
 	
 func _update_state_transition(delta):
 	
@@ -79,11 +81,13 @@ func _update_state_transition(delta):
 	
 	# We are done, if we need to swap state do it now:
 	if(_next_state != null):
-		_current_state = _next_state
-		_next_state = null
-		_current_transition = _current_state.state.enter()
+		_switch_to_next_state()
 	
-
+func _switch_to_next_state():
+	assert(_next_state is FSM_State)
+	_current_state = _next_state
+	_next_state = null
+	_current_transition = _current_state.enter()
 	
 	
 

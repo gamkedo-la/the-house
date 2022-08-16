@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Node",
 "class": "FSM_State",
 "language": "GDScript",
 "path": "res://code-library/FSM/fsm-state.gd"
@@ -29,17 +29,47 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player/player.gd"
 }, {
+"base": "FSM_State",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://player/fsm/player-state.gd"
+}, {
 "base": "FSM_StateMachine",
 "class": "PlayerStateMachine",
 "language": "GDScript",
-"path": "res://player/player-statemachine.gd"
+"path": "res://player/fsm/player-statemachine.gd"
+}, {
+"base": "PlayerState",
+"class": "State_Examining",
+"language": "GDScript",
+"path": "res://player/fsm/state-examing.gd"
+}, {
+"base": "FSM_StateMachine",
+"class": "State_Exploring",
+"language": "GDScript",
+"path": "res://player/fsm/state-exploring.gd"
+}, {
+"base": "PlayerState",
+"class": "State_HoldingItem",
+"language": "GDScript",
+"path": "res://player/fsm/state-holding-item.gd"
+}, {
+"base": "PlayerState",
+"class": "State_NoItem",
+"language": "GDScript",
+"path": "res://player/fsm/state-no-item.gd"
 } ]
 _global_script_class_icons={
 "FSM_State": "",
 "FSM_StateMachine": "",
 "InteractiveItem": "",
 "Player": "",
-"PlayerStateMachine": ""
+"PlayerState": "",
+"PlayerStateMachine": "",
+"State_Examining": "",
+"State_Exploring": "",
+"State_HoldingItem": "",
+"State_NoItem": ""
 }
 
 [application]

@@ -13,11 +13,8 @@ onready var pixelator = $"%Camera/screen pixelation"
 var hilited_items = []
 
 
-#onready var _state_machine := PlayerStateMachine.new()
-
-
-var is_movement_enabled := true
-var is_item_take_enabled := true
+# Higher level actions the player can do, used to change the states:
+enum Action { take_item, drop_item, examine_item, stop_examining_item }
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off

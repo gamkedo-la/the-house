@@ -1,5 +1,6 @@
+extends Node 
 
-# Base class for a state in a state machine.
+# Base node for a state in a state machine.
 # State implementations must inherit this type to be injected in the state
 # machine (FSM_StateMachine)
 class_name FSM_State
@@ -7,7 +8,16 @@ class_name FSM_State
 # The current state machine this state is in.
 # This is destined to be set only by the state machine itself.
 # Then other code can use it to call `state_machine.push_action(...)`
-var state_machine # : FSM_StateMachine  # not set because of cycle in dependencies
+onready var state_machine # : FSM_StateMachine  # not set because of cycle in dependencies
+
+var state_id : String setget , get_state_id
+
+func _init(id:String):
+	assert(!id.empty())
+	state_id = id
+
+func get_state_id() -> String:
+	return state_id
 
 # Called when the state-machine starts this state. Overrides if you need
 # to execute code as part of the transition to this state.
@@ -39,3 +49,6 @@ func physics_update(_delta):
 func input_update(_event:InputEvent):
 	pass
 
+# Called when an input event wasn't handled.
+func unhandled_input_update(_event:InputEvent):
+	pass

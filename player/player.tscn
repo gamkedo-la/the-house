@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
 [ext_resource path="res://visuals/screen_pixelation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
 [ext_resource path="res://visuals/WorldEnvironment.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/fsm/player-statemachine.gd" type="Script" id=6]
 [ext_resource path="res://visuals/night_sky.tscn" type="PackedScene" id=7]
+[ext_resource path="res://player/fsm/state-exploring.gd" type="Script" id=8]
+[ext_resource path="res://player/fsm/state-no-item.gd" type="Script" id=9]
+[ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
+[ext_resource path="res://player/fsm/state-examing.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -86,3 +91,18 @@ angle_random = 1.0
 scale_amount = 10.0
 scale_amount_random = 0.1
 color_ramp = SubResource( 4 )
+
+[node name="PlayerStateMachine" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="State_Exploring" type="Node" parent="PlayerStateMachine"]
+script = ExtResource( 8 )
+
+[node name="State_EmptyHanded" type="Node" parent="PlayerStateMachine/State_Exploring"]
+script = ExtResource( 9 )
+
+[node name="State_HoldingItem" type="Node" parent="PlayerStateMachine/State_Exploring"]
+script = ExtResource( 10 )
+
+[node name="State_Examining" type="Node" parent="PlayerStateMachine"]
+script = ExtResource( 11 )

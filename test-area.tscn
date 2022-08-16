@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://items/mushrooms/brown/mushroom_5.glb" type="PackedScene" id=56]
 [ext_resource path="res://items/lighter/lighter.tscn" type="PackedScene" id=57]
 [ext_resource path="res://items/torch/torch.tscn" type="PackedScene" id=58]
+[ext_resource path="res://items/knife_cleaver/knife_cleaver.glb" type="PackedScene" id=59]
 
 [sub_resource type="CapsuleShape" id=3]
 resource_local_to_scene = true
@@ -549,5 +550,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.404883, 0, -0.376259 )
 
 [node name="mushroom_9" parent="Purple Mushroom Group4" instance=ExtResource( 33 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
+
+[node name="knife_cleaver" parent="." instance=ExtResource( 59 )]
+transform = Transform( 0.257841, -0.966187, 0, 0.966187, 0.257841, 0, 0, 0, 1, -0.121716, 0.948919, -6.45703 )
 
 [editable path="player"]

@@ -15,6 +15,9 @@ func get_is_active():
 
 var _current_transition: GDScriptFunctionState
 
+func print_log(message: String) -> void:
+	print("FSM(%s): %s" % [state_id , message] )
+
 # The transition table must be provided in the form:
 #     { 
 #         state_id : { action_id: state_id, ... }, 
@@ -32,6 +35,7 @@ func _ready():
 
 func start() -> void:
 	is_active = true
+	print_log("Starting... ")
 	_begin_switch_to(_transition_table[START])
 	
 func _gather_states() -> void:
@@ -41,24 +45,24 @@ func _gather_states() -> void:
 			assert(!_states.has(node_id), "Node type exists more than once in the state-machine children node: %s" % node_id)
 			node.state_machine = self
 			_states[node_id] = node
-			print("Registered state: %s" % node_id)
+			print_log("FSM: Registered state: %s" % node_id)
 
 # Takes an action id and look for a state to transition to following the
 # transition table given in `_init()`.
 func push_action(action_id, params:= {}) -> bool:
 	assert(action_id != null)
-	print("Received action: %s" % action_id)
+	print_log("Received action: %s" % action_id)
 	if !is_active:
 		return false
 	var current_state_transitions = _transition_table[_current_state.id]
 	assert(current_state_transitions != null)
 	var next_state_id = current_state_transitions[action_id]
 	if(next_state_id != null): # Can be null if nothing matches the action.
-		print("Transition found for action: %s -> %s" % action_id % next_state_id)
+		print_log("Transition found for action: %s -> %s" % action_id % next_state_id)
 		_begin_switch_to(next_state_id)
 		return true
 	else:
-		print("No transition found for action: %s" % action_id)
+		print_log("No transition found for action: %s" % action_id)
 		return false
 
 func _process(delta) -> void:
@@ -87,7 +91,7 @@ func _begin_switch_to(next_state_id: String) -> void:
 	assert(_next_state is FSM_State)
 	
 	if(_current_state is FSM_State):
-		print("Leaving %s ..." % _current_state.state_id)
+		print_log("Leaving %s ..." % _current_state.state_id)
 		_current_transition = _current_state.leave()
 		
 	if(_current_transition == null || _current_state == null):
@@ -109,17 +113,17 @@ func _switch_now_to_next_state() -> void:
 	assert(_next_state is FSM_State)
 	_current_state = _next_state
 	_next_state = null
-	print("Entering %s ...." % _current_state.state_id)
+	print_log("Entering %s ...." % _current_state.state_id)
 	_current_transition = _current_state.enter()
 	
 func enter():
-	print("State machine %s activates..." % state_id)
+	print_log("State machine %s activates..." % state_id)
 	is_active = true
 	if _next_state == null:
 		start()
 		
 func leave():
-	print("State machine %s deactivates..." % state_id)
+	print_log("State machine %s deactivates..." % state_id)
 	is_active = false
 	
 

@@ -3,24 +3,21 @@ extends KinematicBody
 class_name Player
 
 var walk_speed = 500.0
-var view_speed = 0.002
+var view_speed = 0.002 # TODO: make this a game setting
 
 var gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var camera = $"%Camera"
 onready var interraction_ray: RayCast = $"%InterractionRay"
 onready var pixelator = $"%Camera/screen pixelation"
+onready var state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var hilited_items = []
-
-
-# Higher level actions the player can do, used to change the states:
-enum Action { take_item, drop_item, examine_item, stop_examining_item }
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
 	
 func _ready():
-	pass
+	state_machine.start_with_player(self)
 
 func _process(delta):
 #	_state_machine.update(delta)	
@@ -42,16 +39,16 @@ func _process(delta):
 			lighter.show()
 			torch.hide()
 	####
-
-func _physics_process(delta):
-#	_state_machine.physics_update(delta)
-	_update_walk(delta)
-	_item_ray_check()
-
-func _input(event):
-#	_state_machine.input_update(event)
-	_update_orientation(event)
-		
+#
+#func _physics_process(delta):
+##	_state_machine.physics_update(delta)
+#	_update_walk(delta)
+#	_item_ray_check()
+#
+#func _input(event):
+##	_state_machine.input_update(event)
+#	_update_orientation(event)
+#
 
 func _update_walk(delta) -> void:
 	var translation = Vector3()

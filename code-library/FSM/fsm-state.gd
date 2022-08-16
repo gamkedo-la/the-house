@@ -12,7 +12,7 @@ onready var state_machine # : FSM_StateMachine  # not set because of cycle in de
 
 var state_id : String setget , get_state_id
 
-func _init(id:String):
+func _init(id:String) -> void:
 	assert(!id.empty())
 	state_id = id
 
@@ -38,17 +38,17 @@ func leave():
 	pass
 
 # Called every frame update by the state-machine if this is the current state.
-func update(_delta):
+func update(_delta) -> void:
 	pass
 
 # Called every frame update by the state-machine if this is the current state.
-func physics_update(_delta):
+func physics_update(_delta) -> void:
 	pass
 
 # Called at input events.
-func input_update(_event:InputEvent):
+func input_update(_event:InputEvent) -> void:
 	pass
 
 # Called when an input event wasn't handled.
-func unhandled_input_update(_event:InputEvent):
+func unhandled_input_update(_event:InputEvent) -> void:
 	pass

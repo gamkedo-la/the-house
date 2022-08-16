@@ -4,7 +4,7 @@ extends PlayerState
 # When the player is examining an hold item.
 class_name State_Examining
 
-func _init().("EXAMINING"):
+func _init().("EXAMINING") -> void:
 	pass
 
 func enter():

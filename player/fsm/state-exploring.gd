@@ -23,11 +23,12 @@ func leave():
 	.leave()
 
 func update(delta):
-	player._update_walk(delta)
+	player.update_walk(delta)
+	player.update_interraction_ray()
 	.update(delta)
 	
 
 func input_update(event: InputEvent):
-	player._update_orientation(event)
+	player.update_orientation(event)
 	.input_update(event)
 

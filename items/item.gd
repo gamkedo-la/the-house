@@ -31,9 +31,11 @@ func _init_hilite() -> void:
 		set_collision_layer_bit(7, true)
 	for child in get_children():
 		if child is MeshInstance:
+			child.mesh = child.get_mesh().duplicate(true)
 			hilite_mesh = child.get_mesh()
 			if hilite_mesh:
-				var hilite_m = hilite_mat
+				var hilite_m = hilite_mat.duplicate(true)
+				hilite_mesh.surface_set_material(0, hilite_mesh.surface_get_material(0).duplicate(true))
 				item_mat = hilite_mesh.surface_get_material(0)
 				item_mat.set_next_pass(hilite_m)
 				item_mat_next = item_mat.get_next_pass()

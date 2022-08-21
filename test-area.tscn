@@ -126,7 +126,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.917014, 1.25204 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532844, 0.884297, -8.65323 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.982245, -0.15481, 0.105969, -0.0589312, 0.790871, 0.609138, -0.178108, 0.592078, -0.785952, 0, 11.8971, 0 )
+transform = Transform( 1, 0, 0, 0, 0.564852, 0.825192, 0, -0.825192, 0.564852, 0, 11.8971, 0 )
 light_color = Color( 0.219608, 0.223529, 0.235294, 1 )
 light_energy = 0.2
 shadow_enabled = true

@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="small_box" type="CSGBox"]
+visible = false
+width = 0.1
+height = 0.1
+depth = 0.1

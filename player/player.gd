@@ -92,8 +92,11 @@ func get_currently_pointed_item() -> InteractiveItem:
 func is_pointing_item() -> bool:
 	return _pointed_item is InteractiveItem
 
-func get_item_in_hand() -> Node:
-	return _hand_node.get_child(0)
+func get_item_in_hand() -> InteractiveItem:
+	for maybe_item in _hand_node.get_children():
+		if maybe_item is InteractiveItem:
+			return maybe_item
+	return null
 	
 func is_holding_item() -> bool:
 	return get_item_in_hand() != null

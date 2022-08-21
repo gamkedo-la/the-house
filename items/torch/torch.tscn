@@ -197,10 +197,10 @@ mesh = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.141457 )
 light_energy = 0.0
 shadow_enabled = true
-shadow_bias = 0.05
-spot_range = 20.0
+shadow_bias = 0.039
+spot_range = 36.348
 spot_attenuation = 2.2974
-spot_angle = 30.0
+spot_angle = 14.08
 spot_angle_attenuation = 0.707107
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

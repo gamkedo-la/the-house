@@ -202,6 +202,7 @@ mass = 0.2
 script = ExtResource( 4 )
 
 [node name="Lighter" type="Spatial" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="Body" type="MeshInstance" parent="Lighter"]
@@ -220,7 +221,7 @@ cast_shadow = 0
 mesh = SubResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0181092, 0.0169707, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036, 0.034, 0 )
 light_color = Color( 0.9, 0.7416, 0.306, 1 )
 light_energy = 0.0
 shadow_enabled = true
@@ -234,7 +235,7 @@ anims/Light = SubResource( 6 )
 anims/RESET = SubResource( 8 )
 
 [node name="Flame" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.02, 0.0154123, 0 )
+transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.04, 0.015, 0 )
 
 [node name="CPUParticles" parent="Flame" index="0"]
 emitting = false

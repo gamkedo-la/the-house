@@ -51,3 +51,13 @@ func hilite(toggle: bool) -> void:
 			item_mat_next.set_shader_param("outline_width",highlight_width)
 		else:
 			item_mat_next.set_shader_param("outline_width",0.0)
+			
+func take():
+	mode = MODE_KINEMATIC
+	item_held = true
+	
+func drop():
+	mode = MODE_RIGID
+	sleeping = false
+	item_held = false
+

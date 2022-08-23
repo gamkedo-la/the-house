@@ -5,7 +5,6 @@ signal use_item
 
 export var hilighted = false
 
-export var item_held = false
 export (bool) var highlightable = true
 export (Color) var highlight_color = "#ff6f00"
 export (float) var highlight_width = 5.0
@@ -21,10 +20,6 @@ func _ready():
 	if highlightable:
 		_init_hilite()
 	pass # Replace with function body.
-
-func _input(event):
-	if item_held and event is InputEventKey and event.scancode == KEY_Q and event.pressed and not event.echo:
-		emit_signal("use_item")
 		
 func _init_hilite() -> void:
 	if self is RigidBody:
@@ -51,13 +46,13 @@ func hilite(toggle: bool) -> void:
 			item_mat_next.set_shader_param("outline_width",highlight_width)
 		else:
 			item_mat_next.set_shader_param("outline_width",0.0)
+
+func activate():
+	emit_signal("use_item")
 			
 func take():
 	mode = MODE_KINEMATIC
-	item_held = true
 	
 func drop():
 	mode = MODE_RIGID
 	sleeping = false
-	item_held = false
-

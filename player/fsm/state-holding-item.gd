@@ -24,10 +24,13 @@ func update(delta):
 	# We allow taking another item even if we have one already, just swap them
 	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_item():
 		_take_pointed_item()
+		
+	if Input.is_action_just_pressed("item_activation"):
+		var held_item = player.get_item_in_hand()
+		if held_item != null:
+			held_item.activate()
 	
 	# TODO: how to examine item
-	# TODO: drop the hold item
-	# TODO: activate/deactivate item
 	# TODO: special lighter->candle detection here? maybe? maybe just the lighter code can do the thing
 	
 	

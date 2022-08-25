@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://player/fsm/state-no-item.gd" type="Script" id=9]
 [ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
 [ext_resource path="res://player/fsm/state-examing.gd" type="Script" id=11]
-[ext_resource path="res://test_scenes/small-box.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -112,8 +111,6 @@ color_ramp = SubResource( 4 )
 
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5814, -0.375856, -0.806546 )
-
-[node name="small_box" parent="Head/Camera/right_hand" instance=ExtResource( 12 )]
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

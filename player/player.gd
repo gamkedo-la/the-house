@@ -30,16 +30,6 @@ func _process(delta):
 		else:
 			_pixelator.show()
 			
-	if Input.is_action_just_pressed("debug_switch_light_source"):
-		var lighter = $"%Camera/lighter"
-		var torch = $"%Camera/torchlight"
-		if lighter.visible:
-			lighter.hide()
-			torch.show()
-		else:
-			lighter.show()
-			torch.hide()
-
 # Call this only once per _physics_update()
 func update_walk(delta) -> void:
 	var translation = Vector3()
@@ -105,14 +95,17 @@ func take_item(item_node: InteractiveItem) -> void:
 	assert(item_node)
 	print("PLAYER: take item %s" % item_node)
 	item_node.get_parent().remove_child(item_node)
+	item_node.take()
 	_hand_node.add_child(item_node)
 	item_node.global_transform.origin = _hand_node.global_transform.origin
+	item_node.global_transform.basis = _hand_node.global_transform.basis
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
 	_hand_node.remove_child(item)
+	item.drop()
 	get_parent().add_child(item)
 	item.global_transform.origin = _hand_node.global_transform.origin
 	

@@ -88,15 +88,6 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.419, 0 )
 current = true
 
-[node name="lighter" parent="player/Head/Camera" index="0" instance=ExtResource( 57 )]
-transform = Transform( 0.889512, 0, -0.456912, 0, 1, 0, 0.456912, 0, 0.889512, 0.05, 0, -0.2 )
-visible = false
-item_held = true
-
-[node name="torchlight" parent="player/Head/Camera" index="1" instance=ExtResource( 58 )]
-transform = Transform( 0.996839, 0, 0.0794508, 0, 1, 0, -0.0794508, 0, 0.996839, 0.129, -0.139, -0.2 )
-item_held = true
-
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )
 
@@ -319,7 +310,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 0.529599, -5.21058 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 1.48227, -4.48179 )
 
 [node name="lighter" parent="." instance=ExtResource( 57 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60145, 0.144103, -5.44373 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.756427, 0.144103, 4.82737 )
 
 [node name="StaticBody3" type="StaticBody" parent="."]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 16.5025, 3.08569, -5.85059 )
@@ -554,5 +545,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
 
 [node name="knife_cleaver" parent="." instance=ExtResource( 59 )]
 transform = Transform( 0.257841, -0.966187, 0, 0.966187, 0.257841, 0, 0, 0, 1, -0.121716, 0.948919, -6.45703 )
+
+[node name="torch" parent="." instance=ExtResource( 58 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.316674, 5.12857 )
 
 [editable path="player"]

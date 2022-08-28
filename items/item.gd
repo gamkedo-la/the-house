@@ -5,47 +5,62 @@ signal use_item
 
 export var hilighted = false
 
-export (bool) var highlightable = true
-export (Color) var highlight_color = "#ff6f00"
-export (float) var highlight_width = 5.0
-export (NodePath) var mesh_node
+export var highlightable := true
+export var highlight_color : Color  = "#ff6f00"
+export var highlight_width := 5.0
+export var mesh_node: NodePath
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
-var hilite_mesh: Mesh
-var item_mat: Material
-var item_mat_next: ShaderMaterial
+
+class MeshHighlight:
+	var mesh : Mesh
+	var item_mat: Material
+	var item_mat_next: ShaderMaterial
+	
+var highlites := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Does this item 'glow' when the player hovers over it?
 	if highlightable:
-		_init_hilite()
+		highlites = _init_hilite(self, hilite_mat, highlight_color)
 	pass # Replace with function body.
 		
-func _init_hilite() -> void:
-	if self is RigidBody:
-		set_collision_layer_bit(7, true)
-	for child in get_children():
+static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Color) -> Array:
+	var highlites := []
+	if node is RigidBody:
+		node.set_collision_layer_bit(7, true)
+	for child in node.get_children():
 		if child is MeshInstance:
 			child.mesh = child.get_mesh().duplicate(true)
-			hilite_mesh = child.get_mesh()
-			if hilite_mesh:
+			var hilit_mesh = child.get_mesh()
+			if hilit_mesh:
+				var mesh_highlit = MeshHighlight.new()
+				hilit_mesh.surface_set_material(0, hilit_mesh.surface_get_material(0).duplicate(true))
+				var item_mat = hilit_mesh.surface_get_material(0)
 				var hilite_m = hilite_mat.duplicate(true)
-				hilite_mesh.surface_set_material(0, hilite_mesh.surface_get_material(0).duplicate(true))
-				item_mat = hilite_mesh.surface_get_material(0)
 				item_mat.set_next_pass(hilite_m)
-				item_mat_next = item_mat.get_next_pass()
+				var item_mat_next = item_mat.get_next_pass()
 				item_mat_next.set_shader_param("color", highlight_color)
+				
+				mesh_highlit.mesh = hilit_mesh
+				mesh_highlit.item_mat = item_mat
+				mesh_highlit.item_mat_next = item_mat_next
+				highlites.append(mesh_highlit)
+		highlites = highlites + _init_hilite(child, hilite_mat, highlight_color)
+	return highlites
 		
 func is_hilighted()-> bool:
 	return hilighted
 	
 func hilite(toggle: bool) -> void:
 	hilighted = toggle
-	if hilite_mesh:
+	if highlites.size() > 0:
 		if hilighted:
-			item_mat_next.set_shader_param("outline_width",highlight_width)
+			for slot in highlites:
+				slot.item_mat_next.set_shader_param("outline_width",highlight_width)
 		else:
-			item_mat_next.set_shader_param("outline_width",0.0)
+			for slot in highlites:
+				slot.item_mat_next.set_shader_param("outline_width",0.0)
 
 func activate():
 	emit_signal("use_item")

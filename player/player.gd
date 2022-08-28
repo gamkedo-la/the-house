@@ -107,5 +107,8 @@ func drop_item() -> void:
 	get_parent().add_child(item)
 	item.global_transform.origin = _hand_node.global_transform.origin
 	
-	
+func use_item() -> void:
+	var held_item = get_item_in_hand()
+	if held_item != null:
+		held_item.activate()
 

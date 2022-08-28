@@ -26,10 +26,8 @@ func update(delta):
 		_take_pointed_item()
 		
 	if Input.is_action_just_pressed("item_activation"):
-		var held_item = player.get_item_in_hand()
-		if held_item != null:
-			held_item.activate()
-	
+		player.use_item()
+
 	# TODO: how to examine item
 	# TODO: special lighter->candle detection here? maybe? maybe just the lighter code can do the thing
 	

@@ -50,9 +50,20 @@ func hilite(toggle: bool) -> void:
 func activate():
 	emit_signal("use_item")
 			
-func take():
+func take(hold_where: Transform):
+	global_transform.origin = hold_where.origin
+	global_transform.basis = hold_where.basis
 	mode = MODE_KINEMATIC
+	linear_velocity = Vector3.ZERO;
+	angular_velocity = Vector3.ZERO;
+
 	
-func drop():
+func drop(where: Transform):
+	global_transform.origin = where.origin
+	global_transform.basis = where.basis
 	mode = MODE_RIGID
-	sleeping = false
+	sleeping = false	
+	linear_velocity = Vector3.ZERO;
+	angular_velocity = Vector3.ZERO;
+	
+	

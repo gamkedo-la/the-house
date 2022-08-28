@@ -10,6 +10,7 @@ var _gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gra
 onready var _camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node = $"%Camera/right_hand"
+onready var _drop_spot = $"%Camera/drop_spot"
 onready var _pixelator = $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
@@ -93,19 +94,16 @@ func take_item(item_node: InteractiveItem) -> void:
 	assert(item_node)
 	print("PLAYER: take item %s" % item_node)
 	item_node.get_parent().remove_child(item_node)
-	item_node.take()
 	_hand_node.add_child(item_node)
-	item_node.global_transform.origin = _hand_node.global_transform.origin
-	item_node.global_transform.basis = _hand_node.global_transform.basis
+	item_node.take(_hand_node.global_transform)
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
 	_hand_node.remove_child(item)
-	item.drop()
 	get_parent().add_child(item)
-	item.global_transform.origin = _hand_node.global_transform.origin
+	item.drop(_drop_spot.global_transform)
 	
 func use_item() -> void:
 	var held_item = get_item_in_hand()

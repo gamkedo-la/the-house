@@ -24,7 +24,6 @@ func _process(delta):
 #	_state_machine.update(delta)	
 	# TEMPORARY:
 	if Input.is_action_just_pressed("debug_switch_pixelator"):
-		print("F10")
 		if _pixelator.visible:
 			_pixelator.hide()
 		else:
@@ -34,17 +33,16 @@ func _process(delta):
 func update_walk(delta) -> void:
 	var translation = Vector3()
 
-	# TODO: replace these actions by game specific actions "walk_left" etc.
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		translation += Vector3.LEFT
 
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		translation += Vector3.RIGHT
 
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_forward"):
 		translation += Vector3.FORWARD
 
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_backward"):
 		translation += Vector3.BACK
 
 	var movement_translation = translation.normalized() * walk_speed * delta

@@ -14,6 +14,7 @@ onready var _drop_spot := $"%Camera/drop_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
+var _held_item: InteractiveItem
 
 onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
@@ -34,6 +35,8 @@ func _process(delta):
 			_pixelator.hide()
 		else:
 			_pixelator.show()
+	# END OF TEMPORARY
+		
 			
 # Call this only once per _physics_update()
 func update_walk(delta) -> void:
@@ -56,13 +59,19 @@ func update_walk(delta) -> void:
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
 	move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
+	
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:
 	if(event is InputEventMouseMotion):
 		rotate_y(-event.relative.x * view_speed)
 		_camera.rotate_x(-event.relative.y * view_speed)
-	
+
+func update_item_position() -> void:
+	# this function assumes the player position and orientation have been updated already
+	if _held_item:
+		_held_item.global_transform.origin = _hand_node.global_transform.origin
+		_held_item.global_transform.basis = _hand_node.global_transform.basis
 
 func update_interraction_ray() -> void:
 	if _interraction_ray.is_colliding():
@@ -87,10 +96,11 @@ func is_pointing_item() -> bool:
 	return _pointed_item is InteractiveItem
 
 func get_item_in_hand() -> InteractiveItem:
-	for maybe_item in _hand_node.get_children():
-		if maybe_item is InteractiveItem:
-			return maybe_item
-	return null
+	return _held_item
+#	for maybe_item in _hand_node.get_children():
+#		if maybe_item is InteractiveItem:
+#			return maybe_item
+#	return null
 	
 func is_holding_item() -> bool:
 	return get_item_in_hand() != null
@@ -98,16 +108,18 @@ func is_holding_item() -> bool:
 func take_item(item_node: InteractiveItem) -> void:
 	assert(item_node)
 	print("PLAYER: take item %s" % item_node)
-	item_node.get_parent().remove_child(item_node)
-	_hand_node.add_child(item_node)
+#	item_node.get_parent().remove_child(item_node)
+#	_hand_node.add_child(item_node)
 	item_node.take(_hand_node.global_transform)
+	_held_item = item_node
+	_interraction_ray.hide()
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
-	_hand_node.remove_child(item)
-	get_parent().add_child(item)
+#	_hand_node.remove_child(item)
+#	get_parent().add_child(item)
 	item.drop(_drop_spot.global_transform)
 	
 func use_item() -> void:

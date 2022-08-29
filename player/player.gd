@@ -28,7 +28,6 @@ func _ready():
 	_state_machine.start_with_player(self)
 
 func _process(delta):
-#	_state_machine.update(delta)	
 	# TEMPORARY:
 	if Input.is_action_just_pressed("debug_switch_pixelator"):
 		if _pixelator.visible:

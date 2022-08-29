@@ -110,10 +110,12 @@ scale_amount_random = 0.1
 color_ramp = SubResource( 4 )
 
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5814, -0.375856, -0.806546 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435487, -0.375856, -0.642215 )
 
 [node name="drop_spot" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.087 )
+
+[node name="crouch_tween" type="Tween" parent="Head/Camera"]
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

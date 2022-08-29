@@ -25,6 +25,10 @@ func leave():
 func update(delta):
 	player.update_walk(delta)
 	player.update_interraction_ray()
+	
+	if Input.is_action_just_pressed("toggle_crouch"):
+		player.toggle_crouch()
+	
 	.update(delta)
 	
 

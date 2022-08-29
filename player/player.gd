@@ -7,13 +7,19 @@ var view_speed = 0.002 # TODO: make this a game setting
 
 var _gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
-onready var _camera = $"%Camera"
+onready var _camera := $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
-onready var _hand_node = $"%Camera/right_hand"
-onready var _drop_spot = $"%Camera/drop_spot"
-onready var _pixelator = $"%Camera/screen pixelation"
+onready var _hand_node := $"%Camera/right_hand"
+onready var _drop_spot := $"%Camera/drop_spot"
+onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
+
+onready var _crouch_tween := $"%Camera/crouch_tween"
+onready var _up_position : Vector3 = _camera.transform.origin
+onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
+var _is_crouched := false
+var _crouch_duration := 0.33
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
@@ -110,3 +116,35 @@ func use_item() -> void:
 	if held_item != null:
 		held_item.activate()
 
+func crouch() -> void:
+	if _is_crouched:
+		return
+	
+	var result = _crouch_tween.interpolate_property(_camera, "translation", _camera.transform.origin, _crouched_position, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	assert(result == true)
+	result = _crouch_tween.start()
+	assert(result == true)
+	
+	_is_crouched = true
+	
+	
+func get_up() -> void:
+	if not _is_crouched:
+		return
+		
+	var result = _crouch_tween.interpolate_property(_camera, "translation", _camera.transform.origin, _up_position, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	assert(result == true)
+	result = _crouch_tween.start()
+	assert(result == true)
+	
+	_is_crouched = false
+	
+func is_crouched() -> bool:
+	return _is_crouched
+	
+func toggle_crouch() -> void:
+	print("Toggle Crouching")
+	if _is_crouched:
+		get_up()
+	else:
+		crouch()

@@ -75,15 +75,20 @@ static func _set_collision_with_player(node: Node, set_enabled: bool):
 		node.set_collision_layer_bit(player_collision_layer_bit, set_enabled) 
 	for child_node in node.get_children():
 		_set_collision_with_player(child_node, set_enabled)
-		
+
+static func _cancel_velocity(node: Node):
+	if node is RigidBody:
+		node.linear_velocity = Vector3.ZERO
+		node.angular_velocity = Vector3.ZERO
+	for child_node in node.get_children():
+		_cancel_velocity(child_node)
 
 func take(hold_where: Transform):
 	global_transform.origin = hold_where.origin
 	global_transform.basis = hold_where.basis
 	mode = MODE_KINEMATIC
 	_set_collision_with_player(self, false) # stop colliding with the player
-	linear_velocity = Vector3.ZERO;
-	angular_velocity = Vector3.ZERO;
+	_cancel_velocity(self)
 
 	
 func drop(where: Transform):
@@ -91,8 +96,7 @@ func drop(where: Transform):
 	global_transform.basis = where.basis
 	mode = MODE_RIGID
 	_set_collision_with_player(self, true) # resume colliding with the player
-	sleeping = false	
-	linear_velocity = Vector3.ZERO;
-	angular_velocity = Vector3.ZERO;
+	sleeping = false
+	_cancel_velocity(self)
 	
 	

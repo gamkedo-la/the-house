@@ -112,7 +112,6 @@ func take_item(item_node: InteractiveItem) -> void:
 #	_hand_node.add_child(item_node)
 	item_node.take(_hand_node.global_transform)
 	_held_item = item_node
-	_interraction_ray.hide()
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()

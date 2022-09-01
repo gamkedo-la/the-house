@@ -58,6 +58,11 @@ _global_script_classes=[ {
 "class": "State_NoItem",
 "language": "GDScript",
 "path": "res://player/fsm/state-no-item.gd"
+}, {
+"base": "Object",
+"class": "utility",
+"language": "GDScript",
+"path": "res://code-library/utility.gd"
 } ]
 _global_script_class_icons={
 "FSM_State": "",
@@ -69,7 +74,8 @@ _global_script_class_icons={
 "State_Examining": "",
 "State_Exploring": "",
 "State_HoldingItem": "",
-"State_NoItem": ""
+"State_NoItem": "",
+"utility": ""
 }
 
 [application]

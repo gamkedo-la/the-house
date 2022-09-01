@@ -18,7 +18,7 @@ func enter():
 func update(delta):
 	assert(player.is_holding_item())
 	
-	player.update_item_position()
+	player.update_item_position(delta)
 	
 	if Input.is_action_just_pressed("drop_held_item"):
 		state_machine.push_action(PlayerState.Action.drop_item)

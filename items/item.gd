@@ -11,6 +11,9 @@ export var highlight_width := 5.0
 export var mesh_node: NodePath
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
+var _tracking_position = Node
+const _tracking_speed := 500.0
+const _tracking_angular_speed := 1000.0
 
 const player_collision_layer_bit := 0
 const player_interraction_raycast_layer_bit := 7
@@ -83,20 +86,28 @@ static func _cancel_velocity(node: Node):
 	for child_node in node.get_children():
 		_cancel_velocity(child_node)
 
-func take(hold_where: Transform):
-	global_transform.origin = hold_where.origin
-	global_transform.basis = hold_where.basis
-	mode = MODE_KINEMATIC
+func take(hold_where: Node):
+	_tracking_position = hold_where
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 
 	
-func drop(where: Transform):
-	global_transform.origin = where.origin
-	global_transform.basis = where.basis
-	mode = MODE_RIGID
+func drop(where: Node):
+	_tracking_position = null
+	global_transform.origin = where.global_transform.origin
+	global_transform.basis = where.global_transform.basis
 	_set_collision_with_player(self, true) # resume colliding with the player
-	sleeping = false
 	_cancel_velocity(self)
+	sleeping = false
 	
+	
+func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -> void:
+	if not _tracking_position:
+		return
+	var translation_to_target : Vector3 = _tracking_position.global_transform.origin - global_transform.origin
+	var item_linear_velocity : Vector3 = translation_to_target * _tracking_speed * delta
+	linear_velocity = base_linear_velocity + item_linear_velocity
+		
+	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, _tracking_position.global_transform.basis)
+	angular_velocity = rotation_to_target_direction * _tracking_angular_speed * delta
 	

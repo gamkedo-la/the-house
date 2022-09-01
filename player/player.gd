@@ -2,10 +2,10 @@ extends KinematicBody
 
 class_name Player
 
-var walk_speed = 500.0
-var view_speed = 0.002 # TODO: make this a game setting
+const walk_speed := 500.0
+const view_speed := 0.002 # TODO: make this a game setting
 
-var _gravity = Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
+var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera := $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
@@ -15,6 +15,8 @@ onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
 var _held_item: InteractiveItem
+
+var _last_linear_velocity: Vector3
 
 onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
@@ -58,7 +60,7 @@ func update_walk(delta) -> void:
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
-	move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
+	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
 	
 
 # Call this only once per _input() or _unhandled_input()
@@ -67,11 +69,12 @@ func update_orientation(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * view_speed)
 		_camera.rotate_x(-event.relative.y * view_speed)
 
-func update_item_position() -> void:
+func update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already
-	if _held_item:
-		_held_item.global_transform.origin = _hand_node.global_transform.origin
-		_held_item.global_transform.basis = _hand_node.global_transform.basis
+	assert(_held_item)	
+	_held_item.update_movement(delta, _last_linear_velocity)
+	
+
 
 func update_interraction_ray() -> void:
 	if _interraction_ray.is_colliding():
@@ -110,7 +113,7 @@ func take_item(item_node: InteractiveItem) -> void:
 	print("PLAYER: take item %s" % item_node)
 #	item_node.get_parent().remove_child(item_node)
 #	_hand_node.add_child(item_node)
-	item_node.take(_hand_node.global_transform)
+	item_node.take(_hand_node)
 	_held_item = item_node
 	
 func drop_item() -> void:
@@ -119,7 +122,7 @@ func drop_item() -> void:
 	print("PLAYER: drop item %s" % item)
 #	_hand_node.remove_child(item)
 #	get_parent().add_child(item)
-	item.drop(_drop_spot.global_transform)
+	item.drop(_drop_spot)
 	
 func use_item() -> void:
 	var held_item = get_item_in_hand()

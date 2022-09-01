@@ -62,6 +62,7 @@ func update_walk(delta) -> void:
 
 	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
 	
+	_update_item_position(delta)
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:
@@ -69,9 +70,10 @@ func update_orientation(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * view_speed)
 		_camera.rotate_x(-event.relative.y * view_speed)
 
-func update_item_position(delta: float) -> void:
+func _update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already
-	assert(_held_item)	
+	if not _held_item:
+		return
 	_held_item.update_movement(delta, _last_linear_velocity)
 	
 

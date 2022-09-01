@@ -75,8 +75,6 @@ func _update_item_position(delta: float) -> void:
 	if not _held_item:
 		return
 	_held_item.update_movement(delta, _last_linear_velocity)
-	
-
 
 func update_interraction_ray() -> void:
 	if _interraction_ray.is_colliding():
@@ -102,10 +100,6 @@ func is_pointing_item() -> bool:
 
 func get_item_in_hand() -> InteractiveItem:
 	return _held_item
-#	for maybe_item in _hand_node.get_children():
-#		if maybe_item is InteractiveItem:
-#			return maybe_item
-#	return null
 	
 func is_holding_item() -> bool:
 	return get_item_in_hand() != null
@@ -113,18 +107,17 @@ func is_holding_item() -> bool:
 func take_item(item_node: InteractiveItem) -> void:
 	assert(item_node)
 	print("PLAYER: take item %s" % item_node)
-#	item_node.get_parent().remove_child(item_node)
-#	_hand_node.add_child(item_node)
 	item_node.take(_hand_node)
 	_held_item = item_node
+	assert(is_holding_item())
 	
 func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
-#	_hand_node.remove_child(item)
-#	get_parent().add_child(item)
+	_held_item = null
 	item.drop(_drop_spot)
+	assert(not is_holding_item())
 	
 func use_item() -> void:
 	var held_item = get_item_in_hand()

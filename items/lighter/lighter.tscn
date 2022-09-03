@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://items/lighter/lighter_details.material" type="Material" id=1]
 [ext_resource path="res://items/lighter/lighter.gd" type="Script" id=2]
 [ext_resource path="res://items/flame/flame.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/item.gd" type="Script" id=4]
 [ext_resource path="res://items/lighter/lighter_body.material" type="Material" id=5]
+[ext_resource path="res://items/lighter/click.wav" type="AudioStream" id=6]
+[ext_resource path="res://items/lighter/wheel.wav" type="AudioStream" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "lighter_object_merge1"
@@ -102,6 +104,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer3D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.102922 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 6 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.354955 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "bezier"
@@ -126,6 +152,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer3D:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.100642 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 7 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.231504, 0.334712 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Lighter/Wheel_Axis/Wheel:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.165645, 0.213258 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Light Flickering"
@@ -146,7 +208,7 @@ tracks/0/keys = {
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -155,6 +217,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 140 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer3D:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0516038, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 6 ), ExtResource( 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.00769781, 0.339274, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -192,6 +278,42 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer3D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ null ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Lighter/Wheel_Axis/Wheel:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
 }
 
 [sub_resource type="BoxShape" id=9]
@@ -243,6 +365,8 @@ emitting = false
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00299751, 0, 0 )
 shape = SubResource( 9 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="use_item" from="." to="Lighter" method="_on_lighter_use_item"]
 

@@ -34,6 +34,9 @@ func update(delta):
 		state_machine.push_action(PlayerState.Action.stop_examining_item)
 		return
 	
+	if Input.is_action_just_pressed("item_activation"):
+		player.use_item()
+	
 	_update_examination_controls(delta)
 
 func _update_examination_controls(delta):

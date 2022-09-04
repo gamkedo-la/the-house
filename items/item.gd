@@ -87,13 +87,13 @@ static func _cancel_velocity(node: Node):
 		_cancel_velocity(child_node)
 
 func take(hold_where: Node):
-	_tracking_position = hold_where
+	track(hold_where)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 
 	
 func drop(where: Node):
-	_tracking_position = null
+	stop_tracking()
 	global_transform.origin = where.global_transform.origin
 	global_transform.basis = where.global_transform.basis
 	_set_collision_with_player(self, true) # resume colliding with the player
@@ -110,4 +110,10 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 		
 	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, _tracking_position.global_transform.basis)
 	angular_velocity = rotation_to_target_direction * _tracking_angular_speed * delta
+	
+func track(target: Node):
+	_tracking_position = target
+	
+func stop_tracking():
+	_tracking_position = null
 	

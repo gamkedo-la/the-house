@@ -11,6 +11,7 @@ onready var _camera := $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node := $"%Camera/right_hand"
 onready var _drop_spot := $"%Camera/drop_spot"
+onready var _examination_spot := $"%Camera/examination_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
@@ -134,6 +135,17 @@ func use_item() -> void:
 	var held_item = get_item_in_hand()
 	if held_item != null:
 		held_item.activate()
+		
+func begin_item_examination():
+	var held_item = get_item_in_hand()
+	assert(held_item is InteractiveItem)
+	held_item.track(_examination_spot)
+	
+func end_item_examination():
+	var held_item = get_item_in_hand()
+	assert(held_item is InteractiveItem)
+	held_item.track(_hand_node)
+	
 
 func crouch() -> void:
 	if _is_crouched:

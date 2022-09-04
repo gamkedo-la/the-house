@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "PlayerState",
 "class": "State_Examining",
 "language": "GDScript",
-"path": "res://player/fsm/state-examing.gd"
+"path": "res://player/fsm/state-examining.gd"
 }, {
 "base": "PlayerState",
 "class": "State_HoldingItem",

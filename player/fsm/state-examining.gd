@@ -11,11 +11,13 @@ func enter():
 	print("Examining now...")
 	assert(player.is_holding_item())
 	# TODO: add here moving the item in focus
+	player.begin_item_examination()
 	# TODO: 
 
 func leave():
 	print("Stop examining...")
 	assert(player.is_holding_item())
+	player.end_item_examination()
 
 func update(delta):
 	# TODO: code that allows turning the item around,

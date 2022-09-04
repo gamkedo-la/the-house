@@ -125,7 +125,7 @@ func _switch_now_to_next_state() -> void:
 func enter():
 	print_log("State machine %s activates..." % state_id)
 	is_active = true
-	if _next_state == null:
+	if _current_state == null:
 		start()
 		
 func leave():

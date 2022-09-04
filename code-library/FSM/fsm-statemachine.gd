@@ -56,14 +56,20 @@ func push_action(action_id, params:= {}) -> bool:
 		return false
 	var current_state_transitions = _transition_table[_current_state.state_id]
 	assert(current_state_transitions != null)
-	var next_state_id = current_state_transitions[action_id]
-	if(next_state_id != null): # Can be null if nothing matches the action.
+	var next_state_id = current_state_transitions.get(action_id)
+	if next_state_id != null: # Can be null if nothing matches the action.
 		print_log("Transition found for action: %s -> %s" % [action_id, next_state_id])
 		_begin_switch_to(next_state_id)
 		return true
 	else:
-		print_log("No transition found for action: %s" % action_id)
-		return false
+		# Forward to parent state-machine if existing:
+		var result = false
+		if state_machine:
+			result = state_machine.push_action(action_id)
+			
+		if result == false:
+			 print_log("No transition found for action: %s" % action_id)
+		return result
 
 func _process(delta) -> void:
 	if !is_active:

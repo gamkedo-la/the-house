@@ -136,8 +136,11 @@ text = "Debug Info: F1
 Move: WASD keys or arrow keys
 Take Item: left mouse button
 Use Held Item: right mouse button
-Examine Item: TAB key
 Drop Item: SPACE key
+
+Examine Item: TAB key
+Rotate Examined Item: WASDEQ keys
+    OR hold left mouse button and mouve the mouse
 
 "
 fit_content_height = true

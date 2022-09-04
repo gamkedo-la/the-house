@@ -5,8 +5,10 @@ extends PlayerState
 class_name State_Examining
 
 var _exanimation_node : Spatial
+var _mouse_rotations := Vector3.ZERO
 
 const _rotation_speed := 3.0
+const _mouse_rotation_speed := 8.0
 
 
 func _init().("EXAMINING") -> void:
@@ -54,7 +56,17 @@ func _update_examination_controls(delta):
 	
 	var rotations_to_apply : Vector3 = rotations.normalized() * _rotation_speed * delta
 	
+	if Input.is_action_pressed("item_mouse_rotation_mode"):
+		rotations_to_apply += _mouse_rotations.normalized() * _mouse_rotation_speed * delta
+	
 	_exanimation_node.rotate_x(rotations_to_apply.x)
 	_exanimation_node.rotate_y(rotations_to_apply.y)
 	_exanimation_node.rotate_z(rotations_to_apply.z)
 	
+	_mouse_rotations = Vector3.ZERO
+	
+func input_update(event: InputEvent):
+	if event is InputEventMouseMotion:
+		_mouse_rotations.x += event.relative.y
+		_mouse_rotations.y += event.relative.x
+		

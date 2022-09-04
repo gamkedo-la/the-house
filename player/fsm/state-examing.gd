@@ -9,10 +9,19 @@ func _init().("EXAMINING") -> void:
 
 func enter():
 	print("Examining now...")
+	assert(player.is_holding_item())
 	# TODO: add here moving the item in focus
 	# TODO: 
+
+func leave():
+	print("Stop examining...")
+	assert(player.is_holding_item())
 
 func update(delta):
 	# TODO: code that allows turning the item around,
 	# zooming on it etc.
-	pass
+	player.update_item_position(delta)
+	
+	if Input.is_action_just_pressed("item_examination"):
+		state_machine.push_action(PlayerState.Action.stop_examining_item)
+

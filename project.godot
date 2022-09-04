@@ -44,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player/fsm/state-examing.gd"
 }, {
-"base": "FSM_StateMachine",
-"class": "State_Exploring",
-"language": "GDScript",
-"path": "res://player/fsm/state-exploring.gd"
-}, {
 "base": "PlayerState",
 "class": "State_HoldingItem",
 "language": "GDScript",
@@ -72,7 +67,6 @@ _global_script_class_icons={
 "PlayerState": "",
 "PlayerStateMachine": "",
 "State_Examining": "",
-"State_Exploring": "",
 "State_HoldingItem": "",
 "State_NoItem": "",
 "utility": ""

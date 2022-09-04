@@ -38,8 +38,20 @@ func _process(delta):
 		else:
 			_pixelator.show()
 	# END OF TEMPORARY
-		
-			
+
+# Common updates for when the player can explore freely
+func exploration_update(delta: float):
+	update_walk(delta)
+	update_item_position(delta)
+	update_interraction_ray()
+	
+	if Input.is_action_just_pressed("toggle_crouch"):
+		toggle_crouch()
+
+# Common input event handling for when the player can explore freely
+func exploration_input_handling(event: InputEvent):
+	update_orientation(event)
+
 # Call this only once per _physics_update()
 func update_walk(delta) -> void:
 	var translation = Vector3()
@@ -62,7 +74,6 @@ func update_walk(delta) -> void:
 
 	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
 	
-	_update_item_position(delta)
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:
@@ -70,7 +81,7 @@ func update_orientation(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * view_speed)
 		_camera.rotate_x(-event.relative.y * view_speed)
 
-func _update_item_position(delta: float) -> void:
+func update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already
 	if not _held_item:
 		return

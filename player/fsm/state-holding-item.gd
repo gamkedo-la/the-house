@@ -9,14 +9,14 @@ func _init().("HOLDING_ITEM"):
 	pass
 	
 func enter():
-	
-	_take_pointed_item()
-	
+	if not player.is_holding_item():
+		_take_pointed_item()
 	print("Holding an item")
 	
-
 func update(delta):
 	assert(player.is_holding_item())
+	
+	player.exploration_update(delta)
 	
 	if Input.is_action_just_pressed("drop_held_item"):
 		state_machine.push_action(PlayerState.Action.drop_item)
@@ -28,9 +28,11 @@ func update(delta):
 	if Input.is_action_just_pressed("item_activation"):
 		player.use_item()
 
-	# TODO: how to examine item
-	# TODO: special lighter->candle detection here? maybe? maybe just the lighter code can do the thing
+	if Input.is_action_just_pressed("item_examination"):
+		state_machine.push_action(PlayerState.Action.examine_item)
 	
+func input_update(event: InputEvent):
+	player.exploration_input_handling(event)
 	
 func _take_pointed_item():
 	var pointed_item = player.get_currently_pointed_item()
@@ -40,4 +42,5 @@ func _take_pointed_item():
 		player.drop_item()
 		
 	player.take_item(pointed_item)
+	assert(player.is_holding_item())
 	

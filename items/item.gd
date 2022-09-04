@@ -11,7 +11,7 @@ export var highlight_width := 5.0
 export var mesh_node: NodePath
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
-var _tracking_position = Node
+var _tracking_position = Spatial
 const _tracking_speed := 500.0
 const _tracking_angular_speed := 1000.0
 
@@ -86,13 +86,13 @@ static func _cancel_velocity(node: Node):
 	for child_node in node.get_children():
 		_cancel_velocity(child_node)
 
-func take(hold_where: Node):
+func take(hold_where: Spatial):
 	track(hold_where)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 
 	
-func drop(where: Node):
+func drop(where: Spatial):
 	stop_tracking()
 	global_transform.origin = where.global_transform.origin
 	global_transform.basis = where.global_transform.basis
@@ -111,7 +111,7 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, _tracking_position.global_transform.basis)
 	angular_velocity = rotation_to_target_direction * _tracking_angular_speed * delta
 	
-func track(target: Node):
+func track(target: Spatial):
 	_tracking_position = target
 	
 func stop_tracking():

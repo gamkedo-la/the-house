@@ -9,9 +9,9 @@ var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gr
 
 onready var _camera := $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
-onready var _hand_node := $"%Camera/right_hand"
-onready var _drop_spot := $"%Camera/drop_spot"
-onready var _examination_spot := $"%Camera/examination_spot"
+onready var _hand_node : Spatial = $"%Camera/right_hand"
+onready var _drop_spot : Spatial = $"%Camera/drop_spot"
+onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 var _pointed_item : InteractiveItem
@@ -24,6 +24,8 @@ onready var _up_position : Vector3 = _camera.transform.origin
 onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
 var _crouch_duration := 0.33
+
+onready var _initial_examination_transform : Transform = _examination_spot.transform
 
 func _init():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
@@ -139,13 +141,16 @@ func use_item() -> void:
 func begin_item_examination():
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
+	_examination_spot.transform = _initial_examination_transform
 	held_item.track(_examination_spot)
 	
 func end_item_examination():
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
 	held_item.track(_hand_node)
-	
+
+func get_examination_node() -> Spatial:
+	return _examination_spot
 
 func crouch() -> void:
 	if _is_crouched:

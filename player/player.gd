@@ -151,6 +151,9 @@ func end_item_examination():
 
 func get_examination_node() -> Spatial:
 	return _examination_spot
+	
+func get_examination_axis() -> Vector3:
+	return (_examination_spot.transform.origin - _camera.transform.origin).normalized()
 
 func crouch() -> void:
 	if _is_crouched:

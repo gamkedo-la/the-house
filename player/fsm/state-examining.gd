@@ -28,7 +28,7 @@ func leave():
 	print("Stop examining...")
 	assert(player.is_holding_item())
 	player.end_item_examination()
-	player.get_item_in_hand.scale(1.0) # reset scale
+#	player.get_item_in_hand.scale(1.0) # reset scale
 	_examination_node = null
 
 func update(delta):

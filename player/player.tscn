@@ -140,7 +140,7 @@ Drop Item: SPACE key
 
 Examine Item: TAB key
 Rotate Examined Item: WASDEQ keys
-    OR hold left mouse button and mouve the mouse
+    OR hold left mouse button or SPACE key and mouve the mouse
 
 "
 fit_content_height = true

@@ -28,3 +28,9 @@ static func calc_angular_velocity(from_basis: Basis, to_basis: Basis) -> Vector3
 	var axis := Vector3(qt.x, qt.y, qt.z) / sqrt(1-qt.w*qt.w)
 	
 	return axis * angle
+
+
+static func random_selection(array: Array):
+	var selected = array[ randi() % array.size() ]
+	return selected
+

@@ -80,18 +80,18 @@ visible = false
 [node name="InterractionRay" type="RayCast" parent="Head/Camera"]
 unique_name_in_owner = true
 enabled = true
-cast_to = Vector3( 0, 0, -3 )
+cast_to = Vector3( 0, 0, -2 )
 collision_mask = 128
 debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )
 
 [node name="target" type="CSGBox" parent="Head/Camera/InterractionRay"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.18657 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97395 )
 cast_shadow = 0
 generate_lightmap = false
 operation = 2
-width = 0.01
-height = 0.01
-depth = 1.622
+width = 0.005
+height = 0.005
+depth = 0.052
 material = SubResource( 5 )
 
 [node name="CPUParticles" type="CPUParticles" parent="Head/Camera"]

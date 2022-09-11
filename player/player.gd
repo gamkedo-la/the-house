@@ -79,7 +79,7 @@ func update_walk(delta) -> void:
 	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
 	
 	if movement_translation.length() > 0.0:
-		_feet_audio.begin_walk()
+		_feet_audio.begin_walk(FootAudio.StepSurface.House)
 	else:
 		_feet_audio.end_walk()
 		

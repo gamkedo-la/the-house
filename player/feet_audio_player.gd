@@ -1,5 +1,7 @@
 extends AudioStreamPlayer3D
 
+class_name FootAudio
+
 enum StepSurface {
 	Grass, Dirt, House,
 }
@@ -31,9 +33,11 @@ onready var step_sounds = {
 const _step_interval_duration_ms := 500
 var _last_step_time := 0
 var _we_are_walking = false
+var _current_surface = StepSurface.Grass
 
-func begin_walk():
+func begin_walk(surface: int):
 	_we_are_walking = true
+	_current_surface = surface
 	
 func end_walk():
 	_we_are_walking = false
@@ -47,7 +51,7 @@ func update_step_sounds(_delta):
 	var now = Time.get_ticks_msec()
 	if _last_step_time + _step_interval_duration_ms < now:
 		_last_step_time = now
-		play_random_step(StepSurface.House)
+		play_random_step(_current_surface)
 
 func play_random_step(surface: int):
 	var sound_bank = step_sounds[surface]

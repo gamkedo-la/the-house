@@ -367,6 +367,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00299751, 0, 0 )
 shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "Hand"
 
 [connection signal="use_item" from="." to="Lighter" method="_on_lighter_use_item"]
 

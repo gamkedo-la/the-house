@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/off.wav-4ef4c440ec462771620d0c9702b628a2.sample"
+
+[deps]
+
+source_file="res://items/torch/off.wav"
+dest_files=[ "res://.import/off.wav-4ef4c440ec462771620d0c9702b628a2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

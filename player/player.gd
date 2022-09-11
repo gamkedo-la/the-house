@@ -14,6 +14,7 @@ onready var _drop_spot : Spatial = $"%Camera/drop_spot"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
+onready var _feet_audio : AudioStreamPlayer3D = $"Body/feet_audio_player"
 var _pointed_item : InteractiveItem
 var _held_item: InteractiveItem
 
@@ -76,6 +77,12 @@ func update_walk(delta) -> void:
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
 	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
+	
+	if movement_translation.length() > 0.0:
+		_feet_audio.begin_walk()
+	else:
+		_feet_audio.end_walk()
+		
 	
 
 # Call this only once per _input() or _unhandled_input()

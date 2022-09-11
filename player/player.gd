@@ -7,7 +7,7 @@ const view_speed := 0.002 # TODO: make this a game setting
 
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
-onready var _camera := $"%Camera"
+onready var _camera : Camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
 onready var _drop_spot : Spatial = $"%Camera/drop_spot"
@@ -187,3 +187,7 @@ func toggle_crouch() -> void:
 		get_up()
 	else:
 		crouch()
+
+func get_camera() -> Camera:
+	return _camera
+

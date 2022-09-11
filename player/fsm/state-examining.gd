@@ -7,12 +7,13 @@ class_name State_Examining
 var _examination_node : Spatial
 var _mouse_rotations := Vector3.ZERO
 var _mouse_zoom := 0.0
+var _initial_zoom := 0
 
 const _rotation_speed := 3.0
-const _mouse_rotation_speed := 8.0
-const _zoom_speed := 0.0001
-const _min_zoom := 0.5
-const _max_zoom := 4.0
+const _mouse_rotation_speed := 4.0
+const _zoom_speed := 1.5
+const _min_zoom_factor := 0.25
+const _max_zoom_factor := 1.0
 
 func _init().("EXAMINING") -> void:
 	pass
@@ -23,6 +24,7 @@ func enter():
 	# TODO: add here moving the item in focus
 	player.begin_item_examination()
 	_examination_node = player.get_examination_node()
+	_initial_zoom = player.get_camera().fov
 
 func leave():
 	print("Stop examining...")
@@ -30,6 +32,7 @@ func leave():
 	player.end_item_examination()
 #	player.get_item_in_hand.scale(1.0) # reset scale
 	_examination_node = null
+	player.get_camera().fov = _initial_zoom
 
 func update(delta):
 	player.update_item_position(delta)
@@ -74,16 +77,20 @@ func _update_examination_controls(delta):
 	
 	var zoom : float = _mouse_zoom
 	if Input.is_action_pressed("item_zoom_in"):
-		zoom += -1.0
+		zoom += -_zoom_speed
 	if Input.is_action_pressed("item_zoom_out"):
-		zoom += 1.0
+		zoom += _zoom_speed
+	
+	var camera = player.get_camera()
+	var next_zoom = camera.fov + zoom
 		
-	var zoom_to_apply : float = zoom * _zoom_speed * delta
-	if zoom_to_apply != 0.0:
-		var item = player.get_item_in_hand()
-		item.scale = item.scale + Vector3.ONE * zoom_to_apply
+	if next_zoom >= _initial_zoom * _min_zoom_factor and next_zoom <= _initial_zoom * _max_zoom_factor:
+		camera.fov = next_zoom
+	
+	print("zoom = ", player.get_camera().fov)
 	
 	_mouse_zoom = 0.0
+	
 	
 func input_update(event: InputEvent):
 	if event is InputEventMouseMotion:
@@ -91,7 +98,7 @@ func input_update(event: InputEvent):
 		_mouse_rotations.y += event.relative.x
 	elif event is InputEventMouseButton:
 		if event.button_index == BUTTON_WHEEL_UP:
-			_mouse_zoom += _zoom_speed
-		if event.button_index == BUTTON_WHEEL_DOWN:
 			_mouse_zoom -= _zoom_speed
+		if event.button_index == BUTTON_WHEEL_DOWN:
+			_mouse_zoom += _zoom_speed
 		

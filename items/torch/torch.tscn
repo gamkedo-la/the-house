@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://items/torch/torch.gd" type="Script" id=1]
 [ext_resource path="res://items/item.gd" type="Script" id=2]
 [ext_resource path="res://items/torch/on.wav" type="AudioStream" id=3]
 [ext_resource path="res://items/torch/off.wav" type="AudioStream" id=4]
+[ext_resource path="res://items/torch/glass.glb" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 vertex_color_use_as_albedo = true
@@ -40,6 +41,13 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 176
 }
+
+[sub_resource type="SpatialMaterial" id=9]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
 
 [sub_resource type="CylinderShape" id=5]
 margin = 0.02
@@ -97,6 +105,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Torch/glass:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -172,6 +192,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Torch/glass:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "Switch On"
@@ -242,6 +274,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Torch/glass:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="torch" type="RigidBody"]
 angular_damp = 5.0
@@ -259,6 +303,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0141596, -0.02 )
 
 [node name="Switch" type="MeshInstance" parent="Torch/Switch_Pivot"]
 mesh = SubResource( 4 )
+
+[node name="glass" parent="Torch" instance=ExtResource( 5 )]
+transform = Transform( 1.001, 0, 0, 0, 1.001, 0, 0, 0, 1.001, 0, 0, 0 )
+visible = false
+
+[node name="Glass" parent="Torch/glass/Root" index="0"]
+cast_shadow = 0
+material/0 = SubResource( 9 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.251607 )
@@ -284,3 +336,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0241199, -0.0525436 )
 stream = ExtResource( 4 )
 
 [connection signal="use_item" from="." to="Torch" method="_on_torch_use_item"]
+
+[editable path="Torch/glass"]

@@ -30,7 +30,7 @@ var _crouch_duration := 0.33
 onready var _initial_examination_transform : Transform = _examination_spot.transform
 
 func _init():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # TODO: have a way to switch that on/off
+	pass
 	
 func _ready():
 	_state_machine.start_with_player(self)
@@ -99,7 +99,10 @@ func crouch_speed() -> float:
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:
-	if(event is InputEventMouseMotion):
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		return
+		
+	if(event is InputEventMouseMotion ):
 		rotate_y(-event.relative.x * view_speed)
 		_camera.rotate_x(-event.relative.y * view_speed)
 

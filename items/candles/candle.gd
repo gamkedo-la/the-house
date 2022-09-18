@@ -1,9 +1,8 @@
 extends InteractiveItem
 
-
-onready var interraction_area := $"interraction_area"
-
+onready var light : Node = $"light"
 
 
-
-
+func _on_light_lit_using_fire() -> void:
+	light.visible = true
+	

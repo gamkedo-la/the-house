@@ -317,7 +317,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 0.039, 0.034, 0.026 )
+extents = Vector3( 0.0439352, 0.0553909, 0.0142493 )
 
 [node name="lighter" type="RigidBody"]
 mass = 0.2
@@ -363,7 +363,7 @@ transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.04, 0.015, 0 )
 emitting = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00299751, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0404238, -0.0136172, -0.000431962 )
 shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

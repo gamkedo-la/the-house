@@ -551,6 +551,9 @@ transform = Transform( 0.257841, -0.966187, 0, 0.966187, 0.257841, 0, 0, 0, 1, -
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.316674, 5.12857 )
 
 [node name="Candle" parent="." instance=ExtResource( 60 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.456, 0, -6.525 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92778, 0, 4.35295 )
+
+[node name="Candle2" parent="." instance=ExtResource( 60 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47799, 0, 4.35295 )
 
 [editable path="player"]

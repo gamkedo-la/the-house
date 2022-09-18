@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=1]
+[ext_resource path="res://items/fire_area.gd" type="Script" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
@@ -25,6 +26,9 @@ _data = [ Vector2( 0, 0.429933 ), 0.0, 0.0, 0, 0, Vector2( 0.311881, 0.763636 ),
 offsets = PoolRealArray( 0, 0.139665, 0.351955, 0.435754, 0.497207, 0.620112, 1 )
 colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0.537255, 1, 0.37207, 0, 1, 0.949707, 0.932774, 0.0370979, 1, 0.998974, 0.998628, 0.980349, 1, 0.964706, 0.603833, 0.0196078, 1, 0.996078, 0.735386, 0, 0 )
 
+[sub_resource type="SphereShape" id=5]
+radius = 1.07785
+
 [node name="Flame" type="Spatial"]
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
@@ -41,3 +45,10 @@ angle_random = 1.0
 scale_amount = 2.0
 scale_amount_curve = SubResource( 4 )
 color_ramp = SubResource( 3 )
+
+[node name="fire_area" type="Area" parent="."]
+script = ExtResource( 2 )
+
+[node name="firing_shape" type="CollisionShape" parent="fire_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778709, 0 )
+shape = SubResource( 5 )

@@ -6,8 +6,6 @@ class_name LightableArea
 
 signal lit_using_fire
 
-
-
 func _ready():
 	set_collision_layer_bit(FireArea.lighting_by_fire_collision_bit, true)
 	set_collision_mask_bit(FireArea.lighting_by_fire_collision_bit, true)

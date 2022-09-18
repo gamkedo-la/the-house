@@ -6,12 +6,13 @@
 
 [sub_resource type="CylinderShape" id=1]
 height = 0.238779
-radius = 0.0553082
+radius = 0.0679009
 
 [sub_resource type="SphereShape" id=2]
 radius = 0.136066
 
 [node name="Candle" type="RigidBody"]
+mass = 2.04082
 script = ExtResource( 3 )
 
 [node name="candle-01" parent="." instance=ExtResource( 1 )]
@@ -21,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128145, 0 )
 shape = SubResource( 1 )
 
 [node name="light" type="Spatial" parent="."]
+visible = false
 
 [node name="Flame" parent="light" instance=ExtResource( 2 )]
 transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -8.4281e-05, 0.240441, 2.84016e-05 )

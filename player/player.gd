@@ -27,6 +27,8 @@ onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
 var _crouch_duration := 0.33
 
+var _is_holding_front := false
+
 onready var _initial_examination_transform : Transform = _examination_spot.transform
 
 func _init():
@@ -152,7 +154,13 @@ func drop_item() -> void:
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
 	_held_item = null
-	item.drop(_drop_spot)
+	var drop_spot : Node
+	if _is_holding_front:
+		drop_spot = item # Drop where the item is now
+	else:
+		drop_spot = _drop_spot
+		
+	item.drop(drop_spot)
 	assert(not is_holding_item())
 	
 func use_item() -> void:
@@ -182,11 +190,13 @@ func get_examination_axis() -> Vector3:
 	return (_examination_spot.transform.origin - _camera.transform.origin).normalized()
 	
 func begin_center_item_holding() -> void:
+	_is_holding_front = true
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
 	held_item.track(_center_holding_spot, held_item.follow_orientation_when_held_front)
 
 func end_center_item_holding() -> void:
+	_is_holding_front = false
 	_resume_holding_item()
 
 func crouch() -> void:

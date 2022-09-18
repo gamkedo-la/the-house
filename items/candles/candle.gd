@@ -1,14 +1,17 @@
 extends InteractiveItem
 
-onready var light : Node = $"light"
+onready var _light : Node = $"light"
+onready var _fire_area : Node = $"light/Flame/fire_area"
 
 func light_on() -> void:
 	print("turning light on")
-	light.show()
+	_light.show()
+	_fire_area.on_fire_on()
 	
 func light_off() -> void:
 	print("turning light off")
-	light.hide()
+	_light.hide()
+	_fire_area.on_fire_off()
 	
 # TODO: add ways to make the candle turn off when mishandled
 

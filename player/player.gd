@@ -2,8 +2,8 @@ extends KinematicBody
 
 class_name Player
 
-const walk_speed := 500.0
-const view_speed := 0.002 # TODO: make this a game setting
+export var walk_speed : float = 400.0
+export var view_speed : float = 0.002
 
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
@@ -73,7 +73,9 @@ func update_walk(delta) -> void:
 	if Input.is_action_pressed("move_backward"):
 		translation += Vector3.BACK
 
-	var movement_translation = translation.normalized() * walk_speed * delta
+	var speed = current_move_speed()
+	
+	var movement_translation = translation.normalized() * speed * delta
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 
@@ -85,6 +87,15 @@ func update_walk(delta) -> void:
 		_feet_audio.end_walk()
 		
 	
+
+func current_move_speed() -> float:
+	if _is_crouched:
+		return crouch_speed()
+	else:
+		return walk_speed
+
+func crouch_speed() -> float:
+	return walk_speed / 2
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:

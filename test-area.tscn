@@ -81,6 +81,7 @@ script = ExtResource( 1 )
 [node name="player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14163, 11.5689 )
+walk_speed = 400.0
 
 [node name="Body" parent="player" index="0"]
 shape = SubResource( 3 )

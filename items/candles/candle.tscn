@@ -1,17 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://items/candles/candle-01.glb" type="PackedScene" id=1]
 [ext_resource path="res://items/flame/flame.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/candles/candle.gd" type="Script" id=3]
 
-[node name="Candle" type="Spatial"]
+[sub_resource type="CylinderShape" id=1]
+height = 0.238779
+radius = 0.0553082
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.136066
+
+[node name="Candle" type="RigidBody"]
+script = ExtResource( 3 )
 
 [node name="candle-01" parent="." instance=ExtResource( 1 )]
 
-[node name="Flame" parent="." instance=ExtResource( 2 )]
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128145, 0 )
+shape = SubResource( 1 )
+
+[node name="light" type="Spatial" parent="."]
+
+[node name="Flame" parent="light" instance=ExtResource( 2 )]
 transform = Transform( 0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -8.4281e-05, 0.240441, 2.84016e-05 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036, 0.034, 0 )
+[node name="OmniLight" type="OmniLight" parent="light"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76201e-05, 0.35168, 0 )
 light_color = Color( 0.9, 0.7416, 0.306, 1 )
 shadow_enabled = true
 omni_range = 2.0
+
+[node name="interraction_area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.240989, 0 )
+
+[node name="shape" type="CollisionShape" parent="interraction_area"]
+shape = SubResource( 2 )

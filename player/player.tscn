@@ -154,6 +154,8 @@ Examine Item: TAB key
 Rotate Examined Item: WASDEQ keys
     OR hold left mouse button or SPACE key and mouve the mouse
 
+Release window focus: Escape key
+
 Pixelated Screen: F10
 "
 fit_content_height = true

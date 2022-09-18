@@ -30,6 +30,12 @@ func update(delta):
 
 	if Input.is_action_just_pressed("item_examination"):
 		state_machine.push_action(PlayerState.Action.examine_item)
+		
+	if Input.is_action_just_pressed("item_center_holding"):
+		player.begin_center_item_holding()
+		
+	if Input.is_action_just_released("item_center_holding"):
+		player.end_center_item_holding()
 	
 func input_update(event: InputEvent):
 	player.exploration_input_handling(event)

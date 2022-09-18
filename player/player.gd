@@ -12,6 +12,7 @@ onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
 onready var _drop_spot : Spatial = $"%Camera/drop_spot"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
+onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"Body/feet_audio_player"
@@ -131,7 +132,7 @@ func take_item(item_node: InteractiveItem) -> void:
 	item_node.take(_hand_node)
 	_held_item = item_node
 	assert(is_holding_item())
-	
+
 func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
@@ -144,6 +145,12 @@ func use_item() -> void:
 	var held_item = get_item_in_hand()
 	if held_item != null:
 		held_item.activate()
+
+func _resume_holding_item() -> void:
+	var held_item = get_item_in_hand()
+	assert(held_item is InteractiveItem)
+	held_item.track(_hand_node)
+
 		
 func begin_item_examination():
 	var held_item = get_item_in_hand()
@@ -152,15 +159,21 @@ func begin_item_examination():
 	held_item.track(_examination_spot)
 	
 func end_item_examination():
-	var held_item = get_item_in_hand()
-	assert(held_item is InteractiveItem)
-	held_item.track(_hand_node)
+	_resume_holding_item()
 
 func get_examination_node() -> Spatial:
 	return _examination_spot
 	
 func get_examination_axis() -> Vector3:
 	return (_examination_spot.transform.origin - _camera.transform.origin).normalized()
+	
+func begin_center_item_holding() -> void:
+	var held_item = get_item_in_hand()
+	assert(held_item is InteractiveItem)
+	held_item.track(_center_holding_spot)
+
+func end_center_item_holding() -> void:
+	_resume_holding_item()
 
 func crouch() -> void:
 	if _is_crouched:

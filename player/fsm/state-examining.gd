@@ -90,7 +90,7 @@ func _update_examination_controls(delta):
 	if next_zoom >= _initial_zoom * _min_zoom_factor and next_zoom <= _initial_zoom * _max_zoom_factor:
 		camera.fov = next_zoom
 	
-	print("zoom = ", player.get_camera().fov)
+#	print("zoom = ", player.get_camera().fov)
 	
 	_mouse_zoom = 0.0
 	

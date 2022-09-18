@@ -9,7 +9,7 @@ func light_on() -> void:
 	_fire_area.on_fire_on()
 	
 func light_off() -> void:
-	print("turning light off")
+#	print("turning light off")
 	_light.hide()
 	_fire_area.on_fire_off()
 	

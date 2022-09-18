@@ -35,7 +35,6 @@ func leave():
 	player.get_camera().fov = _initial_zoom
 
 func update(delta):
-	player.update_item_position(delta)
 	
 	if Input.is_action_just_pressed("item_examination"):
 		state_machine.push_action(PlayerState.Action.stop_examining_item)
@@ -45,6 +44,10 @@ func update(delta):
 		player.use_item()
 	
 	_update_examination_controls(delta)
+
+func physics_update(delta: float) -> void:
+	
+	player.update_item_position(delta)
 
 func _update_examination_controls(delta):
 	assert(_examination_node != null)

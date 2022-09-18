@@ -13,8 +13,10 @@ func enter():
 
 	print("No item in hands")
 
-func update(delta: float):
+func physics_update(delta: float):
 	player.exploration_update(delta)
+
+func update(delta: float):
 	
 	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_item():
 		state_machine.push_action(PlayerState.Action.take_item)

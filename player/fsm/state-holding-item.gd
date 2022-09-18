@@ -12,11 +12,10 @@ func enter():
 	if not player.is_holding_item():
 		_take_pointed_item()
 	print("Holding an item")
+
 	
 func update(delta):
 	assert(player.is_holding_item())
-	
-	player.exploration_update(delta)
 	
 	if Input.is_action_just_pressed("drop_held_item"):
 		state_machine.push_action(PlayerState.Action.drop_item)
@@ -39,6 +38,10 @@ func update(delta):
 	
 func input_update(event: InputEvent):
 	player.exploration_input_handling(event)
+	
+func physics_update(delta: float):
+	player.exploration_update(delta)
+
 	
 func _take_pointed_item():
 	var pointed_item = player.get_currently_pointed_item()

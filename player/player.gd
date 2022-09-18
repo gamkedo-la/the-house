@@ -181,7 +181,7 @@ func get_examination_axis() -> Vector3:
 func begin_center_item_holding() -> void:
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
-	held_item.track(_center_holding_spot)
+	held_item.track(_center_holding_spot, held_item.follow_orientation_when_held_front)
 
 func end_center_item_holding() -> void:
 	_resume_holding_item()

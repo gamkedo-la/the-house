@@ -9,9 +9,12 @@ export var highlightable := true
 export var highlight_color : Color  = "#ff6f00"
 export var highlight_width := 5.0
 export var mesh_node: NodePath
+export var follow_orientation_when_held_front := true
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
 var _tracking_position = Spatial
+var _tracking_rotation_enabled = true
+
 const _tracking_speed := 500.0
 const _tracking_angular_speed := 1000.0
 
@@ -108,11 +111,19 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 	var item_linear_velocity : Vector3 = translation_to_target * _tracking_speed * delta
 	linear_velocity = base_linear_velocity + item_linear_velocity
 		
-	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, _tracking_position.global_transform.basis)
+	var orientation_to_track : Basis
+	if(_tracking_rotation_enabled):
+		orientation_to_track = _tracking_position.global_transform.basis
+	else:
+		orientation_to_track = Basis.IDENTITY # TODO: keep track of the rotation around the global y axis
+		
+	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, orientation_to_track)
 	angular_velocity = rotation_to_target_direction * _tracking_angular_speed * delta
+		
 	
-func track(target: Spatial):
+func track(target: Spatial, enable_rotation_tracking := true):
 	_tracking_position = target
+	_tracking_rotation_enabled = enable_rotation_tracking
 	
 func stop_tracking():
 	_tracking_position = null

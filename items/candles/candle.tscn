@@ -16,6 +16,7 @@ radius = 0.211521
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175556, 0 )
 mass = 2.04082
 script = ExtResource( 3 )
+follow_orientation_when_held_front = false
 
 [node name="candle-01" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175218, 0 )

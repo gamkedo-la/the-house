@@ -13,16 +13,19 @@ radius = 0.0679009
 radius = 0.211521
 
 [node name="Candle" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175556, 0 )
 mass = 2.04082
 script = ExtResource( 3 )
 
 [node name="candle-01" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175218, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128145, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0470731, 0 )
 shape = SubResource( 1 )
 
 [node name="light" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175218, 0 )
 visible = false
 
 [node name="Flame" parent="light" instance=ExtResource( 2 )]
@@ -35,7 +38,7 @@ shadow_enabled = true
 omni_range = 2.0
 
 [node name="lightable_area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249042, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0738239, 0 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="lightable_area"]

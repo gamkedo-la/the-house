@@ -145,10 +145,10 @@ meta_underlined = false
 text = "Debug Info: F1
 
 Move: WASD keys or arrow keys
-Take Item: left mouse button
-Use Held Item: right mouse button
-Put Item In Front Of You: E key
-Drop Item: SPACE key
+Take Item: left mouse button or E key
+Use Held Item: right mouse button or F key
+Put Item In Front Of You: SPACE key
+Drop Item: R key
 
 Examine Item: TAB key
 Rotate Examined Item: WASDEQ keys

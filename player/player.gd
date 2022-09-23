@@ -5,6 +5,10 @@ class_name Player
 export var walk_speed : float = 400.0
 export var view_speed : float = 0.002
 
+const limit_up_angle : float = deg2rad(75.0)
+const limit_down_angle : float = deg2rad(-89.0)
+
+
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
@@ -106,7 +110,15 @@ func update_orientation(event: InputEvent) -> void:
 		
 	if(event is InputEventMouseMotion ):
 		rotate_y(-event.relative.x * view_speed)
-		_camera.rotate_x(-event.relative.y * view_speed)
+		
+		# Here we want to avoid the camera to go up until being in our back
+		# or go down until being in our back.
+		# To avoid this we limit the angles possible when looking up and down.
+		var rotation_x_to_apply = -event.relative.y * view_speed
+		var attempted_next_rotation := _camera.global_rotation + Vector3(rotation_x_to_apply, 0.0, 0.0)
+		var next_x_rotation := min(limit_up_angle, max(limit_down_angle, attempted_next_rotation.x))
+		var next_rotation = Vector3(next_x_rotation, attempted_next_rotation.y, attempted_next_rotation.z)
+		_camera.global_rotation = next_rotation
 
 func update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already

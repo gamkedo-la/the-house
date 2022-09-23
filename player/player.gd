@@ -154,12 +154,7 @@ func drop_item() -> void:
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
 	_held_item = null
-	var drop_spot : Node
-	if _is_holding_front:
-		drop_spot = item # Drop where the item is now
-	else:
-		drop_spot = _drop_spot
-		
+	var drop_spot : Node = item # Drop where the item is now
 	item.drop(drop_spot)
 	assert(not is_holding_item())
 	

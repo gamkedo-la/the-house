@@ -1,16 +1,13 @@
 extends Area
 
 
+# This is used to light candles etc.
 class_name FireArea
 
 var _is_fire_on := false
 
-# This is used to light candles etc.
-const lighting_by_fire_collision_bit := 10
-
 func _ready():
-	get_parent().has_signal("")
-	set_collision_layer_bit(lighting_by_fire_collision_bit, true)
+	set_collision_layer_bit(ItemUtils.lighting_by_fire_collision_bit, true)
 
 func is_fire_on() -> bool:
 	return _is_fire_on

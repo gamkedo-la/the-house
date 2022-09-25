@@ -2,7 +2,9 @@ extends RigidBody
 class_name InteractiveItem
 
 signal use_item
+signal snapping_into_position
 
+export var can_be_taken = true
 export var hilighted = false
 
 export var highlightable := true
@@ -33,7 +35,7 @@ func _ready():
 	# Does this item 'glow' when the player hovers over it?
 	if highlightable:
 		highlites = _init_hilite(self, hilite_mat, highlight_color)
-	pass # Replace with function body.
+	
 		
 static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Color) -> Array:
 	var highlites := []
@@ -89,13 +91,14 @@ static func _cancel_velocity(node: Node):
 	for child_node in node.get_children():
 		_cancel_velocity(child_node)
 
-func take(hold_where: Spatial):
+func take(hold_where: Spatial) -> void:
+	assert(can_be_taken)
 	track(hold_where)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 
 	
-func drop(where: Spatial):
+func drop(where: Spatial) -> void:
 	stop_tracking()
 	global_transform.origin = where.global_transform.origin
 	global_transform.basis = where.global_transform.basis
@@ -125,6 +128,21 @@ func track(target: Spatial, enable_rotation_tracking := true):
 	_tracking_position = target
 	_tracking_rotation_enabled = enable_rotation_tracking
 	
-func stop_tracking():
+func stop_tracking() -> void:
 	_tracking_position = null
 	
+func snap_to(target: Spatial) -> void:
+	assert(target)
+	print("snapping into position")
+	emit_signal("snapping_into_position") # We emit this signal early to let the player's code react 
+	stop_tracking()
+	# mode = RigidBody.MODE_STATIC
+	can_be_taken = false
+	sleeping = true
+	get_parent().remove_child(self)
+	target.add_child(self)
+	angular_velocity = Vector3.ZERO
+	linear_velocity = Vector3.ZERO
+	transform.origin = Vector3.ZERO
+	global_transform.origin = target.global_transform.origin
+	global_transform.basis = target.global_transform.basis

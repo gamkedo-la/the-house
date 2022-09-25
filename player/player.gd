@@ -8,7 +8,6 @@ export var view_speed : float = 0.002
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-89.0)
 
-
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
@@ -147,6 +146,9 @@ func get_currently_pointed_item() -> InteractiveItem:
 
 func is_pointing_item() -> bool:
 	return _pointed_item is InteractiveItem
+	
+func is_pointing_takable_item() -> bool:
+	return _pointed_item is InteractiveItem && _pointed_item.can_be_taken
 
 func get_item_in_hand() -> InteractiveItem:
 	return _held_item
@@ -159,6 +161,7 @@ func take_item(item_node: InteractiveItem) -> void:
 	print("PLAYER: take item %s" % item_node)
 	item_node.take(_hand_node)
 	_held_item = item_node
+	_held_item.connect("snapping_into_position", self, "_on_item_snapping_into_posiiton")
 	assert(is_holding_item())
 
 func drop_item() -> void:
@@ -169,6 +172,11 @@ func drop_item() -> void:
 	var drop_spot : Node = item # Drop where the item is now
 	item.drop(drop_spot)
 	assert(not is_holding_item())
+	
+func _on_item_snapping_into_posiiton():
+	# Probably the item is a key going into a lock.
+	# We just release our hold.
+	_state_machine.push_action(PlayerState.Action.drop_item)
 	
 func use_item() -> void:
 	var held_item = get_item_in_hand()

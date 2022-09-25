@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -60,11 +60,8 @@
 [ext_resource path="res://items/torch/torch.tscn" type="PackedScene" id=58]
 [ext_resource path="res://items/knife_cleaver/knife_cleaver.glb" type="PackedScene" id=59]
 [ext_resource path="res://items/candles/candle.tscn" type="PackedScene" id=60]
-
-[sub_resource type="CapsuleShape" id=3]
-resource_local_to_scene = true
-margin = 0.001
-radius = 0.5
+[ext_resource path="res://test_scenes/test-key.tscn" type="PackedScene" id=61]
+[ext_resource path="res://test_scenes/test-lock.tscn" type="PackedScene" id=62]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -82,13 +79,6 @@ script = ExtResource( 1 )
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14163, 11.5689 )
 walk_speed = 400.0
-
-[node name="Body" parent="player" index="0"]
-shape = SubResource( 3 )
-
-[node name="Camera" parent="player/Head" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.419, 0 )
-current = true
 
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )
@@ -557,4 +547,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92778, 0, 4.35295 )
 [node name="Candle2" parent="." instance=ExtResource( 60 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47799, 0, 4.35295 )
 
-[editable path="player"]
+[node name="key" parent="." instance=ExtResource( 61 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47811, 0.316695, 5.55657 )
+
+[node name="lock" parent="." instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70799, 0.703687, 6.71812 )

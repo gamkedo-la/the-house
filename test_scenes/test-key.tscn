@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://items/key_area.gd" type="Script" id=1]
+[ext_resource path="res://items/item.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+albedo_color = Color( 0.682353, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.1, 0.1, 0.246 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.240607
+
+[node name="key" type="RigidBody"]
+transform = Transform( -0.999951, 0, -0.00986098, 0, 1, 0, 0.00986098, 0, -0.999951, 0, 0, -0.034522 )
+script = ExtResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00403053, 0, -0.25101 )
+width = 0.04
+height = 0.04
+depth = 0.4
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.045134 )
+width = 0.1383
+height = 0.104042
+depth = 0.08
+material = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.999993, 0, -0.00378553, 0, 1, 0, 0.00378553, 0, 0.999993, 0.00363001, 0, -0.235592 )
+shape = SubResource( 1 )
+
+[node name="KeyArea" type="Area" parent="."]
+script = ExtResource( 1 )
+key_name = "test-key"
+
+[node name="CollisionShape" type="CollisionShape" parent="KeyArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00767545, 0, -0.430685 )
+shape = SubResource( 3 )

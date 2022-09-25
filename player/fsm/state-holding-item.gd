@@ -21,7 +21,7 @@ func update(delta):
 		state_machine.push_action(PlayerState.Action.drop_item)
 	
 	# We allow taking another item even if we have one already, just swap them
-	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_item():
+	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_takable_item():
 		_take_pointed_item()
 		
 	if Input.is_action_just_pressed("item_activation"):
@@ -43,9 +43,10 @@ func physics_update(delta: float):
 	player.exploration_update(delta)
 
 	
-func _take_pointed_item():
+func _take_pointed_item() -> void:
 	var pointed_item = player.get_currently_pointed_item()
 	assert(pointed_item is InteractiveItem)
+	assert(pointed_item.can_be_taken)
 	
 	if player.is_holding_item():
 		player.drop_item()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=1]
 [ext_resource path="res://items/fire_area.gd" type="Script" id=2]
+[ext_resource path="res://items/flame/flame_gravity.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
@@ -45,6 +46,7 @@ angle_random = 1.0
 scale_amount = 2.0
 scale_amount_curve = SubResource( 4 )
 color_ramp = SubResource( 3 )
+script = ExtResource( 3 )
 
 [node name="fire_area" type="Area" parent="."]
 script = ExtResource( 2 )

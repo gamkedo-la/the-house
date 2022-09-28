@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://items/test-box/box.tscn" type="PackedScene" id=2]
@@ -62,6 +62,7 @@
 [ext_resource path="res://items/candles/candle.tscn" type="PackedScene" id=60]
 [ext_resource path="res://test_scenes/test-key.tscn" type="PackedScene" id=61]
 [ext_resource path="res://test_scenes/test-lock.tscn" type="PackedScene" id=62]
+[ext_resource path="res://house/Dresser.tscn" type="PackedScene" id=63]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -552,3 +553,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47811, 0.316695, 5.55657 )
 
 [node name="lock" parent="." instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70799, 0.703687, 6.71812 )
+
+[node name="Dresser" parent="." instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -13 )
+
+[node name="Dresser2" parent="." instance=ExtResource( 63 )]
+transform = Transform( 0.316527, 0, 0.948584, 0, 1, 0, -0.948584, 0, 0.316527, -1.36263, -1.19209e-07, -7.02974 )

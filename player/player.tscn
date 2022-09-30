@@ -64,7 +64,7 @@ bus = "Steps"
 script = ExtResource( 12 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )
 
 [node name="Camera" type="Camera" parent="Head"]
 unique_name_in_owner = true

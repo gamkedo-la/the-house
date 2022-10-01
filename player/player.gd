@@ -88,7 +88,7 @@ func update_walk(delta) -> void:
 			translation += Vector3.BACK
 			
 	elif _movement_mode == MovementMode.Climbing:
-		if global_rotation.x <= 0.0:
+		if _camera.global_rotation.x >= 0.0:
 			if Input.is_action_pressed("move_forward"):
 				translation +=  Vector3.UP
 

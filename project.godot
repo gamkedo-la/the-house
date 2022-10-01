@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area",
+"class": "ClimbingArea",
+"language": "GDScript",
+"path": "res://furniture/climbing-area.gd"
+}, {
 "base": "Node",
 "class": "FSM_State",
 "language": "GDScript",
@@ -90,6 +95,7 @@ _global_script_classes=[ {
 "path": "res://code-library/utility.gd"
 } ]
 _global_script_class_icons={
+"ClimbingArea": "",
 "FSM_State": "",
 "FSM_StateMachine": "",
 "FireArea": "",

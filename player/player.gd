@@ -34,10 +34,14 @@ var _is_holding_front := false
 
 onready var _initial_examination_transform : Transform = _examination_spot.transform
 
+enum MovementMode { Walking, Climbing }
+var _movement_mode : int = MovementMode.Walking
+
 func _init():
 	pass
 	
 func _ready():
+	set_collision_layer_bit(ItemUtils.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 
 func _process(delta):
@@ -62,6 +66,9 @@ func exploration_update(delta: float):
 func exploration_input_handling(event: InputEvent):
 	update_orientation(event)
 
+func set_movement_mode(new_mode: int) -> void:
+	_movement_mode = new_mode
+
 # Call this only once per _physics_update()
 func update_walk(delta) -> void:
 	var translation = Vector3()
@@ -72,19 +79,40 @@ func update_walk(delta) -> void:
 	if Input.is_action_pressed("move_right"):
 		translation += Vector3.RIGHT
 
-	if Input.is_action_pressed("move_forward"):
-		translation += Vector3.FORWARD
+	if _movement_mode == MovementMode.Walking:
+		if Input.is_action_pressed("move_forward"):
+			translation +=  Vector3.FORWARD
 
-	if Input.is_action_pressed("move_backward"):
-		translation += Vector3.BACK
+		if Input.is_action_pressed("move_backward"):
+			translation += Vector3.BACK
+			
+	elif _movement_mode == MovementMode.Climbing:
+		if global_rotation.x <= 0.0:
+			if Input.is_action_pressed("move_forward"):
+				translation +=  Vector3.UP
+
+			if Input.is_action_pressed("move_backward"):
+				translation += Vector3.DOWN
+		else:
+			if Input.is_action_pressed("move_forward"):
+				translation +=  Vector3.DOWN
+
+			if Input.is_action_pressed("move_backward"):
+				translation += Vector3.UP
+	else:
+		assert(false, "unhandleded movement mode") 
 
 	var speed = current_move_speed()
 	
 	var movement_translation = translation.normalized() * speed * delta
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
+	
+	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
+	if _movement_mode == MovementMode.Walking:
+		oriented_movement += _gravity
 
-	_last_linear_velocity = move_and_slide(oriented_movement + _gravity, Vector3.UP, true)
+	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 	
 	if movement_translation.length() > 0.0:
 		_feet_audio.begin_walk(FootAudio.StepSurface.House)

@@ -2,6 +2,7 @@ extends Node
 
 class_name ItemUtils
 
+const climbing_area_collision_bit := 2
 const key_lock_collision_bit := 9
 const lighting_by_fire_collision_bit := 10
 

@@ -6,7 +6,7 @@
 extents = Vector3( 0.55, 2, 0.06 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 1, 2.63814, 0.407788 )
+extents = Vector3( 1, 3.99861, 0.407788 )
 
 [node name="ladder" type="StaticBody"]
 
@@ -110,5 +110,5 @@ shape = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="climbing_area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64072, 0.354035 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.91477, 0.354035 )
 shape = SubResource( 2 )

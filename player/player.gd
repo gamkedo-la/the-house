@@ -88,18 +88,27 @@ func update_walk(delta) -> void:
 			translation += Vector3.BACK
 			
 	elif _movement_mode == MovementMode.Climbing:
-		if _camera.global_rotation.x >= 0.0:
+		if _camera.global_rotation.x >= deg2rad(45.0): # Looking up
 			if Input.is_action_pressed("move_forward"):
 				translation +=  Vector3.UP
 
 			if Input.is_action_pressed("move_backward"):
 				translation += Vector3.DOWN
-		else:
+				
+		elif _camera.global_rotation.x <= deg2rad(-45.0): # Looking down
 			if Input.is_action_pressed("move_forward"):
 				translation +=  Vector3.DOWN
 
 			if Input.is_action_pressed("move_backward"):
 				translation += Vector3.UP
+				
+		else: # Looking more or less horizontally
+			if Input.is_action_pressed("move_forward"):
+				translation +=  Vector3.FORWARD
+
+			if Input.is_action_pressed("move_backward"):
+				translation += Vector3.BACK
+			
 	else:
 		assert(false, "unhandleded movement mode") 
 

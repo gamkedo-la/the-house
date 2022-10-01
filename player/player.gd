@@ -4,6 +4,7 @@ class_name Player
 
 export var walk_speed : float = 400.0
 export var view_speed : float = 0.002
+export var gravity_factor : float= 100.0
 
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-89.0)
@@ -110,7 +111,8 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		oriented_movement += _gravity
+		var gravity = _gravity * delta * gravity_factor
+		oriented_movement += gravity
 
 	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 	

@@ -69,7 +69,6 @@ func exploration_input_handling(event: InputEvent):
 	update_orientation(event)
 
 func set_movement_mode(new_mode: int) -> void:
-	assert(MovementMode.has(new_mode))
 	_movement_mode = new_mode
 
 func get_movement_mode() -> int:

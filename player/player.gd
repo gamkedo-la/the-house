@@ -3,6 +3,7 @@ extends KinematicBody
 class_name Player
 
 export var walk_speed : float = 400.0
+export var climb_speed : float = 200.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
 
@@ -113,6 +114,8 @@ func update_walk(delta) -> void:
 		assert(false, "unhandleded movement mode") 
 
 	var speed = current_move_speed()
+	if _movement_mode == MovementMode.Climbing:
+		speed = climb_speed
 	
 	var movement_translation = translation.normalized() * speed * delta
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)

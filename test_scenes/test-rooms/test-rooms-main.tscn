@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="RoomManager" type="RoomManager" parent="."]
+roomlist = NodePath("../RoomList")
+
+[node name="RoomList" type="Spatial" parent="."]

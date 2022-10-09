@@ -6,6 +6,8 @@
 
 [node name="Box" type="RigidBody"]
 script = ExtResource( 1 )
+can_be_taken = false
+highlightable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

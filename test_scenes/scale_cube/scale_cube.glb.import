@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/scale_cube.glb-37cbba4ceea42d6c3026e7619266bebd.scn"
+path="res://.import/scale_cube.glb-25e0d05d1d28493a45d5327147d43ffb.scn"
 
 [deps]
 
-source_file="res://items/scale_cube/scale_cube.glb"
-dest_files=[ "res://.import/scale_cube.glb-37cbba4ceea42d6c3026e7619266bebd.scn" ]
+source_file="res://test_scenes/scale_cube/scale_cube.glb"
+dest_files=[ "res://.import/scale_cube.glb-25e0d05d1d28493a45d5327147d43ffb.scn" ]
 
 [params]
 

@@ -173,7 +173,7 @@ func update_item_position(delta: float) -> void:
 func update_interraction_ray() -> void:
 	if _interraction_ray.is_colliding():
 		var something = _interraction_ray.get_collider()
-		if something is InteractiveItem and (_pointed_item == null or _pointed_item != something):
+		if something is InteractiveItem and something.is_takable_now() and (_pointed_item == null or _pointed_item != something):
 			if _pointed_item != null:
 				_pointed_item.hilite(false)
 			_pointed_item = something
@@ -193,7 +193,7 @@ func is_pointing_item() -> bool:
 	return _pointed_item is InteractiveItem
 	
 func is_pointing_takable_item() -> bool:
-	return _pointed_item is InteractiveItem && _pointed_item.can_be_taken
+	return _pointed_item is InteractiveItem && _pointed_item.is_takable_now()
 
 func get_item_in_hand() -> InteractiveItem:
 	return _held_item

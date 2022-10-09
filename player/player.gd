@@ -40,8 +40,16 @@ enum MovementMode { Walking, Climbing }
 var _movement_mode : int = MovementMode.Walking
 
 func _init():
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):	
 	
+	if Input.is_action_just_pressed("mouse_capture"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
+	if Input.is_action_just_pressed("mouse_release"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _ready():
 	set_collision_layer_bit(ItemUtils.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)

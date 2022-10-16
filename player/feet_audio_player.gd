@@ -41,6 +41,7 @@ func begin_walk(surface: int):
 	
 func end_walk():
 	_we_are_walking = false
+	stop()
 	
 func _process(_delta):
 	if _we_are_walking:

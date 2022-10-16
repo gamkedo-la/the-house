@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://test_scenes/test-box/static-box.tscn" type="PackedScene" id=1]
+
+[node name="building" type="Spatial"]
+
+[node name="exterior" parent="." instance=ExtResource( 1 )]
+transform = Transform( 8.85867, 0, 0, 0, 9.24061, 0, 0, 0, 12.3458, 0, 0, 0 )
+
+[node name="door" parent="exterior" instance=ExtResource( 1 )]
+transform = Transform( 0.157495, 0, 0, 0, 0.240465, 0, 0, 0, 0.0685367, 0, -0.0124105, 1.02753 )
+
+[node name="Portal" type="Portal" parent="exterior/door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00642, 1.01367 )
+
+[node name="RoomGroup" type="RoomGroup" parent="."]

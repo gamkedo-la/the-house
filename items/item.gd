@@ -16,6 +16,7 @@ onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
 var _tracking_position = Spatial
 var _tracking_rotation_enabled = true
+var _is_taken := false
 
 const _tracking_speed := 500.0
 const _tracking_angular_speed := 1000.0
@@ -77,6 +78,8 @@ func hilite(toggle: bool) -> void:
 func activate():
 	emit_signal("use_item")
 
+func is_takable_now() -> bool :
+	return can_be_taken && not _is_taken
 
 static func _set_collision_with_player(node: Node, set_enabled: bool):
 	if node is RigidBody:
@@ -93,9 +96,11 @@ static func _cancel_velocity(node: Node):
 
 func take(hold_where: Spatial) -> void:
 	assert(can_be_taken)
+	assert(not _is_taken)
 	track(hold_where)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
+	_is_taken = true
 
 	
 func drop(where: Spatial) -> void:
@@ -105,6 +110,7 @@ func drop(where: Spatial) -> void:
 	_set_collision_with_player(self, true) # resume colliding with the player
 	_cancel_velocity(self)
 	sleeping = false
+	_is_taken = false
 	
 	
 func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -> void:

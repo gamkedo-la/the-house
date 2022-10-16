@@ -46,7 +46,7 @@ func physics_update(delta: float):
 func _take_pointed_item() -> void:
 	var pointed_item = player.get_currently_pointed_item()
 	assert(pointed_item is InteractiveItem)
-	assert(pointed_item.can_be_taken)
+	assert(pointed_item.is_takable_now())
 	
 	if player.is_holding_item():
 		player.drop_item()

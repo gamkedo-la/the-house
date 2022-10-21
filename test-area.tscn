@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://test_scenes/test-lock.tscn" type="PackedScene" id=62]
 [ext_resource path="res://furniture/dresser/Dresser.tscn" type="PackedScene" id=63]
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=64]
+[ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=65]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -640,3 +641,17 @@ material = SubResource( 8 )
 [node name="Label3D" type="Label3D" parent="WindowExample/MirrorMesh"]
 transform = Transform( -1, -8.74228e-08, -1.06581e-14, 8.74228e-08, -1, 8.47033e-22, -1.06581e-14, 0, 1, -5.96046e-08, -1.08563, 0.0111513 )
 text = "MIRROR"
+
+[node name="Trees" type="Spatial" parent="."]
+
+[node name="PineTree" parent="Trees" instance=ExtResource( 65 )]
+transform = Transform( 0.690055, 0, 0, 0, 0.690055, 0, 0, 0, 0.690055, 25.0057, 0, -14.1715 )
+
+[node name="PineTree2" parent="Trees" instance=ExtResource( 65 )]
+transform = Transform( 1.15097, 0, 0, 0, 1.15097, 0, 0, 0, 1.15097, 14.9405, 0, -27.6784 )
+
+[node name="PineTree3" parent="Trees" instance=ExtResource( 65 )]
+transform = Transform( 0.896706, 0, 0, 0, 0.896706, 0, 0, 0, 0.896706, 0.394714, 0, -26.8656 )
+
+[node name="PineTree4" parent="Trees" instance=ExtResource( 65 )]
+transform = Transform( 0.918537, 0, 0, 0, 0.918537, 0, 0, 0, 0.918537, 32.0284, 0, -27.0687 )

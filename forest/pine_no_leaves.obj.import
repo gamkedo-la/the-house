@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pine_no_leaves.obj-8cec6887dba236777e36c05e785c745c.mesh"
+
+[deps]
+
+files=[ "res://.import/pine_no_leaves.obj-8cec6887dba236777e36c05e785c745c.mesh" ]
+
+source_file="res://forest/pine_no_leaves.obj"
+dest_files=[ "res://.import/pine_no_leaves.obj-8cec6887dba236777e36c05e785c745c.mesh", "res://.import/pine_no_leaves.obj-8cec6887dba236777e36c05e785c745c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

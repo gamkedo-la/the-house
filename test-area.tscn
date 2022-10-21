@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://furniture/dresser/Dresser.tscn" type="PackedScene" id=63]
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=64]
 [ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=65]
+[ext_resource path="res://forest/PineTreeNoLeaves.tscn" type="PackedScene" id=66]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -655,3 +656,9 @@ transform = Transform( 0.705224, 0, -0.553842, 0, 0.896706, 0, 0.553842, 0, 0.70
 
 [node name="PineTree4" parent="Trees" instance=ExtResource( 65 )]
 transform = Transform( 0.918537, 0, 0, 0, 0.918537, 0, 0, 0, 0.918537, 32.0284, 0, -27.0687 )
+
+[node name="PineTreeNoLeaves" parent="." instance=ExtResource( 66 )]
+transform = Transform( 0.891326, 0, 0, 0, 0.891326, 0, 0, 0, 0.891326, 9.3655, 0.00014317, -32.3594 )
+
+[node name="PineTreeNoLeaves2" parent="." instance=ExtResource( 66 )]
+transform = Transform( 0.891326, 0, 0, 0, 0.891326, 0, 0, 0, 0.891326, 35.4618, 0.00014317, -18.641 )

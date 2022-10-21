@@ -645,13 +645,13 @@ text = "MIRROR"
 [node name="Trees" type="Spatial" parent="."]
 
 [node name="PineTree" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 0.690055, 0, 0, 0, 0.690055, 0, 0, 0, 0.690055, 25.0057, 0, -14.1715 )
+transform = Transform( -0.20242, 0, 0.659698, 0, 0.690055, 0, -0.659698, 0, -0.20242, 25.0057, 0, -14.1715 )
 
 [node name="PineTree2" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 1.15097, 0, 0, 0, 1.15097, 0, 0, 0, 1.15097, 14.9405, 0, -27.6784 )
+transform = Transform( 1.04106, 0, 0.490843, 0, 1.15097, 0, -0.490843, 0, 1.04106, 14.9405, 0, -27.6784 )
 
 [node name="PineTree3" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 0.896706, 0, 0, 0, 0.896706, 0, 0, 0, 0.896706, 0.394714, 0, -26.8656 )
+transform = Transform( 0.705224, 0, -0.553842, 0, 0.896706, 0, 0.553842, 0, 0.705224, 0.394714, 0, -26.8656 )
 
 [node name="PineTree4" parent="Trees" instance=ExtResource( 65 )]
 transform = Transform( 0.918537, 0, 0, 0, 0.918537, 0, 0, 0, 0.918537, 32.0284, 0, -27.0687 )

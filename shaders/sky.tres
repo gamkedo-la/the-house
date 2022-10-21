@@ -158,7 +158,7 @@ void fragment() {
 	float n_out22p0 = n_out21p0 - n_in22p1;
 
 // Scalar:28
-	float n_out28p0 = 3.141593;
+	float n_out28p0 = 3.141590;
 
 // ScalarOp:23
 	float n_in23p1 = 2.00000;
@@ -220,7 +220,6 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -2944.91, 220.211 )
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2( 1180, 60 )

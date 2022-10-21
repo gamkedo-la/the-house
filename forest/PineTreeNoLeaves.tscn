@@ -1,8 +1,41 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://forest/pine_no_leaves.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets-workfiles/textures/pine_blend.png" type="Texture" id=3]
+[ext_resource path="res://shaders/tree.shader" type="Shader" id=4]
+[ext_resource path="res://assets-workfiles/textures/pine_blend_normal.png" type="Texture" id=5]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/bark07.png-550c94af293d82a97a0e92017a8e26d5.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/bark07_normal.png-f146ea1dca714d55db5d7fc5987b3766.s3tc.stex"
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/AlphaScissor = 1.0
+shader_param/WindStrength = 0.0
+shader_param/WindSpeed = 1.5
+shader_param/SwayStrength = 0.1
+shader_param/SwayOffset = null
+shader_param/Albedo = SubResource( 3 )
+shader_param/Normal = SubResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/AlphaScissor = 1.0
+shader_param/WindStrength = 0.0
+shader_param/WindSpeed = 4.0
+shader_param/SwayStrength = 0.1
+shader_param/SwayOffset = null
+shader_param/Albedo = ExtResource( 3 )
+shader_param/Normal = ExtResource( 5 )
 
 [node name="PineTreeNoLeaves" type="Spatial"]
 
 [node name="pine_no_leaves" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

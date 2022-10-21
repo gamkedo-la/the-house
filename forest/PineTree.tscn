@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://forest/pine2_leaf.tres" type="Material" id=1]
+[ext_resource path="res://forest/pine2.obj" type="ArrayMesh" id=2]
+
+[node name="PineTree" type="Spatial"]
+
+[node name="pine2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0632782, 1.90735e-06, 0.00151634 )
+mesh = ExtResource( 2 )
+material/2 = ExtResource( 1 )

@@ -691,24 +691,12 @@ text = "MIRROR"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33424, 2, 4.51502 )
 
 [node name="WindowAnchor" type="Spatial" parent="WindowExample"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33424, 2, 4.51502 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55394, 2, 4.94381 )
 
 [node name="Trees" type="Spatial" parent="."]
 
 [node name="PineTree" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( -0.20242, 0, 0.659698, 0, 0.690055, 0, -0.659698, 0, -0.20242, 25.0057, 0, -14.1715 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42.4902 )
 
-[node name="PineTree2" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 1.04106, 0, 0.490843, 0, 1.15097, 0, -0.490843, 0, 1.04106, 14.9405, 0, -27.6784 )
-
-[node name="PineTree3" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 0.705224, 0, -0.553842, 0, 0.896706, 0, 0.553842, 0, 0.705224, 0.394714, 0, -26.8656 )
-
-[node name="PineTree4" parent="Trees" instance=ExtResource( 65 )]
-transform = Transform( 0.918537, 0, 0, 0, 0.918537, 0, 0, 0, 0.918537, 32.0284, 0, -27.0687 )
-
-[node name="PineTreeNoLeaves" parent="." instance=ExtResource( 66 )]
-transform = Transform( 0.891326, 0, 0, 0, 0.891326, 0, 0, 0, 0.891326, 9.3655, 0.00014317, -32.3594 )
-
-[node name="PineTreeNoLeaves2" parent="." instance=ExtResource( 66 )]
-transform = Transform( 0.891326, 0, 0, 0, 0.891326, 0, 0, 0, 0.891326, 35.4618, 0.00014317, -18.641 )
+[node name="PineTreeNoLeaves" parent="Trees" instance=ExtResource( 66 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1611, 0, -64.314 )

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/branch08.png-bad378c68faa2216e71e71178bd1e27f.s3tc.stex"
-path.etc2="res://.import/branch08.png-bad378c68faa2216e71e71178bd1e27f.etc2.stex"
+path.s3tc="res://.import/pine_blend.png-9594e2b8c616ee2f64ecc1b5131a2f49.s3tc.stex"
+path.etc2="res://.import/pine_blend.png-9594e2b8c616ee2f64ecc1b5131a2f49.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets-workfiles/textures/branch08.png"
-dest_files=[ "res://.import/branch08.png-bad378c68faa2216e71e71178bd1e27f.s3tc.stex", "res://.import/branch08.png-bad378c68faa2216e71e71178bd1e27f.etc2.stex" ]
+source_file="res://forest/pine_blend.png"
+dest_files=[ "res://.import/pine_blend.png-9594e2b8c616ee2f64ecc1b5131a2f49.s3tc.stex", "res://.import/pine_blend.png-9594e2b8c616ee2f64ecc1b5131a2f49.etc2.stex" ]
 
 [params]
 

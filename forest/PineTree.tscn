@@ -2,13 +2,13 @@
 
 [ext_resource path="res://shaders/tree.shader" type="Shader" id=1]
 [ext_resource path="res://forest/pine2.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets-workfiles/textures/branch08.png" type="Texture" id=3]
+[ext_resource path="res://forest/branch08.png" type="Texture" id=3]
 [ext_resource path="res://assets-workfiles/textures/branch08_normal.png" type="Texture" id=4]
 [ext_resource path="res://shaders/wind_noise_4.png" type="Texture" id=5]
-[ext_resource path="res://assets-workfiles/textures/pine_blend.png" type="Texture" id=7]
+[ext_resource path="res://forest/pine_blend.png" type="Texture" id=7]
 [ext_resource path="res://assets-workfiles/textures/pine_blend_normal.png" type="Texture" id=8]
 [ext_resource path="res://assets-workfiles/textures/bark07_normal.png" type="Texture" id=9]
-[ext_resource path="res://assets-workfiles/textures/bark07.png" type="Texture" id=10]
+[ext_resource path="res://forest/bark07.png" type="Texture" id=10]
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 1 )

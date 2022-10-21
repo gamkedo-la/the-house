@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/bark07.png-ae4e9edb2976b4636abf60c682559824.s3tc.stex"
-path.etc2="res://.import/bark07.png-ae4e9edb2976b4636abf60c682559824.etc2.stex"
+path.s3tc="res://.import/branch08.png-a91fe35584891c2ab70d80ccff0f6954.s3tc.stex"
+path.etc2="res://.import/branch08.png-a91fe35584891c2ab70d80ccff0f6954.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets-workfiles/textures/bark07.png"
-dest_files=[ "res://.import/bark07.png-ae4e9edb2976b4636abf60c682559824.s3tc.stex", "res://.import/bark07.png-ae4e9edb2976b4636abf60c682559824.etc2.stex" ]
+source_file="res://forest/branch08.png"
+dest_files=[ "res://.import/branch08.png-a91fe35584891c2ab70d80ccff0f6954.s3tc.stex", "res://.import/branch08.png-a91fe35584891c2ab70d80ccff0f6954.etc2.stex" ]
 
 [params]
 

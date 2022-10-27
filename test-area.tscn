@@ -376,9 +376,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 0.529599, -5.21058 )
 [node name="plate2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675784, 1.48227, -4.48179 )
 
-[node name="bed_single" parent="." instance=ExtResource( 68 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64923, -4.76837e-07, -6.80823 )
-
 [node name="lighter" parent="." instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.756427, 0.144103, 4.82737 )
 
@@ -704,3 +701,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42.4902 )
 
 [node name="PineTreeNoLeaves" parent="Trees" instance=ExtResource( 66 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1611, 0, -64.314 )
+
+[node name="bed_single" parent="." instance=ExtResource( 68 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -6.9 )

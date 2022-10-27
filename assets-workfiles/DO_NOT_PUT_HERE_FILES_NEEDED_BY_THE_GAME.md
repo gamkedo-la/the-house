@@ -1,0 +1,1 @@
+this directory is for work files only, it is ignored by godot

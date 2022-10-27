@@ -64,8 +64,8 @@
 [ext_resource path="res://test_scenes/test-lock.tscn" type="PackedScene" id=62]
 [ext_resource path="res://furniture/dresser/Dresser.tscn" type="PackedScene" id=63]
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=64]
-[ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=65]
-[ext_resource path="res://forest/PineTreeNoLeaves.tscn" type="PackedScene" id=66]
+[ext_resource path="res://forest/tree/PineTree.tscn" type="PackedScene" id=65]
+[ext_resource path="res://forest/tree/PineTreeNoLeaves.tscn" type="PackedScene" id=66]
 [ext_resource path="res://test_scenes/WindowExample.gd" type="Script" id=67]
 [ext_resource path="res://furniture/bed/bed_single.tscn" type="PackedScene" id=68]
 

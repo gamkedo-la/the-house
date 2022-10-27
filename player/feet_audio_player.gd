@@ -8,25 +8,25 @@ enum StepSurface {
 
 onready var step_sounds = {
 	StepSurface.Grass : [
-		preload("res://audio/footsteps/footstep_grass-01.wav"),
-		preload("res://audio/footsteps/footstep_grass-02.wav"),
-		preload("res://audio/footsteps/footstep_grass-03.wav"),
-		preload("res://audio/footsteps/footstep_grass-04.wav"),
-		preload("res://audio/footsteps/footstep_grass-05.wav"),
+		preload("res://player/footsteps/footstep_grass-01.wav"),
+		preload("res://player/footsteps/footstep_grass-02.wav"),
+		preload("res://player/footsteps/footstep_grass-03.wav"),
+		preload("res://player/footsteps/footstep_grass-04.wav"),
+		preload("res://player/footsteps/footstep_grass-05.wav"),
 	],
 	StepSurface.House : [
-		preload("res://audio/footsteps/footstep_wood-01.wav"),
-		preload("res://audio/footsteps/footstep_wood-02.wav"),
-		preload("res://audio/footsteps/footstep_wood-03.wav"),
-		preload("res://audio/footsteps/footstep_wood-04.wav"),
-		preload("res://audio/footsteps/footstep_wood-05.wav"),
+		preload("res://player/footsteps/footstep_wood-01.wav"),
+		preload("res://player/footsteps/footstep_wood-02.wav"),
+		preload("res://player/footsteps/footstep_wood-03.wav"),
+		preload("res://player/footsteps/footstep_wood-04.wav"),
+		preload("res://player/footsteps/footstep_wood-05.wav"),
 	],
 	StepSurface.Dirt : [
-		preload("res://audio/footsteps/footstep_hard-01.wav"),
-		preload("res://audio/footsteps/footstep_hard-02.wav"),
-		preload("res://audio/footsteps/footstep_hard-03.wav"),
-		preload("res://audio/footsteps/footstep_hard-04.wav"),
-		preload("res://audio/footsteps/footstep_hard-05.wav"),
+		preload("res://player/footsteps/footstep_hard-01.wav"),
+		preload("res://player/footsteps/footstep_hard-02.wav"),
+		preload("res://player/footsteps/footstep_hard-03.wav"),
+		preload("res://player/footsteps/footstep_hard-04.wav"),
+		preload("res://player/footsteps/footstep_hard-05.wav"),
 	]
 }
 

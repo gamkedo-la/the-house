@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/footstep_grass-01.wav-50b8a4560bef10967bd9b48e8d1c0f7a.sample"
+path="res://.import/footstep_hard-05.wav-a92fc17294ba6f6d0ee330d5eecb7c30.sample"
 
 [deps]
 
-source_file="res://audio/footsteps/footstep_grass-01.wav"
-dest_files=[ "res://.import/footstep_grass-01.wav-50b8a4560bef10967bd9b48e8d1c0f7a.sample" ]
+source_file="res://player/footsteps/footstep_hard-05.wav"
+dest_files=[ "res://.import/footstep_hard-05.wav-a92fc17294ba6f6d0ee330d5eecb7c30.sample" ]
 
 [params]
 

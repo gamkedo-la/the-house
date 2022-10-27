@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/footstep_hard-05.wav-4f74c512ed355e46b2cf1f69f8c081df.sample"
+path="res://.import/footstep_hard-03.wav-c801a9022b873d69e5ebdcce247993c2.sample"
 
 [deps]
 
-source_file="res://audio/footsteps/footstep_hard-05.wav"
-dest_files=[ "res://.import/footstep_hard-05.wav-4f74c512ed355e46b2cf1f69f8c081df.sample" ]
+source_file="res://player/footsteps/footstep_hard-03.wav"
+dest_files=[ "res://.import/footstep_hard-03.wav-c801a9022b873d69e5ebdcce247993c2.sample" ]
 
 [params]
 

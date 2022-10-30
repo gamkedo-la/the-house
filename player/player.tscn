@@ -69,6 +69,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )
 [node name="Camera" type="Camera" parent="Head"]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
+far = 8192.0
 script = ExtResource( 4 )
 
 [node name="Sky" parent="Head/Camera" instance=ExtResource( 7 )]

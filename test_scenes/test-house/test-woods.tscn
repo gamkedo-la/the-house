@@ -1,8 +1,68 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://test_scenes/test-box/static-box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://forest/tree/PineTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test_scenes/test-house/test-house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/lighter/lighter.tscn" type="PackedScene" id=4]
 
-[node name="Spatial" type="Spatial"]
+[node name="test-woods" type="Spatial"]
 
-[node name="ground" parent="." instance=ExtResource( 1 )]
-transform = Transform( 15.2253, 0, 0, 0, 0.226412, 0, 0, 0, 18.0325, 0, 0, 0 )
+[node name="ambiant_lights" type="Node" parent="."]
+
+[node name="OmniLight" type="OmniLight" parent="ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )
+omni_range = 15.8959
+
+[node name="OmniLight2" type="OmniLight" parent="ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, 0 )
+omni_range = 15.8959
+
+[node name="OmniLight3" type="OmniLight" parent="ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, -25.1791 )
+omni_range = 15.8959
+
+[node name="SpotLight" type="SpotLight" parent="ambiant_lights"]
+transform = Transform( -0.498064, -0.407485, 0.765433, 0, 0.88271, 0.469918, -0.86714, 0.234049, -0.439646, 18.5571, 5.05364, -5.33785 )
+spot_range = 20.0
+spot_angle = 58.93
+
+[node name="ground" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299078, 0 )
+width = 52.4883
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox2" type="CSGBox" parent="ground"]
+transform = Transform( 0.999459, 0.0328761, 0, -0.0328761, 0.999459, 0, 0, 0, 1, 48.8716, -1.06516, -0.773018 )
+width = 45.417
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox3" type="CSGBox" parent="ground"]
+transform = Transform( 0.988897, 0.148603, 0, -0.148603, 0.988897, 0, 0, 0, 1, 96.0916, -5.36494, -0.773018 )
+width = 49.6416
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox4" type="CSGBox" parent="ground"]
+transform = Transform( 0.988897, 0.148603, 0, -0.148603, 0.988897, 0, 0, 0, 1, 203.577, -21.5169, -0.773018 )
+width = 169.543
+height = 0.302539
+depth = 57.024
+
+[node name="house" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, 0, 1.37633, 0 )
+
+[node name="trees" type="Node" parent="."]
+
+[node name="PineTree" parent="trees" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4409, -1.03122, 17.6915 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.0121821, 0, 0.999926, 0, 1, 0, -0.999926, 0, 0.0121821, 146.481, -8.98198, 0 )
+
+[node name="lighter" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.52466, -6.1681 )

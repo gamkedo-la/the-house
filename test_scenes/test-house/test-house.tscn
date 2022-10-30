@@ -1,0 +1,84 @@
+[gd_scene format=2]
+
+[node name="test-house" type="Spatial"]
+
+[node name="walls" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="main-walls" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, 0 )
+width = 20.1398
+height = 28.9795
+depth = 20.1315
+
+[node name="interior" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, 0 )
+operation = 2
+width = 19.1185
+height = 27.9184
+depth = 18.841
+
+[node name="entrance" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85855, 9.79948 )
+operation = 2
+height = 3.56738
+
+[node name="floor1" type="CSGBox" parent="walls"]
+use_collision = true
+width = 19.9442
+height = 0.214476
+depth = 18.9305
+
+[node name="floor2" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, 0 )
+use_collision = true
+width = 19.9442
+height = 0.214476
+depth = 18.9305
+
+[node name="front_porch_stairs" type="CSGBox" parent="walls"]
+transform = Transform( -0.0103333, 0.00508999, 2.19957, 0.322802, 0.946465, -0.00325995, -0.94641, 0.322765, -0.0251277, 0.10878, -1.66452, 14.4038 )
+width = 4.9375
+depth = 1.65202
+
+[node name="front_porch" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104329, 11.1506 )
+width = 19.8309
+height = 0.367293
+depth = 2.54528
+
+[node name="window1" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 2.44718, 9.44077 )
+operation = 2
+width = 1.5144
+height = 1.88358
+
+[node name="window2" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5361, 2.44718, 9.44077 )
+operation = 2
+width = 1.5144
+height = 1.88358
+
+[node name="window3" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89014, 2.44718, 4.58158 )
+operation = 2
+width = 1.5144
+height = 1.88358
+
+[node name="window4" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89014, 2.44718, -5.8691 )
+operation = 2
+width = 1.5144
+height = 1.88358
+
+[node name="window5" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68465, 2.44718, -5.8691 )
+operation = 2
+width = 1.5144
+height = 1.88358
+
+[node name="window6" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68465, 2.44718, 4.70461 )
+operation = 2
+width = 1.5144
+height = 1.88358

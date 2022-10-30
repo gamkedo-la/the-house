@@ -1,50 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://shaders/tree.shader" type="Shader" id=1]
+[ext_resource path="res://forest/tree/pine_leaf.material" type="Material" id=1]
 [ext_resource path="res://forest/tree/pine2.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://forest/tree/branch08.png" type="Texture" id=3]
-[ext_resource path="res://forest/tree/branch08_normal.png" type="Texture" id=4]
-[ext_resource path="res://shaders/wind_noise_4.png" type="Texture" id=5]
-[ext_resource path="res://forest/tree/pine_blend.png" type="Texture" id=7]
-[ext_resource path="res://forest/tree/pine_blend_normal.png" type="Texture" id=8]
-[ext_resource path="res://forest/tree/bark07_normal.png" type="Texture" id=9]
-[ext_resource path="res://forest/tree/bark07.png" type="Texture" id=10]
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 1 )
-shader_param/AlphaScissor = 1.0
-shader_param/WindStrength = 0.0
-shader_param/WindSpeed = 4.0
-shader_param/SwayStrength = 0.1
-shader_param/SwayOffset = 1.0
-shader_param/Albedo = ExtResource( 10 )
-shader_param/Normal = ExtResource( 9 )
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 1 )
-shader_param/AlphaScissor = 1.0
-shader_param/WindStrength = 0.0
-shader_param/WindSpeed = 4.0
-shader_param/SwayStrength = 0.1
-shader_param/SwayOffset = 1.0
-shader_param/Albedo = ExtResource( 7 )
-shader_param/Normal = ExtResource( 8 )
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
-shader_param/AlphaScissor = 0.5
-shader_param/WindStrength = 0.08
-shader_param/WindSpeed = 3.5
-shader_param/SwayStrength = 0.1
-shader_param/SwayOffset = 1.0
-shader_param/Albedo = ExtResource( 3 )
-shader_param/Normal = ExtResource( 4 )
-shader_param/WindNoise = ExtResource( 5 )
+[ext_resource path="res://forest/tree/pine_bark_blend.material" type="Material" id=3]
+[ext_resource path="res://forest/tree/pine_bark.material" type="Material" id=4]
 
 [node name="PineTree" type="Spatial"]
 
 [node name="pine2" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
-material/0 = SubResource( 3 )
-material/1 = SubResource( 2 )
-material/2 = SubResource( 1 )
+material/0 = ExtResource( 4 )
+material/1 = ExtResource( 3 )
+material/2 = ExtResource( 1 )

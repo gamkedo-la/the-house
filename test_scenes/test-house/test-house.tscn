@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 
 [node name="test-house" type="Spatial"]
 
@@ -82,3 +84,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4487, 2.44718, 4.70461 )
 operation = 2
 width = 1.5144
 height = 1.88358
+
+[node name="attic_entrance" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90571, 6.26371, 0.337835 )
+operation = 2
+height = 1.52814
+
+[node name="attic_ladders" type="Spatial" parent="."]
+
+[node name="ladder" parent="attic_ladders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
+
+[node name="ladder2" parent="attic_ladders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )

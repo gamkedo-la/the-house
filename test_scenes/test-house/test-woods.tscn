@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://forest/tree/PineTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://test_scenes/test-house/test-house.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/lighter/lighter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/torch/torch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/candles/candle.tscn" type="PackedScene" id=6]
 
 [node name="test-woods" type="Spatial"]
 
@@ -66,3 +68,15 @@ transform = Transform( 0.0121821, 0, 0.999926, 0, 1, 0, -0.999926, 0, 0.0121821,
 
 [node name="lighter" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.52466, -6.1681 )
+
+[node name="torch" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.386, 1.50565, -5.46616 )
+
+[node name="Candle" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39895, 1.65003, -4.48336 )
+
+[node name="Candle2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01548, 8.27789, -5.94286 )
+
+[node name="Candle3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10981, 3.04818, 13.5297 )

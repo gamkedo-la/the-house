@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://furniture/bed/bed_single.tscn" type="PackedScene" id=68]
 [ext_resource path="res://items/basement_key/Basement_Key.tscn" type="PackedScene" id=69]
 [ext_resource path="res://items/kitchen_key/Kitchen_Key.tscn" type="PackedScene" id=70]
+[ext_resource path="res://items/gold_bar/Gold.tscn" type="PackedScene" id=71]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -713,3 +714,6 @@ transform = Transform( -0.154486, 0.987995, 0, -0.987995, -0.154486, 0, 0, 0, 1,
 
 [node name="Basement Key" parent="." instance=ExtResource( 69 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5978, 1.08976, -12.6751 )
+
+[node name="Gold Bar" parent="." instance=ExtResource( 71 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57671, 1.25813, -7.56161 )

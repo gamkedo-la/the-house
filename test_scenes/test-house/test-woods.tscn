@@ -55,6 +55,13 @@ width = 169.543
 height = 0.302539
 depth = 57.024
 
+[node name="house_hole" type="CSGBox" parent="ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513003, 0, 0 )
+operation = 2
+width = 20.3819
+height = 33.9566
+depth = 27.8418
+
 [node name="house" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, 0, 1.37633, 0 )
 
@@ -79,4 +86,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39895, 1.65003, -4.48336 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01548, 8.27789, -5.94286 )
 
 [node name="Candle3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10981, 3.04818, 13.5297 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10981, 2.78347, 13.5297 )

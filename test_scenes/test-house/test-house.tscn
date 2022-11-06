@@ -52,41 +52,70 @@ depth = 2.54528
 [node name="window1" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 2.44718, 9.44077 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
 
 [node name="window2" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5361, 2.44718, 9.44077 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
 
 [node name="window3" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2476, 2.44718, 4.58158 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
 
 [node name="window4" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.175, 2.44718, -5.8691 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
 
 [node name="window5" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8892, 2.44718, -5.8691 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
 
 [node name="window6" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4487, 2.44718, 4.70461 )
 operation = 2
-width = 1.5144
-height = 1.88358
+width = 1.936
+height = 2.413
+
+[node name="window7" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 9.10439, 9.44077 )
+operation = 2
+width = 1.936
+height = 2.413
+
+[node name="window8" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5361, 9.10439, 9.44077 )
+operation = 2
+width = 1.936
+height = 2.413
+
+[node name="window9" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.175, 9.10439, -5.8691 )
+operation = 2
+width = 1.936
+height = 2.413
+
+[node name="window10" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8892, 9.10439, -5.8691 )
+operation = 2
+width = 1.936
+height = 2.413
 
 [node name="attic_entrance" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90571, 6.26371, 0.337835 )
+operation = 2
+height = 1.52814
+
+[node name="basement_entrance" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -3.34959 )
 operation = 2
 height = 1.52814
 
@@ -96,4 +125,13 @@ height = 1.52814
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
 
 [node name="ladder2" parent="attic_ladders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )
+
+[node name="basement_ladders2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16716, -6.72602, -3.70133 )
+
+[node name="ladder" parent="basement_ladders2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
+
+[node name="ladder2" parent="basement_ladders2" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )

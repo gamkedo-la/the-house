@@ -144,6 +144,9 @@ func update_walk(delta) -> void:
 		oriented_movement += gravity
 
 	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
+	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
+	# is a failsafe to present it from ruining a game session:
+	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)
 	
 	if movement_translation.length() > 0.0:
 		_feet_audio.begin_walk(FootAudio.StepSurface.House)

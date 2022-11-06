@@ -34,3 +34,11 @@ static func random_selection(array: Array):
 	var selected = array[ randi() % array.size() ]
 	return selected
 
+static func nan_to_zero(vec: Vector3) -> Vector3:
+	if is_nan(vec.x):
+		vec.x = 0
+	if is_nan(vec.y):
+		vec.y = 0
+	if is_nan(vec.z):
+		vec.z = 0
+	return vec

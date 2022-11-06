@@ -7,14 +7,14 @@ use_collision = true
 
 [node name="main-walls" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, 0 )
-width = 20.1398
+width = 27.468
 height = 28.9795
 depth = 20.1315
 
 [node name="interior" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 2.38675, 0.0206141 )
 operation = 2
-width = 19.1185
+width = 26.097
 height = 27.9184
 depth = 18.841
 
@@ -25,14 +25,14 @@ height = 3.56738
 
 [node name="floor1" type="CSGBox" parent="walls"]
 use_collision = true
-width = 19.9442
+width = 26.607
 height = 0.214476
 depth = 18.9305
 
 [node name="floor2" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, 0 )
 use_collision = true
-width = 19.9442
+width = 26.607
 height = 0.214476
 depth = 18.9305
 
@@ -60,25 +60,25 @@ width = 1.5144
 height = 1.88358
 
 [node name="window3" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89014, 2.44718, 4.58158 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2476, 2.44718, 4.58158 )
 operation = 2
 width = 1.5144
 height = 1.88358
 
 [node name="window4" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89014, 2.44718, -5.8691 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.175, 2.44718, -5.8691 )
 operation = 2
 width = 1.5144
 height = 1.88358
 
 [node name="window5" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68465, 2.44718, -5.8691 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8892, 2.44718, -5.8691 )
 operation = 2
 width = 1.5144
 height = 1.88358
 
 [node name="window6" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68465, 2.44718, 4.70461 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4487, 2.44718, 4.70461 )
 operation = 2
 width = 1.5144
 height = 1.88358

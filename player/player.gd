@@ -9,6 +9,7 @@ export var gravity_factor : float= 100.0
 
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-89.0)
+const floor_max_angle : float = deg2rad(200)
 
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
@@ -143,7 +144,7 @@ func update_walk(delta) -> void:
 		var gravity = _gravity * delta * gravity_factor
 		oriented_movement += gravity
 
-	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
+	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, floor_max_angle)
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
 	# is a failsafe to present it from ruining a game session:
 	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)

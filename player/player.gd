@@ -227,6 +227,7 @@ func drop_item() -> void:
 	var item = get_item_in_hand()
 	assert(item is InteractiveItem)
 	print("PLAYER: drop item %s" % item)
+	_held_item.disconnect("snapping_into_position", self, "_on_item_snapping_into_posiiton")
 	_held_item = null
 	var drop_spot : Node = item # Drop where the item is now
 	item.drop(drop_spot)

@@ -63,6 +63,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155941, 0.747836, 1 )
 bus = "Steps"
 script = ExtResource( 12 )
 
+[node name="player shadow caster mesh" type="CSGCylinder" parent="Body"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.5 )
+cast_shadow = 3
+radius = 0.5
+height = 2.0
+sides = 16
+
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
 [ext_resource path="res://player/fsm/state-examining.gd" type="Script" id=11]
 [ext_resource path="res://player/feet_audio_player.gd" type="Script" id=12]
+[ext_resource path="res://player/shadow_mesh/shadow_mesh.obj" type="ArrayMesh" id=13]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -63,12 +64,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155941, 0.747836, 1 )
 bus = "Steps"
 script = ExtResource( 12 )
 
-[node name="player shadow caster mesh" type="CSGCylinder" parent="Body"]
+[node name="shadow_cylinder" type="CSGCylinder" parent="Body"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.5 )
+visible = false
 cast_shadow = 3
 radius = 0.5
 height = 2.0
 sides = 16
+
+[node name="shadow_mesh" type="MeshInstance" parent="Body"]
+transform = Transform( -0.4, -3.49691e-08, -1.74846e-08, 1.74846e-08, 7.64274e-16, -0.4, 3.49691e-08, -0.4, 7.64274e-16, 0, 0, 1 )
+cast_shadow = 3
+mesh = ExtResource( 13 )
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/shadow_mesh.obj-cab5b1622b1ca980c2d1bad0de7db9ba.mesh"
+
+[deps]
+
+files=[ "res://.import/shadow_mesh.obj-cab5b1622b1ca980c2d1bad0de7db9ba.mesh" ]
+
+source_file="res://player/shadow_mesh/shadow_mesh.obj"
+dest_files=[ "res://.import/shadow_mesh.obj-cab5b1622b1ca980c2d1bad0de7db9ba.mesh", "res://.import/shadow_mesh.obj-cab5b1622b1ca980c2d1bad0de7db9ba.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

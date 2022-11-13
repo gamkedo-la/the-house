@@ -8,17 +8,17 @@
 use_collision = true
 
 [node name="main-walls" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, -3.26608 )
 width = 27.468
-height = 28.9795
-depth = 20.1315
+height = 18.03
+depth = 26.969
 
 [node name="interior" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 2.38675, 0.0206141 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 2.38675, -3.36962 )
 operation = 2
 width = 26.097
-height = 27.9184
-depth = 18.841
+height = 17.642
+depth = 25.0
 
 [node name="entrance" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85855, 9.79948 )
@@ -26,17 +26,18 @@ operation = 2
 height = 3.56738
 
 [node name="floor1" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25022 )
 use_collision = true
 width = 26.607
 height = 0.214476
-depth = 18.9305
+depth = 26.344
 
 [node name="floor2" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, -3.25022 )
 use_collision = true
 width = 26.607
 height = 0.214476
-depth = 18.9305
+depth = 26.344
 
 [node name="front_porch_stairs" type="CSGBox" parent="walls"]
 transform = Transform( -0.0103333, 0.00508999, 2.19957, 0.322802, 0.946465, -0.00325995, -0.94641, 0.322765, -0.0251277, 0.10878, -1.66452, 14.4038 )

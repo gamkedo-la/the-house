@@ -9,6 +9,9 @@
 
 [node name="test-woods" type="Spatial"]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 122.127, 0.770271, 0 )
+
 [node name="ambiant_lights" type="Node" parent="."]
 
 [node name="OmniLight" type="OmniLight" parent="ambiant_lights"]
@@ -69,9 +72,6 @@ transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008,
 
 [node name="PineTree" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4409, -1.03122, 17.6915 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.0121821, 0, 0.999926, 0, 1, 0, -0.999926, 0, 0.0121821, 146.481, -8.98198, 0 )
 
 [node name="lighter" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.52466, -6.1681 )

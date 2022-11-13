@@ -317,7 +317,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 0.0439352, 0.0553909, 0.0142493 )
+extents = Vector3( 0.0439352, 0.0553909, 0.0329471 )
 
 [node name="lighter" type="RigidBody"]
 mass = 0.2

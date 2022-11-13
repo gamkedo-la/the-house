@@ -119,6 +119,7 @@ operation = 2
 height = 1.52814
 
 [node name="attic_ladders" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.985088, 0.172049, 0, -0.172049, 0.985088, 0, 0.110401, 1.21054 )
 
 [node name="ladder" parent="attic_ladders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
@@ -127,7 +128,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )
 
 [node name="basement_ladders2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16716, -6.72602, -3.70133 )
+transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, -3.16716, -6.47738, -2.71245 )
 
 [node name="ladder" parent="basement_ladders2" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )

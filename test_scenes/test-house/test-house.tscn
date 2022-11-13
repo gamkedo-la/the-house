@@ -39,16 +39,14 @@ width = 26.607
 height = 0.214476
 depth = 26.344
 
-[node name="front_porch_stairs" type="CSGBox" parent="walls"]
-transform = Transform( -0.0103333, 0.00508999, 2.19957, 0.322802, 0.946465, -0.00325995, -0.94641, 0.322765, -0.0251277, 0.10878, -1.66452, 14.4038 )
-width = 4.9375
-depth = 1.65202
-
 [node name="front_porch" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104329, 11.1506 )
 width = 19.8309
 height = 0.367293
 depth = 2.54528
+
+[node name="ladder" parent="walls/front_porch" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.940845, 0.338836, 0, -0.338836, 0.940845, 0, -3.61047, 2.63428 )
 
 [node name="window1" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 2.44718, 9.44077 )

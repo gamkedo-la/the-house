@@ -16,18 +16,22 @@ transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 122.127, 
 
 [node name="OmniLight" type="OmniLight" parent="ambiant_lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )
+shadow_enabled = true
 omni_range = 15.8959
 
 [node name="OmniLight2" type="OmniLight" parent="ambiant_lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, 0 )
+shadow_enabled = true
 omni_range = 15.8959
 
 [node name="OmniLight3" type="OmniLight" parent="ambiant_lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, -25.1791 )
+shadow_enabled = true
 omni_range = 15.8959
 
 [node name="SpotLight" type="SpotLight" parent="ambiant_lights"]
 transform = Transform( -0.498064, -0.407485, 0.765433, 0, 0.88271, 0.469918, -0.86714, 0.234049, -0.439646, 18.5571, 5.05364, -5.33785 )
+shadow_enabled = true
 spot_range = 20.0
 spot_angle = 58.93
 

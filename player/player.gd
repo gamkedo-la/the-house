@@ -31,6 +31,7 @@ onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
 onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
+var _is_crouch_locked := false
 var _crouch_duration := 0.33
 
 var _is_holding_front := false
@@ -71,12 +72,13 @@ func exploration_update(delta: float):
 	update_interraction_ray()
 
 # TODO: make an option to decide if the crouch action is a toggle or an input hold
-#	if Input.is_action_just_pressed("toggle_crouch"):
-#		toggle_crouch()
+	if Input.is_action_just_pressed("toggle_crouch"):
+		toggle_crouch()
+		
 	# Currently: hold to crouch
-	if Input.is_action_pressed("toggle_crouch"):
+	if Input.is_action_pressed("crouch"):
 		crouch();
-	else:
+	elif not _is_crouch_locked:
 		get_up()
 
 # Common input event handling for when the player can explore freely
@@ -307,8 +309,10 @@ func is_crouched() -> bool:
 func toggle_crouch() -> void:
 	print("Toggle Crouching")
 	if _is_crouched:
+		_is_crouch_locked = false
 		get_up()
 	else:
+		_is_crouch_locked = true
 		crouch()
 
 func get_camera() -> Camera:

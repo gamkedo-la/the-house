@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://player/fsm/state-examining.gd" type="Script" id=11]
 [ext_resource path="res://player/feet_audio_player.gd" type="Script" id=12]
 [ext_resource path="res://player/shadow_mesh/shadow_mesh_one_arm.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -76,6 +77,7 @@ sides = 16
 transform = Transform( -0.38637, 3.43733e-08, -0.103528, 0.103528, -4.52533e-09, -0.38637, -3.43733e-08, -0.4, -4.52533e-09, 0, 0, 1 )
 cast_shadow = 3
 mesh = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )

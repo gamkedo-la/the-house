@@ -7,68 +7,6 @@
 [node name="walls" type="CSGCombiner" parent="."]
 use_collision = true
 
-[node name="kitchen_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.31411, 1.31 )
-width = 0.4
-height = 6.5
-depth = 16.4936
-
-[node name="kitchen_entrance" type="CSGBox" parent="walls/kitchen_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.34743 )
-operation = 2
-height = 3.56738
-
-[node name="bathroom_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.31411, -11.3904 )
-width = 0.4
-height = 6.5
-depth = 8.97819
-
-[node name="bathroom_entrance" type="CSGBox" parent="walls/bathroom_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.67395 )
-operation = 2
-height = 3.56738
-
-[node name="bedroom_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46923, 3.31411, -11.3904 )
-width = 0.4
-height = 6.5
-depth = 8.97819
-
-[node name="bedroom_entrance" type="CSGBox" parent="walls/bedroom_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.67395 )
-operation = 2
-height = 3.56738
-
-[node name="living_room_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7888, 3.35867, 1.31 )
-width = 0.4
-height = 6.5
-depth = 16.4936
-
-[node name="living_room_entrance" type="CSGBox" parent="walls/living_room_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27234, -1.46774, 2.34743 )
-operation = 2
-height = 3.56738
-
-[node name="living_back_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99332, 3.31469, -6.72199 )
-width = 10.54
-height = 6.5
-depth = 0.4
-
-[node name="kitchen_back_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81654, 3.31469, -6.72199 )
-width = 10.54
-height = 6.5
-depth = 0.4
-
-[node name="corridor_cross_wall" type="CSGBox" parent="walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226745, 3.31469, -11.1808 )
-width = 14.5902
-height = 6.5
-depth = 0.4
-
 [node name="exterior_walls" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, -3.26608 )
 width = 27.468
@@ -152,6 +90,68 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8892, 6.71922, -2.60302 )
 operation = 2
 width = 1.936
 height = 2.413
+
+[node name="kitchen_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.31411, 1.31 )
+width = 0.4
+height = 6.5
+depth = 16.4936
+
+[node name="kitchen_entrance" type="CSGBox" parent="walls/kitchen_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.34743 )
+operation = 2
+height = 3.56738
+
+[node name="bathroom_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.31411, -11.3904 )
+width = 0.4
+height = 6.5
+depth = 8.97819
+
+[node name="bathroom_entrance" type="CSGBox" parent="walls/bathroom_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.67395 )
+operation = 2
+height = 3.56738
+
+[node name="bedroom_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46923, 3.31411, -11.3904 )
+width = 0.4
+height = 6.5
+depth = 8.97819
+
+[node name="bedroom_entrance" type="CSGBox" parent="walls/bedroom_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.67395 )
+operation = 2
+height = 3.56738
+
+[node name="living_room_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7888, 3.35867, 1.31 )
+width = 0.4
+height = 6.5
+depth = 16.4936
+
+[node name="living_room_entrance" type="CSGBox" parent="walls/living_room_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27234, -1.46774, 2.34743 )
+operation = 2
+height = 3.56738
+
+[node name="living_back_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99332, 3.31469, -6.72199 )
+width = 10.54
+height = 6.5
+depth = 0.4
+
+[node name="kitchen_back_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81654, 3.31469, -6.72199 )
+width = 10.54
+height = 6.5
+depth = 0.4
+
+[node name="corridor_cross_wall" type="CSGBox" parent="walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226745, 3.31469, -11.1808 )
+width = 14.5902
+height = 6.5
+depth = 0.4
 
 [node name="floor1" type="CSGBox" parent="walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25022 )

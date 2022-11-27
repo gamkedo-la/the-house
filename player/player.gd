@@ -2,9 +2,9 @@ extends KinematicBody
 
 class_name Player
 
-export var walk_speed : float = 200.0
-export var crouch_speed : float = 100.0
-export var climb_speed : float = 75.0
+export var walk_speed : float = 300.0
+export var crouch_speed : float = 150.0
+export var climb_speed : float = 100.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
 

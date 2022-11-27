@@ -155,7 +155,7 @@ script = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14163, 11.5689 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.987047, 11.5689 )
 
 [node name="box" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2715, 7.23082, -35.2269 )

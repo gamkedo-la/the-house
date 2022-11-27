@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/treasure_chest.glb-cc68da1328134351b4e580f8016cc08b.scn"
+path="res://.import/treasure_chest.glb-9e198388c2f59d449d2236cf5c8546c7.scn"
 
 [deps]
 
-source_file="res://furniture/treasure_chest/treasure_chest.glb"
-dest_files=[ "res://.import/treasure_chest.glb-cc68da1328134351b4e580f8016cc08b.scn" ]
+source_file="res://items/treasure_chest/treasure_chest.glb"
+dest_files=[ "res://.import/treasure_chest.glb-9e198388c2f59d449d2236cf5c8546c7.scn" ]
 
 [params]
 

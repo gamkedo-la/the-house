@@ -2,8 +2,9 @@ extends KinematicBody
 
 class_name Player
 
-export var walk_speed : float = 300.0
-export var climb_speed : float = 200.0
+export var walk_speed : float = 200.0
+export var crouch_speed : float = 100.0
+export var climb_speed : float = 75.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
 
@@ -134,10 +135,8 @@ func update_walk(delta) -> void:
 		assert(false, "unhandleded movement mode") 
 
 	var speed = current_move_speed()
-	if _movement_mode == MovementMode.Climbing:
-		speed = climb_speed
-	
 	var movement_translation = translation.normalized() * speed * delta
+
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
@@ -145,7 +144,7 @@ func update_walk(delta) -> void:
 	if _movement_mode == MovementMode.Walking:
 		var gravity = _gravity * delta * gravity_factor
 		oriented_movement += gravity
-
+		
 	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, floor_max_angle)
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
 	# is a failsafe to present it from ruining a game session:
@@ -159,13 +158,12 @@ func update_walk(delta) -> void:
 	
 
 func current_move_speed() -> float:
-	if _is_crouched:
-		return crouch_speed()
+	if _movement_mode == MovementMode.Climbing:
+		return climb_speed
+	elif _is_crouched:
+		return crouch_speed
 	else:
 		return walk_speed
-
-func crouch_speed() -> float:
-	return walk_speed / 2
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:

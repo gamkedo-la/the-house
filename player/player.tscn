@@ -54,7 +54,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.770271, 0 )
 collision_layer = 0
 input_ray_pickable = false
 script = ExtResource( 1 )
-walk_speed = 500.0
 
 [node name="Body" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

@@ -12,7 +12,7 @@
 [ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
 [ext_resource path="res://player/fsm/state-examining.gd" type="Script" id=11]
 [ext_resource path="res://player/feet_audio_player.gd" type="Script" id=12]
-[ext_resource path="res://player/shadow_mesh/shadow_mesh_one_arm.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://player/shadow_mesh/shadow_mesh_one_arm_no_legs.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleShape" id=1]

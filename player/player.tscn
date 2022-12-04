@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -20,6 +20,12 @@ resource_local_to_scene = true
 margin = 0.001
 radius = 0.5
 height = 1.2
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+albedo_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true
@@ -70,10 +76,10 @@ script = ExtResource( 12 )
 [node name="shadow_mesh" type="MeshInstance" parent="."]
 unique_name_in_owner = true
 transform = Transform( -0.38637, 3.43733e-08, -0.103528, 2.98479e-08, 0.4, 2.14141e-08, 0.103528, 1.29592e-08, -0.38637, 0, -0.739554, -4.37114e-08 )
-cast_shadow = 3
 generate_lightmap = false
 mesh = ExtResource( 13 )
 skeleton = NodePath("../Body")
+material/0 = SubResource( 6 )
 script = ExtResource( 14 )
 
 [node name="Head" type="Spatial" parent="."]

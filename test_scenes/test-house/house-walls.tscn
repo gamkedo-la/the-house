@@ -204,10 +204,12 @@ operation = 2
 height = 1.52814
 
 [node name="front_porch" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104329, 11.1506 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0692931, 11.1506 )
 width = 19.8309
 height = 0.367293
 depth = 2.54528
 
 [node name="ladder" parent="front_porch" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.940845, 0.338836, 0, -0.338836, 0.940845, 0, -3.61047, 2.63428 )
+
+[editable path="front_porch/ladder"]

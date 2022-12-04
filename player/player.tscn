@@ -193,15 +193,3 @@ script = ExtResource( 9 )
 
 [node name="State_HoldingItem" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 10 )
-
-[node name="ignore_me" type="Spatial" parent="."]
-visible = false
-
-[node name="CSGBox" type="CSGBox" parent="ignore_me"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
-width = 45.866
-depth = 102.408
-
-[node name="DirectionalLight" type="DirectionalLight" parent="ignore_me"]
-transform = Transform( 0.790668, 0.299724, -0.533862, 0, 0.871975, 0.48955, 0.612245, -0.387072, 0.689443, 0, 0, 0 )
-shadow_enabled = true

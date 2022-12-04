@@ -15,7 +15,7 @@ bus = "Music"
 script = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 122.127, 0.770271, 0 )
+transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 42.9512, 3.43626, -4.71924e-06 )
 
 [node name="ambiant_lights" type="Node" parent="."]
 

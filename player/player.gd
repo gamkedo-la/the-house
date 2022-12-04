@@ -9,7 +9,7 @@ export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
 
 const limit_up_angle : float = deg2rad(75.0)
-const limit_down_angle : float = deg2rad(-65.0)
+const limit_down_angle : float = deg2rad(-80.0)
 const floor_max_angle : float = deg2rad(200)
 
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)

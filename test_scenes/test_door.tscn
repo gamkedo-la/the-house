@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 2, 4, 0.1 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -1, -2, -0.05, -1, -2, 0.05, -1, 2, -0.05, 1, -2, -0.05, 1, -2, 0.05, -1, 2, 0.05, 1, 2, -0.05, 1, 2, 0.05 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 4 )
+size = Vector3( 0.1, 4, 0.1 )
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -0.05, -2, -0.05, -0.05, -2, 0.05, -0.05, 2, -0.05, 0.05, -2, -0.05, 0.05, -2, 0.05, -0.05, 2, 0.05, 0.05, 2, -0.05, 0.05, 2, 0.05 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="physics-door" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10242, 2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="physics-door"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="physics-door"]
+shape = SubResource( 2 )
+
+[node name="door-frame" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="door-frame"]
+mesh = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="door-frame"]
+shape = SubResource( 5 )
+
+[node name="HingeJoint" type="HingeJoint" parent="."]
+transform = Transform( 1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -0.439139, -0.00138485, 0.000987232 )
+nodes/node_a = NodePath("../physics-door")
+nodes/node_b = NodePath("../door-frame")
+angular_limit/enable = true
+angular_limit/upper = 110.0
+angular_limit/lower = 0.0

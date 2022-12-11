@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creak-rusty.mp3-8f747c0cf57bdd3fa4b3424c0b8d2807.mp3str"
+
+[deps]
+
+source_file="res://sounds/creak-rusty.mp3"
+dest_files=[ "res://.import/creak-rusty.mp3-8f747c0cf57bdd3fa4b3424c0b8d2807.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

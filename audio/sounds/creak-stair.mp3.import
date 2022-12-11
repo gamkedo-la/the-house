@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creak-stair.mp3-f419344eb4fa7561b623d9ff822f6921.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creak-stair.mp3"
+dest_files=[ "res://.import/creak-stair.mp3-f419344eb4fa7561b623d9ff822f6921.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

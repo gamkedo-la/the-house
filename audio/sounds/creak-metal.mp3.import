@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creak-metal.mp3-692bf19fca78c37fa99532d02bdfb9ec.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creak-metal.mp3"
+dest_files=[ "res://.import/creak-metal.mp3-692bf19fca78c37fa99532d02bdfb9ec.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

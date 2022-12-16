@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creak-floor.mp3-ca9c765b7c3312531956a59d63bb9bce.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creak-floor.mp3"
+dest_files=[ "res://.import/creak-floor.mp3-ca9c765b7c3312531956a59d63bb9bce.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

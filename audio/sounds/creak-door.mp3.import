@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creak-door.mp3-2785053134ca7a674d755dd0124a78f4.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creak-door.mp3"
+dest_files=[ "res://.import/creak-door.mp3-2785053134ca7a674d755dd0124a78f4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

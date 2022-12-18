@@ -57,7 +57,7 @@
 [ext_resource path="res://items/mushrooms/brown/mushroom_2.glb" type="PackedScene" id=55]
 [ext_resource path="res://items/mushrooms/brown/mushroom_5.glb" type="PackedScene" id=56]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=57]
-[ext_resource path="res://items/torch.tscn" type="PackedScene" id=58]
+[ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=58]
 [ext_resource path="res://items/knife_cleaver/knife_cleaver.glb" type="PackedScene" id=59]
 [ext_resource path="res://items/candle.tscn" type="PackedScene" id=60]
 [ext_resource path="res://test_scenes/test-key.tscn" type="PackedScene" id=61]
@@ -707,8 +707,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57671, 1.25813, -7.56161 )
 [node name="cauldron" parent="objects" instance=ExtResource( 72 )]
 transform = Transform( -0.202565, 0, 0.979269, 0, 1, 0, -0.979269, 0, -0.202565, 6.35919, 0.000980616, -5.60618 )
 
-[node name="lantern" parent="objects" instance=ExtResource( 73 )]
+[node name="lantern_modern" parent="objects" instance=ExtResource( 73 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772186, 0.167537, 4.88872 )
+
+[node name="lantern_old" parent="objects" instance=ExtResource( 74 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510581, 0.00053823, 4.55489 )
 
 [node name="knife_cleaver" parent="objects" instance=ExtResource( 59 )]
 transform = Transform( 0.257841, -0.966187, 0, 0.966187, 0.257841, 0, 0, 0, 1, -0.121716, 0.948919, -6.45703 )
@@ -727,6 +730,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47811, 0.316695, 5.55657 )
 
 [node name="bed_single" parent="objects" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -6.9 )
-
-[node name="lantern" parent="." instance=ExtResource( 74 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510581, 0.00053823, 4.55489 )

@@ -250,7 +250,7 @@ func use_item() -> void:
 func _resume_holding_item() -> void:
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
-	held_item.track(_hand_node, held_item.follow_orientation_when_held) # TODO: Refactor so that the items script handles this
+	held_item.track(_hand_node, held_item.orientation_hand_held) # TODO: Refactor so that the items script handles this
 
 		
 func begin_item_examination():
@@ -272,7 +272,7 @@ func begin_center_item_holding() -> void:
 	_is_holding_front = true
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
-	held_item.track(_center_holding_spot, held_item.follow_orientation_when_held_front)
+	held_item.track(_center_holding_spot, held_item.orientation_held_front)
 
 func end_center_item_holding() -> void:
 	_is_holding_front = false

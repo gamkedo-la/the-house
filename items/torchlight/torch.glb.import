@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/glass.glb-3eccf271e3b979cd19cbcd88fc8868f2.scn"
+path="res://.import/torch.glb-b513900afbff2afc3b4892333629eb89.scn"
 
 [deps]
 
-source_file="res://items/torch/glass.glb"
-dest_files=[ "res://.import/glass.glb-3eccf271e3b979cd19cbcd88fc8868f2.scn" ]
+source_file="res://items/torchlight/torch.glb"
+dest_files=[ "res://.import/torch.glb-b513900afbff2afc3b4892333629eb89.scn" ]
 
 [params]
 

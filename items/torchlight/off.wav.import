@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/off.wav-4ef4c440ec462771620d0c9702b628a2.sample"
+path="res://.import/off.wav-68dc3422411a58c26c06cf1488fda9fa.sample"
 
 [deps]
 
-source_file="res://items/torch/off.wav"
-dest_files=[ "res://.import/off.wav-4ef4c440ec462771620d0c9702b628a2.sample" ]
+source_file="res://items/torchlight/off.wav"
+dest_files=[ "res://.import/off.wav-68dc3422411a58c26c06cf1488fda9fa.sample" ]
 
 [params]
 

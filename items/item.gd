@@ -11,12 +11,21 @@ export var highlightable := true
 export var highlight_color : Color  = "#ff6f00"
 export var highlight_width := 5.0
 export var mesh_node: NodePath
-export var follow_orientation_when_held_front := true
-export var follow_orientation_when_held := true
+
+enum TrackingOrientation {
+	NONE, # The item will not orient itself at all.
+	FOLLOW, # The item will follow the orientation being tracked.
+	FOLLOW_Y, # The item will orient like the tracked node but will not rotate on the plane XZ.
+}
+
+export(TrackingOrientation) var orientation_hand_held = TrackingOrientation.FOLLOW
+export(TrackingOrientation) var orientation_held_front = TrackingOrientation.FOLLOW_Y
+
+
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
 var _tracking_position = Spatial
-var _tracking_rotation_enabled = true
+var _tracking_rotation_enabled = TrackingOrientation.FOLLOW
 var _is_taken := false
 
 const _tracking_speed := 500.0
@@ -98,7 +107,7 @@ static func _cancel_velocity(node: Node):
 func take(hold_where: Spatial) -> void:
 	assert(can_be_taken)
 	assert(not _is_taken)
-	track(hold_where, follow_orientation_when_held)
+	track(hold_where, orientation_hand_held)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 	_is_taken = true
@@ -121,17 +130,19 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 	var item_linear_velocity : Vector3 = translation_to_target * _tracking_speed * delta
 	linear_velocity = base_linear_velocity + item_linear_velocity
 		
-	var orientation_to_track : Basis
-	if(_tracking_rotation_enabled):
-		orientation_to_track = _tracking_position.global_transform.basis
-	else:
-		orientation_to_track = Basis.IDENTITY # TODO: keep track of the rotation around the global y axis
+	var orientation_to_track : Basis = Basis.IDENTITY
+	match _tracking_rotation_enabled:
+		TrackingOrientation.FOLLOW:
+			orientation_to_track = _tracking_position.global_transform.basis
+		TrackingOrientation.FOLLOW_Y:
+			orientation_to_track = orientation_to_track.rotated(Vector3.UP, _tracking_position.global_transform.basis.get_euler().y)
+		
 		
 	var rotation_to_target_direction := utility.calc_angular_velocity(global_transform.basis, orientation_to_track)
 	angular_velocity = rotation_to_target_direction * _tracking_angular_speed * delta
 		
 	
-func track(target: Spatial, enable_rotation_tracking := true):
+func track(target: Spatial, enable_rotation_tracking := TrackingOrientation.FOLLOW):
 	_tracking_position = target
 	_tracking_rotation_enabled = enable_rotation_tracking
 	

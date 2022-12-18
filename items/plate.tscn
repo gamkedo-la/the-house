@@ -28,6 +28,7 @@ radius = 0.203
 mass = 0.5
 continuous_cd = true
 script = ExtResource( 1 )
+orientation_held_front = 2
 
 [node name="plate" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )

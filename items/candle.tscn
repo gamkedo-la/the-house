@@ -17,7 +17,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175556, 0 )
 mass = 2.04082
 angular_damp = 18.238
 script = ExtResource( 3 )
-follow_orientation_when_held_front = false
+orientation_hand_held = 2
 
 [node name="candle-01" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175218, 0 )

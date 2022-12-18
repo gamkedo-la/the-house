@@ -4,7 +4,7 @@
 [ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://test_scenes/test-house/test-house.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://items/torch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/candle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=7]
 

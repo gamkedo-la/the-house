@@ -322,7 +322,6 @@ extents = Vector3( 0.0439352, 0.0553909, 0.0329471 )
 [node name="lighter" type="RigidBody"]
 mass = 0.2
 script = ExtResource( 4 )
-follow_orientation_when_held_front = false
 
 [node name="Lighter" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

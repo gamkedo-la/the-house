@@ -1695,7 +1695,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Material: 2880602306128, "Material::lantern_paint", "" {
+	Material: 2880602306128, "Material::lantern_paint_old", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0

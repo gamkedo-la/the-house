@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://items/lantern/Lantern.fbx" type="PackedScene" id=1]
-[ext_resource path="res://items/item.gd" type="Script" id=2]
-[ext_resource path="res://items/lantern/lantern-light.gd" type="Script" id=3]
+[ext_resource path="res://items/lantern/lantern-light-modern.gd" type="Script" id=1]
+[ext_resource path="res://items/lantern/lantern_modern.fbx" type="PackedScene" id=2]
+[ext_resource path="res://items/item.gd" type="Script" id=3]
 
 [sub_resource type="CylinderShape" id=1]
 height = 2.16952
@@ -10,7 +10,7 @@ radius = 0.7104
 
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 follow_orientation_when_held_front = false
 follow_orientation_when_held = false
 
@@ -18,11 +18,11 @@ follow_orientation_when_held = false
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
 shape = SubResource( 1 )
 
-[node name="lantern-mesh" parent="CollisionShape" instance=ExtResource( 1 )]
+[node name="lantern-mesh" parent="CollisionShape" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0 )
 
 [node name="lantern-light" type="Spatial" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 
 [node name="light" type="OmniLight" parent="lantern-light"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185831, 0 )

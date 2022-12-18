@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Lantern.fbx-bb653fca1c227a4626f6bb460bba0c08.scn"
+path="res://.import/lantern_modern.fbx-d54bf030cb2c30ffa7b763eeddc00da7.scn"
 
 [deps]
 
-source_file="res://items/lantern/Lantern.fbx"
-dest_files=[ "res://.import/Lantern.fbx-bb653fca1c227a4626f6bb460bba0c08.scn" ]
+source_file="res://items/lantern/lantern_modern.fbx"
+dest_files=[ "res://.import/lantern_modern.fbx-d54bf030cb2c30ffa7b763eeddc00da7.scn" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -72,7 +72,8 @@
 [ext_resource path="res://items/kitchen_key.tscn" type="PackedScene" id=70]
 [ext_resource path="res://items/gold.tscn" type="PackedScene" id=71]
 [ext_resource path="res://furniture/cauldron/cauldron.glb" type="PackedScene" id=72]
-[ext_resource path="res://items/lantern.tscn" type="PackedScene" id=73]
+[ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=73]
+[ext_resource path="res://items/lantern-old.tscn" type="PackedScene" id=74]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -726,3 +727,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47811, 0.316695, 5.55657 )
 
 [node name="bed_single" parent="objects" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -6.9 )
+
+[node name="lantern" parent="." instance=ExtResource( 74 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510581, 0.00053823, 4.55489 )

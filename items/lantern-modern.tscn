@@ -18,13 +18,13 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
 shape = SubResource( 1 )
 
 [node name="lantern-mesh" parent="CollisionShape" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0 )
+transform = Transform( -1, 0, -3.72529e-08, 0, 1, 0, 3.72529e-08, 0, -1, 0, -1.1, 0 )
 
 [node name="lantern-light" type="Spatial" parent="."]
 script = ExtResource( 1 )
 
 [node name="light" type="OmniLight" parent="lantern-light"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185831, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216692, 0 )
 visible = false
 light_color = Color( 1, 0.909804, 0.717647, 1 )
 light_energy = 1.476

@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://items/lantern/lantern_old.fbx" type="PackedScene" id=1]
+[ext_resource path="res://items/lantern/lantern_old_mesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/item.gd" type="Script" id=2]
 [ext_resource path="res://items/lantern/lantern-light-old.gd" type="Script" id=3]
+[ext_resource path="res://items/flame.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/lightable_area.gd" type="Script" id=5]
 
 [sub_resource type="CylinderShape" id=1]
 height = 2.16952
 radius = 0.7104
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.0536888
 
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315
@@ -18,19 +23,32 @@ follow_orientation_when_held = false
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
 shape = SubResource( 1 )
 
-[node name="lantern-mesh" parent="CollisionShape" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0 )
+[node name="lantern_old_mesh" parent="CollisionShape" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="lantern-light" type="Spatial" parent="."]
 script = ExtResource( 3 )
 
-[node name="light" type="OmniLight" parent="lantern-light"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185831, 0 )
+[node name="light_source" type="Spatial" parent="lantern-light"]
 visible = false
+
+[node name="flame" parent="lantern-light/light_source" instance=ExtResource( 4 )]
+transform = Transform( 0.0196945, 0, 0, 0, 0.029864, 0, 0, 0, 0.0227278, 0.00145028, 0.172, 0 )
+
+[node name="light" type="OmniLight" parent="lantern-light/light_source"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255092, 0 )
 light_color = Color( 1, 0.909804, 0.717647, 1 )
-light_energy = 1.476
+light_energy = 0.7
 shadow_enabled = true
-omni_range = 7.43
-omni_attenuation = 2.14355
+omni_range = 4.446
+omni_attenuation = 1.27456
+
+[node name="LightableArea" type="Area" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="LightableArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0177159, 0.146305, -0.10936 )
+shape = SubResource( 2 )
 
 [connection signal="use_item" from="." to="lantern-light" method="_on_lantern_use_item"]
+[connection signal="lit_using_fire" from="LightableArea" to="lantern-light" method="_on_LightableArea_lit_using_fire"]

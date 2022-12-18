@@ -2,13 +2,7 @@ extends Spatial
 
 
 var is_on = false
-onready var light_source : OmniLight = $"./light"
-
-func toggle_light():
-	if is_on:
-		turn_off()
-	else:
-		turn_on()
+onready var light_source := $"./light_source"
 
 func turn_on():
 	is_on = true
@@ -19,4 +13,8 @@ func turn_off():
 	light_source.visible = false
 
 func _on_lantern_use_item():
-	toggle_light()
+	turn_off()
+
+
+func _on_LightableArea_lit_using_fire():
+	turn_on()

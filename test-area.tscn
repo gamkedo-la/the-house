@@ -71,7 +71,7 @@
 [ext_resource path="res://items/Basement_Key.tscn" type="PackedScene" id=69]
 [ext_resource path="res://items/kitchen_key.tscn" type="PackedScene" id=70]
 [ext_resource path="res://items/gold.tscn" type="PackedScene" id=71]
-[ext_resource path="res://furniture/cauldron/cauldron.glb" type="PackedScene" id=72]
+[ext_resource path="res://furniture/cauldron.tscn" type="PackedScene" id=72]
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=73]
 [ext_resource path="res://items/lantern-old.tscn" type="PackedScene" id=74]
 
@@ -704,9 +704,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5978, 1.08976, -12.6751 )
 [node name="Gold Bar" parent="objects" instance=ExtResource( 71 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57671, 1.25813, -7.56161 )
 
-[node name="cauldron" parent="objects" instance=ExtResource( 72 )]
-transform = Transform( -0.202565, 0, 0.979269, 0, 1, 0, -0.979269, 0, -0.202565, 6.35919, 0.000980616, -5.60618 )
-
 [node name="lantern_modern" parent="objects" instance=ExtResource( 73 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772186, 0.167537, 4.88872 )
 
@@ -727,6 +724,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47799, 0, 4.35295 )
 
 [node name="key" parent="objects" instance=ExtResource( 61 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47811, 0.316695, 5.55657 )
+
+[node name="cauldron" parent="objects" instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2365, 0.00147247, 2.87112 )
 
 [node name="bed_single" parent="objects" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -6.9 )

@@ -250,7 +250,7 @@ func use_item() -> void:
 func _resume_holding_item() -> void:
 	var held_item = get_item_in_hand()
 	assert(held_item is InteractiveItem)
-	held_item.track(_hand_node)
+	held_item.track(_hand_node, held_item.follow_orientation_when_held) # TODO: Refactor so that the items script handles this
 
 		
 func begin_item_examination():

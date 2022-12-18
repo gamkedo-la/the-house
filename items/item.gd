@@ -12,6 +12,7 @@ export var highlight_color : Color  = "#ff6f00"
 export var highlight_width := 5.0
 export var mesh_node: NodePath
 export var follow_orientation_when_held_front := true
+export var follow_orientation_when_held := true
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
 var _tracking_position = Spatial
@@ -97,7 +98,7 @@ static func _cancel_velocity(node: Node):
 func take(hold_where: Spatial) -> void:
 	assert(can_be_taken)
 	assert(not _is_taken)
-	track(hold_where)
+	track(hold_where, follow_orientation_when_held)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 	_is_taken = true

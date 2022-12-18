@@ -72,7 +72,7 @@
 [ext_resource path="res://items/kitchen_key/Kitchen_Key.tscn" type="PackedScene" id=70]
 [ext_resource path="res://items/gold_bar/Gold.tscn" type="PackedScene" id=71]
 [ext_resource path="res://furniture/cauldron/cauldron.glb" type="PackedScene" id=72]
-[ext_resource path="res://items/lantern/Lantern.fbx" type="PackedScene" id=73]
+[ext_resource path="res://items/lantern/lantern.tscn" type="PackedScene" id=73]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -720,7 +720,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5978, 1.08976, -12.6751 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57671, 1.25813, -7.56161 )
 
 [node name="cauldron" parent="." instance=ExtResource( 72 )]
-transform = Transform( -0.202565, 0, 0.979269, 0, 1, 0, -0.979269, 0, -0.202565, 7.71851, 0.000980616, -3.05779 )
+transform = Transform( -0.202565, 0, 0.979269, 0, 1, 0, -0.979269, 0, -0.202565, 6.35919, 0.000980616, -5.60618 )
 
-[node name="Lantern" parent="." instance=ExtResource( 73 )]
-transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0.950202, 0.248237, -7.09634 )
+[node name="lantern" parent="." instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772186, 0.167537, 4.88872 )

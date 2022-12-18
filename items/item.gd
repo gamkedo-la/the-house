@@ -58,8 +58,11 @@ static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Colo
 			var hilit_mesh = child.get_mesh()
 			if hilit_mesh:
 				var mesh_highlit = MeshHighlight.new()
-				hilit_mesh.surface_set_material(0, hilit_mesh.surface_get_material(0).duplicate(true))
 				var item_mat = hilit_mesh.surface_get_material(0)
+				if !item_mat:
+					item_mat = ShaderMaterial.new()
+				hilit_mesh.surface_set_material(0, item_mat.duplicate(true))
+				item_mat = hilit_mesh.surface_get_material(0)
 				var hilite_m = hilite_mat.duplicate(true)
 				item_mat.set_next_pass(hilite_m)
 				var item_mat_next = item_mat.get_next_pass()

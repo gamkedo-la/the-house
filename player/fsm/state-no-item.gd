@@ -16,7 +16,7 @@ func enter():
 func physics_update(delta: float):
 	player.exploration_update(delta)
 
-func update(delta: float):
+func update(_delta: float):
 	
 	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_takable_item():
 		state_machine.push_action(PlayerState.Action.take_item)

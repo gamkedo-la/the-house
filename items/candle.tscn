@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://items/candles/candle-01.glb" type="PackedScene" id=1]
-[ext_resource path="res://items/flame/flame.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/flame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://items/candles/candle.gd" type="Script" id=3]
 [ext_resource path="res://items/lightable_area.gd" type="Script" id=4]
 

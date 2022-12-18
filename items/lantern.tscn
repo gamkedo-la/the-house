@@ -11,6 +11,8 @@ radius = 0.7104
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315
 script = ExtResource( 2 )
+follow_orientation_when_held_front = false
+follow_orientation_when_held = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )

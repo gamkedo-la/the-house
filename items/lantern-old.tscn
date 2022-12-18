@@ -11,7 +11,7 @@ height = 2.16952
 radius = 0.7104
 
 [sub_resource type="SphereShape" id=2]
-radius = 0.0536888
+radius = 0.0997423
 
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315
@@ -23,7 +23,7 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
 shape = SubResource( 1 )
 
 [node name="lantern_old_mesh" parent="CollisionShape" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0 )
 
 [node name="lantern-light" type="Spatial" parent="."]
 script = ExtResource( 3 )
@@ -46,7 +46,7 @@ omni_attenuation = 1.27456
 script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="LightableArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0177159, 0.146305, -0.10936 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00164266, 0.146305, 0.121262 )
 shape = SubResource( 2 )
 
 [connection signal="use_item" from="." to="lantern-light" method="_on_lantern_use_item"]

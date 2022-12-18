@@ -8,6 +8,7 @@ height = 2.16952
 radius = 0.7104
 
 [node name="lantern" type="RigidBody"]
+angular_damp = 23.315
 script = ExtResource( 2 )
 follow_orientation_when_held_front = false
 follow_orientation_when_held = false

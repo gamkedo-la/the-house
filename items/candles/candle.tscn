@@ -7,7 +7,7 @@
 
 [sub_resource type="CylinderShape" id=1]
 height = 0.238779
-radius = 0.0679009
+radius = 0.0808216
 
 [sub_resource type="SphereShape" id=2]
 radius = 0.211521
@@ -15,6 +15,7 @@ radius = 0.211521
 [node name="Candle" type="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175556, 0 )
 mass = 2.04082
+angular_damp = 18.238
 script = ExtResource( 3 )
 follow_orientation_when_held_front = false
 

@@ -1,0 +1,35 @@
+[gd_scene format=2]
+
+[node name="ground_placeholder" type="CSGCombiner"]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299078, 0 )
+width = 52.4883
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 0.999459, 0.0328761, 0, -0.0328761, 0.999459, 0, 0, 0, 1, 48.8716, -1.06516, -0.773018 )
+width = 45.417
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 0.988897, 0.148603, 0, -0.148603, 0.988897, 0, 0, 0, 1, 96.0916, -5.36494, -0.773018 )
+width = 49.6416
+height = 0.302539
+depth = 57.024
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( 0.988897, 0.148603, 0, -0.148603, 0.988897, 0, 0, 0, 1, 203.577, -21.5169, -0.773018 )
+width = 169.543
+height = 0.302539
+depth = 57.024
+
+[node name="house_hole" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513003, 0, 0 )
+operation = 2
+width = 20.3819
+height = 33.9566
+depth = 27.8418

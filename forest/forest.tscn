@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://forest/ground_placeholder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=2]
+
+[node name="forest" type="Node"]
+
+[node name="ground_placeholder" type="CSGCombiner" parent="." instance=ExtResource( 1 )]
+use_collision = true
+
+[node name="trees" type="Node" parent="."]
+
+[node name="PineTree" type="Spatial" parent="trees" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4409, -1.03122, 17.6915 )

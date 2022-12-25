@@ -89,16 +89,29 @@ operation = 2
 width = 1.936
 height = 2.413
 
-[node name="kitchen_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.31411, 1.31 )
-width = 0.4
-height = 6.5
-depth = 16.4936
+[node name="floor1" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25022 )
+use_collision = true
+width = 26.607
+height = 0.214476
+depth = 26.344
 
-[node name="kitchen_entrance" type="CSGBox" parent="kitchen_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.34743 )
+[node name="basement_entrance" type="CSGBox" parent="floor1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -0.09937 )
 operation = 2
-height = 3.56738
+height = 1.52814
+
+[node name="floor2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, -3.25022 )
+use_collision = true
+width = 26.607
+height = 0.214476
+depth = 26.344
+
+[node name="attic_entrance" type="CSGBox" parent="floor2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9561, -0.36415, 0.69561 )
+operation = 2
+height = 1.52814
 
 [node name="bathroom_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.31411, -9.0068 )
@@ -156,6 +169,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27234, -1.46774, 2.34743 )
 operation = 2
 height = 3.56738
 
+[node name="kitchen_wall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.31411, 1.31 )
+width = 0.4
+height = 6.5
+depth = 16.0767
+
+[node name="kitchen_entrance" type="CSGBox" parent="kitchen_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.34743 )
+operation = 2
+height = 3.56738
+
 [node name="living_back_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99332, 3.31469, -6.72199 )
 width = 10.54
@@ -178,30 +202,6 @@ depth = 0.4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.42318, 0.0943289 )
 operation = 2
 height = 3.56738
-
-[node name="floor1" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25022 )
-use_collision = true
-width = 26.607
-height = 0.214476
-depth = 26.344
-
-[node name="basement_entrance" type="CSGBox" parent="floor1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -0.09937 )
-operation = 2
-height = 1.52814
-
-[node name="floor2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, -3.25022 )
-use_collision = true
-width = 26.607
-height = 0.214476
-depth = 26.344
-
-[node name="attic_entrance" type="CSGBox" parent="floor2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9561, -0.36415, 0.69561 )
-operation = 2
-height = 1.52814
 
 [node name="front_porch" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0692931, 11.1506 )

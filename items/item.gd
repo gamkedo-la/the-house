@@ -113,6 +113,7 @@ func take(hold_where: Spatial) -> void:
 	track(hold_where, orientation_hand_held)
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
+	set_mode(RigidBody.MODE_RIGID) # Once taken, even if the object was static before, it is now following physics laws.
 	_is_taken = true
 
 	

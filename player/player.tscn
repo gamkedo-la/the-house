@@ -165,6 +165,7 @@ meta_underlined = false
 text = "Debug Info: F1
 
 Move: WASD keys or arrow keys
+Crounch: CTRL to toggle, C to hold
 Take Item: left mouse button or E key
 Use Held Item: right mouse button or F key
 Put Item In Front Of You: SPACE key

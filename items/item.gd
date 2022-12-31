@@ -8,7 +8,7 @@ export var can_be_taken = true
 export var hilighted = false
 
 export var highlightable := true
-export var highlight_color : Color  = "#ff6f00"
+export var highlight_color : Color = "#ffffff"
 export var highlight_width := 5.0
 export var mesh_node: NodePath
 
@@ -66,7 +66,7 @@ static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Colo
 				var hilite_m = hilite_mat.duplicate(true)
 				item_mat.set_next_pass(hilite_m)
 				var item_mat_next = item_mat.get_next_pass()
-				item_mat_next.set_shader_param("color", highlight_color)
+				item_mat_next.set_shader_param("outline_color", highlight_color)
 				
 				mesh_highlit.mesh = hilit_mesh
 				mesh_highlit.item_mat = item_mat

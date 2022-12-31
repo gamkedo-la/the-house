@@ -353,7 +353,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.582604, 0.945501, -5.18948 )
 
 [node name="frying_pan2" parent="objects" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19094, 0.945501, -5.18948 )
-highlight_color = Color( 0.682353, 0.054902, 0.054902, 1 )
 
 [node name="frying_pan3" parent="objects" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1589, 0.945501, -5.18948 )

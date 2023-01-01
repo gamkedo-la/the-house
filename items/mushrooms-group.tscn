@@ -14,52 +14,57 @@ collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
-mushroom_color = 4
-mushroom_shape = 7
+mushroom_shape = 8
 
 [node name="mushroom2" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
 collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
 mushroom_color = 4
-mushroom_shape = 6
+mushroom_shape = 2
 
 [node name="mushroom3" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_color = 3
-mushroom_shape = 3
-
-[node name="mushroom4" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_color = 2
-mushroom_shape = 7
-
-[node name="mushroom5" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
 mushroom_color = 1
-mushroom_shape = 1
+mushroom_shape = 3
 
-[node name="mushroom6" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_color = 2
-mushroom_shape = 7
-
-[node name="mushroom7" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+[node name="mushroom4" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
 collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
 mushroom_color = 4
+mushroom_shape = 1
+
+[node name="mushroom5" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+collision_layer = 129
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+mushroom_shape = 5
+
+[node name="mushroom6" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0 )
+collision_layer = 129
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+mushroom_color = 3
+mushroom_shape = 1
+
+[node name="mushroom7" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0 )
+collision_layer = 129
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+mushroom_color = 3
+mushroom_shape = 6

@@ -70,8 +70,10 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1798, 0 )
 
 [node name="blue" type="Spatial" parent="models"]
+visible = false
 
 [node name="mushroom_0" parent="models/blue" instance=ExtResource( 3 )]
+visible = false
 
 [node name="mushroom_1" parent="models/blue" instance=ExtResource( 7 )]
 visible = false
@@ -200,10 +202,8 @@ visible = false
 visible = false
 
 [node name="yellow" type="Spatial" parent="models"]
-visible = false
 
 [node name="mushroom_0" parent="models/yellow" instance=ExtResource( 35 )]
-visible = false
 
 [node name="mushroom_1" parent="models/yellow" instance=ExtResource( 30 )]
 visible = false

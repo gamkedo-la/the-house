@@ -2,18 +2,19 @@
 tool
 
 extends InteractiveItem
+class_name Mushroom
 
 
 onready var _models_node : Spatial = $"models"
 
 
 enum MushroomColor {
-	blue, bluegreen, brown, purple, yellow
+	random, blue, bluegreen, brown, purple, yellow, 
 }
 
-export(MushroomColor) var mushroom_color = MushroomColor.blue setget _set_mushroom_color
-export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape
-
+export(MushroomColor) var mushroom_color = MushroomColor.yellow setget _set_mushroom_color
+const mushroom_shapes_count := 9 # We cannot use this in values of `export` though, but we can use it in other code.
+export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +26,7 @@ func _ready():
 func _update_mushroom() ->void :
 	_hide_all_models()
 	_show_selected_model()
+	print("Mushroom updated: %s" % self.get_path())
 
 func _hide_node(node: Node)->void:
 	if node is Spatial and not node is MeshInstance: # We don't want to hide the meshes, just their node ownders.
@@ -40,14 +42,16 @@ func _show_selected_model() -> void:
 	color_node.visible = true
 	
 	var mushroom_path = "mushroom_%d" % mushroom_shape
-	print("mushroom_path = %s/%s" % [ color_name, mushroom_path])
+#	print("mushroom_path = %s/%s" % [ color_name, mushroom_path])
 	var mushroom_node = color_node.find_node(mushroom_path)
 	assert(mushroom_node is Node) # This is for crashing spectacularly if the node was not found.
 	mushroom_node.visible = true
 	
 	
 func _set_mushroom_color(new_color: int) -> void:
-	if new_color != mushroom_color:
+	if new_color != mushroom_color || new_color == MushroomColor.random:
+		if new_color == MushroomColor.random:
+			new_color = rand_range(1, MushroomColor.keys().size())
 		mushroom_color = new_color
 		if _models_node is Spatial:
 			_update_mushroom()

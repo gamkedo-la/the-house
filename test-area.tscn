@@ -739,3 +739,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38332, 0.0817194, 6.78693 )
 mushroom_color = 4
 mushroom_shape = 4
+
+[node name="mushroom2" parent="objects" instance=ExtResource( 76 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.804751, 0.0817194, 6.78693 )
+mushroom_color = 2
+mushroom_shape = 4

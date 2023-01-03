@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -77,6 +77,7 @@
 [ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=75]
 [ext_resource path="res://items/mushroom.tscn" type="PackedScene" id=76]
 [ext_resource path="res://items/mushrooms-group.tscn" type="PackedScene" id=77]
+[ext_resource path="res://gameplay/test_display_area.gd" type="Script" id=78]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -153,6 +154,9 @@ viewport_path = NodePath("WindowExample/MirrorView")
 resource_local_to_scene = true
 flags_unshaded = true
 albedo_texture = SubResource( 10 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 1.42988, 1, 1.31228 )
 
 [node name="World" type="Spatial"]
 script = ExtResource( 1 )
@@ -748,3 +752,33 @@ mushroom_shape = 4
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.804751, 0.0817194, 6.78693 )
 mushroom_color = 2
 mushroom_shape = 4
+
+[node name="texts" type="Node" parent="."]
+
+[node name="display_text_window" type="Area" parent="texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86814, 1.00082, 3.83662 )
+script = ExtResource( 78 )
+bbtext_to_display = [ "This window looks strange.." ]
+
+[node name="CollisionShape" type="CollisionShape" parent="texts/display_text_window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0361204, 0, 0 )
+shape = SubResource( 14 )
+
+[node name="display_text_mirror" type="Area" parent="texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86814, 1.00082, -0.745887 )
+script = ExtResource( 78 )
+bbtext_to_display = [ "Is this really a mirror? Am I really that ugly?" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="texts/display_text_mirror"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0361204, 0, 0 )
+shape = SubResource( 14 )
+
+[node name="display_text_mirror2" type="Area" parent="texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4865, 0.973271, 0.181429 )
+script = ExtResource( 78 )
+bbtext_to_display = [ "We enter the darkness...", "This house is very ugly...", "...and...[b]scary![/b]" ]
+display_only_once = true
+
+[node name="CollisionShape" type="CollisionShape" parent="texts/display_text_mirror2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0361204, 0, 0 )
+shape = SubResource( 14 )

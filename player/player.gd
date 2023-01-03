@@ -322,3 +322,6 @@ func get_camera() -> Camera:
 func display_text(bbtext: String) -> void:
 	_text_display.display_text(bbtext)
 	
+func stop_text_display() -> void:
+	_text_display.stop_display()
+	

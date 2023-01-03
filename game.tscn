@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://house/test-house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gameplay/test_display_area.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=7]
 [ext_resource path="res://items/lantern-old.tscn" type="PackedScene" id=8]
 [ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=9]
+
+[sub_resource type="CylinderShape" id=1]
+height = 7.7531
+radius = 30.5386
 
 [node name="game" type="Spatial"]
 
@@ -21,7 +26,7 @@ script = ExtResource( 1 )
 transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, 0, 1.37633, 0 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 42.9512, 3.43626, -4.71924e-06 )
+transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 42.9512, 0.120489, -4.71924e-06 )
 
 [node name="temporary_ambiant_lights" type="Node" parent="."]
 
@@ -59,3 +64,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2357, 1.49068, -4.99469 )
 
 [node name="lantern2" parent="temporary_tools" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9745, 1.49068, -5.52431 )
+
+[node name="texts" type="Node" parent="."]
+
+[node name="TextDisplayArea" type="Area" parent="texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0285, 0, 0 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="texts/TextDisplayArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5866, 3.35231, 0 )
+shape = SubResource( 1 )

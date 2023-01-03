@@ -17,10 +17,11 @@ func _ready():
 
 var remove_me = 0
 
-func _process(delta):
-	if Input.is_action_just_pressed("item_activation"):
-		remove_me += 1
-		display_text("text number %d" % remove_me)
+# USE THIS TO DEBUG THE TEXT SYSTEM:
+# func _process(delta):
+#	if Input.is_action_just_pressed("item_activation"):
+#		remove_me += 1
+#		display_text("text number %d" % remove_me)
 
 
 func display_text(new_text: String) -> void:

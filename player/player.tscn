@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://player/feet_audio_player.gd" type="Script" id=12]
 [ext_resource path="res://player/shadow_mesh/shadow_mesh_one_arm_no_legs.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
+[ext_resource path="res://player/text_display.gd" type="Script" id=15]
+[ext_resource path="res://fonts/Caveat/static/Caveat-Bold.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://fonts/Caveat/static/Caveat-Regular.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
@@ -55,6 +58,17 @@ size = Vector2( 6, 6 )
 interpolation_mode = 2
 offsets = PoolRealArray( 0, 0.284916, 0.77095, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.223529, 1, 1, 1, 0.180392, 1, 1, 1, 0 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 64
+outline_size = 5
+outline_color = Color( 0.419608, 0.105882, 0.105882, 1 )
+use_mipmaps = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+font_data = ExtResource( 17 )
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.770271, 0 )
@@ -192,6 +206,23 @@ text = "Type F1 for keys and info"
 fit_content_height = true
 scroll_active = false
 script = ExtResource( 8 )
+
+[node name="text_display" type="RichTextLabel" parent="Head/Camera"]
+unique_name_in_owner = true
+margin_left = 422.0
+margin_top = 771.0
+margin_right = 1535.0
+margin_bottom = 964.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "This is the text being displayed [b]to the player[/b]"
+text = "This is the text being displayed to the player"
+scroll_active = false
+script = ExtResource( 15 )
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

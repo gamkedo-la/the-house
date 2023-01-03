@@ -209,6 +209,7 @@ script = ExtResource( 8 )
 
 [node name="text_display" type="RichTextLabel" parent="Head/Camera"]
 unique_name_in_owner = true
+visible = false
 margin_left = 422.0
 margin_top = 771.0
 margin_right = 1535.0

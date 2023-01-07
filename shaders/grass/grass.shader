@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode cull_disabled;
+//render_mode cull_disabled;
 
 uniform sampler2D color_ramp : hint_black_albedo;
 uniform sampler2D grass_tex;

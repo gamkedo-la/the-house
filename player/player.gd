@@ -23,6 +23,9 @@ onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
+onready var _text_display : RichTextLabel = $"%text_display"
+
+
 var _pointed_item : InteractiveItem
 var _held_item: InteractiveItem
 
@@ -316,3 +319,9 @@ func toggle_crouch() -> void:
 func get_camera() -> Camera:
 	return _camera
 
+func display_text(bbtext: String) -> void:
+	_text_display.display_text(bbtext)
+	
+func stop_text_display() -> void:
+	_text_display.stop_display()
+	

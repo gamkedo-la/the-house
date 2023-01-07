@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "FireArea",
 "language": "GDScript",
-"path": "res://items/fire_area.gd"
+"path": "res://gameplay/fire_area.gd"
 }, {
 "base": "AudioStreamPlayer3D",
 "class": "FootAudio",
@@ -47,17 +47,22 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "KeyArea",
 "language": "GDScript",
-"path": "res://items/key_area.gd"
+"path": "res://gameplay/key_area.gd"
 }, {
 "base": "Area",
 "class": "LightableArea",
 "language": "GDScript",
-"path": "res://items/lightable_area.gd"
+"path": "res://gameplay/lightable_area.gd"
 }, {
 "base": "Area",
 "class": "LockArea",
 "language": "GDScript",
-"path": "res://items/lock_area.gd"
+"path": "res://gameplay/lock_area.gd"
+}, {
+"base": "InteractiveItem",
+"class": "Mushroom",
+"language": "GDScript",
+"path": "res://items/mushrooms/mushroom.gd"
 }, {
 "base": "KinematicBody",
 "class": "Player",
@@ -89,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player/fsm/state-no-item.gd"
 }, {
+"base": "Area",
+"class": "TextDisplayArea",
+"language": "GDScript",
+"path": "res://gameplay/test_display_area.gd"
+}, {
 "base": "Object",
 "class": "utility",
 "language": "GDScript",
@@ -105,12 +115,14 @@ _global_script_class_icons={
 "KeyArea": "",
 "LightableArea": "",
 "LockArea": "",
+"Mushroom": "",
 "Player": "",
 "PlayerState": "",
 "PlayerStateMachine": "",
 "State_Examining": "",
 "State_HoldingItem": "",
 "State_NoItem": "",
+"TextDisplayArea": "",
 "utility": ""
 }
 

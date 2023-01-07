@@ -4,7 +4,7 @@
 [ext_resource path="res://items/item.gd" type="Script" id=2]
 [ext_resource path="res://items/lantern/lantern-light-old.gd" type="Script" id=3]
 [ext_resource path="res://items/flame.tscn" type="PackedScene" id=4]
-[ext_resource path="res://items/lightable_area.gd" type="Script" id=5]
+[ext_resource path="res://gameplay/lightable_area.gd" type="Script" id=5]
 
 [sub_resource type="CylinderShape" id=1]
 height = 2.16952

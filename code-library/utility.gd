@@ -42,3 +42,26 @@ static func nan_to_zero(vec: Vector3) -> Vector3:
 	if is_nan(vec.z):
 		vec.z = 0
 	return vec
+
+# TODO: add support for values to pass
+static func apply_recursively(root_node: Node, work_on_node: FuncRef, apply_to_root: bool = true) -> void:
+	if apply_to_root:
+		work_on_node.call_func(root_node)
+
+	# We go breadth-first:
+	for child_node in root_node.get_children():
+		work_on_node.call_func(child_node)
+		
+	for child_node in root_node.get_children():
+		apply_recursively(child_node, work_on_node, false) # Make sure it is not applied to the child node twice.
+
+static func delete_child(parent : Node, child: Node):
+	# source: https://www.reddit.com/r/godot/comments/9qmjfj/remove_all_children/
+	parent.remove_child(child)
+	child.queue_free()
+	
+static func delete_children(node : Node):
+	# source: https://www.reddit.com/r/godot/comments/9qmjfj/remove_all_children/
+	for child_node in node.get_children():
+		delete_child(node, child_node)
+	

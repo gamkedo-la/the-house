@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0431373, 0.156863, 0.00784314, 1 )
+
+[node name="bush" type="Spatial"]
+
+[node name="placeholder_please_replace_me_im_ugly" type="Spatial" parent="."]
+
+[node name="CSGSphere" type="CSGSphere" parent="placeholder_please_replace_me_im_ugly"]
+transform = Transform( 0.851869, -0.473969, 0.222876, 0.486198, 0.873849, 0, -0.19476, 0.108362, 0.974847, 0, 0.331744, 0 )
+use_collision = true
+radius = 1.222
+radial_segments = 17
+rings = 8
+material = SubResource( 1 )

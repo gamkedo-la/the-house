@@ -926,6 +926,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4865, 0.973271, 0.181429 )
 script = ExtResource( 78 )
 bbtext_to_display = [ "We enter the darkness...", "This house is very ugly...", "...and...[b]scary![/b]" ]
 display_only_once = true
+stop_display_on_exit = false
 
 [node name="CollisionShape" type="CollisionShape" parent="texts/display_text_mirror2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0361204, 0, 0 )

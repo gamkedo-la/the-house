@@ -6,6 +6,7 @@
 extents = Vector3( 100, 1, 100 )
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.00784314, 0.235294, 0.0352941, 1 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 1 )

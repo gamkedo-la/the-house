@@ -129,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The House"
-run/main_scene="res://game.tscn"
+run/main_scene="res://test-area.tscn"
 config/icon="res://icon.png"
 
 [debug]
@@ -321,5 +321,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

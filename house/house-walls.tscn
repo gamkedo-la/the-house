@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
 
 [node name="walls" type="CSGCombiner"]
 use_collision = true
@@ -10,6 +12,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, -3.26608 )
 width = 27.468
 height = 18.03
 depth = 26.969
+material = ExtResource( 2 )
 
 [node name="interior_space" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 0.00158, -0.10354 )
@@ -17,6 +20,7 @@ operation = 2
 width = 26.097
 height = 17.642
 depth = 25.0
+material = ExtResource( 3 )
 
 [node name="entrance" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52662, 13.0656 )

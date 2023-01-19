@@ -192,7 +192,8 @@ Rotate Examined Item: WASDEQ keys
 Release window focus: Escape key
 
 Pixelated Screen: F10
-"
+Fog: F11
+Glow: F9"
 fit_content_height = true
 scroll_active = false
 

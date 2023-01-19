@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://house/wood_siding_spatialmaterial.tres" type="Material" id=4]
+[ext_resource path="res://house/roof_spatialmaterial.tres" type="Material" id=5]
 
 [node name="walls" type="CSGCombiner"]
 use_collision = true
@@ -10,6 +14,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, -3.26608 )
 width = 27.468
 height = 18.03
 depth = 26.969
+material = ExtResource( 2 )
 
 [node name="interior_space" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 0.00158, -0.10354 )
@@ -17,77 +22,90 @@ operation = 2
 width = 26.097
 height = 17.642
 depth = 25.0
+material = ExtResource( 3 )
 
 [node name="entrance" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52662, 13.0656 )
 operation = 2
 height = 3.56738
+material = ExtResource( 4 )
 
 [node name="window1" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 0.06201, 12.7069 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window2" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5361, 0.06201, 12.7069 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window3" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2476, 0.06201, 7.84766 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window4" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74116, 0.525232, -12.9892 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window11" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67306, 0.525232, -12.9892 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window5" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0306, 0.355989, -12.9019 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window6" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4487, 0.06201, 7.97069 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window7" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01036, 6.71922, 12.7069 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window8" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5361, 6.71922, 12.7069 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window9" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.175, 6.71922, -2.60302 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="window10" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8892, 6.71922, -2.60302 )
 operation = 2
 width = 1.936
 height = 2.413
+material = ExtResource( 4 )
 
 [node name="floor1" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25022 )
@@ -95,6 +113,7 @@ use_collision = true
 width = 26.607
 height = 0.214476
 depth = 26.344
+material = ExtResource( 4 )
 
 [node name="basement_entrance" type="CSGBox" parent="floor1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -0.09937 )
@@ -107,11 +126,56 @@ use_collision = true
 width = 26.607
 height = 0.214476
 depth = 26.344
+material = ExtResource( 4 )
 
 [node name="attic_entrance" type="CSGBox" parent="floor2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9561, -0.36415, 0.69561 )
 operation = 2
 height = 1.52814
+
+[node name="roof" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, -3.25 )
+use_collision = true
+width = 28.0
+height = 12.0
+depth = 28.0
+material = ExtResource( 5 )
+
+[node name="roof_a" type="CSGBox" parent="roof"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -16.4736, 7.49879, -0.00022006 )
+operation = 2
+use_collision = true
+width = 22.0
+height = 22.0
+depth = 30.0
+material = ExtResource( 5 )
+
+[node name="roof_a2" type="CSGBox" parent="roof"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 16.2866, 7.49879, -0.00022006 )
+operation = 2
+use_collision = true
+width = 22.0
+height = 22.0
+depth = 30.0
+material = ExtResource( 5 )
+
+[node name="roof_a3" type="CSGBox" parent="roof"]
+transform = Transform( -3.09086e-08, 3.09086e-08, 1, 0.707107, 0.707107, 0, -0.707107, 0.707107, -4.37114e-08, -0.0787697, 7.49879, 16.2954 )
+operation = 2
+use_collision = true
+width = 22.0
+height = 22.0
+depth = 30.0
+material = ExtResource( 5 )
+
+[node name="roof_a4" type="CSGBox" parent="roof"]
+transform = Transform( -3.09086e-08, 3.09086e-08, 1, 0.707107, 0.707107, 0, -0.707107, 0.707107, -4.37114e-08, -0.0787697, 7.49879, -16.4605 )
+operation = 2
+use_collision = true
+width = 22.0
+height = 22.0
+depth = 30.0
+material = ExtResource( 5 )
 
 [node name="bathroom_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.31411, -9.0068 )
@@ -208,6 +272,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0692931, 12.6015 )
 width = 19.8309
 height = 0.367293
 depth = 4.98162
+material = ExtResource( 4 )
 
 [node name="ladder" parent="front_porch" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.940845, 0.338836, 0, -0.338836, 0.940845, 0, -3.61047, 3.97987 )

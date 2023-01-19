@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Basement Key.png-c339209dcfb574f3a82fb2285da2adee.s3tc.stex"
-path.etc2="res://.import/Basement Key.png-c339209dcfb574f3a82fb2285da2adee.etc2.stex"
+path.s3tc="res://.import/house_interior_wall_normalmap.jpg-0badeb78f90714568ade362c3b527b72.s3tc.stex"
+path.etc2="res://.import/house_interior_wall_normalmap.jpg-0badeb78f90714568ade362c3b527b72.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://items/basement_key/Basement Key.png"
-dest_files=[ "res://.import/Basement Key.png-c339209dcfb574f3a82fb2285da2adee.s3tc.stex", "res://.import/Basement Key.png-c339209dcfb574f3a82fb2285da2adee.etc2.stex" ]
+source_file="res://house/house_interior_wall_normalmap.jpg"
+dest_files=[ "res://.import/house_interior_wall_normalmap.jpg-0badeb78f90714568ade362c3b527b72.s3tc.stex", "res://.import/house_interior_wall_normalmap.jpg-0badeb78f90714568ade362c3b527b72.etc2.stex" ]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

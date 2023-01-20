@@ -2,7 +2,7 @@
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
-[ext_resource path="res://house/test-house.tscn" type="PackedScene" id=3]
+[ext_resource path="res://house/house.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gameplay/test_display_area.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=6]

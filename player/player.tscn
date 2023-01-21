@@ -240,3 +240,8 @@ script = ExtResource( 9 )
 
 [node name="State_HoldingItem" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 10 )
+
+[node name="close_visibility" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.140702, 0 )
+omni_range = 1.801
+omni_attenuation = 4.14105

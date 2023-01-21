@@ -6,7 +6,7 @@ class_name Mushroom
 
 
 onready var _models_node : Spatial = $"models"
-
+onready var _light_node : OmniLight = $"light"
 
 enum MushroomColor {
 	random, blue, bluegreen, brown, purple, yellow, 
@@ -47,12 +47,19 @@ func _show_selected_model() -> void:
 	assert(mushroom_node is Node) # This is for crashing spectacularly if the node was not found.
 	mushroom_node.visible = true
 	
+	# change the light color too
+	var current_mesh : MeshInstance = color_node.find_node("geo1")
+	assert(current_mesh)
+	var current_hat_material : Material = current_mesh.mesh.surface_get_material(0)
+	assert(current_hat_material)
+	_light_node.light_color = current_hat_material.emission
 	
 func _set_mushroom_color(new_color: int) -> void:
 	if new_color != mushroom_color || new_color == MushroomColor.random:
 		if new_color == MushroomColor.random:
 			new_color = rand_range(1, MushroomColor.keys().size())
 		mushroom_color = new_color
+		
 		if _models_node is Spatial:
 			_update_mushroom()
 		

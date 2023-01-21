@@ -130,6 +130,7 @@ depth = 0.052
 material = SubResource( 5 )
 
 [node name="airdust_particles" type="CPUParticles" parent="Head/Camera"]
+visible = false
 amount = 150
 lifetime = 5.0
 preprocess = 5.0

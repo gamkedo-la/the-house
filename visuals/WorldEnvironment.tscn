@@ -10,8 +10,13 @@ background_sky = SubResource( 4 )
 fog_enabled = true
 glow_enabled = true
 glow_levels/7 = true
-glow_bloom = 0.38
+glow_intensity = 1.39
+glow_strength = 0.72
+glow_bloom = 0.06
 glow_blend_mode = 1
+glow_hdr_threshold = 1.4
+glow_bicubic_upscale = true
+glow_high_quality = true
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource( 3 )

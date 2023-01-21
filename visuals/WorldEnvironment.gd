@@ -22,10 +22,5 @@ func _bloom_tween_completed() -> void:
 		
 	var ignored = bloom_tween.start()
 	
-func _process(delta) -> void:
-	if Input.is_action_just_pressed("debug_switch_fog"):
-		environment.fog_enabled = not environment.fog_enabled
-	if Input.is_action_just_pressed("debug_switch_glow"):
-		environment.glow_enabled = not environment.glow_enabled
 	
 	

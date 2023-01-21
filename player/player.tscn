@@ -129,7 +129,7 @@ height = 0.005
 depth = 0.052
 material = SubResource( 5 )
 
-[node name="CPUParticles" type="CPUParticles" parent="Head/Camera"]
+[node name="airdust_particles" type="CPUParticles" parent="Head/Camera"]
 amount = 150
 lifetime = 5.0
 preprocess = 5.0
@@ -191,9 +191,10 @@ Rotate Examined Item: WASDEQ keys
 
 Release window focus: Escape key
 
-Pixelated Screen: F10
-Fog: F11
-Glow: F9"
+Pixelated Screen: 7
+Fog: 8
+Glow: 9
+Air Dust: 0"
 fit_content_height = true
 scroll_active = false
 

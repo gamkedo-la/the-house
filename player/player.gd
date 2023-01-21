@@ -20,7 +20,6 @@ onready var _hand_node : Spatial = $"%Camera/right_hand"
 onready var _drop_spot : Spatial = $"%Camera/drop_spot"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
-onready var _pixelator := $"%Camera/screen pixelation"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _text_display : RichTextLabel = $"%text_display"
@@ -60,14 +59,6 @@ func _ready():
 	set_collision_layer_bit(ItemUtils.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 
-func _process(delta):
-	# TEMPORARY:
-	if Input.is_action_just_pressed("debug_switch_pixelator"):
-		if _pixelator.visible:
-			_pixelator.hide()
-		else:
-			_pixelator.show()
-	# END OF TEMPORARY
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):

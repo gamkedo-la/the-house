@@ -13,7 +13,7 @@ use_collision = true
 [node name="exterior_walls" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38517, -3.26608 )
 width = 27.468
-height = 18.03
+height = 18.0
 depth = 26.969
 material = ExtResource( 2 )
 
@@ -21,7 +21,7 @@ material = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180747, 0.00158, -0.10354 )
 operation = 2
 width = 26.097
-height = 17.642
+height = 16.0
 depth = 25.0
 material = ExtResource( 3 )
 
@@ -122,7 +122,7 @@ operation = 2
 height = 1.52814
 
 [node name="floor2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62786, -3.25022 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -3.25 )
 use_collision = true
 width = 26.607
 height = 0.214476
@@ -213,7 +213,7 @@ height = 6.5
 depth = 4.6871
 
 [node name="hidden_entrance" type="CSGBox" parent="hidden_room_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 0.0892286 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 0.0892296 )
 operation = 2
 height = 3.56738
 
@@ -264,7 +264,7 @@ height = 6.5
 depth = 0.4
 
 [node name="toilets_entrance" type="CSGBox" parent="corridor_cross_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.42318, 0.0943289 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.43023, 0.0943289 )
 operation = 2
 height = 3.56738
 

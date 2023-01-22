@@ -23,7 +23,7 @@ script = ExtResource( 1 )
 [node name="forest" parent="." instance=ExtResource( 2 )]
 
 [node name="house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, 0, 1.37633, 0 )
+transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, 3.62315, 1.37633, 0 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 42.9512, 0.120489, -4.71924e-06 )
@@ -51,7 +51,8 @@ shadow_enabled = true
 spot_range = 20.0
 spot_angle = 58.93
 
-[node name="temporary_tools" type="Node" parent="."]
+[node name="temporary_tools" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431572, 1.15819 )
 
 [node name="lighter" parent="temporary_tools" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.55969, -6.1681 )

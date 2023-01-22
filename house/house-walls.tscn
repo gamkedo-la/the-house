@@ -7,6 +7,7 @@
 [ext_resource path="res://house/roof_spatialmaterial.tres" type="Material" id=5]
 
 [node name="walls" type="CSGCombiner"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
 use_collision = true
 
 [node name="exterior_walls" type="CSGBox" parent="."]
@@ -268,7 +269,7 @@ operation = 2
 height = 3.56738
 
 [node name="front_porch" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0692931, 12.6015 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.601 )
 width = 19.8309
 height = 0.367293
 depth = 4.98162

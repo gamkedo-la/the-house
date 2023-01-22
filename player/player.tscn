@@ -21,7 +21,7 @@
 [sub_resource type="CapsuleShape" id=1]
 resource_local_to_scene = true
 margin = 0.001
-radius = 0.5
+radius = 0.35
 height = 1.2
 
 [sub_resource type="SpatialMaterial" id=6]

@@ -22,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )
 
 [node name="basement_ladders" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, -3.16716, -6.47738, -2.71245 )
+visible = false
 
 [node name="ladder" parent="basement_ladders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
@@ -30,6 +31,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 0.107238, -0.606526 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )
 
 [node name="doors" type="Spatial" parent="."]
+visible = false
 
 [node name="attic_door_trap" type="CSGBox" parent="doors"]
 transform = Transform( 1, 0, 0, 0, -0.0937087, -0.9956, 0, 0.9956, -0.0937087, 8.96875, 7.59582, -1.47675 )
@@ -43,6 +45,7 @@ height = 0.2
 transform = Transform( 0.904031, 0, 0, 0, 0.854965, 0, 0, 0, 1, -0.953937, 0.158469, 10.1284 )
 
 [node name="furniture" type="Spatial" parent="."]
+visible = false
 
 [node name="Dresser" parent="furniture" instance=ExtResource( 5 )]
 transform = Transform( -5.68248e-08, 0, -1.3, 0, 1.2, 0, 1.3, 0, -5.68248e-08, 12.3655, 0.0936344, -9.30484 )

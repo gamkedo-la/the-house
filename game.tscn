@@ -55,16 +55,16 @@ spot_angle = 58.93
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431572, 1.15819 )
 
 [node name="lighter" parent="temporary_tools" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.55969, -6.1681 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.12395, -6.1681 )
 
 [node name="torch" parent="temporary_tools" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.386, 1.54068, -5.46616 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.386, 1.10495, -5.46616 )
 
 [node name="lantern" parent="temporary_tools" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2357, 1.49068, -4.99469 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2357, 1.0519, -4.99469 )
 
 [node name="lantern2" parent="temporary_tools" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9745, 1.49068, -5.52431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9745, 1.0519, -5.52431 )
 
 [node name="texts" type="Node" parent="."]
 

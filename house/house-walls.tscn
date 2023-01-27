@@ -336,7 +336,7 @@ height = 3.56738
 material = ExtResource( 4 )
 
 [node name="front_porch" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.601 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.074, 12.601 )
 width = 19.8309
 height = 0.367293
 depth = 4.98162

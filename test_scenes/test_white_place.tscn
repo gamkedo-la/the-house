@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.109804, 0.0431373, 0.152941, 1 )
+
+[node name="test_white_room" type="Spatial"]
+
+[node name="ground" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+use_collision = true
+width = 1000.0
+height = 1.0
+depth = 1000.0
+material = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.672406, 0.733069, -0.102374, -0.3121, 0.40621, 0.858829, 0.671166, -0.54553, 0.501929, 0, 3.11651, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55647, 0.689554, 1.50686 )
+
+[node name="test-house" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226557, 1.82655, -10.1245 )

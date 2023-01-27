@@ -14,7 +14,7 @@ func _process(delta):
 	var dist = pos.length()
 
 	# breathing constantly up and down
-	translation.z = sin(age*breathing_bob_freq)*breathing_bob_size
+	translation.y = sin(age*breathing_bob_freq)*breathing_bob_size
 
 	# bob the child mesh up and down based on pos (fake footstep animation!)
 	
@@ -22,4 +22,4 @@ func _process(delta):
 	# translation.z += sin((pos.x*bob_freq+pos.z*bob_freq)) * bob_size
 	
 	# fixme: if you circle strafe 0,0,0 you don't step (dist stays same)
-	translation.z += sin(dist*bob_freq) * bob_size
+	translation.y += sin(dist*bob_freq) * bob_size

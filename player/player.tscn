@@ -89,15 +89,16 @@ script = ExtResource( 12 )
 
 [node name="shadow_mesh" type="MeshInstance" parent="."]
 unique_name_in_owner = true
-transform = Transform( -0.38637, 3.43733e-08, -0.103528, 2.98479e-08, 0.4, 2.14141e-08, 0.103528, 1.29592e-08, -0.38637, 0, -1.22284, -4.37114e-08 )
+transform = Transform( -0.38637, 3.43733e-08, -0.103528, 2.98479e-08, 0.4, 2.14141e-08, 0.103528, 1.29592e-08, -0.38637, 0, -1.22284, 0.134601 )
 generate_lightmap = false
 mesh = ExtResource( 13 )
 skeleton = NodePath("../Body")
+software_skinning_transform_normals = false
 material/0 = SubResource( 6 )
 script = ExtResource( 14 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.4764 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.227731 )
 
 [node name="Camera" type="Camera" parent="Head"]
 unique_name_in_owner = true

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
-[ext_resource path="res://test_scenes/test_door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
@@ -24,18 +23,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39902, 2.77456, -0.606526 )
 transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, 0.107154, -3.89527, -2.12133 )
 
 [node name="doors" type="Spatial" parent="."]
-visible = false
-
-[node name="attic_door_trap" type="CSGBox" parent="doors"]
-transform = Transform( 1, 0, 0, 0, -0.0937087, -0.9956, 0, 0.9956, -0.0937087, 8.96875, 7.59582, -1.47675 )
-height = 0.2
-
-[node name="basement_door_trap" type="CSGBox" parent="doors"]
-transform = Transform( -4.37114e-08, -0.9956, 0.0937087, 0, -0.0937087, -0.9956, 1, -4.3519e-08, 4.09614e-09, -0.856641, 0.900551, -3.36026 )
-height = 0.2
-
-[node name="entrence_door" parent="doors" instance=ExtResource( 3 )]
-transform = Transform( 0.904031, 0, 0, 0, 0.854965, 0, 0, 0, 1, -0.953937, 0.158469, 10.1284 )
 
 [node name="furniture" type="Spatial" parent="."]
 visible = false

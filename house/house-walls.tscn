@@ -156,6 +156,7 @@ material = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -0.09937 )
 operation = 2
 height = 1.52814
+depth = 2.3
 material = ExtResource( 4 )
 
 [node name="floor2" type="CSGBox" parent="."]
@@ -345,52 +346,43 @@ material = ExtResource( 4 )
 [node name="ladder" parent="front_porch" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.940845, 0.338836, 0, -0.338836, 0.940845, 0, -3.61047, 3.97987 )
 
-[node name="CSGBox" parent="front_porch/ladder" index="0"]
+[node name="CSGBox3" parent="front_porch/ladder" index="0"]
 material = ExtResource( 4 )
 
-[node name="CSGBox2" parent="front_porch/ladder" index="1"]
+[node name="CSGBox4" parent="front_porch/ladder" index="1"]
 material = ExtResource( 4 )
 
-[node name="CSGBox3" parent="front_porch/ladder" index="2"]
+[node name="CSGBox5" parent="front_porch/ladder" index="2"]
 material = ExtResource( 4 )
 
-[node name="CSGBox4" parent="front_porch/ladder" index="3"]
+[node name="CSGBox6" parent="front_porch/ladder" index="3"]
 material = ExtResource( 4 )
 
-[node name="CSGBox5" parent="front_porch/ladder" index="4"]
+[node name="CSGBox7" parent="front_porch/ladder" index="4"]
 material = ExtResource( 4 )
 
-[node name="CSGBox6" parent="front_porch/ladder" index="5"]
+[node name="CSGBox8" parent="front_porch/ladder" index="5"]
 material = ExtResource( 4 )
 
-[node name="CSGBox7" parent="front_porch/ladder" index="6"]
+[node name="CSGBox9" parent="front_porch/ladder" index="6"]
 material = ExtResource( 4 )
 
-[node name="CSGBox8" parent="front_porch/ladder" index="7"]
+[node name="CSGBox10" parent="front_porch/ladder" index="7"]
 material = ExtResource( 4 )
 
-[node name="CSGBox9" parent="front_porch/ladder" index="8"]
+[node name="CSGBox12" parent="front_porch/ladder" index="8"]
 material = ExtResource( 4 )
 
-[node name="CSGBox10" parent="front_porch/ladder" index="9"]
+[node name="CSGBox13" parent="front_porch/ladder" index="9"]
 material = ExtResource( 4 )
 
-[node name="CSGBox11" parent="front_porch/ladder" index="10"]
+[node name="CSGBox14" parent="front_porch/ladder" index="10"]
 material = ExtResource( 4 )
 
-[node name="CSGBox12" parent="front_porch/ladder" index="11"]
+[node name="CSGBox15" parent="front_porch/ladder" index="11"]
 material = ExtResource( 4 )
 
-[node name="CSGBox13" parent="front_porch/ladder" index="12"]
-material = ExtResource( 4 )
-
-[node name="CSGBox14" parent="front_porch/ladder" index="13"]
-material = ExtResource( 4 )
-
-[node name="CSGBox15" parent="front_porch/ladder" index="14"]
-material = ExtResource( 4 )
-
-[node name="CSGBox16" parent="front_porch/ladder" index="15"]
+[node name="CSGBox16" parent="front_porch/ladder" index="12"]
 material = ExtResource( 4 )
 
 [editable path="front_porch/ladder"]

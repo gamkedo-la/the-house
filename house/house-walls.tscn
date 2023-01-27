@@ -62,7 +62,7 @@ depth = 0.88487
 material = ExtResource( 4 )
 
 [node name="entrance" type="CSGBox" parent="exterior_walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52662, 13.0656 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.499, 13.066 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )
@@ -217,120 +217,120 @@ depth = 30.0
 material = ExtResource( 5 )
 
 [node name="bathroom_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.31411, -9.0068 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.1, -9.0068 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 4.28167
 material = ExtResource( 6 )
 
 [node name="bathroom_entrance" type="CSGBox" parent="bathroom_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 0.0892286 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
 operation = 2
 height = 3.56738
 material = ExtResource( 6 )
 
 [node name="bedroom_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31604, 3.31411, -9.0068 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31604, 3.1, -9.0068 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 4.28167
 material = ExtResource( 6 )
 
 [node name="bedroom_entrance" type="CSGBox" parent="bedroom_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 0.0892286 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )
 
 [node name="toilet_bedroom_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.295, 3.314, -13.904 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.295, 3.1, -13.904 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 5.2
 material = ExtResource( 6 )
 
 [node name="hidden_room_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.336, 3.314, -13.904 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.336, 3.1, -13.904 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 5.2
 material = ExtResource( 6 )
 
 [node name="hidden_entrance" type="CSGBox" parent="hidden_room_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 0.0892296 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
 operation = 2
 height = 3.56738
 
 [node name="hidden_room_wall2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84709, 3.31411, -13.9041 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84709, 3.1, -13.9041 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 5.2
 material = ExtResource( 6 )
 
 [node name="living_room_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96818, 3.35867, 1.47 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96818, 3.1, 1.47 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 16.5
 material = ExtResource( 6 )
 
 [node name="living_room_door_frame" type="CSGBox" parent="living_room_wall"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.023663, -1.50012, 2.3573 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.024, -1.171, 2.357 )
 width = 2.5
 height = 4.0
 depth = 0.5
 material = ExtResource( 4 )
 
 [node name="living_room_entrance" type="CSGBox" parent="living_room_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27234, -1.46774, 2.34743 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27234, -1.20907, 2.34743 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )
 
 [node name="kitchen_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.31411, 1.47 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.1, 1.47 )
 width = 0.4
-height = 6.5
+height = 5.8
 depth = 16.5
 material = ExtResource( 6 )
 
 [node name="kitchen_door_frame" type="CSGBox" parent="kitchen_wall"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00762653, -1.45556, 2.3573 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.008, -1.171, 2.357 )
 width = 2.5
 height = 4.0
 depth = 0.5
 material = ExtResource( 4 )
 
 [node name="kitchen_entrance" type="CSGBox" parent="kitchen_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.42318, 2.34743 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 2.34743 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )
 
 [node name="living_back_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25098, 3.31469, -6.72199 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25098, 3.1, -6.72199 )
 width = 10.54
-height = 6.5
+height = 5.8
 depth = 0.4
 material = ExtResource( 6 )
 
 [node name="kitchen_back_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02213, 3.31469, -6.72199 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02213, 3.1, -6.72199 )
 width = 11.0
-height = 6.5
+height = 5.8
 depth = 0.4
 material = ExtResource( 6 )
 
 [node name="corridor_cross_wall" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226745, 3.31469, -11.1808 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226745, 3.1, -11.1808 )
 width = 14.5902
-height = 6.5
+height = 5.8
 depth = 0.4
 material = ExtResource( 6 )
 
 [node name="toilets_entrance" type="CSGBox" parent="corridor_cross_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.43023, 0.0943289 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.11955, 0.0943289 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )

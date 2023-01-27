@@ -19,13 +19,12 @@ transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, 0
 [node name="doors" type="Spatial" parent="."]
 
 [node name="furniture" type="Spatial" parent="."]
-visible = false
 
-[node name="Dresser" parent="furniture" instance=ExtResource( 5 )]
-transform = Transform( -5.68248e-08, 0, -1.3, 0, 1.2, 0, 1.3, 0, -5.68248e-08, 12.3655, 0.0936344, -9.30484 )
+[node name="dresser" parent="furniture" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481, 0.0530064, -4.72908 )
 
 [node name="bed_single" parent="furniture" instance=ExtResource( 4 )]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.9137, 0.122188, -14.5377 )
+transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6.6524, 0.0718173, -8.78317 )
 
 [node name="chest" parent="furniture" instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 7.81771, 0.107238, -15.0336 )
+transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -9.4484 )

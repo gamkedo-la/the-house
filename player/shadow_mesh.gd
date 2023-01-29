@@ -1,7 +1,7 @@
 extends MeshInstance
 
-export var bob_size : float = 0.1
-export var bob_freq : float = 3.0
+export var bob_size : float = 0.08
+export var bob_freq : float = 1.5
 export var bob_stop_speed : float = 0.5
 export var breathing_bob_size : float = 0.01
 export var breathing_bob_freq : float = 2.313
@@ -29,7 +29,7 @@ func _process(delta):
 	if distance_since_last_pos == 0.0:
 		_moving_distance = 0
 	else:
-		_moving_distance += distance_since_last_pos 
+		_moving_distance += distance_since_last_pos
 	_moving_distance = max(_moving_distance, 0.0)
 	
 	height_modulation += sin(_moving_distance * bob_freq) * bob_size

@@ -39,10 +39,13 @@ func display_text(new_text: String) -> void:
 	_texts_to_display.push_back(new_text)
 	_start_display_texts()
 	
+static func centered_text(text: String) -> String:
+	return "[center]%s[/center]" % text
+	
 func _start_display_texts() -> void:
 	while _texts_to_display.size() > 0 and not _is_displaying_text and not _is_force_stopping:
 		_is_displaying_text = true
-		bbcode_text = _texts_to_display.pop_front()
+		bbcode_text = centered_text(_texts_to_display.pop_front())
 		print("---> ", bbcode_text)
 
 		# fade in

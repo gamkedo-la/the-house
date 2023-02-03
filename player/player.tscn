@@ -213,10 +213,14 @@ script = ExtResource( 8 )
 
 [node name="text_display" type="RichTextLabel" parent="Head/Camera"]
 unique_name_in_owner = true
-margin_left = 422.0
-margin_top = 771.0
-margin_right = 1535.0
-margin_bottom = 964.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -554.0
+margin_top = -279.0
+margin_right = 559.0
+margin_bottom = -86.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )

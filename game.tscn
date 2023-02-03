@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=7]
 [ext_resource path="res://items/lantern-old.tscn" type="PackedScene" id=8]
 [ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/cristal_ball.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CylinderShape" id=1]
 height = 7.7531
@@ -53,6 +54,9 @@ spot_angle = 58.93
 
 [node name="temporary_tools" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431572, 1.15819 )
+
+[node name="crystal_ball" parent="temporary_tools" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8765, 1.11055, -5.93306 )
 
 [node name="lighter" parent="temporary_tools" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.12395, -6.1681 )

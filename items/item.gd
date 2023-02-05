@@ -31,8 +31,6 @@ var _is_taken := false
 const _tracking_speed := 500.0
 const _tracking_angular_speed := 1000.0
 
-const player_collision_layer_bit := 0
-const player_interraction_raycast_layer_bit := 7
 
 class MeshHighlight:
 	var mesh : Mesh
@@ -51,7 +49,7 @@ func _ready():
 static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Color) -> Array:
 	var highlites := []
 	if node is RigidBody:
-		node.set_collision_layer_bit(player_interraction_raycast_layer_bit, true)
+		node.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
 	for child in node.get_children():
 		if child is MeshInstance:
 			child.mesh = child.get_mesh().duplicate(true)
@@ -96,7 +94,7 @@ func is_takable_now() -> bool :
 
 static func _set_collision_with_player(node: Node, set_enabled: bool):
 	if node is RigidBody:
-		node.set_collision_layer_bit(player_collision_layer_bit, set_enabled) 
+		node.set_collision_layer_bit(CollisionLayers.player_collision_layer_bit, set_enabled) 
 	for child_node in node.get_children():
 		_set_collision_with_player(child_node, set_enabled)
 

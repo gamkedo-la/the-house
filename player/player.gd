@@ -56,7 +56,7 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _ready():
-	set_collision_layer_bit(ItemUtils.climbing_area_collision_bit, true)
+	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 
 

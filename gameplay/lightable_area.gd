@@ -7,8 +7,8 @@ class_name LightableArea
 signal lit_using_fire
 
 func _ready():
-	set_collision_layer_bit(ItemUtils.lighting_by_fire_collision_bit, true)
-	set_collision_mask_bit(ItemUtils.lighting_by_fire_collision_bit, true)
+	set_collision_layer_bit(CollisionLayers.lighting_by_fire_collision_bit, true)
+	set_collision_mask_bit(CollisionLayers.lighting_by_fire_collision_bit, true)
 	connect("area_entered", self, "_on_area_entered")
 
 func light_using_fire() -> void :

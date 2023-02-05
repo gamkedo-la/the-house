@@ -7,7 +7,7 @@ class_name FireArea
 var _is_fire_on := false
 
 func _ready():
-	set_collision_layer_bit(ItemUtils.lighting_by_fire_collision_bit, true)
+	set_collision_layer_bit(CollisionLayers.lighting_by_fire_collision_bit, true)
 
 func is_fire_on() -> bool:
 	return _is_fire_on

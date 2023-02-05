@@ -21,8 +21,12 @@ func update(delta):
 		state_machine.push_action(PlayerState.Action.drop_item)
 	
 	# We allow taking another item even if we have one already, just swap them
-	if Input.is_action_just_pressed("take_pointed_item") and player.is_pointing_takable_item():
-		_take_pointed_item()
+	if Input.is_action_just_pressed("interract_with_pointed_entity"):
+		if player.is_pointing_takable_item():
+			_take_pointed_item()
+		elif player.is_pointing_usable_entity():
+			player.use_pointed_usable_entity()
+		
 		
 	if Input.is_action_just_pressed("item_activation"):
 		player.use_item()

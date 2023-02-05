@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://furniture/door-basic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
@@ -17,6 +18,24 @@ transform = Transform( 1, 0, 0, 0, 0.935834, 0.172049, 0, -0.163447, 0.985088, 5
 transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, 0.107154, -3.89527, -2.12133 )
 
 [node name="doors" type="Spatial" parent="."]
+
+[node name="entrance_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599523, 0.0657877, 6.06917 )
+
+[node name="toilet_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.119335, -6.71467 )
+
+[node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.88106 )
+
+[node name="bathroom_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.75156 )
+
+[node name="living_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
+
+[node name="bedroom_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.938 )
 
 [node name="furniture" type="Spatial" parent="."]
 

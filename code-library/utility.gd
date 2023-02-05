@@ -65,3 +65,12 @@ static func delete_children(node : Node):
 	for child_node in node.get_children():
 		delete_child(node, child_node)
 	
+static func object_has_signal( object: Object, signal_name: String ) -> bool:
+	# source: https://www.reddit.com/r/godot/comments/8bklwt/check_if_node_has_signal/
+	var list = object.get_signal_list()
+	
+	for signal_entry in list:
+		if signal_entry["name"] == signal_name:
+			return true
+		
+	return false

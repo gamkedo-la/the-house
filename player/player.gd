@@ -26,6 +26,7 @@ onready var _text_display : RichTextLabel = $"%text_display"
 
 
 var _pointed_item : InteractiveItem
+var _pointed_usable_entity : Spatial
 var _held_item: InteractiveItem
 
 var _last_linear_velocity: Vector3
@@ -191,11 +192,22 @@ func update_interraction_ray() -> void:
 			_pointed_item = something
 			_pointed_item.hilite(true)
 			print("Highlight ON: %s" % _pointed_item)
+		elif utility.object_has_signal(something, "on_player_interracts") and (something == null or something != _pointed_usable_entity):
+			print("Usable entity pointed")
+			_pointed_usable_entity = something
+#		elif something:
+#			print("pointing ", something)
+			
 	else:
 		if _pointed_item is InteractiveItem:
 			print("Highlight OFF: %s" % _pointed_item)
 			_pointed_item.hilite(false)
 			_pointed_item = null
+		
+		if _pointed_usable_entity:
+			print("Stopped pointing at usable entity")
+			
+		_pointed_usable_entity = null
 	
 
 func get_currently_pointed_item() -> InteractiveItem:
@@ -206,6 +218,9 @@ func is_pointing_item() -> bool:
 	
 func is_pointing_takable_item() -> bool:
 	return _pointed_item is InteractiveItem && _pointed_item.is_takable_now()
+
+func is_pointing_usable_entity() -> bool:
+	return not _pointed_usable_entity == null
 
 func get_item_in_hand() -> InteractiveItem:
 	return _held_item
@@ -316,3 +331,6 @@ func display_text(bbtext: String) -> void:
 func stop_text_display() -> void:
 	_text_display.stop_display()
 	
+func use_pointed_usable_entity():
+	assert(_pointed_usable_entity)
+	_pointed_usable_entity.player_interracts()

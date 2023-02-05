@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://furniture/doors/door_handle.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.607843, 0.517647, 0.101961, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.111236, 0.0347476, 0.0568341 )
+
+[node name="door_hanlde" type="StaticBody"]
+script = ExtResource( 1 )
+
+[node name="vtube" type="CSGCylinder" parent="."]
+transform = Transform( -0.6, -2.29282e-15, -5.24537e-08, -5.24537e-08, 2.62268e-08, 0.6, 0, 0.6, -2.62268e-08, -0.000634344, 1.96369e-09, 0.012 )
+radius = 0.04
+height = 0.16
+material = SubResource( 1 )
+
+[node name="handle" type="CSGBox" parent="."]
+transform = Transform( -0.6, 5.24537e-08, 0, -5.24537e-08, -0.6, 0, 0, 0, 0.6, -0.0729474, -1.49365e-10, 0.0450764 )
+width = 0.268
+height = 0.04
+depth = 0.036
+material = SubResource( 1 )
+
+[node name="pommeau" type="CSGSphere" parent="."]
+transform = Transform( -0.6, 5.24537e-08, 0, -5.24537e-08, -0.6, 0, 0, 0, 0.6, -0.172241, -1.96369e-09, 0.0442612 )
+radius = 0.064
+material = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0936037, 0, 0.0223163 )
+shape = SubResource( 2 )

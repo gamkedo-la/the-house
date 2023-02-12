@@ -1,12 +1,8 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
-[ext_resource path="res://visuals/screen_pixelation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
-[ext_resource path="res://visuals/WorldEnvironment.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/fsm/player-statemachine.gd" type="Script" id=6]
-[ext_resource path="res://visuals/night_sky.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/debug_info.gd" type="Script" id=8]
 [ext_resource path="res://player/fsm/state-no-item.gd" type="Script" id=9]
 [ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
@@ -36,28 +32,6 @@ flags_no_depth_test = true
 flags_use_point_size = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_transparent = true
-vertex_color_use_as_albedo = true
-params_blend_mode = 1
-params_billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-albedo_texture = ExtResource( 2 )
-transmission_enabled = true
-transmission = Color( 0.5, 0.5, 0.5, 1 )
-transmission_texture = ExtResource( 2 )
-
-[sub_resource type="QuadMesh" id=3]
-material = SubResource( 2 )
-size = Vector2( 6, 6 )
-
-[sub_resource type="Gradient" id=4]
-interpolation_mode = 2
-offsets = PoolRealArray( 0, 0.284916, 0.77095, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.223529, 1, 1, 1, 0.180392, 1, 1, 1, 0 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 64
@@ -103,15 +77,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.227731 )
 [node name="Camera" type="Camera" parent="Head"]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
+current = true
 far = 8192.0
 script = ExtResource( 4 )
-
-[node name="Sky" parent="Head/Camera" instance=ExtResource( 7 )]
-
-[node name="screen pixelation" parent="Head/Camera" instance=ExtResource( 3 )]
-visible = false
-
-[node name="WorldEnvironment" parent="Head/Camera" instance=ExtResource( 5 )]
 
 [node name="InterractionRay" type="RayCast" parent="Head/Camera"]
 unique_name_in_owner = true
@@ -130,29 +98,6 @@ height = 0.005
 depth = 0.052
 material = SubResource( 5 )
 
-[node name="airdust_particles" type="CPUParticles" parent="Head/Camera"]
-visible = false
-amount = 150
-lifetime = 5.0
-preprocess = 5.0
-speed_scale = 0.5
-lifetime_randomness = 0.5
-local_coords = false
-mesh = SubResource( 3 )
-emission_shape = 1
-emission_sphere_radius = 40.0
-direction = Vector3( 0, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 0.1
-initial_velocity_random = 1.0
-angular_velocity_random = 1.0
-angle = 360.0
-angle_random = 1.0
-scale_amount = 10.0
-scale_amount_random = 0.1
-color_ramp = SubResource( 4 )
-
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435487, -0.375856, -0.642215 )
 visible = false
@@ -166,7 +111,7 @@ transform = Transform( 0.777462, 0.36233, -0.514073, -0.626944, 0.5114, -0.58771
 visible = false
 
 [node name="center_holding_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -1.26336 )
+transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -0.890186 )
 visible = false
 
 [node name="crouch_tween" type="Tween" parent="Head/Camera"]

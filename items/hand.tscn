@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/body/hand.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.670588, 0.227451, 0.341176, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.0509921, 0.00818999, 0.137254 )
+
+[node name="hand" type="RigidBody"]
+script = ExtResource( 1 )
+
+[node name="placeholder_please_replace_me" type="CSGCombiner" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.83171e-10, 0, -0.0202046 )
+
+[node name="palm" type="CSGBox" parent="placeholder_please_replace_me"]
+width = 0.0744711
+height = 0.0222419
+depth = 0.0757804
+material = SubResource( 2 )
+
+[node name="finger_1" type="CSGBox" parent="placeholder_please_replace_me"]
+transform = Transform( 0.973263, 0, -0.229693, 0, 1, 0, 0.229693, 0, 0.973263, -0.0419414, 0.00240868, 0.0704893 )
+width = 0.0141257
+height = 0.00829496
+depth = 0.1
+material = SubResource( 2 )
+
+[node name="finger_2" type="CSGBox" parent="placeholder_please_replace_me"]
+transform = Transform( 0.999451, 0, -0.0331203, 0, 1, 0, 0.0331203, 0, 0.999451, -0.0172367, 0.00240871, 0.081105 )
+width = 0.0141257
+height = 0.00829496
+depth = 0.1
+material = SubResource( 2 )
+
+[node name="finger_3" type="CSGBox" parent="placeholder_please_replace_me"]
+transform = Transform( 0.999451, 0, -0.0331203, 0, 1, 0, 0.0331203, 0, 0.999451, 0.00195783, 0.00240871, 0.0849946 )
+width = 0.0141257
+height = 0.00829496
+depth = 0.1
+material = SubResource( 2 )
+
+[node name="finger_4" type="CSGBox" parent="placeholder_please_replace_me"]
+transform = Transform( 0.974288, 0, 0.225308, 0, 1, 0, -0.225308, 0, 0.974288, 0.0331608, 0.00240868, 0.0732733 )
+width = 0.0141257
+height = 0.00829496
+depth = 0.1
+material = SubResource( 2 )
+
+[node name="finger_5" type="CSGBox" parent="placeholder_please_replace_me"]
+transform = Transform( 0.497753, 0.326028, 0.803709, -0.384975, 0.913423, -0.132111, -0.777198, -0.243649, 0.580171, 0.0555199, -0.00421412, 0.0142094 )
+width = 0.0141257
+height = 0.00829496
+depth = 0.0714222
+material = SubResource( 2 )
+
+[node name="arm" type="CSGCylinder" parent="placeholder_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.103846 )
+radius = 0.0215053
+height = 0.1457
+material = SubResource( 2 )
+
+[node name="placeholder_collision_shape" type="CollisionShape" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.83171e-10, 0, 0 )
+shape = SubResource( 1 )

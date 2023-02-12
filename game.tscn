@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://items/cristal_ball.tscn" type="PackedScene" id=10]
 [ext_resource path="res://items/military_torchlight.tscn" type="PackedScene" id=11]
+[ext_resource path="res://furniture/toilet/toilet.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CylinderShape" id=1]
 height = 7.7531
@@ -83,3 +84,9 @@ script = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="texts/TextDisplayArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5866, 3.35231, 0 )
 shape = SubResource( 1 )
+
+[node name="room_toilet" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5, -3 )
+
+[node name="toilet" parent="room_toilet" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.915, 0, 0.33847 )

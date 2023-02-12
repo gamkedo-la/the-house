@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "RigidBody",
 "class": "InteractiveItem",
 "language": "GDScript",
-"path": "res://items/item.gd"
+"path": "res://items/interactive_item.gd"
 }, {
 "base": "Node",
 "class": "ItemUtils",

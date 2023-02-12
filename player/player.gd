@@ -2,9 +2,10 @@ extends KinematicBody
 
 class_name Player
 
-export var walk_speed : float = 300.0
-export var crouch_speed : float = 150.0
-export var climb_speed : float = 100.0
+export var walking_speed : float = 150.0
+export var running_speed : float = 300.0
+export var crouching_speed : float = 50.0
+export var climbing_speed : float = 100.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
 
@@ -37,6 +38,7 @@ onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
 var _is_crouch_locked := false
 var _crouch_duration := 0.33
+var _is_running := false
 
 var _is_holding_front := false
 
@@ -66,6 +68,8 @@ func exploration_update(delta: float):
 	update_walk(delta)
 	update_item_position(delta)
 	update_interraction_ray()
+
+	_is_running = Input.is_action_pressed("run")
 
 # TODO: make an option to decide if the crouch action is a toggle or an input hold
 	if Input.is_action_just_pressed("toggle_crouch"):
@@ -154,11 +158,14 @@ func update_walk(delta) -> void:
 
 func current_move_speed() -> float:
 	if _movement_mode == MovementMode.Climbing:
-		return climb_speed
+		return climbing_speed
 	elif _is_crouched:
-		return crouch_speed
+		return crouching_speed
 	else:
-		return walk_speed
+		if _is_running:
+			return running_speed
+		else:
+			return walking_speed
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:

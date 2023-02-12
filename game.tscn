@@ -42,12 +42,15 @@ transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 42.9512, 
 
 [node name="moon_light" type="DirectionalLight" parent="ambiant_lights"]
 transform = Transform( -0.784359, 0.125479, -0.607483, -0.220791, 0.858715, 0.462449, 0.579683, 0.496853, -0.645837, -13.2111, 12.547, -4.3763 )
+light_energy = 0.2
+light_specular = 0.0
 shadow_enabled = true
 shadow_contact = 0.353
 directional_shadow_max_distance = 23.9
 script = ExtResource( 12 )
 
 [node name="temporary_ambiant_lights" type="Spatial" parent="."]
+visible = false
 
 [node name="OmniLight" type="OmniLight" parent="temporary_ambiant_lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )

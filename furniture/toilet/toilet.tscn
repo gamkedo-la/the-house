@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://furniture/toilet/toilet.glb" type="PackedScene" id=1]
 
-[node name="toilet" instance=ExtResource( 1 )]
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.308456, 0.288878, 0.482623 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.306516, 0.220199, 0.179682 )
+
+[node name="toilet" type="StaticBody"]
+
+[node name="mesh" parent="." instance=ExtResource( 1 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.288901, 0 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761006, -0.51086 )
+shape = SubResource( 5 )

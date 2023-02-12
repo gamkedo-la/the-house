@@ -41,7 +41,7 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.
 [node name="furniture" type="Spatial" parent="."]
 
 [node name="toilet" parent="furniture" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77187, 0, -9.121 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.50876, 0.0636346, -9.121 )
 
 [node name="dresser" parent="furniture" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481, 0.0530064, -4.72908 )

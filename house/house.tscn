@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://furniture/toilet/toilet.tscn" type="PackedScene" id=7]
 
 [node name="test-house" type="Spatial"]
 
@@ -38,6 +39,9 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.0
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.938 )
 
 [node name="furniture" type="Spatial" parent="."]
+
+[node name="toilet" parent="furniture" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77187, 0, -9.121 )
 
 [node name="dresser" parent="furniture" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481, 0.0530064, -4.72908 )

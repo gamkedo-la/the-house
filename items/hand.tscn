@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://items/interactive_item.gd" type="Script" id=1]
+[ext_resource path="res://items/body/hand.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.670588, 0.227451, 0.341176, 1 )
@@ -49,10 +49,10 @@ depth = 0.1
 material = SubResource( 2 )
 
 [node name="finger_5" type="CSGBox" parent="placeholder_please_replace_me"]
-transform = Transform( 0.598199, 0, 0.801348, 0, 1, 0, -0.801348, 0, 0.598199, 0.0451401, -0.00421412, 0.0174529 )
+transform = Transform( 0.497753, 0.326028, 0.803709, -0.384975, 0.913423, -0.132111, -0.777198, -0.243649, 0.580171, 0.0555199, -0.00421412, 0.0142094 )
 width = 0.0141257
 height = 0.00829496
-depth = 0.0458055
+depth = 0.0714222
 material = SubResource( 2 )
 
 [node name="arm" type="CSGCylinder" parent="placeholder_please_replace_me"]

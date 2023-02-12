@@ -63,16 +63,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6283, 1.11555, -5.12659 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8765, 1.11055, -5.93306 )
 
 [node name="lighter" parent="temporary_tools" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.12395, -6.1681 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2163, 1.07955, -6.1681 )
 
 [node name="torch" parent="temporary_tools" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.386, 1.10495, -5.46616 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.386, 1.06055, -5.46616 )
 
 [node name="lantern" parent="temporary_tools" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2357, 1.0519, -4.99469 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2357, 1.0075, -4.99469 )
 
 [node name="lantern2" parent="temporary_tools" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9745, 1.0519, -5.52431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9745, 1.0075, -5.52431 )
 
 [node name="texts" type="Node" parent="."]
 

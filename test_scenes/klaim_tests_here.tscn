@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://test_scenes/test-key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.828706, 0.559685, 0, -0.559685, 0.828706, 0, 0, -13.1667 )
+
+[node name="ground" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0614002, 0 )
+use_collision = true
+width = 12.8327
+height = 0.12755
+depth = 16.6487
+
+[node name="key" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.999951, 0, -0.00986098, 0, 1, 0, 0.00986098, 0, -0.999951, 0.365058, 0.242982, -1.48963 )
+can_be_taken = null
+hilighted = null
+highlightable = null
+highlight_color = null
+highlight_width = null
+mesh_node = null
+orientation_hand_held = null
+orientation_held_front = null
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53166, 0.691929, 1.39781 )

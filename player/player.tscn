@@ -111,7 +111,7 @@ transform = Transform( 0.777462, 0.36233, -0.514073, -0.626944, 0.5114, -0.58771
 visible = false
 
 [node name="center_holding_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -1.26336 )
+transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -0.890186 )
 visible = false
 
 [node name="crouch_tween" type="Tween" parent="Head/Camera"]

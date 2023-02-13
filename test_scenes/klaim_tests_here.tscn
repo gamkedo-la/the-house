@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://test_scenes/test-key.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.392157, 0.317647, 0.317647, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -28,3 +32,11 @@ orientation_held_front = null
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53166, 0.691929, 1.39781 )
+
+[node name="torch" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57976, 0.00237513, -1.62309 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24686, 1.00237, 0 )
+use_collision = true
+material = SubResource( 1 )

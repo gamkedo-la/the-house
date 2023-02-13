@@ -2,11 +2,14 @@ extends KinematicBody
 
 class_name Player
 
-export var walk_speed : float = 300.0
-export var crouch_speed : float = 150.0
-export var climb_speed : float = 100.0
+export var walking_speed : float = 150.0
+export var running_speed : float = 300.0
+export var crouching_speed : float = 50.0
+export var climbing_speed : float = 100.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 100.0
+export var interraction_distance : float = 1.2
+export var auto_pointing_distance : float = 4.0
 
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-75.0)
@@ -17,17 +20,16 @@ var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gr
 onready var _camera : Camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
-onready var _drop_spot : Spatial = $"%Camera/drop_spot"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _text_display : RichTextLabel = $"%text_display"
 
-
 var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
 var _held_item: InteractiveItem
+onready var _initial_hand_transform : Transform
 
 var _last_linear_velocity: Vector3
 
@@ -37,6 +39,7 @@ onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
 var _is_crouch_locked := false
 var _crouch_duration := 0.33
+var _is_running := false
 
 var _is_holding_front := false
 
@@ -45,7 +48,7 @@ onready var _initial_examination_transform : Transform = _examination_spot.trans
 enum MovementMode { Walking, Climbing }
 var _movement_mode : int = MovementMode.Walking
 
-func _init():
+func _init() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):	
@@ -56,16 +59,18 @@ func _input(event):
 	if Input.is_action_just_pressed("mouse_release"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func _ready():
+func _ready() -> void:
 	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
-
+	_initial_hand_transform = _hand_node.transform
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):
 	update_walk(delta)
 	update_item_position(delta)
 	update_interraction_ray()
+
+	_is_running = Input.is_action_pressed("run")
 
 # TODO: make an option to decide if the crouch action is a toggle or an input hold
 	if Input.is_action_just_pressed("toggle_crouch"):
@@ -154,11 +159,14 @@ func update_walk(delta) -> void:
 
 func current_move_speed() -> float:
 	if _movement_mode == MovementMode.Climbing:
-		return climb_speed
+		return climbing_speed
 	elif _is_crouched:
-		return crouch_speed
+		return crouching_speed
 	else:
-		return walk_speed
+		if _is_running:
+			return running_speed
+		else:
+			return walking_speed
 
 # Call this only once per _input() or _unhandled_input()
 func update_orientation(event: InputEvent) -> void:
@@ -184,7 +192,25 @@ func update_item_position(delta: float) -> void:
 	_held_item.update_movement(delta, _last_linear_velocity)
 
 func update_interraction_ray() -> void:
-	if _interraction_ray.is_colliding():
+	var distance_to_pointed = _interraction_ray.global_transform.origin.distance_to(_interraction_ray.get_collision_point())
+	
+	# Hand orientation determine held items orientation:
+	if _held_item is InteractiveItem and _held_item.orientation_hand_held == InteractiveItem.TrackingOrientation.FOLLOW:
+		if _interraction_ray.is_colliding() and distance_to_pointed <= auto_pointing_distance:
+			# Hand need to point to whatever is pointed if we are holding an item which follows the view
+			_hand_node.look_at(_interraction_ray.get_collision_point(), Vector3.UP)
+		else:
+			# Point at the farthest point in front of us
+			var forward = -_interraction_ray.global_transform.basis.z
+			var forward_position = _interraction_ray.global_transform.origin + (forward * 10)
+			_hand_node.look_at(forward_position, Vector3.UP)
+	else:
+		# Cancel any pointing
+		_hand_node.transform.basis = _initial_hand_transform.basis 
+		
+	
+	# Interracting with interractible items:
+	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance:
 		var something = _interraction_ray.get_collider()
 		if something is InteractiveItem and something.is_takable_now() and (_pointed_item == null or _pointed_item != something):
 			if _pointed_item != null:
@@ -197,7 +223,6 @@ func update_interraction_ray() -> void:
 			_pointed_usable_entity = something
 #		elif something:
 #			print("pointing ", something)
-			
 	else:
 		if _pointed_item is InteractiveItem:
 			print("Highlight OFF: %s" % _pointed_item)

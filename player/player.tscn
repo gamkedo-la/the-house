@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
@@ -32,6 +32,9 @@ flags_no_depth_test = true
 flags_use_point_size = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0.0862745, 1, 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 64
@@ -84,26 +87,21 @@ script = ExtResource( 4 )
 [node name="InterractionRay" type="RayCast" parent="Head/Camera"]
 unique_name_in_owner = true
 enabled = true
-cast_to = Vector3( 0, 0, -2 )
-collision_mask = 128
+cast_to = Vector3( 0, 0, -20 )
+collision_mask = 129
 debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )
 
 [node name="target" type="CSGBox" parent="Head/Camera/InterractionRay"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97395 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
 cast_shadow = 0
 generate_lightmap = false
-operation = 2
-width = 0.005
-height = 0.005
+width = 0.003
+height = 0.003
 depth = 0.052
 material = SubResource( 5 )
 
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435487, -0.375856, -0.642215 )
-visible = false
-
-[node name="drop_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.087 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.493, -0.384, -0.509 )
 visible = false
 
 [node name="examination_spot" type="Spatial" parent="Head/Camera"]
@@ -111,8 +109,16 @@ transform = Transform( 0.777462, 0.36233, -0.514073, -0.626944, 0.5114, -0.58771
 visible = false
 
 [node name="center_holding_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -0.890186 )
+transform = Transform( 1, 0, 0, 0, 0.966583, -0.256357, 0, 0.256357, 0.966583, 0, -0.125, -0.7 )
 visible = false
+
+[node name="CSGBox" type="CSGBox" parent="Head/Camera/center_holding_spot"]
+transform = Transform( 1, 0, 0, 0, 0.980771, 0.195159, 0, -0.195159, 0.980771, 0, 0, 0 )
+visible = false
+width = 0.1
+height = 0.1
+depth = 0.1
+material = SubResource( 10 )
 
 [node name="crouch_tween" type="Tween" parent="Head/Camera"]
 
@@ -126,7 +132,8 @@ meta_underlined = false
 text = "Debug Info: F1
 
 Move: WASD keys or arrow keys
-Crounch: CTRL to toggle, C to hold
+Crouch: CTRL to toggle, C to hold
+Run: hold Shift while moving
 Take Item: left mouse button or E key
 Use Held Item: right mouse button or F key
 Put Item In Front Of You: SPACE key

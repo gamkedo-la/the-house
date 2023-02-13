@@ -110,9 +110,11 @@ visible = false
 
 [node name="center_holding_spot" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 0.966583, -0.256357, 0, 0.256357, 0.966583, 0, -0.125, -0.7 )
+visible = false
 
 [node name="CSGBox" type="CSGBox" parent="Head/Camera/center_holding_spot"]
 transform = Transform( 1, 0, 0, 0, 0.980771, 0.195159, 0, -0.195159, 0.980771, 0, 0, 0 )
+visible = false
 width = 0.1
 height = 0.1
 depth = 0.1

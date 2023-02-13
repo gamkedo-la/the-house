@@ -21,14 +21,6 @@ depth = 16.6487
 
 [node name="key" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.999951, 0, -0.00986098, 0, 1, 0, 0.00986098, 0, -0.999951, 0.365058, 0.242982, -1.48963 )
-can_be_taken = null
-hilighted = null
-highlightable = null
-highlight_color = null
-highlight_width = null
-mesh_node = null
-orientation_hand_held = null
-orientation_held_front = null
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53166, 0.691929, 1.39781 )

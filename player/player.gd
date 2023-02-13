@@ -20,7 +20,6 @@ var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gr
 onready var _camera : Camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
-onready var _drop_spot : Spatial = $"%Camera/drop_spot"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"

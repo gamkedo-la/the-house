@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
@@ -32,6 +32,9 @@ flags_no_depth_test = true
 flags_use_point_size = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0.0862745, 1, 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 64
@@ -101,23 +104,19 @@ material = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.493, -0.384, -0.509 )
 visible = false
 
-[node name="CSGBox" type="CSGBox" parent="Head/Camera/right_hand"]
-visible = false
-width = 0.1
-height = 0.1
-depth = 0.1
-
-[node name="drop_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.087 )
-visible = false
-
 [node name="examination_spot" type="Spatial" parent="Head/Camera"]
 transform = Transform( 0.777462, 0.36233, -0.514073, -0.626944, 0.5114, -0.587718, 0.0499492, 0.779223, 0.624754, 0, 0, -0.643 )
 visible = false
 
 [node name="center_holding_spot" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 0.980772, -0.195159, 0, 0.195159, 0.980772, 0, -0.125327, -0.890186 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 0.966583, -0.256357, 0, 0.256357, 0.966583, 0, -0.125, -0.7 )
+
+[node name="CSGBox" type="CSGBox" parent="Head/Camera/center_holding_spot"]
+transform = Transform( 1, 0, 0, 0, 0.980771, 0.195159, 0, -0.195159, 0.980771, 0, 0, 0 )
+width = 0.1
+height = 0.1
+depth = 0.1
+material = SubResource( 10 )
 
 [node name="crouch_tween" type="Tween" parent="Head/Camera"]
 

@@ -10,7 +10,6 @@ export var hilighted = false
 export var highlightable := true
 export var highlight_color : Color = "#ffffff"
 export var highlight_width := 5.0
-export var mesh_node: NodePath
 
 enum TrackingOrientation {
 	NONE, # The item will not orient itself at all.

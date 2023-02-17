@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/steps-ponderous.mp3-57e37d9c23e38dd714a24002c432f98a.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/steps-ponderous.mp3"
+dest_files=[ "res://.import/steps-ponderous.mp3-57e37d9c23e38dd714a24002c432f98a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

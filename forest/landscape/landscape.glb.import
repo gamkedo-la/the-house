@@ -11,8 +11,8 @@ dest_files=[ "res://.import/landscape.glb-e854cd0e233cd89d5e4f0b5ea5ca4a54.scn" 
 
 [params]
 
-nodes/root_type="Spatial"
-nodes/root_name="Scene Root"
+nodes/root_type="StaticBody"
+nodes/root_name="landscape"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0

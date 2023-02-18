@@ -173,7 +173,10 @@ Release window focus: Escape key
 Pixelated Screen: 7
 Fog: 8
 Glow: 9
-Air Dust: 0"
+Air Dust: 0
+
+Jump to next Spawn point: K 
+"
 fit_content_height = true
 scroll_active = false
 

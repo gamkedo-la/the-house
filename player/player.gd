@@ -20,6 +20,7 @@ const limit_down_angle : float = deg2rad(-75.0)
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
+onready var _body : CollisionShape = $"%Body"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _ground_checker: RayCast = $"%ground_checker"
 onready var _slope_checker: RayCast = $"%slope_checker"
@@ -35,6 +36,8 @@ var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
 var _held_item: InteractiveItem
 onready var _initial_hand_transform : Transform
+onready var _initial_body_transform : Transform
+onready var _initial_body_height : float
 
 var _last_linear_velocity: Vector3
 
@@ -68,6 +71,8 @@ func _ready() -> void:
 	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 	_initial_hand_transform = _hand_node.transform
+	_initial_body_transform = _body.transform
+	_initial_body_height = _body.shape.height
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):
@@ -358,6 +363,9 @@ func crouch() -> void:
 	result = _crouch_tween.start()
 	assert(result == true)
 	
+	_body.transform.origin -= (_body.transform.origin * 0.5)
+	_body.shape.height = _body.shape.height * 0.5
+	
 	_is_crouched = true
 	
 	
@@ -369,6 +377,9 @@ func get_up() -> void:
 	assert(result == true)
 	result = _crouch_tween.start()
 	assert(result == true)
+	
+	_body.transform.origin += _initial_body_transform.origin
+	_body.shape.height = _initial_body_height
 	
 	_is_crouched = false
 	

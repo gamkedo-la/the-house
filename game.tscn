@@ -147,6 +147,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30219, 1.00749, 10.1251 )
 [node name="lantern2" parent="debug/temporary_tools" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33787, 1.00749, 9.99792 )
 
+[node name="quick_travel_spawn_point4" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 80.9613, 2.10669, 27.5537 )
+
 [node name="quick_travel_spawn_point3" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 59.3841, 8.08281, -38.4963 )
 

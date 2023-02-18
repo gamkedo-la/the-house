@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://player/feet_audio_player.gd"
 }, {
+"base": "RayCast",
+"class": "GroundChecker",
+"language": "GDScript",
+"path": "res://player/ground_checker.gd"
+}, {
 "base": "RigidBody",
 "class": "InteractiveItem",
 "language": "GDScript",
@@ -116,6 +121,7 @@ _global_script_class_icons={
 "FSM_StateMachine": "",
 "FireArea": "",
 "FootAudio": "",
+"GroundChecker": "",
 "InteractiveItem": "",
 "ItemUtils": "",
 "KeyArea": "",

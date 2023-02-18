@@ -88,7 +88,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0772, 9.53674e-07, 40.5956 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5917, 9.53674e-07, 20.9675 )
 
 [node name="PineTree6" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7103, 11.7896, -22.2476 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1881, 8.43449, -23.3269 )
+
+[node name="PineTree30" parent="trees" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3621, 8.43449, -15.1854 )
+
+[node name="PineTree33" parent="trees" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7828, 10.111, -9.46241 )
 
 [node name="PineTree7" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5483, 3.26599, -52.1196 )

@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://forest/tree/pine_no_leaves.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://forest/tree/pine_bark_blend.material" type="Material" id=2]
 [ext_resource path="res://forest/tree/pine_bark.material" type="Material" id=3]
+[ext_resource path="res://forest/tree/PineTree.gd" type="Script" id=4]
 
 [node name="PineTreeNoLeaves" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="pine_no_leaves" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )

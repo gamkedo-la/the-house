@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -9,13 +9,16 @@
 [ext_resource path="res://furniture/toilet/toilet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://house/windows/window.tscn" type="PackedScene" id=8]
 [ext_resource path="res://furniture/trap_door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://furniture/doors/attic_trap_door.gd" type="Script" id=10]
 
 [node name="test-house" type="Spatial"]
 
 [node name="walls" parent="." instance=ExtResource( 2 )]
 
 [node name="attic_ladder" parent="." instance=ExtResource( 1 )]
+unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 0.935834, 0.172049, 0, -0.163447, 0.985088, 5.3635, 0.0330846, -1.50762 )
+visible = false
 
 [node name="basement_ladder" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.989729, 0.142957, 0, -0.142957, 0.989729, 0.107154, -3.91047, -2.12133 )
@@ -45,6 +48,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.08177
 
 [node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35793, 3.67927, -1.28276 )
+script = ExtResource( 10 )
 
 [node name="furniture" type="Spatial" parent="."]
 

@@ -33,6 +33,9 @@ static func calc_angular_velocity(from_basis: Basis, to_basis: Basis) -> Vector3
 static func random_selection(array: Array):
 	var selected = array[ randi() % array.size() ]
 	return selected
+	
+static func random_vector2(width: float, origin: Vector2 = Vector2.ZERO) -> Vector2:
+	return Vector2(origin.x + rand_range(-width, width), origin.y + rand_range(-width, width));
 
 static func nan_to_zero(vec: Vector3) -> Vector3:
 	if is_nan(vec.x):

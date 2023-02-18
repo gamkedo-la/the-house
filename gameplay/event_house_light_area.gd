@@ -6,7 +6,7 @@ func _ready():
 func _on_body_entered(player: Node) -> void:
 	if player is Player:
 		$"to_disappear".visible = false
-		monitorable = false
-		monitoring = false
+		set_deferred("monitorable", false)
+		set_deferred("monitoring", false)
 
 

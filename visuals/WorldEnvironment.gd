@@ -16,9 +16,9 @@ func _ready():
 
 func _bloom_tween_completed() -> void:
 	if environment.glow_strength > 1:
-		var ignored = bloom_tween.interpolate_property(environment, "glow_strength", 1.09, 1, 7.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
+		var _ignored = bloom_tween.interpolate_property(environment, "glow_strength", 1.09, 1, 7.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
 	else:
-		var ignored = bloom_tween.interpolate_property(environment, "glow_strength", 1, 1.09, 7.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
+		var _ignored = bloom_tween.interpolate_property(environment, "glow_strength", 1, 1.09, 7.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
 		
 	var ignored = bloom_tween.start()
 	

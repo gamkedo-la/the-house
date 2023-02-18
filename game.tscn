@@ -50,8 +50,8 @@ transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.017487
 [node name="ambiant_lights" type="Spatial" parent="."]
 
 [node name="moon_light" type="DirectionalLight" parent="ambiant_lights"]
-transform = Transform( -0.784359, 0.125479, -0.607483, -0.220791, 0.858715, 0.462449, 0.579683, 0.496853, -0.645836, -59.2176, 39.8945, -11.2015 )
-light_energy = 0.2
+transform = Transform( -0.810717, 0.431324, -0.39585, 0.081885, 0.753058, 0.652838, 0.579683, 0.496853, -0.645836, -59.2176, 39.8945, -11.2015 )
+light_color = Color( 0.709804, 0, 0, 1 )
 light_specular = 0.0
 shadow_enabled = true
 shadow_contact = 0.353

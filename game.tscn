@@ -102,6 +102,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38355, 1.00749, 2.85844 )
 [node name="lantern2" parent="temporary_tools" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34787, 1.00749, 2.73125 )
 
+[node name="quick_travel_spawn_point" type="Spatial" parent="temporary_tools"]
+transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -38.2518, 26.2728, -65.2771 )
+
+[node name="player_spawn_point" type="Spatial" parent="temporary_tools"]
+transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 0.196899, 1.70009, 3.8775 )
+
 [node name="texts" type="Node" parent="."]
 
 [node name="TextDisplayArea" type="Area" parent="texts"]

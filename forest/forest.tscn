@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://forest/landscape.tscn" type="PackedScene" id=1]
 [ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://forest/bush.tscn" type="PackedScene" id=3]
 [ext_resource path="res://forest/tree/bark07.png" type="Texture" id=4]
+[ext_resource path="res://items/mushrooms-group.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 4 )
@@ -449,3 +450,10 @@ transform = Transform( 0.0948764, 0.382087, 0.919243, -0.976713, -0.142769, 0.16
 use_collision = true
 height = 26.9457
 material = SubResource( 1 )
+
+[node name="mushrooms" type="Node" parent="."]
+
+[node name="mushrooms-group" parent="mushrooms" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3706, 0.203189, 78.8837 )
+random_placement_radius = 8.0
+mushroom_count = 36

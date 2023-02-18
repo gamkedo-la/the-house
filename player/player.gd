@@ -166,7 +166,7 @@ func update_walk(delta) -> void:
 	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)
 	
 	if movement_translation.length() > 0.0:
-		if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround:
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround or _movement_mode == MovementMode.Climbing:
 			_feet_audio.begin_walk(FootAudio.StepSurface.House)
 		else:
 			_feet_audio.begin_walk(FootAudio.StepSurface.Grass)

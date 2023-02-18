@@ -142,9 +142,11 @@ func update_walk(delta) -> void:
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
+	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
+	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		if _ground_checker.currently_walking_on() == GroundChecker.WalkingOn.OutsideGround and _slope_checker.currently_walking_on() == GroundChecker.WalkingOn.OutsideGround:
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround and _slope_checker.currently_walking_on() == GroundChecker.WalkingOn.OutsideGround:
 			# We detected that we are walking on a slope on the landscape of the forest.
 			# In this case we do not want to be affected by gravity, as a workaround having to
 			# counter gravity with more strengh in the legs.
@@ -164,7 +166,10 @@ func update_walk(delta) -> void:
 	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)
 	
 	if movement_translation.length() > 0.0:
-		_feet_audio.begin_walk(FootAudio.StepSurface.House)
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround:
+			_feet_audio.begin_walk(FootAudio.StepSurface.House)
+		else:
+			_feet_audio.begin_walk(FootAudio.StepSurface.Grass)
 	else:
 		_feet_audio.end_walk()
 		

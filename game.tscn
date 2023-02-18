@@ -38,7 +38,7 @@ script = ExtResource( 1 )
 [node name="forest" parent="." instance=ExtResource( 2 )]
 
 [node name="house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 24.0639, 0 )
+transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
 
 [node name="toolshed" parent="." instance=ExtResource( 14 )]
 transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -23.763, 26.9263, -14.7953 )
@@ -79,6 +79,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6469, -0.251875, -2.45365 
 shape = SubResource( 2 )
 
 [node name="to_disappear" type="Spatial" parent="event_areas/event_house_light_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35668, 0 )
 
 [node name="shadow" parent="event_areas/event_house_light_area/to_disappear" instance=ExtResource( 17 )]
 transform = Transform( -0.321673, 0, 0.506485, 0, 0.6, 0, -0.506485, 0, -0.321673, -22.902, 4.80558, -4.27306 )
@@ -150,7 +151,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34787, 1.00749, 2.73125 )
 transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 5.07294, 24.4241, 2.8632 )
 
 [node name="quick_travel_spawn_point" type="Spatial" parent="debug"]
-transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -20.6121, 25.2623, 2.8632 )
+transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -20.6121, 26.7836, 2.8632 )
 
 [node name="player_spawn_point" type="Spatial" parent="debug"]
 transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )

@@ -55,7 +55,6 @@ func lock() -> void:
 	pass
 
 func on_player_interract():
-	print("ouch")
 	_set_open(not is_open)
 	
 

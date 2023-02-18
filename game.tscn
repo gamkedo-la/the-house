@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://house/house.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gameplay/test_display_area.gd" type="Script" id=4]
+[ext_resource path="res://gameplay/text_display_area.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=7]
@@ -15,10 +15,15 @@
 [ext_resource path="res://game-environment.tscn" type="PackedScene" id=13]
 [ext_resource path="res://toolshed.tscn" type="PackedScene" id=14]
 [ext_resource path="res://game.gd" type="Script" id=15]
+[ext_resource path="res://gameplay/event_house_light_area.gd" type="Script" id=16]
+[ext_resource path="res://player/shadow_mesh/shadow.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CylinderShape" id=1]
 height = 7.7531
 radius = 18.0958
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 2.51952, 2.57765, 36.8175 )
 
 [node name="game" type="Spatial"]
 script = ExtResource( 15 )
@@ -53,61 +58,6 @@ shadow_contact = 0.353
 directional_shadow_max_distance = 23.9
 script = ExtResource( 12 )
 
-[node name="temporary_ambiant_lights" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6902, 24.7373, 0.709967 )
-visible = false
-
-[node name="OmniLight" type="OmniLight" parent="temporary_ambiant_lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )
-shadow_enabled = true
-omni_range = 15.8959
-
-[node name="OmniLight2" type="OmniLight" parent="temporary_ambiant_lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, 0 )
-shadow_enabled = true
-omni_range = 15.8959
-
-[node name="OmniLight3" type="OmniLight" parent="temporary_ambiant_lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, -25.1791 )
-shadow_enabled = true
-omni_range = 15.8959
-
-[node name="SpotLight" type="SpotLight" parent="temporary_ambiant_lights"]
-transform = Transform( -0.498064, -0.407485, 0.765433, 0, 0.88271, 0.469918, -0.86714, 0.234049, -0.439646, 18.5571, 5.05364, -5.33785 )
-shadow_enabled = true
-spot_range = 20.0
-spot_angle = 58.93
-
-[node name="OmniLight4" type="OmniLight" parent="temporary_ambiant_lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0101, 2.75592, -21.805 )
-
-[node name="temporary_tools" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6397, -1.01054, 68.1403 )
-
-[node name="military_torchlight" parent="temporary_tools" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72273, 1.11555, 1.45742 )
-
-[node name="crystal_ball" parent="temporary_tools" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38045, 1.11055, 2.13684 )
-
-[node name="lighter" parent="temporary_tools" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09563, 1.07955, 1.0509 )
-
-[node name="torch" parent="temporary_tools" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98659, 1.06054, 2.05698 )
-
-[node name="lantern" parent="temporary_tools" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38355, 1.00749, 2.85844 )
-
-[node name="lantern2" parent="temporary_tools" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34787, 1.00749, 2.73125 )
-
-[node name="quick_travel_spawn_point" type="Spatial" parent="temporary_tools"]
-transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -38.2518, 26.2728, -65.2771 )
-
-[node name="player_spawn_point" type="Spatial" parent="temporary_tools"]
-transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 0.196899, 1.70009, 3.8775 )
-
 [node name="texts" type="Node" parent="."]
 
 [node name="TextDisplayArea" type="Area" parent="texts"]
@@ -117,3 +67,90 @@ script = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="texts/TextDisplayArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1452, 3.9442, -9.04716 )
 shape = SubResource( 1 )
+
+[node name="event_areas" type="Spatial" parent="."]
+
+[node name="event_house_light_area" type="Area" parent="event_areas"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.1892, 0 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="event_areas/event_house_light_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6469, -0.251875, -2.45365 )
+shape = SubResource( 2 )
+
+[node name="to_disappear" type="Spatial" parent="event_areas/event_house_light_area"]
+
+[node name="shadow" parent="event_areas/event_house_light_area/to_disappear" instance=ExtResource( 17 )]
+transform = Transform( -0.321673, 0, 0.506485, 0, 0.6, 0, -0.506485, 0, -0.321673, -22.902, 4.80558, -4.27306 )
+
+[node name="light_from_inside_the_house" type="OmniLight" parent="event_areas/event_house_light_area/to_disappear"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1729, 6.25569, -4.33377 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.149
+
+[node name="light_from_inside_the_house2" type="OmniLight" parent="event_areas/event_house_light_area/to_disappear"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8499, 6.25569, 3.87328 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.149
+
+[node name="debug" type="Spatial" parent="."]
+
+[node name="temporary_ambiant_lights" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6902, 24.7373, 0.709967 )
+visible = false
+
+[node name="OmniLight" type="OmniLight" parent="debug/temporary_ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )
+shadow_enabled = true
+omni_range = 15.8959
+
+[node name="OmniLight2" type="OmniLight" parent="debug/temporary_ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, 0 )
+shadow_enabled = true
+omni_range = 15.8959
+
+[node name="OmniLight3" type="OmniLight" parent="debug/temporary_ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 118.424, -6.873, -25.1791 )
+shadow_enabled = true
+omni_range = 15.8959
+
+[node name="SpotLight" type="SpotLight" parent="debug/temporary_ambiant_lights"]
+transform = Transform( -0.498064, -0.407485, 0.765433, 0, 0.88271, 0.469918, -0.86714, 0.234049, -0.439646, 18.5571, 5.05364, -5.33785 )
+shadow_enabled = true
+spot_range = 20.0
+spot_angle = 58.93
+
+[node name="OmniLight4" type="OmniLight" parent="debug/temporary_ambiant_lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0101, 2.75592, -21.805 )
+
+[node name="temporary_tools" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6397, -1.01054, 68.1403 )
+
+[node name="military_torchlight" parent="debug/temporary_tools" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72273, 1.11555, 1.45742 )
+
+[node name="crystal_ball" parent="debug/temporary_tools" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38045, 1.11055, 2.13684 )
+
+[node name="lighter" parent="debug/temporary_tools" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09563, 1.07955, 1.0509 )
+
+[node name="torch" parent="debug/temporary_tools" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98659, 1.06054, 2.05698 )
+
+[node name="lantern" parent="debug/temporary_tools" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38355, 1.00749, 2.85844 )
+
+[node name="lantern2" parent="debug/temporary_tools" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34787, 1.00749, 2.73125 )
+
+[node name="quick_travel_spawn_point2" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 5.07294, 24.4241, 2.8632 )
+
+[node name="quick_travel_spawn_point" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -20.6121, 25.2623, 2.8632 )
+
+[node name="player_spawn_point" type="Spatial" parent="debug"]
+transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )

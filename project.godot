@@ -107,7 +107,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "TextDisplayArea",
 "language": "GDScript",
-"path": "res://gameplay/test_display_area.gd"
+"path": "res://gameplay/text_display_area.gd"
 }, {
 "base": "Object",
 "class": "utility",

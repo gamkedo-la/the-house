@@ -26,7 +26,7 @@ shadow_enabled = true
 material/0 = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9749, 0.689554, 55.7562 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9749, 3.29999, 55.7562 )
 floor_max_angle = 200.0
 
 [node name="crystal_ball" parent="." instance=ExtResource( 3 )]

@@ -11,6 +11,8 @@ export var gravity_factor : float= 50.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
 export var floor_max_angle : float = 70.0
+export var fall_check_max_depth_allowed : float = 6.0
+export var fall_check_distance : float = 1.5
 
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-75.0)
@@ -21,6 +23,7 @@ onready var _camera : Camera = $"%Camera"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _ground_checker: RayCast = $"%ground_checker"
 onready var _slope_checker: RayCast = $"%slope_checker"
+onready var _fall_checker: RayCast = $"%fall_checker"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
@@ -142,6 +145,8 @@ func update_walk(delta) -> void:
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
+	oriented_movement = never_fall_in_holes(oriented_movement)
+		
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
@@ -156,6 +161,7 @@ func update_walk(delta) -> void:
 		else:
 			var gravity = _gravity * delta * gravity_factor
 			oriented_movement += gravity
+			
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
@@ -173,7 +179,20 @@ func update_walk(delta) -> void:
 	else:
 		_feet_audio.end_walk()
 		
-	
+		
+func will_fall_in_hole(oriented_movement:Vector3) -> bool:
+	var original_position = _fall_checker.global_transform.origin
+	var position_to_check = global_transform.origin + (oriented_movement.normalized() * fall_check_distance)
+	_fall_checker.global_transform.origin = position_to_check
+	var ground_distance = _fall_checker.collision_distance()
+	_fall_checker.global_transform.origin = original_position
+	return ground_distance == null or ground_distance >= fall_check_max_depth_allowed
+
+func never_fall_in_holes(oriented_movement:Vector3) -> Vector3:
+	if will_fall_in_hole(oriented_movement):
+		return Vector3.ZERO # Dont go in holes
+	else:
+		return oriented_movement
 
 func current_move_speed() -> float:
 	if _movement_mode == MovementMode.Climbing:

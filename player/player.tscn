@@ -66,6 +66,14 @@ debug_shape_custom_color = Color( 0, 0.564706, 0.0745098, 1 )
 debug_shape_thickness = 4
 script = ExtResource( 2 )
 
+[node name="fall_checker" type="RayCast" parent="."]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 1, 1, 1, 1 )
+debug_shape_thickness = 4
+script = ExtResource( 2 )
+
 [node name="slope_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 0.891094, -0.453819, 0, 0.453819, 0.891094, 0, 0, 0 )

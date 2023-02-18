@@ -10,7 +10,7 @@ export var view_speed : float = 0.002
 export var gravity_factor : float= 50.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
-export var floor_max_angle : float = 70.0
+export var floor_max_angle : float = 80.0
 export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
@@ -137,7 +137,7 @@ func update_walk(delta) -> void:
 				translation += Vector3.BACK
 			
 	else:
-		assert(false, "unhandleded movement mode") 
+		assert(false, "unhandled movement mode") 
 
 	var speed = current_move_speed()
 	var movement_translation = translation.normalized() * speed * delta

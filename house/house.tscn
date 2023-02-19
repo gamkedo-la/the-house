@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -6,29 +6,16 @@
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
 [ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
-[ext_resource path="res://furniture/toilet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://house/windows/window.tscn" type="PackedScene" id=8]
 [ext_resource path="res://furniture/trap_door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://furniture/doors/attic_trap_door.gd" type="Script" id=10]
-[ext_resource path="res://decals/paintings/painting1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://house/decals/paintings/painting1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://furniture/doors/basement_trap_door.gd" type="Script" id=12]
-[ext_resource path="res://decals/paintings/painting2.tscn" type="PackedScene" id=13]
-[ext_resource path="res://decals/paintings/painting4.tscn" type="PackedScene" id=14]
-[ext_resource path="res://decals/paintings/painting3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://house/decals/paintings/painting2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://house/decals/paintings/painting4.tscn" type="PackedScene" id=14]
+[ext_resource path="res://house/decals/paintings/painting3.tscn" type="PackedScene" id=15]
 
 [node name="test-house" type="Spatial"]
-
-[node name="painting1" parent="." instance=ExtResource( 11 )]
-transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 0, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6573, 1.65249, 3.81675 )
-
-[node name="painting2" parent="." instance=ExtResource( 13 )]
-transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 2.20231e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6345, 1.64576, 0.931516 )
-
-[node name="painting3" parent="." instance=ExtResource( 15 )]
-transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 2.20231e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6454, 2.08081, -0.349214 )
-
-[node name="painting4" parent="." instance=ExtResource( 14 )]
-transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 3.13408e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.62593, 1.74134, -1.78237 )
 
 [node name="walls" parent="." instance=ExtResource( 2 )]
 
@@ -118,5 +105,19 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942
 
 [node name="window11" parent="windows" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942, 1.47642, 2.86375 )
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="painting1" parent="props" instance=ExtResource( 11 )]
+transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 0, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6573, 1.65249, 3.81675 )
+
+[node name="painting2" parent="props" instance=ExtResource( 13 )]
+transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 2.20231e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6345, 1.64576, 0.931516 )
+
+[node name="painting3" parent="props" instance=ExtResource( 15 )]
+transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 2.20231e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.6454, 2.08081, -0.349214 )
+
+[node name="painting4" parent="props" instance=ExtResource( 14 )]
+transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 3.13408e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.62593, 1.74134, -1.78237 )
 
 [editable path="porch_ladder"]

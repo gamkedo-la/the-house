@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/decal.fbx-60b6d03bb1328ddee3e411957270361d.scn"
+path="res://.import/decal.fbx-4d0b01b1ba10b2025f51c7ccf289350c.scn"
 
 [deps]
 
-source_file="res://decals/decal.fbx"
-dest_files=[ "res://.import/decal.fbx-60b6d03bb1328ddee3e411957270361d.scn" ]
+source_file="res://house/decals/decal.fbx"
+dest_files=[ "res://.import/decal.fbx-4d0b01b1ba10b2025f51c7ccf289350c.scn" ]
 
 [params]
 

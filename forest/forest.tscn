@@ -31,13 +31,13 @@ transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 59.7751, 0.
 transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 59.7751, 0.274463, 53.5739 )
 
 [node name="PineTree21" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 91.1528, 0.274462, 86.666 )
+transform = Transform( 2.141, 0, 0, 0, 1, 0, 0, 0, 2.26, 87.237, 0.274462, 92.411 )
 
 [node name="PineTree22" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 91.1528, 0.274462, 86.666 )
+transform = Transform( 2.141, 0, 0, 0, 1, 0, 0, 0, 2.26, 91.1528, 0.274462, 86.666 )
 
 [node name="PineTree23" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 97.0075, 0.274462, 49.3322 )
+transform = Transform( 2.141, 0, 0, 0, 1, 0, 0, 0, 2.26, 96.7048, -1.06313, 49.0714 )
 
 [node name="PineTree24" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 99.3258, 0.274462, 64.3414 )
@@ -46,10 +46,10 @@ transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 99.3258, 0.
 transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 63.6785, 0.274462, 94.063 )
 
 [node name="PineTree26" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 24.7659, 0.274462, 93.4582 )
+transform = Transform( 2.141, 0, 0, 0, 1, 0, 0, 0, 2.26, 35.1426, 0.274462, 98.0143 )
 
 [node name="PineTree27" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, 24.7659, 0.274462, 93.4582 )
+transform = Transform( 2.141, 0, 0, 0, 1, 0, 0, 0, 2.26, 24.7659, 0.274462, 93.4582 )
 
 [node name="PineTree28" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 2.14113, 0, 0, 0, 0.648555, 0, 0, 0, 2.25987, -1.95843, 0.274462, 61.8838 )
@@ -85,7 +85,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0772, 9.53674e-07, 40.5956 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5917, 9.53674e-07, 20.9675 )
 
 [node name="PineTree6" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1881, 8.43449, -23.3269 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1881, 7.7487, -23.3269 )
 
 [node name="PineTree30" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3621, 8.43449, -15.1854 )
@@ -445,3 +445,4 @@ transform = Transform( -4.32171e-08, 0.988691, 0.149967, -1, -4.37114e-08, 0, 6.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3706, 0.203189, 78.8837 )
 random_placement_radius = 8.0
 mushroom_count = 36
+mushroom_color = 2

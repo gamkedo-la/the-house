@@ -156,10 +156,12 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		var gravity = _gravity * delta * gravity_factor
-		oriented_movement += gravity
-			
-		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround: # Slope handling
+			_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		else:
+			var gravity = _gravity * delta * gravity_factor
+			oriented_movement += gravity
+			_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
 		

@@ -53,7 +53,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.770271, 0 )
 collision_layer = 0
 input_ray_pickable = false
 script = ExtResource( 1 )
-floor_max_angle = 200.0
 
 [node name="Body" type="CollisionShape" parent="."]
 unique_name_in_owner = true

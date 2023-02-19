@@ -9,14 +9,9 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for child_mesh in get_children():
-		if child_mesh is MeshInstance:
-			child_mesh.mesh = child_mesh.mesh.duplicate(true)
-			for surface_idx in child_mesh.mesh.get_surface_count():
-				var material = child_mesh.mesh.surface_get_material(surface_idx)
-				if material is ShaderMaterial:
-					var offset = rand_range(0.5, 2.0)
-					print("setting tree material offset = ", offset)
-					material.set_shader_param("SwayOffset", offset)
-					
-
+	# Calculate offset once per instance so that trunk + leaves move in sync
+	# with each other.
+	var offset = rand_range(0.5, 2.0)
+	for i in $pine2.get_surface_material_count():
+		var material = $pine2.get_surface_material(i)
+		material.set_shader_param("SwayOffset", offset)

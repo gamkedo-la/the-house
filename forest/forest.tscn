@@ -440,7 +440,7 @@ transform = Transform( 1.34975, 0, 0.382748, 0, 1, 0, -0.559195, 0, 0.923853, 0.
 [node name="special" type="Node" parent="."]
 
 [node name="fallen_trunk" type="CSGCylinder" parent="special"]
-transform = Transform( 0.0136399, 0.939112, 0.34334, -0.999212, -4.36769e-08, 0.0396958, 0.0372788, -0.343611, 0.938372, 78.475, 2.27576, 18.0542 )
+transform = Transform( 0.0136399, 0.939112, 0.34334, -0.999212, -4.36769e-08, 0.0396958, 0.0372788, -0.343611, 0.938372, 78.475, 2.37266, 18.0542 )
 use_collision = true
 height = 26.9457
 material = SubResource( 1 )

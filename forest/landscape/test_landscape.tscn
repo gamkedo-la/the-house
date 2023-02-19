@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://forest/landscape.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/cristal_ball.tscn" type="PackedScene" id=3]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 21.8
+
+[sub_resource type="NoiseTexture" id=2]
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.152941, 0.556863, 0.188235, 1 )
+albedo_texture = SubResource( 2 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.895549, 0.444963, 0, -0.444963, 0.895549, 0, 22.802, 0 )
+shadow_enabled = true
+
+[node name="landscape" parent="." instance=ExtResource( 2 )]
+
+[node name="terrain" parent="landscape" index="0"]
+material/0 = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9749, 3.29999, 55.7562 )
+floor_max_angle = 200.0
+
+[node name="crystal_ball" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6771, 0.1, 54.2507 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.938, 1.00443, 35.3741 )
+use_collision = true
+
+[editable path="landscape"]

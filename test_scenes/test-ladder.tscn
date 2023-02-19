@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://furniture/climbing-area.gd" type="Script" id=1]
+[ext_resource path="res://test_scenes/test-ladder.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+metallic = 0.37
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.55, 2, 0.06 )
@@ -9,84 +14,100 @@ extents = Vector3( 0.55, 2, 0.06 )
 extents = Vector3( 0.546947, 2.81981, 0.334328 )
 
 [node name="ladder" type="StaticBody"]
+script = ExtResource( 2 )
 
-[node name="CSGBox3" type="CSGBox" parent="."]
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 0.1, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox4" type="CSGBox" parent="."]
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 0.45307, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox5" type="CSGBox" parent="."]
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 0.857287, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox6" type="CSGBox" parent="."]
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 1.20959, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox7" type="CSGBox" parent="."]
+[node name="CSGBox7" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 1.58903, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox8" type="CSGBox" parent="."]
+[node name="CSGBox8" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 1.93619, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox9" type="CSGBox" parent="."]
+[node name="CSGBox9" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515, 2, 0 )
 width = 0.1
 height = 4.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox10" type="CSGBox" parent="."]
+[node name="CSGBox10" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485, 2, 0 )
 width = 0.1
 height = 4.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox12" type="CSGBox" parent="."]
+[node name="CSGBox12" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 2.44835, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox13" type="CSGBox" parent="."]
+[node name="CSGBox13" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 2.85256, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox14" type="CSGBox" parent="."]
+[node name="CSGBox14" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 3.20487, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox15" type="CSGBox" parent="."]
+[node name="CSGBox15" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 3.58431, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
-[node name="CSGBox16" type="CSGBox" parent="."]
+[node name="CSGBox16" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0148218, 3.93146, 0 )
 width = 0.1
 height = 1.0
 depth = 0.1
+material = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0241584, 1.97327, 0 )

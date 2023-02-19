@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/ground_checker.gd" type="Script" id=2]
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
 [ext_resource path="res://player/fsm/player-statemachine.gd" type="Script" id=6]
 [ext_resource path="res://player/debug_info.gd" type="Script" id=8]
@@ -57,6 +58,30 @@ script = ExtResource( 1 )
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.260446, 0 )
 shape = SubResource( 1 )
+
+[node name="ground_checker" type="RayCast" parent="."]
+unique_name_in_owner = true
+enabled = true
+debug_shape_custom_color = Color( 0, 0.564706, 0.0745098, 1 )
+debug_shape_thickness = 4
+script = ExtResource( 2 )
+
+[node name="fall_checker" type="RayCast" parent="."]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector3( 0, -8, 0 )
+debug_shape_custom_color = Color( 1, 1, 1, 1 )
+debug_shape_thickness = 4
+script = ExtResource( 2 )
+
+[node name="slope_checker" type="RayCast" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 0.891094, -0.453819, 0, 0.453819, 0.891094, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.7, 0 )
+debug_shape_custom_color = Color( 0.658824, 0, 0, 1 )
+debug_shape_thickness = 4
+script = ExtResource( 2 )
 
 [node name="feet_audio_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
@@ -148,7 +173,10 @@ Release window focus: Escape key
 Pixelated Screen: 7
 Fog: 8
 Glow: 9
-Air Dust: 0"
+Air Dust: 0
+
+Jump to next Spawn point: K 
+"
 fit_content_height = true
 scroll_active = false
 

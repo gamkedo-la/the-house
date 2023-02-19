@@ -104,10 +104,8 @@ visible = false
 visible = false
 
 [node name="bluegreen" type="Spatial" parent="models"]
-visible = false
 
 [node name="mushroom_0" parent="models/bluegreen" instance=ExtResource( 19 )]
-visible = false
 
 [node name="mushroom_1" parent="models/bluegreen" instance=ExtResource( 4 )]
 visible = false
@@ -203,8 +201,10 @@ visible = false
 visible = false
 
 [node name="yellow" type="Spatial" parent="models"]
+visible = false
 
 [node name="mushroom_0" parent="models/yellow" instance=ExtResource( 35 )]
+visible = false
 
 [node name="mushroom_1" parent="models/yellow" instance=ExtResource( 30 )]
 visible = false
@@ -235,8 +235,9 @@ visible = false
 
 [node name="light" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104003, 0 )
-light_energy = 1.282
-light_indirect_energy = 4.053
-light_specular = 6.549
-omni_range = 0.81
+light_energy = 2.116
+light_indirect_energy = 1.283
+light_specular = 3.27
+shadow_enabled = true
+omni_range = 1.692
 omni_attenuation = 3.03143

@@ -8,7 +8,7 @@ func _ready():
 	var iChannel = $"%Sky".get_viewport().get_texture()
 	$"%WorldEnvironment".environment.background_sky.set_panorama(iChannel)
 
-func _process(delta):
+func _process(_delta):
 	# TEMPORARY:
 	if Input.is_action_just_pressed("debug_switch_pixelator"):
 		_pixelator.visible = not _pixelator.visible

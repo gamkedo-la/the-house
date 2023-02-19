@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
 [ext_resource path="res://house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
 [ext_resource path="res://house/wood_siding_spatialmaterial.tres" type="Material" id=4]
 [ext_resource path="res://house/roof_spatialmaterial.tres" type="Material" id=5]
 [ext_resource path="res://house/house_wall_plaster_spatialmaterial.tres" type="Material" id=6]
+[ext_resource path="res://house/house_interior_walls.tres" type="Material" id=7]
+[ext_resource path="res://house/house_back_walls.tres" type="Material" id=8]
 
 [node name="walls" type="CSGCombiner"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
@@ -19,12 +21,12 @@ depth = 26.4
 material = ExtResource( 2 )
 
 [node name="interior_space" type="CSGBox" parent="exterior_walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00200009, 0 )
 operation = 2
 width = 27.0
 height = 16.0
 depth = 26.0
-material = ExtResource( 3 )
+material = ExtResource( 7 )
 
 [node name="window_frame" type="CSGBox" parent="exterior_walls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53251, 0.0130618, 12.918 )
@@ -223,7 +225,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1611, 3.1, -9.0068 )
 width = 0.4
 height = 5.8
 depth = 4.28167
-material = ExtResource( 6 )
+material = ExtResource( 8 )
 
 [node name="bathroom_entrance" type="CSGBox" parent="bathroom_wall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
@@ -236,7 +238,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31604, 3.1, -9.0068 )
 width = 0.4
 height = 5.8
 depth = 4.28167
-material = ExtResource( 6 )
+material = ExtResource( 8 )
 
 [node name="bedroom_entrance" type="CSGBox" parent="bedroom_wall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
@@ -249,7 +251,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.295, 3.1, -13.904 )
 width = 0.4
 height = 5.8
 depth = 5.2
-material = ExtResource( 6 )
+material = ExtResource( 8 )
 
 [node name="hidden_room_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.336, 3.1, -13.904 )
@@ -268,14 +270,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84709, 3.1, -13.9041 )
 width = 0.4
 height = 5.8
 depth = 5.2
-material = ExtResource( 6 )
+material = ExtResource( 8 )
 
 [node name="living_room_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96818, 3.1, 1.47 )
 width = 0.4
 height = 5.8
 depth = 16.5
-material = ExtResource( 6 )
+material = ExtResource( 1 )
 
 [node name="living_room_door_frame" type="CSGBox" parent="living_room_wall"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.024, -1.171, 2.357 )
@@ -290,12 +292,47 @@ operation = 2
 height = 3.56738
 material = ExtResource( 4 )
 
+[node name="basement_ground" type="CSGBox" parent="."]
+transform = Transform( 0.996194, -0.0871557, 3.8097e-09, 0, -4.37114e-08, -1, 0.0871557, 0.996194, -4.3545e-08, 0.0828963, -5.4596, -4.91566 )
+width = 9.31503
+height = 17.6994
+depth = 0.4
+material = ExtResource( 3 )
+
+[node name="basement_wall_1" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405143, -2.96296, 1.40365 )
+width = 9.31503
+height = 5.8
+depth = 0.4
+material = ExtResource( 6 )
+
+[node name="basement_wall_2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.536002, -2.96296, -11.8813 )
+width = 9.31503
+height = 5.8
+depth = 0.4
+material = ExtResource( 6 )
+
+[node name="basement_wall_3" type="CSGBox" parent="."]
+transform = Transform( 0.0871558, 0, 0.996194, 0, 1, 0, -0.996194, 0, 0.0871558, -4.613, -2.963, -5.315 )
+width = 13.288
+height = 5.8
+depth = 0.4
+material = ExtResource( 6 )
+
+[node name="basement_wall_4" type="CSGBox" parent="."]
+transform = Transform( 0.0871558, 0, 0.996194, 0, 1, 0, -0.996194, 0, 0.0871558, 4.82508, -2.96296, -5.31508 )
+width = 13.2877
+height = 5.8
+depth = 0.4
+material = ExtResource( 6 )
+
 [node name="kitchen_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56334, 3.1, 1.47 )
 width = 0.4
 height = 5.8
 depth = 16.5
-material = ExtResource( 6 )
+material = ExtResource( 1 )
 
 [node name="kitchen_door_frame" type="CSGBox" parent="kitchen_wall"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.008, -1.171, 2.357 )
@@ -315,21 +352,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25098, 3.1, -6.72199 )
 width = 10.54
 height = 5.8
 depth = 0.4
-material = ExtResource( 6 )
+material = ExtResource( 1 )
 
 [node name="kitchen_back_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02213, 3.1, -6.72199 )
 width = 11.0
 height = 5.8
 depth = 0.4
-material = ExtResource( 6 )
+material = ExtResource( 1 )
 
 [node name="corridor_cross_wall" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226745, 3.1, -11.1808 )
 width = 14.5902
 height = 5.8
 depth = 0.4
-material = ExtResource( 6 )
+material = ExtResource( 8 )
 
 [node name="toilets_entrance" type="CSGBox" parent="corridor_cross_wall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28912, -1.11955, 0.0943289 )
@@ -343,47 +380,3 @@ width = 19.8309
 height = 0.367293
 depth = 4.98162
 material = ExtResource( 4 )
-
-[node name="ladder" parent="front_porch" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.940845, 0.338836, 0, -0.338836, 0.940845, 0, -3.61047, 3.97987 )
-
-[node name="CSGBox3" parent="front_porch/ladder" index="0"]
-material = ExtResource( 4 )
-
-[node name="CSGBox4" parent="front_porch/ladder" index="1"]
-material = ExtResource( 4 )
-
-[node name="CSGBox5" parent="front_porch/ladder" index="2"]
-material = ExtResource( 4 )
-
-[node name="CSGBox6" parent="front_porch/ladder" index="3"]
-material = ExtResource( 4 )
-
-[node name="CSGBox7" parent="front_porch/ladder" index="4"]
-material = ExtResource( 4 )
-
-[node name="CSGBox8" parent="front_porch/ladder" index="5"]
-material = ExtResource( 4 )
-
-[node name="CSGBox9" parent="front_porch/ladder" index="6"]
-material = ExtResource( 4 )
-
-[node name="CSGBox10" parent="front_porch/ladder" index="7"]
-material = ExtResource( 4 )
-
-[node name="CSGBox12" parent="front_porch/ladder" index="8"]
-material = ExtResource( 4 )
-
-[node name="CSGBox13" parent="front_porch/ladder" index="9"]
-material = ExtResource( 4 )
-
-[node name="CSGBox14" parent="front_porch/ladder" index="10"]
-material = ExtResource( 4 )
-
-[node name="CSGBox15" parent="front_porch/ladder" index="11"]
-material = ExtResource( 4 )
-
-[node name="CSGBox16" parent="front_porch/ladder" index="12"]
-material = ExtResource( 4 )
-
-[editable path="front_porch/ladder"]

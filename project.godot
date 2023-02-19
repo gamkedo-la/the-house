@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://collisions_layers.gd"
 }, {
+"base": "Spatial",
+"class": "Door",
+"language": "GDScript",
+"path": "res://furniture/doors/door.gd"
+}, {
 "base": "Node",
 "class": "FSM_State",
 "language": "GDScript",
@@ -38,6 +43,11 @@ _global_script_classes=[ {
 "class": "FootAudio",
 "language": "GDScript",
 "path": "res://player/feet_audio_player.gd"
+}, {
+"base": "RayCast",
+"class": "GroundChecker",
+"language": "GDScript",
+"path": "res://player/ground_checker.gd"
 }, {
 "base": "RigidBody",
 "class": "InteractiveItem",
@@ -102,7 +112,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "TextDisplayArea",
 "language": "GDScript",
-"path": "res://gameplay/test_display_area.gd"
+"path": "res://gameplay/text_display_area.gd"
 }, {
 "base": "Object",
 "class": "utility",
@@ -112,10 +122,12 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "ClimbingArea": "",
 "CollisionLayers": "",
+"Door": "",
 "FSM_State": "",
 "FSM_StateMachine": "",
 "FireArea": "",
 "FootAudio": "",
+"GroundChecker": "",
 "InteractiveItem": "",
 "ItemUtils": "",
 "KeyArea": "",
@@ -328,6 +340,11 @@ debug_switch_airdust={
 run={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_spawn={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":75,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

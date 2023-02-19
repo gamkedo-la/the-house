@@ -7,18 +7,24 @@ export var running_speed : float = 300.0
 export var crouching_speed : float = 50.0
 export var climbing_speed : float = 100.0
 export var view_speed : float = 0.002
-export var gravity_factor : float= 100.0
+export var gravity_factor : float= 50.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
+export var floor_max_angle : float = 80.0
+export var fall_check_max_depth_allowed : float = 6.0
+export var fall_check_distance : float = 1.5
 
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-75.0)
-const floor_max_angle : float = deg2rad(200)
 
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
+onready var _body : CollisionShape = $"%Body"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
+onready var _ground_checker: RayCast = $"%ground_checker"
+onready var _slope_checker: RayCast = $"%slope_checker"
+onready var _fall_checker: RayCast = $"%fall_checker"
 onready var _hand_node : Spatial = $"%Camera/right_hand"
 onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
@@ -30,6 +36,8 @@ var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
 var _held_item: InteractiveItem
 onready var _initial_hand_transform : Transform
+onready var _initial_body_transform : Transform
+onready var _initial_body_height : float
 
 var _last_linear_velocity: Vector3
 
@@ -63,6 +71,8 @@ func _ready() -> void:
 	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 	_initial_hand_transform = _hand_node.transform
+	_initial_body_transform = _body.transform
+	_initial_body_height = _body.shape.height
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):
@@ -132,7 +142,7 @@ func update_walk(delta) -> void:
 				translation += Vector3.BACK
 			
 	else:
-		assert(false, "unhandleded movement mode") 
+		assert(false, "unhandled movement mode") 
 
 	var speed = current_move_speed()
 	var movement_translation = translation.normalized() * speed * delta
@@ -140,22 +150,54 @@ func update_walk(delta) -> void:
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
+	oriented_movement = never_fall_in_holes(oriented_movement)
+		
+	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
+	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		var gravity = _gravity * delta * gravity_factor
-		oriented_movement += gravity
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround and _slope_checker.currently_walking_on() == GroundChecker.WalkingOn.OutsideGround:
+			# We detected that we are walking on a slope on the landscape of the forest.
+			# In this case we do not want to be affected by gravity, as a workaround having to
+			# counter gravity with more strengh in the legs.
+			# Note that this coudl be replaced by adding some leg strengh, but for now it should be enough.
+#			print("walking on slope") # Uncomment to check slope detection.
+			pass
+		else:
+			var gravity = _gravity * delta * gravity_factor
+			oriented_movement += gravity
+			
+		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+	else:
+		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
 		
-	_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, floor_max_angle)
+	
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
 	# is a failsafe to present it from ruining a game session:
 	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)
 	
 	if movement_translation.length() > 0.0:
-		_feet_audio.begin_walk(FootAudio.StepSurface.House)
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround or _movement_mode == MovementMode.Climbing:
+			_feet_audio.begin_walk(FootAudio.StepSurface.House)
+		else:
+			_feet_audio.begin_walk(FootAudio.StepSurface.Grass)
 	else:
 		_feet_audio.end_walk()
 		
-	
+		
+func will_fall_in_hole(oriented_movement:Vector3) -> bool:
+	var original_position = _fall_checker.global_transform.origin
+	var position_to_check = global_transform.origin + (oriented_movement.normalized() * fall_check_distance)
+	_fall_checker.global_transform.origin = position_to_check
+	var ground_distance = _fall_checker.collision_distance()
+	_fall_checker.global_transform.origin = original_position
+	return ground_distance == null or ground_distance >= fall_check_max_depth_allowed
+
+func never_fall_in_holes(oriented_movement:Vector3) -> Vector3:
+	if will_fall_in_hole(oriented_movement):
+		return Vector3.ZERO # Dont go in holes
+	else:
+		return oriented_movement
 
 func current_move_speed() -> float:
 	if _movement_mode == MovementMode.Climbing:
@@ -321,6 +363,9 @@ func crouch() -> void:
 	result = _crouch_tween.start()
 	assert(result == true)
 	
+	_body.transform.origin -= (_body.transform.origin * 0.5)
+	_body.shape.height = _body.shape.height * 0.5
+	
 	_is_crouched = true
 	
 	
@@ -332,6 +377,9 @@ func get_up() -> void:
 	assert(result == true)
 	result = _crouch_tween.start()
 	assert(result == true)
+	
+	_body.transform.origin += _initial_body_transform.origin
+	_body.shape.height = _initial_body_height
 	
 	_is_crouched = false
 	

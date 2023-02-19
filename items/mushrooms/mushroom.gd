@@ -26,7 +26,7 @@ func _ready():
 func _update_mushroom() ->void :
 	_hide_all_models()
 	_show_selected_model()
-	print("Mushroom updated: %s" % name)
+#	print("Mushroom updated: %s" % name)
 
 func _hide_node(node: Node)->void:
 	if node is Spatial and not node is MeshInstance: # We don't want to hide the meshes, just their node ownders.

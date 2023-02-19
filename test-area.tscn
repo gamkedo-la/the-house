@@ -902,22 +902,22 @@ transform = Transform( -0.86918, 0.460381, 0.180488, 0.493794, 0.788623, 0.36639
 [node name="Dresser3" parent="objects" instance=ExtResource( 63 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00831175, 0.000452757, 15.7301 )
 
-[node name="StaticBody" parent="objects" instance=ExtResource( 81 )]
+[node name="table" parent="objects" instance=ExtResource( 81 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4142, 0.000201702, 16.1133 )
 
 [node name="toilet" parent="objects" instance=ExtResource( 92 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8443, 0.000203133, 19.5263 )
 
-[node name="StaticBody2" parent="objects" instance=ExtResource( 91 )]
+[node name="chair" parent="objects" instance=ExtResource( 91 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49415, 0.000200748, 14.3439 )
 
-[node name="StaticBody3" parent="objects" instance=ExtResource( 91 )]
+[node name="chair2" parent="objects" instance=ExtResource( 91 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.96492, 0.000204563, 15.977 )
 
-[node name="StaticBody4" parent="objects" instance=ExtResource( 91 )]
+[node name="chair3" parent="objects" instance=ExtResource( 91 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.43711, 0.000202656, 18.0191 )
 
-[node name="StaticBody5" parent="objects" instance=ExtResource( 91 )]
+[node name="chair4" parent="objects" instance=ExtResource( 91 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.96251, 0.000200272, 15.9667 )
 
 [node name="lighter2" parent="objects" instance=ExtResource( 57 )]

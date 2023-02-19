@@ -8,7 +8,7 @@ extents = Vector3( 0.824436, 0.0551221, 0.822039 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.0671051, 0.344871, 0.0621656 )
 
-[node name="StaticBody" type="StaticBody"]
+[node name="table" type="StaticBody"]
 
 [node name="table-oak-square" parent="." instance=ExtResource( 1 )]
 

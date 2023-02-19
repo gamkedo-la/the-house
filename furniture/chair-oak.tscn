@@ -8,7 +8,10 @@ extents = Vector3( 0.199904, 0.195614, 0.0392671 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.0368482, 0.19177, 0.0392671 )
 
-[node name="StaticBody" type="StaticBody"]
+[node name="chair" type="RigidBody"]
+mass = 10.0
+linear_damp = 4.0
+angular_damp = 2.0
 
 [node name="chair_01" parent="." instance=ExtResource( 1 )]
 

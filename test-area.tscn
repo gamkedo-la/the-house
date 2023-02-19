@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://gameplay/text_display_area.gd" type="Script" id=78]
 [ext_resource path="res://forest/bush.tscn" type="PackedScene" id=79]
 [ext_resource path="res://forest/grass.tscn" type="PackedScene" id=80]
+[ext_resource path="res://furniture/table-oak-square.tscn" type="PackedScene" id=81]
 [ext_resource path="res://furniture/toilet/toilet.glb" type="PackedScene" id=82]
 [ext_resource path="res://furniture/toilet/scale_check.glb" type="PackedScene" id=83]
 [ext_resource path="res://test_scenes/test_materials/test_brown.tres" type="Material" id=84]
@@ -89,6 +90,8 @@
 [ext_resource path="res://items/hand.tscn" type="PackedScene" id=88]
 [ext_resource path="res://items/foot.tscn" type="PackedScene" id=89]
 [ext_resource path="res://items/eyeball.tscn" type="PackedScene" id=90]
+[ext_resource path="res://furniture/chair-oak.tscn" type="PackedScene" id=91]
+[ext_resource path="res://furniture/toilet.tscn" type="PackedScene" id=92]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -898,6 +901,27 @@ transform = Transform( -0.86918, 0.460381, 0.180488, 0.493794, 0.788623, 0.36639
 
 [node name="Dresser3" parent="objects" instance=ExtResource( 63 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00831175, 0.000452757, 15.7301 )
+
+[node name="StaticBody" parent="objects" instance=ExtResource( 81 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4142, 0.000201702, 16.1133 )
+
+[node name="toilet" parent="objects" instance=ExtResource( 92 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8443, 0.000203133, 19.5263 )
+
+[node name="StaticBody2" parent="objects" instance=ExtResource( 91 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49415, 0.000200748, 14.3439 )
+
+[node name="StaticBody3" parent="objects" instance=ExtResource( 91 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.96492, 0.000204563, 15.977 )
+
+[node name="StaticBody4" parent="objects" instance=ExtResource( 91 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.43711, 0.000202656, 18.0191 )
+
+[node name="StaticBody5" parent="objects" instance=ExtResource( 91 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.96251, 0.000200272, 15.9667 )
+
+[node name="lighter2" parent="objects" instance=ExtResource( 57 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34764, 1.07931, 19.4054 )
 
 [node name="texts" type="Node" parent="."]
 

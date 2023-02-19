@@ -156,9 +156,16 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		var gravity = _gravity * delta * gravity_factor
-		oriented_movement += gravity
-		
+		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround:
+			# We detected that we are walking on the landscape of the forest.
+			# In this case we do not want to be affected by gravity, as a workaround having to
+			# counter gravity with more strengh in the legs when walking on slopes.
+			# Note that this coudl be replaced by adding some leg strengh, but for now it should be enough.
+			pass
+		else:
+			var gravity = _gravity * delta * gravity_factor
+			oriented_movement += gravity
+			
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)

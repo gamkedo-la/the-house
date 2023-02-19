@@ -53,6 +53,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.770271, 0 )
 collision_layer = 0
 input_ray_pickable = false
 script = ExtResource( 1 )
+floor_max_angle = 200.0
 
 [node name="Body" type="CollisionShape" parent="."]
 unique_name_in_owner = true
@@ -76,11 +77,11 @@ script = ExtResource( 2 )
 
 [node name="slope_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 0.891094, -0.453819, 0, 0.453819, 0.891094, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.842923, -0.538035, 0, 0.538035, 0.842923, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
 debug_shape_custom_color = Color( 0.658824, 0, 0, 1 )
-debug_shape_thickness = 4
+debug_shape_thickness = 5
 script = ExtResource( 2 )
 
 [node name="feet_audio_player" type="AudioStreamPlayer3D" parent="."]

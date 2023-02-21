@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://forest/landscape.tscn" type="PackedScene" id=1]
 [ext_resource path="res://forest/PineTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://forest/bush.tscn" type="PackedScene" id=3]
 [ext_resource path="res://forest/fallen_trunk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://items/mushrooms-group.tscn" type="PackedScene" id=5]
+[ext_resource path="res://forest/shrubbery/shrub.tscn" type="PackedScene" id=6]
 
 [node name="forest" type="Spatial"]
 
@@ -446,3 +447,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3706, 0.203189, 78.8837 )
 random_placement_radius = 8.0
 mushroom_count = 36
 mushroom_color = 2
+
+[node name="Shrub" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3814, -4.76837e-07, 65.6888 )

@@ -10,7 +10,7 @@ export var view_speed : float = 0.002
 export var gravity_factor : float= 1.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
-export var floor_max_angle : float = 45.0
+export var floor_max_angle : float = 60.0
 export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
@@ -103,7 +103,7 @@ func get_movement_mode() -> int:
 	return _movement_mode
 
 # Call this only once per _physics_update()
-func update_walk(delta) -> void:
+func update_walk(_delta) -> void:
 	var translation = Vector3()
 
 	if Input.is_action_pressed("move_left"):
@@ -156,8 +156,11 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		var gravity = _gravity * gravity_factor
-		oriented_movement += gravity
+		
+		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
+			var gravity = _gravity * gravity_factor
+			oriented_movement += gravity
+		
 		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)

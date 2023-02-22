@@ -143,7 +143,7 @@ func update_walk(_delta) -> void:
 			
 	else:
 		assert(false, "unhandled movement mode") 
-
+	
 	var speed = current_move_speed()
 	var movement_translation = translation.normalized() * speed
 
@@ -151,12 +151,11 @@ func update_walk(_delta) -> void:
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
 	oriented_movement = never_fall_in_holes(oriented_movement)
-		
+			
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
-	
+		
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		
 		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
 			var gravity = _gravity * gravity_factor
 			oriented_movement += gravity

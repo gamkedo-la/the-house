@@ -10,7 +10,7 @@ export var view_speed : float = 0.002
 export var gravity_factor : float= 50.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
-export var floor_max_angle : float = 80.0
+export var floor_max_angle : float = 45.0
 export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
@@ -156,12 +156,15 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
+			
 		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround: # Slope handling
-			_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
-		else:
+			var ground_normal = _ground_checker.get_collision_normal()
+			var slope_angle = rad2deg(Vector3.FORWARD.angle_to(ground_normal))
+			print("landscape angle: %s degs" % slope_angle)
+		else:	
 			var gravity = _gravity * delta * gravity_factor
 			oriented_movement += gravity
-			_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
 		

@@ -22,14 +22,16 @@ surfaces/0 = {
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0.6, 0.6, 0.6, 0.6, 0.6, -0.6, -0.6, 0.6, 0.6, 0.6, -0.6, 0.6, 0.6, -0.6, -0.6, -0.6, 0.6, -0.6, -0.6, -0.6, 0.6, -0.6, -0.6, -0.6 )
 
-[node name="cardboardbox" type="RigidBody"]
+[node name="cardboardbox" type="Spatial"]
+
+[node name="cardboardbox" type="RigidBody" parent="."]
 script = ExtResource( 2 )
 
-[node name="default" type="MeshInstance" parent="."]
+[node name="default" type="MeshInstance" parent="cardboardbox"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.25, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="cardboardbox"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.25, 0 )
 shape = SubResource( 2 )

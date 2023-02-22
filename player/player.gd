@@ -10,7 +10,7 @@ export var view_speed : float = 0.002
 export var gravity_factor : float= 1.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
-export var floor_max_angle : float = 60.0
+export var floor_max_angle : float = 70.0
 export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
@@ -158,8 +158,11 @@ func update_walk(_delta) -> void:
 	if _movement_mode == MovementMode.Walking:
 		
 		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
+			print("not walking on landscape")
 			var gravity = _gravity * gravity_factor
 			oriented_movement += gravity
+		else:
+			print("walking on landscape")
 		
 		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:

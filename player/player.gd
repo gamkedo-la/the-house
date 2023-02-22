@@ -2,12 +2,12 @@ extends KinematicBody
 
 class_name Player
 
-export var walking_speed : float = 150.0
-export var running_speed : float = 300.0
-export var crouching_speed : float = 50.0
-export var climbing_speed : float = 100.0
+export var walking_speed : float = 2.0
+export var running_speed : float = 4.0
+export var crouching_speed : float = 1.0
+export var climbing_speed : float = 1.0
 export var view_speed : float = 0.002
-export var gravity_factor : float= 50.0
+export var gravity_factor : float= 1.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
 export var floor_max_angle : float = 45.0
@@ -145,7 +145,7 @@ func update_walk(delta) -> void:
 		assert(false, "unhandled movement mode") 
 
 	var speed = current_move_speed()
-	var movement_translation = translation.normalized() * speed * delta
+	var movement_translation = translation.normalized() * speed
 
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
@@ -156,17 +156,11 @@ func update_walk(delta) -> void:
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-			
-		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround: # Slope handling
-			var ground_normal = _ground_checker.get_collision_normal()
-			var slope_angle = rad2deg(Vector3.FORWARD.angle_to(ground_normal))
-			print("landscape angle: %s degs" % slope_angle)
-		else:	
-			var gravity = _gravity * delta * gravity_factor
-			oriented_movement += gravity
-		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		var gravity = _gravity * gravity_factor
+		oriented_movement += gravity
+		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
-		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
+		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 		
 	
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following

@@ -1,0 +1,5 @@
+newmtl cube_with_UVs
+map_Kd -o 0 0 -s 1 1 cube_with_UVs.png
+Kd 1 1 1
+d 1
+

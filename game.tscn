@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://game.gd" type="Script" id=15]
 [ext_resource path="res://gameplay/event_house_light_area.gd" type="Script" id=16]
 [ext_resource path="res://player/shadow_mesh/shadow.tscn" type="PackedScene" id=17]
+[ext_resource path="res://items/cardboard_box/cardboardbox.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CylinderShape" id=1]
 height = 7.7531
@@ -161,3 +162,66 @@ transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.99809
 
 [node name="player_spawn_point" type="Spatial" parent="debug"]
 transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )
+
+[node name="cardboardbox" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9826, 25.4644, 6.80079 )
+
+[node name="cardboardbox14" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 0.75, -30.1153, 25.4644, 4.40032 )
+
+[node name="cardboardbox15" parent="." instance=ExtResource( 18 )]
+transform = Transform( -0.0515341, 0, -0.749003, 0, 0.5, 0, 0.998671, 0, -0.0386506, -31.6595, 25.4644, 2.95139 )
+
+[node name="cardboardbox20" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.451165, 0.446214, 0.00350225, -0.892381, 0.225595, -0.00692727, -0.0103497, 0, 0.74996, -30.7318, 25.7423, 5.84446 )
+
+[node name="cardboardbox18" parent="." instance=ExtResource( 18 )]
+transform = Transform( -0.0515341, 0, -0.749003, 0, 0.5, 0, 0.998671, 0, -0.0386506, -24.5142, 25.4644, 2.08925 )
+
+[node name="cardboardbox19" parent="." instance=ExtResource( 18 )]
+transform = Transform( -0.998709, 0, -0.0381017, -0.0431708, 0.263567, 0.636514, 0.0267796, 0.424891, -0.39484, -23.277, 25.6805, 2.7349 )
+
+[node name="cardboardbox16" parent="." instance=ExtResource( 18 )]
+transform = Transform( -0.0515341, 0, -0.749003, 0, 0.5, 0, 0.998671, 0, -0.0386506, -29.9556, 25.4644, 7.27605 )
+
+[node name="cardboardbox17" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.55297, 0, -0.624901, 0, 0.5, 0, 0.833201, 0, 0.414727, -31.2737, 26.6656, 7.08395 )
+
+[node name="cardboardbox8" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0254, 25.4644, 7.43651 )
+
+[node name="cardboardbox9" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6462, 25.4644, 7.40626 )
+
+[node name="cardboardbox10" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6077, 25.4644, 6.768 )
+
+[node name="cardboardbox11" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.999332, 0, -0.0365565, 0, 1, 0, 0.0365565, 0, 0.999332, -31.6077, 26.0685, 6.7928 )
+
+[node name="cardboardbox12" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.998245, 0, 0.0592193, 0, 1, 0, -0.0592193, 0, 0.998245, -31.6734, 26.0685, 7.38363 )
+
+[node name="cardboardbox13" parent="." instance=ExtResource( 18 )]
+transform = Transform( -4.36796e-08, 1, -1.66655e-09, -0.999273, -4.37114e-08, -0.0381262, -0.0381262, 0, 0.999273, -31.2474, 26.3267, 7.37414 )
+
+[node name="cardboardbox21" parent="." instance=ExtResource( 18 )]
+transform = Transform( -4.36796e-08, 1, -1.66655e-09, -0.999273, -4.37114e-08, -0.0381262, -0.0381262, 0, 0.999273, -31.5863, 25.7523, 4.89698 )
+
+[node name="cardboardbox2" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.989541, 0, 0.144253, 0, 1, 0, -0.144253, 0, 0.989541, -30.7328, 25.4644, 5.15616 )
+
+[node name="cardboardbox3" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.92189, 0, -0.387451, 0, 1, 0, 0.387451, 0, 0.92189, -29.72, 25.4644, 6.11313 )
+
+[node name="cardboardbox4" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.974901, 0, -0.222638, 0, 1, 0, 0.222638, 0, 0.974901, -31.2518, 25.4644, 5.97921 )
+
+[node name="cardboardbox5" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.787269, 0, 0.61661, 0, 1, 0, -0.61661, 0, 0.787269, -31.296, 25.4644, 4.20679 )
+
+[node name="cardboardbox6" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.99027, 0, 0.139156, 0, 1, 0, -0.139156, 0, 0.99027, -23.0973, 25.4644, 2.25757 )
+
+[node name="cardboardbox7" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.889632, 0, -0.456679, 0, 1, 0, 0.456679, 0, 0.889632, -23.8711, 25.4644, 2.23293 )

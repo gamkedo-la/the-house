@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://game.gd" type="Script" id=15]
 [ext_resource path="res://gameplay/event_house_light_area.gd" type="Script" id=16]
 [ext_resource path="res://player/shadow_mesh/shadow.tscn" type="PackedScene" id=17]
-[ext_resource path="res://forest/wooden_fence/wooden_fence.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CylinderShape" id=1]
 height = 7.7531
@@ -162,72 +161,3 @@ transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.99809
 
 [node name="player_spawn_point" type="Spatial" parent="debug"]
 transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )
-
-[node name="Wooden Fences" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-
-[node name="wooden_fence2" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.988917, 0.0821503, 0.123667, -0.0828997, 0.996558, 0.000917337, -0.123166, -0.0111592, 0.992323, -4.58601, 21.8566, -10.5542 )
-
-[node name="wooden_fence3" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.63786, 0.0523538, 0.76837, 0.0704925, 0.98953, -0.125942, -0.766919, 0.134498, 0.627491, 2.48835, 22.2522, -16.9072 )
-
-[node name="wooden_fence6" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.896918, -0.0317597, 0.441055, 0.0319002, 0.999466, 0.00709848, -0.441045, 0.00770299, 0.897452, 66.5385, 1.86265e-07, 77.7919 )
-
-[node name="wooden_fence7" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.896918, -0.0317597, 0.441055, 0.0319002, 0.999466, 0.00709848, -0.441045, 0.00770299, 0.897452, 60.8924, 1.86265e-07, 66.6586 )
-
-[node name="wooden_fence8" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.216297, -0.0138371, 0.97623, 0.0319002, 0.999466, 0.00709848, -0.975806, 0.0296066, 0.216623, 74.1091, 9.0152e-07, 36.7772 )
-
-[node name="wooden_fence9" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.290887, -0.00248916, -0.956754, 0.0319002, 0.999466, 0.00709848, 0.956226, -0.0325855, 0.290811, 86.1679, -0.0369016, 27.0573 )
-
-[node name="wooden_fence11" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.290887, -0.00248916, -0.956754, 0.0319002, 0.999466, 0.00709848, 0.956226, -0.0325855, 0.290811, 87.9894, -0.0369016, 8.78785 )
-
-[node name="wooden_fence17" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( -0.160851, 0.0121432, -0.986904, 0.149192, 0.988734, -0.0121505, 0.975637, -0.149193, -0.160851, 53.404, 4.00439, -39.8486 )
-
-[node name="wooden_fence19" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.271133, -0.0285649, 0.962118, -0.139322, 0.987869, 0.0685915, -0.952405, -0.152641, 0.263864, 30.1944, 14.6841, -4.37968 )
-
-[node name="wooden_fence20" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.791262, 0.0539033, 0.609096, -0.176306, 0.973915, 0.142847, -0.585508, -0.220417, 0.780126, 24.6587, 16.0489, 2.66199 )
-
-[node name="wooden_fence21" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.750463, 0.264414, 0.605715, -0.272287, 0.958785, -0.0811851, -0.602217, -0.104002, 0.791529, 28.5657, 14.3753, -13.1364 )
-
-[node name="wooden_fence22" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.922122, 0.273341, 0.273816, -0.27007, 0.961523, -0.0503488, -0.277043, -0.0275218, 0.960463, 24.2352, 16.0656, -8.61172 )
-
-[node name="wooden_fence18" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.791262, 0.0539033, 0.609096, -0.106013, 0.993115, 0.0498311, -0.602217, -0.104002, 0.791529, 52.6963, 4.19206, -39.4834 )
-
-[node name="wooden_fence12" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( -0.160851, 0.0121432, -0.986904, 0.0319002, 0.999466, 0.00709848, 0.986463, -0.0303406, -0.161153, 87.9894, 0.0367788, 15.4358 )
-
-[node name="wooden_fence13" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.290887, -0.00248916, -0.956754, 0.0319002, 0.999466, 0.00709848, 0.956226, -0.0325855, 0.290811, 89.5362, 0.0367788, -7.06982 )
-
-[node name="wooden_fence14" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.290887, -0.00248916, -0.956754, -0.0059829, 0.999972, -0.00442063, 0.956739, 0.00701004, 0.290864, 87.2772, 2.79094, -27.4606 )
-
-[node name="wooden_fence15" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.833611, 0.0698961, -0.547912, -0.0454554, 0.997278, 0.0580634, 0.550478, -0.0234968, 0.834519, 85.2827, 2.79094, -33.6479 )
-
-[node name="wooden_fence16" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.986476, 0.161572, -0.0275502, -0.160009, 0.985758, 0.0517468, 0.0355186, -0.0466388, 0.99828, 79.8803, 3.08682, -37.2568 )
-
-[node name="wooden_fence10" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.394543, -0.00556445, -0.918861, 0.0314983, 0.999476, 0.00747217, 0.918338, -0.0318907, 0.394511, 89.9145, 6.63102e-07, 37.3509 )
-
-[node name="wooden_fence" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.997452, -0.0322877, 0.0636064, 0.0319002, 0.999466, 0.00709847, -0.0638017, -0.00505135, 0.99795, 41.2338, 0, 74.451 )
-
-[node name="wooden_fence5" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.991521, -0.0290646, 0.126653, 0.0274972, 0.999522, 0.0141069, -0.127003, -0.0105047, 0.991847, 41.101, 1.90735e-06, 87.3578 )
-
-[node name="wooden_fence4" parent="Wooden Fences" instance=ExtResource( 18 )]
-transform = Transform( 0.783578, 0.0678566, 0.617577, -0.0859233, 0.996302, -0.000450317, -0.615324, -0.0527114, 0.78651, 3.89214, 21.4798, -9.00526 )

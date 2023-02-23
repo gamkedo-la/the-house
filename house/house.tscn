@@ -123,6 +123,192 @@ transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 3.13408e-22, -2.62268e-0
 [node name="cardboards" type="Spatial" parent="."]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 0.608705, -25.4001, 28.3043 )
 
+[node name="attic_box_1" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.4115, 29.119, -5.96661 )
+
+[node name="attic_box_tipped_1" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -4.21748e-08, 0.964847, -0.262812, -1, -4.37114e-08, 0, -1.14879e-08, 0.262812, 0.964847, -37.4883, 29.3724, -5.32289 )
+
+[node name="attic_box_tipped_2" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -4.21748e-08, 0.964847, -0.262812, -1, -4.37114e-08, 0, -1.14879e-08, 0.262812, 0.964847, -35.4353, 29.3724, -4.34302 )
+
+[node name="attic_box_tipped_3" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -4.21748e-08, 0.964847, -0.262813, -1, -4.37114e-08, 0, -1.14879e-08, 0.262813, 0.964847, -36.4747, 29.3724, -0.293186 )
+
+[node name="attic_box_tipped_4" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -1.69705e-08, 0.38824, 0.921559, -1, -4.37114e-08, 0, 4.02826e-08, -0.921559, 0.38824, -33.5056, 29.3724, 6.19955 )
+
+[node name="attic_box_tipped_5" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -3.52882e-08, 0.807301, 0.590141, -1, -4.37114e-08, 0, 2.57959e-08, -0.590141, 0.807301, -32.8992, 29.3724, 6.90671 )
+
+[node name="attic_box_tipped_6" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 8.78043e-09, -0.200873, 0.979619, -1, -4.37114e-08, 0, 4.28205e-08, -0.979618, -0.200873, -24.2961, 29.3724, 7.36533 )
+
+[node name="attic_box_tipped_7" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 8.78043e-09, -0.200873, 0.979619, -1, -4.37114e-08, 0, 4.28205e-08, -0.979619, -0.200873, -23.147, 29.3724, 5.6119 )
+
+[node name="attic_box_tipped_8" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 3.77441e-08, -0.863485, 0.504378, -1, -4.37114e-08, 0, 2.2047e-08, -0.504378, -0.863485, -23.8678, 29.3535, 1.91822 )
+
+[node name="attic_box_tipped_9" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 3.77441e-08, -0.863485, 0.504378, -1, -4.37114e-08, 0, 2.2047e-08, -0.504378, -0.863485, -23.8191, 29.3535, -0.349826 )
+
+[node name="attic_box_2" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2088, 29.119, -6.63947 )
+
+[node name="attic_box_3" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2505, 29.119, -7.52788 )
+
+[node name="attic_box_4" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.979873, 0, 0.199624, 0, 1, 0, -0.199624, 0, 0.979873, -36.5413, 29.119, -7.74003 )
+
+[node name="attic_box_5" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.993379, 0, -0.114885, 0, 1, 0, 0.114885, 0, 0.993379, -36.487, 29.119, -6.77587 )
+
+[node name="attic_box_41" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.101838, 0, 0.994802, 0, 1, 0, -0.994802, 0, -0.101838, -36.8421, 29.7209, -6.78351 )
+
+[node name="attic_box_42" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.169952, 0, 0.985453, 0, 1, 0, -0.985453, 0, 0.169952, -36.9718, 29.7209, -7.70928 )
+
+[node name="attic_box_43" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.169952, 0, 0.985453, 0, 1, 0, -0.985453, 0, 0.169952, -34.7931, 29.7209, -3.31627 )
+
+[node name="attic_box_44" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.169952, 0, 0.985454, 0, 1, 0, -0.985454, 0, 0.169952, -37.1644, 29.7209, 1.07664 )
+
+[node name="attic_box_45" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.0346205, 0, 0.999402, 0, 1, 0, -0.999402, 0, 0.0346205, -37.15, 29.7209, 0.406229 )
+
+[node name="attic_box_46" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.0346205, 0, 0.999402, 0, 1, 0, -0.999402, 0, 0.0346205, -34.2053, 29.7209, 7.32632 )
+
+[node name="attic_box_47" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0815385, 0, 0.996672, 0, 1, 0, -0.996672, 0, -0.0815385, -33.5503, 29.7209, 7.3404 )
+
+[node name="attic_box_48" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0815385, 0, 0.996672, 0, 1, 0, -0.996672, 0, -0.0815385, -34.1679, 29.7209, 6.59415 )
+
+[node name="attic_box_49" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0815385, 0, 0.996672, 0, 1, 0, -0.996672, 0, -0.0815385, -23.1427, 29.7209, 7.73155 )
+
+[node name="attic_box_50" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0815385, 0, 0.996672, 0, 1, 0, -0.996672, 0, -0.0815385, -22.9957, 29.7209, 0.892641 )
+
+[node name="attic_box_51" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.0504886, 0, 0.998727, 0, 1, 0, -0.998727, 0, 0.0504886, -22.9818, 29.7209, 0.245397 )
+
+[node name="attic_box_52" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0419978, 0, 0.99912, 0, 1, 0, -0.99912, 0, -0.0419978, -22.9676, 29.7209, -0.414021 )
+
+[node name="attic_box_53" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.0711842, 0, 0.997466, 0, 1, 0, -0.997466, 0, -0.0711842, -22.9745, 30.3306, -0.0923772 )
+
+[node name="attic_box_6" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.992829, 0, 0.119548, 0, 1, 0, -0.119548, 0, 0.992829, -33.3317, 29.119, -7.80175 )
+
+[node name="attic_box_7" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.99556, 0, -0.0941257, 0, 1, 0, 0.0941257, 0, 0.99556, -34.0249, 29.119, -7.81666 )
+
+[node name="attic_box_8" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.814511, 0, 0.580149, 0, 1, 0, -0.580149, 0, 0.814511, -34.6698, 29.119, -3.67524 )
+
+[node name="attic_box_9" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.968679, 0, 0.248318, 0, 1, 0, -0.248318, 0, 0.968679, -34.6589, 29.119, -2.898 )
+
+[node name="attic_box_10" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3344, 29.119, -2.97669 )
+
+[node name="attic_box_11" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.538, 29.119, 0.409793 )
+
+[node name="attic_box_12" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.995478, 0, -0.0949944, 0, 1, 0, 0.0949944, 0, 0.995478, -36.8661, 29.119, 0.424245 )
+
+[node name="attic_box_13" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.975757, 0, -0.218859, 0, 1, 0, 0.218859, 0, 0.975757, -36.1494, 29.119, 0.549392 )
+
+[node name="attic_box_14" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0998, 29.119, 1.19637 )
+
+[node name="attic_box_15" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.923391, 0, 0.38386, 0, 1, 0, -0.38386, 0, 0.923391, -32.5289, 29.119, 2.1307 )
+
+[node name="attic_box_16" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.649037, 0, -0.760757, 0, 1, 0, 0.760757, 0, 0.649037, -33.1709, 29.119, 0.309392 )
+
+[node name="attic_box_17" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4958, 29.119, 7.53639 )
+
+[node name="attic_box_18" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.983941, 0, -0.178493, 0, 1, 0, 0.178493, 0, 0.983941, -33.5167, 29.119, 6.82255 )
+
+[node name="attic_box_19" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2155, 29.119, 7.41941 )
+
+[node name="attic_box_20" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2214, 29.119, 6.7358 )
+
+[node name="attic_box_21" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.992841, 0, 0.119444, 0, 1, 0, -0.119444, 0, 0.992841, -34.2049, 29.119, 5.98929 )
+
+[node name="attic_box_22" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.97797, 0, 0.208748, 0, 1, 0, -0.208748, 0, 0.97797, -32.6805, 29.119, 7.54723 )
+
+[node name="attic_box_23" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0034, 29.119, 7.95961 )
+
+[node name="attic_box_24" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.978682, 0, 0.205384, 0, 1, 0, -0.205384, 0, 0.978682, -23.7803, 29.119, 7.79879 )
+
+[node name="attic_box_25" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.97686, 0, -0.213883, 0, 1, 0, 0.213883, 0, 0.97686, -23.1083, 29.119, 7.19589 )
+
+[node name="attic_box_26" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.920859, 0, -0.389896, 0, 1, 0, 0.389896, 0, 0.920859, -24.0866, 29.119, 6.17462 )
+
+[node name="attic_box_27" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8376, 29.119, 0.271216 )
+
+[node name="attic_box_28" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.997746, 0, -0.0671098, 0, 1, 0, 0.0671098, 0, 0.997746, -23.5667, 29.119, 0.34884 )
+
+[node name="attic_box_29" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.999001, 0, -0.044683, 0, 1, 0, 0.044683, 0, 0.999001, -22.8476, 29.119, -0.432995 )
+
+[node name="attic_box_30" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.999955, 0, 0.00949445, 0, 1, 0, -0.00949445, 0, 0.999955, -22.8322, 29.119, -1.14869 )
+
+[node name="attic_box_31" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.999185, 0, 0.0403585, 0, 1, 0, -0.0403585, 0, 0.999185, -22.8175, 29.119, -1.82959 )
+
+[node name="attic_box_32" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.997224, 0, -0.0744566, 0, 1, 0, 0.0744566, 0, 0.997224, -22.8024, 29.119, -2.53328 )
+
+[node name="attic_box_33" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8789, 29.119, 1.02322 )
+
+[node name="attic_box_34" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.999999, 0, 0.00150098, 0, 1, 0, -0.00150098, 0, 0.999999, -23.606, 29.119, 1.00758 )
+
+[node name="attic_box_35" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.99542, 0, 0.0956025, 0, 1, 0, -0.0956025, 0, 0.99542, -23.2178, 29.119, 1.79963 )
+
+[node name="attic_box_36" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.946638, 0, -0.322299, 0, 1, 0, 0.322299, 0, 0.946638, -27.1282, 29.119, 1.23498 )
+
+[node name="attic_box_37" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.99037, 0, -0.138447, 0, 1, 0, 0.138447, 0, 0.99037, -27.6332, 29.119, 2.19055 )
+
+[node name="attic_box_38" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8791, 29.119, 2.20758 )
+
+[node name="attic_box_39" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -28.2231, 29.119, -3.46517 )
+
+[node name="attic_box_40" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.995102, 0, -0.0988508, 0, 1, 0, 0.0988508, 0, 0.995102, -27.5192, 29.119, -3.45003 )
+
 [node name="cardboardbox" parent="cardboards" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9826, 25.4644, 6.80079 )
 

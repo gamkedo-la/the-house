@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://forest/wooden_fence/wooden_fence.material" type="Material" id=1]
+[ext_resource path="res://forest/wooden_fence/wooden_fence.fbx" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 3.1, 1, 0.25 )
+
+[node name="wooden_fence" instance=ExtResource( 2 )]
+
+[node name="RootNode" parent="." index="0"]
+transform = Transform( 1, 3.6569e-09, 0, 1.58875e-10, 1, -3.54077e-11, -2.98023e-08, -5.37259e-10, 1, 0, 0, 0 )
+
+[node name="wooden_fence" parent="RootNode" index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="1"]
+transform = Transform( -0.0160874, -0.97337, 0.228676, 0.999864, -0.0165253, -7.45058e-09, 0.00377895, 0.228645, 0.973503, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( -0.0160874, 0.999863, 0.00377894, -0.973369, -0.0165253, 0.228645, 0.228676, -8.44443e-09, 0.973502, 0.0908728, 2.92392, -0.494744 )
+shape = SubResource( 1 )

@@ -12,3 +12,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429268, 0 )
 shape = SubResource( 1 )
 
 [node name="shrubbery_stylized" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0832664, 0 )

@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="credits_screen" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 836.0
+margin_top = 474.0
+margin_right = 1335.0
+margin_bottom = 585.0
+text = "CREDITS"

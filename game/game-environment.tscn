@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://game-environment.gd" type="Script" id=1]
+[ext_resource path="res://game/game-environment.gd" type="Script" id=1]
 [ext_resource path="res://items/flame/particle.png" type="Texture" id=2]
-[ext_resource path="res://visuals/night_sky.tscn" type="PackedScene" id=3]
-[ext_resource path="res://visuals/WorldEnvironment.tscn" type="PackedScene" id=4]
-[ext_resource path="res://visuals/screen_pixelation.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/visuals/night_sky.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/visuals/WorldEnvironment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/visuals/screen_pixelation.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PanoramaSky" id=4]
 

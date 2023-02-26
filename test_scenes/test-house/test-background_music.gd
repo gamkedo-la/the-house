@@ -10,6 +10,7 @@ export var initial_track := "res://audio/music-intro-draft1.mp3"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_stream(load(initial_track))
+	yield(get_tree().create_timer(5.0), "timeout")
 	play()
 
 

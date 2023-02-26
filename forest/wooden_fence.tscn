@@ -4,7 +4,7 @@
 [ext_resource path="res://forest/wooden_fence/wooden_fence.fbx" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 3.1, 1, 0.25 )
+extents = Vector3( 3.1, 0.610646, 0.25 )
 
 [node name="wooden_fence" instance=ExtResource( 2 )]
 
@@ -18,5 +18,5 @@ material/0 = ExtResource( 1 )
 transform = Transform( -0.0160874, -0.97337, 0.228676, 0.999864, -0.0165253, -7.45058e-09, 0.00377895, 0.228645, 0.973503, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
-transform = Transform( -0.0160874, 0.999863, 0.00377894, -0.973369, -0.0165253, 0.228645, 0.228676, -8.44443e-09, 0.973502, 0.0908728, 2.92392, -0.494744 )
+transform = Transform( -0.0160874, 0.999863, 0.00377894, -0.973369, -0.0165253, 0.228645, 0.228676, -8.16101e-09, 0.973502, 0.715482, 2.9136, -0.494744 )
 shape = SubResource( 1 )

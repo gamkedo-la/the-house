@@ -3,11 +3,17 @@ extends MultiMeshInstance
 
 export var extents := Vector2.ONE setget _set_extents
 
+var _is_ready := false
+
 func _ready() -> void:
 	multimesh = multimesh.duplicate(true)
+	_is_ready = true
 	_update()
 	
 func _update()-> void:
+	if not _is_ready:
+		return
+		
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 

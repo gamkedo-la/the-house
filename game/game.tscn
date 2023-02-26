@@ -46,7 +46,7 @@ transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.091970
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
-transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 8.30466, 0.689554, 78.482 )
+transform = Transform( 0.643416, 0, -0.765517, 0, 1, 0, 0.765517, 0, 0.643416, 9.14254, 0.689554, 76.5022 )
 
 [node name="ambiant_lights" type="Spatial" parent="."]
 
@@ -129,24 +129,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0101, 2.75592, -21.805 )
 
 [node name="temporary_tools" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6397, -1.01054, 68.1403 )
+visible = false
 
 [node name="military_torchlight" parent="debug/temporary_tools" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96301, 1.11554, 8.72409 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.54379, 1.11554, 6.90528 )
 
 [node name="crystal_ball" parent="debug/temporary_tools" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30529, 1.11054, 9.40351 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88607, 1.11054, 7.5847 )
 
 [node name="lighter" parent="debug/temporary_tools" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59011, 1.07955, 8.31757 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.17089, 1.07955, 6.49876 )
 
 [node name="torch" parent="debug/temporary_tools" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69915, 1.06054, 9.32365 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27993, 1.06054, 7.50484 )
 
 [node name="lantern" parent="debug/temporary_tools" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30219, 1.00749, 10.1251 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88297, 1.00749, 8.30629 )
 
 [node name="lantern2" parent="debug/temporary_tools" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33787, 1.00749, 9.99792 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.91865, 1.00749, 8.17911 )
 
 [node name="quick_travel_spawn_point4" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 80.9613, 2.10669, 27.5537 )

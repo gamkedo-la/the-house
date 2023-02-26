@@ -18,10 +18,10 @@ export(Mushroom.MushroomColor) var mushroom_color := Mushroom.MushroomColor.rand
 
 
 func _ready():
-	_update_mushrooms() 
+	_update_mushrooms()
 
 func _update_mushrooms():
-	print("Updating mushrooms in group : %s" % name)
+#	print("Updating mushrooms in group : %s" % name)
 	
 	if mode == Mode.random:
 		_clear_all_mushrooms()
@@ -86,7 +86,7 @@ func _set_random_min_spacing(value: float) -> void:
 
 func _place_mushrooms():
 	# FIXME: Temporary placement
-	print("Re-placing mushrooms")
+#	print("Re-placing mushrooms")
 	if placement == Placement.line:
 		var idx := 0
 		for mushroom in _mushroom_node.get_children():
@@ -98,22 +98,22 @@ func _place_mushrooms():
 		# Random placement but not too close of each other
 		var positions := []
 		for mushroom in _mushroom_node.get_children():
-			print("new mushroom: ", mushroom)
+#			print("new mushroom: ", mushroom)
 			var max_attempts = 20
 			while true:
 				max_attempts -= 1
 				var random_pos = utility.random_vector2(random_placement_radius)
-				print("new pos: ", random_pos)
+#				print("new pos: ", random_pos)
 				var is_new_pos_acceptable = true
 				for pos in positions:
 					var distance = pos.distance_to(random_pos)
 					if distance < random_placement_min_spacing:
-						print("!skipping: distance = %s < %s" % [distance, random_placement_min_spacing])
+#						print("!skipping: distance = %s < %s" % [distance, random_placement_min_spacing])
 						is_new_pos_acceptable = false
 						continue
 				if not is_new_pos_acceptable && max_attempts > 0: # Still use that position if we tried too many alternatives
 					continue
-				print("new pos accepted! ")
+#				print("new pos accepted! ")
 				positions.push_back(random_pos)
 				
 				var new_relative_position := Vector3(random_pos.x, 0.0, random_pos.y)

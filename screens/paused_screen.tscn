@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
+
+[node name="paused_screen" type="Node2D"]
+
+[node name="options_screen" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 669.0
+margin_top = 86.0
+margin_right = 1330.0
+margin_bottom = 126.0
+text = "PAUSED SCREEN"

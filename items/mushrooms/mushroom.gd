@@ -15,18 +15,25 @@ enum MushroomColor {
 export(MushroomColor) var mushroom_color = MushroomColor.yellow setget _set_mushroom_color
 const mushroom_shapes_count := 9 # We cannot use this in values of `export` though, but we can use it in other code.
 export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
+export var random_mushroom_shape := true
+export var is_stuck_in_ground := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(_models_node)
-	set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
+	
+	if is_stuck_in_ground:
+		set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
+	
 	_cancel_velocity(self)
 	_update_mushroom()
 
 func _update_mushroom() ->void :
 	_hide_all_models()
+	if random_mushroom_shape:
+		mushroom_shape = rand_range(0, mushroom_shapes_count - 1)
 	_show_selected_model()
-	print("Mushroom updated: %s" % name)
+#	print("Mushroom updated: %s" % name)
 
 func _hide_node(node: Node)->void:
 	if node is Spatial and not node is MeshInstance: # We don't want to hide the meshes, just their node ownders.

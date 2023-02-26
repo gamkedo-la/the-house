@@ -11,7 +11,12 @@ extends Spatial
 func _ready():
 	# Calculate offset once per instance so that trunk + leaves move in sync
 	# with each other.
-	var offset = rand_range(0.5, 2.0)
-	for i in $pine2.get_surface_material_count():
-		var material = $pine2.get_surface_material(i)
-		material.set_shader_param("SwayOffset", offset)
+	# FIXME: SwayOffset doenst do what we need (having the trees not be in sync)
+	pass
+#	var offset = rand_range(0, 10000)
+#	for meshi in get_children():
+#		if meshi is MeshInstance:
+#			for i in meshi.get_surface_material_count():
+#				var material = meshi.get_surface_material(i)
+##				print("blah")
+#				material.set_shader_param("SwayOffset", offset)

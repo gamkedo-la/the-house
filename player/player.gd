@@ -2,15 +2,15 @@ extends KinematicBody
 
 class_name Player
 
-export var walking_speed : float = 150.0
-export var running_speed : float = 300.0
-export var crouching_speed : float = 50.0
-export var climbing_speed : float = 100.0
+export var walking_speed : float = 2.0
+export var running_speed : float = 4.0
+export var crouching_speed : float = 1.0
+export var climbing_speed : float = 1.0
 export var view_speed : float = 0.002
-export var gravity_factor : float= 50.0
+export var gravity_factor : float= 1.0
 export var interraction_distance : float = 1.2
 export var auto_pointing_distance : float = 4.0
-export var floor_max_angle : float = 80.0
+export var floor_max_angle : float = 70.0
 export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
@@ -56,10 +56,7 @@ onready var _initial_examination_transform : Transform = _examination_spot.trans
 enum MovementMode { Walking, Climbing }
 var _movement_mode : int = MovementMode.Walking
 
-func _init() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func _input(event):	
+func _input(event) -> void:
 	
 	if Input.is_action_just_pressed("mouse_capture"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -73,6 +70,10 @@ func _ready() -> void:
 	_initial_hand_transform = _hand_node.transform
 	_initial_body_transform = _body.transform
 	_initial_body_height = _body.shape.height
+	
+	yield(get_tree().create_timer(1.0), "timeout")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):
@@ -103,7 +104,7 @@ func get_movement_mode() -> int:
 	return _movement_mode
 
 # Call this only once per _physics_update()
-func update_walk(delta) -> void:
+func update_walk(_delta) -> void:
 	var translation = Vector3()
 
 	if Input.is_action_pressed("move_left"):
@@ -143,33 +144,26 @@ func update_walk(delta) -> void:
 			
 	else:
 		assert(false, "unhandled movement mode") 
-
+	
 	var speed = current_move_speed()
-	var movement_translation = translation.normalized() * speed * delta
+	var movement_translation = translation.normalized() * speed
 
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
 	oriented_movement = never_fall_in_holes(oriented_movement)
-		
+			
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
-	
+		
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
-		if ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround and _slope_checker.currently_walking_on() == GroundChecker.WalkingOn.OutsideGround:
-			# We detected that we are walking on a slope on the landscape of the forest.
-			# In this case we do not want to be affected by gravity, as a workaround having to
-			# counter gravity with more strengh in the legs.
-			# Note that this coudl be replaced by adding some leg strengh, but for now it should be enough.
-#			print("walking on slope") # Uncomment to check slope detection.
-			pass
-		else:
-			var gravity = _gravity * delta * gravity_factor
+		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
+			var gravity = _gravity * gravity_factor
 			oriented_movement += gravity
-			
-		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		
+		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
-		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, false)
+		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 		
 	
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following

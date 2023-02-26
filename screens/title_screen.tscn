@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/credits/credits_screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://forest/moon_light.gd" type="Script" id=3]
+[ext_resource path="res://game/game-environment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://forest/forest_title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://house/house.tscn" type="PackedScene" id=7]
+[ext_resource path="res://screens/title_screen.gd" type="Script" id=8]
+
+[node name="title_screen" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="main_menu" type="Spatial" parent="."]
+
+[node name="title" type="RichTextLabel" parent="main_menu"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+text = "The House"
+
+[node name="options_screen" parent="main_menu" instance=ExtResource( 1 )]
+visible = false
+
+[node name="credits_screen" parent="main_menu" instance=ExtResource( 2 )]
+visible = false
+
+[node name="start_button" type="Button" parent="main_menu"]
+unique_name_in_owner = true
+margin_left = 259.0
+margin_top = 229.0
+margin_right = 383.0
+margin_bottom = 271.0
+text = "START"
+
+[node name="scenery" type="Spatial" parent="."]
+
+[node name="forest2" parent="scenery" instance=ExtResource( 5 )]
+
+[node name="environment" parent="scenery" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+
+[node name="house" parent="scenery" instance=ExtResource( 7 )]
+transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
+
+[node name="light_from_inside_the_house" type="OmniLight" parent="scenery/house"]
+transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 5.05228, 4.93458, 4.31823 )
+light_color = Color( 1, 0.729412, 0.470588, 1 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.1
+
+[node name="light_from_inside_the_house2" type="OmniLight" parent="scenery/house"]
+transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, -3.7786, 4.92439, 4.44397 )
+light_color = Color( 1, 0.729412, 0.470588, 1 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.149
+
+[node name="light_from_inside_the_house3" type="OmniLight" parent="scenery/house"]
+transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 5.05228, 1.17733, 4.31823 )
+light_color = Color( 1, 0.729412, 0.470588, 1 )
+light_energy = 2.374
+light_indirect_energy = 4.417
+omni_range = 5.1
+
+[node name="light_from_inside_the_house4" type="OmniLight" parent="scenery/house"]
+transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, -3.7786, 1.16714, 4.44397 )
+light_color = Color( 1, 0.729412, 0.470588, 1 )
+light_energy = 2.374
+light_indirect_energy = 4.417
+omni_range = 5.149
+
+[node name="panel_reflecting_light" type="CSGBox" parent="scenery/house"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.323703, 2.76162, 2.94307 )
+width = 14.504
+height = 9.17831
+depth = 0.618887
+
+[node name="toolshed" parent="scenery" instance=ExtResource( 6 )]
+transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -23.763, 26.9263, -14.7953 )
+
+[node name="ambiant_lights" type="Spatial" parent="scenery"]
+
+[node name="moon_light" type="DirectionalLight" parent="scenery/ambiant_lights"]
+transform = Transform( -0.810717, 0.431324, -0.39585, 0.081885, 0.753058, 0.652838, 0.579683, 0.496853, -0.645836, -59.2176, 39.8945, -11.2015 )
+visible = false
+light_color = Color( 0.709804, 0, 0, 1 )
+light_specular = 0.0
+shadow_enabled = true
+shadow_contact = 0.353
+directional_shadow_max_distance = 23.9
+script = ExtResource( 3 )
+
+[node name="Camera" type="Camera" parent="scenery"]
+transform = Transform( 0.695138, 0.135622, 0.705967, 0.0140678, 0.979288, -0.201981, -0.718739, 0.150336, 0.678833, 54.7166, 27.9253, 45.477 )
+current = true
+far = 8192.0

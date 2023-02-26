@@ -6,7 +6,7 @@
 height = 2.26563
 radius = 2.17482
 
-[node name="Shrub" type="RigidBody"]
+[node name="Shrub" type="StaticBody"]
 
 [node name="shrubbery_1" parent="." instance=ExtResource( 1 )]
 

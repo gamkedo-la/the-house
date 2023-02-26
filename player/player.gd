@@ -156,17 +156,31 @@ func update_walk(_delta) -> void:
 			
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
 	var debug_text = "Ground: "
-		
+	
+	if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround:
+		debug_text += "building "
+	elif ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround:
+		debug_text += "landscape "
+	else:
+		debug_text += "??? "
+	
+	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
+		var snap_ray := Vector3.DOWN * 10.0
+		
 		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
 			var gravity = _gravity * gravity_factor
 			oriented_movement += gravity
 			debug_text += "with gravity "
+			
+			snap_ray = Vector3.ZERO
+			debug_text += "no snap "
+			
 		else:
-			debug_text += "no gravity"
+			debug_text += "no gravity but snap"
 		
-		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN * 10.0, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, snap_ray, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 		

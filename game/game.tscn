@@ -42,7 +42,7 @@ script = ExtResource( 1 )
 transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
 
 [node name="toolshed" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -23.763, 26.9263, -14.7953 )
+transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -37.0618, 21.9992, -15.0888 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true

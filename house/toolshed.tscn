@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://furniture/toolshed_door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house_exterior_wall.jpg" type="Texture" id=2]
 [ext_resource path="res://house/wood_siding_spatialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://house/wood_siding_vertical.jpg" type="Texture" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.415686, 0.415686, 0.415686, 1 )
+albedo_texture = ExtResource( 4 )
 
 [node name="toolshed" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9318, 4.53804, -19.9422 )
 
 [node name="walls" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.72861, 0 )
 use_collision = true
 
 [node name="exterior_walls" type="CSGBox" parent="walls"]
@@ -14,18 +23,28 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.04011, 0 )
 width = 5.92214
 height = 3.77549
 depth = 5.82934
+material = SubResource( 1 )
 
 [node name="interior_hole" type="CSGBox" parent="walls/exterior_walls"]
 operation = 2
 width = 5.522
 height = 3.375
 depth = 5.429
+material = SubResource( 2 )
 
 [node name="entrance" type="CSGBox" parent="walls"]
-transform = Transform( 4.52987e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 4.52987e-08, -1.87084, -3.61564, 2.59204 )
+transform = Transform( 4.52987e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 4.52987e-08, -1.87084, -3.65406, 2.59204 )
 operation = 2
 height = 3.56738
 material = ExtResource( 3 )
 
 [node name="toolshed_door" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45838, -4.65597, 2.839 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45838, 0.00181285, 2.839 )
+
+[node name="ground" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+visible = false
+use_collision = true
+width = 10.0
+height = 1.0
+depth = 10.0

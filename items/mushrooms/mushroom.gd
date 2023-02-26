@@ -7,6 +7,8 @@ class_name Mushroom
 
 onready var _models_node : Spatial = $"models"
 onready var _light_node : OmniLight = $"light"
+onready var _lighten_area : Area = $"%lighten_area"
+onready var _lighten_area_shape : CollisionShape = $"%lighten_area/CollisionShape"
 
 enum MushroomColor {
 	random, blue, bluegreen, brown, purple, yellow, 
@@ -17,22 +19,33 @@ const mushroom_shapes_count := 9 # We cannot use this in values of `export` thou
 export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
 export var random_mushroom_shape := true
 export var is_stuck_in_ground := true
+export var lightening_distance := 1.0 setget _set_lightening_distance
+
+var _is_ready := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(_models_node)
 	
+	_lighten_area.connect("body_entered", self, "_on_player_is_close")
+	_lighten_area.connect("body_exited", self, "_on_player_left")
+	
 	if is_stuck_in_ground:
 		set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
+		_cancel_velocity(self)
 	
-	_cancel_velocity(self)
+	_is_ready = true
 	_update_mushroom()
 
 func _update_mushroom() ->void :
+	if not _is_ready:
+		return
+		
 	_hide_all_models()
 	if random_mushroom_shape:
 		mushroom_shape = rand_range(0, mushroom_shapes_count - 1)
 	_show_selected_model()
+	_check_light_visibility()
 #	print("Mushroom updated: %s" % name)
 
 func _hide_node(node: Node)->void:
@@ -55,11 +68,12 @@ func _show_selected_model() -> void:
 	mushroom_node.visible = true
 	
 	# change the light color too
-	var current_mesh : MeshInstance = color_node.find_node("geo1")
-	assert(current_mesh)
-	var current_hat_material : Material = current_mesh.mesh.surface_get_material(0)
-	assert(current_hat_material)
-	_light_node.light_color = current_hat_material.emission
+	if mushroom_color != MushroomColor.brown:
+		var current_mesh : MeshInstance = color_node.find_node("geo1")
+		assert(current_mesh)
+		var current_hat_material : Material = current_mesh.mesh.surface_get_material(0)
+		assert(current_hat_material)
+		_light_node.light_color = current_hat_material.emission
 	
 func _set_mushroom_color(new_color: int) -> void:
 	if new_color != mushroom_color || new_color == MushroomColor.random:
@@ -76,4 +90,29 @@ func _set_mushroom_shape(new_shape: int) -> void:
 		mushroom_shape = new_shape
 		if _models_node is Spatial:
 			_update_mushroom()
+
+func _check_light_visibility() -> void:
+	if not _is_ready:
+		return
 		
+	var shape : SphereShape = _lighten_area_shape.shape
+	shape.radius = lightening_distance
+	_lighten_area_shape.transform.origin = _lighten_area_shape.transform.origin
+	for body in _lighten_area.get_overlapping_bodies():
+		if body is Player and mushroom_color != MushroomColor.brown and _light_node.visible == false:
+			_light_node.visible = true
+		else:
+			_light_node.visible = false
+
+func _on_player_is_close(player : Node) -> void:
+	if player is Player and mushroom_color != MushroomColor.brown and _light_node.visible == false:
+		_light_node.visible = true
+
+func _on_player_left(player: Node) -> void:
+	if player is Player and _light_node.visible == true:
+		_light_node.visible = false
+
+func _set_lightening_distance(new_value: float) -> void:
+	lightening_distance = new_value
+	_check_light_visibility()
+	

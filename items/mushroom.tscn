@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://items/mushrooms/mushroom.gd" type="Script" id=1]
 [ext_resource path="res://items/mushrooms/blue/mushroom_9.glb" type="PackedScene" id=2]
@@ -56,12 +56,15 @@
 height = 0.197119
 radius = 0.0601154
 
+[sub_resource type="SphereShape" id=2]
+
 [node name="mushroom" type="RigidBody"]
 collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
-mushroom_color = 2
+mushroom_shape = 3
+lightening_distance = 18.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0 )
@@ -104,8 +107,10 @@ visible = false
 visible = false
 
 [node name="bluegreen" type="Spatial" parent="models"]
+visible = false
 
 [node name="mushroom_0" parent="models/bluegreen" instance=ExtResource( 19 )]
+visible = false
 
 [node name="mushroom_1" parent="models/bluegreen" instance=ExtResource( 4 )]
 visible = false
@@ -201,7 +206,6 @@ visible = false
 visible = false
 
 [node name="yellow" type="Spatial" parent="models"]
-visible = false
 
 [node name="mushroom_0" parent="models/yellow" instance=ExtResource( 35 )]
 visible = false
@@ -213,7 +217,6 @@ visible = false
 visible = false
 
 [node name="mushroom_3" parent="models/yellow" instance=ExtResource( 45 )]
-visible = false
 
 [node name="mushroom_4" parent="models/yellow" instance=ExtResource( 48 )]
 visible = false
@@ -233,8 +236,18 @@ visible = false
 [node name="mushroom_9" parent="models/yellow" instance=ExtResource( 25 )]
 visible = false
 
-[node name="light" type="OmniLight" parent="."]
+[node name="lighten_area" type="Area" parent="."]
+unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104003, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="lighten_area"]
+shape = SubResource( 2 )
+
+[node name="light" type="OmniLight" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104003, 0 )
+visible = false
+light_color = Color( 1, 0.584314, 0, 1 )
 light_energy = 2.116
 light_indirect_energy = 1.283
 light_specular = 3.27

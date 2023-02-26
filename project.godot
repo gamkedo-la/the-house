@@ -153,7 +153,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The House"
-run/main_scene="res://game/game.tscn"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
 [audio]
@@ -376,4 +376,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/shadows/filter_mode=2
+limits/rendering/max_lights_per_object=100
 environment/default_environment="res://game/default_env.tres"

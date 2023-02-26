@@ -56,10 +56,7 @@ onready var _initial_examination_transform : Transform = _examination_spot.trans
 enum MovementMode { Walking, Climbing }
 var _movement_mode : int = MovementMode.Walking
 
-func _init() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func _input(event):	
+func _input(event) -> void:
 	
 	if Input.is_action_just_pressed("mouse_capture"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -73,6 +70,10 @@ func _ready() -> void:
 	_initial_hand_transform = _hand_node.transform
 	_initial_body_transform = _body.transform
 	_initial_body_height = _body.shape.height
+	
+	yield(get_tree().create_timer(1.0), "timeout")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):

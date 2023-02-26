@@ -18,7 +18,7 @@ export(Mushroom.MushroomColor) var mushroom_color := Mushroom.MushroomColor.rand
 
 
 func _ready():
-	_update_mushrooms() 
+	_update_mushrooms()
 
 func _update_mushrooms():
 #	print("Updating mushrooms in group : %s" % name)

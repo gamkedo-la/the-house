@@ -57,6 +57,7 @@ height = 0.197119
 radius = 0.0601154
 
 [sub_resource type="SphereShape" id=2]
+radius = 18.0
 
 [node name="mushroom" type="RigidBody"]
 collision_layer = 129

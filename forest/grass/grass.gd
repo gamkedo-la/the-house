@@ -4,6 +4,7 @@ extends MultiMeshInstance
 export var extents := Vector2.ONE setget _set_extents
 
 func _ready() -> void:
+	multimesh = multimesh.duplicate(true)
 	_update()
 	
 func _update()-> void:

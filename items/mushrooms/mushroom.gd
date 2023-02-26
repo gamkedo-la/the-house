@@ -15,11 +15,15 @@ enum MushroomColor {
 export(MushroomColor) var mushroom_color = MushroomColor.yellow setget _set_mushroom_color
 const mushroom_shapes_count := 9 # We cannot use this in values of `export` though, but we can use it in other code.
 export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
+export var is_stuck_in_ground := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(_models_node)
-	set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
+	
+	if is_stuck_in_ground:
+		set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
+	
 	_cancel_velocity(self)
 	_update_mushroom()
 

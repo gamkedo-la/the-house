@@ -62,7 +62,7 @@ shape = SubResource( 1 )
 [node name="ground_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
 enabled = true
-cast_to = Vector3( 0, -2, 0 )
+cast_to = Vector3( 0, -1.7, 0 )
 debug_shape_custom_color = Color( 0, 0.564706, 0.0745098, 1 )
 debug_shape_thickness = 4
 script = ExtResource( 2 )

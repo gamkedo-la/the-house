@@ -46,7 +46,7 @@ transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.091970
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
-transform = Transform( 0.643416, 0, -0.765517, 0, 1, 0, 0.765517, 0, 0.643416, 9.14254, 0.689554, 76.5022 )
+transform = Transform( 0.0760055, 0, 0.997108, 0, 1, 0, -0.997108, 0, 0.0760055, 5.84703, 0.689554, 78.1165 )
 
 [node name="ambiant_lights" type="Spatial" parent="."]
 

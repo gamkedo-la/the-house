@@ -62,7 +62,7 @@ shape = SubResource( 1 )
 [node name="ground_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
 enabled = true
-cast_to = Vector3( 0, -1.7, 0 )
+cast_to = Vector3( 0, -0.695, 0 )
 debug_shape_custom_color = Color( 0, 0.564706, 0.0745098, 1 )
 debug_shape_thickness = 4
 script = ExtResource( 2 )
@@ -147,6 +147,17 @@ depth = 0.1
 material = SubResource( 10 )
 
 [node name="crouch_tween" type="Tween" parent="Head/Camera"]
+
+[node name="debug_status" type="RichTextLabel" parent="Head/Camera"]
+unique_name_in_owner = true
+margin_left = 698.0
+margin_top = 27.0
+margin_right = 1307.0
+margin_bottom = 1016.0
+meta_underlined = false
+text = "Debug Status"
+fit_content_height = true
+scroll_active = false
 
 [node name="debug_info" type="RichTextLabel" parent="Head/Camera"]
 visible = false

@@ -31,6 +31,7 @@ onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _text_display : RichTextLabel = $"%text_display"
+onready var _debug_status : RichTextLabel = $"%debug_status"
 
 var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
@@ -154,17 +155,22 @@ func update_walk(_delta) -> void:
 	oriented_movement = never_fall_in_holes(oriented_movement)
 			
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
+	var debug_text = "Ground: "
 		
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
 		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
 			var gravity = _gravity * gravity_factor
 			oriented_movement += gravity
+			debug_text += "with gravity "
+		else:
+			debug_text += "no gravity"
 		
-		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(floor_max_angle))
+		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, Vector3.DOWN * 10.0, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
 		
+	_debug_status.text = debug_text
 	
 	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
 	# is a failsafe to present it from ruining a game session:
@@ -177,7 +183,7 @@ func update_walk(_delta) -> void:
 			_feet_audio.begin_walk(FootAudio.StepSurface.Grass)
 	else:
 		_feet_audio.end_walk()
-		
+	
 		
 func will_fall_in_hole(oriented_movement:Vector3) -> bool:
 	var original_position = _fall_checker.global_transform.origin

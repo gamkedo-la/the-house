@@ -3,7 +3,7 @@
 [ext_resource path="res://forest/tree/pine_no_leaves.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://forest/tree/pine_bark_blend.material" type="Material" id=2]
 [ext_resource path="res://forest/tree/pine_bark.material" type="Material" id=3]
-[ext_resource path="res://forest/tree/PineTree.gd" type="Script" id=4]
+[ext_resource path="res://forest/tree_like.gd" type="Script" id=4]
 
 [sub_resource type="CylinderShape" id=1]
 height = 22.2149

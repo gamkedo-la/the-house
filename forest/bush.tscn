@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://forest/shrubbery_stylized/shrubbery_stylized.tscn" type="PackedScene" id=1]
+[ext_resource path="res://forest/tree_like.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.872561
 
 [node name="bush" type="StaticBody"]
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429268, 0 )

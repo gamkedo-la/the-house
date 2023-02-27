@@ -152,7 +152,7 @@ func update_walk(_delta) -> void:
 	# Make sure we move towards the direction currently faced, on the "ground plane" (not the camera direction)
 	var oriented_movement =  global_transform.basis.get_rotation_quat() * movement_translation
 	
-	oriented_movement = never_fall_in_holes(oriented_movement)
+#	oriented_movement = never_fall_in_holes(oriented_movement)
 			
 	var ground_we_are_walking_on = _ground_checker.currently_walking_on()
 	var debug_text = "Ground: "

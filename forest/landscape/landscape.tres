@@ -1,6 +1,17 @@
-[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
 
-[ext_resource path="res://forest/landscape/landscape.png" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=1]
+flags = 23
+load_path = "res://.import/landscape_bake_albedo_2k.png-fd8b93039782773483fdbe054fffd7e4.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/landscape_normal_4k.png-8616eaece2bf5df5d3d563309d4691e2.s3tc.stex"
 
 [resource]
-albedo_texture = ExtResource( 1 )
+albedo_texture = SubResource( 1 )
+metallic_specular = 0.17
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.36
+normal_texture = SubResource( 2 )

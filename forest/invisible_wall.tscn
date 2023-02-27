@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0 )
+
+[node name="invisible_wall" type="CSGBox"]
+use_collision = true
+material = SubResource( 1 )

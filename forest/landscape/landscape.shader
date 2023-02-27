@@ -6,7 +6,7 @@ uniform sampler2D dirt_normal : hint_normal;
 uniform sampler2D grass_albedo : hint_black_albedo;
 uniform sampler2D grass_normal : hint_normal;
 
-/* R = dirt, G = grass, B = unused */
+/* R = dirt */
 uniform sampler2D color_map : hint_black_albedo;
 
 uniform float uv_scale : hint_range(0.0, 50.0, 0.1);
@@ -22,11 +22,6 @@ void vertex() {
 }
 
 vec3 blend_normal(vec3 A, vec3 B) {
-//	return normalize(vec3(
-//		A.r + B.r,
-//		A.g * B.g,
-//		A.b + B.b
-//	));
 	return normalize(vec3(A.rg + B.rg, A.b * B.b));
 }
 
@@ -40,12 +35,6 @@ void fragment() {
 	
 	vec3 grass_bump = texture(grass_normal, world_uv).rgb;
 	vec3 dirt_bump = texture(dirt_normal, world_uv).rgb;
-//	vec3 bump = normalize(vec3(grass_bump.rg + dirt_bump.rg, dirt_bump.b));
-//	vec4 dirt_bump = normalize(texture(dirt_normal, world_uv));
-//	vec3 bump = mix(grass_bump, dirt_bump, vert_color.r);
-//	vec3 bump = blend_normal(grass_bump, dirt_bump);
-//	vec3 bump = normalize(grass_bump.rgb + dirt_bump.rgb);
-//	ALBEDO = bump;
 	NORMALMAP = mix(grass_bump, dirt_bump, vert_color.r);
 	NORMALMAP_DEPTH = normal_strength;
 	

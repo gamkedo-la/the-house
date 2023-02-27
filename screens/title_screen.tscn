@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/credits/credits_screen.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://house/house.tscn" type="PackedScene" id=7]
 [ext_resource path="res://screens/title_screen.gd" type="Script" id=8]
+[ext_resource path="res://fonts/title_normal.tres" type="DynamicFont" id=9]
+[ext_resource path="res://fonts/title_bold.tres" type="DynamicFont" id=10]
 
 [node name="title_screen" type="Spatial"]
 script = ExtResource( 8 )
@@ -19,6 +21,12 @@ anchor_left = 0.1
 anchor_top = 0.1
 anchor_right = 0.9
 anchor_bottom = 0.9
+margin_right = -881.0
+margin_bottom = -675.0
+custom_fonts/bold_font = ExtResource( 10 )
+custom_fonts/normal_font = ExtResource( 9 )
+bbcode_enabled = true
+bbcode_text = "[b]The House[/b]"
 text = "The House"
 
 [node name="options_screen" parent="main_menu" instance=ExtResource( 1 )]
@@ -29,10 +37,14 @@ visible = false
 
 [node name="start_button" type="Button" parent="main_menu"]
 unique_name_in_owner = true
-margin_left = 259.0
-margin_top = 229.0
-margin_right = 383.0
-margin_bottom = 271.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -316.0
+margin_right = -104.0
+margin_bottom = -274.0
 text = "START"
 
 [node name="scenery" type="Spatial" parent="."]

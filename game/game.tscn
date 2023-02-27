@@ -56,7 +56,8 @@ light_color = Color( 0.709804, 0, 0, 1 )
 light_specular = 0.0
 shadow_enabled = true
 shadow_contact = 0.353
-directional_shadow_max_distance = 23.9
+directional_shadow_depth_range = 1
+directional_shadow_max_distance = 8192.0
 script = ExtResource( 12 )
 
 [node name="texts" type="Spatial" parent="."]
@@ -101,6 +102,7 @@ omni_range = 5.149
 
 [node name="temporary_ambiant_lights" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6902, 24.7373, 0.709967 )
+visible = false
 
 [node name="OmniLight" type="OmniLight" parent="debug/temporary_ambiant_lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.581, -11.6288, 0 )

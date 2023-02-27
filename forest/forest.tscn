@@ -2751,6 +2751,12 @@ transform = Transform( -0.394978, -0.492399, -0.775587, -0.916701, 0.155717, 0.3
 [node name="fallen_trunk4" parent="special" instance=ExtResource( 4 )]
 transform = Transform( 0.425373, 0.00415301, -0.905008, -0.902814, -0.0677942, -0.424653, -0.0631178, 0.997691, -0.0250885, 90.1369, 0.410736, 7.87429 )
 
+[node name="fallen_trunk9" parent="special" instance=ExtResource( 4 )]
+transform = Transform( -0.00289318, 0.189508, -0.981874, -0.997981, -0.0628349, -0.00918686, -0.063437, 0.979867, 0.189307, 90.4941, 1.3597, -13.7207 )
+
+[node name="fallen_trunk10" parent="special" instance=ExtResource( 4 )]
+transform = Transform( -0.0162472, 0.16735, -0.985763, -0.991067, -0.13321, -0.00628007, -0.132365, 0.976857, 0.16802, 92.3408, 0.631257, -13.7892 )
+
 [node name="fallen_trunk5" parent="special" instance=ExtResource( 4 )]
 transform = Transform( 0.395713, 0.25559, -0.882091, -0.914466, 0.0211397, -0.404111, -0.0846397, 0.966554, 0.242094, 88.3286, 2.67191, -12.6586 )
 

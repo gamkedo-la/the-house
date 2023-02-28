@@ -290,6 +290,7 @@ tracks/6/keys = {
 [node name="torch" type="RigidBody"]
 angular_damp = 18.716
 script = ExtResource( 2 )
+orientation_held_front = 1
 
 [node name="Torch" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -317,9 +318,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.251607 )
 light_energy = 0.0
 shadow_enabled = true
 shadow_bias = 0.05
-spot_range = 20.0
-spot_attenuation = 2.2974
-spot_angle = 30.0
+spot_range = 12.0
+spot_attenuation = 0.482968
+spot_angle = 35.0
 spot_angle_attenuation = 0.707107
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

@@ -64,7 +64,7 @@ collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
-mushroom_shape = 3
+mushroom_shape = 4.9698
 lightening_distance = 18.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -218,9 +218,9 @@ visible = false
 visible = false
 
 [node name="mushroom_3" parent="models/yellow" instance=ExtResource( 45 )]
+visible = false
 
 [node name="mushroom_4" parent="models/yellow" instance=ExtResource( 48 )]
-visible = false
 
 [node name="mushroom_5" parent="models/yellow" instance=ExtResource( 22 )]
 visible = false
@@ -249,9 +249,9 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0104003, 0 )
 visible = false
 light_color = Color( 1, 0.584314, 0, 1 )
-light_energy = 2.116
-light_indirect_energy = 1.283
+light_energy = 0.4
+light_indirect_energy = 0.629
 light_specular = 3.27
 shadow_enabled = true
-omni_range = 1.692
-omni_attenuation = 3.03143
+omni_range = 1.5
+omni_attenuation = 2.21914

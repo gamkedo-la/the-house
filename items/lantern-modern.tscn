@@ -27,9 +27,8 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216692, 0 )
 visible = false
 light_color = Color( 1, 0.909804, 0.717647, 1 )
-light_energy = 1.476
 shadow_enabled = true
-omni_range = 7.43
-omni_attenuation = 2.14355
+omni_range = 4.862
+omni_attenuation = 0.901251
 
 [connection signal="use_item" from="." to="lantern-light" method="_on_lantern_use_item"]

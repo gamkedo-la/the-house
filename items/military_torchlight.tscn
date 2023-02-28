@@ -291,6 +291,7 @@ tracks/6/keys = {
 [node name="military_torchlight" type="RigidBody"]
 angular_damp = 18.716
 script = ExtResource( 2 )
+orientation_held_front = 1
 
 [node name="Torch" type="Spatial" parent="."]
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 2, 0, 0, 0 )
@@ -319,8 +320,8 @@ light_energy = 0.0
 light_indirect_energy = 1.635
 shadow_enabled = true
 shadow_bias = 0.05
-spot_range = 22.123
-spot_attenuation = 0.784586
+spot_range = 20.091
+spot_attenuation = 0.203064
 spot_angle = 61.33
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

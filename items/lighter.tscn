@@ -347,7 +347,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036, 0.034, 0 )
 light_color = Color( 0.9, 0.7416, 0.306, 1 )
 light_energy = 0.0
 shadow_enabled = true
-omni_range = 3.0
+omni_attenuation = 2.82843
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Close Lid" = SubResource( 4 )

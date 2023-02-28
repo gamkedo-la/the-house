@@ -96,7 +96,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357006, -0.227731 )
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
 current = true
-far = 8192.0
+far = 200.0
 script = ExtResource( 4 )
 
 [node name="InterractionRay" type="RayCast" parent="Head/Camera"]

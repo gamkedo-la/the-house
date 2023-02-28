@@ -209,7 +209,7 @@ custom_fonts/bold_font = ExtResource( 3 )
 custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "This is the text being displayed [b]to the player[/b]"
-text = "This is the text being displayed [b]to the player[/b]"
+text = "This is the text being displayed to the player"
 scroll_active = false
 script = ExtResource( 15 )
 

@@ -78,7 +78,7 @@ shape = SubResource( 3 )
 [node name="story_1_wakeup" type="Area" parent="texts"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07452, 0.321892, 78.9887 )
 script = ExtResource( 4 )
-bbtext_to_display = [ "...", "Wait ...", "Where am I?", "I was running from?", "I ...", "I can't remember ...", "My left arm is missing", "What was I running from?", "This forest seems... familiar?" ]
+bbtext_to_display = [ "...", "Wait ...", "Where am I?", "What or what was I running from?", "I ...", "I can't remember ...", "My left arm is missing", "What was I running from?", "This forest seems... familiar?" ]
 stop_display_on_exit = false
 prioritary_text = false
 

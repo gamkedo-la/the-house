@@ -14,6 +14,7 @@ uniform float uv_scale : hint_range(0.0, 50.0, 0.1);
 uniform float normal_strength : hint_range(0.0, 5.0, 0.1);
 uniform float roughness : hint_range(0.0, 1.0, 0.01);
 uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float brightness : hint_range(0.0, 1.0, 0.01);
 
 varying vec3 WORLD_POSITION;
 
@@ -31,7 +32,7 @@ void fragment() {
 	
 	vec3 grass_color = texture(grass_albedo, world_uv).rgb;
 	vec3 dirt_color = texture(dirt_albedo, world_uv).rgb;
-	ALBEDO = mix(grass_color, dirt_color, vert_color.r);
+	ALBEDO = mix(grass_color, dirt_color, vert_color.r) * brightness;
 	
 	vec3 grass_bump = texture(grass_normal, world_uv).rgb;
 	vec3 dirt_bump = texture(dirt_normal, world_uv).rgb;

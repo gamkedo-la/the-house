@@ -377,4 +377,5 @@ common/enable_pause_aware_picking=true
 
 threads/thread_model=2
 quality/shading/use_physical_light_attenuation=true
+quality/spatial_partitioning/render_tree_balance=1.0
 environment/default_environment="res://game/default_env.tres"

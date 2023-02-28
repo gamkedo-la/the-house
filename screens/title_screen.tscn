@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/credits/credits_screen.tscn" type="PackedScene" id=2]
@@ -8,8 +8,15 @@
 [ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://house/house.tscn" type="PackedScene" id=7]
 [ext_resource path="res://screens/title_screen.gd" type="Script" id=8]
-[ext_resource path="res://fonts/title_normal.tres" type="DynamicFont" id=9]
-[ext_resource path="res://fonts/title_bold.tres" type="DynamicFont" id=10]
+[ext_resource path="res://fonts/lastman.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=10]
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=1]
+default_font = SubResource( 2 )
 
 [node name="title_screen" type="Spatial"]
 script = ExtResource( 8 )
@@ -17,23 +24,19 @@ script = ExtResource( 8 )
 [node name="main_menu" type="Spatial" parent="."]
 
 [node name="title" type="RichTextLabel" parent="main_menu"]
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-margin_right = -881.0
-margin_bottom = -675.0
-custom_fonts/bold_font = ExtResource( 10 )
-custom_fonts/normal_font = ExtResource( 9 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -553.0
+margin_top = -492.0
+margin_right = -71.0
+margin_bottom = -344.0
+theme = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[b]The House[/b]"
 text = "The House"
-
-[node name="options_screen" parent="main_menu" instance=ExtResource( 1 )]
-visible = false
-
-[node name="credits_screen" parent="main_menu" instance=ExtResource( 2 )]
-visible = false
+scroll_active = false
 
 [node name="start_button" type="Button" parent="main_menu"]
 unique_name_in_owner = true
@@ -41,11 +44,45 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -228.0
-margin_top = -316.0
-margin_right = -104.0
-margin_bottom = -274.0
+margin_left = -414.0
+margin_top = -315.0
+margin_right = -214.0
+margin_bottom = -244.0
+rect_rotation = 0.108225
+theme = ExtResource( 10 )
 text = "START"
+
+[node name="options_button" type="Button" parent="main_menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -412.0
+margin_top = -233.0
+margin_right = -212.0
+margin_bottom = -162.0
+theme = ExtResource( 10 )
+text = "Options"
+
+[node name="options_button2" type="Button" parent="main_menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -412.0
+margin_top = -151.0
+margin_right = -212.0
+margin_bottom = -80.0
+theme = ExtResource( 10 )
+text = "Credits"
+
+[node name="options_screen" parent="main_menu" instance=ExtResource( 1 )]
+visible = false
+
+[node name="credits_screen" parent="main_menu" instance=ExtResource( 2 )]
+visible = false
 
 [node name="scenery" type="Spatial" parent="."]
 

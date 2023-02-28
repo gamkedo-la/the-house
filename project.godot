@@ -169,6 +169,9 @@ gdscript/warnings/unused_class_variable=true
 
 window/size/width=1920
 window/size/height=1080
+window/size/test_width=1920
+window/size/test_height=1080
+window/stretch/aspect="keep"
 
 [global]
 

@@ -22,7 +22,7 @@ void vertex() {
 		vec2 wind_uv = vec2(world_coords.x + TIME*wind_speed, world_coords.z - TIME * wind_speed) * 0.01;
 		float wind_noise = texture(WindNoise, wind_uv).g;
 		wind_noise = (wind_noise * 2.0) - 1.0; // change noise from (0,1) to (-1,1)
-		float sway_strength = wind_noise * SwayStrength * VERTEX.y; // make the sway stronger at the top of the tree
+		float sway_strength = wind_noise * SwayStrength * 0.1 * VERTEX.y; // make the sway stronger at the top of the tree
 		VERTEX.xz += sway_strength;
 	}
 }

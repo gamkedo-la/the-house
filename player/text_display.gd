@@ -9,7 +9,7 @@ onready var _tween = $text_tween
 
 var _texts_to_display := []
 export(float, 0, 600) var text_display_duration_secs = 5.0
-export(float, 0, 600) var fade_duration_secs = 3.0
+export(float, 0, 600) var fade_duration_secs = 2.0
 export(float, 0, 600) var quick_fade_duration_secs = 1.0
 const _alpha_property := "modulate:a"
 var _is_displaying_text := false

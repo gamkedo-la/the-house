@@ -11,7 +11,6 @@
 [sub_resource type="Environment" id=3]
 background_mode = 2
 background_sky = SubResource( 4 )
-fog_enabled = true
 glow_enabled = true
 glow_levels/7 = true
 glow_intensity = 1.39

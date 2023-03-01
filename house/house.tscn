@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://house/decals/paintings/painting2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://house/decals/paintings/painting4.tscn" type="PackedScene" id=14]
 [ext_resource path="res://house/decals/paintings/painting3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://house/decals/paintings/painting5.tscn" type="PackedScene" id=16]
+[ext_resource path="res://house/decals/paintings/painting7.tscn" type="PackedScene" id=17]
+[ext_resource path="res://house/decals/paintings/painting6.tscn" type="PackedScene" id=18]
+[ext_resource path="res://house/decals/paintings/painting8.tscn" type="PackedScene" id=19]
 
 [node name="house" type="Spatial"]
 
@@ -119,6 +123,18 @@ transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 2.20231e-22, -2.62268e-0
 
 [node name="painting4" parent="props" instance=ExtResource( 14 )]
 transform = Transform( -2.62268e-08, -0.6, 2.62268e-08, 3.13408e-22, -2.62268e-08, -0.6, 0.6, -2.62268e-08, 1.14641e-15, 1.62593, 1.74134, -1.78237 )
+
+[node name="painting5" parent="props" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -6.57862 )
+
+[node name="painting6" parent="props" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 1.63131, 1.13403, -0.452446 )
+
+[node name="painting7" parent="props" instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1.41254, 1.77747, 0.652341 )
+
+[node name="painting8" parent="props" instance=ExtResource( 19 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 1.64953, 1.01434, -1.72376 )
 
 [node name="cardboards" type="Spatial" parent="."]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 0.608705, -25.4001, 28.3043 )

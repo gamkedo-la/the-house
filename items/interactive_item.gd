@@ -130,12 +130,18 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 	
 	if not _tracking_position:
 		return
+		
 	var translation_to_target : Vector3 = _tracking_position.global_transform.origin - global_transform.origin
 	var item_linear_velocity : Vector3 = translation_to_target * _tracking_speed * delta
-	if item_linear_velocity != item_linear_velocity: # NaN issues mitigation
-		item_linear_velocity = Vector3.ZERO
-		print("NaN mitigation : item velocity fixed")
-	linear_velocity = base_linear_velocity + item_linear_velocity
+	if item_linear_velocity != item_linear_velocity:
+		print("NaN mitigation : item_linear_velocity is NaN???")
+	
+	var new_velocity = base_linear_velocity + item_linear_velocity
+	if new_velocity != new_velocity: # NaN issues mitigation
+		new_velocity = Vector3.ZERO
+		print("NaN mitigation : item new velocity fixed")
+		
+	linear_velocity = new_velocity
 		
 	var orientation_to_track : Basis = Basis.IDENTITY
 	match _tracking_rotation_enabled:

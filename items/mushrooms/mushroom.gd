@@ -45,6 +45,10 @@ func _ready():
 	
 	_is_ready = true
 	_update_mushroom()
+	
+	if not Engine.editor_hint:
+		yield(get_tree().create_timer(3.0), "timeout")
+		_deactivate_editing_resources()
 
 func _deactivate_editing_resources():
 	if _disable_editing:
@@ -150,8 +154,5 @@ func _process(delta):
 		var player_distance = _player.global_transform.origin.distance_to(self.global_transform.origin)
 		var distance_ratio = 1.0 - (player_distance / lightening_distance)
 		_light_node.light_energy = lerp(0, _target_light_strengh, distance_ratio)
-		
-	if Input.is_key_pressed(KEY_DELETE):
-		_deactivate_editing_resources()
 		
 	

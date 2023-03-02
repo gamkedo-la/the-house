@@ -261,9 +261,9 @@ depth = 5.2
 material = ExtResource( 6 )
 
 [node name="hidden_entrance" type="CSGBox" parent="hidden_room_wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.20907, 0.0892286 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23599, -1.92542, 0.0892286 )
 operation = 2
-height = 3.56738
+height = 2.31683
 
 [node name="hidden_room_wall2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84709, 3.1, -13.9041 )

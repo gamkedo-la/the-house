@@ -3,6 +3,7 @@
 [ext_resource path="res://house/decals/paintings/painting7.png" type="Texture" id=1]
 
 [resource]
+render_priority = 100
 flags_transparent = true
 albedo_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 albedo_texture = ExtResource( 1 )

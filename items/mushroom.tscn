@@ -64,7 +64,7 @@ collision_layer = 129
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
-mushroom_shape = 4.9698
+mushroom_shape = 6
 lightening_distance = 18.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -221,12 +221,12 @@ visible = false
 visible = false
 
 [node name="mushroom_4" parent="models/yellow" instance=ExtResource( 48 )]
+visible = false
 
 [node name="mushroom_5" parent="models/yellow" instance=ExtResource( 22 )]
 visible = false
 
 [node name="mushroom_6" parent="models/yellow" instance=ExtResource( 36 )]
-visible = false
 
 [node name="mushroom_7" parent="models/yellow" instance=ExtResource( 51 )]
 visible = false

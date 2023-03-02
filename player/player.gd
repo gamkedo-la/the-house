@@ -165,6 +165,7 @@ func update_walk(_delta) -> void:
 		debug_text += "??? "
 	
 	
+	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
 		var snap_ray := Vector3.DOWN * 10.0

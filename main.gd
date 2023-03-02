@@ -2,7 +2,8 @@ extends Node
 
 	
 func _ready():
-	to_title_screen()
+	if name == "main":
+		to_title_screen()
 	
 
 func _unhandled_key_input(event):

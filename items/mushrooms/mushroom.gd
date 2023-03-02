@@ -63,20 +63,21 @@ func _hide_all_models() -> void:
 
 func _show_selected_model() -> void:
 	var color_name : String = "%s" % MushroomColor.keys()[mushroom_color]
-	var color_node : Spatial = _models_node.find_node(color_name)
+	var color_node : Spatial = _models_node.get_node(color_name)
 	assert(color_node is Node) # This is for crashing spectacularly if the node was not found.
 	color_node.visible = true
 	
 	var mushroom_path = "mushroom_%d" % mushroom_shape
 #	print("mushroom_path = %s/%s" % [ color_name, mushroom_path])
-	var mushroom_node = color_node.find_node(mushroom_path)
+	var mushroom_node = color_node.get_node(mushroom_path)
 	assert(mushroom_node is Node) # This is for crashing spectacularly if the node was not found.
 	mushroom_node.visible = true
 	
 	# change the light color too
 	if mushroom_color != MushroomColor.brown:
-		var current_mesh : MeshInstance = color_node.find_node("geo1")
+		var current_mesh : MeshInstance = mushroom_node.get_node("geo1")
 		assert(current_mesh)
+		current_mesh.cast_shadow = false # We want the mushroom to emit light without casting shadows on itself
 		var current_hat_material : Material = current_mesh.mesh.surface_get_material(0)
 		assert(current_hat_material)
 		if _light_node:

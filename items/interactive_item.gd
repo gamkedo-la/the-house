@@ -138,7 +138,7 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 		
 	if global_transform.origin != global_transform.origin:
 		global_transform.origin = _previous_global_transform_origin
-#		print("NaN mitigation item: global_transform.origin fixed")
+		print("NaN mitigation item: global_transform.origin fixed")
 	_previous_global_transform_origin = global_transform.origin
 		
 	var translation_to_target : Vector3 = _tracking_position.global_transform.origin - global_transform.origin

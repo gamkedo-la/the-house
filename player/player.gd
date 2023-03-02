@@ -165,6 +165,7 @@ func update_walk(_delta) -> void:
 		debug_text += "??? "
 	
 	
+	var previous_origin := global_transform.origin
 	
 	# Apply gravity if we are walking on the ground, otherwise we are holding on a ladder or climbing
 	if _movement_mode == MovementMode.Walking:
@@ -184,12 +185,19 @@ func update_walk(_delta) -> void:
 		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, snap_ray, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
+
+	# IMPORTANT NOTE: we will try to mitigate the NaN issue by using: https://github.com/godotengine/godot/issues/50450#issuecomment-1264294986	
+	if _last_linear_velocity != _last_linear_velocity:
+		_last_linear_velocity = Vector3.ZERO
+		print("NaN mitigation : player velocity fixed")
 		
+	if global_transform.origin != global_transform.origin:
+		global_transform.origin = previous_origin
+		print("NaN mitigation : player transform fixed")
+		
+	
 	_debug_status.text = debug_text
 	
-	# We sometime get NaN values into the vector returned by `move_and_slide` so the following
-	# is a failsafe to present it from ruining a game session:
-	_last_linear_velocity = utility.nan_to_zero(_last_linear_velocity)
 	
 	if movement_translation.length() > 0.0:
 		if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround or _movement_mode == MovementMode.Climbing:

@@ -5,6 +5,9 @@ func _ready():
 	if OS.get_name() == "HTML5":
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT, SceneTree.STRETCH_ASPECT_KEEP, Vector2(1920, 1080))
 	
+	if not OS.is_debug_build():
+		OS.window_fullscreen = true # TODO: make this an option
+	
 	if name == "main":
 		to_title_screen()
 	

@@ -111,6 +111,7 @@ func take(hold_where: Spatial) -> void:
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 	set_mode(RigidBody.MODE_RIGID) # Once taken, even if the object was static before, it is now following physics laws.
+	continuous_cd = true # Turn on precise handling of collisions
 	_is_taken = true
 
 	
@@ -120,7 +121,7 @@ func drop(where: Spatial) -> void:
 	global_transform.basis = where.global_transform.basis
 	_set_collision_with_player(self, true) # resume colliding with the player
 	_cancel_velocity(self)
-	sleeping = false
+	continuous_cd = false # Turn off precise handling of collisions
 	_is_taken = false
 	
 	

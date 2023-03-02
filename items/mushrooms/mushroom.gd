@@ -6,6 +6,8 @@ class_name Mushroom
 
 
 onready var _models_node : Spatial = $"models"
+onready var _current_mushroom : Spatial = null
+onready var _color_node : Spatial = null
 onready var _light_node : OmniLight = $"light"
 onready var _lighten_area : Area = $"%lighten_area"
 onready var _lighten_area_shape : CollisionShape = $"%lighten_area/CollisionShape"
@@ -25,6 +27,7 @@ export(float, 0.01, 100.0) var lightening_distance := 1.0 setget _set_lightening
 var _target_light_strengh : float
 
 var _is_ready := false
+var _disable_editing := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,8 +46,24 @@ func _ready():
 	_is_ready = true
 	_update_mushroom()
 
+func _deactivate_editing_resources():
+	if _disable_editing:
+		return
+		
+	assert(_current_mushroom)
+	assert(_color_node)
+	_color_node.remove_child(_current_mushroom)
+	self.add_child(_current_mushroom)
+	_current_mushroom.transform.origin = _models_node.transform.origin		
+	_color_node = null
+	utility.delete_child(self, _models_node)
+	_models_node = null
+	_disable_editing = true
+	
+	print("mushroom %s deleted all other mushrooms resources" % name)
+
 func _update_mushroom() ->void :
-	if not _is_ready:
+	if not _is_ready or _disable_editing:
 		return
 		
 	_hide_all_models()
@@ -63,19 +82,19 @@ func _hide_all_models() -> void:
 
 func _show_selected_model() -> void:
 	var color_name : String = "%s" % MushroomColor.keys()[mushroom_color]
-	var color_node : Spatial = _models_node.get_node(color_name)
-	assert(color_node is Node) # This is for crashing spectacularly if the node was not found.
-	color_node.visible = true
+	_color_node = _models_node.get_node(color_name)
+	assert(_color_node is Spatial) # This is for crashing spectacularly if the node was not found.
+	_color_node.visible = true
 	
 	var mushroom_path = "mushroom_%d" % mushroom_shape
 #	print("mushroom_path = %s/%s" % [ color_name, mushroom_path])
-	var mushroom_node = color_node.get_node(mushroom_path)
-	assert(mushroom_node is Node) # This is for crashing spectacularly if the node was not found.
-	mushroom_node.visible = true
+	_current_mushroom = _color_node.get_node(mushroom_path)
+	assert(_current_mushroom is Spatial) # This is for crashing spectacularly if the node was not found.
+	_current_mushroom.visible = true
 	
 	# change the light color too
 	if mushroom_color != MushroomColor.brown:
-		var current_mesh : MeshInstance = mushroom_node.get_node("geo1")
+		var current_mesh : MeshInstance = _current_mushroom.get_node("geo1")
 		assert(current_mesh)
 		current_mesh.cast_shadow = false # We want the mushroom to emit light without casting shadows on itself
 		var current_hat_material : Material = current_mesh.mesh.surface_get_material(0)
@@ -131,4 +150,8 @@ func _process(delta):
 		var player_distance = _player.global_transform.origin.distance_to(self.global_transform.origin)
 		var distance_ratio = 1.0 - (player_distance / lightening_distance)
 		_light_node.light_energy = lerp(0, _target_light_strengh, distance_ratio)
+		
+	if Input.is_key_pressed(KEY_DELETE):
+		_deactivate_editing_resources()
+		
 	

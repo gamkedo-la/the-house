@@ -20,6 +20,7 @@ enum TrackingOrientation {
 export(TrackingOrientation) var orientation_hand_held = TrackingOrientation.FOLLOW
 export(TrackingOrientation) var orientation_held_front = TrackingOrientation.FOLLOW_Y
 
+var _previous_global_transform_origin : Vector3
 
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
@@ -40,6 +41,7 @@ var highlites := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_previous_global_transform_origin = global_transform.origin
 	# Does this item 'glow' when the player hovers over it?
 	if highlightable:
 		highlites = _init_hilite(self, hilite_mat, highlight_color)
@@ -130,15 +132,14 @@ func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -
 	
 	if not _tracking_position:
 		return
-	
-	if delta != delta:
-		print("NaN mitigation item: delta is NaN???")
 		
 	if _tracking_position.global_transform.origin != _tracking_position.global_transform.origin:
 		print("NaN mitigation item: _tracking_position.global_transform.origin is NaN???")
 		
 	if global_transform.origin != global_transform.origin:
-		print("NaN mitigation item: global_transform.origin is NaN???")
+		global_transform.origin = _previous_global_transform_origin
+		print("NaN mitigation item: global_transform.origin fixed")
+	_previous_global_transform_origin = global_transform.origin
 		
 	var translation_to_target : Vector3 = _tracking_position.global_transform.origin - global_transform.origin
 	if translation_to_target != translation_to_target:

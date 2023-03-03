@@ -23,6 +23,7 @@ onready var _camera : Camera = $"%Camera"
 onready var _head : Spatial = $"Head"
 onready var _body : CollisionShape = $"%body"
 onready var _body_crouched : CollisionShape = $"%body_crouched"
+onready var _feet_for_interior : CollisionShape = $"%feet_for_interior"
 onready var _head_spot_crouched : Spatial = $"%head_spot_crouched"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _ground_checker: RayCast = $"%ground_checker"
@@ -76,6 +77,8 @@ func _ready() -> void:
 	_body_crouched.disabled = true
 	_body.visible = true
 	_body.disabled = false
+	_feet_for_interior.visible = false
+	_feet_for_interior.disabled = true
 	
 	yield(get_tree().create_timer(1.0), "timeout")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -164,8 +167,17 @@ func update_walk(_delta) -> void:
 	
 	if ground_we_are_walking_on == GroundChecker.WalkingOn.BuildingGround:
 		debug_text += "building "
+			
+		if not _feet_for_interior.visible:
+			_feet_for_interior.visible = true
+			_feet_for_interior.disabled = false
+			
 	elif ground_we_are_walking_on == GroundChecker.WalkingOn.OutsideGround:
 		debug_text += "landscape "
+		
+		if _feet_for_interior.visible:
+			_feet_for_interior.visible = false
+			_feet_for_interior.disabled = true
 	else:
 		debug_text += "??? "
 	
@@ -184,12 +196,17 @@ func update_walk(_delta) -> void:
 			snap_ray = Vector3.ZERO
 			debug_text += "no snap "
 			
+			
 		else:
-			debug_text += "no gravity but snap"
+			debug_text += "no gravity but snap "
 		
 		_last_linear_velocity = move_and_slide_with_snap(oriented_movement, snap_ray, Vector3.UP, true, 4, deg2rad(floor_max_angle))
 	else:
 		_last_linear_velocity = move_and_slide(oriented_movement, Vector3.UP, true)
+		
+		
+	debug_text += "\ninterior feet = %s " % _feet_for_interior.visible
+		
 
 	# IMPORTANT NOTE: we will try to mitigate the NaN issue by using: https://github.com/godotengine/godot/issues/50450#issuecomment-1264294986	
 	if _last_linear_velocity != _last_linear_velocity:

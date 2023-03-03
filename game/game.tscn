@@ -146,6 +146,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0101, 2.75592, -21.805 )
 
 [node name="temporary_tools" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6397, -1.01054, 68.1403 )
+visible = false
 
 [node name="military_torchlight" parent="debug/temporary_tools" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.54379, 1.11554, 6.90528 )

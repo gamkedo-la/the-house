@@ -61,6 +61,7 @@ radius = 18.0
 
 [node name="mushroom" type="RigidBody"]
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )

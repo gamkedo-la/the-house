@@ -15,15 +15,13 @@
 [ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
 [ext_resource path="res://player/text_display.gd" type="Script" id=15]
 
-[sub_resource type="CylinderShape" id=11]
-margin = 0.044
-height = 2.036
+[sub_resource type="CapsuleShape" id=13]
 radius = 0.35
+height = 1.066
 
-[sub_resource type="CylinderShape" id=12]
-margin = 0.044
-height = 1.10487
+[sub_resource type="CapsuleShape" id=14]
 radius = 0.35
+height = 0.405
 
 [sub_resource type="SpatialMaterial" id=6]
 flags_unshaded = true
@@ -48,23 +46,22 @@ script = ExtResource( 1 )
 
 [node name="body" type="CollisionShape" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.018, 0 )
-shape = SubResource( 11 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.814, 0 )
+shape = SubResource( 13 )
 
 [node name="body_crouched" type="CollisionShape" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553, 0 )
-visible = false
-shape = SubResource( 12 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.481586, 0 )
+shape = SubResource( 14 )
 disabled = true
 
 [node name="head_spot_crouched" type="Spatial" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94, -0.228 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530601, -0.228 )
 
 [node name="ground_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18706, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611916, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.765, 0 )
 debug_shape_custom_color = Color( 0, 0.564706, 0.0745098, 1 )
@@ -73,7 +70,7 @@ script = ExtResource( 2 )
 
 [node name="fall_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18706, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772703, 0 )
 enabled = true
 cast_to = Vector3( 0, -8, 0 )
 debug_shape_custom_color = Color( 1, 1, 1, 1 )
@@ -82,7 +79,7 @@ script = ExtResource( 2 )
 
 [node name="slope_checker" type="RayCast" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 0.842923, -0.538035, 0, 0.538035, 0.842923, 0, 1.18706, 0 )
+transform = Transform( 1, 0, 0, 0, 0.842923, -0.538035, 0, 0.538035, 0.842923, 0, 0.772703, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.7, 0 )
 debug_shape_custom_color = Color( 0.658824, 0, 0, 1 )
@@ -91,13 +88,13 @@ script = ExtResource( 2 )
 
 [node name="feet_audio_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00149916, 0.409437, 0.530127 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00149916, -0.00491995, 0.530127 )
 bus = "Steps"
 script = ExtResource( 12 )
 
 [node name="shadow_mesh" type="MeshInstance" parent="."]
 unique_name_in_owner = true
-transform = Transform( -0.38637, 3.43733e-08, -0.103528, 2.98479e-08, 0.4, 2.14141e-08, 0.103528, 1.29592e-08, -0.38637, 0, -0.0357835, 0.134601 )
+transform = Transform( -0.38637, 3.43733e-08, -0.103528, 2.98479e-08, 0.4, 2.14141e-08, 0.103528, 1.29592e-08, -0.38637, 0, -0.45014, 0.134601 )
 generate_lightmap = false
 mesh = ExtResource( 13 )
 skeleton = NodePath("../body")
@@ -107,7 +104,7 @@ script = ExtResource( 14 )
 
 [node name="Head" type="Spatial" parent="."]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54406, -0.227731 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1297, -0.227731 )
 
 [node name="Camera" type="Camera" parent="Head"]
 unique_name_in_owner = true
@@ -245,6 +242,6 @@ script = ExtResource( 9 )
 script = ExtResource( 10 )
 
 [node name="close_visibility" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04635, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631993, 0 )
 light_energy = 0.01
 omni_range = 0.894

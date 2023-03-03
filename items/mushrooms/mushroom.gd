@@ -46,9 +46,9 @@ func _ready():
 	_is_ready = true
 	_update_mushroom()
 	
-	if not Engine.editor_hint:
-		yield(get_tree().create_timer(3.0), "timeout")
-		_deactivate_editing_resources()
+#	if not Engine.editor_hint:
+#		yield(get_tree().create_timer(3.0), "timeout")
+#		_deactivate_editing_resources()
 
 func _deactivate_editing_resources():
 	if _disable_editing:

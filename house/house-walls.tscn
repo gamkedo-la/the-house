@@ -57,14 +57,14 @@ depth = 0.885
 material = ExtResource( 4 )
 
 [node name="door_frame" type="CSGBox" parent="exterior_walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526619, 13.1882 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.496, 13.1882 )
 width = 2.5
 height = 4.0
 depth = 0.88487
 material = ExtResource( 4 )
 
 [node name="entrance" type="CSGBox" parent="exterior_walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.499, 13.066 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.496, 13.066 )
 operation = 2
 height = 3.56738
 material = ExtResource( 4 )

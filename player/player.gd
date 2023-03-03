@@ -20,7 +20,10 @@ const limit_down_angle : float = deg2rad(-75.0)
 var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
-onready var _body : CollisionShape = $"%Body"
+onready var _head : Spatial = $"Head"
+onready var _body : CollisionShape = $"%body"
+onready var _body_crouched : CollisionShape = $"%body_crouched"
+onready var _head_spot_crouched : Spatial = $"%head_spot_crouched"
 onready var _interraction_ray: RayCast = $"%InterractionRay"
 onready var _ground_checker: RayCast = $"%ground_checker"
 onready var _slope_checker: RayCast = $"%slope_checker"
@@ -36,15 +39,13 @@ onready var _debug_status : RichTextLabel = $"%debug_status"
 var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
 var _held_item: InteractiveItem
-onready var _initial_hand_transform : Transform
-onready var _initial_body_transform : Transform
-onready var _initial_body_height : float
+var _initial_hand_transform : Transform
+var _initial_head_transform : Transform
 
 var _last_linear_velocity: Vector3
 
 onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
-onready var _crouched_position: Vector3 = _up_position + Vector3(0, -0.5, 0)
 var _is_crouched := false
 var _is_crouch_locked := false
 var _crouch_duration := 0.33
@@ -69,8 +70,12 @@ func _ready() -> void:
 	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 	_initial_hand_transform = _hand_node.transform
-	_initial_body_transform = _body.transform
-	_initial_body_height = _body.shape.height
+	_initial_head_transform = _head.transform
+	
+	_body_crouched.visible = false
+	_body_crouched.disabled = true
+	_body.visible = true
+	_body.disabled = false
 	
 	yield(get_tree().create_timer(1.0), "timeout")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -381,13 +386,15 @@ func crouch() -> void:
 	if _is_crouched:
 		return
 	
-	var result = _crouch_tween.interpolate_property(_camera, "translation", _camera.transform.origin, _crouched_position, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	var result = _crouch_tween.interpolate_property(_head, "translation", _head.transform.origin, _head_spot_crouched.transform.origin, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	assert(result == true)
 	result = _crouch_tween.start()
 	assert(result == true)
 	
-	_body.transform.origin -= (_body.transform.origin * 0.5)
-	_body.shape.height = _body.shape.height * 0.5
+	_body.visible = false
+	_body.disabled = true
+	_body_crouched.visible = true
+	_body_crouched.disabled = false
 	
 	_is_crouched = true
 	
@@ -396,13 +403,15 @@ func get_up() -> void:
 	if not _is_crouched:
 		return
 		
-	var result = _crouch_tween.interpolate_property(_camera, "translation", _camera.transform.origin, _up_position, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	var result = _crouch_tween.interpolate_property(_head, "translation", _head.transform.origin, _initial_head_transform.origin, _crouch_duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	assert(result == true)
 	result = _crouch_tween.start()
 	assert(result == true)
 	
-	_body.transform.origin += _initial_body_transform.origin
-	_body.shape.height = _initial_body_height
+	_body_crouched.visible = false
+	_body_crouched.disabled = true
+	_body.visible = true
+	_body.disabled = false
 	
 	_is_crouched = false
 	

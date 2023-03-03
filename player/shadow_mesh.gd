@@ -9,10 +9,13 @@ export var breathing_bob_freq : float = 2.313
 onready var _last_position := _current_position_on_plane()
 onready var _last_start_moving_time := _now_in_secs()
 
-onready var _camera : Camera = $"%Camera"
+onready var _head : Spatial = $"%Head"
 onready var _origin_height : float = self.transform.origin.y
-onready var _origin_camera_height : float = _camera.transform.origin.y
+onready var _origin_head_height : float
 
+func _ready():
+	yield(get_parent(), "ready")
+	_origin_head_height = _head.transform.origin.y
 
 func _current_position_on_plane() -> Vector2:
 	var player : Spatial = get_parent()
@@ -22,8 +25,8 @@ func _now_in_secs() -> float:
 	return Time.get_ticks_msec() * 0.001
 
 func _current_height() -> float:
-	var current_camera_height = _camera.transform.origin.y
-	var camera_height_diff = _origin_camera_height - current_camera_height
+	var current_camera_height = _head.transform.origin.y
+	var camera_height_diff = _origin_head_height - current_camera_height
 	return _origin_height - camera_height_diff
 
 func _physics_process(_delta) -> void:

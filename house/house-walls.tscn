@@ -154,8 +154,8 @@ height = 0.214476
 depth = 26.344
 material = ExtResource( 4 )
 
-[node name="basement_entrance" type="CSGBox" parent="floor1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, 0.080122, -0.0993702 )
+[node name="basement_entrance" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222157, -0.121044, -3.34959 )
 operation = 2
 height = 1.52814
 depth = 2.3

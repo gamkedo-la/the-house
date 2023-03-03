@@ -139,7 +139,7 @@ depth = 0.052
 material = SubResource( 5 )
 
 [node name="right_hand" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.493, -0.384, -0.509 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402997, -0.316399, -0.509 )
 visible = false
 
 [node name="examination_spot" type="Spatial" parent="Head/Camera"]

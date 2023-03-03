@@ -1,6 +1,6 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://fonts/Caveat/static/Caveat-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/lastman.ttf" type="DynamicFontData" id=1]
 
 [resource]
 size = 128

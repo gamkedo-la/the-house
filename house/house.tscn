@@ -34,6 +34,7 @@ transform = Transform( 1, 0, 0, 0, 0.882743, 0.469856, 0, -0.469856, 0.882743, -
 [node name="attic_ladder" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 0.935834, 0.172049, 0, -0.163447, 0.985088, 5.3635, 0.0330846, -1.50762 )
+visible = false
 
 [node name="basement_ladder" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
@@ -50,9 +51,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.0514893, -6.71467 )
 
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.88106 )
+is_locked = true
 
 [node name="bathroom_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.75156 )
+is_locked = true
 
 [node name="living_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
@@ -63,10 +66,12 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.082, 0.019, -2.018 )
 script = ExtResource( 12 )
+is_locked = true
 
 [node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35793, 3.67927, -1.28276 )
 script = ExtResource( 10 )
+is_locked = true
 
 [node name="furniture" type="Spatial" parent="."]
 
@@ -98,7 +103,7 @@ mushroom_color = 2
 mushroom_shape = 3.2609
 
 [node name="mushroom6" parent="mushrooms" instance=ExtResource( 20 )]
-transform = Transform( 0.419579, -0.499761, -0.757755, 0, 0.83479, -0.550568, 0.907719, 0.231007, 0.35026, -1.0122, 0.207544, 5.99132 )
+transform = Transform( 0.419579, -0.499761, -0.757755, -0.790007, 0.210071, -0.575985, 0.447037, 0.840303, -0.306674, -0.997313, 0.553488, 6.20613 )
 mushroom_color = 4
 mushroom_shape = 2.50862
 
@@ -469,6 +474,12 @@ transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -
 [node name="cardboardbox23" parent="cardboards" instance=ExtResource( 7 )]
 transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.978, 25.4644, 2.76663 )
 
+[node name="cardboardbox25" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( 0.643924, 0, -0.76509, 0, 1, 0, 0.76509, 0, 0.643924, -21.7942, 25.4644, 5.56936 )
+
+[node name="cardboardbox26" parent="cardboards" instance=ExtResource( 7 )]
+transform = Transform( -0.890611, 0, -0.454769, 0, 1, 0, 0.454769, 0, -0.890611, -21.709, 26.0644, 5.54444 )
+
 [node name="cardboardbox24" parent="cardboards" instance=ExtResource( 7 )]
 transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.5947, 26.056, 2.82419 )
 
@@ -487,7 +498,7 @@ transform = Transform( 0.889632, 0, -0.456679, 0, 1, 0, 0.456679, 0, 0.889632, -
 [node name="candles" type="Spatial" parent="."]
 
 [node name="Candle" parent="candles" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82309, 0.911139, 6.00447 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82309, 0.911139, 5.98071 )
 
 [node name="special_items" type="Spatial" parent="."]
 

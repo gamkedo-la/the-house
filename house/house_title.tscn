@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://furniture/door-basic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
+[ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://house/windows/window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://furniture/trap_door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://furniture/doors/attic_trap_door.gd" type="Script" id=10]
+[ext_resource path="res://furniture/doors/basement_trap_door.gd" type="Script" id=12]
+
+[node name="house_title" type="Spatial"]
+
+[node name="walls" parent="." instance=ExtResource( 2 )]
+
+[node name="porch_ladder" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.882743, 0.469856, 0, -0.469856, 0.882743, -0.0164985, -3.52353, 10.9708 )
+
+[node name="doors" type="Spatial" parent="."]
+
+[node name="entrance_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599523, 0.0657877, 6.06917 )
+
+[node name="toilet_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.119335, -6.71467 )
+
+[node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.88106 )
+
+[node name="bathroom_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.75156 )
+
+[node name="living_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
+
+[node name="bedroom_door" parent="doors" instance=ExtResource( 3 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.938 )
+
+[node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.082, 0.019, -2.018 )
+script = ExtResource( 12 )
+
+[node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35793, 3.67927, -1.28276 )
+script = ExtResource( 10 )
+
+[node name="furniture" type="Spatial" parent="."]
+
+[node name="dresser" parent="furniture" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481, 0.0530064, -4.72908 )
+
+[node name="bed_single" parent="furniture" instance=ExtResource( 4 )]
+transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6.6524, 0.0718173, -8.78317 )
+
+[node name="chest" parent="furniture" instance=ExtResource( 6 )]
+transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -9.4484 )
+
+[node name="windows" type="Spatial" parent="."]
+
+[node name="window" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92559, 1.46548, 5.85614 )
+
+[node name="window2" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22235, 1.46548, 5.85614 )
+
+[node name="window3" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20606, 5.46922, 5.85614 )
+
+[node name="window4" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91975, 5.46717, 5.85614 )
+
+[node name="window5" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84387, 1.7442, -9.81289 )
+
+[node name="window6" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76868, 1.7442, -9.8119 )
+
+[node name="window7" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62629, 1.64394, -9.81226 )
+
+[node name="window8" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.18981, 1.46852, 2.74211 )
+
+[node name="window9" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.18981, 5.48106, -3.52097 )
+
+[node name="window10" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942, 5.48106, -3.52097 )
+
+[node name="window11" parent="windows" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942, 1.47642, 2.86375 )
+
+[editable path="porch_ladder"]

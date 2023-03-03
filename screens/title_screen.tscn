@@ -6,10 +6,10 @@
 [ext_resource path="res://game/game-environment.tscn" type="PackedScene" id=4]
 [ext_resource path="res://forest/forest_title.tscn" type="PackedScene" id=5]
 [ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=6]
-[ext_resource path="res://house/house.tscn" type="PackedScene" id=7]
 [ext_resource path="res://screens/title_screen.gd" type="Script" id=8]
 [ext_resource path="res://fonts/lastman.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=10]
+[ext_resource path="res://house/house_title.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=2]
 size = 120
@@ -91,38 +91,38 @@ visible = false
 [node name="environment" parent="scenery" instance=ExtResource( 4 )]
 unique_name_in_owner = true
 
-[node name="house" parent="scenery" instance=ExtResource( 7 )]
+[node name="house_title" parent="scenery" instance=ExtResource( 11 )]
 transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
 
-[node name="light_from_inside_the_house" type="OmniLight" parent="scenery/house"]
+[node name="light_from_inside_the_house" type="OmniLight" parent="scenery/house_title"]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 5.05228, 4.93458, 4.31823 )
 light_color = Color( 1, 0.729412, 0.470588, 1 )
 light_energy = 2.866
 light_indirect_energy = 2.922
 omni_range = 5.1
 
-[node name="light_from_inside_the_house2" type="OmniLight" parent="scenery/house"]
+[node name="light_from_inside_the_house2" type="OmniLight" parent="scenery/house_title"]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, -3.7786, 4.92439, 4.44397 )
 light_color = Color( 1, 0.729412, 0.470588, 1 )
 light_energy = 2.866
 light_indirect_energy = 2.922
 omni_range = 5.149
 
-[node name="light_from_inside_the_house3" type="OmniLight" parent="scenery/house"]
+[node name="light_from_inside_the_house3" type="OmniLight" parent="scenery/house_title"]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, 5.05228, 1.17733, 4.31823 )
 light_color = Color( 1, 0.729412, 0.470588, 1 )
 light_energy = 2.374
 light_indirect_energy = 4.417
 omni_range = 5.1
 
-[node name="light_from_inside_the_house4" type="OmniLight" parent="scenery/house"]
+[node name="light_from_inside_the_house4" type="OmniLight" parent="scenery/house_title"]
 transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, -3.7786, 1.16714, 4.44397 )
 light_color = Color( 1, 0.729412, 0.470588, 1 )
 light_energy = 2.374
 light_indirect_energy = 4.417
 omni_range = 5.149
 
-[node name="panel_reflecting_light" type="CSGBox" parent="scenery/house"]
+[node name="panel_reflecting_light" type="CSGBox" parent="scenery/house_title"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.323703, 2.76162, 2.94307 )
 width = 14.504
 height = 9.17831

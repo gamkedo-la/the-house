@@ -128,7 +128,7 @@ mushroom_color = 1
 mushroom_shape = 5.99259
 
 [node name="mushroom3" parent="mushrooms" instance=ExtResource( 20 )]
-transform = Transform( 0.809099, -0.323554, -0.490583, 0, 0.83479, -0.550568, 0.587672, 0.445464, 0.675428, 0.577254, 0.207544, 6.26128 )
+transform = Transform( 0.809099, -0.323554, -0.490583, 0, 0.83479, -0.550568, 0.587672, 0.445464, 0.675428, 1.74517, 0.207544, 6.26128 )
 mushroom_color = 4
 mushroom_shape = 2.94732
 

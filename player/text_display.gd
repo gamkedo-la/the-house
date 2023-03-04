@@ -89,6 +89,9 @@ func _fade_to(next_status : int) -> void:
 		_start_next_status(next_status)
 
 func _update_text_readable() -> void:
+	if text_display_duration_secs == 0:
+		return
+		
 	var secs_since_beginning = now_secs() - _status_start_time
 	if secs_since_beginning >= text_display_duration_secs:
 		_start_next_status(Status.FADE_OUT)

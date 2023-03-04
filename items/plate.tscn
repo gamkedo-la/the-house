@@ -20,19 +20,17 @@ surfaces/0 = {
 "vertex_count": 338
 }
 
-[sub_resource type="CylinderShape" id=3]
-height = 0.03
-radius = 0.203
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.203, 0.0201215, 0.203 )
 
 [node name="plate" type="RigidBody"]
 mass = 0.5
 continuous_cd = true
 script = ExtResource( 1 )
-orientation_held_front = 2
 
 [node name="plate" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013259, 0 )
 shape = SubResource( 3 )

@@ -218,24 +218,40 @@ script = ExtResource( 8 )
 
 [node name="text_display" type="RichTextLabel" parent="Head/Camera"]
 unique_name_in_owner = true
-anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -554.0
-margin_top = -279.0
-margin_right = 559.0
-margin_bottom = -86.0
+margin_top = -270.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
 custom_fonts/bold_font = ExtResource( 3 )
 custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
-bbcode_text = "This is the text being displayed [b]to the player[/b]"
+bbcode_text = "[center]This is the text being displayed [b]to the player[/b][/center]"
 text = "This is the text being displayed to the player"
 scroll_active = false
 script = ExtResource( 15 )
+
+[node name="action_display" type="RichTextLabel" parent="Head/Camera"]
+unique_name_in_owner = true
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -137.0
+margin_bottom = 17.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]This is the text being displayed [b]to the player[/b][/center]"
+text = "This is the text being displayed to the player"
+scroll_active = false
+script = ExtResource( 15 )
+text_display_duration_secs = 0.0
+fade_duration_secs = 0.3
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

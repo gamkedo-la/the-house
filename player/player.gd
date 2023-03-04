@@ -447,11 +447,11 @@ func toggle_crouch() -> void:
 func get_camera() -> Camera:
 	return _camera
 
-func display_text(bbtext: String) -> void:
-	_text_display.display_text(bbtext)
+func display_text_sequence(bbtext_sequence: Array, exclusive: bool) -> void:
+	_text_display.display_text_sequence(bbtext_sequence, exclusive)
 	
 func stop_text_display() -> void:
-	_text_display.stop_display()
+	_text_display.stop_display_sequence()
 	
 func use_pointed_usable_entity():
 	assert(_pointed_usable_entity)

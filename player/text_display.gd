@@ -4,87 +4,92 @@ extends RichTextLabel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
-onready var _tween = $text_tween
-
+var _current_tween : SceneTreeTween
 var _texts_to_display := []
 export(float, 0, 600) var text_display_duration_secs = 5.0
-export(float, 0, 600) var fade_duration_secs = 2.0
-export(float, 0, 600) var quick_fade_duration_secs = 1.0
+export(float, 0, 600) var fade_duration_secs = 1.0
 const _alpha_property := "modulate:a"
-var _is_displaying_text := false
-var _is_force_stopping := false
-var _current_timer : SceneTreeTimer = null
+
+enum Status { TEXT_HIDDEN, FADE_IN, TEXT_READABLE, FADE_OUT }
+var _status = Status.TEXT_HIDDEN
+var _status_start_time : float
+var _fade_start_value : float
+var _fade_target : float
 
 func _init():
 	modulate.a = 0.0
 
-func _ready():
-	pass
-
-var remove_me = 0
-
-# USE THIS TO DEBUG THE TEXT SYSTEM:
-#func _process(delta):
-#	if Input.is_action_just_pressed("item_activation"):
-#		remove_me += 1
-#		display_text("text number %d" % remove_me)
-#
-#	if _is_displaying_text:
-#		print("modulate.a = ", modulate.a)
-
-
-func display_text(new_text: String) -> void:
-	assert(!new_text.empty())
-	_texts_to_display.push_back(new_text)
-	_start_display_texts()
+func display_text_sequence(new_text_sequence: Array, exclusive: bool = true) -> void:
+	assert(!new_text_sequence.empty())
+	for text in new_text_sequence:
+		assert(text is String)
+		
+	if exclusive:
+		_texts_to_display = new_text_sequence.duplicate()
+	else:
+		_texts_to_display.append_array(new_text_sequence.duplicate())
+	
+func stop_display_sequence() -> void:
+	_texts_to_display = []
+	if _status != Status.TEXT_HIDDEN or _status != Status.FADE_OUT:
+		_start_next_status(Status.FADE_OUT)
 	
 static func centered_text(text: String) -> String:
 	return "[center]%s[/center]" % text
-	
-func _start_display_texts() -> void:
-	while _texts_to_display.size() > 0 and not _is_displaying_text and not _is_force_stopping:
-		_is_displaying_text = true
-		bbcode_text = centered_text(_texts_to_display.pop_front())
-		print("---> ", bbcode_text)
 
-		# fade in
-		print("new text fade in start now ", modulate.a)
-		_tween.interpolate_property(self, _alpha_property, modulate.a, 1.0, _fade_duration(), Tween.TRANS_QUAD, Tween.EASE_IN)	
-		_tween.start()
-		yield(_tween, "tween_all_completed")
-		print("new text fade in - done ", modulate.a)
-		
-		if not _is_force_stopping:
-			# read text
-			print("not stopping so we display the text...")
-			_current_timer = get_tree().create_timer(text_display_duration_secs)
-			yield(_current_timer, "timeout") # ...we wait some time for the player to read...
-		
-		# fade out
-		print("new text fade out start now ", modulate.a)
-		_tween.interpolate_property(self, _alpha_property, modulate.a, 0.0, _fade_duration(), Tween.TRANS_QUAD, Tween.EASE_IN) 
-		_tween.start()
-		yield(_tween, "tween_all_completed")
-		print("new text fade out - done ", modulate.a)
-		_is_displaying_text = false
-		
-	if _texts_to_display.size() > 0 and not _is_displaying_text:
-		_is_force_stopping = false
+static func now_secs() -> float:
+	return Time.get_ticks_msec() * 0.001
 	
-func stop_display() -> void:
-	print("stop text display")
-	if _is_displaying_text:
-		print("stop text display -> canceling current")
-		_is_force_stopping = true
-		_texts_to_display.clear()
-		if _current_timer is SceneTreeTimer:
-			_current_timer.time_left = 0 # make sure we stop displaying the text right now
-			print("stopping timer")
+func _process(_delta) -> void:
 		
+	if _status == Status.TEXT_HIDDEN:
+		if _texts_to_display.empty():
+			return
+		_start_next_text()
+		
+	elif _status == Status.FADE_IN:
+		_update_fade_in()
+	elif _status == Status.TEXT_READABLE:
+		_update_text_readable()
+	elif _status == Status.FADE_OUT:
+		_update_fade_out()
+	
+	
+	
+func _start_next_text() -> void:
+	assert(not _texts_to_display.empty())
+	assert(modulate.a == 0.0)
+	var text = _texts_to_display.pop_front()
+	bbcode_text = centered_text(text)
+	_start_next_status(Status.FADE_IN)
 
-func _fade_duration() -> float:
-	if _is_force_stopping:
-		return quick_fade_duration_secs
-	else:
-		return fade_duration_secs
+func _start_next_status(next_status: int) -> void:
+	_status_start_time = now_secs()
+	_status = next_status
+	_fade_start_value = modulate.a
+
+func _update_fade_in() -> void:
+	_fade_target = 1.0
+	_fade_to(Status.TEXT_READABLE)
+	
+	
+func _update_fade_out() -> void:
+	_fade_target = 0.0
+	_fade_to(Status.TEXT_HIDDEN)
+
+func _fade_to(next_status : int) -> void:
+	var secs_since_beginning = now_secs() - _status_start_time		
+	
+	var ratio_of_fade_time = secs_since_beginning / fade_duration_secs
+	var new_alpha = smoothstep(_fade_start_value, _fade_target, ease(ratio_of_fade_time, 4.0))
+	
+	modulate.a = new_alpha
+	
+	if modulate.a == _fade_target:
+		_start_next_status(next_status)
+
+func _update_text_readable() -> void:
+	var secs_since_beginning = now_secs() - _status_start_time
+	if secs_since_beginning >= text_display_duration_secs:
+		_start_next_status(Status.FADE_OUT)
+

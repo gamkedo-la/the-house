@@ -162,6 +162,7 @@ material = SubResource( 10 )
 
 [node name="debug_status" type="RichTextLabel" parent="Head/Camera"]
 unique_name_in_owner = true
+visible = false
 margin_left = 698.0
 margin_top = 27.0
 margin_right = 1307.0
@@ -235,8 +236,6 @@ bbcode_text = "This is the text being displayed [b]to the player[/b]"
 text = "This is the text being displayed to the player"
 scroll_active = false
 script = ExtResource( 15 )
-
-[node name="text_tween" type="Tween" parent="Head/Camera/text_display"]
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

@@ -34,12 +34,6 @@ func stop_display_sequence() -> void:
 	if _status != Status.TEXT_HIDDEN or _status != Status.FADE_OUT:
 		_start_next_status(Status.FADE_OUT)
 	
-static func centered_text(text: String) -> String:
-	return "[center]%s[/center]" % text
-
-static func now_secs() -> float:
-	return Time.get_ticks_msec() * 0.001
-	
 func _process(_delta) -> void:
 		
 	if _status == Status.TEXT_HIDDEN:
@@ -60,11 +54,11 @@ func _start_next_text() -> void:
 	assert(not _texts_to_display.empty())
 	assert(modulate.a == 0.0)
 	var text = _texts_to_display.pop_front()
-	bbcode_text = centered_text(text)
+	bbcode_text = utility.centered_text(text)
 	_start_next_status(Status.FADE_IN)
 
 func _start_next_status(next_status: int) -> void:
-	_status_start_time = now_secs()
+	_status_start_time = utility.now_secs()
 	_status = next_status
 	_fade_start_value = modulate.a
 
@@ -78,7 +72,7 @@ func _update_fade_out() -> void:
 	_fade_to(Status.TEXT_HIDDEN)
 
 func _fade_to(next_status : int) -> void:
-	var secs_since_beginning = now_secs() - _status_start_time		
+	var secs_since_beginning = utility.now_secs() - _status_start_time		
 	
 	var ratio_of_fade_time = secs_since_beginning / fade_duration_secs
 	var new_alpha = smoothstep(_fade_start_value, _fade_target, ease(ratio_of_fade_time, 4.0))
@@ -92,7 +86,7 @@ func _update_text_readable() -> void:
 	if text_display_duration_secs == 0:
 		return
 		
-	var secs_since_beginning = now_secs() - _status_start_time
+	var secs_since_beginning = utility.now_secs() - _status_start_time
 	if secs_since_beginning >= text_display_duration_secs:
 		_start_next_status(Status.FADE_OUT)
 

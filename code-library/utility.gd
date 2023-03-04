@@ -81,3 +81,10 @@ static func object_has_signal( object: Object, signal_name: String ) -> bool:
 static func random_direction_on_xz_plan(node: Spatial) -> void:
 	node.global_transform.basis = node.global_transform.basis.rotated(Vector3.UP, rand_range(deg2rad(0), deg2rad(360)))
 	
+	
+static func centered_text(text: String) -> String:
+	return "[center]%s[/center]" % text
+
+static func now_secs() -> float:
+	return Time.get_ticks_msec() * 0.001
+	

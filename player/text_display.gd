@@ -54,7 +54,7 @@ func _start_next_text() -> void:
 	assert(not _texts_to_display.empty())
 	assert(modulate.a == 0.0)
 	var text = _texts_to_display.pop_front()
-	bbcode_text = utility.centered_text(text)
+	bbcode_text = utility.centered_text(text.replace("\\n", "\n"))
 	_start_next_status(Status.FADE_IN)
 
 func _start_next_status(next_status: int) -> void:

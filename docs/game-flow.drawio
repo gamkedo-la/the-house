@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="uI9hO-N1rfZND0lMfROh" name="Page-1">
-        <mxGraphModel dx="2503" dy="1938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2570" dy="1938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -250,7 +250,7 @@
                 <mxCell id="75" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;" parent="1" source="57" target="74" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="57" value="&lt;span style=&quot;font-size: 12px&quot;&gt;The front (and only) door of the house is locked. The front (and only) door of the tool shed is locked.&lt;/span&gt;&lt;br style=&quot;font-size: 12px&quot;&gt;&lt;br style=&quot;font-size: 12px&quot;&gt;" style="whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
+                <mxCell id="57" value="&lt;strike&gt;&lt;span style=&quot;font-size: 12px&quot;&gt;The front (and only) door of the house is locked. The front (and only) door of the tool shed is locked.&lt;/span&gt;&lt;br style=&quot;font-size: 12px&quot;&gt;&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
                     <mxGeometry x="240" y="320" width="240" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="58" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="57" edge="1">
@@ -298,7 +298,7 @@
                 <mxCell id="85" style="edgeStyle=none;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="74" target="17" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="&lt;span style=&quot;font-size: 12px&quot;&gt;Next to the house door, there are various objects (pots? rocks?) and a key (&lt;b&gt;the house key&lt;/b&gt;) under one of these objects.&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
+                <mxCell id="74" value="&lt;span style=&quot;font-size: 12px&quot;&gt;&lt;strike&gt;Next to the house door, there are various objects (pots? rocks?) and a key (&lt;b&gt;the house key&lt;/b&gt;) under one of these objects.&lt;/strike&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry y="300" width="160" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" value="Having a &lt;b&gt;light source&lt;/b&gt; close or pointed at the eye will close it and the mouth will open (with a disturbing noise). &lt;b&gt;An OLD WOMAN SHOE&lt;/b&gt;&amp;nbsp;will fall from it." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">

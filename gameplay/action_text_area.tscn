@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gameplay/text_display_area.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+height = 3.23636
+radius = 1.44057
+
+[node name="action_display_area" type="Area"]
+script = ExtResource( 1 )
+display_only_once = false
+stop_display_on_exit = true
+is_action_text = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 1 )

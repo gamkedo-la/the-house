@@ -251,7 +251,7 @@ text = "This is the text being displayed to the player"
 scroll_active = false
 script = ExtResource( 15 )
 text_display_duration_secs = 0.0
-fade_duration_secs = 0.3
+fade_duration_secs = 0.5
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

@@ -50,6 +50,7 @@ onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
 var _is_crouched := false
 var _is_crouch_locked := false
+var did_crouch_changed_this_frame := false
 var _crouch_duration := 0.33
 var _is_running := false
 
@@ -87,6 +88,7 @@ func _ready() -> void:
 
 # Common updates for when the player can explore freely
 func exploration_update(delta: float):
+	did_crouch_changed_this_frame = false
 	update_walk(delta)
 	update_item_position(delta)
 	update_interraction_ray()
@@ -415,7 +417,7 @@ func crouch() -> void:
 	_body_crouched.disabled = false
 	
 	_is_crouched = true
-	
+	did_crouch_changed_this_frame = true
 	
 func get_up() -> void:
 	if not _is_crouched:
@@ -432,6 +434,7 @@ func get_up() -> void:
 	_body.disabled = false
 	
 	_is_crouched = false
+	did_crouch_changed_this_frame = true
 	
 func is_crouched() -> bool:
 	return _is_crouched

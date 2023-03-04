@@ -30,14 +30,18 @@ func _on_area_entered(area: Area) -> void :
 	# If the key area detected is matching our name, we unlock
 	if not get_parent() == area.get_parent() and area is KeyArea and area.key_name == lock_name: 
 		is_locked = false
-		print("KEY MATCH! '%s' UNLOCKED" % lock_name)
 		var item = ItemUtils.get_item_parent_node(area)
-		assert(item)
-		item.snap_to(key_slot)
+		assert(item is InteractiveItem)
+		
+		# Deactivate area detection first
 		item.set_collision_layer_bit(CollisionLayers.key_lock_collision_bit, false)
 		item.set_collision_mask_bit(CollisionLayers.key_lock_collision_bit, false)
 		set_collision_layer_bit(CollisionLayers.key_lock_collision_bit, false)
 		set_collision_mask_bit(CollisionLayers.key_lock_collision_bit, false)
+		
+		item.snap_to(key_slot)
+		
+		print("KEY MATCH! '%s' UNLOCKED" % lock_name)
 		emit_signal("unlocked", lock_name)
 		
 func _find_key_slot() -> Spatial:

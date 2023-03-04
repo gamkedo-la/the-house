@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -23,6 +23,12 @@
 [ext_resource path="res://items/candle.tscn" type="PackedScene" id=21]
 [ext_resource path="res://furniture/toilet.tscn" type="PackedScene" id=22]
 [ext_resource path="res://items/lighter.tscn" type="PackedScene" id=23]
+[ext_resource path="res://items/entrance_key.tscn" type="PackedScene" id=24]
+[ext_resource path="res://gameplay/lock_area.gd" type="Script" id=25]
+[ext_resource path="res://furniture/entrance_door.gd" type="Script" id=26]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.175127
 
 [node name="house" type="Spatial"]
 
@@ -45,6 +51,20 @@ visible = false
 
 [node name="entrance_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599523, 0.0657877, 6.06917 )
+script = ExtResource( 26 )
+
+[node name="lock" type="Area" parent="doors/entrance_door/main_mesh/door_handle_1" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0138999, -0.0772813, -0.0455813 )
+script = ExtResource( 25 )
+lock_name = "entrance_door"
+path_to_key_slot = NodePath("key_slot")
+
+[node name="CollisionShape" type="CollisionShape" parent="doors/entrance_door/main_mesh/door_handle_1/lock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00268114, 0, 0.0601574 )
+shape = SubResource( 1 )
+
+[node name="key_slot" type="Spatial" parent="doors/entrance_door/main_mesh/door_handle_1/lock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, 0.0723319 )
 
 [node name="toilet_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.0514893, -6.71467 )
@@ -93,65 +113,65 @@ transform = Transform( 0.0151664, 0, 0.999885, 0, 1, 0, -0.999885, 0, 0.0151664,
 
 [node name="mushroom12" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.522466, -3.31918, 11.1057 )
-mushroom_shape = 2.36596
+mushroom_shape = 4.9698
 
 [node name="mushroom13" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( -0.0535733, -0.549777, -0.833591, 8.9407e-08, 0.834791, -0.550568, 0.998564, -0.0294956, -0.044723, -0.625315, -3.01666, 10.7931 )
-mushroom_shape = 3.78999
+mushroom_shape = 6.04808
 
 [node name="mushroom" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.704683, 0.207544, 6.28975 )
 mushroom_color = 2
-mushroom_shape = 3.74387
+mushroom_shape = 3.2609
 
 [node name="mushroom6" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.419579, -0.499761, -0.757755, -0.790007, 0.210071, -0.575985, 0.447037, 0.840303, -0.306674, -0.997313, 0.553488, 6.20613 )
 mushroom_color = 4
-mushroom_shape = 6.9294
+mushroom_shape = 2.50862
 
 [node name="mushroom7" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.665837, -0.0750034, -0.742318, -0.245614, 0.917443, -0.313006, 0.70451, 0.390735, 0.592445, -1.31043, 0.207544, 6.22648 )
 mushroom_color = 1
-mushroom_shape = 6.9467
+mushroom_shape = 0.573979
 
 [node name="mushroom2" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.896479, 0.24395, 0.369885, 0, 0.83479, -0.550568, -0.443087, 0.493573, 0.748372, 0.773506, 0.207544, 6.2813 )
 mushroom_color = 2
-mushroom_shape = 7.70476
+mushroom_shape = 2.22634
 
 [node name="mushroom8" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.85908, -0.00482896, 0.511819, 0.256233, 0.869691, -0.421879, -0.443087, 0.493573, 0.748372, 1.16897, 0.207544, 6.24024 )
 mushroom_color = 2
-mushroom_shape = 2.85746
+mushroom_shape = 6.02426
 
 [node name="mushroom9" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.85908, -0.00482896, 0.511819, 0.256233, 0.869691, -0.421879, -0.443087, 0.493573, 0.748372, 1.00267, 0.186312, 6.31984 )
 mushroom_color = 1
-mushroom_shape = 4.79837
+mushroom_shape = 5.97206
 
 [node name="mushroom11" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.941481, -0.259782, 0.214771, 0.336582, 0.758671, -0.557791, -0.0180362, 0.597438, 0.801712, 0.666407, 0.108186, 9.13537 )
 mushroom_color = 1
-mushroom_shape = 7.4621
+mushroom_shape = 5.99259
 
 [node name="mushroom3" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.809099, -0.323554, -0.490583, 0, 0.83479, -0.550568, 0.587672, 0.445464, 0.675428, 1.74517, 0.207544, 6.26128 )
 mushroom_color = 4
-mushroom_shape = 0.848372
+mushroom_shape = 2.94732
 
 [node name="mushroom4" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.737808, 0.371639, 0.563493, 0, 0.83479, -0.550568, -0.675011, 0.406213, 0.615915, -0.578035, 1.6556, 6.26427 )
 mushroom_color = 1
-mushroom_shape = 5.15333
+mushroom_shape = 1.03213
 
 [node name="mushroom5" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 1.16847, 6.25036 )
-mushroom_shape = 0.285768
+mushroom_shape = 2.92556
 
 [node name="mushroom10" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 2.35922, 6.25036 )
 mushroom_color = 1
-mushroom_shape = 6.59616
+mushroom_shape = 0.22169
 
 [node name="corridor" type="Spatial" parent="mushrooms"]
 
@@ -488,19 +508,22 @@ transform = Transform( -4.35975e-08, 1, -1.86265e-09, -0.999273, -4.37114e-08, -
 [node name="entrance" type="Spatial" parent="cardboards"]
 
 [node name="cardboardbox3" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.999703, 0, 0.0243802, 0, 1, 0, -0.0243802, 0, 0.999703, -21.8532, 25.4644, 2.45065 )
+transform = Transform( 0.999703, 0, 0.0243802, 0, 1, 0, -0.0243802, 0, 0.999703, -21.8532, 25.5159, 2.45065 )
 
 [node name="cardboardbox22" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.8156, 25.4644, 3.29173 )
+transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.8156, 25.5159, 3.29173 )
 
 [node name="cardboardbox23" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.978, 25.4644, 2.76663 )
+transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.978, 25.5159, 2.76663 )
 
 [node name="cardboardbox25" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.643924, 0, -0.76509, 0, 1, 0, 0.76509, 0, 0.643924, -21.7942, 25.4644, 5.56936 )
 
 [node name="cardboardbox33" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.999633, 0, -0.0436638, 0, 1, 0, 0.0276313, 0, 1.87856, -21.8736, 25.4644, 4.42064 )
+transform = Transform( 0.999633, 0, -0.0436638, 0, 1, 0, 0.0276313, 0, 1.87856, -21.8721, 25.5159, 4.35056 )
+
+[node name="cardboardbox35" parent="cardboards/entrance" instance=ExtResource( 7 )]
+transform = Transform( 0.891727, 0, 0.857822, 0, 1, 0, -0.452607, 0, 1.67183, -20.8344, 25.5159, 4.84325 )
 
 [node name="cardboardbox26" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( -0.890611, 0, -0.454769, 0, 1, 0, 0.454769, 0, -0.890611, -21.709, 26.0644, 5.54444 )
@@ -509,22 +532,25 @@ transform = Transform( -0.890611, 0, -0.454769, 0, 1, 0, 0.454769, 0, -0.890611,
 transform = Transform( -0.984599, 0, -0.174835, 0, 1, 0, 0.174835, 0, -0.984599, -22.0026, 26.0644, 4.94406 )
 
 [node name="cardboardbox24" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.5947, 26.056, 2.82419 )
+transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.8133, 26.1159, 4.10685 )
+
+[node name="cardboardbox36" parent="cardboards/entrance" instance=ExtResource( 7 )]
+transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.8392, 26.1159, 4.90467 )
 
 [node name="cardboardbox27" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.7947, 25.5159, -2.84116 )
+transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.0695, 25.5159, -3.1866 )
 
 [node name="cardboardbox29" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.999786, 0, -0.0207668, 0, 1, 0, 0.0207668, 0, 0.999786, -21.5587, 25.5159, -3.75537 )
+transform = Transform( 0.999787, 0, -0.0207668, 0, 1, 0, 0.0207668, 0, 0.999787, -21.9477, 25.5159, -2.95592 )
 
 [node name="cardboardbox30" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.996265, 0, -0.0863723, 0, 1, 0, 0.0863723, 0, 0.996265, -21.5587, 26.1159, -3.75537 )
+transform = Transform( 0.996265, 0, -0.0863724, 0, 1, 0, 0.0863724, 0, 0.996265, -21.923, 26.1159, -2.95539 )
 
 [node name="cardboardbox31" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.996265, 0, -0.0863724, 0, 1, 0, 0.0863724, 0, 0.996265, -21.5832, 26.1627, -4.54096 )
+transform = Transform( 0.996266, 0, -0.0863725, 0, 1, 0, 0.0863725, 0, 0.996266, -21.6157, 26.1159, -4.83632 )
 
 [node name="cardboardbox32" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.588268, 0, -0.808669, 0, 1, 0, 0.808669, 0, 0.588268, -20.9382, 25.5159, -4.28528 )
+transform = Transform( 0.588268, 0, -0.80867, 0, 1, 0, 0.80867, 0, 0.588268, -20.9382, 25.5159, -4.28528 )
 
 [node name="cardboardbox28" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.740583, 0, -0.671966, 0, 1, 0, 0.671966, 0, 0.740583, -21.3871, 25.5159, -4.81714 )
@@ -539,4 +565,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82309, 0.911139, 5.98071 )
 [node name="lighter" parent="special_items" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92965, 1.11453, -9.12531 )
 
+[node name="entrance_key" parent="special_items" instance=ExtResource( 24 )]
+transform = Transform( -4.26928e-09, -0.0976698, 0.995219, 1, -4.37114e-08, 0, 4.35024e-08, 0.995219, 0.0976698, -4.13665, 0.745807, 5.98222 )
+
 [editable path="porch_ladder"]
+[editable path="doors/entrance_door"]

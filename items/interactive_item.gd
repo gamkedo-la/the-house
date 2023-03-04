@@ -180,7 +180,7 @@ func snap_to(target: Spatial) -> void:
 	print("snapping into position")
 	emit_signal("snapping_into_position") # We emit this signal early to let the player's code react 
 	stop_tracking()
-	# mode = RigidBody.MODE_STATIC
+	mode = RigidBody.MODE_STATIC
 	can_be_taken = false
 	sleeping = true
 	get_parent().remove_child(self)

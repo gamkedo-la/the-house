@@ -170,7 +170,7 @@ depth = 26.344
 material = ExtResource( 4 )
 
 [node name="attic_entrance" type="CSGBox" parent="floor2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9561, -0.364149, 0.74461 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0017, -0.364149, -0.365958 )
 operation = 2
 height = 1.52814
 depth = 2.5

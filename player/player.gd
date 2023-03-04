@@ -35,6 +35,7 @@ onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _text_display : RichTextLabel = $"%text_display"
+onready var _action_display : RichTextLabel = $"%action_display"
 onready var _debug_status : RichTextLabel = $"%debug_status"
 
 var _pointed_item : InteractiveItem
@@ -452,6 +453,12 @@ func display_text_sequence(bbtext_sequence: Array, exclusive: bool) -> void:
 	
 func stop_text_display() -> void:
 	_text_display.stop_display_sequence()
+	
+func display_action_text_sequence(bbtext_sequence: Array, exclusive: bool) -> void:
+	_action_display.display_text_sequence(bbtext_sequence, exclusive)
+	
+func stop_action_text_display() -> void:
+	_action_display.stop_display_sequence()
 	
 func use_pointed_usable_entity():
 	assert(_pointed_usable_entity)

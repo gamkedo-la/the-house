@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -25,6 +25,9 @@ radius = 10.491
 
 [sub_resource type="CylinderShape" id=1]
 height = 3.0
+
+[sub_resource type="CylinderShape" id=4]
+radius = 1.57123
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.51952, 2.57765, 36.8175 )
@@ -140,26 +143,39 @@ script = ExtResource( 12 )
 
 [node name="texts" type="Spatial" parent="actual_game"]
 
-[node name="story_2_mushrooms" type="Area" parent="actual_game/texts"]
+[node name="story" type="Spatial" parent="actual_game/texts"]
+
+[node name="story_2_mushrooms" type="Area" parent="actual_game/texts/story"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5633, 1.52131, 19.4018 )
 script = ExtResource( 4 )
 bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual", "\"Weird\" might be a more fitting description" ]
-display_only_once = true
-stop_display_on_exit = false
 
-[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story_2_mushrooms"]
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_2_mushrooms"]
 shape = SubResource( 3 )
 
-[node name="story_1_wakeup" type="Area" parent="actual_game/texts"]
+[node name="story_1_wakeup" type="Area" parent="actual_game/texts/story"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07452, 0.321892, 78.9887 )
 script = ExtResource( 4 )
 bbtext_to_display = [ "...", "Wait ...", "Where am I?", "What or what was I running from?", "I ...", "I can't remember ...", "My left arm is missing", "What was I running from?", "This forest seems... familiar?" ]
-stop_display_on_exit = false
 prioritary_text = false
 
-[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story_1_wakeup"]
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_1_wakeup"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373764, 0, -0.824059 )
 shape = SubResource( 1 )
+
+[node name="action_tips" type="Spatial" parent="actual_game/texts"]
+
+[node name="move_instructions" type="Area" parent="actual_game/texts/action_tips"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48339, 1.79117, 75.1251 )
+script = ExtResource( 4 )
+bbtext_to_display = [ "Mouse: look around\\nWASD or Arrow keys: walk" ]
+display_only_once = false
+stop_display_on_exit = true
+time_to_display_secs = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/action_tips/move_instructions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06113, -0.627829, 2.44876 )
+shape = SubResource( 4 )
 
 [node name="event_areas" type="Spatial" parent="actual_game"]
 

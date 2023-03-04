@@ -4,7 +4,7 @@
 [ext_resource path="res://screens/options/game_options_screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://screens/options/graphic_options_screen.tscn" type="PackedScene" id=3]
 
-[node name="options_screen" type="Node2D"]
+[node name="options_screen" type="CanvasLayer"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.1

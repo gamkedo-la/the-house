@@ -1,10 +1,10 @@
 [gd_scene format=2]
 
-[node name="credits_screen" type="Node2D"]
+[node name="credits_screen" type="Spatial"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 836.0
 margin_top = 474.0
 margin_right = 1335.0
 margin_bottom = 585.0
-text = "CREDITS"
+text = "CREDITS - MAKE THIS SCREEN SHOW ALL THE PEOPLE"

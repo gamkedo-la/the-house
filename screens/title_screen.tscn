@@ -187,16 +187,13 @@ bbcode_text = "[center]Version 0.5[/center]"
 text = "Version 0.5"
 scroll_active = false
 
-[node name="muting" type="RichTextLabel" parent="info"]
-anchor_left = 0.5
+[node name="important_keys" type="RichTextLabel" parent="info"]
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -336.0
-margin_top = -56.0
-margin_right = 336.0
+margin_top = -46.0
 theme = ExtResource( 13 )
 bbcode_enabled = true
-bbcode_text = "[center]Press [b][M][/b] at any moment to mute/unmute[/center]"
-text = "Press [M] at any moment to mute/unmute"
+bbcode_text = "[center]Press [b][M][/b] at any moment to mute/unmute * [b][P][/b] or [b][ENTER][/b] to Pause/Menu * [ESCAPE] to unlock mouse[/center]"
+text = "Press [M] at any moment to mute/unmute * [P] or [ENTER] to Pause/Menu * [ESCAPE] to unlock mouse"
 scroll_active = false

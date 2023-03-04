@@ -23,6 +23,7 @@ func _clear() -> void:
 
 func change_current_scene(scene_path:String, screen_to_get_back_to: String = "") -> void:
 	_clear()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var scene = load(scene_path).instance()
 	scene.master_scene = self
 	if screen_to_get_back_to != "" :

@@ -30,89 +30,8 @@ height = 3.0
 extents = Vector3( 2.51952, 2.57765, 36.8175 )
 
 [node name="game" type="Spatial"]
+pause_mode = 2
 script = ExtResource( 15 )
-
-[node name="environment" parent="." instance=ExtResource( 13 )]
-unique_name_in_owner = true
-
-[node name="background_music" type="AudioStreamPlayer" parent="."]
-bus = "Music"
-script = ExtResource( 1 )
-
-[node name="forest" parent="." instance=ExtResource( 2 )]
-
-[node name="house" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
-
-[node name="toolshed" parent="." instance=ExtResource( 14 )]
-transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -37.0618, 21.9992, -15.0888 )
-
-[node name="player" parent="." instance=ExtResource( 5 )]
-unique_name_in_owner = true
-transform = Transform( 0.614107, 0, -0.789224, 0, 1, 0, 0.789224, 0, 0.614107, 7.63634, 0.689554, 77.5843 )
-
-[node name="ambiant_lights" type="Spatial" parent="."]
-
-[node name="moon_light" type="DirectionalLight" parent="ambiant_lights"]
-transform = Transform( -0.810717, 0.431324, -0.39585, 0.081885, 0.753058, 0.652838, 0.579683, 0.496853, -0.645836, -59.2176, 39.8945, -11.2015 )
-light_color = Color( 0.709804, 0, 0, 1 )
-light_specular = 0.0
-shadow_enabled = true
-shadow_contact = 0.353
-directional_shadow_depth_range = 1
-directional_shadow_max_distance = 8192.0
-script = ExtResource( 12 )
-
-[node name="texts" type="Spatial" parent="."]
-
-[node name="story_2_mushrooms" type="Area" parent="texts"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5633, 1.52131, 19.4018 )
-script = ExtResource( 4 )
-bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual", "\"Weird\" might be a more fitting description" ]
-display_only_once = true
-stop_display_on_exit = false
-
-[node name="CollisionShape" type="CollisionShape" parent="texts/story_2_mushrooms"]
-shape = SubResource( 3 )
-
-[node name="story_1_wakeup" type="Area" parent="texts"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07452, 0.321892, 78.9887 )
-script = ExtResource( 4 )
-bbtext_to_display = [ "...", "Wait ...", "Where am I?", "What or what was I running from?", "I ...", "I can't remember ...", "My left arm is missing", "What was I running from?", "This forest seems... familiar?" ]
-stop_display_on_exit = false
-prioritary_text = false
-
-[node name="CollisionShape" type="CollisionShape" parent="texts/story_1_wakeup"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373764, 0, -0.824059 )
-shape = SubResource( 1 )
-
-[node name="event_areas" type="Spatial" parent="."]
-
-[node name="event_house_light_area" type="Area" parent="event_areas"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.1892, 0 )
-script = ExtResource( 16 )
-
-[node name="CollisionShape" type="CollisionShape" parent="event_areas/event_house_light_area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6469, -0.251875, -2.45365 )
-shape = SubResource( 2 )
-
-[node name="to_disappear" type="Spatial" parent="event_areas/event_house_light_area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35668, 0 )
-
-[node name="shadow" parent="event_areas/event_house_light_area/to_disappear" instance=ExtResource( 17 )]
-transform = Transform( -0.321673, 0, 0.506485, 0, 0.6, 0, -0.506485, 0, -0.321673, -22.902, 4.80558, -4.27306 )
-
-[node name="light_from_inside_the_house" type="OmniLight" parent="event_areas/event_house_light_area/to_disappear"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0315, 5.56166, -5.13632 )
-light_energy = 2.866
-light_indirect_energy = 2.922
-omni_range = 5.149
-
-[node name="light_from_inside_the_house2" type="OmniLight" parent="event_areas/event_house_light_area/to_disappear"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9491, 5.77861, 3.87328 )
-light_energy = 2.866
-light_indirect_energy = 2.922
-omni_range = 5.149
 
 [node name="debug" type="Spatial" parent="."]
 
@@ -182,4 +101,90 @@ transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.99809
 transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )
 
 [node name="paused_screen" parent="." instance=ExtResource( 18 )]
+pause_mode = 2
 visible = false
+
+[node name="actual_game" type="Spatial" parent="."]
+pause_mode = 1
+
+[node name="environment" parent="actual_game" instance=ExtResource( 13 )]
+unique_name_in_owner = true
+
+[node name="background_music" type="AudioStreamPlayer" parent="actual_game"]
+bus = "Music"
+script = ExtResource( 1 )
+
+[node name="forest" parent="actual_game" instance=ExtResource( 2 )]
+
+[node name="house" parent="actual_game" instance=ExtResource( 3 )]
+transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
+
+[node name="toolshed" parent="actual_game" instance=ExtResource( 14 )]
+transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -37.0618, 21.9992, -15.0888 )
+
+[node name="player" parent="actual_game" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+transform = Transform( 0.614107, 0, -0.789224, 0, 1, 0, 0.789224, 0, 0.614107, 7.63634, 0.689554, 77.5843 )
+
+[node name="ambiant_lights" type="Spatial" parent="actual_game"]
+
+[node name="moon_light" type="DirectionalLight" parent="actual_game/ambiant_lights"]
+transform = Transform( -0.810717, 0.431324, -0.39585, 0.081885, 0.753058, 0.652838, 0.579683, 0.496853, -0.645836, -59.2176, 39.8945, -11.2015 )
+light_color = Color( 0.709804, 0, 0, 1 )
+light_specular = 0.0
+shadow_enabled = true
+shadow_contact = 0.353
+directional_shadow_depth_range = 1
+directional_shadow_max_distance = 8192.0
+script = ExtResource( 12 )
+
+[node name="texts" type="Spatial" parent="actual_game"]
+
+[node name="story_2_mushrooms" type="Area" parent="actual_game/texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5633, 1.52131, 19.4018 )
+script = ExtResource( 4 )
+bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual", "\"Weird\" might be a more fitting description" ]
+display_only_once = true
+stop_display_on_exit = false
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story_2_mushrooms"]
+shape = SubResource( 3 )
+
+[node name="story_1_wakeup" type="Area" parent="actual_game/texts"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07452, 0.321892, 78.9887 )
+script = ExtResource( 4 )
+bbtext_to_display = [ "...", "Wait ...", "Where am I?", "What or what was I running from?", "I ...", "I can't remember ...", "My left arm is missing", "What was I running from?", "This forest seems... familiar?" ]
+stop_display_on_exit = false
+prioritary_text = false
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story_1_wakeup"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.373764, 0, -0.824059 )
+shape = SubResource( 1 )
+
+[node name="event_areas" type="Spatial" parent="actual_game"]
+
+[node name="event_house_light_area" type="Area" parent="actual_game/event_areas"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.1892, 0 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/event_areas/event_house_light_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6469, -0.251875, -2.45365 )
+shape = SubResource( 2 )
+
+[node name="to_disappear" type="Spatial" parent="actual_game/event_areas/event_house_light_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35668, 0 )
+
+[node name="shadow" parent="actual_game/event_areas/event_house_light_area/to_disappear" instance=ExtResource( 17 )]
+transform = Transform( -0.321673, 0, 0.506485, 0, 0.6, 0, -0.506485, 0, -0.321673, -22.902, 4.80558, -4.27306 )
+
+[node name="light_from_inside_the_house" type="OmniLight" parent="actual_game/event_areas/event_house_light_area/to_disappear"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0315, 5.56166, -5.13632 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.149
+
+[node name="light_from_inside_the_house2" type="OmniLight" parent="actual_game/event_areas/event_house_light_area/to_disappear"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9491, 5.77861, 3.87328 )
+light_energy = 2.866
+light_indirect_energy = 2.922
+omni_range = 5.149

@@ -9,6 +9,8 @@ var _next_spawn_point = 0
 
 func _ready() -> void :
 	_add_spawn_points(self)
+	
+	$paused_screen.connect("on_resume", self, "_on_resume_requested")
 
 func _process(_delta):
 	
@@ -49,7 +51,18 @@ func is_game_paused():
 func pause_game(pause: bool) -> void:
 	get_tree().paused = pause
 	print("game paused: ", pause)
+	
+	if pause:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$paused_screen.visible = true
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		$paused_screen.visible = false
+
 	emit_signal("on_game_pause_or_resume", pause)
+
+func _on_resume_requested():
+	pause_game(false)
 	
 func exit_game():
 	if master_scene:

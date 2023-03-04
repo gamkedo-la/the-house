@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/paused_screen.gd" type="Script" id=2]
 
 [node name="paused_screen" type="CanvasLayer"]
+script = ExtResource( 2 )
 
 [node name="options_screen" parent="." instance=ExtResource( 1 )]
 visible = false
@@ -13,3 +15,14 @@ margin_top = 86.0
 margin_right = 1330.0
 margin_bottom = 126.0
 text = "PAUSED SCREEN"
+
+[node name="resume_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -195.0
+margin_right = 87.0
+margin_bottom = -144.0
+text = "Continue"

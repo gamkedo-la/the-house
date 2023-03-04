@@ -1,5 +1,6 @@
 extends Node
 
+var current_scene_path : String
 	
 func _ready():
 	if OS.get_name() == "HTML5":
@@ -20,16 +21,23 @@ func _unhandled_key_input(event):
 func _clear() -> void:
 	utility.delete_children(self)
 
-func _change_current_scene(scene_path:String) -> void:
+func change_current_scene(scene_path:String, screen_to_get_back_to: String = "") -> void:
 	_clear()
 	var scene = load(scene_path).instance()
 	scene.master_scene = self
+	if screen_to_get_back_to != "" :
+		scene.scene_name_to_get_back_to = screen_to_get_back_to
 	add_child(scene)
+	current_scene_path = scene_path
 	
 func start_new_game() -> void:
-	_change_current_scene("res://game/game.tscn")
+	change_current_scene("res://game/game.tscn")
 	
 func to_title_screen() -> void:
-	_change_current_scene("res://screens/title_screen.tscn")
+	change_current_scene("res://screens/title_screen.tscn")
 	
+func to_credits_screen(screen_to_get_back_to: String = "") -> void:
+	if screen_to_get_back_to == "":
+		screen_to_get_back_to = current_scene_path
+	change_current_scene("res://screens/credits/credits_screen.tscn", screen_to_get_back_to)
 

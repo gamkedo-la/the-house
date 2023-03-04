@@ -1,6 +1,17 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="credits_screen" type="Spatial"]
+[ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=1]
+[ext_resource path="res://screens/credits/credits_screen.gd" type="Script" id=2]
+
+[sub_resource type="GradientTexture2D" id=1]
+
+[node name="credits_screen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 959.5, 540 )
+scale = Vector2( 29.9844, 16.8438 )
+texture = SubResource( 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 836.0
@@ -8,3 +19,9 @@ margin_top = 474.0
 margin_right = 1335.0
 margin_bottom = 585.0
 text = "CREDITS - MAKE THIS SCREEN SHOW ALL THE PEOPLE"
+
+[node name="back_button" type="Button" parent="."]
+margin_right = 141.0
+margin_bottom = 71.0
+theme = ExtResource( 1 )
+text = "BACK"

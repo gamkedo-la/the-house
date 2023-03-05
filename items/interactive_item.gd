@@ -20,7 +20,7 @@ enum TrackingOrientation {
 export(TrackingOrientation) var orientation_hand_held = TrackingOrientation.FOLLOW
 export(TrackingOrientation) var orientation_held_front = TrackingOrientation.FOLLOW_Y
 
-export var description : String = "?"
+export var description : String = ""
 
 signal on_taken_by_player(item)
 signal on_dropped_by_player(item)

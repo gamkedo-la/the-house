@@ -8,6 +8,7 @@ extents = Vector3( 0.10754, 0.00126913, 0.0451777 )
 
 [node name="Basement Key" type="RigidBody"]
 script = ExtResource( 1 )
+description = "A Key... but for which door?"
 
 [node name="Basement Key Mesh" parent="." instance=ExtResource( 2 )]
 transform = Transform( -8.74228e-09, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2, 8.74228e-09, 3.82137e-16, -0.0128381, 0.104285, 0.0418061 )

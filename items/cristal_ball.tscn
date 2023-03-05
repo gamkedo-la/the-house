@@ -9,6 +9,7 @@ radius = 0.1
 [node name="crystal_ball" type="RigidBody"]
 script = ExtResource( 1 )
 highlight_color = Color( 1, 0.917647, 0.0588235, 1 )
+description = "A crystal ball. Is this some kind of magic item?"
 
 [node name="sphere" type="CSGSphere" parent="."]
 radius = 0.1

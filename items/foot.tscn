@@ -10,7 +10,9 @@ height = 0.228172
 radius = 0.1
 
 [node name="foot" type="RigidBody"]
+collision_layer = 129
 script = ExtResource( 1 )
+description = "A real human foot...cut from it's owner"
 
 [node name="placeholder_please_replace_me" type="CSGCombiner" parent="."]
 transform = Transform( -1, 0, -1.92963e-07, 0, 1.3107, 0, 1.50996e-07, 0, -1.27793, -8.83171e-10, 0, -0.0202046 )

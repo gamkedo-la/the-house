@@ -8,6 +8,7 @@ extents = Vector3( 0.107514, 0.00361472, 0.046225 )
 
 [node name="Kitchen Key" type="RigidBody"]
 script = ExtResource( 1 )
+description = "A key. But for which door?"
 
 [node name="Kitchen Key Mesh" parent="." instance=ExtResource( 2 )]
 transform = Transform( -3.01746e-10, 0.2, 8.73707e-09, -0.00690315, -8.74228e-09, 0.199881, 0.199881, 0, 0.00690315, -0.0118553, 0.0920675, 0.04262 )

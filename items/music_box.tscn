@@ -10,6 +10,7 @@ extents = Vector3( 0.1, 0.05, 0.1 )
 mass = 24.32
 script = ExtResource( 1 )
 orientation_hand_held = 2
+description = "A [b]music box[/b]. I can activate it to make it play."
 
 [node name="placeholder_box_please_replace_me" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )

@@ -168,6 +168,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6723, 0.627782, 4.4887 )
 [node name="foot" parent="furniture/living_room" instance=ExtResource( 31 )]
 transform = Transform( 0.0249556, 0.999689, 0, -0.999689, 0.0249556, 0, 0, 0, 1, 6.5382, 0.514603, 3.85866 )
 collision_layer = 129
+description = "?"
 
 [node name="bedroom" type="Spatial" parent="furniture"]
 
@@ -345,73 +346,91 @@ transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4
 
 [node name="flower_pot" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40959, 0.0657884, 6.45116 )
+description = "?"
 
 [node name="flower_pot2" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63978, 0.0657884, 6.53967 )
+description = "?"
 
 [node name="flower_pot7" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29953, 0.741177, 5.99908 )
+description = "?"
 
 [node name="flower_pot8" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.04419, 0.905408, 6.00552 )
+description = "?"
 
 [node name="flower_pot5" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84185, 0.0657884, 6.47695 )
+description = "?"
 
 [node name="flower_pot14" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51493, 0.0657884, 8.84389 )
+description = "?"
 
 [node name="flower_pot15" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26493, 0.0657884, 8.87717 )
+description = "?"
 
 [node name="flower_pot16" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0521, 0.0657884, 8.85106 )
+description = "?"
 
 [node name="flower_pot17" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0521, 0.0657884, 8.85106 )
+description = "?"
 
 [node name="flower_pot3" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.678, 0.0657878, 6.22457 )
+description = "?"
 width = 2.0
 height = 2.0
 
 [node name="flower_pot13" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90872, 0.0657884, 8.83123 )
+description = "?"
 width = 2.0
 height = 2.0
 
 [node name="flower_pot18" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, -4.60816, 0.386575, 6.3248 )
+description = "?"
 width = 2.5
 height = 2.0
 
 [node name="flower_pot9" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1704, 0.0657884, 6.44971 )
+description = "?"
 width = 3.0
 height = 2.0
 
 [node name="flower_pot10" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19292, 0.0657886, 6.57048 )
+description = "?"
 width = 3.0
 height = 3.0
 
 [node name="flower_pot11" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60541, 0.0657886, 8.6556 )
+description = "?"
 width = 3.0
 height = 3.0
 
 [node name="flower_pot4" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, 0, 0, 1, -5.11164, 0.386575, 6.3408 )
+description = "?"
 width = 2.0
 height = 2.0
 
 [node name="flower_pot6" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, 0, 0, 1, -4.09445, 0.386575, 6.32718 )
+description = "?"
 width = 2.0
 height = 2.0
 
 [node name="flower_pot12" parent="props/porch" instance=ExtResource( 32 )]
 transform = Transform( -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, 0, 0, 1, -5.60247, 0.387788, 8.02456 )
+description = "?"
 width = 2.0
 height = 2.0
 

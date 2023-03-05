@@ -64,7 +64,8 @@ collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
-mushroom_shape = 4.72992
+description = "An unusual mushroom"
+mushroom_shape = 4
 lightening_distance = 18.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

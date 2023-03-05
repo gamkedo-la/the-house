@@ -8,6 +8,7 @@ extents = Vector3( 0.413909, 0.0803277, 0.171178 )
 
 [node name="Gold Bar" type="RigidBody"]
 script = ExtResource( 1 )
+description = "A solid bar of Gold"
 
 [node name="Gold Bar Mesh" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.228168, -1.19209e-07, -0.0772728 )

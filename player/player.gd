@@ -17,7 +17,6 @@ export var fall_check_distance : float = 1.5
 const limit_up_angle : float = deg2rad(75.0)
 const limit_down_angle : float = deg2rad(-75.0)
 
-var _gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 onready var _camera : Camera = $"%Camera"
 onready var _head : Spatial = $"Head"
@@ -198,7 +197,7 @@ func update_walk(_delta) -> void:
 		var snap_ray := Vector3.DOWN * 10.0
 		
 		if ground_we_are_walking_on != GroundChecker.WalkingOn.OutsideGround:
-			var gravity = _gravity * gravity_factor
+			var gravity = global.gravity * gravity_factor
 			oriented_movement += gravity
 			debug_text += "with gravity "
 			

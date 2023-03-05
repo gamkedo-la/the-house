@@ -132,6 +132,8 @@ func drop(where: Spatial) -> void:
 	global_transform.basis = where.global_transform.basis
 	_set_collision_with_player(self, true) # resume colliding with the player
 	_cancel_velocity(self)
+	linear_velocity = global.gravity.normalized()
+	sleeping = false # Makes sure it starts falling
 	continuous_cd = false # Turn off precise handling of collisions
 	_is_taken = false
 	emit_signal("on_dropped_by_player", self)

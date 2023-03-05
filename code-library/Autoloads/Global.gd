@@ -2,6 +2,7 @@ extends Node
 
 var current_player : Player
 
+var gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 #
 ## warning-ignore:unused_signal

@@ -15,7 +15,7 @@ albedo_texture = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="hinge" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.03003, -0.00393108, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.03, 0, 0 )
 use_collision = true
 width = 0.06
 height = 1.5

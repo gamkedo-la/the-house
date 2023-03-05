@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -15,10 +15,13 @@
 [ext_resource path="res://game/game-environment.tscn" type="PackedScene" id=13]
 [ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=14]
 [ext_resource path="res://game/game.gd" type="Script" id=15]
-[ext_resource path="res://gameplay/event_house_light_area.gd" type="Script" id=16]
+[ext_resource path="res://game/event_house_light_area.gd" type="Script" id=16]
 [ext_resource path="res://player/shadow_mesh/shadow.tscn" type="PackedScene" id=17]
 [ext_resource path="res://screens/paused_screen.tscn" type="PackedScene" id=18]
 [ext_resource path="res://gameplay/action_text_area.tscn" type="PackedScene" id=19]
+[ext_resource path="res://game/take_instructions_text.gd" type="Script" id=20]
+[ext_resource path="res://game/examine_instructions.gd" type="Script" id=21]
+[ext_resource path="res://game/examine_instructions_2.gd" type="Script" id=22]
 
 [sub_resource type="CylinderShape" id=3]
 height = 3.0
@@ -173,16 +176,57 @@ shape = SubResource( 1 )
 
 [node name="move_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8185, 0.388094, 77.5203 )
-bbtext_to_display = [ "Mouse -> Look around\\n[WASD] or [Arrows] -> Walk" ]
+bbtext_to_display = [ "Mouse -> [b]Look around[/b]\\n[WASD] or [Arrows] -> [b]Walk[/b]" ]
 display_only_once = true
 time_to_display_secs = 5.0
+mode = 1
 
 [node name="take_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
-bbtext_to_display = [ "[Ctrl] or [C] -> Crouch\\nLeft Mouse Buton -> Take / Interract" ]
+script = ExtResource( 20 )
+bbtext_to_display = [ "[CTRL] or [C] -> [b]Crouch[/b]\\nLeft Mouse Button -> [b]Take[/b]" ]
 display_only_once = true
+mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/take_instructions" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+shape = SubResource( 5 )
+
+[node name="examine_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
+monitoring = false
+monitorable = false
+script = ExtResource( 21 )
+bbtext_to_display = [ "[TAB] -> [b]Examine item[/b]" ]
+display_only_once = true
+mode = 1
+
+[node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+shape = SubResource( 5 )
+
+[node name="examine_instructions2" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
+monitoring = false
+monitorable = false
+script = ExtResource( 22 )
+bbtext_to_display = [ "[WASD] [Q][E] or [Arrows] or Left Mouse Button -> [b]Rotate item[/b]\\n[Z] [X] or Mouse Wheel -> [b]Zoom In/Out[b]\\n[TAB] -> [b]Stop examining[/b]" ]
+display_only_once = true
+mode = 1
+
+[node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions2" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+shape = SubResource( 5 )
+
+[node name="point_forward_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
+monitoring = false
+monitorable = false
+bbtext_to_display = [ "[SPACE] -> [b]Hold item in front of you[/b]" ]
+display_only_once = true
+mode = 1
+
+[node name="CollisionShape" parent="actual_game/texts/action_tips/point_forward_instructions" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
 shape = SubResource( 5 )
 
@@ -190,6 +234,7 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6265, 0.388094, 85.4608 )
 bbtext_to_display = [ "[SHIFT] -> Run" ]
 display_only_once = true
+mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/run_instructions" index="0"]
 transform = Transform( 0.888849, 0, 0.4582, 0, 1, 0, -0.4582, 0, 0.888849, -1.17584, 0.5, -2.28098 )
@@ -225,4 +270,7 @@ omni_range = 5.149
 
 [editable path="actual_game/texts/action_tips/move_instructions"]
 [editable path="actual_game/texts/action_tips/take_instructions"]
+[editable path="actual_game/texts/action_tips/examine_instructions"]
+[editable path="actual_game/texts/action_tips/examine_instructions2"]
+[editable path="actual_game/texts/action_tips/point_forward_instructions"]
 [editable path="actual_game/texts/action_tips/run_instructions"]

@@ -10,7 +10,6 @@ radius = 1.44057
 script = ExtResource( 1 )
 display_only_once = false
 stop_display_on_exit = true
-is_action_text = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )

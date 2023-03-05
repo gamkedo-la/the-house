@@ -34,9 +34,12 @@ onready var _examination_spot : Spatial = $"%Camera/examination_spot"
 onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
-onready var _text_display : RichTextLabel = $"%text_display"
-onready var _action_display : RichTextLabel = $"%action_display"
 onready var _debug_status : RichTextLabel = $"%debug_status"
+
+onready var story_display : TextDisplay = $"%text_display"
+onready var action_display : TextDisplay = $"%action_display"
+onready var info_display : TextDisplay = $"%info_display"
+
 
 var _pointed_item : InteractiveItem
 var _pointed_usable_entity : Spatial
@@ -55,6 +58,7 @@ var _crouch_duration := 0.33
 var _is_running := false
 
 var _is_holding_front := false
+var _is_examining := false
 
 onready var _initial_examination_transform : Transform = _examination_spot.transform
 
@@ -382,15 +386,20 @@ func begin_item_examination():
 	assert(held_item is InteractiveItem)
 	_examination_spot.transform = _initial_examination_transform
 	held_item.track(_examination_spot)
+	_is_examining = true
 	
 func end_item_examination():
 	_resume_holding_item()
+	_is_examining = false
 
 func get_examination_node() -> Spatial:
 	return _examination_spot
 	
 func get_examination_axis() -> Vector3:
 	return (_examination_spot.transform.origin - _camera.transform.origin).normalized()
+	
+func is_examining() -> bool:
+	return _is_examining
 	
 func begin_center_item_holding() -> void:
 	_is_holding_front = true
@@ -451,18 +460,6 @@ func toggle_crouch() -> void:
 func get_camera() -> Camera:
 	return _camera
 
-func display_text_sequence(bbtext_sequence: Array, exclusive: bool) -> void:
-	_text_display.display_text_sequence(bbtext_sequence, exclusive)
-	
-func stop_text_display() -> void:
-	_text_display.stop_display_sequence()
-	
-func display_action_text_sequence(bbtext_sequence: Array, exclusive: bool) -> void:
-	_action_display.display_text_sequence(bbtext_sequence, exclusive)
-	
-func stop_action_text_display() -> void:
-	_action_display.stop_display_sequence()
-	
 func use_pointed_usable_entity():
 	assert(_pointed_usable_entity)
 	_pointed_usable_entity.player_interracts()

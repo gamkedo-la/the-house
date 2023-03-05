@@ -250,6 +250,23 @@ bbcode_text = "[center]This is the text being displayed [b]to the player[/b][/ce
 text = "This is the text being displayed to the player"
 scroll_active = false
 script = ExtResource( 15 )
+text_display_duration_secs = 2.0
+fade_duration_secs = 0.5
+
+[node name="info_display" type="RichTextLabel" parent="Head/Camera"]
+unique_name_in_owner = true
+anchor_right = 1.0
+margin_bottom = 148.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]This is the text being displayed [b]to the player[/b][/center]"
+text = "This is the text being displayed to the player"
+scroll_active = false
+script = ExtResource( 15 )
 text_display_duration_secs = 0.0
 fade_duration_secs = 0.5
 

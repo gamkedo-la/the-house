@@ -1,5 +1,6 @@
 extends RichTextLabel
 
+class_name TextDisplay
 
 # Declare member variables here. Examples:
 # var a = 2

@@ -20,6 +20,14 @@ enum TrackingOrientation {
 export(TrackingOrientation) var orientation_hand_held = TrackingOrientation.FOLLOW
 export(TrackingOrientation) var orientation_held_front = TrackingOrientation.FOLLOW_Y
 
+export var description : String = "?"
+
+signal on_taken_by_player(item)
+signal on_dropped_by_player(item)
+signal on_begin_examination(item)
+signal on_end_examination(item)
+signal on_snapped_into_fixed_position(item)
+
 var _previous_global_transform_origin : Vector3
 
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
@@ -115,6 +123,7 @@ func take(hold_where: Spatial) -> void:
 	set_mode(RigidBody.MODE_RIGID) # Once taken, even if the object was static before, it is now following physics laws.
 	continuous_cd = true # Turn on precise handling of collisions
 	_is_taken = true
+	emit_signal("on_taken_by_player", self)
 
 	
 func drop(where: Spatial) -> void:
@@ -125,6 +134,7 @@ func drop(where: Spatial) -> void:
 	_cancel_velocity(self)
 	continuous_cd = false # Turn off precise handling of collisions
 	_is_taken = false
+	emit_signal("on_dropped_by_player", self)
 	
 	
 func update_movement(delta:float, base_linear_velocity:Vector3 = Vector3.ZERO) -> void:
@@ -190,3 +200,13 @@ func snap_to(target: Spatial) -> void:
 	transform.origin = Vector3.ZERO
 	global_transform.origin = target.global_transform.origin
 	global_transform.basis = target.global_transform.basis
+	emit_signal("on_snapped_into_fixed_position", self)
+	
+func begin_examination() -> void:
+	emit_signal("on_examination_begin", self)
+	
+func end_examination() -> void:
+	emit_signal("on_examination_end", self)
+	
+	
+	

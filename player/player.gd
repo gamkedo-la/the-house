@@ -39,6 +39,7 @@ onready var _debug_status : RichTextLabel = $"%debug_status"
 onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
 onready var info_display : TextDisplay = $"%info_display"
+onready var examination_display : TextDisplay = $"%examination_display"
 
 
 var _pointed_item : InteractiveItem
@@ -388,8 +389,13 @@ func begin_item_examination():
 	_examination_spot.transform = _initial_examination_transform
 	held_item.track(_examination_spot)
 	_is_examining = true
+	held_item.begin_examination()
+	examination_display.display_text_sequence([held_item.description])
+	
 	
 func end_item_examination():
+	examination_display.stop_display_sequence()
+	_held_item.end_examination()
 	_resume_holding_item()
 	_is_examining = false
 

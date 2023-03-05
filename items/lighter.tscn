@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://items/lighter/lighter_details.material" type="Material" id=1]
-[ext_resource path="res://items/lighter/lighter.gd" type="Script" id=2]
+[ext_resource path="res://items/lighter/lighter_body.gd" type="Script" id=2]
 [ext_resource path="res://items/flame.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/interactive_item.gd" type="Script" id=4]
 [ext_resource path="res://items/lighter/lighter_body.material" type="Material" id=5]
@@ -69,7 +69,7 @@ surfaces/0 = {
 resource_name = "Close Lid"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/path = NodePath("lighter_body/Lid:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -177,7 +177,7 @@ tracks/3/keys = {
 "values": [ false, true, false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Lighter/Wheel_Axis/Wheel:rotation_degrees")
+tracks/4/path = NodePath("lighter_body/Wheel_Axis/Wheel:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -207,7 +207,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/path = NodePath("lighter_body/Lid:rotation_degrees")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -246,7 +246,7 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=8]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Lighter/Lid:rotation_degrees")
+tracks/0/path = NodePath("lighter_body/Lid:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -304,7 +304,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Lighter/Wheel_Axis/Wheel:rotation_degrees")
+tracks/5/path = NodePath("lighter_body/Wheel_Axis/Wheel:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -324,22 +324,22 @@ mass = 0.2
 script = ExtResource( 4 )
 description = "A lighter. It's [b]flame[/b] could be useful."
 
-[node name="Lighter" type="Spatial" parent="."]
+[node name="lighter_body" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 2 )
 
-[node name="Body" type="MeshInstance" parent="Lighter"]
+[node name="Body" type="MeshInstance" parent="lighter_body"]
 cast_shadow = 0
 mesh = SubResource( 1 )
 
-[node name="Lid" type="MeshInstance" parent="Lighter"]
+[node name="Lid" type="MeshInstance" parent="lighter_body"]
 cast_shadow = 0
 mesh = SubResource( 2 )
 
-[node name="Wheel_Axis" type="Spatial" parent="Lighter"]
+[node name="Wheel_Axis" type="Spatial" parent="lighter_body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028045, 0.008045, 0 )
 
-[node name="Wheel" type="MeshInstance" parent="Lighter/Wheel_Axis"]
+[node name="Wheel" type="MeshInstance" parent="lighter_body/Wheel_Axis"]
 cast_shadow = 0
 mesh = SubResource( 3 )
 
@@ -370,6 +370,6 @@ shape = SubResource( 9 )
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 bus = "Hand"
 
-[connection signal="use_item" from="." to="Lighter" method="_on_lighter_use_item"]
+[connection signal="use_item" from="." to="lighter_body" method="_on_lighter_use_item"]
 
 [editable path="Flame"]

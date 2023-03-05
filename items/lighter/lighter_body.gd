@@ -23,5 +23,5 @@ func turn_off():
 	AnimationPlayer.play("Close Lid")
 	fire_area.on_fire_off()
 
-func _on_lighter_use_item():
+func _on_lighter_use_item(_lighter):
 	toggle_light()

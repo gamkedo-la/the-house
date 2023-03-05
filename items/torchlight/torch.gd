@@ -18,5 +18,5 @@ func turn_on():
 func turn_off():
 	AnimationPlayer.play("Switch Off")
 
-func _on_torch_use_item():
+func _on_torch_use_item(_torch):
 	toggle_light()

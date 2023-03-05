@@ -1,8 +1,13 @@
 extends RigidBody
 class_name InteractiveItem
 
-signal use_item
-signal snapping_into_position
+signal use_item(item)
+signal snapping_into_position(item)
+signal on_taken_by_player(item)
+signal on_dropped_by_player(item)
+signal on_examination_begin(item)
+signal on_examination_end(item)
+signal on_snapped_into_fixed_position(item)
 
 export var can_be_taken = true
 export var hilighted = false
@@ -22,11 +27,6 @@ export(TrackingOrientation) var orientation_held_front = TrackingOrientation.FOL
 
 export var description : String = ""
 
-signal on_taken_by_player(item)
-signal on_dropped_by_player(item)
-signal on_begin_examination(item)
-signal on_end_examination(item)
-signal on_snapped_into_fixed_position(item)
 
 var _previous_global_transform_origin : Vector3
 
@@ -96,7 +96,7 @@ func hilite(toggle: bool) -> void:
 				slot.item_mat_next.set_shader_param("outline_width",0.0)
 
 func activate():
-	emit_signal("use_item")
+	emit_signal("use_item", self)
 
 func is_takable_now() -> bool :
 	return can_be_taken && not _is_taken

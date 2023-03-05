@@ -12,7 +12,7 @@ func turn_off():
 	is_on = false
 	light_source.visible = false
 
-func _on_lantern_use_item():
+func _on_lantern_use_item(_lantern):
 	turn_off()
 
 

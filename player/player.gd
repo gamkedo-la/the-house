@@ -74,6 +74,7 @@ func _input(event) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _ready() -> void:
+	global.current_player = self
 	set_collision_layer_bit(CollisionLayers.climbing_area_collision_bit, true)
 	_state_machine.start_with_player(self)
 	_initial_hand_transform = _hand_node.transform

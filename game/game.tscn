@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -18,7 +18,7 @@
 [ext_resource path="res://game/event_house_light_area.gd" type="Script" id=16]
 [ext_resource path="res://player/shadow_mesh/shadow.tscn" type="PackedScene" id=17]
 [ext_resource path="res://screens/paused_screen.tscn" type="PackedScene" id=18]
-[ext_resource path="res://gameplay/action_text_area.tscn" type="PackedScene" id=19]
+[ext_resource path="res://gameplay/info_text_area.tscn" type="PackedScene" id=19]
 [ext_resource path="res://game/take_instructions_text.gd" type="Script" id=20]
 [ext_resource path="res://game/examine_instructions.gd" type="Script" id=21]
 [ext_resource path="res://game/examine_instructions_2.gd" type="Script" id=22]
@@ -31,12 +31,15 @@ radius = 10.491
 height = 3.0
 radius = 2.69651
 
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 2.54381, 1, 17.5025 )
+
 [sub_resource type="CylinderShape" id=5]
 height = 3.3895
 radius = 2.87124
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 4.077, 1, 6.30188 )
+extents = Vector3( 4.077, 2.19295, 6.30188 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.51952, 2.57765, 36.8175 )
@@ -158,6 +161,7 @@ script = ExtResource( 12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5633, 1.52131, 19.4018 )
 script = ExtResource( 4 )
 bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual", "\"Weird\" might be a more fitting description" ]
+prioritary_text = false
 
 [node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_2_mushrooms"]
 shape = SubResource( 3 )
@@ -165,19 +169,28 @@ shape = SubResource( 3 )
 [node name="story_1_wakeup" type="Area" parent="actual_game/texts/story"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08704, 0.885981, 80.4714 )
 script = ExtResource( 4 )
-bbtext_to_display = [ "...", "Wait ...", "Where am I?", "I can't remember ...", "My left arm is missing", "Who.. or what was I running from?", "This forest seems... familiar?" ]
+bbtext_to_display = [ "...", "Wait ...", "Where am I?" ]
 prioritary_text = false
 
 [node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_1_wakeup"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201744, 2.38419e-07, 0.850914 )
 shape = SubResource( 1 )
 
+[node name="story_1_wakeup2" type="Area" parent="actual_game/texts/story"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3782, 0.885982, 82.5612 )
+script = ExtResource( 4 )
+bbtext_to_display = [ "I can't remember ...", "My left arm is missing", "Where am I?", "Who.. or what was I running from?", "This forest seems... familiar?" ]
+prioritary_text = false
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_1_wakeup2"]
+transform = Transform( 0.86996, 0, 0.493122, 0, 1, 0, -0.493122, 0, 0.86996, 0.201744, 2.38419e-07, 0.850914 )
+shape = SubResource( 6 )
+
 [node name="action_tips" type="Spatial" parent="actual_game/texts"]
 
 [node name="move_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8185, 0.388094, 77.5203 )
 bbtext_to_display = [ "Mouse -> [b]Look around[/b]\\n[WASD] or [Arrows] -> [b]Walk[/b]" ]
-display_only_once = true
 time_to_display_secs = 5.0
 mode = 1
 
@@ -185,7 +198,6 @@ mode = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 script = ExtResource( 20 )
 bbtext_to_display = [ "[CTRL] or [C] -> [b]Crouch[/b]\\nLeft Mouse Button -> [b]Take[/b]" ]
-display_only_once = true
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/take_instructions" index="0"]
@@ -198,7 +210,6 @@ monitoring = false
 monitorable = false
 script = ExtResource( 21 )
 bbtext_to_display = [ "[TAB] -> [b]Examine item[/b]" ]
-display_only_once = true
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions" index="0"]
@@ -210,8 +221,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 monitoring = false
 monitorable = false
 script = ExtResource( 22 )
-bbtext_to_display = [ "[WASD] [Q][E] or [Arrows] or Left Mouse Button -> [b]Rotate item[/b]\\n[Z] [X] or Mouse Wheel -> [b]Zoom In/Out[b]\\n[TAB] -> [b]Stop examining[/b]" ]
-display_only_once = true
+bbtext_to_display = [ "[WASD] [Q][E] or [Arrows] or Left Mouse Button -> [b]Rotate item[/b]\\n[Z] [X] or Mouse Wheel -> [b]Zoom In/Out[/b]\\n[TAB] -> [b]Stop examining[/b]" ]
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions2" index="0"]
@@ -222,8 +232,7 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 monitoring = false
 monitorable = false
-bbtext_to_display = [ "[SPACE] -> [b]Hold item in front of you[/b]" ]
-display_only_once = true
+bbtext_to_display = [ "[SPACE] -> [b]Hold item in front of you[/b]\\n[R] -> Release item" ]
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/point_forward_instructions" index="0"]
@@ -231,9 +240,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
 shape = SubResource( 5 )
 
 [node name="run_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6265, 0.388094, 85.4608 )
-bbtext_to_display = [ "[SHIFT] -> Run" ]
-display_only_once = true
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 85.7217, 1.19042, -3.97576 )
+bbtext_to_display = [ "[SHIFT] -> [b]Run[/b]" ]
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/run_instructions" index="0"]

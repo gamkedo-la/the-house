@@ -17,10 +17,13 @@ onready var _door_handle_2 : Spatial = $"main_mesh/door_handle_2"
 onready var _open_position : Spatial = $"open_position"
 onready var _closed_position : Spatial = $"closed_position"
 
+var _is_ready := false
+
 func _ready():
 	_setup_door_handle(_door_handle_1)
 	_setup_door_handle(_door_handle_2)
 	_update_door_mesh_state()
+	_is_ready = true
 
 func _setup_door_handle(door_handle:Spatial):
 	door_handle.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
@@ -37,6 +40,8 @@ func _set_open(should_open:bool):
 
 func open() -> void:
 	if is_locked:
+		if _is_ready:
+			global.current_player.action_display.display_text_sequence(["Locked..."])
 		return
 	is_open = true
 	_update_door_mesh_state()
@@ -70,6 +75,9 @@ func _set_locked(should_be_locked:bool):
 func unlock() -> void:
 	emit_signal("door_unlocked")
 	is_locked = false
+
+	if _is_ready:
+		global.current_player.action_display.display_text_sequence(["Unlocked!"])
 	
 func lock() -> void:
 	emit_signal("door_locked")

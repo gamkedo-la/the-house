@@ -11,7 +11,7 @@ extents = Vector3( 0.0509921, 0.00818999, 0.137254 )
 [node name="hand" type="RigidBody"]
 collision_layer = 129
 script = ExtResource( 1 )
-description = "A real human hand...cut from his owner..."
+description = "A real human hand...cut from his owner...\\nIt's not mine."
 
 [node name="placeholder_please_replace_me" type="CSGCombiner" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.83171e-10, 0, -0.0202046 )

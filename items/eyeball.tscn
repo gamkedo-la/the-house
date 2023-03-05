@@ -20,7 +20,7 @@ radius = 0.05
 
 [node name="eyeball" type="RigidBody"]
 script = ExtResource( 1 )
-description = "A real human eye ball... not mine."
+description = "A real human eye ball...\\nIt's not mine."
 
 [node name="placeholder_please_replace_me" type="CSGCombiner" parent="."]
 

@@ -49,3 +49,6 @@ func _find_key_slot() -> Spatial:
 	assert(node is Spatial)
 	return node as Spatial
 	
+
+func get_class() -> String:
+	return "LockArea"

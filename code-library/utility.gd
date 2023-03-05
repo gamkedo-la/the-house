@@ -88,3 +88,17 @@ static func centered_text(text: String) -> String:
 static func now_secs() -> float:
 	return Time.get_ticks_msec() * 0.001
 	
+
+static func has_node_type(node_type: String, node: Node) -> bool:
+	assert(not node_type.empty())
+	var node_class_name = node.get_class()
+	if node_class_name == node_type:
+		return true
+		
+	for child in node.get_children():
+		if has_node_type(node_type, child):
+			return true
+			
+	return false
+
+

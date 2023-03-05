@@ -20,3 +20,5 @@ func on_fire_off() -> void:
 #	print("fire area off")
 	_is_fire_on = false
 
+func get_class() -> String:
+	return "FireArea"

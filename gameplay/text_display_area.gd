@@ -77,3 +77,8 @@ func _process(_delta) -> void:
 		var time_since_start = utility.now_secs() - _time_player_entered
 		if time_since_start >= time_to_display_secs:
 			_start_display()
+
+
+func get_class() -> String:
+	return "TextDisplayArea"
+	

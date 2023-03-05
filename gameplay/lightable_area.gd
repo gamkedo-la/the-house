@@ -21,3 +21,5 @@ func _on_area_entered(area: Area) -> void :
 	if not get_parent() == area.get_parent() and area is FireArea and area.is_fire_on(): 
 		light_using_fire()
 
+func get_class() -> String:
+	return "LightableArea"

@@ -10,6 +10,7 @@ signal door_opened()
 signal door_closed()
 signal door_locked()
 signal door_unlocked()
+signal notified_door_is_locked()
 
 onready var _door : Spatial = $"main_mesh"
 onready var _door_handle_1 : Spatial = $"main_mesh/door_handle_1"
@@ -41,6 +42,7 @@ func _set_open(should_open:bool):
 func open() -> void:
 	if is_locked and not Engine.editor_hint:
 		if _is_ready:
+			emit_signal("notified_door_is_locked")
 			global.current_player.action_display.display_text_sequence(["Locked..."])
 			return
 	is_open = true

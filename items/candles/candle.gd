@@ -7,6 +7,7 @@ var _player : Player
 var _displaying_instructions := false
 
 func _ready() -> void:
+	$instructions_area.set_collision_mask_bit(CollisionLayers.player_collision_layer_bit, true)
 	$instructions_area.connect("body_entered", self, "_on_entered_instruction_area")
 	$instructions_area.connect("body_exited", self, "_on_exited_instruction_area")
 
@@ -44,7 +45,7 @@ func _on_exited_instruction_area(player) -> void:
 func _process(_delta) -> void:
 	if _player is Player and not _player.did_light_a_candle and _player.is_holding_item():
 		var item = _player.get_item_in_hand()
-		if not _displaying_instructions and ItemUtils.has_fire_area(item):
+		if not _displaying_instructions and utility.has_node_type("FireArea", item):
 			_player.info_display.display_text_sequence(["Bring a flame close to the thread to light a candle."])
 			_displaying_instructions = true 
 			

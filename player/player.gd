@@ -50,6 +50,8 @@ var _initial_head_transform : Transform
 var _last_linear_velocity: Vector3
 
 var did_light_a_candle := false
+var did_unlock_using_a_key := false
+var did_try_to_open_door := false
 
 onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin

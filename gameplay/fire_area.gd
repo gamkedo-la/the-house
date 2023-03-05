@@ -19,3 +19,4 @@ func on_fire_on() -> void:
 func on_fire_off() -> void:
 #	print("fire area off")
 	_is_fire_on = false
+

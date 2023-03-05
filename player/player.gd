@@ -49,6 +49,8 @@ var _initial_head_transform : Transform
 
 var _last_linear_velocity: Vector3
 
+var did_light_a_candle := false
+
 onready var _crouch_tween := $"%Camera/crouch_tween"
 onready var _up_position : Vector3 = _camera.transform.origin
 var _is_crouched := false

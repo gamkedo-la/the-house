@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/ground_checker.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://player/scene_cam.gd" type="Script" id=4]
 [ext_resource path="res://fonts/player_text_normal.tres" type="DynamicFont" id=5]
 [ext_resource path="res://player/fsm/player-statemachine.gd" type="Script" id=6]
+[ext_resource path="res://fonts/Dancing_Script/static/DancingScript-Bold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://player/debug_info.gd" type="Script" id=8]
 [ext_resource path="res://player/fsm/state-no-item.gd" type="Script" id=9]
 [ext_resource path="res://player/fsm/state-holding-item.gd" type="Script" id=10]
@@ -14,6 +15,7 @@
 [ext_resource path="res://player/shadow_mesh/shadow_mesh_one_arm_no_legs.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
 [ext_resource path="res://player/text_display.gd" type="Script" id=15]
+[ext_resource path="res://fonts/Dancing_Script/static/DancingScript-Medium.ttf" type="DynamicFontData" id=16]
 
 [sub_resource type="CapsuleShape" id=13]
 radius = 0.35
@@ -41,6 +43,16 @@ flags_disable_ambient_light = true
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0, 0.0862745, 1, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
+outline_size = 4
+outline_color = Color( 0.52549, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 50
+font_data = ExtResource( 16 )
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
@@ -221,7 +233,7 @@ unique_name_in_owner = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -270.0
+margin_top = -228.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
@@ -239,7 +251,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -308.0
-margin_bottom = -154.0
+margin_bottom = -88.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
@@ -256,12 +268,13 @@ fade_duration_secs = 0.5
 [node name="info_display" type="RichTextLabel" parent="Head/Camera"]
 unique_name_in_owner = true
 anchor_right = 1.0
-margin_bottom = 148.0
+margin_top = 17.0
+margin_bottom = 381.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.427451, 0.141176, 0.141176, 1 )
-custom_fonts/bold_font = ExtResource( 3 )
-custom_fonts/normal_font = ExtResource( 5 )
+custom_fonts/bold_font = SubResource( 16 )
+custom_fonts/normal_font = SubResource( 17 )
 bbcode_enabled = true
 bbcode_text = "[center]This is the text being displayed [b]to the player[/b][/center]"
 text = "This is the text being displayed to the player"

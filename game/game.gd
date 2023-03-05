@@ -7,6 +7,8 @@ var master_scene = null # Dont use this except if this is a scene below main whe
 var _spawn_points := []
 var _next_spawn_point = 0
 
+signal on_game_pause_or_resume()
+
 func _ready() -> void :
 	_add_spawn_points(self)
 	

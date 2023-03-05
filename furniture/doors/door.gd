@@ -77,7 +77,7 @@ func unlock() -> void:
 	is_locked = false
 
 	if _is_ready:
-		global.current_player.action_display.display_text_sequence(["Unlocked!"])
+		global.current_player.action_display.display_text_sequence(["[b]Unlocked![/b]"])
 	
 func lock() -> void:
 	emit_signal("door_locked")

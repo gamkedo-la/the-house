@@ -7,12 +7,12 @@ func _ready() -> void:
 	lock()
 	
 func _on_door_unlocked()-> void:
-	var ladder = $"../../attic_ladder"
+	var ladder = get_node_or_null("../../attic_ladder")
 	if ladder:
 		ladder.visible = true
 
 func _on_door_locked()-> void:
-	var ladder = $"../../attic_ladder"
+	var ladder = get_node_or_null("../../attic_ladder")
 	if ladder:
 		ladder.visible = false
  

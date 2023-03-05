@@ -9,6 +9,7 @@ func _update_scale() -> void:
 	var new_scale = Vector3(width, height, width)
 	$mesh.scale = new_scale
 	$collision_shape.scale = new_scale
+	$collision_shape.transform.origin = Vector3(0.0, ($collision_shape.shape.extents.y * height), 0.0)
 
 func _set_width(new_value : float) -> void:
 	width = new_value

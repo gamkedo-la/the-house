@@ -52,9 +52,8 @@
 [ext_resource path="res://items/mushrooms/yellow/mushroom_8.glb" type="PackedScene" id=50]
 [ext_resource path="res://items/mushrooms/yellow/mushroom_7.glb" type="PackedScene" id=51]
 
-[sub_resource type="CylinderShape" id=1]
-height = 0.197119
-radius = 0.0601154
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.0471066, 0.139764, 0.0383057 )
 
 [sub_resource type="SphereShape" id=2]
 radius = 18.0
@@ -65,12 +64,12 @@ collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
-mushroom_shape = 6
+mushroom_shape = 4.72992
 lightening_distance = 18.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, -0.0331457, 0 )
+shape = SubResource( 3 )
 
 [node name="models" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1798, 0 )
@@ -222,12 +221,12 @@ visible = false
 visible = false
 
 [node name="mushroom_4" parent="models/yellow" instance=ExtResource( 48 )]
-visible = false
 
 [node name="mushroom_5" parent="models/yellow" instance=ExtResource( 22 )]
 visible = false
 
 [node name="mushroom_6" parent="models/yellow" instance=ExtResource( 36 )]
+visible = false
 
 [node name="mushroom_7" parent="models/yellow" instance=ExtResource( 51 )]
 visible = false

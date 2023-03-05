@@ -39,10 +39,10 @@ func _set_open(should_open:bool):
 		close()
 
 func open() -> void:
-	if is_locked:
+	if is_locked and not Engine.editor_hint:
 		if _is_ready:
 			global.current_player.action_display.display_text_sequence(["Locked..."])
-		return
+			return
 	is_open = true
 	_update_door_mesh_state()
 	emit_signal("door_opened")
@@ -76,7 +76,7 @@ func unlock() -> void:
 	emit_signal("door_unlocked")
 	is_locked = false
 
-	if _is_ready:
+	if _is_ready and not Engine.editor_hint:
 		global.current_player.action_display.display_text_sequence(["[b]Unlocked![/b]"])
 	
 func lock() -> void:

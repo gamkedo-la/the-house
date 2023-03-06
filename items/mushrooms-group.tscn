@@ -10,80 +10,97 @@ script = ExtResource( 1 )
 [node name="mushrooms" type="Spatial" parent="."]
 
 [node name="mushroom" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0351387, 0, -0.538813 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179611, 0, -0.902543 )
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
-mushroom_color = 1
-mushroom_shape = 3
+description = "An unusual mushroom"
+mushroom_color = 2
+mushroom_shape = 1
 
 [node name="mushroom2" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.810012, 0, 0.755317 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.583265, 0, -0.108573 )
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
-mushroom_color = 1
-mushroom_shape = 6
-
-[node name="mushroom3" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44936, 0, -0.246608 )
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_shape = 7
-
-[node name="mushroom4" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675241, 0, 0.875532 )
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_color = 1
-mushroom_shape = 1
-
-[node name="mushroom5" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29755, 0, 0.221284 )
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
-mushroom_shape = 1
-
-[node name="mushroom6" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741104, 0, -0.140108 )
-collision_layer = 129
-mode = 1
-angular_damp = 10.222
-script = ExtResource( 3 )
+description = "An unusual mushroom"
 mushroom_color = 1
 mushroom_shape = 2
 
-[node name="mushroom7" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188789, 0, 0.71712 )
+[node name="mushroom3" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0613052, 0, 0.810482 )
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
+description = "An unusual mushroom"
 mushroom_color = 4
-mushroom_shape = 3
+
+[node name="mushroom4" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446077, 0, 0.0185319 )
+collision_layer = 129
+collision_mask = 0
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+description = "An unusual mushroom"
+mushroom_color = 1
+mushroom_shape = 6
+
+[node name="mushroom5" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.643382, 0, -0.708301 )
+collision_layer = 129
+collision_mask = 0
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+description = "An unusual mushroom"
+mushroom_color = 2
+mushroom_shape = 2
+
+[node name="mushroom6" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641176, 0, 0.832027 )
+collision_layer = 129
+collision_mask = 0
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+description = "An unusual mushroom"
+mushroom_color = 3
+
+[node name="mushroom7" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984694, 0, 0.192568 )
+collision_layer = 129
+collision_mask = 0
+mode = 1
+angular_damp = 10.222
+script = ExtResource( 3 )
+description = "An unusual mushroom"
+mushroom_shape = 1
 
 [node name="mushroom8" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.560073, 0, -0.984707 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.942891, 0, -0.707034 )
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
-mushroom_color = 2
+description = "An unusual mushroom"
+mushroom_color = 4
 mushroom_shape = 7
 
 [node name="mushroom9" type="RigidBody" parent="mushrooms" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.688945, 0, -0.719926 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774727, 0, 0.957434 )
 collision_layer = 129
+collision_mask = 0
 mode = 1
 angular_damp = 10.222
 script = ExtResource( 3 )
-mushroom_color = 3
-mushroom_shape = 6
+description = "An unusual mushroom"
+mushroom_color = 2
+mushroom_shape = 7

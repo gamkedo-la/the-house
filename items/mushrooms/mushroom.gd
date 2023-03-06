@@ -22,7 +22,7 @@ const mushroom_shapes_count := 9 # We cannot use this in values of `export` thou
 export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
 export var random_mushroom_shape := true
 export var is_stuck_in_ground := true
-export(float, 0.01, 100.0) var lightening_distance := 1.0 setget _set_lightening_distance
+export(float, 0.01, 100.0) var lightening_distance := 8.0 setget _set_lightening_distance
 
 var _target_light_strengh : float
 
@@ -127,27 +127,28 @@ func _set_mushroom_shape(new_shape: int) -> void:
 			_update_mushroom()
 
 func _check_light_visibility() -> void:
-	if not _is_ready:
+	if not _is_ready or _light_node == null:
 		return
 		
 	var shape : SphereShape = _lighten_area_shape.shape
 	shape.radius = lightening_distance
 	_lighten_area_shape.transform.origin = _lighten_area_shape.transform.origin
-	for body in _lighten_area.get_overlapping_bodies():
-		if _light_node and body is Player and mushroom_color != MushroomColor.brown and _light_node.visible == false:
-			_light_node.visible = true
-		else:
-			_light_node.visible = false
+	if _player is Player and _lighten_area.overlaps_body(_player) and mushroom_color != MushroomColor.brown:
+		_light_node.visible = true
+	else:
+		_light_node.visible = false
 
 func _on_player_is_close(player : Node) -> void:
 	if _light_node and player is Player and mushroom_color != MushroomColor.brown and _light_node.visible == false:
+#		print("mushroom %s starts tracking player" % name)
 		_player = player
-		_light_node.visible = true
+		_check_light_visibility()
 
 func _on_player_left(player: Node) -> void:
-	if _light_node and player is Player and _light_node.visible == true:
+	if player is Player:
+#		print("mushroom %s stops tracking player" % name)
 		_player = null
-		_light_node.visible = false
+		_check_light_visibility()
 
 func _set_lightening_distance(new_value: float) -> void:
 	lightening_distance = new_value
@@ -155,8 +156,14 @@ func _set_lightening_distance(new_value: float) -> void:
 	
 func _process(delta):
 	if _light_node and _player is Player:
-		var player_distance = _player.global_transform.origin.distance_to(self.global_transform.origin)
-		var distance_ratio = 1.0 - (player_distance / lightening_distance)
-		_light_node.light_energy = lerp(0, _target_light_strengh, distance_ratio)
+		compute_light_intensity()
 		
+	
+func compute_light_intensity() -> void:
+	var player_distance = Vector2(_player.global_transform.origin.x, _player.global_transform.origin.z).distance_to(Vector2(self.global_transform.origin.x, self.global_transform.origin.z))
+	var distance_ratio = player_distance / lightening_distance
+	var lighting_ratio = 1.0 - distance_ratio
+	_light_node.light_energy = smoothstep(0, _target_light_strengh, ease(lighting_ratio, -3.2)) # see https://docs.godotengine.org/en/3.5/classes/class_@gdscript.html#class-gdscript-method-ease
+#	print("mushroom %s : _light_node.light_energy = %s, ratio = %s" % [name, _light_node.light_energy, lighting_ratio])
+	
 	

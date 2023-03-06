@@ -56,7 +56,7 @@
 extents = Vector3( 0.0471066, 0.139764, 0.0383057 )
 
 [sub_resource type="SphereShape" id=2]
-radius = 18.0
+radius = 8.0
 
 [node name="mushroom" type="RigidBody"]
 collision_layer = 129
@@ -65,8 +65,7 @@ mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
 description = "An unusual mushroom"
-mushroom_shape = 4
-lightening_distance = 18.0
+mushroom_shape = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, -0.0331457, 0 )
@@ -213,7 +212,6 @@ visible = false
 visible = false
 
 [node name="mushroom_1" parent="models/yellow" instance=ExtResource( 30 )]
-visible = false
 
 [node name="mushroom_2" parent="models/yellow" instance=ExtResource( 47 )]
 visible = false
@@ -222,6 +220,7 @@ visible = false
 visible = false
 
 [node name="mushroom_4" parent="models/yellow" instance=ExtResource( 48 )]
+visible = false
 
 [node name="mushroom_5" parent="models/yellow" instance=ExtResource( 22 )]
 visible = false

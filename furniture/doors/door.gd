@@ -6,6 +6,9 @@ class_name Door
 export var is_open := false setget _set_open, _is_open
 export var is_locked := false setget _set_locked, _is_locked
 
+export var locked_text := "Locked..."
+export var unlocked_text := "[b]Unlocked![/b]"
+
 signal door_opened()
 signal door_closed()
 signal door_locked()
@@ -43,7 +46,7 @@ func open() -> void:
 	if is_locked and not Engine.editor_hint:
 		if _is_ready:
 			emit_signal("notified_door_is_locked")
-			global.current_player.action_display.display_text_sequence(["Locked..."])
+			global.current_player.action_display.display_text_sequence([ locked_text ])
 			return
 	is_open = true
 	_update_door_mesh_state()
@@ -79,7 +82,7 @@ func unlock() -> void:
 	is_locked = false
 
 	if _is_ready and not Engine.editor_hint:
-		global.current_player.action_display.display_text_sequence(["[b]Unlocked![/b]"])
+		global.current_player.action_display.display_text_sequence([ unlocked_text ])
 	
 func lock() -> void:
 	emit_signal("door_locked")

@@ -40,6 +40,7 @@ material = ExtResource( 3 )
 
 [node name="toolshed_door" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45838, 0.00181285, 2.839 )
+is_locked = true
 
 [node name="ground" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )

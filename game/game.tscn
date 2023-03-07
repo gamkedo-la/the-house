@@ -109,10 +109,13 @@ transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.99809
 transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 5.07294, 24.4241, 2.8632 )
 
 [node name="quick_travel_spawn_point" type="Spatial" parent="debug"]
-transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, -20.6121, 26.7836, 2.8632 )
+transform = Transform( 0.157434, -5.58793e-09, -0.987529, 0.0608894, -0.998097, 0.00970713, -0.985651, -0.0616583, -0.157135, -20.6121, 26.7836, 0.124507 )
+
+[node name="quick_travel_spawn_point5" type="Spatial" parent="debug"]
+transform = Transform( -0.0710447, -8.3819e-09, -0.997473, 0.0615025, -0.998097, -0.00438049, -0.995575, -0.0616583, 0.0709095, -24.1075, 26.8043, -0.61224 )
 
 [node name="player_spawn_point" type="Spatial" parent="debug"]
-transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 17.8366, 0.68955, 72.0178 )
+transform = Transform( -0.0174873, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0174873, 7.9276, 0.68955, 78.1737 )
 
 [node name="paused_screen" parent="." instance=ExtResource( 18 )]
 pause_mode = 2

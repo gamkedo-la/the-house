@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="giant_mouth" type="Spatial"]
+
+[node name="placeholder_mesh_please_replace_me" type="Spatial" parent="."]
+
+[node name="lip_up" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.204415, 0.15 )
+use_collision = true
+width = 1.25524
+height = 0.394843
+depth = 0.3
+
+[node name="lip_down" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, 0.15 )
+use_collision = true
+width = 1.7
+height = 0.312315
+depth = 0.3

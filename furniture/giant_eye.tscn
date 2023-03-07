@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://furniture/giant_eye/giant_eye.gd" type="Script" id=1]
+[ext_resource path="res://furniture/giant_eye/giant_eyeball.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.84336, 1.14634, 2.0527 )
+
+[node name="giant_eye" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="eyelid_down_closed" type="Spatial" parent="."]
+transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -1.43489e-08, -0.25, -0.0941629 )
+
+[node name="eyelid_up_closed" type="Spatial" parent="."]
+transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -1.43489e-08, 0.25, -0.0941629 )
+
+[node name="placeholder_mesh_please_replace_me" type="CSGCombiner" parent="."]
+transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 1.41786e-08, 0, 0.080206 )
+
+[node name="eyelid_down" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.514065, 0.15 )
+use_collision = true
+width = 1.0
+height = 0.5
+depth = 0.3
+
+[node name="eyelid_up" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.478762, 0.15 )
+use_collision = true
+width = 1.0
+height = 0.5
+depth = 0.3
+
+[node name="back" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.120444 )
+use_collision = true
+width = 1.0
+height = 1.07423
+depth = 0.237424
+
+[node name="eyeball" parent="placeholder_mesh_please_replace_me" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.85688e-09, 0, 0.080206 )
+
+[node name="wall" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.193669 )
+operation = 2
+use_collision = true
+width = 1.0
+height = 1.07423
+depth = 0.345721
+
+[node name="attention_area" type="Area" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.91157e-08, 0, 0.0597325 )
+
+[node name="CollisionShape" type="CollisionShape" parent="attention_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906832, 0, -2.05692 )
+shape = SubResource( 4 )

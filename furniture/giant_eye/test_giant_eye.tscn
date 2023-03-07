@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://furniture/giant_eye.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="giant_eye" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.59826, 1.41861, -1.20745 )
+
+[node name="ground" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294204, 0, -0.839622 )
+use_collision = true
+width = 8.61103
+height = 0.231972
+depth = 10.7569
+
+[node name="Player" parent="ground" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584546, 0.115986, 2.54335 )

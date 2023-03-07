@@ -163,7 +163,7 @@ func compute_light_intensity() -> void:
 	var player_distance = Vector2(_player.global_transform.origin.x, _player.global_transform.origin.z).distance_to(Vector2(self.global_transform.origin.x, self.global_transform.origin.z))
 	var distance_ratio = player_distance / lightening_distance
 	var lighting_ratio = 1.0 - distance_ratio
-	_light_node.light_energy = smoothstep(0, _target_light_strengh, ease(lighting_ratio, -3.2)) # see https://docs.godotengine.org/en/3.5/classes/class_@gdscript.html#class-gdscript-method-ease
+	_light_node.light_energy = lerp(0, _target_light_strengh, ease(lighting_ratio, -3.2)) # see https://docs.godotengine.org/en/3.5/classes/class_@gdscript.html#class-gdscript-method-ease
 #	print("mushroom %s : _light_node.light_energy = %s, ratio = %s" % [name, _light_node.light_energy, lighting_ratio])
 	
 	

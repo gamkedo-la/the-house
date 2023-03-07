@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://furniture/giant_eye/giant_eyeball.gltf" type="PackedScene" id=1]
+
+[node name="giant_eyeball_mesh" instance=ExtResource( 1 )]

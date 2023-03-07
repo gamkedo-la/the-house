@@ -36,7 +36,7 @@ var _tracking_position = Spatial
 var _tracking_rotation_enabled = TrackingOrientation.FOLLOW
 var _is_taken := false
 
-const _tracking_speed := 500.0
+const _tracking_speed := 1000.0
 const _tracking_angular_speed := 1000.0
 
 

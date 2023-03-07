@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0156863, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.615686, 0, 0, 1 )
+
+[node name="CSGCombiner" type="CSGCombiner"]
+
+[node name="eyeball" type="CSGSphere" parent="."]
+unique_name_in_owner = true
+transform = Transform( -6, 0, -9.05975e-07, 0, 6, 0, 9.05975e-07, 0, -6, 0, 0, 0 )
+radius = 0.05
+radial_segments = 24
+rings = 12
+material = SubResource( 1 )
+
+[node name="lens" type="CSGSphere" parent="eyeball"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.033 )
+radius = 0.025
+radial_segments = 24
+rings = 12
+material = SubResource( 2 )
+
+[node name="pupil" type="CSGSphere" parent="eyeball"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0478451 )
+radius = 0.0115792
+radial_segments = 24
+rings = 12
+material = SubResource( 3 )

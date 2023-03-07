@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://placeholder_material.tres" type="Material" id=1]
 
 [node name="giant_mouth" type="Spatial"]
 
@@ -10,6 +12,7 @@ use_collision = true
 width = 1.25524
 height = 0.394843
 depth = 0.3
+material = ExtResource( 1 )
 
 [node name="lip_down" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, 0.15 )
@@ -17,3 +20,4 @@ use_collision = true
 width = 1.7
 height = 0.312315
 depth = 0.3
+material = ExtResource( 1 )

@@ -339,7 +339,7 @@
                         <mxPoint x="739.6000000000001" y="1270" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="93" value="Locked Door&lt;br&gt;Requires playing the &lt;b&gt;MUSIC BOX&lt;/b&gt; to the door's ear" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="92" vertex="1" connectable="0">
+                <mxCell id="93" value="&lt;strike&gt;Locked Door&lt;br&gt;&lt;/strike&gt;Requires playing the &lt;b&gt;MUSIC BOX&lt;/b&gt; to the door's ear" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="92" vertex="1" connectable="0">
                     <mxGeometry x="-0.3665" y="1" relative="1" as="geometry">
                         <mxPoint x="20" y="9" as="offset"/>
                     </mxGeometry>

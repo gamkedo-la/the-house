@@ -292,7 +292,7 @@
                 <mxCell id="69" value="Kitchen&lt;br&gt;&lt;br&gt;It's a normal amercan kitchen with a table along the interior wall.&lt;br&gt;Normal... except for weird ingredients, butcher tools and mushrooms everywhere." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="950" y="790" width="260" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="72" value="Trapdoor on the attic&lt;br&gt;Locked.&lt;br&gt;&lt;br&gt;There is a keypad on the wall close to the trapdoor, needs a code to open." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                <mxCell id="72" value="&lt;strike&gt;Trapdoor on the attic&lt;br&gt;Locked.&lt;/strike&gt;&lt;br&gt;&lt;br&gt;There is a keypad on the wall close to the trapdoor, needs a code to open." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="50" y="860" width="160" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" style="edgeStyle=none;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="74" target="17" edge="1">
@@ -301,7 +301,7 @@
                 <mxCell id="74" value="&lt;span style=&quot;font-size: 12px&quot;&gt;&lt;strike&gt;Next to the house door, there are various objects (pots? rocks?) and a key (&lt;b&gt;the house key&lt;/b&gt;) under one of these objects.&lt;/strike&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry y="300" width="160" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="76" value="Having a &lt;b&gt;light source&lt;/b&gt; close or pointed at the eye will close it and the mouth will open (with a disturbing noise). &lt;b&gt;An OLD WOMAN SHOE&lt;/b&gt;&amp;nbsp;will fall from it." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
+                <mxCell id="76" value="&lt;strike&gt;Having a &lt;b&gt;light source&lt;/b&gt; close or pointed at the eye will close it and the mouth will open (with a disturbing noise). &lt;b&gt;An OLD WOMAN SHOE&lt;/b&gt;&amp;nbsp;will fall from it.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry x="1219.9962500000001" y="430" width="160" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="82" style="edgeStyle=none;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="79" target="69" edge="1">

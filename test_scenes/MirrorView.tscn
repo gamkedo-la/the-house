@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="QuadMesh" id=9]
+size = Vector2( 2, 2 )
+
+[sub_resource type="ViewportTexture" id=10]
+viewport_path = NodePath("WindowExample/MirrorView")
+
+[sub_resource type="SpatialMaterial" id=8]
+resource_local_to_scene = true
+flags_unshaded = true
+albedo_texture = SubResource( 10 )
+
+[node name="MirrorView" type="Viewport"]
+size = Vector2( 1080, 1080 )
+shadow_atlas_size = 1024
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.50626, 2, -0.768763 )
+
+[node name="MirrorMesh" type="CSGMesh" parent="."]
+transform = Transform( 4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, -9.19888, 2, -0.694119 )
+mesh = SubResource( 9 )
+material = SubResource( 8 )
+
+[node name="Label3D" type="Label3D" parent="MirrorMesh"]
+transform = Transform( -1, -8.74228e-08, -1.06581e-14, 8.74228e-08, -1, 8.47033e-22, -1.06581e-14, 0, 1, -5.96046e-08, -1.08563, 0.0111513 )
+text = "MIRROR"

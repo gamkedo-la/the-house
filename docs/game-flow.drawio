@@ -307,7 +307,7 @@
                 <mxCell id="82" style="edgeStyle=none;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="79" target="69" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="79" value="The &lt;b&gt;KITCHEN KEY&lt;/b&gt; is put somewhere on a surface of a table or furniture in this room (maybe randomize?)" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
+                <mxCell id="79" value="&lt;strike&gt;The &lt;b&gt;KITCHEN KEY&lt;/b&gt; is put somewhere on a surface of a table or furniture in this room (maybe randomize?)&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry x="1424.99625" y="720" width="160" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;startArrow=block;" parent="1" source="31" target="69" edge="1">
@@ -316,7 +316,7 @@
                         <mxPoint x="700" y="860" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="84" value="Locked Door&lt;br&gt;Requires the Kitchen Key" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="83" vertex="1" connectable="0">
+                <mxCell id="84" value="&lt;strike&gt;Locked Door&lt;br&gt;Requires the Kitchen Key&lt;/strike&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="83" vertex="1" connectable="0">
                     <mxGeometry x="-0.3665" y="1" relative="1" as="geometry">
                         <mxPoint x="4" y="-3" as="offset"/>
                     </mxGeometry>
@@ -539,7 +539,7 @@
                 <mxCell id="185" value="An &lt;b&gt;Old Lantern&lt;/b&gt; is hidden somewhere in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="2150" y="1130" width="140" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="187" value="A &lt;b&gt;Flashlight&lt;/b&gt; is hidden in this room." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
+                <mxCell id="187" value="&lt;strike&gt;A &lt;b&gt;Flashlight&lt;/b&gt; is hidden in this room.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="835" y="1015" width="140" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="189" value="A Crystal Ball is hidden in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">

@@ -384,7 +384,7 @@
                 <mxCell id="194" style="edgeStyle=none;html=1;fontSize=11;fontColor=#FFFF00;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="106" target="193" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="BathRoom&lt;br&gt;&lt;br&gt;Big Bath Thub, Shower,&lt;br&gt;Sink, and other bath stuffs&lt;br&gt;(no toilets)" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                <mxCell id="106" value="&lt;strike&gt;BathRoom&lt;br&gt;&lt;br&gt;Big Bath Thub, Shower,&lt;br&gt;Sink, and other bath stuffs&lt;br&gt;(no toilets)&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="369.99875" y="1420" width="165" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="32" target="106" edge="1">
@@ -413,7 +413,7 @@
                 <mxCell id="115" value="The symbols once decyphered are the&lt;b&gt; code for the big chest.&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry x="-325" y="1270" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="119" value="The first time the player enter the Bathroom, once inside the door closes and locks." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;rounded=1;" parent="1" vertex="1">
+                <mxCell id="119" value="DROPPED&lt;br&gt;&lt;strike&gt;The first time the player enter the Bathroom, once inside the door closes and locks.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="350.00375" y="1570" width="202.5" height="65" as="geometry"/>
                 </mxCell>
                 <mxCell id="150" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="121" target="148" edge="1">
@@ -545,7 +545,7 @@
                 <mxCell id="189" value="A Crystal Ball is hidden in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="1639.9950000000001" y="1985" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="193" value="A MILITARY FLASHLIGHT is hidden in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
+                <mxCell id="193" value="&lt;strike&gt;A MILITARY FLASHLIGHT is hidden in this room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="180" y="1417.5" width="110" height="110" as="geometry"/>
                 </mxCell>
             </root>

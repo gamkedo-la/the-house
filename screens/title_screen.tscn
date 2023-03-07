@@ -173,6 +173,7 @@ far = 8192.0
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
+bus = "Ambiant"
 
 [node name="info" type="CanvasLayer" parent="."]
 

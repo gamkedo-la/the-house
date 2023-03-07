@@ -23,5 +23,5 @@ func switch_light() -> void:
 	else:
 		turn_on()
 
-func _on_crystal_ball_use_item() -> void:
+func _on_crystal_ball_use_item(_item) -> void:
 	switch_light()

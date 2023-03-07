@@ -794,6 +794,36 @@ transform = Transform( -0.0118659, 0.237991, 0.971195, 0.999926, -3.09086e-08, 0
 
 [node name="bathroom" type="Spatial" parent="cardboards"]
 
+[node name="cardboardbox" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8856, 25.4644, 2.93136 )
+
+[node name="cardboardbox2" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2739, 25.4644, 2.93136 )
+
+[node name="cardboardbox3" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 25.4644, 2.93136 )
+
+[node name="cardboardbox4" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.0718, 2.93136 )
+
+[node name="cardboardbox7" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.6718, 2.93136 )
+
+[node name="cardboardbox8" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 27.2718, 2.93136 )
+
+[node name="cardboardbox5" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.9464, 26.0718, 2.93136 )
+
+[node name="cardboardbox6" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.936, 26.6718, 2.93136 )
+
+[node name="cardboardbox9" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3438, 26.0718, 2.94448 )
+
+[node name="cardboardbox10" parent="cardboards/bathroom" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.326, 26.6718, 2.94448 )
+
 [node name="candles" type="Spatial" parent="."]
 
 [node name="Candle" parent="candles" instance=ExtResource( 21 )]

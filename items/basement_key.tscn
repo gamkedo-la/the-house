@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://items/interactive_item.gd" type="Script" id=1]
 [ext_resource path="res://items/basement_key/Basement Key.fbx" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/key_area.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.10754, 0.00126913, 0.0451777 )
+extents = Vector3( 0.10754, 0.0104705, 0.0451777 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.10754, 0.0104705, 0.0451777 )
 
 [node name="Basement Key" type="RigidBody"]
 script = ExtResource( 1 )
@@ -16,3 +20,11 @@ transform = Transform( -8.74228e-09, 0.2, 8.74228e-09, 0, -8.74228e-09, 0.2, 0.2
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -0.00405157, 0.00191236, -0.0596893 )
 shape = SubResource( 1 )
+
+[node name="KeyArea" type="Area" parent="."]
+script = ExtResource( 3 )
+key_name = "basement"
+
+[node name="CollisionShape" type="CollisionShape" parent="KeyArea"]
+transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -0.00405157, 0.00191236, -0.0596893 )
+shape = SubResource( 2 )

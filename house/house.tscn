@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://furniture/sink.tscn" type="PackedScene" id=43]
 [ext_resource path="res://furniture/mirror/old_mirror.tres" type="Material" id=44]
 [ext_resource path="res://furniture/bathtub.tscn" type="PackedScene" id=45]
+[ext_resource path="res://items/basement_key.tscn" type="PackedScene" id=46]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -854,6 +855,60 @@ transform = Transform( -0.92932, -0.369276, 1.61416e-08, 0, -4.37114e-08, -1, 0.
 [node name="cardboardbox10" parent="cardboards/bathroom" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.326, 26.6718, 2.94448 )
 
+[node name="secret_room" type="Spatial" parent="cardboards"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.98653 )
+
+[node name="cardboardbox" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8856, 25.4644, 3.05723 )
+
+[node name="cardboardbox2" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2739, 25.4644, 2.93136 )
+
+[node name="cardboardbox3" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 25.4644, 2.93136 )
+
+[node name="cardboardbox15" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 25.4644, 3.54066 )
+
+[node name="cardboardbox16" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 26.0722, 3.54066 )
+
+[node name="cardboardbox17" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 0.898366, 0, -0.43925, 0, 1, 0, 0.43925, 0, 0.898366, -36.4841, 25.5144, 4.98559 )
+
+[node name="cardboardbox4" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.0718, 2.93136 )
+
+[node name="cardboardbox7" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 25.5144, 1.87893 )
+
+[node name="cardboardbox12" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.1144, 1.87893 )
+
+[node name="cardboardbox8" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.6718, 2.93136 )
+
+[node name="cardboardbox5" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.9464, 25.5144, 2.067 )
+
+[node name="cardboardbox6" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7181, 26.116, 4.91662 )
+
+[node name="cardboardbox11" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3159, 25.5144, 4.9058 )
+
+[node name="cardboardbox9" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3438, 25.5144, 4.2737 )
+
+[node name="cardboardbox13" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3438, 26.2671, 2.4735 )
+
+[node name="cardboardbox14" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.9764, 26.1144, 2.10162 )
+
+[node name="cardboardbox10" parent="cardboards/secret_room" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.326, 25.5144, 2.167 )
+
 [node name="candles" type="Spatial" parent="."]
 
 [node name="Candle" parent="candles" instance=ExtResource( 21 )]
@@ -886,6 +941,9 @@ transform = Transform( -4.37114e-08, -4.37114e-08, 1, -1, -4.37114e-08, -4.37114
 [node name="lantern_old" parent="special_items" instance=ExtResource( 42 )]
 transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 7.74592, 1.09957, -4.96922 )
 description = "An old lantern. It needs [b]fire[/b] on it's red part to be lighten."
+
+[node name="Basement Key" parent="special_items" instance=ExtResource( 46 )]
+transform = Transform( -9.3983e-10, -0.0215008, -0.999769, 1, -4.37114e-08, 0, -4.37013e-08, -0.999769, 0.0215008, 0.434906, 0.0696629, -7.29361 )
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

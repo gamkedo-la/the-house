@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="uLco6t-F94_75e--PfTd" name="Page-1">
-        <mxGraphModel dx="1720" dy="838" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1827" dy="838" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -31,31 +31,31 @@
                 <mxCell id="25" value="" style="edgeStyle=none;html=1;" parent="1" source="6" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="Inside the House&lt;br&gt;&lt;br&gt;Corridor, Toilets and Living Room" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="6" value="Inside the House&lt;br&gt;&lt;br&gt;&lt;strike&gt;Corridor, Toilets and Living Room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="804.5" y="240" width="210" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="" style="edgeStyle=none;html=1;" parent="1" source="8" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="Get the Lighter" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="8" value="&lt;strike&gt;Get the Lighter&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="370" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="" style="edgeStyle=none;html=1;" parent="1" source="10" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Mouth/Eye Puzzle" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="10" value="&lt;strike&gt;Mouth/Eye Puzzle&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="480" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" style="edgeStyle=none;html=1;" parent="1" source="12" target="52" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Get OLD WOMAN SHOE" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="12" value="&lt;strike&gt;Get OLD WOMAN SHOE&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="590" width="120" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="" style="edgeStyle=none;html=1;" parent="1" source="14" target="16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="Get The Music Box" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="14" value="&lt;strike&gt;Get The Music Box&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="829" y="370" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="" style="edgeStyle=none;html=1;" parent="1" source="16" target="20" edge="1">
@@ -91,7 +91,7 @@
                 <mxCell id="27" value="" style="edgeStyle=none;html=1;" parent="1" source="24" target="26" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="Get KITCHEN KEY" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="24" value="&lt;strike&gt;Get KITCHEN KEY&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1219" y="370" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" value="" style="edgeStyle=none;html=1;" parent="1" source="26" target="28" edge="1">

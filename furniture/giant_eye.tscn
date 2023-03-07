@@ -48,12 +48,12 @@ unique_name_in_owner = true
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.85688e-09, 0, 0.080206 )
 
 [node name="wall" type="CSGBox" parent="placeholder_mesh_please_replace_me"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.193669 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32296e-08, 0, -0.244112 )
 operation = 2
 use_collision = true
 width = 1.0
 height = 1.07423
-depth = 0.345721
+depth = 0.201641
 
 [node name="attention_area" type="Area" parent="."]
 unique_name_in_owner = true

@@ -11,9 +11,9 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.59826
 [node name="ground" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294204, 0, -0.839622 )
 use_collision = true
-width = 8.61103
+width = 194.433
 height = 0.231972
-depth = 10.7569
+depth = 143.349
 
 [node name="Player" parent="ground" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584546, 0.115986, 2.54335 )

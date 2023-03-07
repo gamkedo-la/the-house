@@ -201,65 +201,65 @@ transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.580
 
 [node name="mushroom12" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.522466, -3.31918, 11.1057 )
-mushroom_shape = 0.558618
+mushroom_shape = 5.8717
 
 [node name="mushroom13" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( -0.0535733, -0.549777, -0.833591, 8.9407e-08, 0.834791, -0.550568, 0.998564, -0.0294956, -0.044723, -0.625315, -3.01666, 10.7931 )
-mushroom_shape = 3.49513
+mushroom_shape = 1.1874
 
 [node name="mushroom" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.704683, 0.207544, 6.28975 )
 mushroom_color = 2
-mushroom_shape = 6.49962
+mushroom_shape = 2.31891
 
 [node name="mushroom6" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.419579, -0.499761, -0.757755, -0.790007, 0.210071, -0.575985, 0.447037, 0.840303, -0.306674, -0.997313, 0.553488, 6.20613 )
 mushroom_color = 4
-mushroom_shape = 6.23266
+mushroom_shape = 4.49408
 
 [node name="mushroom7" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.665837, -0.0750034, -0.742318, -0.245614, 0.917443, -0.313006, 0.70451, 0.390735, 0.592445, -1.31043, 0.207544, 6.22648 )
 mushroom_color = 1
-mushroom_shape = 1.99701
+mushroom_shape = 7.92024
 
 [node name="mushroom2" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.896479, 0.24395, 0.369885, 0, 0.83479, -0.550568, -0.443087, 0.493573, 0.748372, 0.773506, 0.207544, 6.2813 )
 mushroom_color = 2
-mushroom_shape = 7.49675
+mushroom_shape = 6.45342
 
 [node name="mushroom8" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.85908, -0.00482896, 0.511819, 0.256233, 0.869691, -0.421879, -0.443087, 0.493573, 0.748372, 1.16897, 0.207544, 6.24024 )
 mushroom_color = 2
-mushroom_shape = 0.13268
+mushroom_shape = 4.52701
 
 [node name="mushroom9" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.85908, -0.00482896, 0.511819, 0.256233, 0.869691, -0.421879, -0.443087, 0.493573, 0.748372, 1.00267, 0.186312, 6.31984 )
 mushroom_color = 1
-mushroom_shape = 6.37376
+mushroom_shape = 1.33827
 
 [node name="mushroom11" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.941481, -0.259782, 0.214771, 0.336582, 0.758671, -0.557791, -0.0180362, 0.597438, 0.801712, 0.666407, 0.108186, 9.13537 )
 mushroom_color = 1
-mushroom_shape = 2.29497
+mushroom_shape = 3.15659
 
 [node name="mushroom3" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.809099, -0.323554, -0.490583, 0, 0.83479, -0.550568, 0.587672, 0.445464, 0.675428, 1.74517, 0.207544, 6.26128 )
 mushroom_color = 4
-mushroom_shape = 3.23347
+mushroom_shape = 0.125017
 
 [node name="mushroom4" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.737808, 0.371639, 0.563493, 0, 0.83479, -0.550568, -0.675011, 0.406213, 0.615915, -0.578035, 1.6556, 6.26427 )
 mushroom_color = 1
-mushroom_shape = 7.55649
+mushroom_shape = 4.3777
 
 [node name="mushroom5" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 1.16847, 6.25036 )
-mushroom_shape = 5.29987
+mushroom_shape = 4.4662
 
 [node name="mushroom10" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 2.35922, 6.25036 )
 mushroom_color = 1
-mushroom_shape = 4.04508
+mushroom_shape = 0.388682
 
 [node name="corridor" type="Spatial" parent="mushrooms"]
 
@@ -276,6 +276,7 @@ random_mushroom_shape = false
 
 [node name="mushroom14" parent="mushrooms/corridor" instance=ExtResource( 20 )]
 transform = Transform( 0.804666, -0.593728, 0, 0.593728, 0.804666, 0, 0, 0, 1, 1.53255, 0.223762, -2.8117 )
+mushroom_shape = 1
 random_mushroom_shape = false
 
 [node name="living_room" type="Spatial" parent="mushrooms"]
@@ -283,13 +284,13 @@ random_mushroom_shape = false
 [node name="mushroom" parent="mushrooms/living_room" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.117676, -0.993052, 0, 0.993052, 0.117676, 5.16732, 0.68655, 4.52181 )
 mushroom_color = 1
-mushroom_shape = 4.51013
+mushroom_shape = 4.50112
 is_stuck_in_ground = false
 
 [node name="mushroom2" parent="mushrooms/living_room" instance=ExtResource( 20 )]
 transform = Transform( -0.536799, 0.837848, 0.0992845, 0, 0.117676, -0.993052, -0.84371, -0.533069, -0.0631684, 4.68018, 0.68655, 4.48445 )
 mushroom_color = 4
-mushroom_shape = 2.55284
+mushroom_shape = 5.48665
 is_stuck_in_ground = false
 
 [node name="windows" type="Spatial" parent="."]
@@ -378,15 +379,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84185, 0.0657884, 6.47695 )
 description = "?"
 
 [node name="flower_pot14" parent="props/porch" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51493, 0.0657884, 8.84389 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49328, 0.199494, 8.5945 )
 description = "?"
 
 [node name="flower_pot15" parent="props/porch" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26493, 0.0657884, 8.87717 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71346, 0.0657884, 8.74136 )
 description = "?"
 
 [node name="flower_pot16" parent="props/porch" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0521, 0.0657884, 8.85106 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.10351, 0.0657884, 8.6475 )
 description = "?"
 
 [node name="flower_pot3" parent="props/porch" instance=ExtResource( 32 )]
@@ -396,7 +397,7 @@ width = 2.0
 height = 2.0
 
 [node name="flower_pot13" parent="props/porch" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90872, 0.0657884, 8.83123 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95606, 0.0657884, 8.50878 )
 description = "?"
 width = 2.0
 height = 2.0
@@ -420,7 +421,7 @@ width = 3.0
 height = 3.0
 
 [node name="flower_pot11" parent="props/porch" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60541, 0.0657886, 8.6556 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50205, 0.0657886, 8.55045 )
 description = "?"
 width = 3.0
 height = 3.0
@@ -708,7 +709,7 @@ transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -
 transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.978, 25.5159, 2.76663 )
 
 [node name="cardboardbox25" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.643924, 0, -0.76509, 0, 1, 0, 0.76509, 0, 0.643924, -21.5923, 25.4644, 5.61005 )
+transform = Transform( 0.643924, 0, -0.76509, 0, 1, 0, 0.76509, 0, 0.643924, -21.4264, 25.4644, 5.50706 )
 
 [node name="cardboardbox35" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.891727, 0, 0.857822, 0, 1, 0, -0.452607, 0, 1.67183, -20.8344, 25.5159, 4.84325 )

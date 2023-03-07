@@ -346,6 +346,34 @@ height = 0.367293
 depth = 4.98162
 material = ExtResource( 4 )
 
+[node name="front_porch2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95613, 0.301283, 14.8519 )
+width = 7.916
+height = 0.403118
+depth = 0.12579
+material = ExtResource( 4 )
+
+[node name="front_porch4" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.83794, 0.301283, 12.3553 )
+width = 4.9
+height = 0.403118
+depth = 0.12579
+material = ExtResource( 4 )
+
+[node name="front_porch5" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.8394, 0.301283, 12.3553 )
+width = 4.9
+height = 0.403118
+depth = 0.12579
+material = ExtResource( 4 )
+
+[node name="front_porch3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9491, 0.301283, 14.8467 )
+width = 7.916
+height = 0.403118
+depth = 0.12579
+material = ExtResource( 4 )
+
 [node name="basement_room" type="CSGCombiner" parent="."]
 
 [node name="basement_ground" type="CSGBox" parent="basement_room"]

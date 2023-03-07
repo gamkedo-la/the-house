@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://furniture/giant_eye.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://furniture/giant_mouth.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/old_woman_shoe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://furniture/giant_eye/giant_eye_mouth_behavior.gd" type="Script" id=5]
+[ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/lighter.tscn" type="PackedScene" id=7]
 
 [node name="Spatial" type="Spatial"]
-
-[node name="giant_eye" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.59826, 1.41861, -1.20745 )
+script = ExtResource( 5 )
+key_item_path = NodePath("old_woman_shoe")
 
 [node name="ground" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294204, 0, -0.839622 )
@@ -15,5 +19,22 @@ width = 194.433
 height = 0.231972
 depth = 143.349
 
-[node name="Player" parent="ground" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584546, 0.115986, 2.54335 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613966, 0.115986, 1.70373 )
+
+[node name="giant_eye" parent="." instance=ExtResource( 1 )]
+unique_name_in_owner = true
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.59826, 1.41861, -1.20745 )
+
+[node name="giant_mouth" parent="." instance=ExtResource( 3 )]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 7.45058e-08, 1, 0, -1, 7.45058e-08, -2.71842, 2.42114, 0.283231 )
+
+[node name="torch" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.419516, 0.165986, 1.30892 )
+
+[node name="lighter" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6842, 0.184994, 2.12511 )
+
+[node name="old_woman_shoe" parent="." instance=ExtResource( 4 )]
+transform = Transform( -3.48865e-08, 0.79811, 0.602512, -1, -4.47035e-08, -1.49012e-08, 2.98023e-08, -0.602512, 0.79811, -2.76554, 2.62003, 0.36567 )

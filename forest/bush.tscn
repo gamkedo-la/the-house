@@ -3,14 +3,15 @@
 [ext_resource path="res://forest/shrubbery_stylized/shrubbery_stylized.tscn" type="PackedScene" id=1]
 [ext_resource path="res://forest/tree_like.gd" type="Script" id=2]
 
-[sub_resource type="SphereShape" id=1]
-radius = 0.872561
+[sub_resource type="CylinderShape" id=1]
+height = 1.14695
+radius = 0.774574
 
 [node name="bush" type="StaticBody"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429268, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610338, 0 )
 shape = SubResource( 1 )
 
 [node name="shrubbery_stylized" parent="." instance=ExtResource( 1 )]

@@ -20,6 +20,9 @@ onready var _door_handle_1 : Spatial = $"main_mesh/door_handle_1"
 onready var _door_handle_2 : Spatial = $"main_mesh/door_handle_2"
 onready var _open_position : Spatial = $"open_position"
 onready var _closed_position : Spatial = $"closed_position"
+onready var _last_locked_notification_time := utility.now_secs()
+onready var _last_unlocked_notification_time := utility.now_secs()
+const time_betwen_notifications := 3.0
 
 var _is_ready := false
 
@@ -44,10 +47,13 @@ func _set_open(should_open:bool):
 
 func open() -> void:
 	if is_locked and not Engine.editor_hint:
-		if _is_ready:
+		var now = utility.now_secs()
+		if _is_ready and now >= _last_locked_notification_time + time_betwen_notifications:
+			_last_locked_notification_time = now
 			emit_signal("notified_door_is_locked")
 			global.current_player.action_display.display_text_sequence([ locked_text ])
-			return
+		return
+	
 	is_open = true
 	_update_door_mesh_state()
 	emit_signal("door_opened")
@@ -78,11 +84,17 @@ func _set_locked(should_be_locked:bool):
 		unlock()
 
 func unlock() -> void:
-	emit_signal("door_unlocked")
-	is_locked = false
-
-	if _is_ready and not Engine.editor_hint:
+	if not is_locked:
+		return
+	
+	var now = utility.now_secs()
+	if _is_ready and now >= _last_unlocked_notification_time + time_betwen_notifications and not Engine.editor_hint:
+		_last_unlocked_notification_time = now
 		global.current_player.action_display.display_text_sequence([ unlocked_text ])
+		emit_signal("door_unlocked")
+		
+	is_locked = false
+	
 	
 func lock() -> void:
 	emit_signal("door_locked")

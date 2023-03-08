@@ -26,6 +26,7 @@ func display_text_sequence(new_text_sequence: Array, exclusive: bool = true) -> 
 		assert(text is String)
 		
 	if exclusive:
+		stop_display_sequence()
 		_texts_to_display = new_text_sequence.duplicate()
 	else:
 		_texts_to_display.append_array(new_text_sequence.duplicate())

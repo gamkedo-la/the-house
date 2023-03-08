@@ -107,6 +107,7 @@ shape = SubResource( 2 )
 
 [node name="toilet_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.0514893, -6.71467 )
+is_open = true
 
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.88106 )

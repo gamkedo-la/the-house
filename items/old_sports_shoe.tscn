@@ -4,30 +4,30 @@
 [ext_resource path="res://placeholder_material.tres" type="Material" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.0683309, 0.190145, 0.120912 )
+extents = Vector3( 0.0683309, 0.0503988, 0.140955 )
 
-[node name="old_woman_shoe" type="RigidBody"]
+[node name="old_sports_shoe" type="RigidBody"]
 collision_layer = 129
 mass = 10.0
 script = ExtResource( 1 )
-description = "A woman's shoe. It looks ancient."
+description = "A sports shoe. It looks ancient."
 
 [node name="placeholder_please_replace_me" type="CSGCombiner" parent="."]
 transform = Transform( -1, 0, -1.92963e-07, 0, 1.3107, 0, 1.50996e-07, 0, -1.27793, -8.83171e-10, 0, -0.0202046 )
 
 [node name="palm" type="CSGBox" parent="placeholder_please_replace_me"]
-transform = Transform( 1, -7.10543e-15, -5.68434e-14, 0, 0.911884, -0.410448, -3.55271e-14, 0.410448, 0.911883, -2.54966e-09, -0.00270228, 0.0482766 )
+transform = Transform( 1, 4.94083e-08, -1.50289e-08, -2.98166e-08, 0.984388, -0.16635, 4.02606e-09, 0.154397, 0.989768, -2.54966e-09, -0.0174521, 0.0482766 )
 width = 0.0961576
 height = 0.0275514
 depth = 0.189529
 material = ExtResource( 2 )
 
 [node name="leg" type="CSGCylinder" parent="placeholder_please_replace_me"]
-transform = Transform( 1, 8.79431e-08, 8.74212e-08, 8.74212e-08, -0.999982, 0.00595158, 8.79431e-08, -0.00595158, -0.999982, -6.71845e-09, 0.0995161, -0.0195263 )
+transform = Transform( 1, 8.79431e-08, 8.74212e-08, 8.74212e-08, -0.999982, 0.00595158, 8.79431e-08, -0.00595158, -0.999982, -6.71845e-09, -0.0182765, -0.0195263 )
 radius = 0.0679284
-height = 0.300364
+height = 0.0725987
 material = ExtResource( 2 )
 
 [node name="placeholder_collision_shape" type="CollisionShape" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.46472e-09, 0.134873, -0.0726114 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.46472e-09, -0.0229909, -0.054949 )
 shape = SubResource( 1 )

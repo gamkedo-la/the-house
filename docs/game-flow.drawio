@@ -506,7 +506,7 @@
                 <mxCell id="176" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="164" target="86" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="164" value="Among the items, there is the &lt;b&gt;BASEMENT KEY&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
+                <mxCell id="164" value="&lt;strike&gt;Among the items, there is the &lt;b&gt;BASEMENT KEY&lt;/b&gt;&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="917.01" y="1815" width="150.97" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="169" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="166" target="26" edge="1">
@@ -536,13 +536,13 @@
                 <mxCell id="179" value="Looking at the Grimmor will display a text.&lt;br&gt;This is a recipe for a GOLDEN HANDSHAKE.&lt;br&gt;&lt;br&gt;IT requires:&lt;br&gt;- at least one hand&lt;br&gt;- at least one foot&lt;br&gt;- at least one nose&lt;br&gt;- at least two eyes&lt;br&gt;- several magic mushooms&lt;br&gt;- some gold (a gold object)" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry x="1055.96875" y="2875" width="280" height="165" as="geometry"/>
                 </mxCell>
-                <mxCell id="185" value="An &lt;b&gt;Old Lantern&lt;/b&gt; is hidden somewhere in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
+                <mxCell id="185" value="&lt;strike&gt;An &lt;b&gt;Old Lantern&lt;/b&gt; is hidden somewhere in this room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="2150" y="1130" width="140" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="187" value="&lt;strike&gt;A &lt;b&gt;Flashlight&lt;/b&gt; is hidden in this room.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="835" y="1015" width="140" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="189" value="A Crystal Ball is hidden in this room" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
+                <mxCell id="189" value="&lt;strike&gt;A Crystal Ball is hidden in this room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="1639.9950000000001" y="1985" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="193" value="&lt;strike&gt;A MILITARY FLASHLIGHT is hidden in this room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#f0a30a;strokeColor=#BD7000;fontColor=#000000;" parent="1" vertex="1">

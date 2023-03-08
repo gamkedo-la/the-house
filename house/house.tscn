@@ -156,7 +156,6 @@ locked_text = "Locked...\\nThere is no key-hole."
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.140548, 0.015, -2.018 )
 script = ExtResource( 12 )
-is_open = true
 is_locked = true
 
 [node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]

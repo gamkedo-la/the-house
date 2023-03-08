@@ -494,7 +494,7 @@
                 <mxCell id="165" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="160" target="164" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="160" value="Secret Room&lt;br&gt;&lt;br&gt;Contains far too many mushrooms and weird items.&lt;br&gt;There is a door leading to the real corridor of the house.&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" parent="1" vertex="1">
+                <mxCell id="160" value="Secret Room&lt;br&gt;&lt;br&gt;Contains far too many mushrooms and weird items. DROPPED: replaced by cardboards and weird items&lt;br&gt;DROPPED - &lt;strike&gt;There is a door leading to the real corridor of the house.&lt;/strike&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="870.34375" y="1635" width="241.25" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="162" value="DROPPED - &lt;strike&gt;LOOP PUZZLE SOLVED&lt;/strike&gt;" style="shape=flexArrow;endArrow=classic;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;" parent="1" source="156" target="160" edge="1">

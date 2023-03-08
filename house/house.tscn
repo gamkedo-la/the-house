@@ -1044,7 +1044,7 @@ unique_name_in_owner = true
 transform = Transform( -4.37114e-08, -4.37114e-08, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, 3.8436, 3.42182, -0.881453 )
 
 [node name="lantern_old" parent="special_items" instance=ExtResource( 42 )]
-transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 7.74592, 1.09957, -4.96922 )
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 4.04229, 0.0612942, -7.02659 )
 description = "An old lantern. It needs [b]fire[/b] on it's red part to be lighten."
 
 [node name="Basement Key" parent="special_items" instance=ExtResource( 46 )]

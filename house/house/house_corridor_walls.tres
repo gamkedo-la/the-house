@@ -1,7 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[ext_resource path="res://house/floral-retro-70s-wallpaper-1458245844r7z.jpg" type="Texture" id=1]
-[ext_resource path="res://house/house_interior_wall.jpg" type="Texture" id=2]
+[ext_resource path="res://house/house/floral-retro-70s-wallpaper-1458245844r7z.jpg" type="Texture" id=1]
+[ext_resource path="res://house/house/house_interior_wall.jpg" type="Texture" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true

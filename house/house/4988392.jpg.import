@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_siding_vertical.jpg-4f435404b8f13c78902e13e54ae831d9.s3tc.stex"
-path.etc2="res://.import/wood_siding_vertical.jpg-4f435404b8f13c78902e13e54ae831d9.etc2.stex"
+path.s3tc="res://.import/4988392.jpg-759acaac595b57f7357ed9642d483dd9.s3tc.stex"
+path.etc2="res://.import/4988392.jpg-759acaac595b57f7357ed9642d483dd9.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://house/wood_siding_vertical.jpg"
-dest_files=[ "res://.import/wood_siding_vertical.jpg-4f435404b8f13c78902e13e54ae831d9.s3tc.stex", "res://.import/wood_siding_vertical.jpg-4f435404b8f13c78902e13e54ae831d9.etc2.stex" ]
+source_file="res://house/house/4988392.jpg"
+dest_files=[ "res://.import/4988392.jpg-759acaac595b57f7357ed9642d483dd9.s3tc.stex", "res://.import/4988392.jpg-759acaac595b57f7357ed9642d483dd9.etc2.stex" ]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/roof.jpg-192ae73246add2612d613f4d52be8a45.s3tc.stex"
-path.etc2="res://.import/roof.jpg-192ae73246add2612d613f4d52be8a45.etc2.stex"
+path.s3tc="res://.import/wood_siding.jpg-61c3e8cbe475fee87eee829a262d277c.s3tc.stex"
+path.etc2="res://.import/wood_siding.jpg-61c3e8cbe475fee87eee829a262d277c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://house/roof.jpg"
-dest_files=[ "res://.import/roof.jpg-192ae73246add2612d613f4d52be8a45.s3tc.stex", "res://.import/roof.jpg-192ae73246add2612d613f4d52be8a45.etc2.stex" ]
+source_file="res://house/house/wood_siding.jpg"
+dest_files=[ "res://.import/wood_siding.jpg-61c3e8cbe475fee87eee829a262d277c.s3tc.stex", "res://.import/wood_siding.jpg-61c3e8cbe475fee87eee829a262d277c.etc2.stex" ]
 
 [params]
 

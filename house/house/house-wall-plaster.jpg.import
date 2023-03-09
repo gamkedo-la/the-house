@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/floral-retro-70s-wallpaper-1458245844r7z.jpg-ca77cdc426d7f575522438dc0147fe20.s3tc.stex"
-path.etc2="res://.import/floral-retro-70s-wallpaper-1458245844r7z.jpg-ca77cdc426d7f575522438dc0147fe20.etc2.stex"
+path.s3tc="res://.import/house-wall-plaster.jpg-cdbe37c661b75c62b9b651eb16fae98a.s3tc.stex"
+path.etc2="res://.import/house-wall-plaster.jpg-cdbe37c661b75c62b9b651eb16fae98a.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://house/floral-retro-70s-wallpaper-1458245844r7z.jpg"
-dest_files=[ "res://.import/floral-retro-70s-wallpaper-1458245844r7z.jpg-ca77cdc426d7f575522438dc0147fe20.s3tc.stex", "res://.import/floral-retro-70s-wallpaper-1458245844r7z.jpg-ca77cdc426d7f575522438dc0147fe20.etc2.stex" ]
+source_file="res://house/house/house-wall-plaster.jpg"
+dest_files=[ "res://.import/house-wall-plaster.jpg-cdbe37c661b75c62b9b651eb16fae98a.s3tc.stex", "res://.import/house-wall-plaster.jpg-cdbe37c661b75c62b9b651eb16fae98a.etc2.stex" ]
 
 [params]
 

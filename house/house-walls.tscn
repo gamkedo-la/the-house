@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://house/house_corridor_walls.tres" type="Material" id=1]
-[ext_resource path="res://house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
-[ext_resource path="res://house/wood_siding_spatialmaterial.tres" type="Material" id=4]
-[ext_resource path="res://house/roof_spatialmaterial.tres" type="Material" id=5]
-[ext_resource path="res://house/house_wall_plaster_spatialmaterial.tres" type="Material" id=6]
-[ext_resource path="res://house/house_interior_walls.tres" type="Material" id=7]
-[ext_resource path="res://house/house_back_walls.tres" type="Material" id=8]
+[ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
+[ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://house/house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://house/house/wood_siding_spatialmaterial.tres" type="Material" id=4]
+[ext_resource path="res://house/house/roof_spatialmaterial.tres" type="Material" id=5]
+[ext_resource path="res://house/house/house_wall_plaster_spatialmaterial.tres" type="Material" id=6]
+[ext_resource path="res://house/house/house_interior_walls.tres" type="Material" id=7]
+[ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=8]
 
 [node name="walls" type="CSGCombiner"]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )

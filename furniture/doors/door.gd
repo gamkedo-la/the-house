@@ -27,8 +27,10 @@ const time_betwen_notifications := 3.0
 var _is_ready := false
 
 func _ready():
-	_setup_door_handle(_door_handle_1)
-	_setup_door_handle(_door_handle_2)
+	if _door_handle_1:
+		_setup_door_handle(_door_handle_1)
+	if _door_handle_2:
+		_setup_door_handle(_door_handle_2)
 	_update_door_mesh_state()
 	_is_ready = true
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/house-wall-plaster-normalmap.jpg-d82f6b1d1f4a5eb3b688fa7e210c3a4f.s3tc.stex"
-path.etc2="res://.import/house-wall-plaster-normalmap.jpg-d82f6b1d1f4a5eb3b688fa7e210c3a4f.etc2.stex"
+path.s3tc="res://.import/wood_siding_normalmap.jpg-3e3043ded33c6cc294b9fcc078478094.s3tc.stex"
+path.etc2="res://.import/wood_siding_normalmap.jpg-3e3043ded33c6cc294b9fcc078478094.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://house/house-wall-plaster-normalmap.jpg"
-dest_files=[ "res://.import/house-wall-plaster-normalmap.jpg-d82f6b1d1f4a5eb3b688fa7e210c3a4f.s3tc.stex", "res://.import/house-wall-plaster-normalmap.jpg-d82f6b1d1f4a5eb3b688fa7e210c3a4f.etc2.stex" ]
+source_file="res://house/house/wood_siding_normalmap.jpg"
+dest_files=[ "res://.import/wood_siding_normalmap.jpg-3e3043ded33c6cc294b9fcc078478094.s3tc.stex", "res://.import/wood_siding_normalmap.jpg-3e3043ded33c6cc294b9fcc078478094.etc2.stex" ]
 
 [params]
 

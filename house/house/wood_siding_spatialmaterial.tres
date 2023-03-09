@@ -1,7 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=3 format=2]
 
-[ext_resource path="res://house/house_interior_wall.jpg" type="Texture" id=1]
-[ext_resource path="res://house/house_interior_wall_normalmap.jpg" type="Texture" id=2]
+[ext_resource path="res://house/house/wood_siding.jpg" type="Texture" id=1]
+[ext_resource path="res://house/house/wood_siding_normalmap.jpg" type="Texture" id=2]
 
 [resource]
 flags_world_triplanar = true
@@ -9,4 +9,4 @@ albedo_texture = ExtResource( 1 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 2 )
-uv1_scale = Vector3( 8, 8, 8 )
+uv1_scale = Vector3( 4, 4, 4 )

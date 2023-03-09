@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/4988392.jpg-74e0a89aff758ff727cecd972d7b8602.s3tc.stex"
-path.etc2="res://.import/4988392.jpg-74e0a89aff758ff727cecd972d7b8602.etc2.stex"
+path.s3tc="res://.import/house_exterior_wall.jpg-a9d055344c4bf2bba264b620bcbf3eda.s3tc.stex"
+path.etc2="res://.import/house_exterior_wall.jpg-a9d055344c4bf2bba264b620bcbf3eda.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://house/4988392.jpg"
-dest_files=[ "res://.import/4988392.jpg-74e0a89aff758ff727cecd972d7b8602.s3tc.stex", "res://.import/4988392.jpg-74e0a89aff758ff727cecd972d7b8602.etc2.stex" ]
+source_file="res://house/house/house_exterior_wall.jpg"
+dest_files=[ "res://.import/house_exterior_wall.jpg-a9d055344c4bf2bba264b620bcbf3eda.s3tc.stex", "res://.import/house_exterior_wall.jpg-a9d055344c4bf2bba264b620bcbf3eda.etc2.stex" ]
 
 [params]
 

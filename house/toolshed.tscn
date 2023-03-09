@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://furniture/toolshed_door.tscn" type="PackedScene" id=1]
-[ext_resource path="res://house/house_exterior_wall.jpg" type="Texture" id=2]
-[ext_resource path="res://house/wood_siding_spatialmaterial.tres" type="Material" id=3]
-[ext_resource path="res://house/wood_siding_vertical.jpg" type="Texture" id=4]
+[ext_resource path="res://house/house/house_exterior_wall.jpg" type="Texture" id=2]
+[ext_resource path="res://house/house/wood_siding_spatialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://house/house/wood_siding_vertical.jpg" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -39,9 +39,9 @@ height = 3.56738
 material = ExtResource( 3 )
 
 [node name="toolshed_door" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45838, 0.00181285, 2.839 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.22376, 0.00181297, 2.83461 )
 is_locked = true
-locked_text = "Locked.\\nThe handle is shaped like [b]a hand[/b] being shaked."
+locked_text = "Locked.\\nThe metal handle looks like [b]a hand[/b] ready to be shaked."
 
 [node name="ground" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )

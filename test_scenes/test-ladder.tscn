@@ -11,7 +11,7 @@ metallic = 0.37
 extents = Vector3( 0.55, 2, 0.06 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.546947, 2.81981, 0.334328 )
+extents = Vector3( 0.546947, 2.81981, 0.467169 )
 
 [node name="ladder" type="StaticBody"]
 script = ExtResource( 2 )

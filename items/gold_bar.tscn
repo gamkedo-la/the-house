@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.4934, 0.0973597, 0.190445 )
 
-[node name="Gold Bar" type="RigidBody"]
+[node name="gold_bar" type="RigidBody"]
 script = ExtResource( 1 )
 description = "A solid bar of Gold"
 

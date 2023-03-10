@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/crystal-ball-off.mp3-ed51cf70bee86775fe15c6eefd42fc5f.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/crystal-ball-off.mp3"
+dest_files=[ "res://.import/crystal-ball-off.mp3-ed51cf70bee86775fe15c6eefd42fc5f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

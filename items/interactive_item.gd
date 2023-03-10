@@ -41,7 +41,6 @@ const _tracking_angular_speed := 1000.0
 
 
 class MeshHighlight:
-	var mesh : Mesh
 	var item_mat: Material
 	var item_mat_next: ShaderMaterial
 	
@@ -54,32 +53,37 @@ func _ready():
 	if highlightable:
 		highlites = _init_hilite(self, hilite_mat, highlight_color)
 	
+static func _create_hilite(mesh_instance: MeshInstance, hilite_mat: Material, highlight_color: Color) -> Array:
+	var highlites := []
+	for surface_idx in mesh_instance.get_surface_material_count():
+		var item_mat := mesh_instance.get_active_material(surface_idx)
+		if !item_mat:
+			item_mat = ShaderMaterial.new()
+		mesh_instance.set_surface_material(surface_idx, item_mat.duplicate(true))
+		item_mat = mesh_instance.get_active_material(surface_idx)
+		var hilite_m := hilite_mat.duplicate(true)
+		item_mat.set_next_pass(hilite_m)
+		var item_mat_next = item_mat.get_next_pass()
+		item_mat_next.set_shader_param("outline_color", highlight_color)
 		
+		var mesh_highlit = MeshHighlight.new()
+		mesh_highlit.item_mat = item_mat
+		mesh_highlit.item_mat_next = item_mat_next
+		highlites.push_back(mesh_highlit)
+		
+	return highlites
+
 static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Color) -> Array:
 	var highlites := []
 	if node is RigidBody:
 		node.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
+	elif node is MeshInstance:
+		var mesh_highlites = _create_hilite(node, hilite_mat, highlight_color)
+		highlites.append_array(mesh_highlites)
+		
 	for child in node.get_children():
-		if child is MeshInstance:
-			child.mesh = child.get_mesh().duplicate(true)
-			var hilit_mesh = child.get_mesh()
-			if hilit_mesh:
-				var mesh_highlit = MeshHighlight.new()
-				var item_mat = hilit_mesh.surface_get_material(0)
-				if !item_mat:
-					item_mat = ShaderMaterial.new()
-				hilit_mesh.surface_set_material(0, item_mat.duplicate(true))
-				item_mat = hilit_mesh.surface_get_material(0)
-				var hilite_m = hilite_mat.duplicate(true)
-				item_mat.set_next_pass(hilite_m)
-				var item_mat_next = item_mat.get_next_pass()
-				item_mat_next.set_shader_param("outline_color", highlight_color)
-				
-				mesh_highlit.mesh = hilit_mesh
-				mesh_highlit.item_mat = item_mat
-				mesh_highlit.item_mat_next = item_mat_next
-				highlites.append(mesh_highlit)
-		highlites = highlites + _init_hilite(child, hilite_mat, highlight_color)
+		var child_highlights = _init_hilite(child, hilite_mat, highlight_color)
+		highlites.append_array(child_highlights)
 	return highlites
 		
 func is_hilighted()-> bool:

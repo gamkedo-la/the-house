@@ -16,8 +16,8 @@ signal door_unlocked()
 signal notified_door_is_locked()
 
 onready var _door : Spatial = $"main_mesh"
-onready var _door_handle_1 : Spatial = $"main_mesh/door_handle_1"
-onready var _door_handle_2 : Spatial = $"main_mesh/door_handle_2"
+onready var _door_handle_1
+onready var _door_handle_2
 onready var _open_position : Spatial = $"open_position"
 onready var _closed_position : Spatial = $"closed_position"
 onready var _last_locked_notification_time := utility.now_secs()
@@ -27,9 +27,11 @@ const time_betwen_notifications := 3.0
 var _is_ready := false
 
 func _ready():
-	if _door_handle_1:
+	_door_handle_1 = get_node_or_null("main_mesh/door_handle_1")
+	_door_handle_2 = get_node_or_null("main_mesh/door_handle_2")
+	if _door_handle_1 is Spatial:
 		_setup_door_handle(_door_handle_1)
-	if _door_handle_2:
+	if _door_handle_2 is Spatial:
 		_setup_door_handle(_door_handle_2)
 	_update_door_mesh_state()
 	_is_ready = true

@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://forest/moon_light.gd" type="Script" id=3]
 [ext_resource path="res://game/game-environment.tscn" type="PackedScene" id=4]
 [ext_resource path="res://forest/forest_title.tscn" type="PackedScene" id=5]
-[ext_resource path="res://house/toolshed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/title_bold.tres" type="DynamicFont" id=7]
 [ext_resource path="res://screens/title_screen.gd" type="Script" id=8]
 [ext_resource path="res://fonts/lastman.ttf" type="DynamicFontData" id=9]
@@ -149,9 +148,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.323703, 2.76162, 2.94307 )
 width = 14.504
 height = 9.17831
 depth = 0.618887
-
-[node name="toolshed" parent="scenery" instance=ExtResource( 6 )]
-transform = Transform( -0.0919708, 0, -0.995762, 0, 1, 0, 0.995762, 0, -0.0919708, -23.763, 26.9263, -14.7953 )
 
 [node name="ambiant_lights" type="Spatial" parent="scenery"]
 

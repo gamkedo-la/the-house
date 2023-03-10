@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://game/take_instructions_text.gd" type="Script" id=20]
 [ext_resource path="res://game/examine_instructions.gd" type="Script" id=21]
 [ext_resource path="res://game/examine_instructions_2.gd" type="Script" id=22]
+[ext_resource path="res://items/golden_hand.tscn" type="PackedScene" id=23]
 
 [sub_resource type="CylinderShape" id=3]
 height = 3.0
@@ -98,6 +99,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88297, 1.00749, 8.30629 )
 
 [node name="lantern2" parent="debug/temporary_tools" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.91865, 1.00749, 8.17911 )
+
+[node name="golden_hand" parent="debug/temporary_tools" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.8605, 23.0187, -85.835 )
 
 [node name="quick_travel_spawn_point4" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, -0.998097, 0.0616583, 0, -0.0616583, -0.998097, 80.9613, 2.10669, 27.5537 )

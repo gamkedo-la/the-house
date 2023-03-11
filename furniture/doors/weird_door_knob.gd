@@ -1,4 +1,4 @@
-extends Spatial
+extends InteractiveItem
 
 # TODO: generalize this
 signal on_player_interracts()

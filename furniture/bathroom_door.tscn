@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://furniture/doors/door_handle-basic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://furniture/bathroom_door.gd" type="Script" id=2]
+[ext_resource path="res://house/house/wood_siding.jpg" type="Texture" id=3]
+[ext_resource path="res://house/house/wood_siding_vertical.jpg" type="Texture" id=4]
+[ext_resource path="res://gameplay/lock_area.gd" type="Script" id=5]
+[ext_resource path="res://furniture/doors/door_handle.gd" type="Script" id=6]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.266667, 0.188235, 0.188235, 1 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.209338
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.534403, 0.914498, 0.102876 )
+
+[node name="bathroom_door" type="Spatial"]
+script = ExtResource( 2 )
+locked_text = "Locked.\\nThere is a hole where a knob would be."
+unlocked_text = "[b]The knob fits perfectly.[/b]"
+
+[node name="hinge" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0487944, 1.07, -0.00336409 )
+use_collision = true
+width = 0.06
+height = 2.14
+depth = 0.1
+material = SubResource( 2 )
+
+[node name="main_mesh" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+use_collision = true
+collision_layer = 129
+width = 1.14
+height = 2.14
+depth = 0.1
+material = SubResource( 1 )
+
+[node name="door_handle_2" parent="main_mesh" instance=ExtResource( 1 )]
+transform = Transform( 1, 1.19209e-07, 8.74228e-08, 1.19209e-07, -1, 7.10543e-15, 8.74228e-08, 0, -1, 0.401144, -0.204199, -0.0811689 )
+collision_layer = 129
+
+[node name="lock" type="Area" parent="main_mesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.334239, 0.03255, 0 )
+script = ExtResource( 5 )
+lock_name = "bathroom"
+path_to_key_slot = NodePath("knob_hole")
+
+[node name="CollisionShape" type="CollisionShape" parent="main_mesh/lock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0912551 )
+shape = SubResource( 3 )
+
+[node name="knob_hole" type="Spatial" parent="main_mesh/lock"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.100279 )
+
+[node name="hole" type="CSGCylinder" parent="main_mesh/lock/knob_hole"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.0822835 )
+radius = 0.02
+height = 0.1
+material = SubResource( 5 )
+
+[node name="open_position" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.07, -0.63 )
+
+[node name="closed_position" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+
+[node name="interration_area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.623285, 1.30492, 0 )
+collision_layer = 129
+collision_mask = 129
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="interration_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0315437, -0.11667, 0.136609 )
+shape = SubResource( 4 )

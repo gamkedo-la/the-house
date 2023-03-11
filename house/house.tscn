@@ -53,7 +53,7 @@
 [ext_resource path="res://items/knife_cleaver.tscn" type="PackedScene" id=51]
 [ext_resource path="res://items/eyeball.tscn" type="PackedScene" id=52]
 [ext_resource path="res://furniture/sink.tscn" type="PackedScene" id=53]
-[ext_resource path="res://furniture/bathroom_door.gd" type="Script" id=54]
+[ext_resource path="res://furniture/bathroom_door.tscn" type="PackedScene" id=54]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -139,15 +139,9 @@ shape = SubResource( 1 )
 [node name="key_slot" type="Spatial" parent="doors/kitchen_door/main_mesh/door_handle_1/lock"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, -0.050364 )
 
-[node name="bathroom_door" parent="doors" instance=ExtResource( 3 )]
+[node name="bathroom_door" parent="doors" instance=ExtResource( 54 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.75156 )
-script = ExtResource( 54 )
-
-[node name="main_mesh" parent="doors/bathroom_door" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
-
-[node name="door_handle_1" parent="doors/bathroom_door/main_mesh" index="0"]
-visible = false
+is_locked = true
 
 [node name="living_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
@@ -1160,6 +1154,5 @@ transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4
 [editable path="basement_ladder"]
 [editable path="doors/entrance_door"]
 [editable path="doors/kitchen_door"]
-[editable path="doors/bathroom_door"]
 [editable path="doors/basement_trap_door"]
 [editable path="giant_eye_mouth_puzzle/giant_eye"]

@@ -25,8 +25,9 @@ func light_off() -> void:
 
 func _on_lightable_area_lit_using_fire() -> void:
 	print("time to turn on through fire")
-	_player.did_light_a_candle = true
-	_stop_instructions()
+	if _player:
+		_player.did_light_a_candle = true
+		_stop_instructions()
 	light_on()
 
 

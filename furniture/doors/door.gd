@@ -39,6 +39,10 @@ func _ready():
 func _setup_door_handle(door_handle:Spatial):
 	door_handle.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
 	door_handle.connect("on_player_interracts", self, "on_player_interract")
+	
+func _unsetup_door_handle(door_handle:Spatial):
+	door_handle.disconnect("on_player_interracts", self, "on_player_interract")
+	door_handle.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, false)
 
 func _is_open() -> bool:
 	return is_open
@@ -86,6 +90,7 @@ func _set_locked(should_be_locked:bool):
 		lock()
 	else:
 		unlock()
+		
 
 func unlock() -> void:
 	if not is_locked:

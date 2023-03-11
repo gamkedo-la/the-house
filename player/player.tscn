@@ -138,7 +138,8 @@ script = ExtResource( 4 )
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector3( 0, 0, -20 )
-collision_mask = 129
+collision_mask = 128
+collide_with_areas = true
 debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )
 
 [node name="target" type="CSGBox" parent="Head/Camera/InterractionRay"]

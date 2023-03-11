@@ -1,5 +1,5 @@
 
-tool
+#tool
 
 extends InteractiveItem
 class_name Mushroom

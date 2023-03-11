@@ -65,7 +65,7 @@ mode = 1
 angular_damp = 10.222
 script = ExtResource( 1 )
 description = "An unusual mushroom"
-mushroom_shape = 1
+mushroom_shape = 1.52656
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, -0.0331457, 0 )

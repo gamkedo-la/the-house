@@ -471,18 +471,21 @@ mushroom_color = 4
 mushroom_shape = 5
 
 [node name="mushroom4" parent="mushrooms/entrance" instance=ExtResource( 20 )]
-transform = Transform( 0.737808, 0.371639, 0.563493, 0, 0.83479, -0.550568, -0.675011, 0.406213, 0.615915, -0.578035, 1.6556, 6.26427 )
+transform = Transform( 0.993774, -0.0613426, -0.0930097, -0.0376698, 0.600644, -0.798629, 0.104856, 0.797159, 0.594594, -0.726505, 1.71676, 6.34545 )
 mushroom_color = 1
 mushroom_shape = 3
+random_mushroom_shape = false
 
 [node name="mushroom5" parent="mushrooms/entrance" instance=ExtResource( 20 )]
-transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 1.16847, 6.25036 )
+transform = Transform( 0.728022, 0.273218, 0.628758, 0.50718, 0.402425, -0.762117, -0.461252, 0.873732, 0.154403, 0.780099, 1.12526, 6.32311 )
 mushroom_shape = 2
+random_mushroom_shape = false
 
 [node name="mushroom10" parent="mushrooms/entrance" instance=ExtResource( 20 )]
-transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.730755, 2.35922, 6.25036 )
+transform = Transform( 0.972415, -0.128425, -0.194722, 0, 0.83479, -0.550568, 0.233259, 0.535381, 0.811762, 0.63471, 2.42923, 6.29526 )
 mushroom_color = 1
 mushroom_shape = 7
+random_mushroom_shape = false
 
 [node name="corridor" type="Spatial" parent="mushrooms"]
 

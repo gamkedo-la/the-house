@@ -33,9 +33,9 @@ var _disable_editing := false
 func _ready():
 	assert(_models_node)
 	
-	if OS.get_name() == "HTML5" and not Engine.editor_hint:
-		utility.delete_child(self, _light_node)
-		_light_node = null
+#	if OS.get_name() == "HTML5" and not Engine.editor_hint:
+#		utility.delete_child(self, _light_node)
+#		_light_node = null
 	
 	_lighten_area.connect("body_entered", self, "_on_player_is_close")
 	_lighten_area.connect("body_exited", self, "_on_player_left")
@@ -50,9 +50,8 @@ func _ready():
 	_is_ready = true
 	_update_mushroom()
 	
-#	if not Engine.editor_hint:
-#		yield(get_tree().create_timer(3.0), "timeout")
-#		_deactivate_editing_resources()
+	if not Engine.editor_hint:
+		call_deferred("_deactivate_editing_resources")
 
 func _deactivate_editing_resources():
 	if _disable_editing:

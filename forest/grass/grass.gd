@@ -1,4 +1,4 @@
-tool
+#tool
 extends MultiMeshInstance
 
 export var extents := Vector2.ONE setget _set_extents

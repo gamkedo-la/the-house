@@ -38,7 +38,7 @@
 [ext_resource path="res://items/kitchen_key.tscn" type="PackedScene" id=36]
 [ext_resource path="res://furniture/kitchen_door.gd" type="Script" id=37]
 [ext_resource path="res://items/torchlight.tscn" type="PackedScene" id=38]
-[ext_resource path="res://furniture/bedroom_door.gd" type="Script" id=39]
+[ext_resource path="res://furniture/bedroom_door.tscn" type="PackedScene" id=39]
 [ext_resource path="res://furniture/giant_eye/giant_eye_mouth_behavior.gd" type="Script" id=40]
 [ext_resource path="res://items/old_woman_shoe.tscn" type="PackedScene" id=41]
 [ext_resource path="res://items/lantern-old.tscn" type="PackedScene" id=42]
@@ -146,11 +146,9 @@ is_locked = true
 [node name="living_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
 
-[node name="bedroom_door" parent="doors" instance=ExtResource( 3 )]
+[node name="bedroom_door" parent="doors" instance=ExtResource( 39 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.96822 )
-script = ExtResource( 39 )
 is_locked = true
-locked_text = "Locked...\\nThere is no key-hole."
 
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.140548, 0.015, -2.018 )

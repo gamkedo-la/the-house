@@ -311,17 +311,21 @@ func update_interraction_ray() -> void:
 	# Interracting with interractible items:
 	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance:
 		var something = _interraction_ray.get_collider()
-		if something is InteractiveItem and something.is_takable_now() and (_pointed_item == null or _pointed_item != something):
-			if _pointed_item != null:
-				_pointed_item.hilite(false)
-			_pointed_item = something
-			_pointed_item.hilite(true)
-			print("Highlight ON: %s" % _pointed_item)
-		elif utility.object_has_signal(something, "on_player_interracts") and (something == null or something != _pointed_usable_entity):
-			print("Usable entity pointed")
-			_pointed_usable_entity = something
-#		elif something:
-#			print("pointing ", something)
+		if _pointed_item != something:
+			if something is InteractiveItem and something.is_takable_now():
+				_pointed_item = something
+				_pointed_item.hilite(true)
+				print("Highlight ON: %s" % _pointed_item)
+			else:
+				if _pointed_item != null:
+					print("Highlight OFF: %s" % _pointed_item)
+					_pointed_item.hilite(false)
+					_pointed_item = null
+					
+				if utility.object_has_signal(something, "on_player_interracts") and (something == null or something != _pointed_usable_entity):
+					print("Usable entity pointed")
+					_pointed_usable_entity = something
+				
 	else:
 		if _pointed_item is InteractiveItem:
 			print("Highlight OFF: %s" % _pointed_item)

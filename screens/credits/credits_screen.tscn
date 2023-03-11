@@ -13,14 +13,34 @@ position = Vector2( 959.5, 540 )
 scale = Vector2( 29.9844, 16.8438 )
 texture = SubResource( 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 836.0
-margin_top = 474.0
-margin_right = 1335.0
-margin_bottom = 585.0
-text = "CREDITS - MAKE THIS SCREEN SHOW ALL THE PEOPLE"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="back_button" type="Button" parent="."]
+[node name="credits_text" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -603.0
+margin_right = 562.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "CREDITS - see credits.txt
+
+
+gsdfifondsifn
+dfionsdoifndsfinods
+oinfdsoifndsnfiondsoifnsdionfiodsnio
+"
+text = "CREDITS - see credits.txt
+
+
+gsdfifondsifn
+dfionsdoifndsfinods
+oinfdsoifndsnfiondsoifnsdionfiodsnio
+"
+
+[node name="back_button" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
 margin_right = 141.0
 margin_bottom = 71.0
 theme = ExtResource( 1 )

@@ -1,6 +1,9 @@
 extends Node
 
 var current_scene_path : String
+
+const credits_screen_path := "res://screens/credits/credits_screen.tscn"
+const title_screen_path := "res://screens/title_screen.tscn"
 	
 func _ready():
 	if OS.get_name() == "HTML5":
@@ -35,10 +38,14 @@ func start_new_game() -> void:
 	change_current_scene("res://game/game.tscn")
 	
 func to_title_screen() -> void:
-	change_current_scene("res://screens/title_screen.tscn")
+	change_current_scene(title_screen_path)
 	
 func to_credits_screen(screen_to_get_back_to: String = "") -> void:
-	if screen_to_get_back_to == "":
-		screen_to_get_back_to = current_scene_path
-	change_current_scene("res://screens/credits/credits_screen.tscn", screen_to_get_back_to)
+	if screen_to_get_back_to == "" :
+		screen_to_get_back_to = title_screen_path
+	change_current_scene(credits_screen_path, screen_to_get_back_to)
 
+	
+func to_end_game_screen() -> void:
+	change_current_scene("res://screens/end_game/end_game_screen.tscn")
+	

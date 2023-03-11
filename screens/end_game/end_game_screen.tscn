@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=1]
+[ext_resource path="res://screens/end_game/end_game_screen.gd" type="Script" id=2]
+[ext_resource path="res://fonts/info_text.tres" type="Theme" id=3]
+
+[sub_resource type="GradientTexture2D" id=1]
+
+[node name="end_game_screen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 959.5, 540 )
+scale = Vector2( 29.9844, 16.8438 )
+texture = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -372.0
+margin_bottom = 242.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+THIS IS THE END OF THE GAME
+
+THANKS FOR PLAYING THIS GAME
+
+THIS IS ACTUALLY A PLACEHOLDER, THE END OF THE GAME SHOULD BE EXPLAINED HERE
+[/center]"
+text = "
+THIS IS THE END OF THE GAME
+
+THANKS FOR PLAYING THIS GAME
+
+THIS IS ACTUALLY A PLACEHOLDER, THE END OF THE GAME SHOULD BE EXPLAINED HERE
+"
+
+[node name="back_button" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -118.5
+margin_top = -180.0
+margin_right = 118.5
+margin_bottom = -109.0
+theme = ExtResource( 1 )
+text = "THE END"

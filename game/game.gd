@@ -13,6 +13,7 @@ func _ready() -> void :
 	_add_spawn_points(self)
 	
 	$paused_screen.connect("on_resume", self, "_on_resume_requested")
+	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
 
 func _process(_delta):
 	
@@ -69,6 +70,10 @@ func _on_resume_requested():
 func exit_game():
 	if master_scene:
 		master_scene.to_title_screen()
+	
+func _on_player_entered_end_area(player : Node) -> void:
+	if player is Player:
+		master_scene.to_end_game_screen()
 	
 	
 	

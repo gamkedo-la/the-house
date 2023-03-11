@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -44,6 +44,9 @@ extents = Vector3( 4.077, 2.19295, 6.30188 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 8.50317, 6.89047, 6.43432 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1.10466, 1.47815, 1.3725 )
 
 [node name="game" type="Spatial"]
 pause_mode = 2
@@ -296,6 +299,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9491, 5.77861, 3.87328 )
 light_energy = 2.866
 light_indirect_energy = 2.922
 omni_range = 5.149
+
+[node name="event_end_reached" type="Area" parent="actual_game/event_areas"]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.0618, 21.9992, -15.0888 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/event_areas/event_end_reached"]
+transform = Transform( 0.992599, 0, -0.121436, 0, 1, 0, 0.121436, 0, 0.992599, 1.39691, 0.799381, 1.34118 )
+shape = SubResource( 7 )
 
 [editable path="actual_game/texts/action_tips/move_instructions"]
 [editable path="actual_game/texts/action_tips/take_instructions"]

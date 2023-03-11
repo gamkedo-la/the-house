@@ -67,7 +67,7 @@ func _deactivate_editing_resources():
 	_models_node = null
 	_disable_editing = true
 	
-	print("mushroom %s deleted all other mushrooms resources" % name)
+#	print("mushroom %s deleted all other mushrooms resources" % name)
 
 func _update_mushroom() ->void :
 	if not _is_ready or _disable_editing:

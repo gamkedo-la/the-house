@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="uI9hO-N1rfZND0lMfROh" name="Page-1">
-        <mxGraphModel dx="2704" dy="1862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2677" dy="1938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -180,7 +180,7 @@
                         <mxPoint x="240" y="660" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="41" value="House entrance door (not locked)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="38" vertex="1" connectable="0">
+                <mxCell id="41" value="&lt;strike&gt;House entrance door (not locked)&lt;/strike&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" parent="38" vertex="1" connectable="0">
                     <mxGeometry x="-0.13" relative="1" as="geometry">
                         <mxPoint x="21" as="offset"/>
                     </mxGeometry>

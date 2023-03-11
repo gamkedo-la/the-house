@@ -1,5 +1,5 @@
 
-#tool
+tool
 
 extends InteractiveItem
 class_name Mushroom
@@ -76,7 +76,7 @@ func _update_mushroom() ->void :
 		
 	_hide_all_models()
 	if random_mushroom_shape:
-		mushroom_shape = rand_range(0, mushroom_shapes_count - 1)
+		mushroom_shape = utility.random_int(0, mushroom_shapes_count - 1)
 	_show_selected_model()
 	_check_light_visibility()
 #	print("Mushroom updated: %s" % name)

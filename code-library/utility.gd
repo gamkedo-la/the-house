@@ -31,7 +31,7 @@ static func calc_angular_velocity(from_basis: Basis, to_basis: Basis) -> Vector3
 
 
 static func random_selection(array: Array):
-	var selected = array[ randi() % array.size() ]
+	var selected = array[ random_int(0, array.size() - 1) ]
 	return selected
 	
 static func random_vector2(width: float, origin: Vector2 = Vector2.ZERO) -> Vector2:
@@ -101,4 +101,8 @@ static func has_node_type(node_type: String, node: Node) -> bool:
 			
 	return false
 
-
+static func random_int(min_value:int, max_value: int) -> int:
+	# FIXME: find a way to keep the generator around instead of re-creating it each time :/
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	return random.randi_range(min_value, max_value)

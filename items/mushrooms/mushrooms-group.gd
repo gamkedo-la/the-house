@@ -1,4 +1,4 @@
-tool
+#tool
 extends Spatial
 
 enum Mode { random, keep_as_specified }

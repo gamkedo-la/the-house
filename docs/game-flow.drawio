@@ -455,7 +455,7 @@
                 <mxCell id="139" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="136" target="106" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="136" value="Somewhere hidden behind food cans or in a drawer or somewhere, there is a &lt;b&gt;WEIRD DOOR KNOB&lt;/b&gt; (be creative }:D)" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
+                <mxCell id="136" value="&lt;strike&gt;Somewhere hidden behind food cans or in a drawer or somewhere, there is a &lt;b&gt;WEIRD DOOR KNOB&lt;/b&gt; (be creative }:D)&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="620.33875" y="900" width="165" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="138" value="" style="endArrow=classic;html=1;fontSize=11;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="69" target="136" edge="1">

@@ -1,11 +1,11 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
 [ext_resource path="res://furniture/door-basic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
-[ext_resource path="res://items/treasure_chest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/gold_bar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://items/cardboardbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://house/windows/window.tscn" type="PackedScene" id=8]
 [ext_resource path="res://furniture/trap_door.tscn" type="PackedScene" id=9]
@@ -66,6 +66,8 @@
 [ext_resource path="res://house/house/house_wall_plaster_spatialmaterial.tres" type="Material" id=64]
 [ext_resource path="res://house/house/house_interior_walls.tres" type="Material" id=65]
 [ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=66]
+[ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=67]
+[ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=68]
 
 [sub_resource type="ArrayMesh" id=5]
 surfaces/0 = {
@@ -378,8 +380,11 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481
 [node name="bed_single" parent="furniture/bedroom" instance=ExtResource( 4 )]
 transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6.6524, 0.0718173, -8.78317 )
 
-[node name="chest" parent="furniture/bedroom" instance=ExtResource( 6 )]
+[node name="chest" parent="furniture/bedroom" instance=ExtResource( 67 )]
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
+
+[node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
+transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
 
 [node name="bathroom" type="Spatial" parent="furniture"]
 
@@ -1401,6 +1406,9 @@ visible = false
 mode = 1
 sleeping = true
 can_be_taken = false
+
+[node name="gold_bar" parent="special_items" instance=ExtResource( 6 )]
+transform = Transform( 0.938196, 0, -0.3461, 0, 1, 0, 0.3461, 0, 0.938196, 4.60924, 0.21948, -8.59653 )
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

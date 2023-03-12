@@ -34,6 +34,7 @@ onready var _center_holding_spot : Spatial = $"%Camera/center_holding_spot"
 onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _debug_status : RichTextLabel = $"%debug_status"
+onready var _debug_light : OmniLight = $"%debug_light"
 
 onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
@@ -495,3 +496,8 @@ func get_camera() -> Camera:
 func use_pointed_usable_entity():
 	assert(_pointed_usable_entity)
 	_pointed_usable_entity.player_interracts()
+	
+func _toggle_debug_light() -> void:
+	_debug_light.visible = not _debug_light.visible
+	print("debug light: %s " % _debug_light.visible)
+	

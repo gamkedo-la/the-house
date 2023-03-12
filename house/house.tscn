@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -68,6 +68,8 @@
 [ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=66]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=67]
 [ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=68]
+[ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
+[ext_resource path="res://items/book_closed.tscn" type="PackedScene" id=70]
 
 [sub_resource type="ArrayMesh" id=5]
 surfaces/0 = {
@@ -382,7 +384,6 @@ transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 67 )]
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
-is_keypad_locked = false
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
@@ -1331,6 +1332,121 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77897, 4.40113, -7.3784 )
 [node name="Candle8" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1648, 1.28954, -4.95576 )
 
+[node name="books" type="Spatial" parent="."]
+
+[node name="living_room" type="Spatial" parent="books"]
+
+[node name="book_closed19" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.19101, 1.2793, -3.73244 )
+
+[node name="book_closed20" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.2386, 1.2793, -3.73244 )
+
+[node name="book_closed21" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.28669, 1.2793, -3.73244 )
+
+[node name="book_closed22" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.33509, 1.2793, -3.73244 )
+
+[node name="book_closed23" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.38626, 1.2793, -3.73244 )
+
+[node name="book_closed24" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.44009, 1.2793, -3.73244 )
+
+[node name="book_closed25" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.13511, 1.2793, -3.73244 )
+
+[node name="book_closed26" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.08426, 1.2793, -3.73244 )
+
+[node name="book_closed27" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.03306, 1.2793, -3.73244 )
+
+[node name="book_closed28" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.51538, 1.27884, -3.73244 )
+
+[node name="book_closed29" parent="books/living_room" instance=ExtResource( 70 )]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5.98126, 1.28188, -3.73244 )
+
+[node name="basement" type="Spatial" parent="books"]
+
+[node name="book_closed8" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.0872836 )
+
+[node name="book_closed9" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.0397002 )
+
+[node name="book_closed10" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, 0.00839698 )
+
+[node name="book_closed11" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, 0.0567928 )
+
+[node name="book_closed12" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, 0.107966 )
+
+[node name="book_closed13" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, 0.161797 )
+
+[node name="book_closed14" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.143182 )
+
+[node name="book_closed15" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.194037 )
+
+[node name="book_closed16" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.245241 )
+
+[node name="book_closed17" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.297037 )
+
+[node name="book_closed18" parent="books/basement" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395, -1.9408, -0.297037 )
+
+[node name="toilets" type="Spatial" parent="books"]
+
+[node name="book_closed" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46866, 0.0874205, -9.04043 )
+
+[node name="book_closed2" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.887518, 0, 0.460773, 0, 1, 0, -0.460773, 0, 0.887518, 3.46866, 0.135421, -9.04043 )
+
+[node name="book_closed3" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.915276, 0, -0.402827, 0, 1, 0, 0.402827, 0, 0.915276, 3.46866, 0.183421, -9.04043 )
+
+[node name="book_closed5" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.959849, 0, -0.280516, 0, 1, 0, 0.280516, 0, 0.959849, 3.46866, 0.231421, -9.04043 )
+
+[node name="book_closed6" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.999947, 0, 0.0103321, 0, 1, 0, -0.0103321, 0, 0.999947, 3.46866, 0.279421, -9.04043 )
+
+[node name="book_closed7" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.321935, 0, 0.946762, 0, 1, 0, -0.946762, 0, 0.321935, 3.34879, 0.0874206, -8.60867 )
+
+[node name="book_closed4" parent="books/toilets" instance=ExtResource( 70 )]
+transform = Transform( 0.477895, 0, -0.878417, 0, 1, 0, 0.878417, 0, 0.477895, 3.24026, 0.0874205, -9.43672 )
+
+[node name="book_open" parent="books/toilets" instance=ExtResource( 69 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 2.61457, 0.0569918, -9.51017 )
+
+[node name="book_open2" parent="books/toilets" instance=ExtResource( 69 )]
+transform = Transform( 0.214087, 0, 0.976815, 0, 1, 0, -0.976815, 0, 0.214087, 3.40131, 0.296992, -9.19043 )
+
+[node name="bedroom" type="Spatial" parent="books"]
+
+[node name="book_open" parent="books/bedroom" instance=ExtResource( 69 )]
+transform = Transform( 0.848482, 0, 0.529223, 0, 1, 0, -0.529223, 0, 0.848482, 7.51757, 0.0643199, -7.49309 )
+
+[node name="book_closed" parent="books/bedroom" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78512, 1.21976, -4.95226 )
+
+[node name="book_closed2" parent="books/bedroom" instance=ExtResource( 70 )]
+transform = Transform( 0.916475, 0, 0.400093, 0, 1, 0, -0.400093, 0, 0.916475, 7.78512, 1.17176, -4.95226 )
+
+[node name="book_closed3" parent="books/bedroom" instance=ExtResource( 70 )]
+transform = Transform( 0.986265, 0, -0.165168, 0, 1, 0, 0.165168, 0, 0.986265, 7.78512, 1.12376, -4.95226 )
+
 [node name="special_items" type="Spatial" parent="."]
 
 [node name="music_box" parent="special_items" instance=ExtResource( 33 )]
@@ -1362,19 +1478,6 @@ can_be_taken = false
 
 [node name="old_sports_shoe" parent="special_items" instance=ExtResource( 50 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0519339, -2.64365, -6.52717 )
-
-[node name="old_woman_shoe2" parent="special_items" instance=ExtResource( 41 )]
-unique_name_in_owner = true
-transform = Transform( -4.37114e-08, -4.37114e-08, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, 6.61152, 1.65363, -4.86256 )
-
-[node name="old_big_boot2" parent="special_items" instance=ExtResource( 59 )]
-unique_name_in_owner = true
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 7.01799, 1.75358, -5.09523 )
-mode = 1
-sleeping = true
-
-[node name="old_sports_shoe2" parent="special_items" instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.48396, 1.38923, -5.15438 )
 
 [node name="lantern_old" parent="special_items" instance=ExtResource( 42 )]
 transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 4.04229, 0.0612942, -7.02659 )

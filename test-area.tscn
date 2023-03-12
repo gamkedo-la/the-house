@@ -1029,7 +1029,6 @@ collision_layer = 129
 
 [node name="treasure_chest_fix_04" parent="." instance=ExtResource( 95 )]
 transform = Transform( -0.226702, 0, -0.973964, 0, 1, 0, 0.973964, 0, -0.226702, 5.40927, 0, 11.7596 )
-collision_layer = 129
 
 [node name="gold_bar" parent="treasure_chest_fix_04" instance=ExtResource( 71 )]
 transform = Transform( 0.864423, 0, -0.502763, 0, 1, 0, 0.502763, 0, 0.864423, 0.0289583, 0.199126, 0.0271387 )

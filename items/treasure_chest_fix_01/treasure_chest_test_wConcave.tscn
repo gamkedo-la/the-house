@@ -230,6 +230,9 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 0.502597, 0.110549, 0.27202 )
+
 [sub_resource type="Animation" id=16]
 resource_name = "default"
 length = 0.2
@@ -265,13 +268,6 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.58732e-43, -4.23517e-22, 0, 1, 1, 1, 1, 2.5, 1, 0, 0, 0, 3.58732e-43, -4.23517e-22, 0, 1, 1, 1, 1 )
-tracks/2/type = "transform"
-tracks/2/path = NodePath("lid_holder")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = PoolRealArray( 0, 1, 0, 0.421638, -0.264244, 0, 0, 0, 1, 1, 1, 1, 2.5, 1, 0, 0.421638, -0.264244, -138, 0, 0, 1, 1, 1, 1 )
 
 [sub_resource type="BoxShape" id=17]
 extents = Vector3( 0.507048, 0.197019, 0.0426371 )
@@ -282,10 +278,8 @@ extents = Vector3( 0.0242129, 0.197856, 0.270694 )
 [sub_resource type="BoxShape" id=19]
 extents = Vector3( 0.506036, 0.0190047, 0.271802 )
 
-[sub_resource type="BoxShape" id=20]
-extents = Vector3( 0.502597, 0.110549, 0.27202 )
-
 [node name="treasure_chest_fix_03" type="StaticBody"]
+collision_layer = 129
 script = ExtResource( 3 )
 
 [node name="chest-armature" type="Spatial" parent="."]
@@ -410,6 +404,16 @@ skin = SubResource( 2 )
 mesh = SubResource( 13 )
 skin = SubResource( 2 )
 
+[node name="BoneAttachment" type="BoneAttachment" parent="chest-armature/Skeleton"]
+transform = Transform( 1, -7.10543e-15, -6.27833e-07, -6.27833e-07, -1.19209e-07, -1, -6.39487e-14, 1, -1.19209e-07, 9.23706e-14, 0.422635, -0.260427 )
+bone_name = "lid"
+
+[node name="lid_collider" type="KinematicBody" parent="chest-armature/Skeleton/BoneAttachment"]
+transform = Transform( 1, -6.27833e-07, -6.27833e-07, 6.27833e-07, -4.37114e-08, 1, -6.27833e-07, -1, -4.3711e-08, -5.05228e-08, 0.260427, -0.0804716 )
+
+[node name="collision_lid" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider"]
+shape = SubResource( 20 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 16 )
 anims/lid-opening = SubResource( 15 )
@@ -433,10 +437,3 @@ shape = SubResource( 18 )
 [node name="collision_bottom" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0160958, 0 )
 shape = SubResource( 19 )
-
-[node name="lid_holder" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.421638, -0.264244 )
-
-[node name="collision_lid" type="CollisionShape" parent="lid_holder"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0820259, 0.265154 )
-shape = SubResource( 20 )

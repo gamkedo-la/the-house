@@ -106,7 +106,7 @@
                 <mxCell id="149" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="23" target="148" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="A half-player-size doll (that must be creepy) on the border of the bed. Too heavy to be moved around (if possible, only the arms can be moved, and the head turned).&lt;br&gt;After the first time the player sees closely, it will teleport behind the player (or close to that position, but behind the player) each time the player cannot see it anymore (without a noise).&lt;br&gt;Should be scary. No need for sounds when it's teleported.&lt;br&gt;The doll cannot be traversed so the player have to move around it to go behind it." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
+                <mxCell id="23" value="&lt;strike&gt;A half-player-size doll (that must be creepy) on the border of the bed. Too heavy to be moved around (if possible, only the arms can be moved, and the head turned).&lt;br&gt;&lt;/strike&gt;DROPPED FOR NOW:&lt;br&gt;After the first time the player sees closely, it will teleport behind the player (or close to that position, but behind the player) each time the player cannot see it anymore (without a noise).&lt;br&gt;Should be scary. No need for sounds when it's teleported.&lt;br&gt;The doll cannot be traversed so the player have to move around it to go behind it." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
                     <mxGeometry x="2020.00375" y="1335" width="230" height="195" as="geometry"/>
                 </mxCell>
                 <mxCell id="171" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="26" target="170" edge="1">
@@ -268,7 +268,7 @@
                 <mxCell id="186" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="59" target="185" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="59" value="BedRoom" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                <mxCell id="59" value="&lt;strike&gt;BedRoom&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="1735" y="1230" width="220" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" style="edgeStyle=none;html=1;fontSize=11;" parent="1" source="63" target="76" edge="1">
@@ -422,7 +422,7 @@
                 <mxCell id="190" value="" style="edgeStyle=none;html=1;fontSize=11;fontColor=#FFFF00;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="121" target="189" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="121" value="Attic&lt;br&gt;&lt;br&gt;Boxes, old stuffs, weird artifacts and a few creepy dolls having a tea party.&lt;br&gt;There is a chair at the tea party table which is empty, the other chairs are occuupied by creepy dolls." style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+                <mxCell id="121" value="&lt;strike&gt;Attic&lt;br&gt;&lt;br&gt;Boxes, old stuffs, weird artifacts and a few creepy dolls having a tea party.&lt;br&gt;There is a chair at the tea party table which is empty, the other chairs are occuupied by creepy dolls.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
                     <mxGeometry x="1920" y="1875" width="383.41" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="154" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="124" target="126" edge="1">
@@ -479,7 +479,7 @@
                 <mxCell id="151" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;fillColor=#e51400;strokeColor=#B20000;" parent="1" source="148" target="21" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="148" value="Bringing the creepy doll to the attic dolls tea party will make it stuck on the chair.&lt;br&gt;&lt;br&gt;As a reward, when the player will get back to to the stairs, a BIG WOMAN BOOT will be thrown by the creepy doll to the player.&amp;nbsp;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
+                <mxCell id="148" value="&lt;strike&gt;Bringing the creepy doll to the attic dolls tea party will make it stuck on the chair.&lt;br&gt;&lt;br&gt;As a reward, when the player will get back to to the stairs, a BIG WOMAN BOOT will be thrown by the creepy doll to the player.&amp;nbsp;&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">
                     <mxGeometry x="1996.7037500000001" y="2210" width="230" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="156" value="&lt;b style=&quot;&quot;&gt;THIS IS ALL DROPPED : instead we just hid the access to the secret room with some stuffs&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;strike&gt;LOOPING CORRIDOR PUZZLE&lt;/strike&gt;&lt;br&gt;&lt;br&gt;&lt;strike&gt;Basically, after &amp;lt;INSERT ACTION HERE&amp;gt; the door is unlocked and leads to the corridor, doing a corner. It is not the same corridor as before.&lt;/strike&gt;&lt;br&gt;&lt;strike&gt;When going in the corridor, the door to the bathroom closes locked. When the player goes to the other side of the corridor (which does an L) they find another door, which leads to the bathroom. Once inside the doors lock again and some other &amp;lt;INSERT ACTION HERE&amp;gt; needs to be done.&lt;/strike&gt;&lt;br&gt;&lt;br&gt;&lt;strike&gt;Things in the bathroom changes slightly and give clue at what should be done. This happens about 5 times. After the last time, a door open in the wall going to the Secret Room&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;" parent="1" vertex="1">

@@ -233,6 +233,9 @@ script = ExtResource( 26 )
 is_locked = true
 locked_text = "Locked...\\nI need a [b]key[/b]"
 
+[node name="main_mesh" parent="doors/entrance_door" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677576, 1.07, 0 )
+
 [node name="lock" type="Area" parent="doors/entrance_door/main_mesh/door_handle_1" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0138999, -0.0772813, -0.0455813 )
 script = ExtResource( 25 )
@@ -255,17 +258,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.679055, 1.19209e-07, -0.1816
 shape = SubResource( 2 )
 
 [node name="toilet_door" parent="doors" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10953, 0.0514893, -6.71467 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09285, 0.0514893, -6.71467 )
 is_open = true
 
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.88106 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.94251 )
 script = ExtResource( 37 )
 is_locked = true
 locked_text = "Locked...\\nI need a key."
 
 [node name="main_mesh" parent="doors/kitchen_door" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677576, 1.07, 0 )
 
 [node name="lock" type="Area" parent="doors/kitchen_door/main_mesh/door_handle_1" index="4"]
 transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.0764192, -0.00948471, 0.0955592 )
@@ -281,15 +284,14 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, -0.050364 )
 
 [node name="bathroom_door" parent="doors" instance=ExtResource( 54 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.75156 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.73002 )
 is_locked = true
 
 [node name="living_door" parent="doors" instance=ExtResource( 3 )]
-transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.659 )
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.64858 )
 
 [node name="bedroom_door" parent="doors" instance=ExtResource( 39 )]
-transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.96822 )
-is_open = true
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.95474 )
 is_locked = true
 
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
@@ -384,6 +386,8 @@ transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 67 )]
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
+is_keypad_locked = false
+is_locked = false
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )

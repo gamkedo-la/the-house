@@ -37,10 +37,10 @@ depth = 0.1
 material = SubResource( 2 )
 
 [node name="main_mesh" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649418, 1.07, 0 )
 use_collision = true
 collision_layer = 129
-width = 1.14
+width = 1.22148
 height = 2.14
 depth = 0.1
 material = SubResource( 1 )

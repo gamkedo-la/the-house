@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://items/treasure_chest_fix_01/wood.material" type="Material" id=1]
 [ext_resource path="res://items/treasure_chest_fix_01/Brass.material" type="Material" id=2]
 [ext_resource path="res://items/treasure_chest/treasure_chest.gd" type="Script" id=3]
+[ext_resource path="res://items/foot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameplay/lock_area.gd" type="Script" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "treasure_chest_fix_03_mesh-chest"
@@ -233,6 +235,9 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=20]
 extents = Vector3( 0.502597, 0.110549, 0.27202 )
 
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 0.1, 0.169342, 0.1 )
+
 [sub_resource type="Animation" id=16]
 resource_name = "default"
 length = 0.2
@@ -414,6 +419,52 @@ collision_layer = 129
 
 [node name="collision_lid" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider"]
 shape = SubResource( 20 )
+
+[node name="foot" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+transform = Transform( 0.907514, 6.84302e-08, 0.420021, 3.17108e-08, -1, 9.44053e-08, 0.420021, -7.23549e-08, -0.907514, -0.300502, 0.319539, -0.0290914 )
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="lock" type="Area" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot"]
+script = ExtResource( 5 )
+lock_name = "old shoe"
+path_to_key_slot = NodePath(".")
+
+[node name="CollisionShape" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot/lock"]
+transform = Transform( 1, 0, 0, -4.26326e-14, 1, 0, 0, 0, 1, 0.00265899, 0.146603, -0.062803 )
+shape = SubResource( 21 )
+
+[node name="foot2" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+transform = Transform( 1, -5.48869e-14, -1.25567e-06, 7.3774e-14, -1, 8.74228e-08, -1.25567e-06, -8.74228e-08, -1, -0.0361434, 0.319539, -0.0035712 )
+mode = 1
+can_be_taken = false
+highlightable = false
+is_left_handed = true
+
+[node name="lock" type="Area" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot2"]
+script = ExtResource( 5 )
+lock_name = "woman shoe"
+path_to_key_slot = NodePath(".")
+
+[node name="CollisionShape" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot2/lock"]
+transform = Transform( 1, 0, 0, -4.26326e-14, 1, 0, 0, 0, 1, 0.00265899, 0.146603, -0.062803 )
+shape = SubResource( 21 )
+
+[node name="foot3" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+transform = Transform( 0.824284, -9.22416e-08, -0.566177, -4.27448e-08, -1, 1.00689e-07, -0.566177, -5.87951e-08, -0.824284, 0.293701, 0.319539, -0.0292336 )
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="lock" type="Area" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot3"]
+script = ExtResource( 5 )
+lock_name = "sports shoe"
+path_to_key_slot = NodePath(".")
+
+[node name="CollisionShape" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider/foot3/lock"]
+transform = Transform( 1, 0, 0, -4.26326e-14, 1, 0, 0, 0, 1, 0.00265899, 0.146603, -0.062803 )
+shape = SubResource( 21 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 16 )

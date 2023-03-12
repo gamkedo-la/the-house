@@ -312,14 +312,16 @@ func update_interraction_ray() -> void:
 	# Interracting with interractible items:
 	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance:
 		var something = _interraction_ray.get_collider()
-		if something is InteractiveItem:
+		if something is InteractiveItem and something.can_be_taken:
 			_end_pointing_usable_object()
 			if _pointed_item != something and something.is_takable_now():
 				_begin_pointing_interactive_item(something)
+								
 		elif utility.object_has_function(something, "player_interracts"): # Usable object (not takable like InterativeItems)
 			_end_pointing_interactive_item()
 			if _pointed_usable_entity != something:
 				_begin_pointing_usable_object(something)
+				
 		else:
 			# We are pointing at something but it's neither an InteractiveItem or something that can be used:
 			_end_pointing_interactive_item()

@@ -242,7 +242,7 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481
 transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6.6524, 0.0718173, -8.78317 )
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 6 )]
-transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -9.4484 )
+transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.93171 )
 
 [node name="bathroom" type="Spatial" parent="furniture"]
 

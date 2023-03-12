@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -55,6 +55,7 @@
 [ext_resource path="res://furniture/sink.tscn" type="PackedScene" id=53]
 [ext_resource path="res://furniture/bathroom_door.tscn" type="PackedScene" id=54]
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=55]
+[ext_resource path="res://items/creepy_doll.tscn" type="PackedScene" id=56]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -1131,6 +1132,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89211, 0.324353, 0.807316 )
 
 [node name="lantern" parent="special_items" instance=ExtResource( 55 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )
+
+[node name="creepy_doll" parent="special_items" instance=ExtResource( 56 )]
+transform = Transform( 0.819912, 0.148171, 0.552982, 0, 0.965926, -0.258819, -0.572489, 0.212209, 0.791974, 6.298, 1.16832, -8.52021 )
+mode = 1
+description = "A very creepy doll."
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

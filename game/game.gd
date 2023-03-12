@@ -24,7 +24,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("debug_spawn"):
 		_player_jump_to_next_spawn_point()
 		
-		
+	if Input.is_action_just_pressed("debug_light"):
+		print("enable debug light!")
+		_toggle_debug_light()
+	
 func _add_spawn_points(node:Node):
 	if node is Spatial and node.name.count("spawn") > 0:
 		_spawn_points.push_back(node)
@@ -76,4 +79,10 @@ func _on_player_entered_end_area(player : Node) -> void:
 		master_scene.to_end_game_screen()
 	
 	
-	
+func _toggle_debug_light() -> void:
+	var player = $"%player"
+	var debug_light = player.get_node("Head/Camera/debug_spotlight")
+	if debug_light.light_energy > 0.0:
+		debug_light.light_energy = 0.0
+	elif debug_light.light_energy == 0.0:
+		debug_light.light_energy = 8.0

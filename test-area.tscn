@@ -1029,6 +1029,7 @@ collision_layer = 129
 
 [node name="treasure_chest_fix_04" parent="." instance=ExtResource( 95 )]
 transform = Transform( -0.226702, 0, -0.973964, 0, 1, 0, 0.973964, 0, -0.226702, 5.40927, 0, 11.7596 )
+collision_layer = 129
 
 [node name="gold_bar" parent="treasure_chest_fix_04" instance=ExtResource( 71 )]
 transform = Transform( 0.864423, 0, -0.502763, 0, 1, 0, 0.502763, 0, 0.864423, 0.0289583, 0.199126, 0.0271387 )
@@ -1048,7 +1049,7 @@ spot_angle = 42.78
 
 [node name="SpotLight3" type="SpotLight" parent="."]
 transform = Transform( -0.533467, 0.598085, -0.598086, 0, 0.707107, 0.707106, 0.845821, 0.377218, -0.377218, 4, 2, 11 )
-light_energy = 5.821
+light_energy = 5.0
 spot_range = 4.072
 spot_angle = 42.78
 

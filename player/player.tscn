@@ -304,6 +304,10 @@ script = ExtResource( 15 )
 text_display_duration_secs = 0.0
 fade_duration_secs = 0.5
 
+[node name="debug_spotlight" type="SpotLight" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.309911, -0.0574515 )
+light_energy = 8.0
+
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )
 

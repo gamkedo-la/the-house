@@ -264,12 +264,11 @@ is_open = true
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.94251 )
 script = ExtResource( 37 )
-is_open = true
 is_locked = true
 locked_text = "Locked...\\nI need a key."
 
 [node name="main_mesh" parent="doors/kitchen_door" index="1"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.07, -0.63 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677576, 1.07, 0 )
 
 [node name="lock" type="Area" parent="doors/kitchen_door/main_mesh/door_handle_1" index="4"]
 transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.0764192, -0.00948471, 0.0955592 )
@@ -747,6 +746,44 @@ transform = Transform( -0.536799, 0.837848, 0.0992845, 0, 0.117676, -0.993052, -
 mushroom_color = 4
 mushroom_shape = 0
 is_stuck_in_ground = false
+
+[node name="secret_room" type="Spatial" parent="mushrooms"]
+
+[node name="mushroom" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41686, 0.206386, -7.17787 )
+mushroom_color = 0
+
+[node name="mushroom3" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.91908, -0.39407, -1.40398e-08, 0.298413, 0.69598, 0.653117, -0.257374, -0.600267, 0.757257, 1.50841, 0.129409, -6.8985 )
+mushroom_color = 0
+
+[node name="mushroom2" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10683, 0.206386, -7.24122 )
+mushroom_color = 0
+
+[node name="mushroom4" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.414715, 0.680169, -9.29568 )
+mushroom_color = 0
+
+[node name="mushroom5" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.646723, -0.748461, 0.146815, 0.762725, 0.634629, -0.124486, -1.49012e-08, 0.192488, 0.981299, 0.627535, 1.40108, -9.56854 )
+mushroom_color = 0
+
+[node name="mushroom6" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.21587, -0.0683811, 0.974025, 0.762725, 0.634629, -0.124486, -0.609632, 0.769786, 0.189153, 1.39535, 1.45944, -8.80522 )
+mushroom_color = 0
+
+[node name="mushroom7" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.167155, 0.152758, 0.974025, -0.168243, 0.977854, -0.124486, -0.97147, -0.143064, 0.189153, 1.47193, 1.45, -9.19593 )
+mushroom_color = 0
+
+[node name="mushroom8" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.167155, 0.152758, 0.974025, -0.168243, 0.977854, -0.124486, -0.97147, -0.143064, 0.189153, 1.12525, 1.44045, -9.63139 )
+mushroom_color = 0
+
+[node name="mushroom9" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
+transform = Transform( 0.167155, -0.0389617, 0.98516, -0.168243, 0.983436, 0.0674396, -0.97147, -0.177019, 0.157831, 0.835131, 1.49042, -9.59967 )
+mushroom_color = 0
 
 [node name="windows" type="Spatial" parent="."]
 
@@ -1258,15 +1295,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.936, 26.6718, 2.93136 )
 [node name="cardboardbox9" parent="cardboards/bathroom" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3438, 26.0718, 2.94448 )
 
-[node name="cardboardbox11" parent="cardboards/bathroom" instance=ExtResource( 7 )]
-transform = Transform( -4.28408e-08, 0, -1, 0, 1, 0, 1, 0, -4.28408e-08, -32.9007, 25.5144, 5.23416 )
-
-[node name="cardboardbox12" parent="cardboards/bathroom" instance=ExtResource( 7 )]
-transform = Transform( -4.28408e-08, 0, -1, 0, 1, 0, 1, 0, -4.28408e-08, -32.9007, 26.1144, 5.23416 )
-
-[node name="cardboardbox13" parent="cardboards/bathroom" instance=ExtResource( 7 )]
-transform = Transform( -4.28408e-08, 0, -1, 0, 1, 0, 1, 0, -4.28408e-08, -32.9007, 25.5144, 5.84611 )
-
 [node name="cardboardbox14" parent="cardboards/bathroom" instance=ExtResource( 7 )]
 transform = Transform( -0.92932, -0.369276, 1.61416e-08, 0, -4.37114e-08, -1, 0.369276, -0.92932, 4.06218e-08, -32.9576, 26.8027, 7.63211 )
 
@@ -1275,21 +1303,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.326, 26.6718, 2.94448 )
 
 [node name="secret_room" type="Spatial" parent="cardboards"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.98653 )
-
-[node name="cardboardbox3" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 25.4644, 2.93136 )
-
-[node name="cardboardbox7" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 25.5144, 1.87893 )
-
-[node name="cardboardbox12" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.1144, 1.87893 )
-
-[node name="cardboardbox5" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3603, 25.5144, 2.95799 )
-
-[node name="cardboardbox11" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.561, 26.0644, 3.05936 )
 
 [node name="cardboardbox9" parent="cardboards/secret_room" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -35.529, 25.5144, 4.29122 )
@@ -1329,7 +1342,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97634, -2.18007, -6.63266 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85285, -2.18007, -5.50372 )
 
 [node name="Candle6" parent="candles" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9437, 0.630343, 4.867 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45813, 0.250497, 0.334181 )
 
 [node name="Candle7" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77897, 4.40113, -7.3784 )
@@ -1452,6 +1465,17 @@ transform = Transform( 0.916475, 0, 0.400093, 0, 1, 0, -0.400093, 0, 0.916475, 7
 [node name="book_closed3" parent="books/bedroom" instance=ExtResource( 70 )]
 transform = Transform( 0.986265, 0, -0.165168, 0, 1, 0, 0.165168, 0, 0.986265, 7.78512, 1.12376, -4.95226 )
 
+[node name="secret_room" type="Spatial" parent="books"]
+
+[node name="book_open" parent="books/secret_room" instance=ExtResource( 69 )]
+transform = Transform( -0.160949, -8.82413e-08, 0.986963, 0, -1, -8.9407e-08, 0.986963, -1.439e-08, 0.160949, 0.116916, 0.639453, -9.3149 )
+
+[node name="book_closed" parent="books/secret_room" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04491, 0.465001, -7.98131 )
+
+[node name="book_closed2" parent="books/secret_room" instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07466, 0.4899, -7.98035 )
+
 [node name="special_items" type="Spatial" parent="."]
 
 [node name="music_box" parent="special_items" instance=ExtResource( 33 )]
@@ -1498,7 +1522,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75618, 0.719299, -7.26357 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522501, 3.76434, -0.674509 )
 
 [node name="weird_door_knob" parent="special_items" instance=ExtResource( 43 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89211, 0.324353, 0.807316 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89211, 0.135127, 0.807316 )
 
 [node name="lantern" parent="special_items" instance=ExtResource( 55 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )

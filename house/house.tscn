@@ -1035,9 +1035,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.98653 )
 [node name="cardboardbox3" parent="cardboards/secret_room" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6534, 25.4644, 2.93136 )
 
-[node name="cardboardbox17" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 0.898366, 0, -0.43925, 0, 1, 0, 0.43925, 0, 0.898366, -36.4841, 25.5144, 4.98559 )
-
 [node name="cardboardbox7" parent="cardboards/secret_room" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 25.5144, 1.87893 )
 
@@ -1047,11 +1044,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6535, 26.1144, 1.87893 )
 [node name="cardboardbox5" parent="cardboards/secret_room" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -36.3603, 25.5144, 2.95799 )
 
-[node name="cardboardbox6" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7181, 26.116, 4.91662 )
-
 [node name="cardboardbox11" parent="cardboards/secret_room" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3159, 25.5144, 4.9058 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.561, 26.0644, 3.05936 )
 
 [node name="cardboardbox9" parent="cardboards/secret_room" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -35.529, 25.5144, 4.29122 )

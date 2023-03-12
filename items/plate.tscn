@@ -23,14 +23,16 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.203, 0.0201215, 0.203 )
 
-[node name="plate" type="RigidBody"]
+[node name="plate" type="Spatial"]
+
+[node name="plate" type="RigidBody" parent="."]
 mass = 0.5
 continuous_cd = true
 script = ExtResource( 1 )
 
-[node name="plate" type="MeshInstance" parent="."]
+[node name="plate" type="MeshInstance" parent="plate"]
 mesh = SubResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" type="CollisionShape" parent="plate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013259, 0 )
 shape = SubResource( 3 )

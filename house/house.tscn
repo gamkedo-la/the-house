@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -62,6 +62,9 @@ radius = 0.175127
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 2.06142, 1.16082 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.183969, 0.173032, 0.175696 )
 
 [node name="house" type="Spatial"]
 
@@ -332,6 +335,38 @@ transform = Transform( -0.94313, 0, -0.332425, 0, 1, 0, 0.332425, 0, -0.94313, -
 [node name="chair15" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.0406723, 0, -0.999173, 0, 1, 0, 0.999173, 0, -0.0406723, -4.04086, 3.66626, -7.77603 )
 
+[node name="chair25" parent="furniture/attic" instance=ExtResource( 29 )]
+transform = Transform( -0.208524, 0, -0.668219, 0, 0.7, 0, 0.668219, 0, -0.208524, -5.14974, 3.66626, -7.69379 )
+mode = 1
+
+[node name="lock" type="Area" parent="furniture/attic/chair25"]
+script = ExtResource( 25 )
+lock_name = "dolls tea party"
+path_to_key_slot = NodePath("doll_sit_position")
+
+[node name="CollisionShape" type="CollisionShape" parent="furniture/attic/chair25/lock"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.00349617, 0.590962, 0.0370407 )
+shape = SubResource( 3 )
+
+[node name="doll_sit_position" type="Spatial" parent="furniture/attic/chair25/lock"]
+transform = Transform( 0.777321, 0.115965, 0.618323, 0.0567638, 0.965926, -0.252518, -0.626538, 0.231386, 0.744252, 0, 0.906068, 0 )
+
+[node name="chair26" parent="furniture/attic" instance=ExtResource( 29 )]
+transform = Transform( 0.682957, 0, 0.153523, 0, 0.7, 0, -0.153523, 0, 0.682957, -6.16829, 3.66626, -9.13601 )
+mode = 1
+
+[node name="chair27" parent="furniture/attic" instance=ExtResource( 29 )]
+transform = Transform( 0.374367, 0, 0.591481, 0, 0.7, 0, -0.591481, 0, 0.374367, -7.04233, 3.66626, -8.75921 )
+mode = 1
+
+[node name="chair28" parent="furniture/attic" instance=ExtResource( 29 )]
+transform = Transform( 0.0284706, 0, 0.699421, 0, 0.7, 0, -0.699421, 0, 0.0284706, -7.37468, 3.66626, -7.77332 )
+mode = 1
+
+[node name="chair29" parent="furniture/attic" instance=ExtResource( 29 )]
+transform = Transform( -0.325054, 0, 0.619951, 0, 0.7, 0, -0.619951, 0, -0.325054, -6.91684, 3.66626, -6.97183 )
+mode = 1
+
 [node name="chair16" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.937871, 0, -0.346985, 0, 1, 0, 0.346985, 0, 0.937871, -3.39793, 3.66626, -7.77603 )
 
@@ -365,6 +400,9 @@ transform = Transform( 0.801723, 0, -0.597695, 0, 1, 0, 0.597695, 0, 0.801723, 5
 [node name="table" parent="furniture/attic" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122781, 3.658, -1.53209 )
 
+[node name="table5" parent="furniture/attic" instance=ExtResource( 28 )]
+transform = Transform( 0.162129, 0, 0.680966, 0, 0.7, 0, -0.680966, 0, 0.162129, -6.0476, 3.658, -7.92323 )
+
 [node name="table2" parent="furniture/attic" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122781, 4.45932, -1.53209 )
 
@@ -379,6 +417,59 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.4393
 
 [node name="dresser2" parent="furniture/attic" instance=ExtResource( 5 )]
 transform = Transform( 0.756721, 0, 0.653738, 0, 1, 0, -0.653738, 0, 0.756721, -6.96084, 3.65301, -2.59513 )
+
+[node name="creepy_doll" parent="furniture/attic" instance=ExtResource( 56 )]
+transform = Transform( -0.87534, 0.167731, 0.453482, 0.0229403, 0.951251, -0.307563, -0.482963, -0.258819, -0.836516, -6.8174, 4.4156, -6.98497 )
+input_ray_pickable = false
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="creepy_doll2" parent="furniture/attic" instance=ExtResource( 56 )]
+transform = Transform( -0.720513, 0.229003, 0.654536, 0.0229403, 0.951251, -0.307563, -0.693061, -0.206588, -0.690643, -7.3067, 4.4156, -7.77306 )
+input_ray_pickable = false
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="creepy_doll3" parent="furniture/attic" instance=ExtResource( 56 )]
+transform = Transform( -0.0194117, 0.308009, 0.951185, 0.0229403, 0.951251, -0.307563, -0.999548, 0.0158498, -0.0255311, -6.9903, 4.4156, -8.69491 )
+input_ray_pickable = false
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="creepy_doll4" parent="furniture/attic" instance=ExtResource( 56 )]
+transform = Transform( 0.693061, 0.206588, 0.690643, 0.0229403, 0.951251, -0.307563, -0.720513, 0.229003, 0.654536, -6.16717, 4.4156, -9.06496 )
+input_ray_pickable = false
+mode = 1
+can_be_taken = false
+highlightable = false
+
+[node name="knife_cleaver" parent="furniture/attic" instance=ExtResource( 51 )]
+transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -5.51779, 4.32523, -8.28629 )
+
+[node name="plate" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.6813, 4.22817, -7.84943 )
+
+[node name="plate6" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04185, 4.22817, -7.91417 )
+
+[node name="mushroom" parent="furniture/attic/plate6" instance=ExtResource( 20 )]
+transform = Transform( -0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0.00880289, 0.117525, 0.0145411 )
+mushroom_color = 1
+
+[node name="plate2" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.03928, 4.22817, -8.30947 )
+
+[node name="plate3" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.36908, 4.22817, -8.26676 )
+
+[node name="plate4" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.49617, 4.22817, -7.79865 )
+
+[node name="plate5" parent="furniture/attic" instance=ExtResource( 30 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.20232, 4.22817, -7.53284 )
 
 [node name="basement" type="Spatial" parent="furniture"]
 
@@ -865,7 +956,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8791, 29.119, 2.20758 )
 transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -28.2231, 29.119, -3.46517 )
 
 [node name="attic_box_58" parent="cardboards/attic" instance=ExtResource( 7 )]
-transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -29.4977, 29.119, -0.863835 )
+transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -29.4977, 29.1144, -0.863835 )
+
+[node name="attic_box_59" parent="cardboards/attic" instance=ExtResource( 7 )]
+transform = Transform( 0.870107, 0, -0.492864, 0, 1, 0, 0.492864, 0, 0.870107, -28.6017, 29.1144, -0.582676 )
+
+[node name="attic_box_60" parent="cardboards/attic" instance=ExtResource( 7 )]
+transform = Transform( -0.136303, 0, -0.990668, 0, 1, 0, 0.990668, 0, -0.136303, -28.6017, 29.7144, -0.582676 )
 
 [node name="attic_box_40" parent="cardboards/attic" instance=ExtResource( 7 )]
 transform = Transform( 0.995102, 0, -0.0988508, 0, 1, 0, 0.0988508, 0, 0.995102, -27.5192, 29.119, -3.45003 )
@@ -1090,6 +1187,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85285, -2.18007, -5.50372 )
 [node name="Candle6" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9437, 0.630343, 4.867 )
 
+[node name="Candle7" parent="candles" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77897, 4.40113, -7.3784 )
+
 [node name="special_items" type="Spatial" parent="."]
 
 [node name="music_box" parent="special_items" instance=ExtResource( 33 )]
@@ -1137,6 +1237,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )
 transform = Transform( 0.819912, 0.148171, 0.552982, 0, 0.965926, -0.258819, -0.572489, 0.212209, 0.791974, 6.298, 1.16832, -8.52021 )
 mode = 1
 description = "A very creepy doll."
+
+[node name="lantern2" parent="special_items" instance=ExtResource( 42 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85938, 3.66129, 4.15732 )
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

@@ -873,29 +873,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530528, 0, 1.1575 )
 [node name="mushroom" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5532, 3.15195, 19.7336 )
 mushroom_color = 4
-mushroom_shape = 6.40363
+mushroom_shape = 0
 
 [node name="mushroom2" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.804751, 0.0817194, 6.78693 )
-mushroom_shape = 0.365914
+mushroom_shape = 0
 
 [node name="mushroom3" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.695, 0.0989852, -12.4599 )
-mushroom_shape = 7.60701
+mushroom_shape = 0
 
 [node name="mushroom4" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9717, 0.100178, -12.2528 )
 mushroom_color = 4
-mushroom_shape = 0.898175
+mushroom_shape = 0
 
 [node name="mushroom5" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.575, 0.0995038, -11.653 )
 mushroom_color = 1
-mushroom_shape = 7.12536
+mushroom_shape = 0
 
 [node name="mushroom6" parent="objects" instance=ExtResource( 76 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8245, 0.0989174, -11.6886 )
-mushroom_shape = 1.277
+mushroom_shape = 0
 
 [node name="crystal_ball" parent="objects" instance=ExtResource( 85 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44998, 0, 9.54416 )

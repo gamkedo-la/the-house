@@ -112,7 +112,8 @@ func _show_selected_model() -> void:
 func _set_mushroom_color(new_color: int) -> void:
 	if new_color != mushroom_color || new_color == MushroomColor.random:
 		if new_color == MushroomColor.random:
-			new_color = rand_range(1, MushroomColor.keys().size())
+			while new_color == MushroomColor.random || new_color == MushroomColor.brown: # We do not want brown mushrooms by default.
+				new_color = rand_range(1, MushroomColor.keys().size())
 		mushroom_color = new_color
 		
 		if _models_node is Spatial:

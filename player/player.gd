@@ -319,6 +319,10 @@ func update_interraction_ray() -> void:
 			_end_pointing_interactive_item()
 			if _pointed_usable_entity != something:
 				_begin_pointing_usable_object(something)
+		else:
+			# We are pointing at something but it's neither an InteractiveItem or something that can be used:
+			_end_pointing_interactive_item()
+			_end_pointing_usable_object()
 	else:
 		_end_pointing_interactive_item()
 		_end_pointing_usable_object()

@@ -126,9 +126,16 @@ func take(hold_where: Spatial) -> void:
 	_cancel_velocity(self)
 	set_mode(RigidBody.MODE_RIGID) # Once taken, even if the object was static before, it is now following physics laws.
 	continuous_cd = true # Turn on precise handling of collisions
+	_reparent_to_player_parent() # Make sure that the item is in the global space, not stuck to it's previous place.
 	_is_taken = true
 	emit_signal("on_taken_by_player", self)
 
+func _reparent_to_player_parent() -> void:
+	var location = global_transform
+	get_parent().remove_child(self)
+	global.current_player.get_parent().add_child(self)
+	global_transform = location
+	
 	
 func drop(where: Spatial) -> void:
 	stop_tracking()

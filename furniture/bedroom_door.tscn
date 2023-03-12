@@ -148,7 +148,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
 [node name="listening_area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.540541, 1.47128, 0 )
 collision_layer = 0
-collision_mask = 0
+collision_mask = 2048
 input_ray_pickable = false
 monitorable = false
 

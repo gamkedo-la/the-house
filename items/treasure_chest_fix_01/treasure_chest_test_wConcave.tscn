@@ -410,6 +410,7 @@ bone_name = "lid"
 
 [node name="lid_collider" type="KinematicBody" parent="chest-armature/Skeleton/BoneAttachment"]
 transform = Transform( 1, -6.27833e-07, -6.27833e-07, 6.27833e-07, -4.37114e-08, 1, -6.27833e-07, -1, -4.3711e-08, -5.05228e-08, 0.260427, -0.0804716 )
+collision_layer = 129
 
 [node name="collision_lid" type="CollisionShape" parent="chest-armature/Skeleton/BoneAttachment/lid_collider"]
 shape = SubResource( 20 )

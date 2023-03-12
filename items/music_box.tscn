@@ -2,7 +2,7 @@
 
 [ext_resource path="res://items/music_box/music_box.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_material.tres" type="Material" id=2]
-[ext_resource path="res://audio/The_House_1r.mp3" type="AudioStream" id=3]
+[ext_resource path="res://audio/music_box.wav" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.1, 0.05, 0.1 )
@@ -25,3 +25,4 @@ shape = SubResource( 1 )
 
 [node name="music_player" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
+bus = "Sounds"

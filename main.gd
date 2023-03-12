@@ -20,6 +20,11 @@ func _unhandled_key_input(event):
 	if event.is_action_pressed("mute"):
 		var muted = AudioServer.is_bus_mute(0)
 		AudioServer.set_bus_mute(0, !muted)
+		
+	if event.is_action_pressed("mute_music"):
+		var music_bus_id = AudioServer.get_bus_index("Music")
+		var muted = AudioServer.is_bus_mute(music_bus_id)
+		AudioServer.set_bus_mute(music_bus_id, !muted)
 	
 func _clear() -> void:
 	utility.delete_children(self)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://test_scenes/test-box/box.tscn" type="PackedScene" id=2]
@@ -95,6 +95,7 @@
 [ext_resource path="res://gameplay/text_display_area.tscn" type="PackedScene" id=93]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_fix.tscn" type="PackedScene" id=94]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=95]
+[ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=96]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -1031,14 +1032,10 @@ collision_layer = 129
 transform = Transform( -0.226702, 0, -0.973964, 0, 1, 0, 0.973964, 0, -0.226702, 5.40927, 0, 11.7596 )
 
 [node name="gold_bar" parent="treasure_chest_fix_04" instance=ExtResource( 71 )]
-transform = Transform( 0.864423, 0, -0.502763, 0, 1, 0, 0.502763, 0, 0.864423, 0.0289583, 0.199126, 0.0271387 )
+transform = Transform( 0.938196, 0, -0.3461, 0, 1, 0, 0.3461, 0, 0.938196, 0.0289574, 0.155137, 0.0271387 )
 
-[node name="Grimmor" type="CSGBox" parent="treasure_chest_fix_04"]
-transform = Transform( 1, 0, -2.98023e-07, 0, 1, 0, 2.98023e-07, 0, 1, 0.0303192, 0.179808, 0 )
-use_collision = true
-width = 0.610791
-height = 0.0400931
-depth = 0.379688
+[node name="grimmor" parent="treasure_chest_fix_04" instance=ExtResource( 96 )]
+transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
 
 [node name="SpotLight2" type="SpotLight" parent="."]
 transform = Transform( 0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 4, 2, 11 )

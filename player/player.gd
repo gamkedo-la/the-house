@@ -311,32 +311,46 @@ func update_interraction_ray() -> void:
 	# Interracting with interractible items:
 	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance:
 		var something = _interraction_ray.get_collider()
-		if _pointed_item != something:
-			if something is InteractiveItem and something.is_takable_now():
-				_pointed_item = something
-				_pointed_item.hilite(true)
-				print("Highlight ON: %s" % _pointed_item)
-			else:
-				if _pointed_item != null:
-					print("Highlight OFF: %s" % _pointed_item)
-					_pointed_item.hilite(false)
-					_pointed_item = null
-					
-				if utility.object_has_function(something, "player_interracts") and (something == null or something != _pointed_usable_entity):
-					print("Usable entity pointed")
-					_pointed_usable_entity = something
-				
+		if something is InteractiveItem:
+			_end_pointing_usable_object()
+			if _pointed_item != something and something.is_takable_now():
+				_begin_pointing_interactive_item(something)
+		elif utility.object_has_function(something, "player_interracts"): # Usable object (not takable like InterativeItems)
+			_end_pointing_interactive_item()
+			if _pointed_usable_entity != something:
+				_begin_pointing_usable_object(something)
 	else:
-		if _pointed_item is InteractiveItem:
-			print("Highlight OFF: %s" % _pointed_item)
-			_pointed_item.hilite(false)
-			_pointed_item = null
-		
-		if _pointed_usable_entity:
-			print("Stopped pointing at usable entity")
-			
-		_pointed_usable_entity = null
+		_end_pointing_interactive_item()
+		_end_pointing_usable_object()
+
+func _begin_pointing_interactive_item(item : InteractiveItem) -> void:
+	if _pointed_item:
+		_end_pointing_interactive_item()
+	_pointed_item = item
+	_pointed_item.hilite(true)
+	print("Item pointed: %s" % _pointed_item.name)
+
+func _end_pointing_interactive_item() -> void:	
+	if _pointed_item is InteractiveItem:
+		print("Stopped pointing item: %s" % _pointed_item.name)
+		_pointed_item.hilite(false)
+		_pointed_item = null
+
+func _begin_pointing_usable_object(object:Spatial) -> void:
+	if _pointed_usable_entity:
+		_end_pointing_usable_object()
+	print("Usable entity pointed %s" % object.name)
+	_pointed_usable_entity = object
+	if utility.object_has_function(_pointed_usable_entity, "on_player_begin_pointing"):
+		_pointed_usable_entity.on_player_begin_pointing()
 	
+func _end_pointing_usable_object() -> void:
+	if _pointed_usable_entity:
+		print("Stopped pointing at usable entity %s" % _pointed_usable_entity.name)
+		if utility.object_has_function(_pointed_usable_entity, "on_player_end_pointing"):
+			_pointed_usable_entity.on_player_end_pointing()
+		_pointed_usable_entity = null
+
 
 func get_currently_pointed_item() -> InteractiveItem:
 	return _pointed_item

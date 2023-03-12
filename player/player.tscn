@@ -214,7 +214,7 @@ Glow: 9
 Air Dust: 0
 
 Jump to next Spawn point: K 
-"
+Turn on debug light: L"
 fit_content_height = true
 scroll_active = false
 
@@ -306,7 +306,7 @@ fade_duration_secs = 0.5
 
 [node name="debug_spotlight" type="SpotLight" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.309911, -0.0574515 )
-light_energy = 8.0
+light_energy = 0.0
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

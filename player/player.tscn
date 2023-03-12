@@ -308,7 +308,6 @@ fade_duration_secs = 0.5
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.309911, -0.0574515 )
 visible = false
-light_energy = 8.0
 omni_range = 72.596
 omni_attenuation = 0.0603711
 

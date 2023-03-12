@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://items/eyeball.tscn" type="PackedScene" id=52]
 [ext_resource path="res://furniture/sink.tscn" type="PackedScene" id=53]
 [ext_resource path="res://furniture/bathroom_door.tscn" type="PackedScene" id=54]
+[ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=55]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -1126,6 +1127,9 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0519
 
 [node name="weird_door_knob" parent="special_items" instance=ExtResource( 43 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89211, 0.324353, 0.807316 )
+
+[node name="lantern" parent="special_items" instance=ExtResource( 55 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

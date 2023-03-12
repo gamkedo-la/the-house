@@ -421,6 +421,7 @@ collision_layer = 129
 shape = SubResource( 20 )
 
 [node name="foot_boot" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+unique_name_in_owner = true
 transform = Transform( 0.907514, 6.84302e-08, 0.420021, 3.17108e-08, -1, 9.44053e-08, 0.420021, -7.23549e-08, -0.907514, -0.300502, 0.319539, -0.0290914 )
 mode = 1
 can_be_taken = false
@@ -436,6 +437,7 @@ transform = Transform( 1, 0, 0, -4.26326e-14, 1, 0, 0, 0, 1, 0.00265899, 0.14660
 shape = SubResource( 21 )
 
 [node name="foot_woman_shoe" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+unique_name_in_owner = true
 transform = Transform( 1, -5.48869e-14, -1.25567e-06, 7.3774e-14, -1, 8.74228e-08, -1.25567e-06, -8.74228e-08, -1, -0.0361434, 0.319539, -0.0035712 )
 mode = 1
 can_be_taken = false
@@ -452,6 +454,7 @@ transform = Transform( 1, 0, 0, -4.26326e-14, 1, 0, 0, 0, 1, 0.00265899, 0.14660
 shape = SubResource( 21 )
 
 [node name="foot_sports_shoe" parent="chest-armature/Skeleton/BoneAttachment/lid_collider" instance=ExtResource( 4 )]
+unique_name_in_owner = true
 transform = Transform( 0.824284, -9.22416e-08, -0.566177, -4.27448e-08, -1, 1.00689e-07, -0.566177, -5.87951e-08, -0.824284, 0.293701, 0.319539, -0.0292336 )
 mode = 1
 can_be_taken = false

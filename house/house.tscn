@@ -382,6 +382,7 @@ transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 67 )]
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
+is_keypad_locked = false
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )

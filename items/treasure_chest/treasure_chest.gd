@@ -2,15 +2,29 @@ tool
 extends StaticBody
 
 export var is_open := false setget _set_open_chest
+export var is_keypad_locked := true
 export var is_locked := true
 
 onready var _animations : AnimationPlayer = $AnimationPlayer
+onready var _lock_boot : LockArea = $"%foot_boot/lock"
+onready var _lock_woman : LockArea = $"%foot_woman_shoe/lock"
+onready var _lock_sports : LockArea = $"%foot_sports_shoe/lock"
+
 
 func _ready():
 	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
 	
+	_lock_boot.connect("unlocked", self, "_on_unlocked_any_foot")
+	_lock_woman.connect("unlocked", self, "_on_unlocked_any_foot")
+	_lock_sports.connect("unlocked", self, "_on_unlocked_any_foot")
+	
 	if Engine.editor_hint:
 		_set_open_chest(is_open)
+
+func _on_unlocked_any_foot(_key_name) -> void:
+	global.current_player.action_display.display_text_sequence(["I can hear something [b]unlock[/b] inside the chest..."])
+	if not _lock_boot.is_locked and not _lock_woman.is_locked and not _lock_sports.is_locked and not is_keypad_locked:
+		is_locked = false
 
 func player_interracts():
 	if is_locked:
@@ -18,7 +32,8 @@ func player_interracts():
 		return
 		
 	if is_open:
-		close_chest()
+		if Engine.editor_hint:
+			close_chest()
 	else:
 		open_chest()
 

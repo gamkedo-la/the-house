@@ -20,11 +20,11 @@ surfaces/0 = {
 "vertex_count": 204
 }
 
-[node name="old_woman_shoe" type="RigidBody"]
+[node name="old_big_boot" type="RigidBody"]
 collision_layer = 129
 mass = 10.0
 script = ExtResource( 1 )
-description = "A woman's shoe. It looks ancient."
+description = "A big boot. It looks ancient."
 
 [node name="placeholder_collision_shape" type="CollisionShape" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.46472e-09, 0.134873, -0.0726114 )

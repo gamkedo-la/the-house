@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -56,6 +56,9 @@
 [ext_resource path="res://furniture/bathroom_door.tscn" type="PackedScene" id=54]
 [ext_resource path="res://items/lantern-modern.tscn" type="PackedScene" id=55]
 [ext_resource path="res://items/creepy_doll.tscn" type="PackedScene" id=56]
+[ext_resource path="res://gameplay/key_area.gd" type="Script" id=57]
+[ext_resource path="res://house/lock_dolls.gd" type="Script" id=58]
+[ext_resource path="res://items/old_big_boot.tscn" type="PackedScene" id=59]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -65,6 +68,9 @@ extents = Vector3( 1, 2.06142, 1.16082 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.183969, 0.173032, 0.175696 )
+
+[sub_resource type="SphereShape" id=4]
+radius = 0.269689
 
 [node name="house" type="Spatial"]
 
@@ -340,7 +346,7 @@ transform = Transform( -0.208524, 0, -0.668219, 0, 0.7, 0, 0.668219, 0, -0.20852
 mode = 1
 
 [node name="lock" type="Area" parent="furniture/attic/chair25"]
-script = ExtResource( 25 )
+script = ExtResource( 58 )
 lock_name = "dolls tea party"
 path_to_key_slot = NodePath("doll_sit_position")
 
@@ -349,7 +355,7 @@ transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.00349617, 0.590962, 
 shape = SubResource( 3 )
 
 [node name="doll_sit_position" type="Spatial" parent="furniture/attic/chair25/lock"]
-transform = Transform( 0.777321, 0.115965, 0.618323, 0.0567638, 0.965926, -0.252518, -0.626538, 0.231386, 0.744252, 0, 0.906068, 0 )
+transform = Transform( 0.777321, 0.115965, 0.618323, 0.0567638, 0.965926, -0.252518, -0.626538, 0.231386, 0.744252, 0, 1.00349, 0 )
 
 [node name="chair26" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.682957, 0, 0.153523, 0, 0.7, 0, -0.153523, 0, 0.682957, -6.16829, 3.66626, -9.13601 )
@@ -447,7 +453,7 @@ can_be_taken = false
 highlightable = false
 
 [node name="knife_cleaver" parent="furniture/attic" instance=ExtResource( 51 )]
-transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -5.51779, 4.32523, -8.28629 )
+transform = Transform( 5.96046e-08, -1, 0, 1, 5.96046e-08, 0, 0, 0, 1, -5.51779, 4.24281, -8.28629 )
 
 [node name="plate" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.6813, 4.22817, -7.84943 )
@@ -1238,8 +1244,37 @@ transform = Transform( 0.819912, 0.148171, 0.552982, 0, 0.965926, -0.258819, -0.
 mode = 1
 description = "A very creepy doll."
 
+[node name="KeyArea" type="Area" parent="special_items/creepy_doll"]
+script = ExtResource( 57 )
+key_name = "dolls tea party"
+
+[node name="CollisionShape" type="CollisionShape" parent="special_items/creepy_doll/KeyArea"]
+transform = Transform( 0.71052, -0.0349193, -0.702811, 0.225486, 0.957401, 0.180391, 0.666572, -0.286646, 0.688126, -0.00941181, -0.302779, 0.117755 )
+shape = SubResource( 4 )
+
+[node name="creepy_doll2" parent="special_items" instance=ExtResource( 56 )]
+transform = Transform( 0.819912, 0.148171, 0.552982, 0, 0.965926, -0.258819, -0.572489, 0.212209, 0.791974, -3.00473, 4.26994, -8.52021 )
+mode = 1
+description = "A very creepy doll."
+
+[node name="KeyArea" type="Area" parent="special_items/creepy_doll2"]
+script = ExtResource( 57 )
+key_name = "dolls tea party"
+
+[node name="CollisionShape" type="CollisionShape" parent="special_items/creepy_doll2/KeyArea"]
+transform = Transform( 0.71052, -0.0349193, -0.702811, 0.225486, 0.957401, 0.180391, 0.666572, -0.286646, 0.688126, -0.00941181, -0.302779, 0.117755 )
+shape = SubResource( 4 )
+
 [node name="lantern2" parent="special_items" instance=ExtResource( 42 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85938, 3.66129, 4.15732 )
+
+[node name="old_big_boot" parent="special_items" instance=ExtResource( 59 )]
+unique_name_in_owner = true
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 7.2282, 6.12459, -3.38309 )
+visible = false
+mode = 1
+sleeping = true
+can_be_taken = false
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

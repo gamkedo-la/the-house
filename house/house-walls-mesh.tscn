@@ -1,16 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://furniture/door-basic.tscn" type="PackedScene" id=3]
-[ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=4]
+[ext_resource path="res://house/house/house_interior_wall_spatialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://house/house/wood_siding_spatialmaterial.tres" type="Material" id=4]
 [ext_resource path="res://house/house/roof_spatialmaterial.tres" type="Material" id=5]
-[ext_resource path="res://house/house/house_interior_wall_spatialmaterial.tres" type="Material" id=6]
-[ext_resource path="res://house/house/wood_siding_spatialmaterial.tres" type="Material" id=7]
-[ext_resource path="res://house/windows/window.tscn" type="PackedScene" id=8]
-[ext_resource path="res://house/house/house_wall_plaster_spatialmaterial.tres" type="Material" id=9]
-[ext_resource path="res://house/house/house_interior_walls.tres" type="Material" id=10]
-[ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=11]
+[ext_resource path="res://house/house/house_wall_plaster_spatialmaterial.tres" type="Material" id=6]
+[ext_resource path="res://house/house/house_interior_walls.tres" type="Material" id=7]
+[ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -32,7 +29,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 10 ),
+"material": ExtResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1851
@@ -44,7 +41,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 7 ),
+"material": ExtResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 8730
@@ -68,7 +65,7 @@ surfaces/4 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 11 ),
+"material": ExtResource( 8 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2955
@@ -80,7 +77,7 @@ surfaces/5 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 9 ),
+"material": ExtResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1506
@@ -92,7 +89,7 @@ surfaces/6 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 4 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2259
@@ -104,7 +101,7 @@ surfaces/7 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": ExtResource( 6 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 174
@@ -121,55 +118,8 @@ surfaces/8 = {
 "vertex_count": 54
 }
 
-[node name="house_title" type="Spatial"]
-
-[node name="porch_ladder" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.882743, 0.469856, 0, -0.469856, 0.882743, -0.0164985, -3.52353, 10.9708 )
-
-[node name="doors" type="Spatial" parent="."]
-
-[node name="entrance_door" parent="doors" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599523, 0.0657877, 6.06917 )
-
-[node name="furniture" type="Spatial" parent="."]
-
-[node name="windows" type="Spatial" parent="."]
-
-[node name="window" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92559, 1.46548, 5.85614 )
-
-[node name="window2" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22235, 1.46548, 5.85614 )
-
-[node name="window3" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20606, 5.46922, 5.85614 )
-
-[node name="window4" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91975, 5.46717, 5.85614 )
-
-[node name="window5" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84387, 1.7442, -9.81289 )
-
-[node name="window6" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76868, 1.7442, -9.8119 )
-
-[node name="window7" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62629, 1.64394, -9.81226 )
-
-[node name="window8" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.18981, 1.46852, 2.74211 )
-
-[node name="window9" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.18981, 5.48106, -3.52097 )
-
-[node name="window10" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942, 5.48106, -3.52097 )
-
-[node name="window11" parent="windows" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.19942, 1.47642, 2.86375 )
+[node name="house_walls" type="Spatial"]
 
 [node name="walls_mesh" type="MeshInstance" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
 mesh = SubResource( 1 )
-
-[editable path="porch_ladder"]

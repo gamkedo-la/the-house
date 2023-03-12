@@ -7,7 +7,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111084, 2.31721, -15.1723 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111084, 2.31721, 18.7073 )
 
 [node name="ground" parent="." instance=ExtResource( 1 )]
 transform = Transform( 24.6599, 0, 0, 0, 0.0771925, 0, 0, 0, 23.7316, 0, 0, 0 )

@@ -149,6 +149,7 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.0
 
 [node name="bedroom_door" parent="doors" instance=ExtResource( 39 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.96822 )
+is_open = true
 is_locked = true
 
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
@@ -242,7 +243,7 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.04481
 transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6.6524, 0.0718173, -8.78317 )
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 6 )]
-transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.93171 )
+transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
 
 [node name="bathroom" type="Spatial" parent="furniture"]
 

@@ -77,6 +77,16 @@ static func object_has_signal( object: Object, signal_name: String ) -> bool:
 			return true
 		
 	return false
+	
+static func object_has_function( object: Object, func_name: String ) -> bool:
+	# source: https://www.reddit.com/r/godot/comments/8bklwt/check_if_node_has_signal/
+	var list = object.get_method_list()
+	
+	for func_entry in list:
+		if func_entry["name"] == func_name:
+			return true
+		
+	return false
 
 static func random_direction_on_xz_plan(node: Spatial) -> void:
 	node.global_transform.basis = node.global_transform.basis.rotated(Vector3.UP, rand_range(deg2rad(0), deg2rad(360)))

@@ -11,7 +11,7 @@ height = 2.16952
 radius = 0.7104
 
 [sub_resource type="SphereShape" id=2]
-radius = 0.0997423
+radius = 0.130442
 
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315

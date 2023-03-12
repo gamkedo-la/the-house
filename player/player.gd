@@ -322,7 +322,7 @@ func update_interraction_ray() -> void:
 					_pointed_item.hilite(false)
 					_pointed_item = null
 					
-				if utility.object_has_signal(something, "on_player_interracts") and (something == null or something != _pointed_usable_entity):
+				if utility.object_has_function(something, "player_interracts") and (something == null or something != _pointed_usable_entity):
 					print("Usable entity pointed")
 					_pointed_usable_entity = something
 				

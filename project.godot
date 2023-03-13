@@ -411,8 +411,8 @@ debug_light={
 [physics]
 
 3d/smooth_trimesh_collision=true
-common/physics_fps=200
-common/physics_jitter_fix=1.0
+common/physics_fps=220
+common/physics_jitter_fix=2.0
 common/enable_pause_aware_picking=true
 3d/physics_engine="GodotPhysics"
 3d/active_soft_world=false

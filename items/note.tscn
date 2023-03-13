@@ -23,7 +23,9 @@ surfaces/0 = {
 extents = Vector3( 0.05, 0.05, 0.007 )
 
 [node name="note" type="RigidBody"]
+mass = 0.1
 script = ExtResource( 1 )
+orientation_held_front = 1
 description = "A hand-written note.\\nIt's a sequence of weird symbols I never saw before."
 
 [node name="placeholder_mesh_replace_me_please" type="MeshInstance" parent="."]

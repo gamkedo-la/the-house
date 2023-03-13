@@ -48,6 +48,7 @@ var highlites := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	continuous_cd = true # Turn on precise handling of collisions
 	_previous_global_transform_origin = global_transform.origin
 	# Does this item 'glow' when the player hovers over it?
 	if highlightable:
@@ -125,7 +126,6 @@ func take(hold_where: Spatial) -> void:
 	_set_collision_with_player(self, false) # stop colliding with the player
 	_cancel_velocity(self)
 	set_mode(RigidBody.MODE_RIGID) # Once taken, even if the object was static before, it is now following physics laws.
-	continuous_cd = true # Turn on precise handling of collisions
 	_reparent_to_player_parent() # Make sure that the item is in the global space, not stuck to it's previous place.
 	_is_taken = true
 	emit_signal("on_taken_by_player", self)
@@ -145,7 +145,6 @@ func drop(where: Spatial) -> void:
 	_cancel_velocity(self)
 	linear_velocity = global.gravity.normalized()
 	sleeping = false # Makes sure it starts falling
-	continuous_cd = false # Turn off precise handling of collisions
 	_is_taken = false
 	emit_signal("on_dropped_by_player", self)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -59,6 +59,7 @@
 [ext_resource path="res://gameplay/key_area.gd" type="Script" id=57]
 [ext_resource path="res://house/lock_dolls.gd" type="Script" id=58]
 [ext_resource path="res://items/old_big_boot.tscn" type="PackedScene" id=59]
+[ext_resource path="res://furniture/symbol_translator.tscn" type="PackedScene" id=60]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=67]
 [ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=68]
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
@@ -518,6 +519,11 @@ transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.4824
 
 [node name="chair_comfy" parent="furniture/basement" instance=ExtResource( 27 )]
 transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -1.93254, -3.15576, -4.46224 )
+
+[node name="kitchen" type="Spatial" parent="furniture"]
+
+[node name="symbol_translator" parent="furniture/kitchen" instance=ExtResource( 60 )]
+transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -7.41389, 0.0536098, 5.07503 )
 
 [node name="mushrooms" type="Spatial" parent="."]
 
@@ -1343,6 +1349,9 @@ transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 3.32387, 
 
 [node name="note" parent="books/toilets/book_open" instance=ExtResource( 71 )]
 transform = Transform( -1, 8.74228e-08, 1.3027e-15, 5.27516e-22, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0.203722, 0.00499763, -0.112655 )
+description = "A crypted hand-written note.\\nIt's a sequence of unfamiliar [b]symbols[/b]."
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
 
 [node name="book_open2" parent="books/toilets" instance=ExtResource( 69 )]
 transform = Transform( 0.214087, 0, 0.976815, 0, 1, 0, -0.976815, 0, 0.214087, 3.40131, 0.296992, -8.92725 )

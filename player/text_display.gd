@@ -17,6 +17,9 @@ var _status_start_time : float
 var _fade_start_value : float
 var _fade_target : float
 
+signal started_new_display_sequence()
+signal text_sequence_display_completed()
+
 func _init():
 	modulate.a = 0.0
 
@@ -28,6 +31,7 @@ func display_text_sequence(new_text_sequence: Array, exclusive: bool = true) -> 
 	if exclusive:
 		stop_display_sequence()
 		_texts_to_display = new_text_sequence.duplicate()
+		emit_signal("started_new_display_sequence")
 	else:
 		_texts_to_display.append_array(new_text_sequence.duplicate())
 	
@@ -72,6 +76,8 @@ func _update_fade_in() -> void:
 func _update_fade_out() -> void:
 	_fade_target = 0.0
 	_fade_to(Status.TEXT_HIDDEN)
+	if _texts_to_display.empty():
+		emit_signal("text_sequence_display_completed")
 
 func _fade_to(next_status : int) -> void:
 	var secs_since_beginning = utility.now_secs() - _status_start_time		

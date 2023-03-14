@@ -310,7 +310,7 @@ func update_interraction_ray() -> void:
 		
 	
 	# Interracting with interractible items:
-	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance:
+	if _interraction_ray.is_colliding() and distance_to_pointed <= interraction_distance and not is_examining():
 		var something = _interraction_ray.get_collider()
 		if something is InteractiveItem and something.can_be_taken:
 			_end_pointing_usable_object()

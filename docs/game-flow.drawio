@@ -91,7 +91,7 @@
                 <mxCell id="178" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="21" target="177" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="An unsettling Chest:&lt;br&gt;- 3 foot seems to have grown from it's cover, going outward. They are naked.&lt;br&gt;- the chest is closed and locked. There is a big keypad on it with numbers (0 to 9). 6 numbers must be entered." style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
+                <mxCell id="21" value="&lt;strike&gt;An unsettling Chest:&lt;br&gt;- 3 foot seems to have grown from it's cover, going outward. They are naked.&lt;/strike&gt;&lt;br&gt;&lt;strike&gt;- the chest is closed and locked. There is a big keypad on it with numbers (0 to 9). 6 numbers must be entered.&lt;/strike&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
                     <mxGeometry x="1139.98875" y="2525" width="250" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="77" style="edgeStyle=none;html=1;fontSize=11;" parent="1" source="22" target="76" edge="1">
@@ -401,7 +401,7 @@
                 <mxCell id="114" style="edgeStyle=none;html=1;fontSize=11;" parent="1" source="110" target="112" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" value="There are books in there.&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
+                <mxCell id="110" value="&lt;strike&gt;There are books in there.&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;" parent="1" vertex="1">
                     <mxGeometry x="-305" y="1000" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="116" style="edgeStyle=none;html=1;fontSize=11;" parent="1" source="112" target="115" edge="1">
@@ -530,7 +530,7 @@
                 <mxCell id="180" value="" style="edgeStyle=none;html=1;fontSize=11;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="1" source="177" target="179" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="177" value="In the chest:&lt;br&gt;A big grimmor and a &lt;b&gt;GOLDEN OBJECT&lt;/b&gt; (not decided yet, can be a lingo/bar)" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;" parent="1" vertex="1">
+                <mxCell id="177" value="&lt;strike&gt;In the chest:&lt;br&gt;A big grimmor and a &lt;b&gt;GOLDEN OBJECT&lt;/b&gt; (not decided yet, can be a lingo/bar)&lt;/strike&gt;" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1157.48875" y="2710" width="215" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="179" value="Looking at the Grimmor will display a text.&lt;br&gt;This is a recipe for a GOLDEN HANDSHAKE.&lt;br&gt;&lt;br&gt;IT requires:&lt;br&gt;- at least one hand&lt;br&gt;- at least one foot&lt;br&gt;- at least one nose&lt;br&gt;- at least two eyes&lt;br&gt;- several magic mushooms&lt;br&gt;- some gold (a gold object)" style="whiteSpace=wrap;html=1;fontSize=11;rounded=0;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" parent="1" vertex="1">

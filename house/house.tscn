@@ -263,8 +263,6 @@ transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6
 
 [node name="chest" parent="furniture/bedroom" instance=ExtResource( 67 )]
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
-is_keypad_locked = false
-is_locked = false
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
@@ -1349,7 +1347,7 @@ transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 3.32387, 
 
 [node name="note" parent="books/toilets/book_open" instance=ExtResource( 71 )]
 transform = Transform( -1, 8.74228e-08, 1.3027e-15, 5.27516e-22, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0.203722, 0.00499763, -0.112655 )
-description = "A crypted hand-written note.\\nIt's a sequence of unfamiliar [b]symbols[/b]."
+note_key = "chest"
 translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
 translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
 
@@ -1447,6 +1445,12 @@ key_name = "dolls tea party"
 [node name="CollisionShape" type="CollisionShape" parent="special_items/creepy_doll/KeyArea"]
 transform = Transform( 0.71052, -0.0349193, -0.702811, 0.225486, 0.957401, 0.180391, 0.666572, -0.286646, 0.688126, -0.00941181, -0.302779, 0.117755 )
 shape = SubResource( 4 )
+
+[node name="note" parent="special_items/creepy_doll" instance=ExtResource( 71 )]
+transform = Transform( -0.836516, -0.224144, 0.500001, -0.258819, 0.965928, 2.23517e-07, -0.482964, -0.12941, -0.866025, 0.141177, 0.125391, -0.24174 )
+note_key = "attic"
+translated_description = "A crypted hand-written note.\\nII translated it: it's 5 figures number."
+translation_text = "Got it!\\nThis is actually a 5 figures number!"
 
 [node name="lantern2" parent="special_items" instance=ExtResource( 42 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85938, 3.66129, 4.15732 )

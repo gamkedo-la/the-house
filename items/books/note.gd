@@ -2,6 +2,7 @@ extends InteractiveItem
 
 class_name PaperNote
 
+export var note_key := ""
 export var is_translated := false
 export var translated_description := "This is an hand-written note. I managed to translate it."
 export var translation_text := "This makes sense!\nThis note is now translated."

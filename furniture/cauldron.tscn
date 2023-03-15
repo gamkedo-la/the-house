@@ -245,7 +245,13 @@ shape = SubResource( 13 )
 [node name="water" type="MeshInstance" parent="."]
 mesh = SubResource( 18 )
 
+[node name="golden_hand_position" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0936687, 0.803598, 0.130587 )
+
 [node name="mixing_area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0591881, 0 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="mixing_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772953, 0 )

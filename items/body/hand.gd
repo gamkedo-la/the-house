@@ -1,6 +1,7 @@
 tool
 extends InteractiveItem
 
+class_name BodyHand
 
 export var is_left_handed : bool = false setget _set_left_handed,_is_left_handed
 

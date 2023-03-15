@@ -38,4 +38,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6842, 0.184994, 2.12511 )
 
 [node name="old_woman_shoe" parent="." instance=ExtResource( 4 )]
 transform = Transform( -3.48865e-08, 0.79811, 0.602512, -1, -4.47035e-08, -1.49012e-08, 2.98023e-08, -0.602512, 0.79811, -2.76554, 2.62003, 0.36567 )
-continuous_cd = true

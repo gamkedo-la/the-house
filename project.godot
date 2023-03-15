@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "InteractiveItem",
+"class": "BodyEar",
+"language": "GDScript",
+"path": "res://items/body/ear.gd"
+}, {
+"base": "BodyHand",
+"class": "BodyFoot",
+"language": "GDScript",
+"path": "res://items/body/foot.gd"
+}, {
+"base": "InteractiveItem",
+"class": "BodyHand",
+"language": "GDScript",
+"path": "res://items/body/hand.gd"
+}, {
 "base": "Area",
 "class": "ClimbingArea",
 "language": "GDScript",
@@ -23,6 +38,11 @@ _global_script_classes=[ {
 "class": "Door",
 "language": "GDScript",
 "path": "res://furniture/doors/door.gd"
+}, {
+"base": "InteractiveItem",
+"class": "EyeBall",
+"language": "GDScript",
+"path": "res://items/body/eyeball.gd"
 }, {
 "base": "Node",
 "class": "FSM_State",
@@ -48,6 +68,11 @@ _global_script_classes=[ {
 "class": "Game",
 "language": "GDScript",
 "path": "res://game/game.gd"
+}, {
+"base": "InteractiveItem",
+"class": "GoldBar",
+"language": "GDScript",
+"path": "res://items/treasure_chest/gold_bar.gd"
 }, {
 "base": "RayCast",
 "class": "GroundChecker",
@@ -145,14 +170,19 @@ _global_script_classes=[ {
 "path": "res://code-library/utility.gd"
 } ]
 _global_script_class_icons={
+"BodyEar": "",
+"BodyFoot": "",
+"BodyHand": "",
 "ClimbingArea": "",
 "CollisionLayers": "",
 "Door": "",
+"EyeBall": "",
 "FSM_State": "",
 "FSM_StateMachine": "",
 "FireArea": "",
 "FootAudio": "",
 "Game": "",
+"GoldBar": "",
 "GroundChecker": "",
 "InteractiveItem": "",
 "ItemUtils": "",

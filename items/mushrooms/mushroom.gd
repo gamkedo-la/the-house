@@ -166,4 +166,5 @@ func compute_light_intensity() -> void:
 	_light_node.light_energy = lerp(0, _target_light_strengh, ease(lighting_ratio, -3.2)) # see https://docs.godotengine.org/en/3.5/classes/class_@gdscript.html#class-gdscript-method-ease
 #	print("mushroom %s : _light_node.light_energy = %s, ratio = %s" % [name, _light_node.light_energy, lighting_ratio])
 	
-	
+func is_magic_mushroom() -> bool:
+	return mushroom_color == MushroomColor.brown

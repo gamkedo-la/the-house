@@ -116,3 +116,11 @@ static func random_int(min_value:int, max_value: int) -> int:
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	return random.randi_range(min_value, max_value)
+
+static func without_null(array: Array) -> Array:
+	var result = []
+	for x in array:
+		if is_instance_valid(x):
+			result.push_back(x)
+		
+	return result

@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://items/body/hand.gd" type="Script" id=1]
+[ext_resource path="res://items/body/foot.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.0359637, 0.127163, 0.0274127 )
@@ -25,6 +25,47 @@ surfaces/0 = {
 "vertex_count": 552
 }
 
+[sub_resource type="Shader" id=7]
+code = "shader_type spatial;
+render_mode cull_front, unshaded;
+
+uniform vec4 outline_color : hint_color;
+uniform float outline_width = 1.0;
+
+void vertex() {
+	if (outline_width > 0.0)
+	{
+		vec4 clip_position = PROJECTION_MATRIX * (MODELVIEW_MATRIX * vec4(VERTEX, 1.0));
+		vec3 clip_normal = mat3(PROJECTION_MATRIX) * (mat3(MODELVIEW_MATRIX) * NORMAL);
+		
+		vec2 offset = normalize(clip_normal.xy) / VIEWPORT_SIZE * clip_position.w * outline_width * 2.0;
+		
+		clip_position.xy += offset;
+		
+		POSITION = clip_position;	
+	}
+}
+
+void fragment() {
+	if(outline_width > 0.0)
+	{
+		ALBEDO = outline_color.rgb;
+		if (outline_color.a < 1.0) {
+			ALPHA = outline_color.a;
+		}
+	}
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outline_width = 0.0
+
+[sub_resource type="SpatialMaterial" id=9]
+next_pass = SubResource( 8 )
+albedo_color = Color( 0.670588, 0.227451, 0.341176, 1 )
+
 [node name="foot" type="RigidBody"]
 collision_layer = 129
 continuous_cd = true
@@ -42,3 +83,4 @@ shape = SubResource( 6 )
 [node name="placeholder_please_replace_me" type="MeshInstance" parent="."]
 transform = Transform( -1, 0, -1.92963e-07, 0, 1.3107, 0, 1.50996e-07, 0, -1.27793, -8.83171e-10, 0, -0.0202046 )
 mesh = SubResource( 4 )
+material/0 = SubResource( 9 )

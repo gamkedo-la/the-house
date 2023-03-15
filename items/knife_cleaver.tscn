@@ -19,7 +19,7 @@ surfaces/0 = {
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-shader_param/ColorUniform = Color( 0.984314, 0.921569, 0.921569, 1 )
+shader_param/ColorUniform = Color( 0.964706, 0.937255, 0.937255, 1 )
 shader_param/HowShiny = 2.0
 shader_param/Roughness = 0.181
 

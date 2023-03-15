@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://furniture/cauldron/default.material" type="Material" id=1]
 [ext_resource path="res://furniture/cauldron/dark_water.tres" type="Material" id=2]
+[ext_resource path="res://shaders/metal_shiny.tres" type="Shader" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "cauldron_foot4"
@@ -17,6 +18,12 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 114
 }
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = ExtResource( 3 )
+shader_param/ColorUniform = Color( 0.533333, 0.533333, 0.533333, 1 )
+shader_param/HowShiny = 2.0
+shader_param/Roughness = 0.2
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "cauldron_foot3"
@@ -108,6 +115,12 @@ surfaces/0 = {
 "vertex_count": 802
 }
 
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 3 )
+shader_param/ColorUniform = Color( 0.384314, 0.384314, 0.384314, 1 )
+shader_param/HowShiny = 2.0
+shader_param/Roughness = 0.477
+
 [sub_resource type="ConvexPolygonShape" id=14]
 points = PoolVector3Array( 0.738066, 0.272695, 0.0190908, 0.122679, 0.828654, 0.939851, 0.060599, 0.831302, 0.945682, 0.702626, 1.24314, -0.0305492, 0.0469055, 0.0121374, -0.0132346, 0.619442, 0.501464, 0.665858, 0.0306419, 1.24314, 0.702551, 0.787204, 0.900092, 0.513857, 0.0306419, 0.510096, -0.0305492, 0.0678831, 0.208873, 0.656351, 0.946542, 0.630976, 0.00248856, 0.517442, 0.197756, 0.378912, 0.462614, 1.18492, 0.598106, 0.835433, 0.471082, 0.327721, 0.517458, 0.901113, 0.784836, 0.330425, 0.469999, 0.834055, 0.878763, 0.991567, 0.209871, 0.292322, 0.0660857, 0.205218, 0.690677, 1.20545, 0.286917, 0.0670849, 0.518316, 0.910449, 0.211458, 0.993141, 0.87766, 0.866513, 0.76453, 0.406461, 0.409975, 0.253597, 0.594543, 0.947838, 0.860134, 0.00110927, 0.490015, 0.119836, 0.00481509, 0.326599, 0.712326, 0.896591, 0.671529, 0.629602, 0.666674, 0.058678, 0.0565449, 0.315503, 0.64861, 0.262084, 0.328987, 0.297464, 0.134551, 0.432198, 0.763955, 1.01367, 0.459897, 0.936214, 0.742316, 0.208735, 0.288621, 1.20615, 0.689021, 0.916442, 0.51744, 0.0041135, 0.723, 0.44946, 0.51205, 0.544949, 1.01303, 0.705674, 0.0650517, 0.347772, 0.799285, 0.543025, 0.629739, 0.772967, 0.897504, 1.01031, -0.00745545, 0.676294, 0.815423, 0.672171, 0.0541491, 1.00873, 0.894404, 0.776819, 0.629712, 0.538314, 0.845874, 0.411928, 0.158957, 0.600124, 0.190981, 0.185035, 0.249052, 0.281222, 0.701688, 0.491292, 0.423328, 0.718754, 0.351228, 0.880939, 0.876489, 0.407934, 1.01553, 0.789755, 0.898539, 0.603451, 0.269486, 0.54322, 0.263657, 0.486447, 0.877323, 0.879586, 0.349077, 0.209892, 0.742974, 0.935954, 0.600835, 1.18437, 0.459742, 0.317524, 0.0573405, -2.80693e-05, 0.463917, 0.764449, 0.835723, 0.355966, 0.576563, 0.863999, 0.681123, 0.984539, 0.595998, 0.18644, 0.160978, 0.542422, 0.160351, 0.410784, 0.844734, 0.619437, 0.424662, 0.614472, 0.659585, 0.206871, 0.00681998, 0.681524, 0.248396, 0.21423, 0.672035, 1.21249, -0.0305492, 0.717639, 1.20103, 0.202899 )
 
@@ -167,24 +180,31 @@ surfaces/1 = {
 
 [node name="foot4" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
+material/0 = SubResource( 19 )
 
 [node name="foot3" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
+material/0 = SubResource( 19 )
 
 [node name="foot2" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )
+material/0 = SubResource( 19 )
 
 [node name="foot1" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )
+material/0 = SubResource( 19 )
 
 [node name="handle2" type="MeshInstance" parent="."]
 mesh = SubResource( 5 )
+material/0 = SubResource( 19 )
 
 [node name="handle1" type="MeshInstance" parent="."]
 mesh = SubResource( 6 )
+material/0 = SubResource( 19 )
 
 [node name="bowl" type="MeshInstance" parent="."]
 mesh = SubResource( 7 )
+material/0 = SubResource( 20 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="."]
 shape = SubResource( 14 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://furniture/cauldron/default.material" type="Material" id=1]
 [ext_resource path="res://furniture/cauldron/dark_water.tres" type="Material" id=2]
 [ext_resource path="res://shaders/metal_shiny.tres" type="Shader" id=3]
+[ext_resource path="res://furniture/cauldron/cauldron.gd" type="Script" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "cauldron_foot4"
@@ -176,7 +177,12 @@ surfaces/1 = {
 "vertex_count": 18
 }
 
+[sub_resource type="CylinderShape" id=21]
+height = 0.521967
+radius = 0.628393
+
 [node name="cauldron" type="StaticBody"]
+script = ExtResource( 4 )
 
 [node name="foot4" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
@@ -238,3 +244,9 @@ shape = SubResource( 13 )
 
 [node name="water" type="MeshInstance" parent="."]
 mesh = SubResource( 18 )
+
+[node name="mixing_area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="mixing_area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772953, 0 )
+shape = SubResource( 21 )

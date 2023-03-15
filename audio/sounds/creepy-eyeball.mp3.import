@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creepy-eyeball.mp3-0601554993767990eca0f1a5099bf757.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creepy-eyeball.mp3"
+dest_files=[ "res://.import/creepy-eyeball.mp3-0601554993767990eca0f1a5099bf757.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

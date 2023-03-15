@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://shaders/gold_metaillic.tres" type="Shader" id=1]
+[ext_resource path="res://shaders/metal_shiny.tres" type="Shader" id=1]
 
 [resource]
 shader = ExtResource( 1 )

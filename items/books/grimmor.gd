@@ -1,6 +1,6 @@
 extends StaticBody
 
-const grimmor_text := "This old grimmor is open on a recipe or spell named [b]The Golden Handshake[/b]\n\n\"Mix one of each ingredients in a dark sauce of a cauldron:\nFIXME\""
+const grimmor_text := "This old grimmor is open on a recipe or spell\nnamed [b]The Golden Handshake[/b]\n\n\"Mix these ingredients in a dark sauce:\nTwo hands,\nTwo ears,\nTwo feet,\nTwo eyes,\nSome brown magic mushrooms (the ones that do not glow!),\nAnd some gold.\""
 
 
 var _is_reading_text := false

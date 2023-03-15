@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=2]
 [ext_resource path="res://items/note.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/symbol_translator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -66,3 +67,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0 )
 visible = false
 shape = SubResource( 3 )
 disabled = true
+
+[node name="grimmor" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56367, -0.00219637, -0.303957 )

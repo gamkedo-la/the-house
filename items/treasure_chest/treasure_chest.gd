@@ -24,7 +24,7 @@ func _ready():
 func _on_unlocked_any_lock(_key_name) -> void:
 	global.current_player.action_display.display_text_sequence(["I can hear something [b]unlock[/b] inside the chest..."])
 	if not _lock_boot.is_locked and not _lock_woman.is_locked and not _lock_sports.is_locked and not is_keypad_locked:
-		global.current_player.action_display.display_text_sequence(["I think it was the last lock, I can probably open it now..."])
+		global.current_player.action_display.display_text_sequence(["I think it was the last lock, I can probably open it now..."], TextDisplay.DisplayMode.ADD_NEXT)
 		is_locked = false
 
 func player_interracts():

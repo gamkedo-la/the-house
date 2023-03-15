@@ -12,6 +12,7 @@ export(float, 0, 600) var fade_duration_secs = 1.0
 const _alpha_property := "modulate:a"
 
 enum Status { TEXT_HIDDEN, FADE_IN, TEXT_READABLE, FADE_OUT }
+enum DisplayMode { ADD_NEXT, EXCLUSIVE }
 var _status = Status.TEXT_HIDDEN
 var _status_start_time : float
 var _fade_start_value : float
@@ -23,17 +24,19 @@ signal text_sequence_display_completed()
 func _init():
 	modulate.a = 0.0
 
-func display_text_sequence(new_text_sequence: Array, exclusive: bool = true) -> void:
+func display_text_sequence(new_text_sequence: Array, mode: int = DisplayMode.EXCLUSIVE) -> void:
 	assert(!new_text_sequence.empty())
 	for text in new_text_sequence:
 		assert(text is String)
 		
-	if exclusive:
+	if mode == DisplayMode.EXCLUSIVE:
 		stop_display_sequence()
 		_texts_to_display = new_text_sequence.duplicate()
 		emit_signal("started_new_display_sequence")
-	else:
+	elif mode == DisplayMode.ADD_NEXT:
 		_texts_to_display.append_array(new_text_sequence.duplicate())
+	else:
+		assert(false)
 	
 func stop_display_sequence() -> void:
 	_texts_to_display = []

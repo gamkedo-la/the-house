@@ -13,5 +13,5 @@ func _ready():
 func translate_note() -> void:
 	is_translated = true
 	description = translated_description
-	global.current_player.action_display.display_text_sequence([translation_text], true)
+	global.current_player.action_display.display_text_sequence([translation_text], TextDisplay.DisplayMode.ADD_NEXT)
 	

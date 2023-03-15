@@ -40,6 +40,7 @@ onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
 onready var info_display : TextDisplay = $"%info_display"
 onready var examination_display : TextDisplay = $"%examination_display"
+onready var reading_display : TextDisplay = $"%reading_display"
 
 
 var _pointed_item : InteractiveItem

@@ -18,11 +18,14 @@ func start_reading_text() -> void:
 	assert(_player_is_reading)
 	if _is_reading_text:
 		return
-	global.current_player.examination_display.display_text_sequence([grimmor_text])
+	global.current_player.story_display.stop_display_sequence()
+	global.current_player.examination_display.stop_display_sequence()
+	global.current_player.action_display.stop_display_sequence()
+	global.current_player.reading_display.display_text_sequence([grimmor_text])
 	_is_reading_text = true
 
 func stop_reading_text() -> void:
-	global.current_player.examination_display.stop_display_sequence()
+	global.current_player.reading_display.stop_display_sequence()
 	_is_reading_text = false
 
 func on_player_begin_pointing() -> void:

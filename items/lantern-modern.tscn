@@ -4,9 +4,8 @@
 [ext_resource path="res://items/lantern/lantern_modern.fbx" type="PackedScene" id=2]
 [ext_resource path="res://items/interactive_item.gd" type="Script" id=3]
 
-[sub_resource type="CylinderShape" id=1]
-height = 2.16952
-radius = 0.7104
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.467305, 1.0721, 0.422399 )
 
 [node name="lantern" type="RigidBody"]
 angular_damp = 23.315
@@ -14,12 +13,12 @@ script = ExtResource( 3 )
 orientation_hand_held = 2
 description = "A modern lantern. It can be turned on/off without fire."
 
+[node name="lantern-mesh" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.2, 0, -7.45058e-09, 0, 0.2, 0, 7.45058e-09, 0, -0.2, 0, -1.49012e-08, 0 )
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
 shape = SubResource( 1 )
-
-[node name="lantern-mesh" parent="CollisionShape" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.72529e-08, 0, 1, 0, 3.72529e-08, 0, -1, 0, -1.1, 0 )
 
 [node name="lantern-light" type="Spatial" parent="."]
 script = ExtResource( 1 )

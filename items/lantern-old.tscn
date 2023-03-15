@@ -6,9 +6,8 @@
 [ext_resource path="res://items/flame.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/lightable_area.gd" type="Script" id=5]
 
-[sub_resource type="CylinderShape" id=1]
-height = 2.16952
-radius = 0.7104
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.467305, 1.0721, 0.422399 )
 
 [sub_resource type="SphereShape" id=2]
 radius = 0.130442
@@ -19,12 +18,12 @@ script = ExtResource( 2 )
 orientation_hand_held = 2
 description = "An old lantern. It needs fire on it's red part to be lighten."
 
+[node name="lantern_old_mesh" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 0, 0.02, 0 )
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.22, 0 )
-shape = SubResource( 1 )
-
-[node name="lantern_old_mesh" parent="CollisionShape" instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0 )
+shape = SubResource( 3 )
 
 [node name="lantern-light" type="Spatial" parent="."]
 script = ExtResource( 3 )

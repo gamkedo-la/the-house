@@ -148,6 +148,7 @@ shader_param/Roughness = 0.312
 
 [node name="golden_hand" type="RigidBody"]
 collision_layer = 129
+continuous_cd = true
 script = ExtResource( 1 )
 description = "A golden human hand."
 

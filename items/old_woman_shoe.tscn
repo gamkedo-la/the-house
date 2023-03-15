@@ -65,6 +65,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 [node name="old_woman_shoe" type="RigidBody"]
 collision_layer = 129
 mass = 10.0
+continuous_cd = true
 script = ExtResource( 1 )
 description = "A woman's shoe. It looks ancient."
 

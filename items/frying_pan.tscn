@@ -20,13 +20,11 @@ surfaces/0 = {
 "vertex_count": 384
 }
 
-[sub_resource type="CylinderShape" id=3]
-height = 0.055
-radius = 0.242
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.176125, 0.0231003, 0.210597 )
 
-[sub_resource type="CylinderShape" id=4]
-height = 0.286
-radius = 0.019
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.0202817, 0.145898, 0.0301392 )
 
 [node name="frying_pan" type="RigidBody"]
 mass = 5.0
@@ -36,9 +34,9 @@ script = ExtResource( 1 )
 mesh = SubResource( 2 )
 
 [node name="Pan Collision Shape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00823235, 0 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0152019, 0 )
+shape = SubResource( 5 )
 
 [node name="Handle Collision Shape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.138879, 0.990309, 0, -0.990309, -0.138879, 0, 0.0402739, 0.363034 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )

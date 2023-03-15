@@ -65,6 +65,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 [node name="old_big_boot" type="RigidBody"]
 collision_layer = 129
 mass = 10.0
+continuous_cd = true
 script = ExtResource( 1 )
 description = "A big boot. It looks ancient."
 

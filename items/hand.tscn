@@ -65,6 +65,7 @@ albedo_color = Color( 0.670588, 0.227451, 0.341176, 1 )
 
 [node name="hand" type="RigidBody"]
 collision_layer = 129
+continuous_cd = true
 script = ExtResource( 1 )
 description = "A real human hand...cut from his owner...\\nIt's not mine."
 

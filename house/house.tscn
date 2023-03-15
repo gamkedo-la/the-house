@@ -192,7 +192,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, 0.07233
 
 [node name="door_handle_2" parent="doors/basement_trap_door/main_mesh" index="1"]
 visible = false
-collision_layer = 0
+collision_layer = 128
 collision_mask = 0
 
 [node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]
@@ -258,7 +258,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6723, 0.627782, 4.4887 )
 
 [node name="foot" parent="furniture/living_room" instance=ExtResource( 31 )]
 transform = Transform( 0.0249556, 0.999689, 0, -0.999689, 0.0249556, 0, 0, 0, 1, 6.5382, 0.514603, 3.85866 )
-continuous_cd = true
 
 [node name="attic_keypad" parent="furniture/living_room" instance=ExtResource( 61 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.10998, 0.9179, -0.678906 )

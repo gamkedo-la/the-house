@@ -42,7 +42,7 @@ material = ExtResource( 3 )
 [node name="toolshed_door" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.22376, 0.00181297, 2.83461 )
 is_locked = true
-locked_text = "Locked\\nThis door handle looks like [b]a hand[/b] waiting to be shaked."
+locked_text = "Locked\\nThis door handle looks like [b]a hand[/b] waiting to be shaked.\\nMy hand doesnt fit."
 unlocked_text = "I hear the door [b]unlock[/b]..."
 
 [node name="ground" type="CSGBox" parent="."]

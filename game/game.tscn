@@ -184,7 +184,7 @@ script = ExtResource( 12 )
 [node name="story_2_mushrooms" type="Area" parent="actual_game/texts/story"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5633, 1.52131, 19.4018 )
 script = ExtResource( 4 )
-bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual", "\"Weird\" might be a more fitting description" ]
+bbtext_to_display = [ "These [b]glowing mushrooms[/b] are very ... unusual." ]
 prioritary_text = false
 
 [node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_2_mushrooms"]
@@ -203,7 +203,7 @@ shape = SubResource( 1 )
 [node name="story_1_wakeup2" type="Area" parent="actual_game/texts/story"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3782, 0.885982, 82.5612 )
 script = ExtResource( 4 )
-bbtext_to_display = [ "I can't remember ...", "My left arm is missing", "Where am I?", "Who.. or what was I running from?", "This forest seems... familiar?" ]
+bbtext_to_display = [ "I can't remember ...", "My left arm is missing", "Where am I?", "Who.. or what was I running from?" ]
 prioritary_text = false
 
 [node name="CollisionShape" type="CollisionShape" parent="actual_game/texts/story/story_1_wakeup2"]

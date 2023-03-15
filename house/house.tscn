@@ -190,6 +190,11 @@ shape = SubResource( 1 )
 [node name="key_slot" type="Spatial" parent="doors/basement_trap_door/main_mesh/door_handle_1/lock"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, 0.0723319 )
 
+[node name="door_handle_2" parent="doors/basement_trap_door/main_mesh" index="1"]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
 [node name="attic_trap_door" parent="doors" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.17895, 3.67927, -1.92649 )
 script = ExtResource( 10 )

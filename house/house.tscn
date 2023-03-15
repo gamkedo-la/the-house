@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://house/lock_dolls.gd" type="Script" id=58]
 [ext_resource path="res://items/old_big_boot.tscn" type="PackedScene" id=59]
 [ext_resource path="res://furniture/symbol_translator.tscn" type="PackedScene" id=60]
+[ext_resource path="res://items/attic_keypad.tscn" type="PackedScene" id=61]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=67]
 [ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=68]
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
@@ -252,6 +253,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6723, 0.627782, 4.4887 )
 [node name="foot" parent="furniture/living_room" instance=ExtResource( 31 )]
 transform = Transform( 0.0249556, 0.999689, 0, -0.999689, 0.0249556, 0, 0, 0, 1, 6.5382, 0.514603, 3.85866 )
 continuous_cd = true
+
+[node name="attic_keypad" parent="furniture/living_room" instance=ExtResource( 61 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.10998, 0.9179, -0.678906 )
+attic_trapdoor_path = NodePath("../../../doors/attic_trap_door")
 
 [node name="bedroom" type="Spatial" parent="furniture"]
 
@@ -1155,7 +1160,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215982, 0.0830746, -0.00870
 transform = Transform( 1.754, 0, 0, 0, 1.102, 0, 0, 0, 1, -28.5131, 25.4644, -7.66354 )
 
 [node name="cardboardbox2" parent="cardboards/living_room" instance=ExtResource( 7 )]
-transform = Transform( 0.213798, 0, -0.976878, 0, 1, 0, 0.976878, 0, 0.213798, -28.5358, 26.0144, -7.74705 )
+transform = Transform( 0.213798, 0, -0.976878, 0, 1, 0, 0.976878, 0, 0.213798, -28.5015, 26.0144, -7.59047 )
 
 [node name="cardboardbox3" parent="cardboards/living_room" instance=ExtResource( 7 )]
 transform = Transform( -0.046322, 0, -0.998927, 0, 1, 0, 0.998927, 0, -0.046322, -27.4579, 26.4696, -7.63677 )

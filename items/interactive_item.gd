@@ -46,6 +46,9 @@ class MeshHighlight:
 	
 var highlites := []
 
+func get_class() -> String :
+	return "InterractiveItem"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	continuous_cd = true # Turn on precise handling of collisions
@@ -83,8 +86,9 @@ static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Colo
 		highlites.append_array(mesh_highlites)
 		
 	for child in node.get_children():
-		var child_highlights = _init_hilite(child, hilite_mat, highlight_color)
-		highlites.append_array(child_highlights)
+		if child.get_class() != "InterractiveItem":
+			var child_highlights = _init_hilite(child, hilite_mat, highlight_color)
+			highlites.append_array(child_highlights)
 	return highlites
 		
 func is_hilighted()-> bool:

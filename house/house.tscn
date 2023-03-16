@@ -1422,7 +1422,7 @@ transform = Transform( 0.081347, 0, -0.996686, 0, 1, 0, 0.996686, 0, 0.081347, 3
 transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 3.32387, 0.133216, -9.53765 )
 
 [node name="note" parent="books/toilets/book_open" instance=ExtResource( 71 )]
-transform = Transform( -1, 8.74228e-08, 1.3027e-15, 5.27516e-22, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0.203722, 0.00499763, -0.112655 )
+transform = Transform( 1, -2.78182e-08, -8.74228e-08, 8.74228e-08, 4.37114e-08, 1, -2.78182e-08, -1, 4.37114e-08, 0.203722, 0.0629697, -0.0918617 )
 note_key = "chest"
 translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
 translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."

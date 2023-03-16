@@ -3,9 +3,10 @@
 [ext_resource path="res://gameplay/text_display_area.gd" type="Script" id=1]
 
 [sub_resource type="CylinderShape" id=1]
-height = 1.0
+height = 4.91243
+radius = 3.8932
 
-[node name="text_display_area" type="Area"]
+[node name="story_text_area" type="Area"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

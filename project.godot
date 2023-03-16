@@ -165,6 +165,11 @@ _global_script_classes=[ {
 "path": "res://gameplay/text_display_area.gd"
 }, {
 "base": "Object",
+"class": "box_conversions",
+"language": "GDScript",
+"path": "res://code-library/box-conversion.gd"
+}, {
+"base": "Object",
 "class": "utility",
 "language": "GDScript",
 "path": "res://code-library/utility.gd"
@@ -201,6 +206,7 @@ _global_script_class_icons={
 "State_NoItem": "",
 "TextDisplay": "",
 "TextDisplayArea": "",
+"box_conversions": "",
 "utility": ""
 }
 

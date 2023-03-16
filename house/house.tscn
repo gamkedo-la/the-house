@@ -1,7 +1,7 @@
 [gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
-[ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://house/house-walls-mesh.tscn" type="PackedScene" id=2]
 [ext_resource path="res://furniture/door-basic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/bed_single.tscn" type="PackedScene" id=4]
 [ext_resource path="res://furniture/Dresser.tscn" type="PackedScene" id=5]
@@ -85,7 +85,7 @@ radius = 0.269689
 
 [node name="house" type="Spatial"]
 
-[node name="walls" parent="." instance=ExtResource( 2 )]
+[node name="house_walls" parent="." instance=ExtResource( 2 )]
 
 [node name="porch_ladder" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.86774, 0.497019, 0, -0.497019, 0.86774, -0.0164985, -3.52353, 10.9708 )

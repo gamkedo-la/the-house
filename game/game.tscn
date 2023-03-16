@@ -143,6 +143,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8764, 26.7651, 0.65196 )
 [node name="quick_travel_spawn_point9" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5104, 26.7651, -0.324315 )
 
+[node name="quick_travel_spawn_point11" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3049, 26.7651, -3.06929 )
+
+[node name="quick_travel_spawn_point12" type="Spatial" parent="debug"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.6181, 26.7651, -6.0377 )
+
 [node name="quick_travel_spawn_point10" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.2594, 23.9469, -0.324315 )
 

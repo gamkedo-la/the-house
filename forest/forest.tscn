@@ -2816,6 +2816,12 @@ transform = Transform( 0.23834, 0.736923, -1.84395, 0.716517, 1.70015, 0.772068,
 [node name="bush166" parent="bushes" instance=ExtResource( 3 )]
 transform = Transform( 0.0263522, -0.836086, 1.81667, 0.716517, 1.70015, 0.772068, -1.86706, 0.640665, 0.321938, 5.21801, 21.3366, -7.43058 )
 
+[node name="bush200" parent="bushes" instance=ExtResource( 3 )]
+transform = Transform( 0.0263522, -0.836086, 1.81667, 0.716517, 1.70015, 0.772068, -1.86706, 0.640665, 0.321938, 7.97065, 21.3366, -4.7813 )
+
+[node name="bush201" parent="bushes" instance=ExtResource( 3 )]
+transform = Transform( 0.0263522, -0.836086, 1.81667, 0.716517, 1.70015, 0.772068, -1.86706, 0.640665, 0.321938, 7.25344, 21.3366, -0.965635 )
+
 [node name="bush157" parent="bushes" instance=ExtResource( 3 )]
 transform = Transform( 1.85157, -0.753844, -0.0583358, 0.716517, 1.70015, 0.772068, -0.24142, -0.73567, 1.84405, 19.0233, 16.6032, -3.96861 )
 
@@ -3440,6 +3446,12 @@ depth = 9.82794
 transform = Transform( 0.00434596, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.00434596, -6.18545, 1.39886, 87.8362 )
 width = 3.35111
 depth = 9.82794
+
+[node name="invisible_wall15" parent="invisible_walls" instance=ExtResource( 10 )]
+transform = Transform( 0.996447, 0, 0.084217, 0, 1, 0, -0.084217, 0, 0.996447, 8.73427, 21.6267, 4.89143 )
+width = 1.53425
+height = 3.56656
+depth = 22.4754
 
 [node name="audio" type="Spatial" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/house-walls.tscn" type="PackedScene" id=2]
@@ -63,6 +63,8 @@
 [ext_resource path="res://items/attic_keypad.tscn" type="PackedScene" id=61]
 [ext_resource path="res://items/ear.tscn" type="PackedScene" id=62]
 [ext_resource path="res://items/hand.tscn" type="PackedScene" id=63]
+[ext_resource path="res://furniture/kitchen/kitchen_counter.tscn" type="PackedScene" id=64]
+[ext_resource path="res://furniture/kitchen/kitchen_fridge.tscn" type="PackedScene" id=65]
 [ext_resource path="res://items/treasure_chest_fix_01/treasure_chest_test_wConcave.tscn" type="PackedScene" id=67]
 [ext_resource path="res://items/grimmor.tscn" type="PackedScene" id=68]
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
@@ -622,8 +624,39 @@ transform = Transform( 0.690945, 0, -0.722907, 0, 1, 0, 0.722907, 0, 0.690945, -
 
 [node name="kitchen" type="Spatial" parent="furniture"]
 
+[node name="kitchen_counter" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 2 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter4" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, 0.11 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter5" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -1.9 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter6" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -2.9 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter7" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -3.9 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter2" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 1 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_counter3" parent="furniture/kitchen" instance=ExtResource( 64 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 0 )
+skeleton = NodePath("../symbol_translator")
+
+[node name="kitchen_fridge" parent="furniture/kitchen" instance=ExtResource( 65 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.65, 0.075, -0.9 )
+
 [node name="symbol_translator" parent="furniture/kitchen" instance=ExtResource( 60 )]
-transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -7.41389, 0.0536098, 5.07503 )
+transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -7, 0.1, 5 )
 
 [node name="mushrooms" type="Spatial" parent="."]
 

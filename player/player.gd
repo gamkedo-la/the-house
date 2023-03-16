@@ -5,7 +5,7 @@ class_name Player
 export var walking_speed : float = 2.0
 export var running_speed : float = 4.0
 export var crouching_speed : float = 1.0
-export var climbing_speed : float = 1.0
+export var climbing_speed : float = 2.0
 export var view_speed : float = 0.002
 export var gravity_factor : float= 1.0
 export var interraction_distance : float = 1.4
@@ -15,7 +15,7 @@ export var fall_check_max_depth_allowed : float = 6.0
 export var fall_check_distance : float = 1.5
 
 const limit_up_angle : float = deg2rad(75.0)
-const limit_down_angle : float = deg2rad(-75.0)
+const limit_down_angle : float = deg2rad(-80.0)
 
 
 onready var _camera : Camera = $"%Camera"

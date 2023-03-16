@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://game/examine_instructions.gd" type="Script" id=21]
 [ext_resource path="res://game/examine_instructions_2.gd" type="Script" id=22]
 [ext_resource path="res://items/golden_hand.tscn" type="PackedScene" id=23]
+[ext_resource path="res://gameplay/story_text_area.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CylinderShape" id=3]
 height = 3.0
@@ -34,6 +35,15 @@ radius = 2.69651
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 2.54381, 1, 17.5025 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.67288, 2.06037, 22.1435 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1.67288, 2.06037, 4.21758 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1.67288, 2.06037, 8.44007 )
 
 [sub_resource type="CylinderShape" id=5]
 height = 3.3895
@@ -210,6 +220,30 @@ prioritary_text = false
 transform = Transform( 0.86996, 0, 0.493122, 0, 1, 0, -0.493122, 0, 0.86996, 0.201744, 2.38419e-07, 0.850914 )
 shape = SubResource( 6 )
 
+[node name="story_3_goal" parent="actual_game/texts/story" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8897, 22.0097, -11.7115 )
+bbtext_to_display = [ "Now I remember the terror from this place...\\nbut not what exactly.", "I remember that there is a way to [b]escape[/b],\\nin the [b]toolshed[/b], behind that house." ]
+
+[node name="CollisionShape" parent="actual_game/texts/story/story_3_goal" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.623838, 1.05388, 8.29211 )
+shape = SubResource( 8 )
+
+[node name="story_4_toolshed" parent="actual_game/texts/story" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6246, 22.0097, -11.5116 )
+bbtext_to_display = [ "I'm not sure why but I feel like this is the escape route from this horrible place.", "If only I had a way to open that weird door..." ]
+
+[node name="CollisionShape" parent="actual_game/texts/story/story_4_toolshed" index="0"]
+transform = Transform( 0.996915, 0, -0.0784939, 0, 1, 0, 0.0784939, 0, 0.996915, 0.0407753, 0.875824, -3.94179 )
+shape = SubResource( 9 )
+
+[node name="story_the_house" parent="actual_game/texts/story" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83796, 22.0097, -10.6028 )
+bbtext_to_display = [ "My heart is sudenly beating very fast.", "Why am I afraid of this house?" ]
+
+[node name="CollisionShape" parent="actual_game/texts/story/story_the_house" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.795571, 1.1679, -4.27567 )
+shape = SubResource( 10 )
+
 [node name="action_tips" type="Spatial" parent="actual_game/texts"]
 
 [node name="move_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
@@ -222,6 +256,7 @@ mode = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 script = ExtResource( 20 )
 bbtext_to_display = [ "[CTRL] or [C] -> [b]Crouch[/b]\\nLeft Mouse Button -> [b]Take[/b]" ]
+display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/take_instructions" index="0"]
@@ -234,6 +269,7 @@ monitoring = false
 monitorable = false
 script = ExtResource( 21 )
 bbtext_to_display = [ "[TAB] -> [b]Examine item[/b]" ]
+display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions" index="0"]
@@ -246,6 +282,7 @@ monitoring = false
 monitorable = false
 script = ExtResource( 22 )
 bbtext_to_display = [ "[WASD] [Q][E] or [Arrows] or Left Mouse Button -> [b]Rotate item[/b]\\n[Z] [X] or Mouse Wheel -> [b]Zoom In/Out[/b]\\n[TAB] -> [b]Stop examining[/b]" ]
+display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions2" index="0"]
@@ -257,6 +294,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 monitoring = false
 monitorable = false
 bbtext_to_display = [ "[SPACE] -> [b]Hold item in front of you[/b]\\n[R] -> Release item" ]
+display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/point_forward_instructions" index="0"]
@@ -310,6 +348,9 @@ collision_mask = 2
 transform = Transform( 0.992599, 0, -0.121436, 0, 1, 0, 0.121436, 0, 0.992599, 1.39691, 0.799381, 1.34118 )
 shape = SubResource( 7 )
 
+[editable path="actual_game/texts/story/story_3_goal"]
+[editable path="actual_game/texts/story/story_4_toolshed"]
+[editable path="actual_game/texts/story/story_the_house"]
 [editable path="actual_game/texts/action_tips/move_instructions"]
 [editable path="actual_game/texts/action_tips/take_instructions"]
 [editable path="actual_game/texts/action_tips/examine_instructions"]

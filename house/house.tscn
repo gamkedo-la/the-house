@@ -1246,7 +1246,7 @@ transform = Transform( 0.213798, 0, -0.976878, 0, 1, 0, 0.976878, 0, 0.213798, -
 transform = Transform( -0.046322, 0, -0.998927, 0, 1, 0, 0.998927, 0, -0.046322, -27.4579, 26.4696, -7.63677 )
 
 [node name="cardboardbox4" parent="cardboards/living_room" instance=ExtResource( 7 )]
-transform = Transform( -0.0118659, 0.237991, 0.971195, 0.999926, -3.09086e-08, 0.0122171, 0.00290755, 0.971267, -0.237974, -27.6683, 27.3233, -7.87333 )
+transform = Transform( -0.0118659, 0.237991, 0.971195, 0.999926, -3.09086e-08, 0.0122171, 0.00290755, 0.971267, -0.237974, -27.5922, 27.3233, -7.88074 )
 
 [node name="bathroom" type="Spatial" parent="cardboards"]
 
@@ -1458,7 +1458,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07466, 0.4899, -7.98035 )
 [node name="special_items" type="Spatial" parent="."]
 
 [node name="music_box" parent="special_items" instance=ExtResource( 33 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8891, 2.30635, 0.305314 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63178, 2.30635, 0.533889 )
 
 [node name="lighter" parent="special_items" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92965, 1.11453, -9.12531 )

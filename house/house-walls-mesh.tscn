@@ -202,10 +202,12 @@ mesh = SubResource( 1 )
 [node name="bigwall_out" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.4311, -1.95965 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="bigwall_in" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.4323, -1.95965 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="floor" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, -1.95013 )

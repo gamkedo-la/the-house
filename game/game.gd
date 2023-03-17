@@ -77,11 +77,13 @@ func _on_resume_requested():
 func exit_game():
 	if master_scene:
 		global.current_game = null
+		pause_game(false)
 		master_scene.to_title_screen()
 	
 func _on_player_entered_end_area(player : Node) -> void:
 	if player is Player:
 		global.current_game = null
+		pause_game(false)
 		master_scene.to_end_game_screen()
 	
 

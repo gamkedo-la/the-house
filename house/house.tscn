@@ -1009,10 +1009,6 @@ is_stuck_in_ground = false
 
 [node name="toilets" type="Spatial" parent="mushrooms"]
 
-[node name="mushroom" parent="mushrooms/toilets" instance=ExtResource( 20 )]
-transform = Transform( 0.843841, 0.536593, 0, -0.536593, 0.843841, 0, 0, 0, 1, 1.88965, 1.10819, -9.35132 )
-random_mushroom_shape = false
-
 [node name="windows" type="Spatial" parent="."]
 
 [node name="window" parent="windows" instance=ExtResource( 8 )]

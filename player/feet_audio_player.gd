@@ -12,7 +12,7 @@ onready var step_sounds = {
 		preload("res://player/footsteps/footstep_grass-02.wav"),
 		preload("res://player/footsteps/footstep_grass-03.wav"),
 		preload("res://player/footsteps/footstep_grass-04.wav"),
-		preload("res://player/footsteps/footstep_grass-05.wav"),
+#		preload("res://player/footsteps/footstep_grass-05.wav"),
 	],
 	StepSurface.House : [
 		preload("res://player/footsteps/footstep_wood-01.wav"),

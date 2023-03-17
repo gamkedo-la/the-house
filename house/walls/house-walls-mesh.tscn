@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -139,7 +139,13 @@ extents = Vector3( 6.75, 0.107, 13.172 )
 extents = Vector3( 6.75, 0.107, 13.172 )
 
 [sub_resource type="BoxShape" id=23]
-extents = Vector3( 13.5, 0.107238, 13.172 )
+extents = Vector3( 12.4381, 0.107238, 13.172 )
+
+[sub_resource type="BoxShape" id=62]
+extents = Vector3( 0.385901, 0.107238, 13.172 )
+
+[sub_resource type="BoxShape" id=63]
+extents = Vector3( 1.17376, 0.107238, 5.79857 )
 
 [sub_resource type="BoxShape" id=25]
 extents = Vector3( 14, 6, 14 )
@@ -237,8 +243,20 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.783, 0, -1.95 )
 shape = SubResource( 59 )
 
 [node name="floor_attic" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 3.6, -1.95 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.868812, 3.6, -1.95 )
 shape = SubResource( 23 )
+
+[node name="floor_attic2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 8.03154, 3.6, -1.95 )
+shape = SubResource( 62 )
+
+[node name="floor_attic3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.19664, 3.6, -6.38872 )
+shape = SubResource( 63 )
+
+[node name="floor_attic4" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.19664, 3.6, 2.06516 )
+shape = SubResource( 63 )
 
 [node name="toit" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 10.2, -1.95 )

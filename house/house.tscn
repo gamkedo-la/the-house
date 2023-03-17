@@ -737,6 +737,11 @@ transform = Transform( 0.319898, 0.478798, -0.817568, -0.0859932, 0.874024, 0.47
 
 [node name="knife_cleaver" parent="furniture/kitchen" instance=ExtResource( 51 )]
 transform = Transform( 3.32687e-09, -0.997099, -0.0761099, -4.35846e-08, -0.0761099, 0.997099, -1, 0, -4.37114e-08, -4.20306, 0.929308, 0.95623 )
+mode = 1
+
+[node name="knife_cleaver3" parent="furniture/kitchen" instance=ExtResource( 51 )]
+transform = Transform( 0.996815, -0.023822, -0.0761096, 0.0760879, -0.0018184, 0.997099, -0.0238913, -0.999714, -3.96187e-08, -2.45191, 1.24703, -0.971687 )
+mode = 1
 
 [node name="knife_cleaver2" parent="furniture/kitchen" instance=ExtResource( 51 )]
 transform = Transform( -0.183013, -0.653072, -0.734849, -0.98038, 0.176909, 0.08694, 0.0732233, 0.736343, -0.672635, -4.33179, 0.916419, 0.602422 )
@@ -1001,6 +1006,12 @@ is_stuck_in_ground = false
 transform = Transform( -0.701245, 0.71292, 3.11627e-08, 0, -4.37114e-08, 1, 0.71292, 0.701245, 3.06524e-08, -5.22939, 0.930371, -0.91086 )
 mushroom_color = 0
 is_stuck_in_ground = false
+
+[node name="toilets" type="Spatial" parent="mushrooms"]
+
+[node name="mushroom" parent="mushrooms/toilets" instance=ExtResource( 20 )]
+transform = Transform( 0.843841, 0.536593, 0, -0.536593, 0.843841, 0, 0, 0, 1, 1.88965, 1.10819, -9.35132 )
+random_mushroom_shape = false
 
 [node name="windows" type="Spatial" parent="."]
 
@@ -1375,20 +1386,11 @@ transform = Transform( 0.999703, 0, 0.0243802, 0, 1, 0, -0.0243802, 0, 0.999703,
 [node name="cardboardbox22" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.8156, 25.5159, 3.29173 )
 
-[node name="cardboardbox23" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.978, 25.5159, 2.76663 )
-
 [node name="cardboardbox25" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.643924, 0, -0.76509, 0, 1, 0, 0.76509, 0, 0.643924, -21.4264, 25.4644, 5.50706 )
 
-[node name="cardboardbox35" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.891727, 0, 0.857822, 0, 1, 0, -0.452607, 0, 1.67183, -20.8344, 25.5159, 4.84325 )
-
 [node name="cardboardbox26" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( -0.890611, 0, -0.454769, 0, 1, 0, 0.454769, 0, -0.890611, -21.6074, 26.0644, 5.58247 )
-
-[node name="cardboardbox36" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -20.8392, 26.1159, 4.90467 )
 
 [node name="cardboardbox27" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -21.0695, 25.5159, -3.1866 )
@@ -1398,9 +1400,6 @@ transform = Transform( 0.999787, 0, -0.0207668, 0, 1, 0, 0.0207668, 0, 0.999787,
 
 [node name="cardboardbox30" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.996265, 0, -0.0863724, 0, 1, 0, 0.0863724, 0, 0.996265, -21.923, 26.1159, -2.95539 )
-
-[node name="cardboardbox31" parent="cardboards/entrance" instance=ExtResource( 7 )]
-transform = Transform( 0.996266, 0, -0.0863725, 0, 1, 0, 0.0863725, 0, 0.996266, -21.6157, 26.1159, -4.83632 )
 
 [node name="cardboardbox32" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.588268, 0, -0.80867, 0, 1, 0, 0.80867, 0, 0.588268, -20.9382, 25.5159, -4.28528 )
@@ -1469,7 +1468,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82309, 0.911139, 5.98071 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39369, 1.03847, -0.262039 )
 
 [node name="Candle9" parent="candles" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06642, 1.03847, -0.190694 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23295, 1.29302, 1.88704 )
 
 [node name="Candle3" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97634, -2.18007, -6.63266 )

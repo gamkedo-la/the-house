@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -151,7 +151,13 @@ extents = Vector3( 1.17376, 0.107238, 5.79857 )
 extents = Vector3( 14, 6, 14 )
 
 [sub_resource type="BoxShape" id=30]
-extents = Vector3( 0.2, 2.9, 2.2059 )
+extents = Vector3( 0.2, 1.14343, 1.11412 )
+
+[sub_resource type="BoxShape" id=67]
+extents = Vector3( 0.2, 2.9, 0.71643 )
+
+[sub_resource type="BoxShape" id=68]
+extents = Vector3( 0.2, 2.9, 0.649439 )
 
 [sub_resource type="BoxShape" id=32]
 extents = Vector3( 0.2, 2.9, 2.14084 )
@@ -266,8 +272,16 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 10.2, -1.95 )
 shape = SubResource( 25 )
 
 [node name="bathroom_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.3724, 1.8042, -5.42479 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.372, 2.867, -5.425 )
 shape = SubResource( 30 )
+
+[node name="bathroom_wall2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.3724, 1.8042, -4.34582 )
+shape = SubResource( 67 )
+
+[node name="bathroom_wall3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.3724, 1.8042, -6.35689 )
+shape = SubResource( 68 )
 
 [node name="bedroom_wall" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.3896, 1.8042, -5.4042 )

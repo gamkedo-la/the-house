@@ -146,6 +146,7 @@ is_open = true
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.94251 )
 script = ExtResource( 37 )
+is_locked = true
 locked_text = "Locked...\\nI need a key."
 
 [node name="main_mesh" parent="doors/kitchen_door" index="1"]
@@ -166,7 +167,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0203089, -0.0227696, -0.0503
 
 [node name="bathroom_door" parent="doors" instance=ExtResource( 54 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.30606, 0.068, -4.73002 )
-is_locked = true
 
 [node name="living_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.068, 1.64858 )

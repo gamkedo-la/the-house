@@ -10,6 +10,7 @@ var _next_spawn_point = 0
 signal on_game_pause_or_resume()
 
 func _ready() -> void :
+	global.current_game = self
 	_add_spawn_points(self)
 	
 	$paused_screen.connect("on_resume", self, "_on_resume_requested")
@@ -71,10 +72,12 @@ func _on_resume_requested():
 	
 func exit_game():
 	if master_scene:
+		global.current_game = null
 		master_scene.to_title_screen()
 	
 func _on_player_entered_end_area(player : Node) -> void:
 	if player is Player:
+		global.current_game = null
 		master_scene.to_end_game_screen()
 	
 

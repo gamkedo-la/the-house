@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://screens/options_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/paused_screen.gd" type="Script" id=2]
+[ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/player_text_bold.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/player_text_normal.tres" type="DynamicFont" id=5]
 
 [node name="paused_screen" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -9,20 +12,140 @@ script = ExtResource( 2 )
 [node name="options_screen" parent="." instance=ExtResource( 1 )]
 visible = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 669.0
-margin_top = 86.0
-margin_right = 1330.0
-margin_bottom = 126.0
-text = "PAUSED SCREEN"
+[node name="paused_text" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -292.0
+margin_top = -606.0
+margin_right = -57.0
+margin_bottom = -532.0
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center][b]PAUSED[/b][/center]"
+text = "PAUSED"
+scroll_active = false
 
-[node name="resume_button" type="Button" parent="."]
-anchor_left = 0.5
+[node name="menu" type="CanvasLayer" parent="."]
+
+[node name="controls_text" type="RichTextLabel" parent="menu"]
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -91.0
-margin_top = -195.0
-margin_right = 87.0
-margin_bottom = -144.0
+margin_left = 61.0
+margin_top = -480.0
+margin_right = 1090.0
+margin_bottom = 484.0
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
+bbcode_enabled = true
+bbcode_text = "CONTROLS & TIPS:
+
+[P] or [ENTER] -> [b]Pause/Menu[/b]
+[M] -> [b]Mute/Unmute all audio[/b]
+
+Mouse -> [b]Look around[/b]
+[WASD] or [Arrows] -> [b]Walk[/b]
+[SHIFT] -> [b]Run[/b]
+[CTRL] or [C] -> [b]Crouch[/b]
+
+[Left Mouse Button] -> [b]Take an item[/b]
+OR [b]Interract with something pointed[/b]
+
+[b]While holding an item:[/b]
+[SPACE] -> [b]Hold item in front of you[/b]
+[TAB] -> [b]Examine the item (see below)[/b]
+[R] -> [b]Release/drop item[/b]
+[Right Mouse Button] -> [b]Activate item[/b]
+
+[b]Examination mode:[/b]
+[TAB] -> [b]End Examination[/b]
+[WASD] [Q][E] or [Arrows] or Left Mouse Button -> [b]Rotate item[/b]
+[Z] [X] or Mouse Wheel -> [b]Zoom in/out[/b]
+
+TIPS BELOW - Avoid reading until you reach The House::
+
+
+
+Hold a [b]flame[/b] close to a flamable thing (like a [b]candle[/b]) to [b]light it[/b].
+
+Some doors requires keys to unlock.
+Som other doors requires other kind of keys to unlock...
+
+[b]Escape[/b]  the house through the toolshed.
+"
+text = "CONTROLS & TIPS:
+
+[P] or [ENTER] -> Pause/Menu
+[M] -> Mute/Unmute all audio
+
+Mouse -> Look around
+[WASD] or [Arrows] -> Walk
+[SHIFT] -> Run
+[CTRL] or [C] -> Crouch
+
+[Left Mouse Button] -> Take an item
+OR Interract with something pointed
+
+While holding an item:
+[SPACE] -> Hold item in front of you
+[TAB] -> Examine the item (see below)
+[R] -> Release/drop item
+[Right Mouse Button] -> Activate item
+
+Examination mode:
+[TAB] -> End Examination
+[WASD] [Q][E] or [Arrows] or Left Mouse Button -> Rotate item
+[Z] [X] or Mouse Wheel -> Zoom in/out
+
+TIPS BELOW - Avoid reading until you reach The House::
+
+
+
+Hold a flame close to a flamable thing (like a candle) to light it.
+
+Some doors requires keys to unlock.
+Som other doors requires other kind of keys to unlock...
+
+Escape  the house through the toolshed.
+"
+
+[node name="resume_button" type="Button" parent="menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -257.0
+margin_top = -455.0
+margin_right = -79.0
+margin_bottom = -384.0
+theme = ExtResource( 3 )
 text = "Continue"
+
+[node name="options_button" type="Button" parent="menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -257.0
+margin_top = -357.0
+margin_right = -79.0
+margin_bottom = -286.0
+theme = ExtResource( 3 )
+text = "Options"
+
+[node name="exit_button" type="Button" parent="menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -257.0
+margin_top = -165.0
+margin_right = -79.0
+margin_bottom = -94.0
+theme = ExtResource( 3 )
+text = "Exit"

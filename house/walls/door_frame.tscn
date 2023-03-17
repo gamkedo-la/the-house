@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://house/house/wood_siding_spatialmaterial.tres" type="Material" id=1]
+[ext_resource path="res://house/walls/door_frame_collider.tscn" type="PackedScene" id=2]
+
+[node name="CSGCombiner" type="CSGCombiner"]
+
+[node name="door_frame2" type="CSGBox" parent="."]
+width = 2.5
+height = 4.0
+depth = 0.88487
+material = ExtResource( 1 )
+
+[node name="entrance2" type="CSGBox" parent="."]
+operation = 2
+height = 3.56738
+material = ExtResource( 1 )
+
+[node name="door_frame_collider" parent="." instance=ExtResource( 2 )]

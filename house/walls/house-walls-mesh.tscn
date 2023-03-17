@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://house/house/house_wall_plaster_spatialmaterial.tres" type="Material" id=6]
 [ext_resource path="res://house/house/house_interior_walls.tres" type="Material" id=7]
 [ext_resource path="res://house/house/house_back_walls.tres" type="Material" id=8]
+[ext_resource path="res://house/walls/window_frame_colliders.tscn" type="PackedScene" id=9]
+[ext_resource path="res://house/walls/door_frame_collider.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -164,7 +166,7 @@ extents = Vector3( 5.5, 2.9, 0.2 )
 extents = Vector3( 7.2951, 2.9, 0.2 )
 
 [sub_resource type="BoxShape" id=48]
-extents = Vector3( 9.91545, 0.183647, 2.49081 )
+extents = Vector3( 9.915, 0.107, 2.52457 )
 
 [sub_resource type="BoxShape" id=49]
 extents = Vector3( 3.958, 0.201559, 0.062895 )
@@ -262,7 +264,7 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.1362, 1.8042, -6.7086 
 shape = SubResource( 46 )
 
 [node name="porch" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, -0.0444, 7.45428 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 7.43643 )
 shape = SubResource( 48 )
 
 [node name="porch_border" type="CollisionShape" parent="."]
@@ -300,3 +302,18 @@ shape = SubResource( 56 )
 [node name="basement_wall4" type="CollisionShape" parent="."]
 transform = Transform( 0.0522935, 0, 0.597716, 0, 0.6, 0, -0.597716, 0, 0.0522935, 2.89505, -1.77778, -3.18905 )
 shape = SubResource( 57 )
+
+[node name="window_frame_colliders" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.20214, 1.46914, 5.79625 )
+
+[node name="window_frame_colliders3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.20214, 5.46555, 5.79625 )
+
+[node name="window_frame_colliders2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.92236, 1.47153, 5.79093 )
+
+[node name="window_frame_colliders4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.92236, 5.46442, 5.79093 )
+
+[node name="door_frame_collider" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.003, 1.135, 5.959 )

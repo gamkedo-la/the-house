@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.25, 0.148142, 0.4425 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.142717, 1.5, 0.4425 )
+
+[node name="window_frame_colliders" type="StaticBody"]
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35556, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35527, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10868, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11045, 0, 0 )
+shape = SubResource( 2 )

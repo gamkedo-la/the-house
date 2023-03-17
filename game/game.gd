@@ -11,7 +11,10 @@ signal on_game_pause_or_resume()
 
 func _ready() -> void :
 	global.current_game = self
-	_add_spawn_points(self)
+	
+	if global.is_dev_mode:
+		_add_spawn_points(self)
+		$debug.visible = true
 	
 	$paused_screen.connect("on_resume", self, "_on_resume_requested")
 	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
@@ -22,11 +25,12 @@ func _process(_delta):
 		toggle_pause()
 	
 	# for debug
-	if Input.is_action_just_pressed("debug_spawn"):
-		_player_jump_to_next_spawn_point()
-		
-	if Input.is_action_just_pressed("debug_light"):
-		global.current_player._toggle_debug_light()
+	if global.is_dev_mode:
+		if Input.is_action_just_pressed("debug_spawn"):
+			_player_jump_to_next_spawn_point()
+			
+		if Input.is_action_just_pressed("debug_light"):
+			global.current_player._toggle_debug_light()
 	
 func _add_spawn_points(node:Node):
 	if node is Spatial and node.name.count("spawn") > 0:

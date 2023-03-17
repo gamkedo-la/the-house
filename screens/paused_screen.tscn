@@ -44,6 +44,7 @@ bbcode_text = "CONTROLS & TIPS:
 
 [P] or [ENTER] -> [b]Pause/Menu[/b]
 [M] -> [b]Mute/Unmute all audio[/b]
+[N] -> [b]Mute/Unmute music only[/b]
 
 Mouse -> [b]Look around[/b]
 [WASD] or [Arrows] -> [b]Walk[/b]
@@ -79,6 +80,7 @@ text = "CONTROLS & TIPS:
 
 [P] or [ENTER] -> Pause/Menu
 [M] -> Mute/Unmute all audio
+[N] -> Mute/Unmute music only
 
 Mouse -> Look around
 [WASD] or [Arrows] -> Walk

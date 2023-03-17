@@ -4,6 +4,8 @@ var current_scene_path : String
 
 const credits_screen_path := "res://screens/credits/credits_screen.tscn"
 const title_screen_path := "res://screens/title_screen.tscn"
+
+
 	
 func _ready():
 	if OS.get_name() == "HTML5":

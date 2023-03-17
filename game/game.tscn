@@ -63,6 +63,7 @@ pause_mode = 2
 script = ExtResource( 15 )
 
 [node name="debug" type="Spatial" parent="."]
+visible = false
 
 [node name="temporary_ambiant_lights" type="Spatial" parent="debug"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6902, 24.7373, 0.709967 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -165,9 +165,6 @@ extents = Vector3( 0.2, 2.895, 2.6 )
 [sub_resource type="BoxShape" id=37]
 extents = Vector3( 0.2, 2.9, 2.6 )
 
-[sub_resource type="BoxShape" id=38]
-extents = Vector3( 0.2, 2.9, 8.25 )
-
 [sub_resource type="BoxShape" id=64]
 extents = Vector3( 0.2, 2.9, 4.8495 )
 
@@ -288,10 +285,6 @@ shape = SubResource( 35 )
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.7082, 1.8042, -8.3424 )
 shape = SubResource( 37 )
 
-[node name="living_room_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.7808, 1.8042, 0.882 )
-shape = SubResource( 38 )
-
 [node name="kitchen_wall2" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 1.804, -1.23 )
 shape = SubResource( 64 )
@@ -306,6 +299,22 @@ shape = SubResource( 65 )
 
 [node name="kitchen_wall5" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 2.93814, 2.296 )
+shape = SubResource( 66 )
+
+[node name="living_room_wall2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.76604, 1.804, -1.23 )
+shape = SubResource( 64 )
+
+[node name="living_room_wall" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.76604, 1.804, -1.23 )
+shape = SubResource( 64 )
+
+[node name="living_room_wall3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.76604, 1.804, 4.40595 )
+shape = SubResource( 65 )
+
+[node name="living_room_wall4" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.76604, 2.93814, 2.296 )
 shape = SubResource( 66 )
 
 [node name="living_room_back_wall" type="CollisionShape" parent="."]

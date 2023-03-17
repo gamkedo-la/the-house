@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -150,6 +150,15 @@ extents = Vector3( 1.17376, 0.107238, 5.79857 )
 [sub_resource type="BoxShape" id=25]
 extents = Vector3( 14, 6, 14 )
 
+[sub_resource type="BoxShape" id=73]
+extents = Vector3( 0.2, 1.10585, 1.11412 )
+
+[sub_resource type="BoxShape" id=72]
+extents = Vector3( 0.2, 2.9, 0.703779 )
+
+[sub_resource type="BoxShape" id=71]
+extents = Vector3( 0.2, 2.9, 0.644135 )
+
 [sub_resource type="BoxShape" id=30]
 extents = Vector3( 0.2, 1.10585, 1.11412 )
 
@@ -163,7 +172,13 @@ extents = Vector3( 0.2, 2.9, 0.73056 )
 extents = Vector3( 0.2, 2.9, 2.6 )
 
 [sub_resource type="BoxShape" id=35]
-extents = Vector3( 0.2, 2.895, 2.6 )
+extents = Vector3( 0.2, 2.895, 0.775939 )
+
+[sub_resource type="BoxShape" id=74]
+extents = Vector3( 0.2, 2.895, 0.779931 )
+
+[sub_resource type="BoxShape" id=75]
+extents = Vector3( 0.2, 1.75811, 1.03133 )
 
 [sub_resource type="BoxShape" id=37]
 extents = Vector3( 0.2, 2.9, 2.6 )
@@ -184,7 +199,13 @@ extents = Vector3( 5.27, 2.9, 0.2 )
 extents = Vector3( 5.5, 2.9, 0.2 )
 
 [sub_resource type="BoxShape" id=46]
-extents = Vector3( 7.2951, 2.9, 0.2 )
+extents = Vector3( 5.44776, 2.9, 0.2 )
+
+[sub_resource type="BoxShape" id=69]
+extents = Vector3( 1.00164, 2.9, 0.2 )
+
+[sub_resource type="BoxShape" id=70]
+extents = Vector3( 1.04651, 1.0774, 0.2 )
 
 [sub_resource type="BoxShape" id=48]
 extents = Vector3( 9.915, 0.107, 2.52457 )
@@ -269,16 +290,16 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 10.2, -1.95 )
 shape = SubResource( 25 )
 
 [node name="bathroom_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.372, 2.867, -5.425 )
-shape = SubResource( 30 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.372, 2.85, -5.425 )
+shape = SubResource( 73 )
 
 [node name="bathroom_wall2" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.3724, 1.8042, -4.34582 )
-shape = SubResource( 67 )
+shape = SubResource( 72 )
 
 [node name="bathroom_wall3" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.3724, 1.8042, -6.35689 )
-shape = SubResource( 68 )
+shape = SubResource( 71 )
 
 [node name="bedroom_wall4" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.39237, 2.867, -5.40101 )
@@ -297,8 +318,16 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.777, 1.8042, -8.3424 )
 shape = SubResource( 34 )
 
 [node name="secret_room_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.6016, 1.8042, -8.3424 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.6016, 1.8042, -9.35239 )
 shape = SubResource( 35 )
+
+[node name="secret_room_wall2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.6016, 1.8042, -7.22278 )
+shape = SubResource( 74 )
+
+[node name="secret_room_wall3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.6016, 2.49863, -8.27008 )
+shape = SubResource( 75 )
 
 [node name="secret_room_toilet_wall" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.7082, 1.8042, -8.3424 )
@@ -345,8 +374,16 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.79986, 1.80436, -4.03
 shape = SubResource( 45 )
 
 [node name="corridor_back_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.1362, 1.8042, -6.7086 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.15748, 1.8042, -6.7086 )
 shape = SubResource( 46 )
+
+[node name="corridor_back_wall2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.9101, 1.8042, -6.7086 )
+shape = SubResource( 69 )
+
+[node name="corridor_back_wall3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.70724, 2.85061, -6.7086 )
+shape = SubResource( 70 )
 
 [node name="porch" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 7.43643 )

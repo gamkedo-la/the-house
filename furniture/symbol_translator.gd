@@ -50,8 +50,8 @@ func on_player_begin_pointing() -> void:
 	
 func on_player_end_pointing() -> void:
 	global.current_player.examination_display.stop_display_sequence()
+	global.current_player.info_display.stop_display_sequence()
 	if _is_displaying_text:
-		global.current_player.info_display.stop_display_sequence()
 		global.current_player.action_display.stop_display_sequence()
 		if _note_being_translated is PaperNote:
 			global.current_player.action_display.disconnect("text_sequence_display_completed", self, "_on_translated_note")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/creepy_eye_pain_by_flame.mp3-d2983b331f2018cf487ad87785d84a8c.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/creepy_eye_pain_by_flame.mp3"
+dest_files=[ "res://.import/creepy_eye_pain_by_flame.mp3-d2983b331f2018cf487ad87785d84a8c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

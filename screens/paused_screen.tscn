@@ -42,7 +42,7 @@ custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
 bbcode_text = "CONTROLS & TIPS:
 
-[P] or [ENTER] -> [b]Pause/Menu[/b]
+[ESCAPE] or [P] or [ENTER] -> [b]Pause/Menu[/b]
 [M] -> [b]Mute/Unmute all audio[/b]
 [N] -> [b]Mute/Unmute music only[/b]
 
@@ -78,7 +78,7 @@ Som other doors requires other kind of keys to unlock...
 "
 text = "CONTROLS & TIPS:
 
-[P] or [ENTER] -> Pause/Menu
+[ESCAPE] or [P] or [ENTER] -> Pause/Menu
 [M] -> Mute/Unmute all audio
 [N] -> Mute/Unmute music only
 

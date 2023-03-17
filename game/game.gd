@@ -20,8 +20,8 @@ func _ready() -> void :
 	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
 
 func _process(_delta):
-	
-	if Input.is_action_just_pressed("pause_resume"):
+		
+	if Input.is_action_just_pressed("pause_resume") or Input.is_action_just_pressed("mouse_release"):
 		toggle_pause()
 	
 	# for debug

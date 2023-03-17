@@ -177,11 +177,11 @@ bus = "Ambiant"
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -46.0
-margin_right = 176.0
+margin_right = 349.0
 theme = ExtResource( 13 )
 bbcode_enabled = true
-bbcode_text = "[center]Version 0.5[/center]"
-text = "Version 0.5"
+bbcode_text = "Version 0.5-ALPHA"
+text = "Version 0.5-ALPHA"
 scroll_active = false
 
 [node name="important_keys" type="RichTextLabel" parent="info"]

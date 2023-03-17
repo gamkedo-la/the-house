@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/walls/house-walls-mesh.tscn" type="PackedScene" id=2]
@@ -71,6 +71,8 @@
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
 [ext_resource path="res://items/book_closed.tscn" type="PackedScene" id=70]
 [ext_resource path="res://items/note.tscn" type="PackedScene" id=71]
+[ext_resource path="res://furniture/kitchen/cabinets.tscn" type="PackedScene" id=73]
+[ext_resource path="res://items/frying_pan.tscn" type="PackedScene" id=75]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.175127
@@ -626,42 +628,209 @@ transform = Transform( 0.690945, 0, -0.722907, 0, 1, 0, 0.722907, 0, 0.690945, -
 [node name="kitchen" type="Spatial" parent="furniture"]
 
 [node name="kitchen_counter" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 2 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -8.1, 0.1132, 2.12796 )
 
 [node name="kitchen_counter4" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, 0.11 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0.1132, 0.11 )
 
 [node name="kitchen_counter5" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -1.9 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0.1132, -1.9 )
 
 [node name="kitchen_counter6" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -2.9 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0.1132, -2.9 )
 
 [node name="kitchen_counter7" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( 1, 0, 0, 0, 0.75, 0, 0, 0, 1, -1.65, 0.2, -3.9 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 0.1132, -3.9 )
 
 [node name="kitchen_counter2" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 1 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -8.1, 0.1132, 1.12796 )
 
 [node name="kitchen_counter3" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, 0 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -8.1, 0.1132, 0.127958 )
 
 [node name="kitchen_counter8" parent="furniture/kitchen" instance=ExtResource( 64 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 0.75, 0, 1.50996e-07, 0, -1, -8.1, 0.2, -2.02804 )
-skeleton = NodePath("../symbol_translator")
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -8.1, 0.1132, -1.90008 )
 
 [node name="kitchen_fridge" parent="furniture/kitchen" instance=ExtResource( 65 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.65, 0.075, -0.9 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.65, 0.0641999, -0.9 )
+
+[node name="kitchen_fridge2" parent="furniture/kitchen" instance=ExtResource( 65 )]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -7.07865, 0.0641999, -2.89134 )
 
 [node name="symbol_translator" parent="furniture/kitchen" instance=ExtResource( 60 )]
 transform = Transform( -0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -7, 0.1, 5 )
+
+[node name="sink1" parent="furniture/kitchen" instance=ExtResource( 53 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.26227, 0.0641999, -3.7119 )
+
+[node name="sink2" parent="furniture/kitchen" instance=ExtResource( 53 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47683, 0.0641999, -3.73457 )
+
+[node name="cabinets" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13423, 2.0536, -0.870732 )
+
+[node name="cabinets2" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13423, 2.0536, 0.129268 )
+
+[node name="cabinets3" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13423, 2.0536, 1.12927 )
+
+[node name="cabinets4" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.47023, 2.0536, -0.897998 )
+
+[node name="cabinets5" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.47023, 2.0536, -1.898 )
+
+[node name="cabinets6" parent="furniture/kitchen" instance=ExtResource( 73 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.47023, 2.0536, -2.898 )
+
+[node name="table" parent="furniture/kitchen" instance=ExtResource( 28 )]
+transform = Transform( 0.755922, 0, 0, 0, 1, 0, 0, 0, 1.90419, -4.84713, 0.057857, 0.268777 )
+
+[node name="chair" parent="furniture/kitchen" instance=ExtResource( 29 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -5.46197, 0.0641999, 5.41354 )
+
+[node name="chair2" parent="furniture/kitchen" instance=ExtResource( 29 )]
+transform = Transform( 0.123012, 0, -0.992405, 0, 1, 0, 0.992405, 0, 0.123012, -3.15933, 0.0641999, 5.23675 )
+
+[node name="chair3" parent="furniture/kitchen" instance=ExtResource( 29 )]
+transform = Transform( 0.930635, 0, -0.365949, 0, 1, 0, 0.365949, 0, 0.930635, -6.4598, 0.0642001, -2.18205 )
+
+[node name="table2" parent="furniture/kitchen" instance=ExtResource( 28 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.54759, 0.0641999, 4.76815 )
+
+[node name="table3" parent="furniture/kitchen" instance=ExtResource( 28 )]
+transform = Transform( 0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.5, -3.68028, 0.0641999, -3.48237 )
+
+[node name="plate" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.710328, -3.57401 )
+
+[node name="plate2" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.750571, -3.57401 )
+
+[node name="plate3" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.790814, -3.57401 )
+
+[node name="plate4" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.831057, -3.57401 )
+
+[node name="plate5" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.8713, -3.57401 )
+
+[node name="plate6" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.911543, -3.57401 )
+
+[node name="plate7" parent="furniture/kitchen" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75143, 0.951785, -3.57401 )
+
+[node name="stove" parent="furniture/kitchen" instance=ExtResource( 66 )]
+transform = Transform( 0.0215008, 0, -0.999769, 0, 1, 0, 0.999769, 0, 0.0215008, -7.10405, 0.0625248, -0.901407 )
+
+[node name="frying_pan" parent="furniture/kitchen" instance=ExtResource( 75 )]
+transform = Transform( -0.719715, 0, 0.694269, 0, 1, 0, -0.694269, 0, -0.719715, -7.67696, 1.15291, -1.58621 )
+
+[node name="frying_pan2" parent="furniture/kitchen" instance=ExtResource( 75 )]
+transform = Transform( 0.961112, 0, 0.276157, 0, 1, 0, -0.276157, 0, 0.961112, -7.65596, 1.15291, -1.14321 )
+
+[node name="frying_pan3" parent="furniture/kitchen" instance=ExtResource( 75 )]
+transform = Transform( 0.319898, 0.478798, -0.817568, -0.0859932, 0.874024, 0.478213, 0.943541, -0.0826739, 0.320772, -4.53912, 1.13586, -3.48651 )
+
+[node name="knife_cleaver" parent="furniture/kitchen" instance=ExtResource( 51 )]
+transform = Transform( 3.32687e-09, -0.997099, -0.0761099, -4.35846e-08, -0.0761099, 0.997099, -1, 0, -4.37114e-08, -4.20306, 0.929308, 0.95623 )
+
+[node name="knife_cleaver2" parent="furniture/kitchen" instance=ExtResource( 51 )]
+transform = Transform( -0.183013, -0.653072, -0.734849, -0.98038, 0.176909, 0.08694, 0.0732233, 0.736343, -0.672635, -4.33179, 0.916419, 0.602422 )
+
+[node name="hand" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 0.973099, 0, 0.230389, 0, 1, 0, -0.230389, 0, 0.973099, -4.58007, 0.873707, 1.47143 )
+
+[node name="hand2" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( -0.926594, 0, 0.376063, 0, 1, 0, -0.376063, 0, -0.926594, -4.46928, 0.873707, 1.2257 )
+
+[node name="hand3" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80904, 0.873707, 1.19557 )
+is_left_handed = true
+
+[node name="hand4" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80367, 0.873707, 1.38517 )
+
+[node name="hand5" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.70717, 0.873707, 1.47246 )
+
+[node name="hand6" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 0.87974, 0, -0.475455, 0, 1, 0, 0.475455, 0, 0.87974, -4.8818, 0.881897, 1.0617 )
+is_left_handed = true
+
+[node name="hand7" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67687, 0.865517, 1.08458 )
+
+[node name="hand8" parent="furniture/kitchen" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39346, 0.865517, 1.49611 )
+is_left_handed = true
+
+[node name="foot" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.43508, 0.901481, -0.0367295 )
+is_left_handed = true
+
+[node name="foot3" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -2.92316e-08, -0.668741, 0.743495, 1, -4.37114e-08, 0, 3.24992e-08, 0.743495, 0.668741, -4.41547, 0.901481, -0.309429 )
+is_left_handed = true
+
+[node name="foot4" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -4.04167e-10, -0.668741, -0.743495, -1, -4.37114e-08, 3.98601e-08, -5.91553e-08, 0.743495, -0.668741, -4.71329, 0.901481, -0.395049 )
+is_left_handed = true
+
+[node name="foot5" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -4.04167e-10, -0.668741, -0.743495, -1, -4.37114e-08, 3.98601e-08, -5.91553e-08, 0.743495, -0.668741, -4.82875, 0.901481, -0.0140248 )
+is_left_handed = true
+
+[node name="foot6" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -0.668741, 3.55761e-08, -0.743495, 2.98023e-08, 1, 2.1044e-08, 0.743495, -8.0849e-09, -0.668741, -4.67581, 0.881121, -0.947193 )
+
+[node name="foot2" parent="furniture/kitchen" instance=ExtResource( 31 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.50154, 0.901481, 0.237891 )
+
+[node name="eyeball" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.69869, 1.19907, -1.18028 )
+
+[node name="eyeball2" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -7.75779, 1.19907, 0.186131 )
+
+[node name="eyeball3" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( 0.892176, 0, 0.451687, 0, 1, 0, -0.451687, 0, 0.892176, -7.65296, 1.26333, -0.0912513 )
+
+[node name="eyeball4" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -7.47459, 1.26333, 0.0110012 )
+
+[node name="eyeball7" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -7.43707, 1.26333, -0.266582 )
+
+[node name="eyeball5" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( -0.866025, -0.12941, -0.482963, 0, 0.965926, -0.258819, 0.5, -0.224144, -0.836516, -7.5257, 1.26333, 0.226695 )
+
+[node name="eyeball6" parent="furniture/kitchen" instance=ExtResource( 52 )]
+transform = Transform( -0.888329, 0, 0.459208, 0, 1, 0, -0.459208, 0, -0.888329, -7.30814, 1.26333, 0.187223 )
+
+[node name="ear" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.62354, 1.1924, -2.3948 )
+
+[node name="ear2" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.40889, 1.1924, -2.19862 )
+is_left_handed = true
+
+[node name="ear3" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.4996, 1.1924, -2.47256 )
+is_left_handed = true
+
+[node name="ear4" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.53363, 1.1924, -2.24441 )
+
+[node name="ear5" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.4325, 1.1924, -2.3882 )
+
+[node name="ear6" parent="furniture/kitchen" instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -7.37453, 1.1924, -2.53766 )
+is_left_handed = true
 
 [node name="mushrooms" type="Spatial" parent="."]
 
@@ -804,6 +973,34 @@ mushroom_color = 0
 [node name="mushroom9" parent="mushrooms/secret_room" instance=ExtResource( 20 )]
 transform = Transform( 0.167155, -0.0389617, 0.98516, -0.168243, 0.983436, 0.0674396, -0.97147, -0.177019, 0.157831, 0.835131, 1.49042, -9.59967 )
 mushroom_color = 0
+
+[node name="kitchen" type="Spatial" parent="mushrooms"]
+
+[node name="mushroom" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.62457, 1.19242, -1.5937 )
+mushroom_color = 4
+random_mushroom_shape = false
+is_stuck_in_ground = false
+
+[node name="mushroom2" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.02066, 0.930371, -0.8699 )
+mushroom_color = 0
+is_stuck_in_ground = false
+
+[node name="mushroom3" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
+transform = Transform( -0.556629, -0.830761, -3.63137e-08, 0, -4.37114e-08, 1, -0.830761, 0.556629, 2.4331e-08, -5.14203, 0.930371, -0.548661 )
+mushroom_color = 0
+is_stuck_in_ground = false
+
+[node name="mushroom4" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
+transform = Transform( 0.136701, -0.990612, -4.3301e-08, 0, -4.37114e-08, 1, -0.990612, -0.136701, -5.9754e-09, -5.19158, 0.930371, -0.735252 )
+mushroom_color = 0
+is_stuck_in_ground = false
+
+[node name="mushroom5" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
+transform = Transform( -0.701245, 0.71292, 3.11627e-08, 0, -4.37114e-08, 1, 0.71292, 0.701245, 3.06524e-08, -5.22939, 0.930371, -0.91086 )
+mushroom_color = 0
+is_stuck_in_ground = false
 
 [node name="windows" type="Spatial" parent="."]
 
@@ -1170,9 +1367,6 @@ transform = Transform( 0.995102, 0, -0.0988508, 0, 1, 0, 0.0988508, 0, 0.995102,
 
 [node name="kitchen" type="Spatial" parent="cardboards"]
 
-[node name="stove" parent="cardboards/kitchen" instance=ExtResource( 66 )]
-transform = Transform( 1, 0, -1.86265e-09, 0, 1.3, 0, 1.86265e-09, 0, 1, -29.4927, 25.4609, 7.08027 )
-
 [node name="entrance" type="Spatial" parent="cardboards"]
 
 [node name="cardboardbox3" parent="cardboards/entrance" instance=ExtResource( 7 )]
@@ -1216,12 +1410,6 @@ transform = Transform( 0.740583, 0, -0.671966, 0, 1, 0, 0.671966, 0, 0.740583, -
 
 [node name="living_room" type="Spatial" parent="cardboards"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.215982, 0.0830746, -0.0087015 )
-
-[node name="cardboardbox" parent="cardboards/living_room" instance=ExtResource( 7 )]
-transform = Transform( 1.754, 0, 0, 0, 1.102, 0, 0, 0, 1, -28.5131, 25.4644, -7.66354 )
-
-[node name="cardboardbox2" parent="cardboards/living_room" instance=ExtResource( 7 )]
-transform = Transform( 0.213798, 0, -0.976878, 0, 1, 0, 0.976878, 0, 0.213798, -28.5015, 26.0144, -7.59047 )
 
 [node name="cardboardbox3" parent="cardboards/living_room" instance=ExtResource( 7 )]
 transform = Transform( -0.046322, 0, -0.998927, 0, 1, 0, 0.998927, 0, -0.046322, -27.4579, 26.4696, -7.63677 )
@@ -1280,6 +1468,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82309, 0.911139, 5.98071 )
 [node name="Candle2" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39369, 1.03847, -0.262039 )
 
+[node name="Candle9" parent="candles" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06642, 1.03847, -0.190694 )
+
 [node name="Candle3" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97634, -2.18007, -6.63266 )
 
@@ -1287,7 +1478,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97634, -2.18007, -6.63266 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85285, -2.18007, -5.50372 )
 
 [node name="Candle6" parent="candles" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45813, 0.250497, 0.334181 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49501, 1.34225, 1.84072 )
+
+[node name="Candle10" parent="candles" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32136, 1.34225, -3.17959 )
 
 [node name="Candle7" parent="candles" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77897, 4.40113, -7.3784 )
@@ -1473,7 +1667,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.9828
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522501, 3.76434, -0.674509 )
 
 [node name="weird_door_knob" parent="special_items" instance=ExtResource( 43 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89211, 0.135127, 0.807316 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2894, 1.21658, -1.11183 )
 
 [node name="lantern" parent="special_items" instance=ExtResource( 55 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )
@@ -1517,6 +1711,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906832, 0, -2.01974 )
 [node name="giant_mouth" parent="giant_eye_mouth_puzzle" instance=ExtResource( 35 )]
 unique_name_in_owner = true
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 3.78523, 3.21829, -0.892782 )
+
+[node name="table" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00156, 3.61139, 2.93465 )
 
 [editable path="porch_ladder"]
 [editable path="basement_ladder"]

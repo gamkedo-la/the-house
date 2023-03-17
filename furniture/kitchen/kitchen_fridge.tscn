@@ -7,21 +7,21 @@
 [node name="kitchen_fridge" type="Spatial"]
 
 [node name="fridge" type="MeshInstance" parent="."]
-transform = Transform( 0.98, 0, 0, 0, 2, 0, 0, 0, 1, -0.02, 0, 0 )
+transform = Transform( 0.98, 0, 0, 0, 2.5, 0, 0, 0, 1, -0.02, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="side" type="MeshInstance" parent="."]
-transform = Transform( 0.01, 0, 0, 0, 2, 0, 0, 0, 1, -0.01, 0, 0 )
+transform = Transform( 0.01, 0, 0, 0, 2.5, 0, 0, 0, 1, -0.01, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="side2" type="MeshInstance" parent="."]
-transform = Transform( 0.01, 0, 0, 0, 2, 0, 0, 0, 1, -1, 0, 0 )
+transform = Transform( 0.01, 0, 0, 0, 2.5, 0, 0, 0, 1, -1, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="top" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.01, 0, 0, 0, 1, -0.01, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 0.01, 0, 0, 0, 1, -0.01, 2.49055, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 3 )

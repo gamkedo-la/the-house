@@ -1,7 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://furniture/kitchen/kitchen_stove_mesh.fbx" type="PackedScene" id=1]
 
-[node name="Spatial" type="Spatial"]
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.5, 0.52526, 0.5 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.5, 0.740565, 0.050027 )
+
+[node name="Spatial" type="StaticBody"]
 
 [node name="kitchen_stove_mesh" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1.484, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.527973, 0.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.74224, 0.951305 )
+shape = SubResource( 2 )

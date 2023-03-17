@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://house/house/house_corridor_walls.tres" type="Material" id=1]
 [ext_resource path="res://house/house/house_exterior_wall_spatialmaterial.tres" type="Material" id=2]
@@ -168,8 +168,14 @@ extents = Vector3( 0.2, 2.9, 2.6 )
 [sub_resource type="BoxShape" id=38]
 extents = Vector3( 0.2, 2.9, 8.25 )
 
-[sub_resource type="BoxShape" id=41]
-extents = Vector3( 0.2, 2.9, 8.25 )
+[sub_resource type="BoxShape" id=64]
+extents = Vector3( 0.2, 2.9, 4.8495 )
+
+[sub_resource type="BoxShape" id=65]
+extents = Vector3( 0.2, 2.9, 2.47787 )
+
+[sub_resource type="BoxShape" id=66]
+extents = Vector3( 0.2, 1.11753, 1.08619 )
 
 [sub_resource type="BoxShape" id=44]
 extents = Vector3( 5.27, 2.9, 0.2 )
@@ -286,9 +292,21 @@ shape = SubResource( 37 )
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.7808, 1.8042, 0.882 )
 shape = SubResource( 38 )
 
-[node name="kitchen_wall" type="CollisionShape" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.5378, 1.8042, 0.882 )
-shape = SubResource( 41 )
+[node name="kitchen_wall2" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 1.804, -1.23 )
+shape = SubResource( 64 )
+
+[node name="kitchen_wall3" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 1.804, -1.23 )
+shape = SubResource( 64 )
+
+[node name="kitchen_wall4" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 1.804, 4.40595 )
+shape = SubResource( 65 )
+
+[node name="kitchen_wall5" type="CollisionShape" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.538, 2.93814, 2.296 )
+shape = SubResource( 66 )
 
 [node name="living_room_back_wall" type="CollisionShape" parent="."]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.9506, 1.8042, -4.0332 )
@@ -356,3 +374,9 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.92236, 5.46442, 5.790
 
 [node name="door_frame_collider" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.003, 1.135, 5.959 )
+
+[node name="door_frame_collider2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.61831e-08, 0, -0.345, 0, 0.6, 0, 0.599, 0, -1.50804e-08, 1.79574, 1.13068, 2.29321 )
+
+[node name="door_frame_collider3" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.61831e-08, 0, -0.345, 0, 0.6, 0, 0.599, 0, -1.50804e-08, -1.53488, 1.13068, 2.29321 )

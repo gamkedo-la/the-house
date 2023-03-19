@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://furniture/doors/door_handle-basic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://furniture/bedroom_door.gd" type="Script" id=2]
@@ -9,14 +9,21 @@
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 3 )
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.57, 1.07, 0.094129 )
+
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.266667, 0.188235, 0.188235, 1 )
 albedo_texture = ExtResource( 4 )
 
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.03, 1.07, 0.05 )
+
 [sub_resource type="SphereShape" id=3]
 radius = 0.629465
 
-[node name="bedroom_door" type="Spatial"]
+[node name="bedroom_door" type="StaticBody"]
+collision_layer = 129
 script = ExtResource( 2 )
 locked_text = "Locked...\\nThere is no key-hole."
 unlocked_text = "[b]I can ear the door unlocking...[/b]"
@@ -29,8 +36,11 @@ height = 2.14
 depth = 0.1
 material = SubResource( 2 )
 
-[node name="main_mesh" type="CSGBox" parent="."]
+[node name="main_mesh" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+shape = SubResource( 4 )
+
+[node name="main_mesh" type="CSGBox" parent="main_mesh"]
 use_collision = true
 collision_layer = 129
 width = 1.14
@@ -53,91 +63,123 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00713658, -0.0727706, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182772, 0.254861, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear2" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0721393, 0.30257, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear3" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294917, 0.489582, 0.05 )
 mode = 1
+can_be_taken = false
+highlightable = false
 
 [node name="ear4" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199968, 0.405917, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear5" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199968, 0.405917, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear6" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205648, 0.534657, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear7" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164067, 0.462882, 0.05 )
 mode = 1
+can_be_taken = false
+highlightable = false
 
 [node name="ear8" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18994, 0.582991, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear9" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0438521, 0.642467, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear10" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121669, 0.724101, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear11" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412087, 0.324727, 0.05 )
 mode = 1
+can_be_taken = false
+highlightable = false
 
 [node name="ear12" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12052, 0.392591, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear13" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284335, 0.396319, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear14" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0354543, 0.367239, 0.05 )
 mode = 1
+can_be_taken = false
+highlightable = false
 
 [node name="ear15" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275161, 0.220272, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear16" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.306621, 0.658926, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear17" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297639, 0.261791, 0.05 )
 mode = 1
+can_be_taken = false
+highlightable = false
 
 [node name="ear18" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130844, 0.537314, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
 
 [node name="ear19" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130844, 0.537314, 0.05 )
 mode = 1
 can_be_taken = false
+highlightable = false
+
+[node name="main_other_collision_box" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
+shape = SubResource( 4 )
+
+[node name="hinge_collision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0487944, 1.07, -0.00336409 )
+shape = SubResource( 5 )
 
 [node name="open_position" type="Spatial" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.07, -0.63 )
@@ -147,7 +189,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
 
 [node name="listening_area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.540541, 1.47128, 0 )
-collision_layer = 0
+collision_layer = 128
 collision_mask = 2048
 input_ray_pickable = false
 monitorable = false

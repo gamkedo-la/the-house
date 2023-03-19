@@ -100,7 +100,7 @@ transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.01482
 
 [node name="attic_ladder" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
-transform = Transform( 1, 0, 0, 0, 0.935834, 0.172049, 0, -0.163447, 0.985088, 7.18452, 0.0330846, -2.15135 )
+transform = Transform( 1, 0, 0, 0, 0.935834, 0.172049, 0, -0.163447, 0.985088, 7.185, -0.098, -2.302 )
 visible = false
 
 [node name="basement_ladder" parent="." instance=ExtResource( 1 )]

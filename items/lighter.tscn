@@ -322,6 +322,7 @@ extents = Vector3( 0.0498867, 0.0553909, 0.0329471 )
 [node name="lighter" type="RigidBody"]
 mass = 0.2
 script = ExtResource( 4 )
+description = "A lighter. I can activate it to turn it on.\\nI can probably light flameable stuffs with it too."
 
 [node name="lighter_body" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

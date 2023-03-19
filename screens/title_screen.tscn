@@ -114,9 +114,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -492.0
-margin_top = -533.0
+margin_top = -328.0
 margin_right = 492.0
-margin_bottom = -172.0
+margin_bottom = -124.0
 theme = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center][b]Loading...[/b][/center]"
@@ -128,18 +128,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -492.0
-margin_top = -274.0
-margin_right = 492.0
-margin_bottom = -102.0
+margin_left = -957.0
+margin_top = -142.0
+margin_right = 957.0
+margin_bottom = -54.0
 theme = SubResource( 4 )
 custom_fonts/bold_font = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[center]This might take a minute or two...[/center]
-[center][b]Do not close the window[/b][/center]"
-text = "This might take a minute or two...
-Do not close the window"
+bbcode_text = "[center]Do not close this window, it might take a minute or two... [/center]"
+text = "Do not close this window, it might take a minute or two... "
 scroll_active = false
 
 [node name="scenery" type="Spatial" parent="."]

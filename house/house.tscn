@@ -147,6 +147,141 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.09285, 0.0514893, -6.71467 )
 is_open = true
 
+[node name="main_mesh" parent="doors/toilet_door" index="1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.07, -0.63 )
+
+[node name="note2" parent="doors/toilet_door/main_mesh" index="2" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.00655937, 0.00331509, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note3" parent="doors/toilet_door/main_mesh" index="3" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.222384, -0.00102377, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note4" parent="doors/toilet_door/main_mesh" index="4" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.172374, 0.0972427, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note5" parent="doors/toilet_door/main_mesh" index="5" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.0991943, 0.0514388, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note6" parent="doors/toilet_door/main_mesh" index="6" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.078619, 0.332499, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note7" parent="doors/toilet_door/main_mesh" index="7" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.0306273, 0.212471, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note8" parent="doors/toilet_door/main_mesh" index="8" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.380433, 0.21381, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note9" parent="doors/toilet_door/main_mesh" index="9" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.216746, 0.259231, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note10" parent="doors/toilet_door/main_mesh" index="10" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.332519, 0.381243, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note11" parent="doors/toilet_door/main_mesh" index="11" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.178248, 0.402301, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note12" parent="doors/toilet_door/main_mesh" index="12" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.0248382, 0.451761, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note13" parent="doors/toilet_door/main_mesh" index="13" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.18917, 0.286312, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note14" parent="doors/toilet_door/main_mesh" index="14" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.139931, 0.0997711, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note15" parent="doors/toilet_door/main_mesh" index="15" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.429174, -0.0574266, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note16" parent="doors/toilet_door/main_mesh" index="16" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.240382, 0.636397, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note17" parent="doors/toilet_door/main_mesh" index="17" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.0580945, 0.58715, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note18" parent="doors/toilet_door/main_mesh" index="18" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.418298, 0.55841, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note19" parent="doors/toilet_door/main_mesh" index="19" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.0288198, 0.747646, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note20" parent="doors/toilet_door/main_mesh" index="20" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, 0.179589, 0.609639, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note21" parent="doors/toilet_door/main_mesh" index="21" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.330467, 0.771847, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note22" parent="doors/toilet_door/main_mesh" index="22" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.143351, 0.786091, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
+[node name="note23" parent="doors/toilet_door/main_mesh" index="23" instance=ExtResource( 71 )]
+transform = Transform( -7.54979e-08, 1, -1.50996e-07, 1, 7.54979e-08, 8.9407e-08, 8.9407e-08, -1.50996e-07, -1, -0.143351, 0.786091, -0.0550332 )
+note_key = "chest"
+translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
+translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
+
 [node name="kitchen_door" parent="doors" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47956, 0.068, 2.94251 )
 script = ExtResource( 37 )
@@ -1702,6 +1837,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00156, 3.61139, 2.93465 )
 [editable path="porch_ladder"]
 [editable path="basement_ladder"]
 [editable path="doors/entrance_door"]
+[editable path="doors/toilet_door"]
 [editable path="doors/kitchen_door"]
 [editable path="doors/basement_trap_door"]
 [editable path="giant_eye_mouth_puzzle/giant_eye"]

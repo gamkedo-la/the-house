@@ -2,6 +2,8 @@ extends InteractiveItem
 
 class_name MusicBox
 
+onready var mb_anim = $AnimationPlayer
+
 export var is_playing_music := false setget _set_playing_music
 
 func _ready():
@@ -22,10 +24,12 @@ func _set_playing_music(must_play:bool) -> void:
 func play_music() -> void:
 	$music_player.play()
 	is_playing_music = true
+	mb_anim.play("ArmatureAction")
 	
 func stop_music() -> void:
 	$music_player.stop()
 	is_playing_music = false
+	mb_anim.stop()
 
 func _on_player_use(this) -> void:
 	_set_playing_music(not is_playing_music)

@@ -49,6 +49,7 @@ surfaces/2 = {
 extents = Vector3( 0.304705, 0.0243208, 0.19112 )
 
 [node name="book_open" type="RigidBody"]
+mass = 10.0
 script = ExtResource( 2 )
 orientation_held_front = 1
 description = "An old book.\\nNothing interesting in there."

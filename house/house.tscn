@@ -1743,7 +1743,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07466, 0.4899, -7.98035 )
 [node name="special_items" type="Spatial" parent="."]
 
 [node name="music_box" parent="special_items" instance=ExtResource( 33 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63178, 2.30635, 0.533889 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48549, 2.30635, 0.505813 )
 
 [node name="lighter" parent="special_items" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92965, 1.11453, -9.12531 )

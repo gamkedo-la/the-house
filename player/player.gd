@@ -93,8 +93,10 @@ func _ready() -> void:
 	_feet_for_interior.visible = false
 	_feet_for_interior.disabled = true
 	
-	yield(get_tree().create_timer(1.0), "timeout")
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if OS.is_window_focused():
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		OS.request_attention()
 	
 
 # Common updates for when the player can explore freely

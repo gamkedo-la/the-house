@@ -129,7 +129,7 @@ script = ExtResource( 1 )
 description = "A music box.\\nIt should play something if I turn it on."
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+transform = Transform( 0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, 0.621749, 0, 0.106048, 0 )
 shape = SubResource( 1 )
 
 [node name="music_player" type="AudioStreamPlayer3D" parent="."]
@@ -137,11 +137,12 @@ stream = ExtResource( 3 )
 bus = "Sounds"
 
 [node name="placeholder_box_please_replace_me" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+transform = Transform( 0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, 0.621749, 0, 0.106048, 0 )
 visible = false
 mesh = SubResource( 2 )
 
 [node name="Armature" type="Spatial" parent="."]
+transform = Transform( 0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, 0.621749, 0, 0.0560481, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="Armature"]
 bones/0/name = "Root"
@@ -160,9 +161,11 @@ mesh = SubResource( 3 )
 skin = SubResource( 4 )
 
 [node name="body" type="MeshInstance" parent="."]
+transform = Transform( 0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, 0.621749, 0, 0.0560481, 0 )
 mesh = SubResource( 5 )
 
 [node name="lid" type="MeshInstance" parent="."]
+transform = Transform( 0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, 0.621749, 0, 0.0560481, 0 )
 mesh = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

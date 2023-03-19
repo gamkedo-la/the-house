@@ -9,6 +9,12 @@
 [node name="paused_screen" type="CanvasLayer"]
 script = ExtResource( 2 )
 
+[node name="background" type="ColorRect" parent="."]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.309804, 0, 0, 0.180392 )
+
 [node name="options_screen" parent="." instance=ExtResource( 1 )]
 visible = false
 
@@ -112,6 +118,19 @@ Som other doors requires other kind of keys to unlock...
 
 Escape  the house through the toolshed.
 "
+
+[node name="scroll_info" type="RichTextLabel" parent="menu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -809.0
+margin_top = -180.0
+margin_right = -673.0
+margin_bottom = -56.0
+theme = ExtResource( 3 )
+text = "Scroll Up/Down"
+scroll_active = false
 
 [node name="resume_button" type="Button" parent="menu"]
 unique_name_in_owner = true

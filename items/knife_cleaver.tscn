@@ -29,6 +29,7 @@ extents = Vector3( 0.0194505, 0.23645, 0.0844868 )
 [node name="knife_cleaver" type="RigidBody"]
 mass = 20.0
 script = ExtResource( 1 )
+description = "A very sharp butcher knife.\\nIt's blade have been cleaned up but still have traces of blood."
 
 [node name="mesh" type="MeshInstance" parent="."]
 transform = Transform( 9.22912e-16, 0.483027, -2.11138e-08, 0.965926, -1.13133e-08, -0.258819, -0.258819, -4.2222e-08, -0.965926, 0, 0.138335, 0 )

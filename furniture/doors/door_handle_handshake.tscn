@@ -2,14 +2,10 @@
 
 [ext_resource path="res://furniture/doors/door_handle_handshake.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/lock_area.gd" type="Script" id=2]
+[ext_resource path="res://items/gold_metallic.tres" type="Material" id=3]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.141831, 0.0347476, 0.0568341 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.45098, 0.45098, 0.45098, 1 )
-metallic = 0.42
-metallic_specular = 0.76
 
 [sub_resource type="ArrayMesh" id=4]
 surfaces/0 = {
@@ -19,7 +15,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194455,
 "index_count": 0,
-"material": SubResource( 3 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 585

@@ -193,8 +193,8 @@ margin_top = -46.0
 margin_right = 349.0
 theme = ExtResource( 13 )
 bbcode_enabled = true
-bbcode_text = "Version 0.5-ALPHA"
-text = "Version 0.5-ALPHA"
+bbcode_text = "Version [b]0.6-ALPHA[/b]"
+text = "Version 0.6-ALPHA"
 scroll_active = false
 
 [node name="important_keys" type="RichTextLabel" parent="info"]
@@ -204,6 +204,6 @@ anchor_bottom = 1.0
 margin_top = -46.0
 theme = ExtResource( 13 )
 bbcode_enabled = true
-bbcode_text = "[center]Press [b][M][/b] at any moment to mute/unmute * [b][ESCAPE][/b] pr [b][P][/b] or [b][ENTER][/b] to Pause/Menu"
-text = "Press [M] at any moment to mute/unmute * [ESCAPE] pr [P] or [ENTER] to Pause/Menu"
+bbcode_text = "[center]Press [b][M][/b] at any moment to mute/unmute * [b][ESCAPE][/b] or [b][P][/b] or [b][ENTER][/b] to Pause/Menu"
+text = "Press [M] at any moment to mute/unmute * [ESCAPE] or [P] or [ENTER] to Pause/Menu"
 scroll_active = false

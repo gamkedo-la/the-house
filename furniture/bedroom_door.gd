@@ -30,6 +30,7 @@ func _unlock_the_door():
 	_is_listening = false
 	_listening_area.set_deferred("monitoring", false)
 	_listening_area.set_deferred("monitorable", false)
+	$main_other_collision_box.disabled = true
 	global.current_player.examination_display.stop_display_sequence()
 	unlock()
 	

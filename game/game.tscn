@@ -370,6 +370,7 @@ collision_mask = 2
 transform = Transform( 0.992599, 0, -0.121436, 0, 1, 0, 0.121436, 0, 0.992599, 1.39691, 0.799381, 1.34118 )
 shape = SubResource( 7 )
 
+[editable path="actual_game/toolshed"]
 [editable path="actual_game/texts/story/story_3_goal"]
 [editable path="actual_game/texts/story/story_4_toolshed"]
 [editable path="actual_game/texts/story/story_the_house"]

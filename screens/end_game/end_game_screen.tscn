@@ -28,19 +28,25 @@ margin_bottom = 242.0
 theme = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "[center]
-THIS IS THE END OF THE GAME
+You find a tunnel, going into mines and after an hour of walking you manage to find a road that ultimately lead to a small city.
+ YouEscaped!
 
 THANKS FOR PLAYING THIS GAME
 
-THIS IS ACTUALLY A PLACEHOLDER, THE END OF THE GAME SHOULD BE EXPLAINED HERE
-[/center]"
+THIS IS ACTUALLY A PLACEHOLDER
+[/center]
+
+[center]PLEASE GIVE SOME FEEDBACK USING THE LINK IN THE GAME PAGE[/center]"
 text = "
-THIS IS THE END OF THE GAME
+You find a tunnel, going into mines and after an hour of walking you manage to find a road that ultimately lead to a small city.
+ YouEscaped!
 
 THANKS FOR PLAYING THIS GAME
 
-THIS IS ACTUALLY A PLACEHOLDER, THE END OF THE GAME SHOULD BE EXPLAINED HERE
-"
+THIS IS ACTUALLY A PLACEHOLDER
+
+
+PLEASE GIVE SOME FEEDBACK USING THE LINK IN THE GAME PAGE"
 
 [node name="back_button" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true

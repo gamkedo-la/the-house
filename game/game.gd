@@ -17,7 +17,8 @@ func _ready() -> void :
 		$debug.visible = true
 	
 	$paused_screen.connect("on_resume", self, "_on_resume_requested")
-	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
+#	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
+	$"actual_game/toolshed/trap_door".connect("door_opened", self, "_end_game_reached")
 	
 	if OS.window_fullscreen:
 		pause_game(false)
@@ -89,8 +90,10 @@ func exit_game():
 	
 func _on_player_entered_end_area(player : Node) -> void:
 	if player is Player:
-		global.current_game = null
-		pause_game(false)
-		master_scene.to_end_game_screen()
-	
+		_end_game_reached()
+			
+func _end_game_reached() -> void:
+	global.current_game = null
+	pause_game(false)
+	master_scene.to_end_game_screen()
 

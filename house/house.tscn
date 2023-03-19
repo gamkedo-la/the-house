@@ -881,7 +881,7 @@ transform = Transform( 3.32687e-09, -0.997099, -0.0761099, -4.35846e-08, -0.0761
 mode = 1
 
 [node name="knife_cleaver3" parent="furniture/kitchen" instance=ExtResource( 51 )]
-transform = Transform( 0.996815, -0.023822, -0.0761096, 0.0760879, -0.0018184, 0.997099, -0.0238913, -0.999714, -3.96187e-08, -2.45191, 1.24703, -0.971687 )
+transform = Transform( 0.996815, -0.023822, -0.0761096, 0.0760879, -0.0018184, 0.997099, -0.0238913, -0.999714, -3.96187e-08, -2.45191, 1.24703, -1.06258 )
 mode = 1
 
 [node name="knife_cleaver2" parent="furniture/kitchen" instance=ExtResource( 51 )]
@@ -1746,6 +1746,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48549, 2.30635, 0.505813 )
 
 [node name="lighter" parent="special_items" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92965, 1.11453, -9.12531 )
+description = "A lighter. I can activate it to turn it on.\\nI can probably light flameable stuffs with it too."
 
 [node name="entrance_key" parent="special_items" instance=ExtResource( 24 )]
 transform = Transform( -4.26928e-09, -0.0976698, 0.995219, 1, -4.37114e-08, 0, 4.35024e-08, 0.995219, 0.0976698, -4.53817, 0.0859217, 6.38556 )
@@ -1785,7 +1786,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.9828
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522501, 3.76434, -0.674509 )
 
 [node name="weird_door_knob" parent="special_items" instance=ExtResource( 43 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2894, 1.21658, -1.11183 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2894, 1.21658, -0.976397 )
 
 [node name="lantern" parent="special_items" instance=ExtResource( 55 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )

@@ -65,9 +65,11 @@ func pause_game(pause: bool) -> void:
 	if pause:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$paused_screen.visible = true
+		global.current_player.hide_all_texts()
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		$paused_screen.visible = false
+		global.current_player.show_all_texts()
 
 	emit_signal("on_game_pause_or_resume", pause)
 

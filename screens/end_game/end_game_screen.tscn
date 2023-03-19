@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=1]
 [ext_resource path="res://screens/end_game/end_game_screen.gd" type="Script" id=2]
 [ext_resource path="res://fonts/info_text.tres" type="Theme" id=3]
 [ext_resource path="res://audio/music-intro-draft1.mp3" type="AudioStream" id=4]
-
-[sub_resource type="GradientTexture2D" id=1]
 
 [node name="end_game_screen" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,12 +12,12 @@ script = ExtResource( 2 )
 stream = ExtResource( 4 )
 autoplay = true
 
-[node name="background" type="Sprite" parent="."]
-position = Vector2( 959.5, 540 )
-scale = Vector2( 29.9844, 16.8438 )
-texture = SubResource( 1 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 anchor_top = 0.5

@@ -72,10 +72,10 @@ enum MovementMode { Walking, Climbing }
 var _movement_mode : int = MovementMode.Walking
 
 func _input(event) -> void:
-	
-	if Input.is_action_just_pressed("mouse_capture"):
+
+	if Input.is_action_just_pressed("mouse_capture") and not get_tree().paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
+
 	if Input.is_action_just_pressed("mouse_release"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -92,11 +92,6 @@ func _ready() -> void:
 	_body.disabled = false
 	_feet_for_interior.visible = false
 	_feet_for_interior.disabled = true
-	
-	if OS.is_window_focused():
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	else:
-		OS.request_attention()
 	
 
 # Common updates for when the player can explore freely

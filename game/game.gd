@@ -18,6 +18,11 @@ func _ready() -> void :
 	
 	$paused_screen.connect("on_resume", self, "_on_resume_requested")
 	$"%event_end_reached".connect("body_entered", self, "_on_player_entered_end_area")
+	
+	if OS.window_fullscreen:
+		pause_game(false)
+	
+	OS.request_attention()
 
 func _process(_delta):
 		

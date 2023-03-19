@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -51,6 +51,9 @@ radius = 2.87124
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 4.077, 2.19295, 6.30188 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 4.077, 2.19295, 39.4211 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 8.50317, 6.89047, 14.5352 )
@@ -320,6 +323,15 @@ mode = 1
 transform = Transform( 0.888849, 0, 0.4582, 0, 1, 0, -0.4582, 0, 0.888849, -1.17584, 0.5, -2.28098 )
 shape = SubResource( 4 )
 
+[node name="list_of_keys instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, -2.68221e-07, 0, 1, 0, 2.68221e-07, 0, 1, 75.4168, 1.19042, 63.9295 )
+bbtext_to_display = [ "[ESCAPE] or [P] or [ENTER] -> [b]Pause, List of controls & Tips[/b]\\nIf you need help or forgot some controls, check the Pause screen." ]
+mode = 1
+
+[node name="CollisionShape" parent="actual_game/texts/action_tips/list_of_keys instructions" index="0"]
+transform = Transform( 0.888849, 0, 0.4582, 0, 1, 0, -0.4582, 0, 0.888849, -1.56043, 0.5, -3.02701 )
+shape = SubResource( 11 )
+
 [node name="event_areas" type="Spatial" parent="actual_game"]
 
 [node name="event_house_light_area" type="Area" parent="actual_game/event_areas"]
@@ -367,3 +379,4 @@ shape = SubResource( 7 )
 [editable path="actual_game/texts/action_tips/examine_instructions2"]
 [editable path="actual_game/texts/action_tips/point_forward_instructions"]
 [editable path="actual_game/texts/action_tips/run_instructions"]
+[editable path="actual_game/texts/action_tips/list_of_keys instructions"]

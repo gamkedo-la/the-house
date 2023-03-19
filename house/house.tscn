@@ -1560,37 +1560,19 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.3395,
 [node name="toilets" type="Spatial" parent="books"]
 
 [node name="book_closed" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46866, 0.0874205, -8.77725 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46323, 0.0873006, -8.74136 )
 
 [node name="book_closed2" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.887518, 0, 0.460773, 0, 1, 0, -0.460773, 0, 0.887518, 3.46866, 0.135421, -8.77725 )
-
-[node name="book_closed3" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.915276, 0, -0.402827, 0, 1, 0, 0.402827, 0, 0.915276, 3.46866, 0.183421, -8.77725 )
-
-[node name="book_closed5" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.959849, 0, -0.280516, 0, 1, 0, 0.280516, 0, 0.959849, 3.46866, 0.231421, -8.77725 )
-
-[node name="book_closed6" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.999947, 0, 0.0103321, 0, 1, 0, -0.0103321, 0, 0.999947, 3.46866, 0.279421, -8.77725 )
-
-[node name="book_closed7" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.321935, 0, 0.946762, 0, 1, 0, -0.946762, 0, 0.321935, 3.34879, 0.0874206, -8.34549 )
-
-[node name="book_closed4" parent="books/toilets" instance=ExtResource( 70 )]
-transform = Transform( 0.081347, 0, -0.996686, 0, 1, 0, 0.996686, 0, 0.081347, 3.23222, 0.0874205, -9.1845 )
+transform = Transform( 0.887518, 0, 0.460773, 0, 1, 0, -0.460773, 0, 0.887518, 3.41722, 0.135301, -8.7472 )
 
 [node name="book_open" parent="books/toilets" instance=ExtResource( 69 )]
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 3.32387, 0.133216, -9.53765 )
+transform = Transform( -7.35137e-08, 0, 1, 0, 1, 0, -1, 0, -7.35137e-08, 3.38916, 0.0568719, -9.25524 )
 
 [node name="note" parent="books/toilets/book_open" instance=ExtResource( 71 )]
 transform = Transform( 1, -2.78182e-08, -8.74228e-08, 8.74228e-08, 4.37114e-08, 1, -2.78182e-08, -1, 4.37114e-08, 0.203722, 0.0629697, -0.0918617 )
 note_key = "chest"
 translated_description = "A crypted hand-written note.\\nIt says \"CHEST:\" followed by a 6 figures number."
 translation_text = "This makes sense!\\nIt says \"CHEST:\" followed by a 6 figures number."
-
-[node name="book_open2" parent="books/toilets" instance=ExtResource( 69 )]
-transform = Transform( 0.214087, 0, 0.976815, 0, 1, 0, -0.976815, 0, 0.214087, 3.40131, 0.296992, -8.92725 )
 
 [node name="bedroom" type="Spatial" parent="books"]
 

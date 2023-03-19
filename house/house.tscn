@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://test_scenes/test-ladder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://house/walls/house-walls-mesh.tscn" type="PackedScene" id=2]
@@ -71,6 +71,7 @@
 [ext_resource path="res://items/book_open.tscn" type="PackedScene" id=69]
 [ext_resource path="res://items/book_closed.tscn" type="PackedScene" id=70]
 [ext_resource path="res://items/note.tscn" type="PackedScene" id=71]
+[ext_resource path="res://forest/invisible_wall.tscn" type="PackedScene" id=72]
 [ext_resource path="res://furniture/kitchen/cabinets.tscn" type="PackedScene" id=73]
 [ext_resource path="res://items/frying_pan.tscn" type="PackedScene" id=75]
 
@@ -284,6 +285,11 @@ transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.580
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
 transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
+
+[node name="invisible_wall" parent="furniture/bedroom" instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 0.857661, 0.514215, 0, -0.514215, 0.857661, 5.99988, 1.20703, -9.87085 )
+width = 4.30301
+depth = 0.990255
 
 [node name="bathroom" type="Spatial" parent="furniture"]
 

@@ -25,7 +25,6 @@ radius = 0.629465
 [node name="bedroom_door" type="StaticBody"]
 collision_layer = 129
 script = ExtResource( 2 )
-is_open = true
 locked_text = "Locked...\\nThere is no key-hole."
 unlocked_text = "[b]I can ear the door unlocking...[/b]"
 

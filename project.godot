@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://items/treasure_chest/gold_bar.gd"
 }, {
+"base": "BodyHand",
+"class": "GoldenHand",
+"language": "GDScript",
+"path": "res://items/golden_hand.gd"
+}, {
 "base": "RayCast",
 "class": "GroundChecker",
 "language": "GDScript",
@@ -188,6 +193,7 @@ _global_script_class_icons={
 "FootAudio": "",
 "Game": "",
 "GoldBar": "",
+"GoldenHand": "",
 "GroundChecker": "",
 "InteractiveItem": "",
 "ItemUtils": "",

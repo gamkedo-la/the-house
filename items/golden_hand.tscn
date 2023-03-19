@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://items/body/hand.gd" type="Script" id=1]
+[ext_resource path="res://items/golden_hand.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/key_area.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
@@ -150,7 +150,6 @@ shader_param/Roughness = 0.312
 collision_layer = 129
 continuous_cd = true
 script = ExtResource( 1 )
-description = "A golden human hand."
 
 [node name="placeholder_collision_shape" type="CollisionShape" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.83171e-10, 0, 0 )

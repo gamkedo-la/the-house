@@ -1,14 +1,22 @@
 
-[center]THIS IS THE CONTENT OF [b]screens/credits/credits_screen.txt[/b][/center]
-[center]Please edit this file outside Godot as it cannot see it[/center]
-[center]REMEMBER THIS IS BBCODE SO YOU CAN JUST USE [b]BOLD TEXT[/b] and CENTER TO CENTER[/center]
+[center][b]The House[/b][/center]
 
-[b]Lorem ipsum[/b] dolor sit amet, consectetur adipiscing elit. Etiam tristique ac libero et sagittis. Suspendisse volutpat enim ac orci finibus, nec facilisis sapien rutrum. Maecenas dignissim semper efficitur. Duis sollicitudin eros sed lacinia iaculis. Nunc maximus ultrices turpis, sit amet aliquam metus fringilla in. Cras metus tortor, gravida ac pretium vel, scelerisque eu lorem. Cras ut nunc facilisis purus vestibulum maximus. Nam quis mauris nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed egestas ligula eu libero cursus faucibus. Aliquam nec nisl pretium, sollicitudin quam suscipit, aliquam purus. Sed vel nunc vestibulum, mattis elit vel, ultricies purus. Curabitur tempor placerat nisl sit amet sollicitudin. Phasellus suscipit ac mauris ac posuere. Aliquam et dui maximus, auctor lorem non, condimentum eros.
+[b]Klaim (A. Joël Lamotte)[/b]: Project lead, core gameplay design and implementation, level design and interior layouts, puzzle design and implementation, UI and screens, story, player movement, item manipulation and examination, lock and key system, sky made more scary, door behavior, ugly wallpapers, slope handling, camera behavior, ladder system, music (background, intro, music box), various game objects mechanics, house collision adjustments, scale improvements, light tweaks, title screen, instructions text, many bug fixes
 
-[b]Integer mattis vestibulum enim[/b], non imperdiet odio volutpat sit amet. Donec quis venenatis turpis, non ullamcorper eros. Vestibulum at nunc molestie lorem facilisis tristique. Fusce volutpat, turpis vel vulputate fermentum, erat tortor vehicula dui, quis tempor justo est a leo. Cras vel varius nulla. Nullam eleifend consectetur orci vitae iaculis. Aliquam turpis libero, imperdiet quis gravida ac, efficitur ac nunc. Cras id nunc lectus. Suspendisse potenti.
+[b]Liyi Zhang[/b]: Grass shader, models with materials (treasure chest, toilet, sink, chair with comfy variation, clay flower pot, bed, music box) with related integration, sounds (foostep), environment scale reference
 
-[b]Maecenas[/b] nec dui non diam efficitur interdum placerat sed elit. Sed vitae est at odio faucibus hendrerit id eu turpis. Quisque id nibh enim. Nam efficitur enim feugiat, imperdiet leo ut, consequat ex. Suspendisse potenti. Vivamus sit amet cursus nibh. Sed porta, nibh quis fermentum auctor, est risus rhoncus turpis, vel varius nisl leo ut neque. Ut non orci eget felis vulputate bibendum.
+[b]Johan Östling[/b]: Models with materials (lighter, plate, frying plan, mushrooms, torch, candle), flame behavior, lighting experiments, uneven fog/dust, mushroom generator, camera adjustment, lighter and pan integration (with sounds), skitter and dripping audio variations, additional sound integration, held item physics fix
 
-[b]Aenean quis molestie dolor[/b]. Sed ultrices urna vel aliquam pretium. Sed in turpis arcu. Nullam et nisl in felis fermentum euismod et mattis sem. Cras egestas, nunc a pharetra condimentum, ex turpis porttitor quam, eget interdum libero mauris vitae mi. Nunc convallis lectus luctus imperdiet pharetra. Phasellus dignissim sapien tortor, nec bibendum mauris commodo id. Morbi neque quam, pellentesque eu euismod ut, ornare nec orci. Quisque sed ante a neque feugiat faucibus. Nulla facilisi. Donec et lectus in velit ultrices interdum in vitae ante. Fusce molestie turpis eget rhoncus ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla sed lectus eu libero vestibulum congue. Pellentesque tincidunt sit amet metus in scelerisque. Pellentesque neque est, scelerisque id neque quis, sagittis porta odio.
+[b]Christer "McFunkypants" Kaitila[/b]: Models with materials (wood dresser, keys, gold bar, iron cauldron, landern, door, window frame, cardboard boxes, stoven and assorted kitchen appliances), player animated body shadow, house materials (multiple wall types, roof, kitchen surfaces, carpet), sounds (creaking floor, doors, chests, gates), decorative interior model placement
 
-[b]Etiam non mattis quam[/b]. Maecenas fermentum eleifend nisi eget cursus. Mauris eget eleifend orci, eget scelerisque eros. Phasellus quam libero, accumsan id erat ut, gravida ornare dui. Nam nec leo vitae dui lobortis ullamcorper ac ut nisi. Integer tincidunt mattis arcu, vitae vulputate sem finibus et. Phasellus commodo volutpat dui.
+[b]Patrick McKeown[/b]: Spooky music, sounds (unlock door, collision reverb with material variations, nearby steps, crystal ball toggle, light switch, creepy eye watching, mumbling, eye pain flame)
+
+[b]Tyler Funk[/b]: Animated models (pine tree, leafless tree, shrubbery) with related materials, tree placement, landscape texturing, shaders (sky gradient, moon to night sky, pixelated screen)
+
+[b]Kyle Black[/b]: Glow and fog, interactable highlight shader, scene flow, window and mirror
+
+[b]Chris DeLeon[/b]: Night ambient sound recordings, credits info
+
+
+[center]Made in [b]HomeTeam Gamedev - https://hometeamgamedev.com[/b][/center]
+[center]Join us to make games![/center]

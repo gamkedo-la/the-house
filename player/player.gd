@@ -504,3 +504,16 @@ func _toggle_debug_light() -> void:
 	_debug_light.visible = not _debug_light.visible
 	print("debug light: %s " % _debug_light.visible)
 	
+func hide_all_texts() -> void:
+	story_display.visible = false
+	action_display.visible = false
+	info_display.visible = false
+	examination_display.visible = false
+	reading_display.visible = false
+
+func show_all_texts() -> void:
+	story_display.visible = true
+	action_display.visible = true
+	info_display.visible = true
+	examination_display.visible = true
+	reading_display.visible = true

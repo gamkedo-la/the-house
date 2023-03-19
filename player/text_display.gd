@@ -17,6 +17,7 @@ var _status = Status.TEXT_HIDDEN
 var _status_start_time : float
 var _fade_start_value : float
 var _fade_target : float
+var _current_alpha: float # This is purely to be able to see this value when debugging live.
 
 signal started_new_display_sequence()
 signal text_sequence_display_completed()
@@ -88,9 +89,11 @@ func _fade_to(next_status : int) -> void:
 	var ratio_of_fade_time = secs_since_beginning / fade_duration_secs
 	var new_alpha = smoothstep(_fade_start_value, _fade_target, ease(ratio_of_fade_time, 4.0))
 	
+	_current_alpha = new_alpha # This is purely to be able to see this value when debugging live.
 	modulate.a = new_alpha
 	
-	if modulate.a == _fade_target:
+	if is_equal_approx(modulate.a, _fade_target):
+		modulate.a = _fade_target
 		_start_next_status(next_status)
 
 func _update_text_readable() -> void:

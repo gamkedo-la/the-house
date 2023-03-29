@@ -477,4 +477,5 @@ gles3/shaders/shader_compilation_mode.web=2
 gles3/shaders/max_simultaneous_compiles=8
 gles3/shaders/max_simultaneous_compiles.web=8
 quality/spatial_partitioning/use_bvh=false
+limits/rendering/max_renderable_reflections=8
 environment/default_environment="res://game/default_env.tres"

@@ -13,7 +13,8 @@ var _loading_time_max := 1.0 / 4.0
 var _loading_scene_to_get_back_to
 var _loading_scene_path
 
-onready var _loading_sprite : Sprite = $loading_sprite
+onready var _always_ui := $always
+onready var _loading_sprite : Sprite = $"always/loading_sprite"
 	
 func _ready():
 	if OS.get_name() == "HTML5":
@@ -28,7 +29,8 @@ func _ready():
 	if name == "main":
 		to_title_screen()
 		
-	$loading_sprite.visible = false
+	_loading_sprite.visible = false
+	
 
 func _process(time):
 	if not enable_background_loading:
@@ -78,9 +80,9 @@ func _unhandled_key_input(event):
 		AudioServer.set_bus_mute(music_bus_id, !muted)
 	
 func _clear() -> void:
-	remove_child(_loading_sprite)
+	remove_child(_always_ui)
 	utility.delete_children(self)
-	add_child(_loading_sprite)
+	add_child(_always_ui)
 
 func change_current_scene(scene_path:String, screen_to_get_back_to: String = "") -> void:
 	_loading_sprite.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://test_scenes/test-house/test-background_music.gd" type="Script" id=1]
 [ext_resource path="res://forest/forest.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://game/examine_instructions_2.gd" type="Script" id=22]
 [ext_resource path="res://items/golden_hand.tscn" type="PackedScene" id=23]
 [ext_resource path="res://gameplay/story_text_area.tscn" type="PackedScene" id=24]
+[ext_resource path="res://game/house_area.gd" type="Script" id=25]
 
 [sub_resource type="CylinderShape" id=3]
 height = 3.0
@@ -54,6 +55,9 @@ extents = Vector3( 4.077, 2.19295, 6.30188 )
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 4.077, 2.19295, 39.4211 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 30.683, 17.081, 54.024 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 8.50317, 6.89047, 14.5352 )
@@ -177,6 +181,7 @@ bus = "Music"
 script = ExtResource( 1 )
 
 [node name="forest" parent="actual_game" instance=ExtResource( 2 )]
+unique_name_in_owner = true
 
 [node name="house" parent="actual_game" instance=ExtResource( 3 )]
 transform = Transform( 0.0215008, 0, 0.999769, 0, 1, 0, -0.999769, 0, 0.0215008, -28.3108, 25.4001, 0 )
@@ -331,6 +336,18 @@ mode = 1
 [node name="CollisionShape" parent="actual_game/texts/action_tips/list_of_keys instructions" index="0"]
 transform = Transform( 0.888849, 0, 0.4582, 0, 1, 0, -0.4582, 0, 0.888849, -1.56043, 0.5, -3.02701 )
 shape = SubResource( 11 )
+
+[node name="optim_areas" type="Spatial" parent="actual_game"]
+
+[node name="house_area" type="Area" parent="actual_game/optim_areas"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.7939, 0 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 25 )
+
+[node name="CollisionShape" type="CollisionShape" parent="actual_game/optim_areas/house_area"]
+transform = Transform( 0.99993, 0, -0.0118156, 0, 1, 0, 0.0118156, 0, 0.99993, -28.2823, 10.8611, -5.14889 )
+shape = SubResource( 12 )
 
 [node name="event_areas" type="Spatial" parent="actual_game"]
 

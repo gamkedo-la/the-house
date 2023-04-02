@@ -44,6 +44,7 @@ offsets = PoolRealArray( 0, 0.284916, 0.77095, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.223529, 1, 1, 1, 0.180392, 1, 1, 1, 0 )
 
 [node name="environment" type="Spatial"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Sky" parent="." instance=ExtResource( 3 )]
@@ -54,6 +55,7 @@ unique_name_in_owner = true
 environment = SubResource( 3 )
 
 [node name="screen pixelation" parent="." instance=ExtResource( 5 )]
+layer = 0
 visible = false
 
 [node name="airdust_particles" type="CPUParticles" parent="."]

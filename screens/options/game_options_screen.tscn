@@ -102,9 +102,11 @@ unique_name_in_owner = true
 margin_top = 427.0
 margin_right = 665.0
 margin_bottom = 443.0
-hint_tooltip = "When pressing [C] or [CTRL] to crouch:
-- Selected: press a second time to rise up
-- Deselected: release the key to rise up"
+hint_tooltip = "Speed at which the camera will turn
+depending on the mouse movement.
+The center value is no change.
+Max is double speed.
+Min is 1/10 of the original speed."
 theme = ExtResource( 1 )
 min_value = 0.01
 max_value = 2.0

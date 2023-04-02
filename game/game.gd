@@ -27,8 +27,9 @@ func _ready() -> void :
 
 func _process(_delta):
 		
-	if Input.is_action_just_pressed("pause_resume") or Input.is_action_just_pressed("mouse_release"):
-		toggle_pause()
+	if not is_game_paused():
+		if Input.is_action_just_pressed("pause_resume") or Input.is_action_just_pressed("mouse_release"):
+			pause_game(true)
 	
 	# for debug
 	if global.is_dev_mode:

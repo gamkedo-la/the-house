@@ -11,6 +11,12 @@ func _ready():
 	$controls_button.connect("pressed", self, "_show_controls_options")
 	
 	connect("visibility_changed", self, "_on_visibiilty_changed")
+	
+	set_process(false)
+	
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("pause_resume") or Input.is_action_just_pressed("mouse_release"):
+		_on_back_button_pressed()
 
 func _on_visibiilty_changed() -> void:
 	if visible:
@@ -18,6 +24,7 @@ func _on_visibiilty_changed() -> void:
 		_show_game_options()
 	else:
 		_hide_all_tabs()
+	call_deferred("set_process", visible)
 
 func _hide_all_tabs() -> void:
 	for child in get_children():

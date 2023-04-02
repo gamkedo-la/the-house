@@ -1,38 +1,84 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://screens/options/audio_options_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://screens/options/game_options_screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://screens/options/graphic_options_screen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=4]
 [ext_resource path="res://screens/options_screen.gd" type="Script" id=5]
+[ext_resource path="res://screens/options/controls_options_screen.tscn" type="PackedScene" id=6]
 
 [node name="options_screen" type="CanvasLayer"]
 script = ExtResource( 5 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchor_left = 0.1
-anchor_top = 0.2
-anchor_right = 0.1
-anchor_bottom = 0.2
-margin_left = 535.0
-margin_top = 192.0
-margin_right = 1535.0
-margin_bottom = 929.0
-text = "OPTIONS SCREEN"
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -514.0
+margin_top = 39.0
+margin_right = 66.0
+margin_bottom = 108.0
+theme = ExtResource( 4 )
+text = "OPTIONS"
+scroll_active = false
 
 [node name="audio_options_screen" parent="." instance=ExtResource( 1 )]
 visible = false
 
-[node name="audio_options_screen2" parent="." instance=ExtResource( 2 )]
+[node name="game_options_screen" parent="." instance=ExtResource( 2 )]
 visible = false
 
 [node name="graphic_options_screen" parent="." instance=ExtResource( 3 )]
 visible = false
 
+[node name="controls_options_screen" parent="." instance=ExtResource( 6 )]
+visible = false
+
 [node name="back_button" type="Button" parent="."]
-margin_left = 373.0
-margin_top = 155.0
-margin_right = 488.0
-margin_bottom = 226.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -345.0
+margin_top = 40.0
+margin_right = -230.0
+margin_bottom = 111.0
 theme = ExtResource( 4 )
 text = "BACK"
+
+[node name="game_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -209.0
+margin_top = 40.0
+margin_right = -94.0
+margin_bottom = 111.0
+theme = ExtResource( 4 )
+text = "Game"
+
+[node name="graphics_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.0
+margin_top = 39.0
+margin_right = 66.0
+margin_bottom = 110.0
+theme = ExtResource( 4 )
+text = "Graphics"
+
+[node name="audio_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 87.0
+margin_top = 40.0
+margin_right = 202.0
+margin_bottom = 111.0
+theme = ExtResource( 4 )
+text = "Audio"
+
+[node name="controls_button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 224.0
+margin_top = 40.0
+margin_right = 345.0
+margin_bottom = 111.0
+theme = ExtResource( 4 )
+text = "Controls"

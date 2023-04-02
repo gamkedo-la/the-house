@@ -312,6 +312,7 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.0
 
 [node name="bedroom_door" parent="doors" instance=ExtResource( 39 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.95474 )
+is_open = false
 is_locked = true
 
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]

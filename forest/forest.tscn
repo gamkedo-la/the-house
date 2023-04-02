@@ -3161,11 +3161,13 @@ mushroom_shape = 0
 transform = Transform( 0.993449, 0.114278, 0, -0.114278, 0.993449, 0, 0, 0, 1, 16.6845, 19.9097, -16.0833 )
 mushroom_shape = 0
 
-[node name="mushrooms-group12" parent="mushrooms" instance=ExtResource( 5 )]
+[node name="house_mushrooms" type="Spatial" parent="."]
+
+[node name="mushrooms-group12" parent="house_mushrooms" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2162, 22.2406, 0.267949 )
 mushroom_color = 1
 
-[node name="mushrooms-group13" parent="mushrooms" instance=ExtResource( 5 )]
+[node name="mushrooms-group13" parent="house_mushrooms" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4134, 22.2406, -1.79867 )
 random_placement_radius = 2.0
 mushroom_color = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://items/body/ear.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_material.tres" type="Material" id=2]
+[ext_resource path="res://items/body/ear.glb" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.0322037, 0.0501245, 0.0135797 )
@@ -30,4 +31,8 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="placeholder_mesh_please_replace_me" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 2 )
+
+[node name="ear" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.26938e-09, 0, -0.02904, 0, 0.02904, 0, 0.02904, 0, -1.26938e-09, 0.0120478, -0.00189005, 0.0202914 )

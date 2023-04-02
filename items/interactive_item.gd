@@ -10,7 +10,6 @@ signal on_examination_end(item)
 signal on_snapped_into_fixed_position(item)
 
 export var can_be_taken = true
-export var hilighted = false
 
 export var highlightable := true
 export var highlight_color : Color = "#ffffff"
@@ -31,6 +30,8 @@ export var description : String = ""
 var _previous_global_transform_origin : Vector3
 
 onready var hilite_mat = load("res://shaders/hilite_material.tres")
+
+var hilighted = false
 
 var _tracking_position = Spatial
 var _tracking_rotation_enabled = TrackingOrientation.FOLLOW
@@ -53,9 +54,13 @@ func get_class() -> String :
 func _ready():
 	continuous_cd = true # Turn on precise handling of collisions
 	_previous_global_transform_origin = global_transform.origin
-	# Does this item 'glow' when the player hovers over it?
-	if highlightable:
-		highlites = _init_hilite(self, hilite_mat, highlight_color)
+	
+	if can_be_taken:
+		set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
+		# Does this item 'glow' when the player hovers over it?
+#		if highlightable:
+#			highlites = _init_hilite(self, hilite_mat, highlight_color)
+
 	
 static func _create_hilite(mesh_instance: MeshInstance, hilite_mat: Material, highlight_color: Color) -> Array:
 	var highlites := []
@@ -79,9 +84,7 @@ static func _create_hilite(mesh_instance: MeshInstance, hilite_mat: Material, hi
 
 static func _init_hilite(node: Node, hilite_mat: Material, highlight_color: Color) -> Array:
 	var highlites := []
-	if node is RigidBody:
-		node.set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
-	elif node is MeshInstance:
+	if node is MeshInstance:
 		var mesh_highlites = _create_hilite(node, hilite_mat, highlight_color)
 		highlites.append_array(mesh_highlites)
 		

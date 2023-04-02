@@ -11,7 +11,7 @@ func _ready() -> void:
 	_toggle_crouch.connect("toggled", self, "_on_crouch_changed")
 	
 	_toggle_hold.pressed = options.toggle_hold
-	_toggle_hold.connect("toggled", self, "_on_crouch_changed")
+	_toggle_hold.connect("toggled", self, "_on_hold_changed")
 	
 	_toggle_running.pressed = options.toggle_run
 	_toggle_running.connect("toggled", self, "_on_run_changed")

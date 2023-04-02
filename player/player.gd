@@ -101,7 +101,11 @@ func exploration_update(delta: float):
 	update_item_position(delta)
 	update_interraction_ray()
 
-	_is_running = Input.is_action_pressed("run")
+	if options.toggle_run:
+		if Input.is_action_just_pressed("run"):
+			_is_running = not _is_running
+	else:
+		_is_running = Input.is_action_pressed("run")
 
 	if options.toggle_crouch:
 		if Input.is_action_just_pressed("crouch"):
@@ -448,6 +452,9 @@ func begin_center_item_holding() -> void:
 func end_center_item_holding() -> void:
 	_is_holding_front = false
 	_resume_holding_item()
+	
+func is_holding_item_front() -> bool:
+	return _is_holding_front
 
 func crouch() -> void:
 	if _is_crouched:

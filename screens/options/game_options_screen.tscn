@@ -3,8 +3,8 @@
 [node name="game_options_screen" type="CanvasLayer"]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 836.0
-margin_top = 474.0
-margin_right = 1335.0
-margin_bottom = 585.0
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_right = 503.0
 text = "GAME OPTIONS"

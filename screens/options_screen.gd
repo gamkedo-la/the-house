@@ -14,15 +14,15 @@ func _ready():
 
 func _on_visibiilty_changed() -> void:
 	if visible:
+		$game_button.pressed = true
 		_show_game_options()
 	else:
 		_hide_all_tabs()
 
 func _hide_all_tabs() -> void:
-	$audio_options_screen.visible = false
-	$game_options_screen.visible = false
-	$graphic_options_screen.visible = false
-	$controls_options_screen.visible = false
+	for child in get_children():
+		if child is CanvasLayer:
+			child.visible = false	
 
 func _on_back_button_pressed():
 	emit_signal("on_back_from_options")

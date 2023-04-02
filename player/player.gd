@@ -103,15 +103,15 @@ func exploration_update(delta: float):
 
 	_is_running = Input.is_action_pressed("run")
 
-# TODO: make an option to decide if the crouch action is a toggle or an input hold
-	if Input.is_action_just_pressed("toggle_crouch"):
-		toggle_crouch()
-		
-	# Currently: hold to crouch
-	if Input.is_action_pressed("crouch"):
-		crouch();
-	elif not _is_crouch_locked:
-		get_up()
+	if options.toggle_crouch:
+		if Input.is_action_just_pressed("crouch"):
+			toggle_crouch()
+	else:
+		if Input.is_action_pressed("crouch"):
+			crouch()
+		else:			
+			if not _is_crouch_locked:
+				get_up()
 
 # Common input event handling for when the player can explore freely
 func exploration_input_handling(event: InputEvent):

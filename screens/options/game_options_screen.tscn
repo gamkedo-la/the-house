@@ -1,10 +1,114 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/menu_buttons.tres" type="Theme" id=1]
+[ext_resource path="res://screens/options/game_options_screen.gd" type="Script" id=2]
 
 [node name="game_options_screen" type="CanvasLayer"]
+script = ExtResource( 2 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_right = 503.0
-text = "GAME OPTIONS"
+margin_left = -392.0
+margin_top = 309.0
+margin_right = 397.0
+margin_bottom = -239.0
+color = Color( 0.164706, 0.0196078, 0.0196078, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -332.0
+margin_top = 336.0
+margin_right = 333.0
+
+[node name="text_info" type="RichTextLabel" parent="VBoxContainer"]
+margin_right = 665.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Point any option for details[/center]"
+text = "Point any option for details"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 665.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="checkbox_toggle_crouch" type="CheckButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 98.0
+margin_right = 665.0
+margin_bottom = 171.0
+hint_tooltip = "When pressing [C] or [CTRL] to crouch:
+- Selected: press a second time to rise up
+- Deselected: release the key to rise up"
+theme = ExtResource( 1 )
+text = "Toggle Crouch [C] or [CTRL]"
+
+[node name="checkbox_toggle_hold" type="CheckButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 175.0
+margin_right = 665.0
+margin_bottom = 248.0
+hint_tooltip = "When pressing [SPACE] to hold an item
+ in front of you:
+- Selected: press a second time
+ to move the item back on your right
+- Deselected: release the key to move the
+item back on your right"
+theme = ExtResource( 1 )
+text = "Toggle Holding object in front [SPACE]"
+
+[node name="checkbox_toggle_running" type="CheckButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 252.0
+margin_right = 665.0
+margin_bottom = 325.0
+hint_tooltip = "When pressing [SHIFT] to run:
+- Selected: press a second time to 
+stop running
+- Deselected: release the key to 
+stop running"
+theme = ExtResource( 1 )
+text = "Toggle Running [SHIFT]"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 329.0
+margin_right = 665.0
+margin_bottom = 339.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="text_camera_mouse_speed" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 343.0
+margin_right = 665.0
+margin_bottom = 423.0
+rect_min_size = Vector2( 0, 80 )
+hint_tooltip = "Speed at which the camera will turn
+depending on the mouse movement.
+The center value is no change.
+Max is double speed.
+Min is 1/10 of the original speed."
+theme = ExtResource( 1 )
+bbcode_text = "Camera mouse control speed"
+text = "Camera mouse control speed"
+
+[node name="camera_mouse_speed_slider" type="HSlider" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 427.0
+margin_right = 665.0
+margin_bottom = 443.0
+hint_tooltip = "When pressing [C] or [CTRL] to crouch:
+- Selected: press a second time to rise up
+- Deselected: release the key to rise up"
+theme = ExtResource( 1 )
+min_value = 0.01
+max_value = 2.0
+step = 0.01
+value = 1.0
+tick_count = 11
+ticks_on_borders = true

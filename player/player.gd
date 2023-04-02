@@ -271,6 +271,7 @@ func update_orientation(event: InputEvent) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
 		
+	var view_speed = final_view_speed()
 	if(event is InputEventMouseMotion ):
 		rotate_y(-event.relative.x * view_speed)
 		
@@ -282,6 +283,10 @@ func update_orientation(event: InputEvent) -> void:
 		var next_x_rotation := min(limit_up_angle, max(limit_down_angle, attempted_next_rotation.x))
 		var next_rotation = Vector3(next_x_rotation, attempted_next_rotation.y, attempted_next_rotation.z)
 		_camera.global_rotation = next_rotation
+
+func final_view_speed() -> float:
+	return view_speed * options.mouse_camera_speed
+	
 
 func update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already

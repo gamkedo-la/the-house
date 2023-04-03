@@ -37,12 +37,12 @@ scroll_active = false
 [node name="menu" type="CanvasLayer" parent="."]
 
 [node name="controls_text" type="RichTextLabel" parent="menu"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 61.0
-margin_top = -480.0
-margin_right = 1090.0
-margin_bottom = 484.0
+anchor_bottom = 1.0
+margin_left = 57.0
+margin_top = 26.0
+margin_right = 1055.0
+margin_bottom = -38.0
+grow_vertical = 2
 custom_fonts/bold_font = ExtResource( 4 )
 custom_fonts/normal_font = ExtResource( 5 )
 bbcode_enabled = true
@@ -120,14 +120,11 @@ Escape  the house through the toolshed.
 "
 
 [node name="scroll_info" type="RichTextLabel" parent="menu"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -809.0
-margin_top = -180.0
-margin_right = -673.0
-margin_bottom = -56.0
+margin_left = 1062.0
+margin_top = 13.0
+margin_right = 1277.0
+margin_bottom = -899.0
 theme = ExtResource( 3 )
 text = "Scroll Up/Down"
 scroll_active = false

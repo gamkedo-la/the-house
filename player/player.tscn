@@ -118,6 +118,7 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1297, -0.227731 )
 
 [node name="Camera" type="Camera" parent="Head"]
+pause_mode = 2
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418923, 0 )
 current = true

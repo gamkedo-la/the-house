@@ -101,17 +101,21 @@ func exploration_update(delta: float):
 	update_item_position(delta)
 	update_interraction_ray()
 
-	_is_running = Input.is_action_pressed("run")
+	if options.toggle_run:
+		if Input.is_action_just_pressed("run"):
+			_is_running = not _is_running
+	else:
+		_is_running = Input.is_action_pressed("run")
 
-# TODO: make an option to decide if the crouch action is a toggle or an input hold
-	if Input.is_action_just_pressed("toggle_crouch"):
-		toggle_crouch()
-		
-	# Currently: hold to crouch
-	if Input.is_action_pressed("crouch"):
-		crouch();
-	elif not _is_crouch_locked:
-		get_up()
+	if options.toggle_crouch:
+		if Input.is_action_just_pressed("crouch"):
+			toggle_crouch()
+	else:
+		if Input.is_action_pressed("crouch"):
+			crouch()
+		else:			
+			if not _is_crouch_locked:
+				get_up()
 
 # Common input event handling for when the player can explore freely
 func exploration_input_handling(event: InputEvent):
@@ -271,6 +275,7 @@ func update_orientation(event: InputEvent) -> void:
 	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		return
 		
+	var view_speed = final_view_speed()
 	if(event is InputEventMouseMotion ):
 		rotate_y(-event.relative.x * view_speed)
 		
@@ -282,6 +287,10 @@ func update_orientation(event: InputEvent) -> void:
 		var next_x_rotation := min(limit_up_angle, max(limit_down_angle, attempted_next_rotation.x))
 		var next_rotation = Vector3(next_x_rotation, attempted_next_rotation.y, attempted_next_rotation.z)
 		_camera.global_rotation = next_rotation
+
+func final_view_speed() -> float:
+	return view_speed * options.mouse_camera_speed
+	
 
 func update_item_position(delta: float) -> void:
 	# this function assumes the player position and orientation have been updated already
@@ -443,6 +452,9 @@ func begin_center_item_holding() -> void:
 func end_center_item_holding() -> void:
 	_is_holding_front = false
 	_resume_holding_item()
+	
+func is_holding_item_front() -> bool:
+	return _is_holding_front
 
 func crouch() -> void:
 	if _is_crouched:

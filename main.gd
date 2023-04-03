@@ -17,11 +17,6 @@ onready var _always_ui := $always
 onready var _loading_sprite : Sprite = $"always/loading_sprite"
 	
 func _ready():
-	if OS.get_name() == "HTML5":
-		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT, SceneTree.STRETCH_ASPECT_KEEP, Vector2(1920, 1080))
-	
-	if OS.has_feature("standalone"): # If we didnt run it from the editor
-		OS.window_fullscreen = true # TODO: make this an option
 		
 	if enable_background_loading:
 		set_process(false)

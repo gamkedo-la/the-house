@@ -240,6 +240,8 @@ func _setup_sounds() -> void:
 	add_child(_sound_player)
 	_sound_player.stream = load("res://audio/sounds/object_collision_4.mp3")
 	_sound_player.bus = "Sounds"
+	_sound_player.max_distance = 4
+	_sound_player.unit_size = 0.5
 
 	contact_monitor = true
 	contacts_reported = 1
@@ -247,6 +249,6 @@ func _setup_sounds() -> void:
 
 
 func _on_collision(body:Node) -> void:
-#	if body is InteractiveItem:
-	_sound_player.play()
+	if not sleeping and ((body is RigidBody and not body.sleeping) or (body is StaticBody and not body.name == "landscape")):
+		_sound_player.play()
 

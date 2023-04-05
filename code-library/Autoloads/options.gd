@@ -29,11 +29,11 @@ var audio_volume_ambiance := 1.0	setget _set_volume_ambiance
 func _ready() -> void:
 	if OS.get_name() == "HTML5":
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT, SceneTree.STRETCH_ASPECT_KEEP, Vector2(1920, 1080))
-	
+
 	if OS.has_feature("standalone"): # If we didnt run it from the editor
 		_set_fullscreen(true)
-		
-	
+
+
 func _set_fullscreen(value: bool) -> void:
 	if OS.get_name() != "HTML5":
 		fullscreen = value
@@ -46,19 +46,19 @@ func _set_vsync(value: bool) -> void:
 func _set_volume_master(value: float) -> void:
 	audio_volume_master = value
 	_set_volume_for("Master", value)
-	
+
 func _set_volume_music(value: float) -> void:
 	audio_volume_music = value
 	_set_volume_for("Music", value)
-	
+
 func _set_volume_sounds(value: float) -> void:
 	audio_volume_sounds = value
 	_set_volume_for("Sounds", value)
-	
+
 func _set_volume_ambiance(value: float) -> void:
 	audio_volume_ambiance = value
 	_set_volume_for("Ambiant", value)
-	
+
 
 func _set_volume_for(bus_name : String, value: float) -> void:
 	var idx = AudioServer.get_bus_index(bus_name)
@@ -73,11 +73,11 @@ func _set_volume_for(bus_name : String, value: float) -> void:
 func _set_mute_master(enabled: bool) -> void:
 	audio_mute_master = enabled
 	_set_mute_channel("Master", enabled)
-	
+
 func _set_mute_music(enabled: bool) -> void:
 	audio_mute_music = enabled
 	_set_mute_channel("Music", enabled)
-	
+
 func _set_mute_channel(bus_name: String, enabled: bool) -> void:
 	var idx = AudioServer.get_bus_index(bus_name)
 	AudioServer.set_bus_mute(idx, enabled)

@@ -14,10 +14,10 @@ func on_player_entered(player : Node) -> void:
 		print("Removing all mushrooms from the forest...")
 		_forest.remove_child(_forest_mushrooms)
 		print("Removing all mushrooms from the forest - DONE")
-		
+
 func on_player_exited(player : Node) -> void:
 	if player is Player:
 		print("Re-adding all mushrooms to the forest...")
 		_forest.add_child(_forest_mushrooms)
 		print("Re-adding all mushrooms to the forest - DONe")
-			
+

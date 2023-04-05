@@ -13,7 +13,7 @@ func toggle_light():
 func turn_on():
 	is_on = true
 	light_source.visible = true
-	
+
 func turn_off():
 	is_on = false
 	light_source.visible = false

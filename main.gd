@@ -15,22 +15,22 @@ var _loading_scene_path
 
 onready var _always_ui := $always
 onready var _loading_sprite : Sprite = $"always/loading_sprite"
-	
+
 func _ready():
-		
+
 	if enable_background_loading:
 		set_process(false)
-	
+
 	if name == "main":
 		to_title_screen()
-		
+
 	_loading_sprite.visible = false
-	
+
 
 func _process(time):
 	if not enable_background_loading:
 		return
-		
+
 	if _scene_loader == null:
 		# no need to process anymore
 		set_process(false)
@@ -58,7 +58,7 @@ func _process(time):
 			var process_call_duration = utility.now_secs() - start
 #			print("tick %s | %s | %s" % [start, utility.now_secs(), process_call_duration])
 			_loading_sprite._process(process_call_duration)
-			break 
+			break
 		else: # Error during loading.
 			print("ERROR during loading")
 			_scene_loader = null
@@ -68,12 +68,12 @@ func _unhandled_key_input(event):
 	if event.is_action_pressed("mute"):
 		var muted = AudioServer.is_bus_mute(0)
 		AudioServer.set_bus_mute(0, !muted)
-		
+
 	if event.is_action_pressed("mute_music"):
 		var music_bus_id = AudioServer.get_bus_index("Music")
 		var muted = AudioServer.is_bus_mute(music_bus_id)
 		AudioServer.set_bus_mute(music_bus_id, !muted)
-	
+
 func _clear() -> void:
 	remove_child(_always_ui)
 	utility.delete_children(self)
@@ -83,26 +83,26 @@ func change_current_scene(scene_path:String, screen_to_get_back_to: String = "")
 	_loading_sprite.visible = true
 	print("SCENE LOADING START : %s  (back scene: %s) - " % [scene_path, screen_to_get_back_to], utility.now_secs())
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	_loading_wait_frames = 1
 	_loading_scene_path = scene_path
 	_loading_scene_to_get_back_to = screen_to_get_back_to
-	
+
 	if enable_background_loading:
 		# Bootstrap background loading
 		_scene_loader = ResourceLoader.load_interactive(scene_path)
 		if _scene_loader == null:
 			print("ERROR: failed to load scene : %s ", scene_path)
 			return
-		
+
 		# TODO: start loading animation here
-		
+
 	else:
 		_end_loading(load(scene_path))
-	
+
 	set_process(true)
-	
-	
+
+
 func _end_loading(new_scene_resource) -> void:
 	assert(new_scene_resource)
 	print("SCENE LOADING ENDING...", utility.now_secs())
@@ -117,26 +117,26 @@ func _end_loading(new_scene_resource) -> void:
 	add_child(new_scene)
 	print("SCENE LOADING: adding scene as child - DONE -", utility.now_secs())
 	current_scene_path = _loading_scene_path
-	
+
 	_loading_scene_to_get_back_to = null
 	_loading_scene_path = null
-	
+
 	print("SCENE LOADING DONE: %s - " % current_scene_path, utility.now_secs())
 	_loading_sprite.visible = false
-	
-	
+
+
 func start_new_game() -> void:
 	change_current_scene("res://game/game.tscn")
-	
+
 func to_title_screen() -> void:
 	change_current_scene(title_screen_path)
-	
+
 func to_credits_screen(screen_to_get_back_to: String = "") -> void:
 	if screen_to_get_back_to == "" :
 		screen_to_get_back_to = title_screen_path
 	change_current_scene(credits_screen_path, screen_to_get_back_to)
 
-	
+
 func to_end_game_screen() -> void:
 	change_current_scene("res://screens/end_game/end_game_screen.tscn")
-	
+

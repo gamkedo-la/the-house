@@ -9,11 +9,11 @@ var _player_is_reading := false
 func _ready():
 	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
 #	set_collision_mask_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
-	
+
 
 func player_interracts():
 	start_reading_text()
-		
+
 func start_reading_text() -> void:
 	assert(_player_is_reading)
 	if _is_reading_text:
@@ -30,7 +30,7 @@ func stop_reading_text() -> void:
 
 func on_player_begin_pointing() -> void:
 	_player_is_reading = true
-		
+
 func on_player_end_pointing() -> void:
 	_player_is_reading = false
 	if _is_reading_text:

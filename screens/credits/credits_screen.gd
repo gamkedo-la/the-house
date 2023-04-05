@@ -10,7 +10,7 @@ func _ready():
 	file.open(text_file_path, File.READ)
 	var credits_text = file.get_as_text()
 	file.close()
-	
+
 	$"%credits_text".bbcode_text = credits_text
 	$"%back_button".connect("pressed", self, "_on_back_pressed")
 

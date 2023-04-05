@@ -9,14 +9,14 @@ class Ingredients:
 	var eye : EyeBall
 	var mushroom : Mushroom
 	var gold : GoldBar
-	
+
 	func is_complete() -> bool:
 		return ear and hand and foot and eye and mushroom and gold
-	
+
 	func all_ingredients() -> Array:
 		return utility.without_null([ ear, hand, foot, eye, mushroom, gold ])
-	
-	
+
+
 var _valid_ingredients : Ingredients
 
 func _ready() -> void:
@@ -36,8 +36,8 @@ func _on_something_in_cauldron(thing) -> void:
 				print("What we have that's in the recipe:")
 				for ingredient in _valid_ingredients.all_ingredients():
 					print("  - %s" % ingredient.name)
-		
-	
+
+
 
 func _is_recipe_complete() -> bool:
 	_valid_ingredients = Ingredients.new()

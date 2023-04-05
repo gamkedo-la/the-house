@@ -14,7 +14,7 @@ func _update_scale() -> void:
 func _set_width(new_value : float) -> void:
 	width = new_value
 	_update_scale()
-	
+
 func _set_height(new_value : float) -> void:
 	height = new_value
 	_update_scale()

@@ -27,15 +27,15 @@ func _ready() -> void:
 	_attention_area.connect("body_entered", self, "_on_player_close")
 	_attention_area.connect("body_exited", self, "_on_player_left")
 	_flame_intolerance_area.connect("lit_using_fire", self, "_on_flame_is_too_close")
-	
+
 	_initial_eyelid_up_pos = _eyelid_up.transform.origin
 	_initial_eyelid_down_pos = _eyelid_down.transform.origin
 
 func _process(delta):
 	if looks_at_player and _needs_update and _eyeball.visible and global.current_player:
 		_update_eye_looking_at_player()
-		
-	
+
+
 
 func _update_eye_looking_at_player() -> void:
 	var now = utility.now_secs()
@@ -52,7 +52,7 @@ func _update_eye_looking_at_player() -> void:
 		_eyeball.global_transform.basis = shifted_orientation
 
 		_last_orientation_update_time = now
-		
+
 func _on_player_close(player) -> void:
 	if player is Player:
 		_needs_update = true
@@ -71,8 +71,8 @@ func _reset_eye_orientation() -> void:
 func _on_flame_is_too_close() -> void:
 	print("giant eye: flame is too close!")
 	close_eye()
-	
-	
+
+
 func close_eye():
 	_eyelid_up.transform.origin = _eyelid_up_closed.transform.origin
 	_eyelid_down.transform.origin = _eyelid_down_closed.transform.origin
@@ -82,7 +82,7 @@ func close_eye():
 	is_open = false
 	print("giant eye: closed")
 	emit_signal("on_eye_closed")
-	
+
 func open_eye():
 	_eyelid_up.transform.origin = _initial_eyelid_up_pos
 	_eyelid_down.transform.origin = _initial_eyelid_down_pos
@@ -93,5 +93,5 @@ func open_eye():
 	is_open = true
 	print("giant eye: open")
 	emit_signal("on_eye_opened")
-	
+
 

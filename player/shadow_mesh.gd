@@ -30,9 +30,9 @@ func _current_height() -> float:
 	return _origin_height - camera_height_diff
 
 func _physics_process(_delta) -> void:
-	
+
 	var time_since_beginning = _now_in_secs()
-		
+
 	# breathing constantly up and down
 	var breathing_bobbing = sin(time_since_beginning * breathing_bob_freq) * breathing_bob_size
 
@@ -40,18 +40,18 @@ func _physics_process(_delta) -> void:
 	var new_pos = _current_position_on_plane()
 	var distance_since_last_pos = (new_pos - _last_position).length()
 	var is_moving = distance_since_last_pos > 0.0
-		
+
 	if not is_moving:
 		_last_start_moving_time = time_since_beginning
-		
+
 	var secs_since_last_move_started = time_since_beginning - _last_start_moving_time
 	var walking_bobbing := sin(secs_since_last_move_started * bob_freq) * bob_size
-	
-	
+
+
 	# Gather both bobbings
 	var height_modulation = breathing_bobbing + walking_bobbing
 	_last_position = new_pos
-	
+
 	# apply height modulation
 	transform.origin.y = _current_height() + height_modulation
-	
+

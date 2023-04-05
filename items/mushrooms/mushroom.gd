@@ -14,12 +14,12 @@ onready var _lighten_area_shape : CollisionShape = $"%lighten_area/CollisionShap
 onready var _player : Player
 
 enum MushroomColor {
-	random, blue, bluegreen, brown, purple, yellow, 
+	random, blue, bluegreen, brown, purple, yellow,
 }
 
 export(MushroomColor) var mushroom_color = MushroomColor.yellow setget _set_mushroom_color
 const mushroom_shapes_count := 9 # We cannot use this in values of `export` though, but we can use it in other code.
-export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape 
+export(int, 0, 9) var mushroom_shape = 0 setget _set_mushroom_shape
 export var random_mushroom_shape := true
 export var is_stuck_in_ground := true
 export(float, 0.01, 100.0) var lightening_distance := 8.0 setget _set_lightening_distance
@@ -32,47 +32,47 @@ var _disable_editing := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(_models_node)
-	
+
 #	if OS.get_name() == "HTML5" and not Engine.editor_hint:
 #		utility.delete_child(self, _light_node)
 #		_light_node = null
-	
+
 	_lighten_area.connect("body_entered", self, "_on_player_is_close")
 	_lighten_area.connect("body_exited", self, "_on_player_left")
-	
+
 	if is_stuck_in_ground:
 		set_mode(RigidBody.MODE_STATIC) # We want the mushrooms to always be static until picked up.
 		_cancel_velocity(self)
-	
+
 	if _light_node:
 		_target_light_strengh = _light_node.light_energy
-	
+
 	_is_ready = true
 	_update_mushroom()
-	
+
 	if not Engine.editor_hint:
 		call_deferred("_deactivate_editing_resources")
 
 func _deactivate_editing_resources():
 	if _disable_editing:
 		return
-		
+
 	assert(_current_mushroom)
 	assert(_color_node)
 	_color_node.remove_child(_current_mushroom)
 	self.add_child(_current_mushroom)
-	_current_mushroom.transform.origin = _models_node.transform.origin		
+	_current_mushroom.transform.origin = _models_node.transform.origin
 	_color_node = null
 	utility.delete_child(self, _models_node)
 	_models_node = null
 	_disable_editing = true
-	
+
 #	print("mushroom %s deleted all other mushrooms resources" % name)
 
 func _update_mushroom() ->void :
 	if not _is_ready or _disable_editing:
 		return
-		
+
 	_hide_all_models()
 	if random_mushroom_shape:
 		mushroom_shape = utility.random_int(0, mushroom_shapes_count - 1)
@@ -92,13 +92,13 @@ func _show_selected_model() -> void:
 	_color_node = _models_node.get_node(color_name)
 	assert(_color_node is Spatial) # This is for crashing spectacularly if the node was not found.
 	_color_node.visible = true
-	
+
 	var mushroom_path = "mushroom_%d" % mushroom_shape
 #	print("mushroom_path = %s/%s" % [ color_name, mushroom_path])
 	_current_mushroom = _color_node.get_node(mushroom_path)
 	assert(_current_mushroom is Spatial) # This is for crashing spectacularly if the node was not found.
 	_current_mushroom.visible = true
-	
+
 	# change the light color too
 	if mushroom_color != MushroomColor.brown:
 		var current_mesh : MeshInstance = _current_mushroom.get_node("geo1")
@@ -108,19 +108,19 @@ func _show_selected_model() -> void:
 		assert(current_hat_material)
 		if _light_node:
 			_light_node.light_color = current_hat_material.emission
-	
+
 func _set_mushroom_color(new_color: int) -> void:
 	if new_color != mushroom_color || new_color == MushroomColor.random:
 		if new_color == MushroomColor.random:
 			while new_color == MushroomColor.random || new_color == MushroomColor.brown: # We do not want brown mushrooms by default.
 				new_color = rand_range(1, MushroomColor.keys().size())
 		mushroom_color = new_color
-		
+
 		if _models_node is Spatial:
 			_update_mushroom()
-		
+
 func _set_mushroom_shape(new_shape: int) -> void:
-	
+
 	if new_shape != mushroom_shape:
 		mushroom_shape = new_shape
 		if _models_node is Spatial:
@@ -129,7 +129,7 @@ func _set_mushroom_shape(new_shape: int) -> void:
 func _check_light_visibility() -> void:
 	if not _is_ready or _light_node == null:
 		return
-		
+
 	var shape : SphereShape = _lighten_area_shape.shape
 	shape.radius = lightening_distance
 	_lighten_area_shape.transform.origin = _lighten_area_shape.transform.origin
@@ -153,18 +153,18 @@ func _on_player_left(player: Node) -> void:
 func _set_lightening_distance(new_value: float) -> void:
 	lightening_distance = new_value
 	_check_light_visibility()
-	
+
 func _process(delta):
 	if _light_node and _player is Player:
 		compute_light_intensity()
-		
-	
+
+
 func compute_light_intensity() -> void:
 	var player_distance = Vector2(_player.global_transform.origin.x, _player.global_transform.origin.z).distance_to(Vector2(self.global_transform.origin.x, self.global_transform.origin.z))
 	var distance_ratio = player_distance / lightening_distance
 	var lighting_ratio = 1.0 - distance_ratio
 	_light_node.light_energy = lerp(0, _target_light_strengh, ease(lighting_ratio, -3.2)) # see https://docs.godotengine.org/en/3.5/classes/class_@gdscript.html#class-gdscript-method-ease
 #	print("mushroom %s : _light_node.light_energy = %s, ratio = %s" % [name, _light_node.light_energy, lighting_ratio])
-	
+
 func is_magic_mushroom() -> bool:
 	return mushroom_color == MushroomColor.brown

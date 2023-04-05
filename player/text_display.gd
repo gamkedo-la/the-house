@@ -29,7 +29,7 @@ func display_text_sequence(new_text_sequence: Array, mode: int = DisplayMode.EXC
 	assert(!new_text_sequence.empty())
 	for text in new_text_sequence:
 		assert(text is String)
-		
+
 	if mode == DisplayMode.EXCLUSIVE:
 		stop_display_sequence()
 		_texts_to_display = new_text_sequence.duplicate()
@@ -38,28 +38,28 @@ func display_text_sequence(new_text_sequence: Array, mode: int = DisplayMode.EXC
 		_texts_to_display.append_array(new_text_sequence.duplicate())
 	else:
 		assert(false)
-	
+
 func stop_display_sequence() -> void:
 	_texts_to_display = []
 	if _status != Status.TEXT_HIDDEN or _status != Status.FADE_OUT:
 		_start_next_status(Status.FADE_OUT)
-	
+
 func _process(_delta) -> void:
-		
+
 	if _status == Status.TEXT_HIDDEN:
 		if _texts_to_display.empty():
 			return
 		_start_next_text()
-		
+
 	elif _status == Status.FADE_IN:
 		_update_fade_in()
 	elif _status == Status.TEXT_READABLE:
 		_update_text_readable()
 	elif _status == Status.FADE_OUT:
 		_update_fade_out()
-	
-	
-	
+
+
+
 func _start_next_text() -> void:
 	assert(not _texts_to_display.empty())
 	assert(modulate.a == 0.0)
@@ -75,8 +75,8 @@ func _start_next_status(next_status: int) -> void:
 func _update_fade_in() -> void:
 	_fade_target = 1.0
 	_fade_to(Status.TEXT_READABLE)
-	
-	
+
+
 func _update_fade_out() -> void:
 	_fade_target = 0.0
 	_fade_to(Status.TEXT_HIDDEN)
@@ -84,14 +84,14 @@ func _update_fade_out() -> void:
 		emit_signal("text_sequence_display_completed")
 
 func _fade_to(next_status : int) -> void:
-	var secs_since_beginning = utility.now_secs() - _status_start_time		
-	
+	var secs_since_beginning = utility.now_secs() - _status_start_time
+
 	var ratio_of_fade_time = secs_since_beginning / fade_duration_secs
 	var new_alpha = smoothstep(_fade_start_value, _fade_target, ease(ratio_of_fade_time, 4.0))
-	
+
 	_current_alpha = new_alpha # This is purely to be able to see this value when debugging live.
 	modulate.a = new_alpha
-	
+
 	if is_equal_approx(modulate.a, _fade_target):
 		modulate.a = _fade_target
 		_start_next_status(next_status)
@@ -99,7 +99,7 @@ func _fade_to(next_status : int) -> void:
 func _update_text_readable() -> void:
 	if text_display_duration_secs == 0:
 		return
-		
+
 	var secs_since_beginning = utility.now_secs() - _status_start_time
 	if secs_since_beginning >= text_display_duration_secs:
 		_start_next_status(Status.FADE_OUT)

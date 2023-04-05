@@ -12,6 +12,6 @@ func _set_left_handed(new_value: bool) -> void:
 			if child_node is Spatial:
 				child_node.scale = child_node.scale * Vector3(1.0, 1.0, -1.0)
 	is_left_handed = new_value
-	
+
 func _is_left_handed() -> bool:
 	return is_left_handed

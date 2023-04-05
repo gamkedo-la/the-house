@@ -11,7 +11,7 @@ onready var item := ItemUtils.get_item_parent_node(get_parent())
 
 func _ready():
 	set_collision_layer_bit(CollisionLayers.key_lock_collision_bit, true)
-	
+
 
 func get_class() -> String:
 	return "KeyArea"

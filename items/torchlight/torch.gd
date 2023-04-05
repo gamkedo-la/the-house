@@ -3,7 +3,7 @@ extends Spatial
 onready var AnimationPlayer = get_parent().get_node("AnimationPlayer")
 
 var toggle = false
-		
+
 func toggle_light():
 	if toggle:
 		toggle = false
@@ -14,7 +14,7 @@ func toggle_light():
 
 func turn_on():
 	AnimationPlayer.play("Switch On")
-	
+
 func turn_off():
 	AnimationPlayer.play("Switch Off")
 

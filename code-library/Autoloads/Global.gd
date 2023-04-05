@@ -50,11 +50,11 @@ const is_dev_mode := true
 #	print("Getting to goto_scene...")
 #	call_deferred("_deferred_goto_scene", path)
 #
-#func _deferred_goto_scene(path):	
+#func _deferred_goto_scene(path):
 #	current_scene.free()
-#	var s = load(path)	
-#	current_scene = s.instance()	
-#	get_tree().get_root().add_child(current_scene)	
+#	var s = load(path)
+#	current_scene = s.instance()
+#	get_tree().get_root().add_child(current_scene)
 #	get_tree().set_current_scene(current_scene)
 #
 #func toggle_pause():

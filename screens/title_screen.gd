@@ -10,7 +10,7 @@ func _ready():
 	$"%start_button".connect("pressed", self, "_start_new_game")
 	$"%credits_button".connect("pressed", self, "_to_credits")
 	$"%options_button".connect("pressed", self, "_open_options")
-	
+
 	if OS.get_name() != "HTML5":
 		$"%exit_button".connect("pressed", self, "_exit_game")
 	else:
@@ -39,6 +39,6 @@ func _open_options():
 func _close_options():
 	_options_screen.visible = false
 	_main_menu.visible = true
-	
+
 func _exit_game():
 	get_tree().quit()

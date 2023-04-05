@@ -12,12 +12,12 @@ func _on_weird_knob_locked_in(_key_name):
 	$interration_area.set_deferred("monitoring", false)
 	$interration_area.set_deferred("monitorable", false)
 	var weird_knob = find_node("lock").get_node("knob_hole").get_node("weird_door_knob")
-	assert(weird_knob) 
+	assert(weird_knob)
 	_setup_door_handle(weird_knob)
 	unlock()
-	
-	
 
-	
+
+
+
 
 

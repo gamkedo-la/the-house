@@ -13,11 +13,11 @@ onready var _lock_sports : LockArea = $"%foot_sports_shoe/lock"
 
 func _ready():
 	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
-	
+
 	_lock_boot.connect("unlocked", self, "_on_unlocked_any_lock")
 	_lock_woman.connect("unlocked", self, "_on_unlocked_any_lock")
 	_lock_sports.connect("unlocked", self, "_on_unlocked_any_lock")
-	
+
 	if Engine.editor_hint:
 		_set_open_chest(is_open)
 
@@ -37,10 +37,10 @@ func player_interracts():
 				else:
 					_display_wrong_code_description()
 				return
-		
+
 		_display_locked_description()
 		return
-		
+
 	if is_open:
 		if Engine.editor_hint:
 			close_chest()
@@ -55,12 +55,12 @@ func _display_locked_description() -> void:
 	global.current_player.examination_display.display_text_sequence([
 		"This chest is locked. I need [b]a code[/b] to open it...\nThe human [b]feet[/b] screwed on it's lid seems to be part of a mechanism..."
 	])
-	
+
 func _display_wrong_code_description() -> void:
 	global.current_player.examination_display.display_text_sequence([
 		"This code does not seem to work on this keypad..."
 	])
-	
+
 func on_player_end_pointing() -> void:
 	if is_locked:
 		global.current_player.examination_display.stop_display_sequence()
@@ -76,9 +76,9 @@ func close_chest() -> void:
 func _set_open_chest(new_value : bool) -> void:
 	if new_value == is_open:
 		return
-		
+
 	if new_value:
 		open_chest()
 	else:
 		close_chest()
-		
+

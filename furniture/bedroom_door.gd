@@ -10,7 +10,7 @@ func _ready():
 	_listening_area.set_collision_mask_bit(CollisionLayers.audio_lock_collision_bit, true)
 	_listening_area.connect("body_entered", self, "_on_audio_source_entered")
 	_listening_area.connect("body_exited", self, "_on_audio_source_exited")
-	
+
 func _on_audio_source_entered(source) -> void:
 	if source is MusicBox:
 		print("music box is close to bedroom door")
@@ -33,16 +33,16 @@ func _unlock_the_door():
 	$main_other_collision_box.disabled = true
 	global.current_player.examination_display.stop_display_sequence()
 	unlock()
-	
+
 func player_interracts() -> void:
 	global.current_player.action_display.display_text_sequence(["The ears are screwed in this door, I can't remove them.\nThey seem linked to a mechanism inside the door."])
-	
+
 func on_player_begin_pointing() -> void:
 	if is_locked:
 		global.current_player.examination_display.display_text_sequence(["These are real human ears.\nCut from several people's body. Then screwed in this door.\nBut why?"])
-		
+
 func on_player_end_pointing() -> void:
 	if is_locked:
 		global.current_player.examination_display.stop_display_sequence()
-		
-		
+
+

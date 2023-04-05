@@ -9,10 +9,10 @@ func _ready():
 	$"%WorldEnvironment".environment.background_sky.set_panorama(iChannel)
 
 func _process(_delta):
-	
+
 	if options.pixelated != _pixelator.visible:
 		_pixelator.visible = options.pixelated
-	
+
 	if global.is_dev_mode:
 		if Input.is_action_just_pressed("debug_switch_pixelator"):
 			_pixelator.visible = not _pixelator.visible
@@ -27,4 +27,4 @@ func _process(_delta):
 			if Input.is_action_just_pressed("debug_switch_glow"):
 				_environment.environment.glow_enabled = not _environment.environment.glow_enabled
 				print("glow:  ", _environment.environment.glow_enabled)
-		
+

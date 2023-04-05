@@ -11,5 +11,5 @@ dest_files=[ "res://.import/object_collision_4.mp3-dcc73672dbccea77d1888348afde7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

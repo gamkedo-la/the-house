@@ -9,11 +9,11 @@ func _ready() -> void:
 	multimesh = multimesh.duplicate(true)
 	_is_ready = true
 	_update()
-	
+
 func _update()-> void:
 	if not _is_ready:
 		return
-		
+
 	var rng := RandomNumberGenerator.new()
 	rng.randomize()
 

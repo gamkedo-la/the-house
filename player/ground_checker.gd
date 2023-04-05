@@ -27,5 +27,5 @@ func collision_distance():
 		return global_transform.origin.distance_to(collision_point)
 	else:
 		return null
-	
-	
+
+

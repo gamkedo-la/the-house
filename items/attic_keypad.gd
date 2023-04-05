@@ -20,5 +20,5 @@ func player_interracts() -> void:
 			global.current_player.action_display.display_text_sequence(["I will need a [b]code[/b] to make this keypad work."])
 	else:
 		global.current_player.action_display.display_text_sequence(["This keypad opened the access to the attic, it's unlocked."])
-	
+
 

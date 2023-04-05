@@ -12,11 +12,11 @@ func is_lighting() -> bool:
 func turn_on() -> void:
 	_sphere_node.get_active_material(0).emission_enabled = true
 	_light_node.visible = true
-	
+
 func turn_off() -> void:
 	_sphere_node.get_active_material(0).emission_enabled = false
 	_light_node.visible = false
-	
+
 func switch_light() -> void:
 	if is_lighting():
 		turn_off()

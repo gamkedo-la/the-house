@@ -15,7 +15,7 @@ func is_fire_on() -> bool:
 func on_fire_on() -> void:
 #	print("fire area on")
 	_is_fire_on = true
-	
+
 func on_fire_off() -> void:
 #	print("fire area off")
 	_is_fire_on = false

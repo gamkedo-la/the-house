@@ -14,11 +14,11 @@ func _ready():
 func light_using_fire() -> void :
 #	print("lit my fire!")
 	emit_signal("lit_using_fire")
-	
+
 func _on_area_entered(area: Area) -> void :
 #	print("checking area")
 	# If the lighter's lighting area is detected, we light this (if not already lit)
-	if not get_parent() == area.get_parent() and area is FireArea and area.is_fire_on(): 
+	if not get_parent() == area.get_parent() and area is FireArea and area.is_fire_on():
 		light_using_fire()
 
 func get_class() -> String:

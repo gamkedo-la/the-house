@@ -38,15 +38,15 @@ var _current_surface = StepSurface.Grass
 func begin_walk(surface: int):
 	_we_are_walking = true
 	_current_surface = surface
-	
+
 func end_walk():
 	_we_are_walking = false
 	stop()
-	
+
 func _process(_delta):
 	if _we_are_walking:
 		update_step_sounds(_delta)
-	
+
 
 func update_step_sounds(_delta):
 	var now = Time.get_ticks_msec()
@@ -60,4 +60,4 @@ func play_random_step(surface: int):
 	assert(sound is AudioStream)
 	stream = sound
 	play()
-	
+

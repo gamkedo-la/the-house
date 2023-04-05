@@ -17,7 +17,7 @@ func turn_on():
 	AnimationPlayer.queue("Light")
 	AnimationPlayer.queue("Light Flickering")
 	fire_area.on_fire_on()
-	
+
 func turn_off():
 	is_on = false
 	AnimationPlayer.play("Close Lid")

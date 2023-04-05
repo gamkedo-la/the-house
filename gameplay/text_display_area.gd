@@ -33,7 +33,7 @@ func get_text_display() -> TextDisplay:
 		return _player.info_display
 	else:
 		return _player.story_display
-	
+
 func _on_body_entered(player: Node) -> void:
 	if not _player and player is Player: # The first check is to make sure we are not in the case where the player crouched
 		print("player entered ", name)
@@ -44,7 +44,7 @@ func _on_body_entered(player: Node) -> void:
 		else:
 			print("delayed display ", name)
 			_time_player_entered = utility.now_secs()
-		
+
 
 func _on_body_exited(player: Node) -> void:
 	if _player and player is Player:
@@ -52,9 +52,9 @@ func _on_body_exited(player: Node) -> void:
 		# we need to make sure they left the area and didnt just do that.
 		if player.did_crouch_changed_this_frame:
 			return
-		
+
 		print("player exited ", name)
-		
+
 		if stop_display_on_exit:
 			print("stop display sequence ", name)
 			get_text_display().stop_display_sequence()
@@ -81,4 +81,4 @@ func _process(_delta) -> void:
 
 func get_class() -> String:
 	return "TextDisplayArea"
-	
+

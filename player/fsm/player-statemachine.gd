@@ -14,7 +14,7 @@ func _init().("PLAYER_STATE_MACHINE",
 	{ # Transition table:
 		FSM_StateMachine.START: "NO_ITEM",
 		"NO_ITEM": { PlayerState.Action.take_item: "HOLDING_ITEM" },
-		"HOLDING_ITEM": { 
+		"HOLDING_ITEM": {
 			PlayerState.Action.drop_item: "NO_ITEM",
 			PlayerState.Action.examine_item: "EXAMINING",
 		},
@@ -32,5 +32,5 @@ static func set_player_to_all_states(player, state_machine : FSM_StateMachine) -
 		state_node.player = player
 		if state_node is FSM_StateMachine:
 			set_player_to_all_states(player, state_node as FSM_StateMachine)
-			
-	
+
+

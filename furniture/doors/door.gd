@@ -26,6 +26,14 @@ const time_betwen_notifications := 3.0
 
 var _is_ready := false
 
+onready var _sound_player := AudioStreamPlayer3D.new()
+class SoundDesc:
+	var stream
+	var begin: float = 0.0
+	var end: float = 0.0
+
+var _sounds = {}
+
 func _ready():
 	_door_handle_1 = get_node_or_null("main_mesh/door_handle_1")
 	_door_handle_2 = get_node_or_null("main_mesh/door_handle_2")
@@ -34,6 +42,9 @@ func _ready():
 	if _door_handle_2 is Spatial:
 		_setup_door_handle(_door_handle_2)
 	_update_door_mesh_state()
+
+	_setup_sounds()
+
 	_is_ready = true
 
 func _setup_door_handle(door_handle:Spatial):
@@ -60,9 +71,11 @@ func open() -> void:
 			_last_locked_notification_time = now
 			emit_signal("notified_door_is_locked")
 			global.current_player.action_display.display_text_sequence([ locked_text ])
+
 		return
 
 	is_open = true
+	_play_sound("open")
 	_update_door_mesh_state()
 	emit_signal("door_opened")
 
@@ -112,4 +125,21 @@ func lock() -> void:
 func on_player_interract():
 	_set_open(not is_open)
 
+func _setup_sounds() -> void:
+	add_child(_sound_player)
+	_sound_player.bus = "Sounds"
+
+	var sound_open = SoundDesc.new()
+	sound_open.stream = load("res://audio/sounds/door-open.mp3")
+	sound_open.begin = 0.0
+	sound_open.end = 1.29
+	_sounds["open"] = sound_open
+
+func _play_sound(name) -> void:
+	if not _is_ready:
+		return
+
+	var sound : SoundDesc = _sounds[name]
+	_sound_player.stream = sound.stream
+	_sound_player.play(sound.begin)
 

@@ -1,11 +1,22 @@
 extends Node
 
-var current_game : Game
-var current_player : Player
+signal player_ready
+signal game_ready
+
+var current_game : Game setget _set_game
+var current_player : Player setget _set_player
 
 var gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
 const is_dev_mode := true
+
+func _set_game(new_game: Game) -> void:
+	current_game = new_game
+	emit_signal("game_ready")
+
+func _set_player(new_player: Player) -> void:
+	current_player = new_player
+	emit_signal("player_ready")
 
 #
 ## warning-ignore:unused_signal

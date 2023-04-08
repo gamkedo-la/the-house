@@ -10,6 +10,7 @@ signal on_examination_end(item)
 signal on_snapped_into_fixed_position(item)
 
 export var can_be_taken = true
+export var can_collide_with_player = false
 
 export var highlightable := true
 export var highlight_color : Color = "#ffffff"
@@ -64,6 +65,13 @@ func _ready():
 		# Does this item 'glow' when the player hovers over it?
 #		if highlightable:
 #			highlites = _init_hilite(self, hilite_mat, highlight_color)
+
+	yield(global, "game_ready")
+	assert(global.current_player)
+	if not can_collide_with_player:
+		add_collision_exception_with(global.current_player)
+
+
 
 
 static func _create_hilite(mesh_instance: MeshInstance, hilite_mat: Material, highlight_color: Color) -> Array:

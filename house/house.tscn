@@ -612,13 +612,19 @@ can_be_taken = false
 highlightable = false
 
 [node name="knife_cleaver" parent="furniture/attic" instance=ExtResource( 51 )]
-transform = Transform( 5.96046e-08, -1, 0, 1, 5.96046e-08, 0, 0, 0, 1, -5.51779, 4.24281, -8.28629 )
+transform = Transform( -0.656388, -0.754423, -2.86916e-08, -4.37114e-08, -2.6054e-15, 1, -0.754423, 0.656388, -3.29769e-08, -5.85903, 4.37349, -8.02551 )
+mode = 1
 can_be_taken = false
 
 [node name="plate" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.6813, 4.22817, -7.84943 )
 
-[node name="plate" parent="furniture/attic/plate" index="0"]
+[node name="eyeball" parent="furniture/attic/plate" instance=ExtResource( 52 )]
+transform = Transform( 0.258819, -0.482963, 0.836516, 0, 0.866025, 0.5, -0.965926, -0.12941, 0.224144, 0, 0.0403719, 0 )
+mode = 1
+can_be_taken = false
+
+[node name="plate" parent="furniture/attic/plate" index="1"]
 mode = 1
 can_be_taken = false
 
@@ -631,12 +637,18 @@ can_be_taken = false
 
 [node name="mushroom" parent="furniture/attic/plate6" instance=ExtResource( 20 )]
 transform = Transform( -0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0.00880289, 0.117525, 0.0145411 )
+can_be_taken = false
 mushroom_color = 1
 
 [node name="plate2" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.03928, 4.22817, -8.30947 )
 
 [node name="plate" parent="furniture/attic/plate2" index="0"]
+mode = 1
+can_be_taken = false
+
+[node name="eyeball" parent="furniture/attic/plate2" instance=ExtResource( 52 )]
+transform = Transform( -0.875, -0.433013, -0.216506, -0.433013, 0.5, 0.75, -0.216506, 0.75, -0.625, 0, 0.0403719, 0 )
 mode = 1
 can_be_taken = false
 
@@ -647,6 +659,11 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.36908, 4.22817, -8.26
 mode = 1
 can_be_taken = false
 
+[node name="eyeball" parent="furniture/attic/plate3" instance=ExtResource( 52 )]
+transform = Transform( 0.5, 7.45058e-08, -0.866025, 0.612373, -0.707107, 0.353553, -0.612372, -0.707107, -0.353553, 0, 0.0403719, 0 )
+mode = 1
+can_be_taken = false
+
 [node name="plate4" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.49617, 4.22817, -7.79865 )
 
@@ -654,10 +671,20 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.49617, 4.22817, -7.79
 mode = 1
 can_be_taken = false
 
+[node name="eyeball" parent="furniture/attic/plate4" instance=ExtResource( 52 )]
+transform = Transform( -1.37315e-07, -0.707107, -0.707107, -6.18172e-08, -0.707107, 0.707107, -1, 1.40808e-07, 5.33851e-08, 0, 0.0403719, 0 )
+mode = 1
+can_be_taken = false
+
 [node name="plate5" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.20232, 4.22817, -7.53284 )
 
 [node name="plate" parent="furniture/attic/plate5" index="0"]
+mode = 1
+can_be_taken = false
+
+[node name="eyeball" parent="furniture/attic/plate5" instance=ExtResource( 52 )]
+transform = Transform( 0.707107, 0.183013, -0.683013, 0, 0.965926, 0.258819, 0.707107, -0.183013, 0.683013, 0, 0.0403719, 0 )
 mode = 1
 can_be_taken = false
 

@@ -118,9 +118,6 @@ script = ExtResource( 26 )
 is_locked = true
 locked_text = "Locked...\\nI need a [b]key[/b]"
 
-[node name="main_mesh" parent="doors/entrance_door" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677576, 1.07, 0 )
-
 [node name="lock" type="Area" parent="doors/entrance_door/main_mesh/door_handle_1" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0138999, -0.0772813, -0.0455813 )
 script = ExtResource( 25 )
@@ -312,7 +309,6 @@ transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.76, 0.0
 
 [node name="bedroom_door" parent="doors" instance=ExtResource( 39 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.351, 0.0645822, -5.95474 )
-is_open = false
 is_locked = true
 
 [node name="basement_trap_door" parent="doors" instance=ExtResource( 9 )]
@@ -1535,9 +1531,11 @@ transform = Transform( 0.897582, 0, 0.440849, 0, 1, 0, -0.440849, 0, 0.897582, -
 
 [node name="cardboardbox29" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.999787, 0, -0.0207668, 0, 1, 0, 0.0207668, 0, 0.999787, -21.9477, 25.5159, -2.95592 )
+can_be_taken = false
 
 [node name="cardboardbox30" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.996265, 0, -0.0863724, 0, 1, 0, 0.0863724, 0, 0.996265, -21.923, 26.1159, -2.95539 )
+can_be_taken = false
 
 [node name="cardboardbox32" parent="cardboards/entrance" instance=ExtResource( 7 )]
 transform = Transform( 0.588268, 0, -0.80867, 0, 1, 0, 0.80867, 0, 0.588268, -20.9382, 25.5159, -4.28528 )

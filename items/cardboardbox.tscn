@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://items/cardboard_box/cube_with_UVs.material" type="Material" id=1]
 [ext_resource path="res://items/interactive_item.gd" type="Script" id=2]
+[ext_resource path="res://items/cardboard_box/cardboardbox.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=3]
-friction = 4.0
-rough = true
+friction = 10.0
 absorbent = true
 
 [sub_resource type="ArrayMesh" id=1]
@@ -28,14 +28,18 @@ surfaces/0 = {
 points = PoolVector3Array( 0.6, 0.6, 0.6, 0.6, 0.6, -0.6, -0.6, 0.6, 0.6, 0.6, -0.6, 0.6, 0.6, -0.6, -0.6, -0.6, 0.6, -0.6, -0.6, -0.6, 0.6, -0.6, -0.6, -0.6 )
 
 [node name="cardboardbox" type="Spatial"]
+script = ExtResource( 3 )
 
 [node name="cardboardbox" type="RigidBody" parent="."]
+unique_name_in_owner = true
+mass = 10.0
 physics_material_override = SubResource( 3 )
 script = ExtResource( 2 )
 can_collide_with_player = true
 description = "This box only contains junk"
 
-[node name="default" type="MeshInstance" parent="cardboardbox"]
+[node name="cardboard_box_mesh" type="MeshInstance" parent="cardboardbox"]
+unique_name_in_owner = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.25, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("")

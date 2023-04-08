@@ -66,6 +66,9 @@ func _ready():
 #		if highlightable:
 #			highlites = _init_hilite(self, hilite_mat, highlight_color)
 
+	if Engine.editor_hint:
+		return
+
 	yield(global, "game_ready")
 	assert(global.current_player)
 	if not can_collide_with_player:

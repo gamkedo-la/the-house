@@ -8,6 +8,8 @@ var current_player : Player setget _set_player
 
 var gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gravity"), 0.0)
 
+var cardboard_material_darker: Material = null # This is a hack to avoid duplicating  cardboard material more than once
+
 const is_dev_mode := true
 
 func _set_game(new_game: Game) -> void:
@@ -17,6 +19,7 @@ func _set_game(new_game: Game) -> void:
 func _set_player(new_player: Player) -> void:
 	current_player = new_player
 	emit_signal("player_ready")
+
 
 #
 ## warning-ignore:unused_signal

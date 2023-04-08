@@ -50,14 +50,14 @@ var highlites := []
 func get_class() -> String :
 	return "InterractiveItem"
 
-onready var _sound_player = AudioStreamPlayer3D.new()
+#onready var _sound_player = AudioStreamPlayer3D.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	continuous_cd = true # Turn on precise handling of collisions
 	_previous_global_transform_origin = global_transform.origin
 
-	_setup_sounds()
+#	_setup_sounds()
 
 	if can_be_taken:
 		set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
@@ -236,19 +236,19 @@ func end_examination() -> void:
 	emit_signal("on_examination_end", self)
 
 
-func _setup_sounds() -> void:
-	add_child(_sound_player)
-	_sound_player.stream = load("res://audio/sounds/object_collision_4.mp3")
-	_sound_player.bus = "Sounds"
-	_sound_player.max_distance = 4
-	_sound_player.unit_size = 0.5
+#func _setup_sounds() -> void:
+#	add_child(_sound_player)
+#	_sound_player.stream = load("res://audio/sounds/object_collision_4.mp3")
+#	_sound_player.bus = "Sounds"
+#	_sound_player.max_distance = 4
+#	_sound_player.unit_size = 0.5
+#
+#	contact_monitor = true
+#	contacts_reported = 1
+#	connect("body_entered", self, "_on_collision")
 
-	contact_monitor = true
-	contacts_reported = 1
-	connect("body_entered", self, "_on_collision")
 
-
-func _on_collision(body:Node) -> void:
-	if not sleeping and ((body is RigidBody and not body.sleeping) or (body is StaticBody and not body.name == "landscape")):
-		_sound_player.play()
+#func _on_collision(body:Node) -> void:
+#	if not sleeping and ((body is RigidBody and not body.sleeping) or (body is StaticBody and not body.name == "landscape")):
+#		_sound_player.play()
 

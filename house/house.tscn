@@ -465,48 +465,35 @@ transform = Transform( 0.0151664, 0, 0.999885, 0, 1, 0, -0.999885, 0, 0.0151664,
 
 [node name="chair" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50471, 3.66434, 2.55019 )
+mode = 1
 
 [node name="chair2" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.606696, 0, 0.794934, 0, 1, 0, -0.794934, 0, 0.606696, -6.23345, 3.66434, 2.53252 )
+mode = 1
 
 [node name="chair3" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.0301373, 0, 0.999546, 0, 1, 0, -0.999546, 0, 0.0301373, -5.55181, 3.66626, 3.47405 )
+mode = 1
 
 [node name="chair4" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, -6.14424, 3.66626, 3.39389 )
+mode = 1
 
 [node name="chair5" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, -6.77978, 3.66626, 2.78866 )
+mode = 1
 
 [node name="chair6" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.94313, 0, -0.332425, 0, 1, 0, 0.332425, 0, -0.94313, -7.19711, 3.66626, 2.48743 )
+mode = 1
 
 [node name="chair7" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.0406723, 0, -0.999173, 0, 1, 0, 0.999173, 0, -0.0406723, -6.71159, 3.66626, 1.79741 )
+mode = 1
 
 [node name="chair8" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.937871, 0, -0.346985, 0, 1, 0, 0.346985, 0, 0.937871, -6.06866, 3.66626, 1.79741 )
-
-[node name="chair9" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83399, 3.66434, -7.02326 )
-
-[node name="chair10" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( 0.606696, 0, 0.794934, 0, 1, 0, -0.794934, 0, 0.606696, -3.56273, 3.66434, -7.04093 )
-
-[node name="chair11" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( 0.0301373, 0, 0.999546, 0, 1, 0, -0.999546, 0, 0.0301373, -2.88109, 3.66626, -6.0994 )
-
-[node name="chair12" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, -3.47351, 3.66626, -6.17956 )
-
-[node name="chair13" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, -4.10905, 3.66626, -6.78478 )
-
-[node name="chair14" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( -0.94313, 0, -0.332425, 0, 1, 0, 0.332425, 0, -0.94313, -4.52638, 3.66626, -7.08601 )
-
-[node name="chair15" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( -0.0406723, 0, -0.999173, 0, 1, 0, 0.999173, 0, -0.0406723, -4.04086, 3.66626, -7.77603 )
+mode = 1
 
 [node name="chair25" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.208524, 0, -0.668219, 0, 0.7, 0, 0.668219, 0, -0.208524, -5.14974, 3.66626, -7.69379 )
@@ -540,32 +527,37 @@ mode = 1
 transform = Transform( -0.325054, 0, 0.619951, 0, 0.7, 0, -0.619951, 0, -0.325054, -6.91684, 3.66626, -6.97183 )
 mode = 1
 
-[node name="chair16" parent="furniture/attic" instance=ExtResource( 29 )]
-transform = Transform( 0.937871, 0, -0.346985, 0, 1, 0, 0.346985, 0, 0.937871, -3.39793, 3.66626, -7.77603 )
-
 [node name="chair17" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94019, 3.66434, -5.53532 )
+mode = 1
 
 [node name="chair18" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.606696, 0, 0.794934, 0, 1, 0, -0.794934, 0, 0.606696, 1.21145, 3.66434, -5.55299 )
+mode = 1
 
 [node name="chair19" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.0301373, 0, 0.999546, 0, 1, 0, -0.999546, 0, 0.0301373, 1.89309, 3.66626, -4.61146 )
+mode = 1
 
 [node name="chair20" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, 1.30067, 3.66626, -4.69162 )
+mode = 1
 
 [node name="chair21" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.878959, 0, 0.476898, 0, 1, 0, -0.476898, 0, -0.878959, 0.665127, 3.66626, -5.29685 )
+mode = 1
 
 [node name="chair22" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.94313, 0, -0.332425, 0, 1, 0, 0.332425, 0, -0.94313, 0.247797, 3.66626, -5.59807 )
+mode = 1
 
 [node name="chair23" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( -0.0406723, 0, -0.999173, 0, 1, 0, 0.999173, 0, -0.0406723, 0.73332, 3.66626, -6.28809 )
+mode = 1
 
 [node name="chair24" parent="furniture/attic" instance=ExtResource( 29 )]
 transform = Transform( 0.937871, 0, -0.346985, 0, 1, 0, 0.346985, 0, 0.937871, 1.37625, 3.66626, -6.28809 )
+mode = 1
 
 [node name="chair_comfy" parent="furniture/attic" instance=ExtResource( 27 )]
 transform = Transform( 0.801723, 0, -0.597695, 0, 1, 0, 0.597695, 0, 0.801723, 5.86705, 3.66434, 3.32631 )
@@ -621,12 +613,21 @@ highlightable = false
 
 [node name="knife_cleaver" parent="furniture/attic" instance=ExtResource( 51 )]
 transform = Transform( 5.96046e-08, -1, 0, 1, 5.96046e-08, 0, 0, 0, 1, -5.51779, 4.24281, -8.28629 )
+can_be_taken = false
 
 [node name="plate" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.6813, 4.22817, -7.84943 )
 
+[node name="plate" parent="furniture/attic/plate" index="0"]
+mode = 1
+can_be_taken = false
+
 [node name="plate6" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04185, 4.22817, -7.91417 )
+
+[node name="plate" parent="furniture/attic/plate6" index="0"]
+mode = 1
+can_be_taken = false
 
 [node name="mushroom" parent="furniture/attic/plate6" instance=ExtResource( 20 )]
 transform = Transform( -0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0.00880289, 0.117525, 0.0145411 )
@@ -635,14 +636,30 @@ mushroom_color = 1
 [node name="plate2" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.03928, 4.22817, -8.30947 )
 
+[node name="plate" parent="furniture/attic/plate2" index="0"]
+mode = 1
+can_be_taken = false
+
 [node name="plate3" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.36908, 4.22817, -8.26676 )
+
+[node name="plate" parent="furniture/attic/plate3" index="0"]
+mode = 1
+can_be_taken = false
 
 [node name="plate4" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.49617, 4.22817, -7.79865 )
 
+[node name="plate" parent="furniture/attic/plate4" index="0"]
+mode = 1
+can_be_taken = false
+
 [node name="plate5" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -6.20232, 4.22817, -7.53284 )
+
+[node name="plate" parent="furniture/attic/plate5" index="0"]
+mode = 1
+can_be_taken = false
 
 [node name="basement" type="Spatial" parent="furniture"]
 
@@ -1123,11 +1140,6 @@ mushroom_color = 0
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.62457, 1.19242, -1.5937 )
 mushroom_color = 4
 random_mushroom_shape = false
-is_stuck_in_ground = false
-
-[node name="mushroom2" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.02066, 0.930371, -0.8699 )
-mushroom_color = 0
 is_stuck_in_ground = false
 
 [node name="mushroom3" parent="mushrooms/kitchen" instance=ExtResource( 20 )]
@@ -1896,4 +1908,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00156, 3.61139, 2.93465 )
 [editable path="doors/toilet_door"]
 [editable path="doors/kitchen_door"]
 [editable path="doors/basement_trap_door"]
+[editable path="furniture/attic/plate"]
+[editable path="furniture/attic/plate6"]
+[editable path="furniture/attic/plate2"]
+[editable path="furniture/attic/plate3"]
+[editable path="furniture/attic/plate4"]
+[editable path="furniture/attic/plate5"]
 [editable path="giant_eye_mouth_puzzle/giant_eye"]

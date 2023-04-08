@@ -26,6 +26,7 @@ points = PoolVector3Array( 0.6, 0.6, 0.6, 0.6, 0.6, -0.6, -0.6, 0.6, 0.6, 0.6, -
 
 [node name="cardboardbox" type="RigidBody" parent="."]
 script = ExtResource( 2 )
+can_collide_with_player = true
 description = "This box only contains junk"
 
 [node name="default" type="MeshInstance" parent="cardboardbox"]

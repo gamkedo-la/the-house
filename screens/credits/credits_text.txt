@@ -17,6 +17,15 @@
 
 [b]Chris DeLeon[/b]: Night ambient sound recordings, credits info
 
+[center]Special Thanks to Playtesters:[/center]
+[center][b]
+Neil Urwin
+Philippe Daouadi
+Vincent Palancher
+Adeline Fleuve
+Johan Mabile
+Anton Roy
+[/b][/center]
 
 [center]Made in [b]HomeTeam Gamedev - https://hometeamgamedev.com[/b][/center]
 [center]Join us to make games![/center]

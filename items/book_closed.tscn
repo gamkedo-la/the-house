@@ -32,7 +32,9 @@ surfaces/1 = {
 }
 
 [node name="book_closed" type="RigidBody"]
+mode = 1
 script = ExtResource( 2 )
+can_be_taken = false
 orientation_held_front = 1
 description = "An old book.\\nNothing interesting in there."
 

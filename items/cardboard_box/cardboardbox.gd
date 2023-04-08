@@ -8,6 +8,8 @@ onready var _mesh = $"%cardboard_box_mesh"
 
 func _ready():
 	_box.can_be_taken = can_be_taken
+	if not can_be_taken:
+		_box.mode = RigidBody.MODE_STATIC
 
 	if Engine.editor_hint:
 		return

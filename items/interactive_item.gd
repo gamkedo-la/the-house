@@ -60,11 +60,11 @@ func _ready():
 
 #	_setup_sounds()
 
-	if can_be_taken:
-		set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
-		# Does this item 'glow' when the player hovers over it?
+	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
+	# Does this item 'glow' when the player hovers over it?
 #		if highlightable:
 #			highlites = _init_hilite(self, hilite_mat, highlight_color)
+
 
 	if Engine.editor_hint:
 		return
@@ -246,6 +246,17 @@ func begin_examination() -> void:
 func end_examination() -> void:
 	emit_signal("on_examination_end", self)
 
+var _is_displaying_text_through_interraction := false
+
+func player_interracts() -> void:
+	if not can_be_taken:
+		global.current_player.examination_display.display_text_sequence([description])
+		_is_displaying_text_through_interraction = true
+
+func on_player_end_pointing() -> void:
+	if _is_displaying_text_through_interraction:
+		global.current_player.examination_display.stop_display_sequence()
+		_is_displaying_text_through_interraction = false
 
 #func _setup_sounds() -> void:
 #	add_child(_sound_player)

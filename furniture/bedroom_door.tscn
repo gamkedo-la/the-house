@@ -37,7 +37,7 @@ depth = 0.1
 material = SubResource( 2 )
 
 [node name="main_mesh" type="CollisionShape" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.07, -0.63 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 1.07, 0 )
 shape = SubResource( 4 )
 
 [node name="main_mesh" type="CSGBox" parent="main_mesh"]

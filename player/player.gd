@@ -375,7 +375,15 @@ func _begin_pointing_usable_object(object:Spatial) -> void:
 		_end_pointing_usable_object()
 	print("Usable entity pointed %s" % object.name)
 	_pointed_usable_entity = object
-	_center_symbol.set_symbol(CenterSymbol.Symbol.Interract)
+	if utility.object_has_function(_pointed_usable_entity, "is_interraction_action"):
+		var is_interraction_action : bool = _pointed_usable_entity.is_interraction_action()
+		if is_interraction_action:
+			_center_symbol.set_symbol(CenterSymbol.Symbol.Take)
+		else:
+			_center_symbol.set_symbol(CenterSymbol.Symbol.Interract)
+	else:
+		_center_symbol.set_symbol(CenterSymbol.Symbol.Interract)
+
 	if utility.object_has_function(_pointed_usable_entity, "on_player_begin_pointing"):
 		_pointed_usable_entity.on_player_begin_pointing()
 

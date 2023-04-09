@@ -35,12 +35,14 @@ onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _debug_status : RichTextLabel = $"%debug_status"
 onready var _debug_light : OmniLight = $"%debug_light"
+onready var _center_symbol : Sprite = $"%center_sprite"
 
 onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
 onready var info_display : TextDisplay = $"%info_display"
 onready var examination_display : TextDisplay = $"%examination_display"
 onready var reading_display : TextDisplay = $"%reading_display"
+
 
 
 var _pointed_item : InteractiveItem
@@ -342,6 +344,7 @@ func _begin_pointing_interactive_item(item : InteractiveItem) -> void:
 		_end_pointing_interactive_item()
 	_pointed_item = item
 	_pointed_item.hilite(true)
+	_center_symbol.set_symbol(CenterSymbol.Symbol.Take)
 	print("Item pointed: %s" % _pointed_item.name)
 
 func _end_pointing_interactive_item() -> void:
@@ -349,12 +352,14 @@ func _end_pointing_interactive_item() -> void:
 		print("Stopped pointing item: %s" % _pointed_item.name)
 		_pointed_item.hilite(false)
 		_pointed_item = null
+		_center_symbol.reset_symbol()
 
 func _begin_pointing_usable_object(object:Spatial) -> void:
 	if _pointed_usable_entity:
 		_end_pointing_usable_object()
 	print("Usable entity pointed %s" % object.name)
 	_pointed_usable_entity = object
+	_center_symbol.set_symbol(CenterSymbol.Symbol.Interract)
 	if utility.object_has_function(_pointed_usable_entity, "on_player_begin_pointing"):
 		_pointed_usable_entity.on_player_begin_pointing()
 
@@ -364,6 +369,7 @@ func _end_pointing_usable_object() -> void:
 		if utility.object_has_function(_pointed_usable_entity, "on_player_end_pointing"):
 			_pointed_usable_entity.on_player_end_pointing()
 		_pointed_usable_entity = null
+		_center_symbol.reset_symbol()
 
 
 func get_currently_pointed_item() -> InteractiveItem:

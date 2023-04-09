@@ -136,9 +136,11 @@ extents = Vector3( 0.0773068, 0.0801967, 0.0922413 )
 
 [node name="flower_pot" type="RigidBody"]
 collision_layer = 129
+mode = 1
 mass = 10.0
 continuous_cd = true
 script = ExtResource( 2 )
+can_collide_with_player = true
 
 [node name="mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 8 )

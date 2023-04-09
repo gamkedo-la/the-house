@@ -10,7 +10,7 @@ var gravity := Vector3(0.0, -ProjectSettings.get_setting("physics/3d/default_gra
 
 var cardboard_material_darker: Material = null # This is a hack to avoid duplicating  cardboard material more than once
 
-const is_dev_mode := true
+const is_dev_mode := false
 
 func _set_game(new_game: Game) -> void:
 	current_game = new_game

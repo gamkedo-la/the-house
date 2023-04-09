@@ -121,7 +121,7 @@ transform = Transform( 1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 2.7546
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.617198, 0.0657877, 6.06917 )
 script = ExtResource( 26 )
 is_locked = true
-locked_text = "Locked...\\nI need a [b]key[/b]"
+locked_text = "Locked, I need a [b]key[/b]...\\nI vaguely remember that a copy was hidden on this porch."
 
 [node name="lock" type="Area" parent="doors/entrance_door/main_mesh/door_handle_1" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0138999, -0.0772813, -0.0455813 )

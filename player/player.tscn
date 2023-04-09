@@ -349,6 +349,18 @@ region_rect = Rect2( 0, 0, 64, 64 )
 script = ExtResource( 17 )
 symbol = 2
 
+[node name="movement_mode_symbol" type="Sprite" parent="Head/Camera/screen_hud"]
+unique_name_in_owner = true
+visible = false
+position = Vector2( 80, 80 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+hframes = 8
+frame = 2
+region_rect = Rect2( 0, 0, 64, 64 )
+script = ExtResource( 17 )
+symbol = 2
+
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )
 

@@ -35,7 +35,8 @@ onready var _state_machine : PlayerStateMachine = $"PlayerStateMachine"
 onready var _feet_audio : AudioStreamPlayer3D = $"%feet_audio_player"
 onready var _debug_status : RichTextLabel = $"%debug_status"
 onready var _debug_light : OmniLight = $"%debug_light"
-onready var _center_symbol : Sprite = $"%center_sprite"
+onready var _center_symbol : Sprite = $"%center_symbol"
+onready var _examination_symbol : Sprite = $"%examination_symbol"
 
 onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
@@ -430,6 +431,8 @@ func begin_item_examination():
 	_examination_spot.transform = _initial_examination_transform
 	held_item.track(_examination_spot)
 	_is_examining = true
+	_center_symbol.visible = false
+	_examination_symbol.visible = true
 	held_item.begin_examination()
 	examination_display.display_text_sequence([held_item.description])
 
@@ -437,6 +440,8 @@ func begin_item_examination():
 func end_item_examination():
 	examination_display.stop_display_sequence()
 	_held_item.end_examination()
+	_examination_symbol.visible = false
+	_center_symbol.visible = true
 	_resume_holding_item()
 	_is_examining = false
 

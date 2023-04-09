@@ -11,6 +11,9 @@ onready var _bottom_lip_open_pos : Spatial = $"%bottom_lip_open_pos"
 var _is_ready := false
 
 func _ready() -> void:
+	$pain_player.connect("finished", self, "start_mumbling")
+	$audio_player.play()
+	stop_mumbling()
 	_is_ready = true
 	_set_open(is_open)
 
@@ -19,6 +22,8 @@ func open_mouth() -> void:
 		_top_lip.transform.origin = _top_lip_open_pos.transform.origin
 		_bottom_lip.transform.origin = _bottom_lip_open_pos.transform.origin
 	is_open = true
+	play_pain()
+	stop_mumbling()
 	print("giant mouth open")
 
 func close_mouth() -> void:
@@ -35,3 +40,12 @@ func _set_open(new_value : bool) -> void:
 	else:
 		close_mouth()
 
+func play_pain() -> void:
+	stop_mumbling()
+	$pain_player.play()
+
+func start_mumbling() -> void:
+	$audio_player.unit_db = -6
+
+func stop_mumbling() -> void:
+	$audio_player.unit_db = -80

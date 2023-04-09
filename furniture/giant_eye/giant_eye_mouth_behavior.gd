@@ -8,7 +8,8 @@ var _dropped_the_key : bool = false
 
 func _ready():
 	_giant_eye.connect("on_eye_closed", self, "_on_eye_closed")
-
+	$giant_thing_audio_area.connect("body_entered", self, "_on_player_entered")
+	$giant_thing_audio_area.connect("body_exited", self, "_on_player_exited")
 
 func _on_eye_closed() -> void:
 	_giant_mouth.open_mouth()
@@ -20,7 +21,14 @@ func _on_eye_closed() -> void:
 		_dropped_the_key = true
 		print("giant mouth: item dropped")
 
-	yield(get_tree().create_timer(5.0), "timeout")
+	yield(get_tree().create_timer(5.46), "timeout")
 	_giant_mouth.close_mouth()
 	_giant_eye.open_eye()
 
+func _on_player_entered(player:Spatial) -> void:
+	if player is Player:
+		_giant_mouth.start_mumbling()
+
+func _on_player_exited(player:Spatial) -> void:
+	if player is Player:
+		_giant_mouth.stop_mumbling()

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/nobacking_eyeball_pain.mp3-4476cb944f01031502514985c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -19,6 +19,7 @@ func _on_eye_closed() -> void:
 		key_item.sleeping = false
 		key_item.linear_velocity = global.gravity
 		_dropped_the_key = true
+		$audio_shoe.play()
 		print("giant mouth: item dropped")
 
 	yield(get_tree().create_timer(5.46), "timeout")

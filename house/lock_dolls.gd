@@ -11,3 +11,5 @@ func _on_release_key(_key_name) -> void:
 	boot.linear_velocity = global.gravity
 	boot.can_be_taken = true
 	boot.visible = true
+
+	$"%audio_boot_drop".play()

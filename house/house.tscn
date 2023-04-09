@@ -619,12 +619,12 @@ can_be_taken = false
 [node name="plate" parent="furniture/attic" instance=ExtResource( 30 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.6813, 4.22817, -7.84943 )
 
-[node name="eyeball" parent="furniture/attic/plate" instance=ExtResource( 52 )]
-transform = Transform( 0.258819, -0.482963, 0.836516, 0, 0.866025, 0.5, -0.965926, -0.12941, 0.224144, 0, 0.0403719, 0 )
+[node name="plate" parent="furniture/attic/plate" index="0"]
 mode = 1
 can_be_taken = false
 
-[node name="plate" parent="furniture/attic/plate" index="1"]
+[node name="eyeball" parent="furniture/attic/plate" instance=ExtResource( 52 )]
+transform = Transform( 0.258819, -0.482963, 0.836516, 0, 0.866025, 0.5, -0.965926, -0.12941, 0.224144, 0, 0.0403719, 0 )
 mode = 1
 can_be_taken = false
 
@@ -1847,7 +1847,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92965, 1.11453, -9.12531 )
 transform = Transform( -4.26928e-09, -0.0976698, 0.995219, 1, -4.37114e-08, 0, 4.35024e-08, 0.995219, 0.0976698, -4.53817, 0.0859217, 6.38556 )
 
 [node name="kitchen_key" parent="special_items" instance=ExtResource( 36 )]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 7.78111, 1.27582, -3.30292 )
+transform = Transform( 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0, 1, 6.48558, 1.15873, -3.6044 )
 
 [node name="torchlight" parent="special_items" instance=ExtResource( 38 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.86486, 0.794408, 5.68236 )

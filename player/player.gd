@@ -448,6 +448,7 @@ func begin_item_examination():
 	_is_examining = true
 	_center_symbol.visible = false
 	_examination_symbol.visible = true
+	_feet_audio.end_walk()
 	held_item.begin_examination()
 	examination_display.display_text_sequence([held_item.description])
 

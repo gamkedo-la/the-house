@@ -10,6 +10,7 @@ func _on_door_unlocked()-> void:
 	var ladder = get_node_or_null("../../attic_ladder")
 	if ladder:
 		ladder.visible = true
+		$audio_ladder.play()
 
 func _on_door_locked()-> void:
 	var ladder = get_node_or_null("../../attic_ladder")

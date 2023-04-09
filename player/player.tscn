@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/ground_checker.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://player/shadow_mesh.gd" type="Script" id=14]
 [ext_resource path="res://player/text_display.gd" type="Script" id=15]
 [ext_resource path="res://player/player_info_normal.tres" type="DynamicFont" id=16]
+[ext_resource path="res://player/center_sprite.gd" type="Script" id=17]
+[ext_resource path="res://player/symbols.png" type="Texture" id=18]
 
 [sub_resource type="CapsuleShape" id=13]
 radius = 0.35
@@ -135,6 +137,7 @@ debug_shape_custom_color = Color( 0.839216, 0, 1, 1 )
 
 [node name="target" type="CSGBox" parent="Head/Camera/InterractionRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+visible = false
 cast_shadow = 0
 generate_lightmap = false
 width = 0.003
@@ -322,6 +325,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.309911, -0.0574515 )
 visible = false
 omni_range = 72.596
 omni_attenuation = 0.0603711
+
+[node name="screen_hud" type="CanvasLayer" parent="Head/Camera"]
+
+[node name="center_sprite" type="Sprite" parent="Head/Camera/screen_hud"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 18 )
+hframes = 8
+script = ExtResource( 17 )
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

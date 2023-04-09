@@ -3,7 +3,7 @@ extends Sprite
 
 class_name CenterSymbol
 
-enum Symbol { Target, Take, Interract }
+enum Symbol { Target, Take, Interract, Crouch, Ladder, Mushroom }
 export(Symbol) var symbol := Symbol.Target setget set_symbol
 
 export var lock_on_center := false

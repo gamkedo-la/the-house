@@ -37,6 +37,7 @@ onready var _debug_status : RichTextLabel = $"%debug_status"
 onready var _debug_light : OmniLight = $"%debug_light"
 onready var _center_symbol : Sprite = $"%center_symbol"
 onready var _examination_symbol : Sprite = $"%examination_symbol"
+onready var _movement_symbol : Sprite = $"%movement_mode_symbol"
 
 onready var story_display : TextDisplay = $"%text_display"
 onready var action_display : TextDisplay = $"%action_display"
@@ -147,7 +148,21 @@ func update_walk(_delta) -> void:
 		if Input.is_action_pressed("move_backward"):
 			translation += Vector3.BACK
 
+		if _is_crouched:
+			if not _movement_symbol.visible:
+				_movement_symbol.visible = true
+			if _movement_symbol.symbol != CenterSymbol.Symbol.Crouch:
+				_movement_symbol.symbol = CenterSymbol.Symbol.Crouch
+		else:
+			if _movement_symbol.visible:
+				_movement_symbol.visible = false
+
 	elif _movement_mode == MovementMode.Climbing:
+		if not _movement_symbol.visible:
+			_movement_symbol.visible = true
+		if _movement_symbol.symbol != CenterSymbol.Symbol.Ladder:
+			_movement_symbol.symbol = CenterSymbol.Symbol.Ladder
+
 		if _camera.global_rotation.x >= deg2rad(45.0): # Looking up
 			if Input.is_action_pressed("move_forward"):
 				translation +=  Vector3.UP
@@ -483,6 +498,8 @@ func crouch() -> void:
 
 	_is_crouched = true
 	did_crouch_changed_this_frame = true
+	_movement_symbol.visible = true
+	_movement_symbol.symbol = CenterSymbol.Symbol.Crouch
 
 func get_up() -> void:
 	if not _is_crouched:
@@ -500,6 +517,8 @@ func get_up() -> void:
 
 	_is_crouched = false
 	did_crouch_changed_this_frame = true
+
+	_movement_symbol.visible = false
 
 func is_crouched() -> bool:
 	return _is_crouched

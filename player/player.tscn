@@ -331,6 +331,7 @@ omni_attenuation = 0.0603711
 [node name="center_symbol" type="Sprite" parent="Head/Camera/screen_hud"]
 unique_name_in_owner = true
 position = Vector2( 960, 540 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 18 )
 hframes = 8
 region_rect = Rect2( 0, 0, 64, 64 )
@@ -340,7 +341,7 @@ lock_on_center = true
 [node name="examination_symbol" type="Sprite" parent="Head/Camera/screen_hud"]
 unique_name_in_owner = true
 visible = false
-position = Vector2( 80, 80 )
+position = Vector2( 74, 51 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 hframes = 8
@@ -352,14 +353,13 @@ symbol = 2
 [node name="movement_mode_symbol" type="Sprite" parent="Head/Camera/screen_hud"]
 unique_name_in_owner = true
 visible = false
-position = Vector2( 80, 80 )
-scale = Vector2( 2, 2 )
+position = Vector2( 74, 141 )
 texture = ExtResource( 18 )
 hframes = 8
-frame = 2
+frame = 3
 region_rect = Rect2( 0, 0, 64, 64 )
 script = ExtResource( 17 )
-symbol = 2
+symbol = 3
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 6 )

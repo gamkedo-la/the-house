@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://items/body/hand.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_material.tres" type="Material" id=2]
 [ext_resource path="res://gameplay/key_area.gd" type="Script" id=3]
+[ext_resource path="res://items/old_boot_womens/boot_womens.glb" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.0683309, 0.190145, 0.135792 )
@@ -73,8 +74,12 @@ description = "A woman's shoe. It looks ancient."
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.46472e-09, 0.134873, -0.0520444 )
 shape = SubResource( 1 )
 
+[node name="boot_womens" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.158682, 0, -1.38724e-08, 7.31104e-10, 0.158461, -0.00836285, 1.38531e-08, -0.00836285, -0.158461, 0, -0.0188213, -0.03156 )
+
 [node name="placeholder_mesh_please_replace_me" type="MeshInstance" parent="."]
 transform = Transform( -1, 0, -1.92963e-07, 0, 1.3107, 0, 1.50996e-07, 0, -1.27793, -8.83171e-10, 0, -0.0202046 )
+visible = false
 mesh = SubResource( 2 )
 material/0 = SubResource( 5 )
 

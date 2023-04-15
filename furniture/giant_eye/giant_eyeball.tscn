@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://furniture/giant_eye/giant_eyeball_2.glb" type="PackedScene" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.654902, 0.654902, 0.654902, 1 )
@@ -49,5 +51,9 @@ surfaces/2 = {
 
 [node name="giant_eyeball" type="Spatial"]
 
+[node name="giant_eyeball_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.32085, 0, -2.80496e-08, 0, 0.32085, 0, 2.80496e-08, 0, -0.32085, 0, 0, 0 )
+
 [node name="mesh" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 4 )

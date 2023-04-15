@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://placeholder_material.tres" type="Material" id=1]
 [ext_resource path="res://furniture/giant_eye/giant_mouth.gd" type="Script" id=2]
 [ext_resource path="res://audio/sounds/nobacking_eyeball_mumble.mp3" type="AudioStream" id=3]
 [ext_resource path="res://audio/sounds/nobacking_eyeball_pain.mp3" type="AudioStream" id=4]
+[ext_resource path="res://furniture/giant_mouth/giant_mouth.glb" type="PackedScene" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -51,9 +52,11 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43368, 0 )
 
 [node name="placeholders_replace_them_please" type="Spatial" parent="."]
+visible = false
 
 [node name="bottom_lip" type="MeshInstance" parent="placeholders_replace_them_please"]
 unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033401, -0.06671, 0 )
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 
@@ -64,6 +67,7 @@ shape = SubResource( 3 )
 
 [node name="top_lip" type="MeshInstance" parent="placeholders_replace_them_please"]
 unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00136909, 0, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 
@@ -78,10 +82,13 @@ height = 1.57445
 depth = 0.030426
 material = ExtResource( 1 )
 
+[node name="giant_mouth" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.524, 0, -4.58096e-08, 0, 0.524, 0, 4.58096e-08, 0, -0.524, 0, -0.0535963, 0.361078 )
+
 [node name="audio_player" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource( 3 )
-unit_db = -6.0
+unit_db = -80.0
 unit_size = 0.8
 max_distance = 7.0
 bus = "Thing"

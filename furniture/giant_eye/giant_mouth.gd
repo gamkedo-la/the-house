@@ -9,6 +9,7 @@ onready var _top_lip_open_pos : Spatial = $"%top_lip_open_pos"
 onready var _bottom_lip_open_pos : Spatial = $"%bottom_lip_open_pos"
 onready var _target_top_lip_pos : Vector3
 onready var _target_bottom_lip_pos : Vector3
+onready var mouth_anims : AnimationPlayer = $"giant_mouth/AnimationPlayer"
 
 class SpatialRange:
 	var minimum := Vector3.ZERO
@@ -27,15 +28,17 @@ func _ready() -> void:
 	stop_mumbling()
 	_is_ready = true
 	_set_open(is_open)
-	_setup_jitter()
+#	_setup_jitter()
+	mouth_anims.play("MouthMumble-loop")
 
 func _process(_delta):
-	var now := utility.now_secs()
-	var time_passed_since_last_jitter := now - _last_jitter_update_time
-	if time_passed_since_last_jitter >= jitter_interval:
-		_last_jitter_update_time = now
-		_top_lip.transform.origin = jitter_pos(_target_top_lip_pos, top_lip_jitter_range)
-		_bottom_lip.transform.origin = jitter_pos(_target_bottom_lip_pos, bottom_lip_jitter_range)
+#	var now := utility.now_secs()
+#	var time_passed_since_last_jitter := now - _last_jitter_update_time
+#	if time_passed_since_last_jitter >= jitter_interval:
+#		_last_jitter_update_time = now
+#		_top_lip.transform.origin = jitter_pos(_target_top_lip_pos, top_lip_jitter_range)
+#		_bottom_lip.transform.origin = jitter_pos(_target_bottom_lip_pos, bottom_lip_jitter_range)
+	pass
 
 func _setup_jitter() -> void:
 	jitter_interval = 1.0 / 7.0
@@ -61,16 +64,18 @@ func open_mouth() -> void:
 		_target_top_lip_pos = _top_lip.transform.origin
 		_target_bottom_lip_pos = _bottom_lip.transform.origin
 	is_open = true
+	mouth_anims.play("MouthOpen")
 	play_pain()
 	stop_mumbling()
 	print("giant mouth open")
 
 func close_mouth() -> void:
-	if _is_ready:
-		_top_lip.transform.origin = Vector3.ZERO
-		_bottom_lip.transform.origin = Vector3.ZERO
-		_target_top_lip_pos = _top_lip.transform.origin
-		_target_bottom_lip_pos = _bottom_lip.transform.origin
+#	if _is_ready:
+#		_top_lip.transform.origin = Vector3.ZERO
+#		_bottom_lip.transform.origin = Vector3.ZERO
+#		_target_top_lip_pos = _top_lip.transform.origin
+#		_target_bottom_lip_pos = _bottom_lip.transform.origin
+	mouth_anims.play_backwards("MouthOpen")
 	is_open = false
 	print("giant mouth closed")
 

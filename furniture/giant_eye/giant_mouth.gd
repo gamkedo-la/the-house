@@ -76,6 +76,8 @@ func close_mouth() -> void:
 #		_target_top_lip_pos = _top_lip.transform.origin
 #		_target_bottom_lip_pos = _bottom_lip.transform.origin
 	mouth_anims.play_backwards("MouthOpen")
+	mouth_anims.queue("MouthMumble-loop")
+	start_mumbling()
 	is_open = false
 	print("giant mouth closed")
 

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/creak-floor.mp3-ca9c765b7c3312531956a59d63bb9bce.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

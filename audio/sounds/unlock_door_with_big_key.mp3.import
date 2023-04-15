@@ -11,5 +11,5 @@ dest_files=[ "res://.import/unlock_door_with_big_key.mp3-70beb342f115ddf3ebacdb1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

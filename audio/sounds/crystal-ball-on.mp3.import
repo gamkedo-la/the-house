@@ -11,5 +11,5 @@ dest_files=[ "res://.import/crystal-ball-on.mp3-f28e5574d28fcfb46d86924781286180
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

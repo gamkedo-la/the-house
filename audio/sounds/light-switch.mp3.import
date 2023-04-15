@@ -11,5 +11,5 @@ dest_files=[ "res://.import/light-switch.mp3-d18cdc92e8c5b185e4eaf74aa8fad7dd.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/creak-steps.mp3-8a69ecb9f9abd9c91308a83106f981f3.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

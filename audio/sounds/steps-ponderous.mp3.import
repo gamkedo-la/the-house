@@ -11,5 +11,5 @@ dest_files=[ "res://.import/steps-ponderous.mp3-57e37d9c23e38dd714a24002c432f98a
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

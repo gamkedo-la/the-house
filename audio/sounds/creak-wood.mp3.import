@@ -11,5 +11,5 @@ dest_files=[ "res://.import/creak-wood.mp3-77e49bc7bf4f80b309247d3f206c72c3.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

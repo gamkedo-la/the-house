@@ -12,7 +12,7 @@ extents = Vector3( 0.467305, 1.0721, 0.422399 )
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.123, 0.182, 0.1 )
 
-[node name="lantern" type="RigidBody"]
+[node name="lantern_old" type="RigidBody"]
 angular_damp = 23.315
 script = ExtResource( 2 )
 orientation_hand_held = 2
@@ -48,6 +48,10 @@ script = ExtResource( 5 )
 [node name="CollisionShape" type="CollisionShape" parent="LightableArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00164266, 0.203831, 0.121262 )
 shape = SubResource( 4 )
+
+[node name="audio_player" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+bus = "Hand"
 
 [connection signal="use_item" from="." to="lantern-light" method="_on_lantern_use_item"]
 [connection signal="lit_using_fire" from="LightableArea" to="lantern-light" method="_on_LightableArea_lit_using_fire"]

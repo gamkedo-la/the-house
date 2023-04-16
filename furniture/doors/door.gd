@@ -75,14 +75,15 @@ func open() -> void:
 		return
 
 	is_open = true
-	_play_sound("open")
 	_update_door_mesh_state()
 	emit_signal("door_opened")
+	_play_sound("open")
 
 func close() -> void:
 	is_open = false
 	_update_door_mesh_state()
 	emit_signal("door_closed")
+	_play_sound("close")
 
 func _update_door_mesh_state() -> void:
 	if not _door:
@@ -134,6 +135,10 @@ func _setup_sounds() -> void:
 	sound_open.begin = 0.0
 	sound_open.end = 1.29
 	_sounds["open"] = sound_open
+
+	var sound_close = SoundDesc.new()
+	sound_close.stream = load("res://audio/sounds/door-close.wav")
+	_sounds["close"] = sound_close
 
 func _play_sound(name) -> void:
 	if not _is_ready:

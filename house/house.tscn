@@ -1606,7 +1606,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8791, 29.119, 2.20758 )
 can_be_taken = false
 
 [node name="attic_box_39" parent="cardboards/attic" instance=ExtResource( 7 )]
-transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -28.2231, 29.119, -3.46517 )
+transform = Transform( 0.9954, 0, 0.095811, 0, 1, 0, -0.095811, 0, 0.9954, -29.1617, 29.1144, -3.90178 )
 can_be_taken = false
 
 [node name="attic_box_58" parent="cardboards/attic" instance=ExtResource( 7 )]
@@ -1619,7 +1619,7 @@ transform = Transform( 0.870107, 0, -0.492864, 0, 1, 0, 0.492864, 0, 0.870107, -
 transform = Transform( -0.136303, 0, -0.990668, 0, 1, 0, 0.990668, 0, -0.136303, -28.6017, 29.7144, -0.582676 )
 
 [node name="attic_box_40" parent="cardboards/attic" instance=ExtResource( 7 )]
-transform = Transform( 0.995102, 0, -0.0988508, 0, 1, 0, 0.0988508, 0, 0.995102, -27.5192, 29.119, -3.45003 )
+transform = Transform( 0.994787, 0, 0.101977, 0, 1, 0, -0.101977, 0, 0.994787, -28.5581, 29.1144, -3.92183 )
 can_be_taken = false
 
 [node name="kitchen" type="Spatial" parent="cardboards"]
@@ -1943,7 +1943,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906832, 0, -2.01974 )
 
 [node name="giant_mouth" parent="giant_eye_mouth_puzzle" instance=ExtResource( 35 )]
 unique_name_in_owner = true
-transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 3.78523, 3.21829, -0.892782 )
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 3.78523, 3.07471, -0.892782 )
 
 [node name="giant_thing_audio_area" type="Area" parent="giant_eye_mouth_puzzle"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02857, 1.79922, 2.12033 )

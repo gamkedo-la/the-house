@@ -5,6 +5,7 @@ extends Door
 func _ready():
 	find_node("lock").connect("unlocked", self, "_on_weird_knob_locked_in")
 	_setup_door_handle($interration_area)
+	_sounds["locked"] = null
 
 func _on_weird_knob_locked_in(_key_name):
 	_unsetup_door_handle($interration_area)

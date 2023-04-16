@@ -39,8 +39,18 @@ collision_layer = 129
 transform = Transform( -1.6292e-07, 1, 4.37114e-08, 1, 1.6292e-07, 1.31134e-07, 1.31134e-07, 4.37114e-08, -1, 0.805588, 0.0415941, -0.0811689 )
 collision_layer = 129
 
+[node name="handle_audio_player" type="AudioStreamPlayer3D" parent="main_mesh"]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.849078, 0.114844, -4.47981e-08 )
+bus = "Sounds"
+
 [node name="open_position" type="Spatial" parent="."]
 transform = Transform( -0.5, 6.55671e-08, -0.866025, 0.866025, -3.78552e-08, -0.5, -6.55671e-08, -1, -3.78552e-08, -1.501, 0.784, 0 )
 
 [node name="closed_position" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+
+[node name="audio_player" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+bus = "Sounds"

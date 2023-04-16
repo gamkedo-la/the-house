@@ -26,7 +26,9 @@ const time_betwen_notifications := 3.0
 
 var _is_ready := false
 
-onready var _sound_player := AudioStreamPlayer3D.new()
+onready var _sound_player := $"%audio_player"
+onready var _handle_sound_player := $"%handle_audio_player"
+
 class SoundDesc:
 	var stream
 	var begin: float = 0.0
@@ -71,6 +73,7 @@ func open() -> void:
 			_last_locked_notification_time = now
 			emit_signal("notified_door_is_locked")
 			global.current_player.action_display.display_text_sequence([ locked_text ])
+			_play_handle_sound("locked")
 
 		return
 
@@ -127,9 +130,6 @@ func on_player_interract():
 	_set_open(not is_open)
 
 func _setup_sounds() -> void:
-	add_child(_sound_player)
-	_sound_player.bus = "Sounds"
-
 	var sound_open = SoundDesc.new()
 	sound_open.stream = load("res://audio/sounds/door-open.mp3")
 	sound_open.begin = 0.0
@@ -140,11 +140,24 @@ func _setup_sounds() -> void:
 	sound_close.stream = load("res://audio/sounds/door-close.wav")
 	_sounds["close"] = sound_close
 
+	var sound_locked = SoundDesc.new()
+	sound_locked.stream = load("res://audio/sounds/door-locked.mp3")
+	_sounds["locked"] = sound_locked
+
 func _play_sound(name) -> void:
 	if not _is_ready:
 		return
 
-	var sound : SoundDesc = _sounds[name]
-	_sound_player.stream = sound.stream
-	_sound_player.play(sound.begin)
+	var sound = _sounds[name]
+	if sound is SoundDesc:
+		_sound_player.stream = sound.stream
+		_sound_player.play(sound.begin)
 
+func _play_handle_sound(name) -> void:
+	if not _is_ready:
+		return
+
+	var sound = _sounds[name]
+	if sound is SoundDesc:
+		_handle_sound_player.stream = sound.stream
+		_handle_sound_player.play(sound.begin)

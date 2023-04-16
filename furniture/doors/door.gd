@@ -118,6 +118,7 @@ func unlock() -> void:
 		_last_unlocked_notification_time = now
 		global.current_player.action_display.display_text_sequence([ unlocked_text ])
 		emit_signal("door_unlocked")
+		_play_handle_sound("unlocked")
 
 	is_locked = false
 
@@ -143,6 +144,11 @@ func _setup_sounds() -> void:
 	var sound_locked = SoundDesc.new()
 	sound_locked.stream = load("res://audio/sounds/door-locked.mp3")
 	_sounds["locked"] = sound_locked
+
+	var sound_unlocked = SoundDesc.new()
+	sound_unlocked.stream = load("res://audio/sounds/door-unlocked2.wav")
+	_sounds["unlocked"] = sound_unlocked
+
 
 func _play_sound(name) -> void:
 	if not _is_ready:

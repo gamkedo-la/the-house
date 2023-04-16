@@ -426,7 +426,7 @@ transform = Transform( -6.99382e-08, 0, -1.4, 0, 1.4, 0, 1.6, 0, -6.11959e-08, 6
 transform = Transform( 1.2, 0, 8.9407e-08, 0, 1.2, 0, -8.9407e-08, 0, 1.2, 4.58028, 0.0643429, -8.62367 )
 
 [node name="grimmor" parent="furniture/bedroom/chest" instance=ExtResource( 68 )]
-transform = Transform( 1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0, 0.037194, 0 )
+transform = Transform( 1, -6.37821e-08, -3.85092e-08, 4.87296e-15, 0.516862, -0.856068, 7.45059e-08, 0.856068, 0.516862, 0, 0.278882, -0.129484 )
 
 [node name="invisible_wall" parent="furniture/bedroom" instance=ExtResource( 72 )]
 transform = Transform( 1, 0, 0, 0, 0.857661, 0.514215, 0, -0.514215, 0.857661, 5.99988, 1.20703, -9.87085 )
@@ -1927,8 +1927,11 @@ translation_text = "Got it!\\nThis is actually a 5 figures number!"
 [node name="lantern2" parent="special_items" instance=ExtResource( 42 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85938, 3.66129, 4.15732 )
 
+[node name="crystal_ball2" parent="special_items" instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21995, 0.256005, -8.49462 )
+
 [node name="gold_bar" parent="special_items" instance=ExtResource( 6 )]
-transform = Transform( 0.938196, 0, -0.3461, 0, 1, 0, 0.3461, 0, 0.938196, 4.60924, 0.21948, -8.59653 )
+transform = Transform( 0.997447, 0, -0.0713927, 0, 1, 0, 0.0713927, 0, 0.997447, 4.60924, 0.168305, -8.49128 )
 
 [node name="giant_eye_mouth_puzzle" type="Spatial" parent="."]
 script = ExtResource( 40 )

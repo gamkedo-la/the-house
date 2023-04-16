@@ -270,6 +270,7 @@ tracks/1/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.58732e-43, -4.23517e-22, 0, 1, 1
 extents = Vector3( 0.507048, 0.317676, 0.272111 )
 
 [node name="treasure_chest_fix_03" type="StaticBody"]
+collision_layer = 129
 script = ExtResource( 3 )
 
 [node name="chest-armature" type="Spatial" parent="."]

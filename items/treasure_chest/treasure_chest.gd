@@ -10,6 +10,10 @@ onready var _lock_boot : LockArea = $"%foot_boot/lock"
 onready var _lock_woman : LockArea = $"%foot_woman_shoe/lock"
 onready var _lock_sports : LockArea = $"%foot_sports_shoe/lock"
 
+onready var _audio_player := $"%audio_player"
+onready var _unlocked_sound := load("res://audio/sounds/unlock-door.mp3")
+onready var _final_unlocked_sound := load("res://audio/sounds/unlock-door.mp3")
+onready var _open_sound := load("res://audio/sounds/creak-door.mp3")
 
 func _ready():
 	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
@@ -23,9 +27,14 @@ func _ready():
 
 func _on_unlocked_any_lock(_key_name) -> void:
 	global.current_player.action_display.display_text_sequence(["I can hear something [b]unlock[/b] inside the chest..."])
+	_audio_player.stream = _unlocked_sound
+	_audio_player.play()
 	if not _lock_boot.is_locked and not _lock_woman.is_locked and not _lock_sports.is_locked and not is_keypad_locked:
 		global.current_player.action_display.display_text_sequence(["I think it was the last lock, I can probably open it now..."], TextDisplay.DisplayMode.ADD_NEXT)
 		is_locked = false
+		yield(_audio_player, "finished")
+		_audio_player.stream = _final_unlocked_sound
+		_audio_player.play()
 
 func player_interracts():
 	if is_locked:
@@ -68,6 +77,8 @@ func on_player_end_pointing() -> void:
 func open_chest() -> void:
 	_animations.play("lid-opening")
 	is_open = true
+	_audio_player.stream = _open_sound
+	_audio_player.play()
 
 func close_chest() -> void:
 	_animations.play("default")

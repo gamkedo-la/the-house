@@ -299,7 +299,7 @@ bones/1/name = "lid"
 bones/1/parent = 0
 bones/1/rest = Transform( 1, -4.23516e-22, -4.76837e-07, 4.23517e-22, 1, 2.77933e-21, 4.76837e-07, -2.77933e-21, 1, -6.38161e-08, -0.260427, -0.422635 )
 bones/1/enabled = true
-bones/1/bound_children = [  ]
+bones/1/bound_children = [ NodePath("BoneAttachment") ]
 bones/2/name = "neutral_bone"
 bones/2/parent = -1
 bones/2/rest = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
@@ -492,3 +492,6 @@ shape = SubResource( 18 )
 [node name="collision_bottom" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0160958, 0 )
 shape = SubResource( 19 )
+
+[node name="audio_player" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true

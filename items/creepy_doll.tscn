@@ -84,7 +84,7 @@ extents = Vector3( 0.171217, 0.395986, 0.138708 )
 
 [node name="creepy_doll" type="RigidBody"]
 script = ExtResource( 1 )
-description = "A creepy doll.\\nIt have a code marked on it's back..."
+description = "A creepy doll."
 
 [node name="placeholder_mesh_please_replace_me" type="MeshInstance" parent="."]
 transform = Transform( 0.790875, -0.0114614, -0.61187, 0.198736, 0.950446, 0.239073, 0.57881, -0.310678, 0.753962, 0.0346558, -0.444071, 0.076221 )

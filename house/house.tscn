@@ -1908,7 +1908,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13394, -3.15576, -5.60388 )
 [node name="creepy_doll" parent="special_items" instance=ExtResource( 56 )]
 transform = Transform( 0.819912, 0.148171, 0.552982, 0, 0.965926, -0.258819, -0.572489, 0.212209, 0.791974, 6.298, 1.16832, -8.52021 )
 mode = 1
-description = "A very creepy doll."
+description = "A very creepy doll.\\nThere is a note on it's back."
 
 [node name="KeyArea" type="Area" parent="special_items/creepy_doll"]
 script = ExtResource( 57 )

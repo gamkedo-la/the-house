@@ -703,70 +703,91 @@ can_be_taken = false
 
 [node name="eyeball" parent="furniture/basement" instance=ExtResource( 52 )]
 transform = Transform( -0.74386, 0.513524, 0.427746, -0.203932, -0.783894, 0.586449, 0.636462, 0.349005, 0.687831, -1.0886, -2.32106, -5.73028 )
+visible = false
 
 [node name="dresser" parent="furniture/basement" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.39744, -3.1671, 0.14874 )
+visible = false
 
 [node name="dresser2" parent="furniture/basement" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.8007, -3.1671, 0.0972456 )
+visible = false
 
 [node name="cauldron" parent="furniture/basement" instance=ExtResource( 48 )]
 transform = Transform( 0.63272, 0, -0.640051, 0, 0.9, 0, 0.640051, 0, 0.63272, 1.98657, -3.15576, -5.98799 )
+visible = false
 
 [node name="table" parent="furniture/basement" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54853, -3.1621, -6.10039 )
+visible = false
 
 [node name="chair" parent="furniture/basement" instance=ExtResource( 29 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0244939, -3.15384, -6.61806 )
+visible = false
 
 [node name="sink" parent="furniture/basement" instance=ExtResource( 53 )]
 transform = Transform( -0.084739, 0, -0.996403, 0, 1, 0, 0.996403, 0, -0.084739, 2.63861, -3.15351, -4.13678 )
+visible = false
 
 [node name="plate" parent="furniture/basement" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10854, -2.35444, -5.7285 )
+visible = false
 
 [node name="knife_cleaver" parent="furniture/basement" instance=ExtResource( 51 )]
 transform = Transform( -4.37114e-08, -1, 0, 2.98023e-08, -8.88178e-16, 1, -1, 4.37114e-08, 2.98023e-08, -0.832316, -2.31742, -6.00979 )
+visible = false
 mode = 1
 
 [node name="chair_comfy" parent="furniture/basement" instance=ExtResource( 27 )]
 transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -1.93254, -3.15576, -4.46224 )
+visible = false
 
 [node name="ear" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.16584, -2.32327, -5.80039 )
+visible = false
 
 [node name="ear3" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.0329, -2.32327, -5.82582 )
+visible = false
 is_left_handed = true
 
 [node name="ear4" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.971555, -2.32327, -5.7012 )
+visible = false
 
 [node name="ear5" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.08828, -2.32327, -5.60256 )
+visible = false
 is_left_handed = true
 
 [node name="ear6" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.72105, -2.32327, -6.14759 )
+visible = false
 
 [node name="ear7" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.7106, -2.32327, -6.31345 )
+visible = false
 
 [node name="ear8" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.83106, -2.32327, -6.25715 )
+visible = false
 
 [node name="ear9" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.83106, -2.29611, -6.25715 )
+visible = false
 is_left_handed = true
 
 [node name="ear10" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.70971, -2.288, -6.21491 )
+visible = false
 
 [node name="ear11" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 0.753781, 0.657125, 2.87239e-08, 0, -4.37114e-08, 1, 0.657125, -0.753781, -3.29488e-08, -1.70971, -2.31516, -6.21491 )
+visible = false
 
 [node name="ear2" parent="furniture/basement" instance=ExtResource( 62 )]
 transform = Transform( 0.885904, -0.463868, -2.02763e-08, 0, -4.37114e-08, 1, -0.463868, -0.885904, -3.87241e-08, -1.18271, -2.32327, -5.66467 )
+visible = false
 
 [node name="hand" parent="furniture/basement" instance=ExtResource( 63 )]
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -1.10017, -2.35444, -6.27438 )

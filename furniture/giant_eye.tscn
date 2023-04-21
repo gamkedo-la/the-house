@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://furniture/giant_eye/giant_eye.gd" type="Script" id=1]
 [ext_resource path="res://furniture/giant_eye/giant_eyeball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://placeholder_material.tres" type="Material" id=3]
 [ext_resource path="res://gameplay/lightable_area.gd" type="Script" id=4]
 [ext_resource path="res://forest/invisible_wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://furniture/giant_eyelids/eyelids.glb" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 2.84336, 1.14634, 2.0527 )
@@ -93,6 +94,9 @@ shape = SubResource( 5 )
 
 [node name="placeholders_replace_them_please" type="Spatial" parent="."]
 
+[node name="eyelids" parent="placeholders_replace_them_please" instance=ExtResource( 6 )]
+transform = Transform( -0.333, 0, -5.02816e-08, 0, 0.333, 0, 5.02816e-08, 0, -0.333, 0, 0, 0 )
+
 [node name="eyeball" parent="placeholders_replace_them_please" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 1.24345e-14, 0, 0 )
@@ -100,22 +104,26 @@ transform = Transform( 1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 1.24345e-
 [node name="eyelid_down" type="MeshInstance" parent="placeholders_replace_them_please"]
 unique_name_in_owner = true
 transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -2.51616e-08, -0.514065, -0.069794 )
+visible = false
 mesh = SubResource( 6 )
 skeleton = NodePath("../..")
 
 [node name="eyelid_up" type="MeshInstance" parent="placeholders_replace_them_please"]
 unique_name_in_owner = true
 transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, -2.51616e-08, 0.478762, -0.069794 )
+visible = false
 mesh = SubResource( 7 )
 skeleton = NodePath("../..")
 
 [node name="back" type="MeshInstance" parent="placeholders_replace_them_please"]
 transform = Transform( -1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 1.41786e-08, 0, 0.080206 )
+visible = false
 mesh = SubResource( 8 )
 skeleton = NodePath("../..")
 
 [node name="invisible_wall" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0475351 )
+visible = false
 width = 1.08096
 height = 1.39941
 depth = 0.414796

@@ -7,6 +7,7 @@ onready var _eyelid_up_closed : Spatial = $"%eyelid_up_closed"
 onready var _eyelid_down_closed : Spatial = $"%eyelid_down_closed"
 onready var _attention_area : Area = $"%attention_area"
 onready var _flame_intolerance_area : LightableArea = $flame_intolerance_area
+onready var _eyelids_anims = $placeholders_replace_them_please/eyelids/AnimationPlayer
 
 export(float, 0.0, 1.0) var orientation_updates_per_secs : float = 1.0 / 13
 export(float, 0.0, 100) var jitter_drift_amplitude : float = 0.1
@@ -74,9 +75,10 @@ func _on_flame_is_too_close() -> void:
 
 
 func close_eye():
+	_eyelids_anims.play("Blink")
 	_eyelid_up.transform.origin = _eyelid_up_closed.transform.origin
 	_eyelid_down.transform.origin = _eyelid_down_closed.transform.origin
-	_eyeball.visible = false
+#	_eyeball.visible = false
 	_flame_intolerance_area.set_deferred("monitoring", false)
 	_attention_area.set_deferred("monitoring", false)
 	is_open = false
@@ -84,9 +86,10 @@ func close_eye():
 	emit_signal("on_eye_closed")
 
 func open_eye():
+	_eyelids_anims.play_backwards("Blink")
 	_eyelid_up.transform.origin = _initial_eyelid_up_pos
 	_eyelid_down.transform.origin = _initial_eyelid_down_pos
-	_eyeball.visible = true
+#	_eyeball.visible = true
 	_reset_eye_orientation()
 	_flame_intolerance_area.set_deferred("monitoring", true)
 	_attention_area.set_deferred("monitoring", true)

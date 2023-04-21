@@ -5,7 +5,7 @@
 [ext_resource path="res://placeholder_material.tres" type="Material" id=3]
 [ext_resource path="res://gameplay/lightable_area.gd" type="Script" id=4]
 [ext_resource path="res://forest/invisible_wall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://furniture/giant_eyelids/eyelids.glb" type="PackedScene" id=6]
+[ext_resource path="res://furniture/giant_eyelids/giant_eyelids.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 2.84336, 1.14634, 2.0527 )
@@ -95,7 +95,7 @@ shape = SubResource( 5 )
 [node name="placeholders_replace_them_please" type="Spatial" parent="."]
 
 [node name="eyelids" parent="placeholders_replace_them_please" instance=ExtResource( 6 )]
-transform = Transform( -0.333, 0, -5.02816e-08, 0, 0.333, 0, 5.02816e-08, 0, -0.333, 0, 0, 0 )
+transform = Transform( -0.319074, 0, 2.78943e-08, 0, 0.319074, 0, -2.78943e-08, 0, -0.319074, 0, 0, 0 )
 
 [node name="eyeball" parent="placeholders_replace_them_please" instance=ExtResource( 2 )]
 unique_name_in_owner = true

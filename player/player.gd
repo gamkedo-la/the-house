@@ -559,9 +559,19 @@ func hide_all_texts() -> void:
 	examination_display.visible = false
 	reading_display.visible = false
 
+	_center_symbol.visible = false
+	_examination_symbol.visible = false
+	_movement_symbol.visible = false
+
 func show_all_texts() -> void:
 	story_display.visible = true
 	action_display.visible = true
 	info_display.visible = true
 	examination_display.visible = true
 	reading_display.visible = true
+
+	_center_symbol.visible = true
+	if is_examining():
+		_examination_symbol.visible = true
+
+	_movement_symbol.visible = true

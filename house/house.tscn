@@ -1045,11 +1045,6 @@ mushroom_shape = 5
 transform = Transform( -0.0535733, -0.549777, -0.833591, 8.9407e-08, 0.834791, -0.550568, 0.998564, -0.0294956, -0.044723, -0.625315, -3.01666, 10.7931 )
 mushroom_shape = 7
 
-[node name="mushroom" parent="mushrooms/entrance" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.704683, 0.207544, 6.28975 )
-mushroom_color = 2
-mushroom_shape = 2
-
 [node name="mushroom14" parent="mushrooms/entrance" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 0.83479, -0.550568, 0, 0.550568, 0.83479, -0.704683, 0.207544, 6.28975 )
 mushroom_color = 2

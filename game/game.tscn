@@ -274,7 +274,7 @@ mode = 1
 [node name="take_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0128, 0.388094, 88.7606 )
 script = ExtResource( 20 )
-bbtext_to_display = [ "[CTRL] or [C] -> [b]Crouch[/b]\\nLeft Mouse Button -> [b]Take[/b]" ]
+bbtext_to_display = [ "[b]Crouch[/b] to [b]Take[/b] items on the ground.\\n[CTRL] or [C] -> [b]Crouch[/b]\\nLeft Mouse Button -> [b]Take[/b]" ]
 display_only_once = false
 mode = 1
 

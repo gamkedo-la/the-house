@@ -2400,7 +2400,13 @@ transform = Transform( -0.952085, 0, 0.305833, 0, 1, 0, -0.305833, 0, -0.952085,
 transform = Transform( -0.893655, 0, -0.448754, 0, 1, 0, 0.448754, 0, -0.893655, -0.539584, 0, 60.8303 )
 
 [node name="bush13" parent="bushes" instance=ExtResource( 3 )]
-transform = Transform( 0.0788929, 0, -1.39777, 0, 1.1193, 0, 1.39777, 0, 0.0788929, -3.11998, 0, 78.62 )
+transform = Transform( 0.0866698, 0, -1.48863, 0, 1.62, 0, 1.53556, 0, 0.0840212, -0.777364, 0, 78.8289 )
+
+[node name="bush202" parent="bushes" instance=ExtResource( 3 )]
+transform = Transform( 0.0866698, 0, -1.48863, 0, 1.62, 0, 1.53556, 0, 0.0840212, -0.777364, 0, 77.0902 )
+
+[node name="bush203" parent="bushes" instance=ExtResource( 3 )]
+transform = Transform( 0.0866698, 0, -1.48863, 0, 1.62, 0, 1.53556, 0, 0.0840212, -0.777364, 0, 75.4248 )
 
 [node name="bush14" parent="bushes" instance=ExtResource( 3 )]
 transform = Transform( 1.39335, 0, -0.136263, 0, 1.1193, 0, 0.136263, 0, 1.39335, -5.55505, 0, 73.9705 )
@@ -2419,6 +2425,9 @@ transform = Transform( -1.36678, 0, 0.303163, 0, 1.1193, 0, -0.303163, 0, -1.366
 
 [node name="bush19" parent="bushes" instance=ExtResource( 3 )]
 transform = Transform( 1.39428, 0, 0.126399, 0, 1.1193, 0, -0.126399, 0, 1.39428, 5.73475, -4.76837e-07, 89.7787 )
+
+[node name="bush204" parent="bushes" instance=ExtResource( 3 )]
+transform = Transform( 1.39428, 0, 0.126399, 0, 1.1193, 0, -0.126399, 0, 1.39428, 5.56099, -4.76837e-07, 94.3787 )
 
 [node name="bush20" parent="bushes" instance=ExtResource( 3 )]
 transform = Transform( 1.02617, 0, -0.95235, 0, 1.1193, 0, 0.95235, 0, 1.02617, 11.4902, -0.339982, 89.7787 )
@@ -3428,15 +3437,15 @@ height = 10.824
 depth = 6.66291
 
 [node name="invisible_wall10" parent="invisible_walls" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42398, 1.39886, 96.1907 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42398, 1.39886, 94.1443 )
 width = 23.0898
 
 [node name="invisible_wall14" parent="invisible_walls" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3746, 1.39886, 95.6271 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3746, 1.39886, 93.8503 )
 width = 175.795
 
 [node name="invisible_wall11" parent="invisible_walls" instance=ExtResource( 10 )]
-transform = Transform( 0.00434596, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.00434596, -5.28886, 1.39886, 76.4092 )
+transform = Transform( 0.00434596, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.00434596, -0.384778, 1.39886, 76.4092 )
 width = 23.0898
 
 [node name="invisible_wall12" parent="invisible_walls" instance=ExtResource( 10 )]

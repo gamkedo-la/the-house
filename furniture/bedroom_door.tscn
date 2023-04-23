@@ -88,12 +88,6 @@ mode = 1
 can_be_taken = false
 highlightable = false
 
-[node name="ear5" parent="main_mesh/ears" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199968, 0.405917, 0.05 )
-mode = 1
-can_be_taken = false
-highlightable = false
-
 [node name="ear6" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205648, 0.534657, 0.05 )
 mode = 1
@@ -167,12 +161,6 @@ can_be_taken = false
 highlightable = false
 
 [node name="ear18" parent="main_mesh/ears" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130844, 0.537314, 0.05 )
-mode = 1
-can_be_taken = false
-highlightable = false
-
-[node name="ear19" parent="main_mesh/ears" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130844, 0.537314, 0.05 )
 mode = 1
 can_be_taken = false

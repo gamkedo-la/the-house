@@ -369,7 +369,7 @@ transform = Transform( 0.641976, 0, -0.279046, 0, 0.7, 0, 0.279046, 0, 0.641976,
 transform = Transform( 0.441211, 0, -0.235229, 0, 0.5, 0, 0.235229, 0, 0.441211, 6.67106, 0.0611715, 3.7571 )
 
 [node name="table3" parent="furniture/living_room" instance=ExtResource( 28 )]
-transform = Transform( 0.999862, 0, 0.0298752, 0, 1, 0, -0.0165973, 0, 1.79975, 3.8403, 0.0643428, -1.20704 )
+transform = Transform( 0.999862, 0, 0.0298752, 0, 1, 0, -0.0165973, 0, 1.79975, 3.8403, 0.0643428, -0.883863 )
 
 [node name="chair" parent="furniture/living_room" instance=ExtResource( 29 )]
 transform = Transform( 0.0942647, 0, 0.995547, 0, 1, 0, -0.995547, 0, 0.0942647, 3.77336, 0.064342, 4.51861 )
@@ -378,22 +378,22 @@ transform = Transform( 0.0942647, 0, 0.995547, 0, 1, 0, -0.995547, 0, 0.0942647,
 transform = Transform( -0.292539, 0, -0.956254, 0, 1, 0, 0.956254, 0, -0.292539, 5.81498, 0.064342, 5.06929 )
 
 [node name="chair3" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( -0.98803, 0, -0.154262, 0, 1, 0, 0.154262, 0, -0.98803, 3.85227, 0.0643427, 0.197343 )
+transform = Transform( -0.98803, 0, -0.154262, 0, 1, 0, 0.154262, 0, -0.98803, 3.85227, 0.0643427, 0.52052 )
 
 [node name="chair4" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( 0.0653856, 0, 0.99786, 0, 1, 0, -0.99786, 0, 0.0653856, 3.02494, 0.0643423, -0.494261 )
+transform = Transform( 0.0653856, 0, 0.99786, 0, 1, 0, -0.99786, 0, 0.0653856, 3.02494, 0.0643423, -0.171084 )
 
 [node name="chair6" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( 0.0653856, 0, 0.99786, 0, 1, 0, -0.99786, 0, 0.0653856, 2.99622, 0.0643423, -1.65265 )
+transform = Transform( 0.0653856, 0, 0.99786, 0, 1, 0, -0.99786, 0, 0.0653856, 2.99622, 0.0643423, -1.32947 )
 
 [node name="chair7" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( -0.0195637, 0, -0.999809, 0, 1, 0, 0.999809, 0, -0.0195637, 4.64856, 0.0643421, -1.66347 )
+transform = Transform( -0.0195637, 0, -0.999809, 0, 1, 0, 0.999809, 0, -0.0195637, 4.64856, 0.0643421, -1.34029 )
 
 [node name="chair8" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( 0.999385, 0, 0.0350742, 0, 1, 0, -0.0350742, 0, 0.999385, 3.89924, 0.0643421, -2.64197 )
+transform = Transform( 0.999385, 0, 0.0350742, 0, 1, 0, -0.0350742, 0, 0.999385, 3.89924, 0.0643421, -2.31879 )
 
 [node name="chair5" parent="furniture/living_room" instance=ExtResource( 29 )]
-transform = Transform( 0.109786, 0, -0.993955, 0, 1, 0, 0.993955, 0, 0.109786, 4.69578, 0.0643431, -0.788461 )
+transform = Transform( 0.109786, 0, -0.993955, 0, 1, 0, 0.993955, 0, 0.109786, 4.69578, 0.0643431, -0.465284 )
 
 [node name="dresser2" parent="furniture/living_room" instance=ExtResource( 5 )]
 transform = Transform( 0.999659, 0, -0.0261072, 0, 1, 0, 0.0261072, 0, 0.999659, 6.97713, 0.053007, -3.32642 )

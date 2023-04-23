@@ -1,4 +1,4 @@
-extends Spatial
+extends StaticBody
 
 onready var _eyeball : Spatial = $"%eyeball"
 onready var _eyelid_up : Spatial = $"%eyelid_up"
@@ -31,6 +31,8 @@ func _ready() -> void:
 
 	_initial_eyelid_up_pos = _eyelid_up.transform.origin
 	_initial_eyelid_down_pos = _eyelid_down.transform.origin
+
+	set_collision_layer_bit(CollisionLayers.player_interraction_raycast_layer_bit, true)
 
 func _process(delta):
 	if looks_at_player and _needs_update and _eyeball.visible and global.current_player:
@@ -97,4 +99,12 @@ func open_eye():
 	print("giant eye: open")
 	emit_signal("on_eye_opened")
 
+func player_interracts() -> void:
+	global.current_player.examination_display.display_text_sequence(["This... disturbing thing seems alive?\nIt seems connected to that other thing on the ceiling..."])
+
+func on_player_begin_pointing() -> void:
+	global.current_player.examination_display.display_text_sequence(["..."])
+
+func on_player_end_pointing() -> void:
+	global.current_player.examination_display.stop_display_sequence()
 

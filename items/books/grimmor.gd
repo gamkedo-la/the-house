@@ -23,6 +23,7 @@ func start_reading_text() -> void:
 	global.current_player.action_display.stop_display_sequence()
 	global.current_player.reading_display.display_text_sequence([grimmor_text])
 	_is_reading_text = true
+	global.current_player._center_symbol.visible = false
 
 func stop_reading_text() -> void:
 	global.current_player.reading_display.stop_display_sequence()
@@ -35,3 +36,4 @@ func on_player_end_pointing() -> void:
 	_player_is_reading = false
 	if _is_reading_text:
 		stop_reading_text()
+	global.current_player._center_symbol.visible = true

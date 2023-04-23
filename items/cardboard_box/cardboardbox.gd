@@ -21,5 +21,7 @@ func _ready():
 		if not global.cardboard_material_darker:
 			global.cardboard_material_darker = _mesh.get_active_material(0).duplicate()
 			var albedo = global.cardboard_material_darker.albedo_color
-			global.cardboard_material_darker.albedo_color = albedo.darkened(0.5)
+			albedo = albedo.darkened(0.5)
+			albedo.b += 0.1
+			global.cardboard_material_darker.albedo_color = albedo
 		_mesh.set_surface_material(0, global.cardboard_material_darker)

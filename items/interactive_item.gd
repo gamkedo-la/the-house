@@ -30,7 +30,7 @@ export var description : String = ""
 
 var _previous_global_transform_origin : Vector3
 
-onready var hilite_mat = load("res://shaders/hilite_material.tres")
+#onready var hilite_mat = load("res://shaders/hilite_material.tres")
 
 var hilighted = false
 

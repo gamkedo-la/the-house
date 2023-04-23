@@ -103,6 +103,7 @@ mass = 10.0
 continuous_cd = true
 script = ExtResource( 2 )
 can_collide_with_player = true
+description = "An empty flower pot."
 
 [node name="mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 8 )

@@ -40,8 +40,13 @@ func update(delta):
 		state_machine.push_action(PlayerState.Action.stop_examining_item)
 		return
 
+	if Input.is_action_just_pressed("drop_held_item"):
+		state_machine.push_action(PlayerState.Action.drop_item)
+		return
+
 	if Input.is_action_just_pressed("item_activation"):
 		player.use_item()
+
 
 	_update_examination_controls(delta)
 

@@ -18,7 +18,10 @@ func _init().("PLAYER_STATE_MACHINE",
 			PlayerState.Action.drop_item: "NO_ITEM",
 			PlayerState.Action.examine_item: "EXAMINING",
 		},
-		"EXAMINING": { PlayerState.Action.stop_examining_item: "HOLDING_ITEM", }
+		"EXAMINING": {
+			PlayerState.Action.stop_examining_item: "HOLDING_ITEM",
+			PlayerState.Action.drop_item: "NO_ITEM",
+		}
 	}) -> void:
 		pass
 

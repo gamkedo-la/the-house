@@ -30,7 +30,7 @@ func _on_unlocked_any_lock(_key_name) -> void:
 	_audio_player.stream = _unlocked_sound
 	_audio_player.play()
 	if not _lock_boot.is_locked and not _lock_woman.is_locked and not _lock_sports.is_locked and not is_keypad_locked:
-		global.current_player.action_display.display_text_sequence(["I think it was the last lock, I can probably open it now..."], TextDisplay.DisplayMode.ADD_NEXT)
+		global.current_player.action_display.display_text_sequence(["I think that was the last lock, I can probably open it now..."], TextDisplay.DisplayMode.ADD_NEXT)
 		is_locked = false
 		yield(_audio_player, "finished")
 		_audio_player.stream = _final_unlocked_sound
@@ -61,9 +61,15 @@ func _unlock_keypad() -> void:
 	_on_unlocked_any_lock("keypad")
 
 func _display_locked_description() -> void:
-	global.current_player.examination_display.display_text_sequence([
-		"This chest is locked. I need [b]a code[/b] to open it...\nThe human [b]feet[/b] screwed on it's lid seems to be part of a mechanism..."
-	])
+	var text = "This chest is locked. I need [b]a code[/b] to open it...\nThe human [b]feet[/b] screwed on it's lid seems to be part of a mechanism..."
+	if not _lock_boot.is_locked or not _lock_woman.is_locked or not _lock_sports.is_locked or not is_keypad_locked:
+		text = "Still locked. "
+		if not is_keypad_locked:
+			text += "I need to enter a code to unlock the keypad."
+		if not _lock_boot.is_locked or not _lock_woman.is_locked or not _lock_sports.is_locked:
+			text += "The human [b]feet[/b] screwed on it's lid seems to be part of the locking mechanism."
+
+	global.current_player.examination_display.display_text_sequence([ text ])
 
 func _display_wrong_code_description() -> void:
 	global.current_player.examination_display.display_text_sequence([

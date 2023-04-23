@@ -150,6 +150,7 @@ shader_param/Roughness = 0.312
 collision_layer = 129
 continuous_cd = true
 script = ExtResource( 1 )
+description = "The \"Golden Handshake\", a litteral hand made of gold.\\nI made it using the cauldron."
 
 [node name="placeholder_collision_shape" type="CollisionShape" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.83171e-10, 0, 0 )

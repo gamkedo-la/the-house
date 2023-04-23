@@ -22,7 +22,7 @@ func player_interracts() -> void:
 		else:
 			global.current_player.info_display.stop_display_sequence()
 			global.current_player.examination_display.stop_display_sequence()
-			global.current_player.action_display.display_text_sequence(["Ok let's see ...", "...hmmm...", "...this should mean...that...", "..okay?..."])
+			global.current_player.action_display.display_text_sequence(["Ok let's see ...", "...hmmm..."])
 			_note_being_translated = item
 			global.current_player.action_display.connect("text_sequence_display_completed", self, "_on_translated_note")
 	else:
@@ -38,8 +38,10 @@ func on_player_begin_pointing() -> void:
 	var item = global.current_player.get_item_in_hand()
 	if item is PaperNote:
 		if item.is_translated:
+			global.current_player.info_display.display_text_sequence(["Left Mouse Button -> [b]Interract[/b].\nHold this Note while [b]Interracting[/b] with an object to try that code."])
 			global.current_player.examination_display.display_text_sequence(["I managed to use this thing to translate the symbols on this note."])
 		else:
+			global.current_player.info_display.display_text_sequence(["Left Mouse Button -> [b]Translate[/b]."])
 			global.current_player.examination_display.display_text_sequence(["Could I [b]translate[/b] the symbols on this note with that thing?"])
 	else:
 		if _did_at_least_one_translation:
@@ -67,3 +69,4 @@ func _on_translated_note() -> void:
 		assert(_note_being_translated.is_translated)
 		_note_being_translated = null
 		_did_at_least_one_translation = true
+		global.current_player.info_display.display_text_sequence(["[b]Hold[/b] this note while [b]interracting[/b] with a keypad to try that code."])

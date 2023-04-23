@@ -20,7 +20,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.05, 0.05, 0.007 )
+extents = Vector3( 0.05, 0.05, 0.0108174 )
 
 [node name="note" type="RigidBody"]
 mass = 0.1

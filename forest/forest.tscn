@@ -2220,9 +2220,6 @@ transform = Transform( 0.532476, 0, 0.846445, 0, 1, 0, -0.846445, 0, 0.532476, 1
 [node name="PineTree146" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( 0.532476, 0, 0.846445, 0, 1, 0, -0.846445, 0, 0.532476, 132.071, -25.1671, -8.66728 )
 
-[node name="PineTree144" parent="trees" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2612, 0, 28.352 )
-
 [node name="PineTree59" parent="trees" instance=ExtResource( 2 )]
 transform = Transform( -0.946812, 0, -0.321787, 0, 1, 0, 0.321787, 0, -0.946812, 60.2496, 6.64557, -24.4016 )
 
@@ -3008,6 +3005,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1038, 0.203189, 88.3228 )
 random_placement_radius = 4.0
 mushroom_count = 12
 mushroom_color = 4
+
+[node name="mushrooms-group-magic-brown-2" parent="mushrooms" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7384, 0.149398, 56.0619 )
+random_placement_radius = 4.0
+mushroom_count = 12
+mushroom_color = 3
 
 [node name="start_clue_mushroom" parent="mushrooms" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 0.098955, -0.995092, 0, 0.995092, 0.098955, 16.2286, 0.0695734, 88.7121 )

@@ -48,7 +48,7 @@ extents = Vector3( 1.67288, 2.06037, 8.44007 )
 
 [sub_resource type="CylinderShape" id=5]
 height = 3.3895
-radius = 2.87124
+radius = 8.311
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 4.077, 2.19295, 6.30188 )
@@ -279,7 +279,7 @@ display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/take_instructions" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58206, 0.5, -3.1016 )
 shape = SubResource( 5 )
 
 [node name="examine_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
@@ -292,7 +292,7 @@ display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58206, 0.5, -3.1016 )
 shape = SubResource( 5 )
 
 [node name="examine_instructions2" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
@@ -305,7 +305,7 @@ display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/examine_instructions2" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58206, 0.5, -3.1016 )
 shape = SubResource( 5 )
 
 [node name="point_forward_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]
@@ -317,7 +317,7 @@ display_only_once = false
 mode = 1
 
 [node name="CollisionShape" parent="actual_game/texts/action_tips/point_forward_instructions" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84784, 0.5, -0.455833 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58206, 0.5, -3.1016 )
 shape = SubResource( 5 )
 
 [node name="run_instructions" parent="actual_game/texts/action_tips" instance=ExtResource( 19 )]

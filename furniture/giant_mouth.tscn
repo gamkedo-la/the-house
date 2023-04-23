@@ -90,6 +90,7 @@ unique_name_in_owner = true
 stream = ExtResource( 3 )
 unit_db = -80.0
 unit_size = 0.8
+autoplay = true
 max_distance = 7.0
 bus = "Thing"
 

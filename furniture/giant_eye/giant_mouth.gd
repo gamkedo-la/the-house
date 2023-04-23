@@ -1,4 +1,3 @@
-tool
 extends Spatial
 
 export var is_open := false setget _set_open

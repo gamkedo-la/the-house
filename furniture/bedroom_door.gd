@@ -37,6 +37,9 @@ func _unlock_the_door():
 func player_interracts() -> void:
 	global.current_player.action_display.display_text_sequence(["The ears are screwed in this door, I can't remove them.\nThey seem linked to a mechanism inside the door."])
 
+func is_player_interractible() -> bool:
+	return is_locked
+
 func on_player_begin_pointing() -> void:
 	if is_locked:
 		global.current_player.examination_display.display_text_sequence(["These are real human ears.\nCut from several people's body. Then screwed in this door.\nBut why?"])

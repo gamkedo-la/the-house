@@ -342,7 +342,7 @@ func update_interraction_ray() -> void:
 			if _pointed_item != something and something.is_takable_now():
 				_begin_pointing_interactive_item(something)
 
-		elif utility.object_has_function(something, "player_interracts"): # Usable object (not takable like InterativeItems)
+		elif utility.object_has_function(something, "player_interracts") and (not utility.object_has_function(something, "is_player_interractible") or something.is_player_interractible() == true): # Usable object (not takable like InterativeItems)
 			_end_pointing_interactive_item()
 			if _pointed_usable_entity != something:
 				_begin_pointing_usable_object(something)

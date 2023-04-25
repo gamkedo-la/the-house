@@ -100,6 +100,19 @@ margin_bottom = -33.0
 theme = ExtResource( 10 )
 text = "EXIT"
 
+[node name="feedback_button" type="Button" parent="main_menu"]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -189.0
+margin_top = -102.0
+margin_right = -26.0
+margin_bottom = -31.0
+theme = ExtResource( 10 )
+text = "Feedback"
+
 [node name="options_screen" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
 visible = false

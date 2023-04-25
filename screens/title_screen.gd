@@ -10,6 +10,7 @@ func _ready():
 	$"%start_button".connect("pressed", self, "_start_new_game")
 	$"%credits_button".connect("pressed", self, "_to_credits")
 	$"%options_button".connect("pressed", self, "_open_options")
+	$"%feedback_button".connect("pressed", self, "_to_feedback")
 
 	if OS.get_name() != "HTML5":
 		$"%exit_button".connect("pressed", self, "_exit_game")
@@ -39,6 +40,9 @@ func _open_options():
 func _close_options():
 	_options_screen.visible = false
 	_main_menu.visible = true
+
+func _to_feedback() -> void:
+	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSfbbXndm304XRlLyVB00egftwFO2jWM0-kU4MJVz1wFH1vwuA/viewform")
 
 func _exit_game():
 	get_tree().quit()

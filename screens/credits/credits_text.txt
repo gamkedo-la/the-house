@@ -3,7 +3,7 @@
 
 [b]Klaim (A. Joël Lamotte)[/b]: Project lead, core gameplay design and implementation, level design and interior layouts, puzzle design and implementation, UI and screens, story, player movement, item manipulation and examination, lock and key system, sky made more scary, door behavior, ugly wallpapers, slope handling, camera behavior, ladder system, music (background, intro, music box), various game objects mechanics, house collision adjustments, scale improvements, light tweaks, title screen, instructions text, background loading, performance improvements, options menus and implementations, sounds integration, many bug fixes
 
-[b]Liyi Zhang[/b]: Grass shader, models with materials (treasure chest, toilet, sink, chair with comfy variation, clay flower pot, bed, music box, old boot) with related integration, sounds (foostep), environment scale reference
+[b]Liyi Zhang[/b]: Grass shader, models with materials (treasure chest, toilet, sink, chair with comfy variation, clay flower pot, bed, music box, old boot, woman boot, giant mouth and giant eye) with related integration, sounds (foostep), environment scale reference
 
 [b]Johan Östling[/b]: Models with materials (lighter, plate, frying plan, mushrooms, torch, candle), flame behavior, lighting experiments, uneven fog/dust, mushroom generator, camera adjustment, lighter and pan integration (with sounds), skitter and dripping audio variations, additional sound integration, held item physics fix
 

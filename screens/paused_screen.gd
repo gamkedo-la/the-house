@@ -10,6 +10,7 @@ func _ready():
 	$"%options_button".connect("pressed", self, "_on_options_button_pressed")
 	$"%exit_button".connect("pressed", self, "_on_exit_button_pressed")
 	$options_screen.connect("on_back_from_options", self, "_on_back_from_options")
+	$"%feedback_button".connect("pressed", self, "_to_feedback")
 
 	set_process(false)
 
@@ -41,4 +42,8 @@ func _resume() -> void:
 	$menu.visible = true
 	$options_screen.visible = false
 	emit_signal("on_resume")
+
+
+func _to_feedback() -> void:
+	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSfbbXndm304XRlLyVB00egftwFO2jWM0-kU4MJVz1wFH1vwuA/viewform")
 

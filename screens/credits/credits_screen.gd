@@ -18,3 +18,4 @@ func _ready():
 func _on_back_pressed():
 	if master_scene:
 		master_scene.change_current_scene(scene_name_to_get_back_to)
+		$"%back_button".visible = false

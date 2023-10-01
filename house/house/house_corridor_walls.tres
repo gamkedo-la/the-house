@@ -14,3 +14,4 @@ uv1_scale = Vector3( 20, 20, 1 )
 next_pass = SubResource( 3 )
 albedo_texture = ExtResource( 1 )
 uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0

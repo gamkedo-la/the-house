@@ -2897,28 +2897,12 @@ transform = Transform( -4.32171e-08, 0.988691, 0.149967, -1, -4.37114e-08, 0, 6.
 transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 6.70552e-08, -1.49012e-08, 0.755488, 0.655163, -0.569258, -1.09887, 0.909971 )
 mushroom_shape = 0
 
-[node name="mushroom13" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -1.49012e-08, 0.755488, 0.655163, -0.287726, -2.33739, 1.15412 )
-mushroom_shape = 0
-
 [node name="mushroom21" parent="special/fallen_trunk" instance=ExtResource( 9 )]
 transform = Transform( -9.83117e-09, -0.913575, -0.406673, 1, -4.47035e-08, 7.45058e-08, -8.9407e-08, -0.406673, 0.913575, -0.968869, -1.06532, -0.472584 )
 mushroom_shape = 0
 
 [node name="mushroom23" parent="special/fallen_trunk" instance=ExtResource( 9 )]
 transform = Transform( 8.87109e-09, -0.469287, -0.883048, 1, -7.45058e-08, 5.96046e-08, -5.96046e-08, -0.883047, 0.469288, -0.5862, 1.22601, -0.919363 )
-mushroom_shape = 0
-
-[node name="mushroom24" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -3.00138e-09, 0.406673, -0.913576, 1, -2.98023e-08, -4.09782e-08, -4.47035e-08, -0.913575, -0.406673, 0.591062, 2.65209, -0.830618 )
-mushroom_shape = 0
-
-[node name="mushroom25" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -3.00139e-09, 0.406673, -0.913576, 1, -2.98023e-08, -4.84288e-08, -4.47035e-08, -0.913575, -0.406673, 0.350844, 0.897987, -0.937548 )
-mushroom_shape = 0
-
-[node name="mushroom26" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -3.00139e-09, 0.406673, -0.913576, 1, -2.98023e-08, -5.58794e-08, -4.47035e-08, -0.913576, -0.406673, 0.502078, 1.4211, -0.870226 )
 mushroom_shape = 0
 
 [node name="mushroom29" parent="special/fallen_trunk" instance=ExtResource( 9 )]
@@ -2929,24 +2913,8 @@ mushroom_shape = 0
 transform = Transform( 4.68303e-08, 0.99734, 0.0729243, 1, -4.37722e-08, -7.45058e-08, -7.45058e-08, 0.0729243, -0.99734, 1.10584, -0.788208, 0.00989723 )
 mushroom_shape = 0
 
-[node name="mushroom14" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -2.98023e-08, 0.755488, 0.655163, -0.287726, -2.33739, 1.15412 )
-mushroom_shape = 0
-
-[node name="mushroom2" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -1.49012e-08, 0.755488, 0.655163, -0.507094, 0.18441, 0.963877 )
-mushroom_shape = 0
-
 [node name="mushroom10" parent="special/fallen_trunk" instance=ExtResource( 9 )]
 transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -4.47035e-08, 0.755488, 0.655163, -0.153381, 1.06407, 1.27062 )
-mushroom_shape = 0
-
-[node name="mushroom3" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -4.47035e-08, 0.755488, 0.655163, -0.382034, -0.115944, 1.07233 )
-mushroom_shape = 0
-
-[node name="mushroom4" parent="special/fallen_trunk" instance=ExtResource( 9 )]
-transform = Transform( -5.35869e-08, -0.655163, 0.755488, 1, -7.45058e-09, 8.19564e-08, -4.47035e-08, 0.755488, 0.655163, -0.382034, -0.115944, 1.07233 )
 mushroom_shape = 0
 
 [node name="mushroom5" parent="special/fallen_trunk" instance=ExtResource( 9 )]
@@ -3045,13 +3013,7 @@ mushroom_color = 4
 [node name="mushrooms-group6" parent="mushrooms" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.426, 0.137163, 20.2827 )
 random_placement_radius = 2.0
-mushroom_count = 7
-mushroom_color = 5
-
-[node name="mushrooms-group7" parent="mushrooms" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.2237, 0.0849084, 20.6324 )
-random_placement_radius = 2.0
-mushroom_count = 7
+mushroom_count = 3
 mushroom_color = 5
 
 [node name="mushrooms-group8" parent="mushrooms" instance=ExtResource( 5 )]

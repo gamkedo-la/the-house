@@ -228,8 +228,8 @@ margin_top = -46.0
 margin_right = 349.0
 theme = ExtResource( 13 )
 bbcode_enabled = true
-bbcode_text = "Version [b]0.8-ALPHA[/b]"
-text = "Version 0.8-ALPHA"
+bbcode_text = "Version [b]0.9-ALPHA[/b]"
+text = "Version 0.9-ALPHA"
 scroll_active = false
 
 [node name="important_keys" type="RichTextLabel" parent="info"]
